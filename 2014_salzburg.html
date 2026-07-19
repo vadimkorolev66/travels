@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Зальцбург под снегом. Воспоминание о новогодней Австрии</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  nav.toc,
+  article > p,
+  article > h2,
+  article > ul.summary-list,
+  article > blockquote.citation {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.masthead {
+    max-width: none;
+    padding: 8vw 0 4vw;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://live.staticflickr.com/65535/54107976442_95d7722974_b.jpg') center 40% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  nav.toc {
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+    font-family: var(--sans);
+  }
+  nav.toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li { margin: 0 0 0.85rem; break-inside: avoid; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.3;
+    font-size: 0.98rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent-soft); color: var(--accent); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 3.9rem 0 1.4rem;
+    padding-top: 0.2rem;
+    color: var(--text);
+    position: relative;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin-bottom: 1.1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-soft); }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+  a:hover { color: #6b5228; }
+  a.internal-link-pending {
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--accent-soft);
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.summary-list {
+    background: #f4f1ea;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem 1.6rem 2.4rem;
+    margin: 0 0 3rem;
+  }
+  ul.summary-list li { margin-bottom: 0.7rem; }
+  ul.summary-list li:last-child { margin-bottom: 0; }
+  blockquote.citation {
+    margin: 2rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  blockquote.citation p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  figure.photo { margin: 2.6rem 0; }
+  figure.photo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.08), 0 8px 24px rgba(43,41,37,0.06);
+  }
+  img.lazy-photo {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 40px;
+    background: var(--line);
+  }
+  img.lazy-photo.loaded { opacity: 1; }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 2.2rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  p.epigraph {
+    text-align: right;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+  p.fin {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  p.subhead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { width: 88%; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17.5px; }
+    .wrap { width: 90%; padding: 10vw 0 16vw; }
+    header.masthead h1 { font-size: 1.85rem; }
+    nav.toc ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Зальцбург под снегом. Воспоминание о новогодней Австрии</h1>
+  </header>
+
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      <ul>
+    <li><a href="#предисловие">Предисловие.</a></li>
+    <li><a href="#глава-первая-вена-под-снегом">Глава первая. Вена под снегом.</a></li>
+    <li><a href="#глава-вторая-зальцбург-под-снегом">Глава вторая. Зальцбург под снегом.</a></li>
+    <li><a href="#глава-третья-зальцбург-под-солнцем">Глава третья. Зальцбург под солнцем.</a></li>
+    <li><a href="#глава-четвертая-хальштат-под-снегом">Глава четвертая. Хальштат под снегом.</a></li>
+    <li><a href="#глава-пятая-январская-вена">Глава пятая. Январская Вена.</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <article>
+<h2 id="предисловие">Предисловие.</h2>
+<p>Совершенно не собирался писать этот рассказ. «От слова “совсем”» (выражение, очень популярное несколько лет назад, но сейчас, кажется, эта напасть уже схлынула). Поэтому сразу дисклеймер: это не отчет. В практическом отношении он мало полезен, ибо написан о поездке, случившейся ровно десять лет назад. Как-то сложилось, что я не писал тут ни одного отчета о наших прогулках «по европам» - по Австрии, по Италии - в новогодние каникулы. Их было не так много - может, всего-то две или три, но воспоминания остались довольно яркие.</p>
+<p>А тут как-то гуляли мы с женой по лесу, и почему-то, слово за слово, вспомнили про эту: Вена–Зальцбург-Хальштат. Со всеми ее красотами, со всеми анекдотическими подробностями, шаг за шагом. И захотелось мне все это записать буквами. И поделиться фотографиями. Заглянул я в соответствующий альбом и обнаружил, что особо обработкой фотографий я тогда, похоже, мало занимался. Так – немного усилить контраст и откадрировать. Так что я нашел там множество фото, бессловесно хранящих в себе скрытую красоту, которую тогда мне не хватило то ли времени, то ли (что более вероятно) умения извлечь из них. Я засучил рукава, и пару вечеров на них потратил. Получил удовольствие. И сразу хочется поделиться этим.</p>
+<p>И, отчасти ради этого, попробую извлечь из памяти бледнеющие воспоминания, в надежде их как-то оживить и раскрасить.</p>
+<p>…Продуваемая ветром холодная Вена. Мокрый снег в лицо у парка Пратер. Снежная каша на тротуарах. Горячий глинтвейн на уличных лотках. Тепло, разливающееся после первого же глотка. Елочные украшения в витринах. Послерождественский (он же новогодний) базар в тени громады прекрасного Музея истории искусств.</p>
+<p>…Зальцбург, заваленный снегом. Мы, неуклюже (поскольку в зимней одежде) вальсирующие вместе с другими парами под музыку Штрауса на Резиденцплац, перед зальцбургским собором. Новогодний салют над этим же собором. «Дискотека 80-х» в свете голубых огней на катке у памятника Моцарту, где совершенно не знакомые друг другу люди поздравляли друг друга, чокаясь бокалами с шампанским (мы – не исключение: нам вручили бокалы и налили вина). Яркое зимнее небо первого утра года. Вид на заснеженный город и вид в сторону гор с холма у крепости Хоэнзальцбург.</p>
+<p>…Зябкий, но красивый зимний Хальштат. Шапочка из мандариновой кожуры на маленьком снеговичке. Острый оранжевый шпиль церкви на фоне холодного озера и заснеженных гор.</p>
+<p>…Венское кафе. Муж хозяйки, слегка, кажется, подшофе и поэтому веселый и громкий. Огромный шницель и вкусный картофельный салат. Венская ратуша, сверкающая огнями сквозь мокрый снег с дождем.</p>
+<p>Это было или не было? Я же не мог всё это придумать? Такое – вряд ли. И опять же – есть фотографии, сделанные до эпохи искусственного интеллекта.</p>
+<p>Например, вот эти:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975092_d4873e0411_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975092_d4873e0411_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843176_ff454a5d23_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843176_ff454a5d23_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845486_12ef695c92_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845486_12ef695c92_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976442_95d7722974_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976442_95d7722974_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109183949_2856b71f3a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109183949_2856b71f3a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185139_4edfe79108_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185139_4edfe79108_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пожалуй, напишу обо всем этом, если не будет сильных возражений. Как там назывался фантастический боевик 90-х годов со Шварценеггером (тоже, кстати, австрийцем!)? «Вспомнить всё». Ну так приступим!</p>
+<h2 id="глава-первая-вена-под-снегом">Глава первая. Вена под снегом.</h2>
+<p>… Впервые мы увидели Вену за три дня до Нового года, 29 декабря, выбравшись из метро на станции «Пратерштерн». Мы шли по мокрому раскисшему снегу, согнувшись почти по пояс и пряча лица от противной ледяной метели, таща за собой по этой снежной каше чемоданы и пробираясь через сквер в сторону Макс-Винтер-плац, а точнее – нашего отеля Best Western. Погода была отвратительная. В номере, по счастью, было тепло, да и одежды у нас было достаточно, просто пришлось дополнительно утеплиться перед тем, как выдвинуться в город.</p>
+<p>На метро – до станции у собора Св. Стефана. Вокруг холодно, внутри собора – красиво, на его смотровой - тоже. И вот отсюда я и начну фотовоспоминания:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107978342_33fc119dcf_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107978342_33fc119dcf_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187809_640c3ecf2f_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187809_640c3ecf2f_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И тут, после еще нескольких таких же фото – в альбоме обнаруживается лакуна почти в сутки. Холодно и ветрено было так, что никакого желания доставать фотоаппарат и вообще снимать перчатки не было. Следующая фотография у меня – снова собор Св. Стефана, но уже на фоне голубого неба:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107978297_8a19a567a2_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107978297_8a19a567a2_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И сначала, увидев эту фотографию в альбоме встык с предыдущей, я написал что-то в духе «пока мы ходили по собору, распогодилось, и выглянуло солнце». Потом посмотрел на даты снимков – а они вообще из двух разных дней, а между ними - ничего! Это к вопросу о том, насколько можно доверять «фактам» в мемуарах любых людей о временах их молодости. Тут всего-то десять лет! Наша память – вещь удивительно гибкая, как известно, и я только что получил еще одно доказательство этому.</p>
+<p>Но если все же напрячься и привлечь память спутницы, чтобы совместно восстановить цепь событий, можно выяснить, что мы, конечно, прогулялись по культовой улице Грабен с ее Чумной колонной. Зашли в барочную церковь святого Петра, спрятавшуюся между двумя домами, выходящими на Грабен, где мы НЕ купили билеты на скрипичный концерт там же на этот вечер – цены были грабительскими. Потом вернулись к собору и по Кертнерштрассе отправились в сторону Венской оперы, оттуда – к Карлскирхе, и оттуда – в сторону замка Бельведер.</p>
+<p>И вот где-то там, на полпути к нему – кажется, в районе Реннвег, - мы наткнулись на небольшой уличный рыночек, где на прилавке разливали горячий глинтвейн. И это было рождественское чудо! Теплая волна по телу - и настроение улучшилось на глазах, и даже перчатки можно было снять: уже вроде бы и не так холодно! Что было после Бельведера, да и в самом Бельведере – уже не помним оба. Кажется, снова стало ветрено, потом наступили сумерки, и мы довольно рано вернулись домой – все же начали подмерзать, да и ходить по вязкому мокрому снегу было не очень легко. Но мы оба помним отличный маленький (теплый!) ресторанчик под названием «Музей гуляша» на Шулерштрассе, недалеко от собора Св. Стефана. И вкусный горячий гуляш в медной кастрюльке. Увы – глянул сейчас на гуглокарте (уточнял адрес), написано - «закрыто навсегда». Жутко звучит, на самом деле. То ли ковид не пережили, то ли по другой причине. Жаль, жаль.</p>
+<p>Ладно, перенесемся и мы в следующий день. Погода, и правда, улучшилась, ветер стих, выглянуло солнце, и мы снова оказались у Собора. Тут уже повеселей с фотографиями пошло, судя по всему.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187734_2463389765_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187734_2463389765_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109104258_64cb15f64e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109104258_64cb15f64e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187729_a3e35e8edb_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187729_a3e35e8edb_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300685_8f5540c0c9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300685_8f5540c0c9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p><em>Первый храм на месте собора построен в 1137—1147 годах; собор в нынешних границах построен в XIV—XVI веках и приобрёл современный вид к 1511 году. Незавершённая северная башня в 1579 году была перекрыта ренессансным куполом. Строительство южной башни завершал Ганс фон Прахатиц. Кровля собора (1579) выложена из 250 тысяч глазурованных черепиц, составляющих жёлто-бело-зелёно-чёрный узор с гербами империи Габсбургов.</em></p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109104233_43c336c4f0_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109104233_43c336c4f0_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мы с вами движемся теперь в сторону дворцового комплекса Хофбург:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107978277_49de97b2b3_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107978277_49de97b2b3_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101113_bf5f910d69_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101113_bf5f910d69_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300635_a88109fef2_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300635_a88109fef2_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108846636_e02be071ca_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108846636_e02be071ca_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109104163_5b6a5cacae_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109104163_5b6a5cacae_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300570_18e477067a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300570_18e477067a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вдали, за Народным парком, видна Ратуша:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300545_91e43f2432_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300545_91e43f2432_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297585_714f85acbe_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297585_714f85acbe_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот – первая встреча с теперь любимым Музеем истории искусств Вены:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108846601_b282177f8d_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108846601_b282177f8d_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И мы пропали в нем на несколько часов! Огромный, прекрасный; мы сюда обязательно вернемся в следующий приезд в Вену, но уже летом.</p>
+<p>Вышли мы из музея, практически без ног и без спин, когда уже совсем стемнело.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187594_389cd03bdd_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187594_389cd03bdd_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Что тут у нас на полках рождественских домиков:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300510_38e7b7d553_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300510_38e7b7d553_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975147_baea43e8d9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975147_baea43e8d9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108846566_3fc131591d_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108846566_3fc131591d_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101093_642bc62b20_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101093_642bc62b20_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843391_f80bb003f9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843391_f80bb003f9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107978162_7065134f2d_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107978162_7065134f2d_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107978127_4b5d837580_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107978127_4b5d837580_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107978107_236a311eef_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107978107_236a311eef_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184584_fe263b86b9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184584_fe263b86b9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187519_5329c81df2_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187519_5329c81df2_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сияющая в ночи Венская опера:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108846456_3052cdb099_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108846456_3052cdb099_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вечером был органный концерт в соборе Св. Стефана:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107978082_bdd8b0e10c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107978082_bdd8b0e10c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300440_76b8f75e4f_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300440_76b8f75e4f_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107978047_118c83b8c0_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107978047_118c83b8c0_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И в отель. Утром едем на поезде в Зальцбург, встречать Новый год. Это и было нашей основной целью! До встречи через четыре дня, Вена.</p>
+<h2 id="глава-вторая-зальцбург-под-снегом">Глава вторая. Зальцбург под снегом.</h2>
+<p>А это что? Уже Зальцбург? Да! Тут явно какой-то снежный катаклизм случился прямо накануне нашегоприезда, так что вот так выглядела велопарковка около ж.д. вокзала, на который мы прибыли из Вены:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107978007_63340e05fb_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107978007_63340e05fb_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107978012_eb866a9705_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107978012_eb866a9705_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187479_3d9e614d3a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187479_3d9e614d3a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Остановились мы в отеле «Austria Trend Hotel Europa» прямо около сквера перед ж.д. вокзалом. Зарегистрировались на ресепшене, получили смарткарты-ключи, поднялись на свой ...дцатый этаж. Дверь из номера в коридор была открыта, мы заглянули внутрь, и уборщица сказала, что всё, номер готов, и умчалась. Мы распаковались, переоделись в «потеплее»: сегодня 31 декабря, Новый год – гуляем допоздна! – и отправились пешком в сторону «старого города», то есть в сторону видимой издалека крепости Хоэнзальцбург.</p>
+<p>Уже начинало смеркаться, и нас ждал новогодний ужин в заранее забронированном (по рекомендации с нашего Форума) ресторане «Bärenwirt» (Müllner Hauptstrasse, 8). Помню, я никак не мог найти к нему дорогу; пытаясь срезать путь, мы забрели в какие-то засыпанные снегом закоулки ниже этой улицы, ближе к речке Зальцах. И пришлось выбираться и идти назад, разыскивая нормальный подъем от реки на эту улицу. А учитывая, что мы еще и не обедали в этот день, мы уже совсем начали было выбиваться из сил, когда, наконец, нашли желанную дверь.</p>
+<p>Ну и там мы отлично посидели с несколькими, видимо, в основном местными, большими семейными компаниями – кажется, мы единственные были просто парой, да и туристов тут явно не было. Покричали вместе со всеми что-то взаимно-поздравительное, выпили какого-то игристого вина, ну, и поели довольно вкусно.</p>
+<p>И потом, уже в темноте (зимой же темнеет рано), отправились дальше в Altstadt, «Старый город», ходить по улицам, которые, как обычно пишут, «помнят шаги юного Моцарта». И снежный катаклизм предшествующих дней «способствовал ему (старому городу) много к украшенью»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975092_d4873e0411_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975092_d4873e0411_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107977972_2a5a575db6_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107977972_2a5a575db6_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187434_dac9ec3462_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187434_dac9ec3462_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108846346_420b9ab004_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108846346_420b9ab004_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187404_2a4caac560_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187404_2a4caac560_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843311_a73c1fe8b0_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843311_a73c1fe8b0_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108846291_de81a94347_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108846291_de81a94347_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Спускаемся ближе к Зальцаху:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101053_ed4e11e032_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101053_ed4e11e032_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101038_6d918a6c5a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101038_6d918a6c5a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300340_c41765dfe8_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300340_c41765dfe8_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107977897_6cddfbd9cb_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107977897_6cddfbd9cb_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187324_cdacdf76c0_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187324_cdacdf76c0_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187319_34363a644c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187319_34363a644c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975072_181b6a5913_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975072_181b6a5913_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101023_f745c24d1d_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101023_f745c24d1d_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И вот мы на Резиденцплац.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300310_d10cf7f7f3_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300310_d10cf7f7f3_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Каток на Моцартплац, прямо рядом с памятником Вольфгангу:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184474_b8503f5201_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184474_b8503f5201_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109103758_6e15da5d3b_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109103758_6e15da5d3b_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975047_6e5090a520_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975047_6e5090a520_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108846181_952505ced4_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108846181_952505ced4_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Цветомузыка – лилово-аквамариново-сиренево-голубая… музыка пока вполне лиричная.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187249_e9b46629fc_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187249_e9b46629fc_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>К бою, девчонки!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187204_b579c05fa0_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187204_b579c05fa0_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187199_9444313caa_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187199_9444313caa_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107977682_d2ab3cf5c4_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107977682_d2ab3cf5c4_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но мы сначала ушли отсюда, решили погулять еще немного по окрестностям – до Нового года еще час.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300190_9ccaab0316_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300190_9ccaab0316_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107977657_0d2e320840_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107977657_0d2e320840_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108846001_4ec8b90eab_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108846001_4ec8b90eab_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184444_c63516a518_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184444_c63516a518_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108846006_59645e736a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108846006_59645e736a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И в конце концов мы снова вернулись на Резиденцплац, на площадь перед собором.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184429_958c308ed4_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184429_958c308ed4_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109103658_a0f1f46b52_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109103658_a0f1f46b52_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975002_0b5661e7c5_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975002_0b5661e7c5_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107977617_69f194598d_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107977617_69f194598d_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну и вот. Три, два, один!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300110_2b468fb266_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300110_2b468fb266_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845921_67e62577d5_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845921_67e62577d5_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107977577_d1e6f0f938_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107977577_d1e6f0f938_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300060_f474aa1134_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300060_f474aa1134_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109187049_c705e3ebc8_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109187049_c705e3ebc8_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300050_3d14086f14_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300050_3d14086f14_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843176_ff454a5d23_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843176_ff454a5d23_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845836_63368840cc_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845836_63368840cc_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845831_264bfc1c0e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845831_264bfc1c0e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184394_9d985aa1bf_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184394_9d985aa1bf_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А теперь – на каток, под оглушительные диско-хиты нашей молодости!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109300005_aa1ff1f55c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109300005_aa1ff1f55c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мой фотоаппарат не особо позволял снимать вечером, но вот несколько фотографий, чтобы как-то передать праздничную атмосферу. И никаких пьяных!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974987_e6fefd946c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974987_e6fefd946c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107977427_6fb99e8fcd_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107977427_6fb99e8fcd_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845796_09a64950af_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845796_09a64950af_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109186934_be50d3ee51_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109186934_be50d3ee51_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299920_1febf97786_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299920_1febf97786_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974927_e48ac4632a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974927_e48ac4632a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299960_40ab808039_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299960_40ab808039_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Y. M. C. A.! Y. M. C. A.!» судя по всему.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184379_7e0d2b5d07_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184379_7e0d2b5d07_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299840_cebda65a4b_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299840_cebda65a4b_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843101_3d9b8a422c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843101_3d9b8a422c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109186744_a71e1d30cb_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109186744_a71e1d30cb_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297265_ece2538f69_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297265_ece2538f69_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297275_018f5462da_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297275_018f5462da_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109186674_e39124f60e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109186674_e39124f60e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299680_10e561e47e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299680_10e561e47e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В общем, отлично провели время!</p>
+<p>Но всему хорошему приходит конец, время – где-то пол-второго ночи, пора нам и возвращаться к себе в сторону вокзала…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107977177_c744640dbf_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107977177_c744640dbf_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мимо новогодних витрин…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107977172_2f8572d05e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107977172_2f8572d05e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974817_3c73f85533_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974817_3c73f85533_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Через полчаса мы у себя в гостинице, тишина, все спят, поднимаемся на свой …дцатый этаж. Прикладываем ключ-карту – не открывает. И так, и сяк – не открывает. Сверяем номер на двери и номер на карте. Они разные. На пару цифр. Мы вселились в этот номер только потому, что дверь была открыта, и уборщица нам сказала, что номер готов. А мы молодцы! – сказали мы друг другу.</p>
+<p>…На первом этаже откуда-то доносилась негромкая музыка. Я направился туда и обнаружил бар. Бармен вник в нашу проблему, куда-то позвонил и извлек из небытия ночного портье. Который посмеялся, конечно, но выдал нам другие ключи, именно от «нашего» номера, вместо наших «неработающих». Ну и славно. Пора спать. У нас еще два дня в Зальцбурге!</p>
+<p>А луна светит ярко, похоже погода будет хорошая!</p>
+<h2 id="глава-третья-зальцбург-под-солнцем">Глава третья. Зальцбург под солнцем.</h2>
+<p>Утром мы выглянули в окно – а там светло от белого снега, но пока все же облачно. Ну ладно. Быстро позавтракав на верхнем этаже гостиницы, откуда был хорошо виден белеющий вдали на высоком холме над старым городом замок Хоэнзальцбург – примерно вот так:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109186609_c04a9da01a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109186609_c04a9da01a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>мы снова отправились в путь, к мосту через Зальцах, а потом и вдоль Зальцаха в сторону Альтштадта. И пока мы шли, время от времени среди облаков появлялось солнце. Солнце, снег, Зальцбург. Красота!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845486_12ef695c92_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845486_12ef695c92_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299590_2eacff5425_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299590_2eacff5425_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид через мост Marko-Feingold-Steg на холм Капуцинерберг:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109186589_4f03f4031b_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109186589_4f03f4031b_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В ту зиму мы на холм не поднимались. Лишь следующим летом, оказавшись в Зальцбурге проездом, погуляли по нему, посмотрели с его высоты на старый город.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109103108_eb46167fb7_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109103108_eb46167fb7_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Зальцах:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184244_62a699b508_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184244_62a699b508_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тут видна евангелическая церковь Pfarrgemeinde Salzburg Christuskirche, заложенная в 1863 году:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109186529_755a24854a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109186529_755a24854a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Прочитал сейчас в Интернете, что в строительстве храма помогали 370 заключенных крепости Хоэнзальцбург, которые участвовали в Австро-прусской войне против Дании.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845426_85c149e660_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845426_85c149e660_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид с моста в сторону Капуцинерберга:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299530_908879cb3b_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299530_908879cb3b_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и вид с моста в сторону Старого города:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109186544_c743f8c37c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109186544_c743f8c37c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Углубимся же в него. Не пройдем, конечно, мимо дома, в котором родился Моцарт:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184204_fb57eb16b9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184204_fb57eb16b9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107977057_a3d7a1893a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107977057_a3d7a1893a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Рождественско-новогодние базарчики доторговывают последние деньки:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297220_7a9b180d10_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297220_7a9b180d10_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109186499_d2f87d91d5_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109186499_d2f87d91d5_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299440_dbf63a4e66_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299440_dbf63a4e66_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297190_069927d4d4_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297190_069927d4d4_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Кружными путями продвигаемся в сторону Собора:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845331_94d383ccd7_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845331_94d383ccd7_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845296_0a3faff370_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845296_0a3faff370_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102958_606926c85e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102958_606926c85e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На площади Kapitelplatz, у Собора со стороны Хоэнзальцбурга, стоит золотой шар:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974757_dd72073f9f_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974757_dd72073f9f_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p><em>Скульптура "Сфера" немецкого мастера Stephan Balkenhol является частью проекта Walk of Modern Art и была установлена на Kapitelplatz в 2007 году.</em> Отлична видна на гуглокартах.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299315_e934067165_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299315_e934067165_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тут туристов заманивают на очередной концерт именем Моцарта:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976952_0c253a414c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976952_0c253a414c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну, а мы поднимаемся на фуникулере на холм, к крепости Хоэнзальцбург.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102928_90f03380ef_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102928_90f03380ef_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299285_7638e9f908_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299285_7638e9f908_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976917_e5873896bc_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976917_e5873896bc_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845191_cf19395a76_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845191_cf19395a76_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пока я развлекаюсь с фотоаппаратом на смотровой площадке, жена пьет горячий дымящийся на холоде глинтвейн из большой синей чашки. Завидую молча.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184149_64b1a6f8ab_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184149_64b1a6f8ab_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299265_7b83540344_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299265_7b83540344_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Панорама в другую сторону от Зальцаха и Старого города:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976887_36ae8f2a6e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976887_36ae8f2a6e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пока погода облачная, но мы не теряем надежды!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976877_9bec5b7718_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976877_9bec5b7718_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100723_1bfe3b5662_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100723_1bfe3b5662_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845151_ba3c83a150_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845151_ba3c83a150_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Где-то в той стороне – прекрасный немецкий Берхтесгаден, еще не догадывается, что мы в нем будем уже в следующем году, и попадем туда тоже из Зальцбурга, на простом местном автобусе.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976852_78cd7b6a2a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976852_78cd7b6a2a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109186219_6c9ec29a6f_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109186219_6c9ec29a6f_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109186214_f59bd1dac7_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109186214_f59bd1dac7_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Интересно смотреть с высоты на город. Квадрокоптеров пока нет, так что это редкий опыт.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976762_f998e2d94f_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976762_f998e2d94f_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976787_42bd31f1ce_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976787_42bd31f1ce_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну ладно, нам пора на экскурсию в замок. Туда немаленькая очередь, хоть и 1 января.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299195_1dd98315da_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299195_1dd98315da_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но мы не отступаем и, простояв с полчаса, попадаем-таки внутрь замка.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299185_c4ab6b4b58_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299185_c4ab6b4b58_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Для порядка небольшая справка:</p>
+<blockquote class="citation"><p>Крепость Зальцбурга — одна из крупнейших из целиком сохранившихся средневековых крепостей Европы. Площадь крепости — 30 тыс. м² (до 250 м в длину и 150 м в ширину).<br>
+В 1077 году архиепископом Зальцбурга Гебхардом I был построен замок в романском стиле, от которого сегодня сохранился лишь фундамент. Позднее замок несколько раз перестраивался и укреплялся, постепенно превращаясь в мощную укреплённую крепость. Около 1500 года в замке был построен первый в мире фуникулёр Райсцуг, предназначенный для доставки товаров. Свой нынешний вид Хоэнзальцбург в общих чертах приобрёл в начале XVI века благодаря усилиям князя-архиепископа Леонхарда фон Койчаха.<br>
+Во период Тридцатилетней войны архиепископ Пэрис Лодрон (1619—1654) укрепил оборону города, в том числе и крепость Хоэнзальцбург. Он добавил к крепости некоторые части, такие как Пороховая башня и домики для охраны.<br>
+В XIX веке замок использовался в качестве казармы, склада и тюрьмы, прежде чем вновь стал военным форпостом в 1861 году.<br>
+Крепость Хоэнзальцбург была отремонтирована с конца 19-го века и стала главной туристической достопримечательностью с фуникулёром Festungsbahn, открытым в 1892 году, ведущим от города к Hasengrabenbastei. Сегодня это один из наиболее хорошо сохранившихся замков в Европе.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102698_36d8daec44_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102698_36d8daec44_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299150_a704c87af0_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299150_a704c87af0_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вдоль стен – подробная история замка. Красиво, но читать столько информации довольно утомительно:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845061_297704d3f0_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845061_297704d3f0_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108845016_e6f26d24f6_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108845016_e6f26d24f6_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Фотографий изнутри у меня мало – в основном, смотрели глазами; я не предполагал, что придет блажь рассказывать об этом через десять лет.</p>
+<p>Изразцовая печь в Золотом зале:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974682_79df40a31f_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974682_79df40a31f_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297060_6e0afa3c72_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297060_6e0afa3c72_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Разное:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976737_aba3e77105_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976737_aba3e77105_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299120_b06a7af4dc_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299120_b06a7af4dc_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297050_82f671b1e7_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297050_82f671b1e7_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976732_1becd30078_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976732_1becd30078_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844991_31cf64fd76_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844991_31cf64fd76_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844986_a4504ae0f1_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844986_a4504ae0f1_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102643_864d01e6f1_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102643_864d01e6f1_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но пока мы бродили по огромному замку, его дворам на разных уровнях, наконец, вышло солнце. Низкое, зимнее, но солнце!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976697_d93e61d466_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976697_d93e61d466_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976692_d50240aca3_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976692_d50240aca3_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100653_e99834d539_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100653_e99834d539_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100643_51491bc839_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100643_51491bc839_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109299060_fd989d3312_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109299060_fd989d3312_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102628_1427aec4a8_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102628_1427aec4a8_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Красота же?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102598_f3583f9aa6_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102598_f3583f9aa6_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102573_3fa8d312f9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102573_3fa8d312f9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102573_3fa8d312f9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102573_3fa8d312f9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Спускаемся вниз…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298970_203fa29de2_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298970_203fa29de2_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Бедный Моцарт!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102553_c1e4db1063_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102553_c1e4db1063_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108842861_7edec78d47_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108842861_7edec78d47_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976617_3f2e4b7586_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976617_3f2e4b7586_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Перед собором:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844866_85e6869603_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844866_85e6869603_b.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>В 774 году, 25 сентября епископом Виргилием Зальцбургским на месте нынешнего был освящён первый христианский храм, построенный в романском стиле. В ночь с 4 на 5 апреля 1167 года Зальцбург — и собор вместе с ним — был сожжён графом фон Плайн по приказу императора Фридриха Барбароссы за то, что зальцбургский архиепископ Конрад II фон Бабенберг отказался признавать выдвинутого Фридрихом антипапу Пасхалия III.<br>
+Собор был заново отстроен при архиепископе Конраде III Виттельсбахе, но в 1312 году сгорел. При последнем пожаре огонь был столь силён, что расплавились церковные колокола.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976597_cf981e511e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976597_cf981e511e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>После четвёртого пожара 1598 года по указанию архиепископа Вольфдитриха фон Райтенау старое здание вместе с 55 другими повреждёнными домами было снесено, и на их месте по проекту Винченцо Скамоцци в 1614 году было заложено строение нового собора, освящённое в сентябре 1628 года. Этот праздник освящёния, по мнению некоторых историков, являлся самым пышным празднованием за всю историю существования Зальцбурга. Новый пожар последовал во время реставрационных работ в 1859 году.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298940_18a46da72c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298940_18a46da72c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>16 октября 1944 года Зальцбургский собор был повреждён при бомбардировке города американской авиацией. При этом рухнул купол здания. Восстановительные работы были в целом закончены к 1959 году.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102543_bb6480c77a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102543_bb6480c77a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и наш замечательный новогодний каток!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974612_7edbc7db62_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974612_7edbc7db62_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100598_8a68074ff3_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100598_8a68074ff3_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109186074_db0831fb08_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109186074_db0831fb08_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Заснеженный Моцарт у катка. Или каток около Моцарта?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844816_912c63e466_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844816_912c63e466_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298900_62052083bd_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298900_62052083bd_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Гуляем по городу дальше…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844781_c169aaac48_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844781_c169aaac48_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109186034_361942b0ea_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109186034_361942b0ea_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И потихонечку, сначала по Фестунггассе, а потом по Хоэнвег (название говорит само за себя) забираемся наверх по холму…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100563_e43df296f5_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100563_e43df296f5_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844796_0208fd0433_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844796_0208fd0433_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976502_d9a1210856_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976502_d9a1210856_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976482_2d20916a49_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976482_2d20916a49_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Дорога постепенно огибает холм, и, обойдя стены Ноннбергского аббатства, мы выходим на противоположный, южный склон. А тут теплый свет, пригревает, хорошо!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185984_6d68d73005_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185984_6d68d73005_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Церковь, купол которой мы видим на фото - это католическая церковь Святого Эрхарда.</p>
+<p>Мое любимое фото этой зимы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976437_0b2062ec56_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976437_0b2062ec56_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В кладбищенском дворике Ноннбергского аббатства:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298855_e114ee7952_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298855_e114ee7952_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100543_059b624785_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100543_059b624785_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102373_5583ffb333_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102373_5583ffb333_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298810_23ac056733_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298810_23ac056733_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974542_687cb1160e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974542_687cb1160e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Выходим наружу из аббатства. Наверху справа нависает громада Хоэнзальцбурга:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108842816_2ec6373520_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108842816_2ec6373520_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Какой замечательный свет. И тишина, и никого.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844681_06a8bcfc6e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844681_06a8bcfc6e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976412_8cefbb224e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976412_8cefbb224e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102343_99d1f7f407_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102343_99d1f7f407_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вон он вдали, золотой зимний свет…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185924_bd3bbce952_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185924_bd3bbce952_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102348_3f40c544b1_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102348_3f40c544b1_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298765_28a2f087b9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298765_28a2f087b9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974532_0497ffb987_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974532_0497ffb987_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298775_e7df05f98b_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298775_e7df05f98b_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298770_49be2364fb_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298770_49be2364fb_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А мы спустились с холма с южной стороны и немного походили в окрестности. Но тут уже тени.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976362_246e67e90d_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976362_246e67e90d_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Так что поднимаемся назад, чтобы завершить обход холма под Хоэнзальбургом.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844626_30f650f543_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844626_30f650f543_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102288_62153db339_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102288_62153db339_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185864_f2b9e29054_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185864_f2b9e29054_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Это – Францисканская церковь, вторая по известности церковь Зальцбурга, после его кафедрального собора. Процитирую <a href="https://enjourney.ru/strany/austria/regioni/salzburg/mesto/franciskanskaya_cerkov" target="_blank" rel="noopener noreferrer">отсюда</a>:</p>
+<blockquote class="citation"><p>История ее началась в VIII веке, но говорить о церкви как о старейшем здании города, увы, невозможно, ведь Зальцбург не раз сгорал дотла. Так, один из крупнейших пожаров случился в 1167 году, и после него Францисканскую церковь восстанавливали не без помощи простого народа.<br>
+Архитектором был выбран Ганс фон Бургхаузен, успевший зарекомендовать себя во время работы над другими храмами. Чудесный образец готической архитектуры с вытянутыми стрельчатыми окнами, высокой остроконечной башней и декорированным главным порталом — так выглядела церковь в XII столетии, и такой она предстает перед нами сейчас...</p></blockquote>
+<p>Изящная готическая башня была пристроена между 1468 и 1498 годами. Церковь была посвящена Деве Марии и служила приходской церковью до 1635. В 1642 она была передана францисканскому монашескому ордену.</p>
+<p><em>Интерьер храма в отличие от довольно консервативного экстерьера за свою долгую жизнь претерпел массу изменений. Например, создание оригинального алтаря датируют концом XV века, но в веке XVIII новый мастер Иоганн Бернхард Фишер фон Эрлах внес в его облик свои изменения, а точнее, от старой работы оставил лишь фигуру Мадонны с Младенцем, включив ее в вычурную композицию из красного мрамора с обилием позолоты, выполненную в стиле барокко. Именно этот стиль с его обилием скульптур, лепнины и ярких фресок в избытке присутствует и в оформлении остальных алтарей, а также потолков церкви. Таким образом, между внешним и внутренним обликом храма наблюдается поразительный контраст, что особенно поражает посетителей, оказавшихся здесь впервые. </em></p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100508_bb7a2c12a7_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100508_bb7a2c12a7_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Францисканская церковь и Зальцбургский кафедральный собор:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109183949_2856b71f3a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109183949_2856b71f3a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Когда окончательно сгустились сумерки, спускаемся вниз и снова бродим вдоль витрин и лавок рынка, работающего до вечера в расчете на припозднившихся туристов:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974497_cf721972dd_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974497_cf721972dd_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844611_6f587babed_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844611_6f587babed_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298700_32f161a2db_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298700_32f161a2db_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976322_0d6c9dc9e5_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976322_0d6c9dc9e5_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976327_e881118d41_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976327_e881118d41_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185829_0f2253e371_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185829_0f2253e371_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Идем дальше…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844541_73b2b8e2fd_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844541_73b2b8e2fd_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В церквях еще не убраны вертепы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844551_212674ae4a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844551_212674ae4a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976307_285df09f95_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976307_285df09f95_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Заглянули в бенедиктинский монастырь Св. Петра.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185784_c6e2460000_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185784_c6e2460000_b.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>Аббатство Святого Петра было основано в 696 году Святым Рупертом на месте позднеантичной церкви, возникшей во время первой христианизации в этом районе во времена Северина из Норикума. Основание монастыря было призвано содействовать миссионерским усилиям в Восточных Альпах. До 987 года должность аббата была объединена с должностью архиепископа Зальцбурга: один человек исполнял обе обязанности.<br>
+В средние века собор Святого Петра был известен своей школой. В 1074 году архиепископ Гебхард Зальцбургский послал нескольких монахов основать аббатство Адмонт в Штирии. В 1618–1620 годах Даниэль Хайль-младший построил в аббатстве орган. В 1623 году архиепископ Парис Лодрон основал Бенедиктинский университет Зальцбурга, который до своего роспуска в 1810 году был тесно связан с аббатством.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109183919_0574729584_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109183919_0574729584_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В 1926 году попытки восстановить Зальцбургский университет привели к основанию бенедиктинского колледжа; эта инициатива помогла возродить современный Зальцбургский университет.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185774_2a79021c1a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185774_2a79021c1a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844516_860046ca2d_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844516_860046ca2d_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102188_a0b0b713be_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102188_a0b0b713be_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102148_c0bd668025_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102148_c0bd668025_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974447_2f5e81f53a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974447_2f5e81f53a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102138_b41a2241fc_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102138_b41a2241fc_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну что ж. Мы уже проголодались, и нас как раз ждут, чтобы накормить. Еще одно место, где я заказал ужин, но уже на 1 января – таверна «Старый лис», на другой стороне Зальцаха от Старого города, но совсем недалеко, на Linzer Gasse:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844471_062c8969c9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844471_062c8969c9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844466_941c1b27cf_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844466_941c1b27cf_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109183889_33aaa6baa0_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109183889_33aaa6baa0_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976252_a9162c43f7_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976252_a9162c43f7_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Что-то мясное, вкусное и сытное мы там ели, помню. Но без деталей, ибо фотографий собственных тарелок нет.</p>
+<p>И потом снова прогулялись.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109296850_29ce8c6296_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109296850_29ce8c6296_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Памятная табличка около моста через Зальцах:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844456_5401fc7b7b_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844456_5401fc7b7b_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844431_f4a03a03b0_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844431_f4a03a03b0_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сильно шумное фото и нерезкое, но все равно добавлю, для полноты:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185684_02ba0b8227_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185684_02ba0b8227_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И ноги неожиданно нас снова вынесли в старый город. Хотелось походить еще: когда мы тут еще окажемся… (оказалось, совсем скоро – и года не пройдет).</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976187_d730b23e53_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976187_d730b23e53_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109102058_a801332e93_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109102058_a801332e93_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108842711_a9ae43cdcb_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108842711_a9ae43cdcb_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976167_c01e565124_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976167_c01e565124_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976172_b7dcaf860a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976172_b7dcaf860a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Каток уже опустел…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976162_99e87f95da_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976162_99e87f95da_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976137_cb528938e1_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976137_cb528938e1_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И мы окончательно развернулись и отправились домой, в гостиницу. Главное, чтобы ключ-карта подошла к двери.</p>
+<h2 id="глава-четвертая-хальштат-под-снегом">Глава четвертая. Хальштат под снегом.</h2>
+<p>Утром мы отправляемся в Хальштат (его пишут и с одним «т» на конце, традиционно, и с двумя, как в оригинале). Автобус номер 150 (наш хороший в будущем знакомец в перемещениях между озерами Залькаммергута) отправляется прямо с площади перед нашим отелем (но, если что, можно сесть на него и у площади Мирабель, и еще в паре мест по Зальцбургу: актуальные расписания – <a href="https://salzburg-verkehr.at/downloads/regionalbus-150-salzburg-koppl-hof-fuschl-st-gilgen-strobl-bad-ischl/" target="_blank" rel="noopener noreferrer">здесь</a>). Одеваемся тепло – всё же едем на озеро – и в путь. Температура около ноля, на дорогах – снежная жижа. До Бад-Ишля примерно полтора часа пути.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109183849_090a3e0077_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109183849_090a3e0077_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108842706_bae688759f_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108842706_bae688759f_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844361_0e721fc26c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844361_0e721fc26c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Минут через 15, уже после того, как автобус оставил Зальцбург далеко позади, девушка-китаянка, сидевшая перед нами, обернулась к нам и очень вежливо попыталась выяснить, когда будет Мирабель-плац, ей на экскурсию. Мы столь же вежливо попытались разъяснить, что Мирабель-плац будет еще не очень скоро. Ну, то есть, совсем. И предложили ей вместо этого съездить с нами в Хальштат. К ее чести, она не запаниковала, но углубилась в телефон, выясняя, что это. Не знаю, доехала ли, но на промежуточных остановках 150-го не вышла, вроде бы.</p>
+<p>В Бад-Ишле мы слезли с 150-го автобуса и переместились на сотню метров на перрон тихого маленького ж.д вокзала. Для туристов на платформе было заботливо специально указано, в какую сторону этот их мёдом намазанный Хальштат:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185569_77ae49a53d_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185569_77ae49a53d_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот туда – через мостик:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844341_5a054f7943_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844341_5a054f7943_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>а не туда:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844351_33a9e966ab_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844351_33a9e966ab_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Купили билеты до станции «Хальштат», дождались нашей «кукушки» и поехали.</p>
+<p>Поезд едет до Хальштата (точнее, одноименной станции) чуть меньше получаса. Вот уже и озеро, Hallstätter-See, за окном:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185534_8bfd17d4d9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185534_8bfd17d4d9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Выходим на станции и спускаемся к пристани: сам городок Хальштат – на противоположном берегу озера.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101983_83a10fb521_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101983_83a10fb521_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ждем кораблик-челнок, чтобы переправиться…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974397_601b0a6065_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974397_601b0a6065_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Воон он, на том берегу, Хальштат наш:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976072_7b7310616f_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976072_7b7310616f_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот всей этой гурьбой грузимся на кораблик по имени «Стефания»</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298470_f3c8905a7e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298470_f3c8905a7e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Отплываем. Пейзаж на «нашем» берегу:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185464_039ee963de_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185464_039ee963de_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И через минут десять мы приближаемся к «хальштатскому» берегу…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185479_7cff1d0e93_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185479_7cff1d0e93_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298435_bec88e122c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298435_bec88e122c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Прибыли!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844251_e980f28e85_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844251_e980f28e85_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298420_672c746a04_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298420_672c746a04_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298425_1f8d4db6b8_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298425_1f8d4db6b8_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Не мог не зафиксировать этот момент охоты:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109296775_f7ee27a12a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109296775_f7ee27a12a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Стефания» отправляется в обратный пусть:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107976012_0ff3debcdf_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107976012_0ff3debcdf_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Красивый зимний вид. И облака тоже симпатичные:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975992_52f2b3b309_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975992_52f2b3b309_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185409_6a2a0c6e9a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185409_6a2a0c6e9a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100373_61de82cefb_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100373_61de82cefb_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Взбирающиеся по крутому склону домики Хальштата:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844176_c604054e1d_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844176_c604054e1d_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну что ж, пойдем гулять, раз приехали.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298325_6e4c39d427_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298325_6e4c39d427_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Не желаете венский шницель из свининки с картошечкой и салатом?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109296725_917992d528_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109296725_917992d528_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну, как хотите, дело хозяйское.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844141_998da659e9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844141_998da659e9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101838_a56a42f956_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101838_a56a42f956_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101828_e76293564e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101828_e76293564e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101803_bf6829fc7b_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101803_bf6829fc7b_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975872_b52fd1ec5b_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975872_b52fd1ec5b_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тишина над озером…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975857_911fa7fb2d_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975857_911fa7fb2d_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975867_61b7eeabc4_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975867_61b7eeabc4_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109296715_53b45edcb8_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109296715_53b45edcb8_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100323_084607aff3_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100323_084607aff3_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101753_9fdda7fd1e_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101753_9fdda7fd1e_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Оранжевый шпиль церкви – отличный ориентир. И вызывает ассоциации с морковным носом снеговика.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101743_931f7cd3ec_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101743_931f7cd3ec_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975797_3814430f34_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975797_3814430f34_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108844031_b2c01e2bcb_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108844031_b2c01e2bcb_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101658_cb935f9b98_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101658_cb935f9b98_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Забираемся немного повыше; церковь с оранжевым шпилем остается между нами и озером:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975737_6d824bedce_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975737_6d824bedce_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Заснеженные крыши:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298145_95444dd0f3_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298145_95444dd0f3_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Теперь этот шпиль из кадра не выгнать! Такое яркое пятно. Штампуем «открытки с видами Хальштата»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108842571_e1c1b4b907_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108842571_e1c1b4b907_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185234_87586b3495_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185234_87586b3495_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101583_ac0486c34a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101583_ac0486c34a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Или вот так:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975677_43848c5e15_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975677_43848c5e15_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843911_9f6fc603d2_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843911_9f6fc603d2_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Обнаружили вот таких снеговичков на парапете:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108842561_21e329146f_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108842561_21e329146f_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И снова «открытка»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109296695_1e1be68cde_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109296695_1e1be68cde_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но красиво, да. Не зря приехали.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101563_1f80b933af_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101563_1f80b933af_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Зябковато, правда. Но не будем морщиться. Как вот этот:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843866_1db71712e6_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843866_1db71712e6_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185139_4edfe79108_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185139_4edfe79108_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Забрели на церковное кладбище…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101523_e1ab1f97f1_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101523_e1ab1f97f1_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843856_e35a82ea15_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843856_e35a82ea15_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843841_ea498a7536_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843841_ea498a7536_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ч/б:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843846_caed4d0259_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843846_caed4d0259_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109298020_95f71c89af_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109298020_95f71c89af_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297990_3ba75a2448_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297990_3ba75a2448_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101478_771ae83d57_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101478_771ae83d57_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ладно, надо зайти в таверну, погреться и поесть.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185064_3fc6fd5eff_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185064_3fc6fd5eff_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Горячий гуляш зимой еще никому не повредил!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108842506_b7129c75ce_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108842506_b7129c75ce_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297970_a268df470f_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297970_a268df470f_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109296670_8873dc3a7c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109296670_8873dc3a7c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сувенирное раздолье:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185049_4eac3f326f_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185049_4eac3f326f_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109185024_4122a34006_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109185024_4122a34006_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100238_52f48899e3_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100238_52f48899e3_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Просто так. Что-то есть в картинке:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184999_34cd887d0c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184999_34cd887d0c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100213_23f28c7d88_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100213_23f28c7d88_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109296645_88d2ca3c73_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109296645_88d2ca3c73_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297880_c7fc5d10b9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297880_c7fc5d10b9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Понемногу начинает смеркаться, и мы, немного согревшись после обеда, пускаемся в обратный путь, в Зальцбург. Вот вам напоследок еще одна открытка:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974292_f35b01b846_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974292_f35b01b846_b.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="глава-пятая-январская-вена">Глава пятая. Январская Вена.</h2>
+<p>И на следующий день мы точно так же, на поезде, вернулись в Вену, в ту же гостиницу, еще на полтора дня. В этот день я запланировал (примерно) прогулку по маршруту, включающему в себя старейшую церковь Вены – Ruprechtskirche. И примерно в ту сторону мы и отправились, на этот раз от станции метро Schwedenplatz.</p>
+<p>Было довольно пасмурно, но немного потеплело.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184959_46066ba8bf_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184959_46066ba8bf_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мы прошли мимо Griechen Beisl - элитного ресторана в стиле рустик, 1447 года, который, как утверждается, посещали Франц Шуберт, Иоганн Штраус и Марк Твен:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184954_ee49650acc_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184954_ee49650acc_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297845_b2239eb4d1_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297845_b2239eb4d1_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Оно вплотную примыкает к церкви, известной как Греческая православная церковь Святой Троицы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975487_0a5a0c93d6_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975487_0a5a0c93d6_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мы и в нее заглянули.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101403_de90533c85_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101403_de90533c85_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975457_3e7bbf44d1_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975457_3e7bbf44d1_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Витрины все еще новогодние.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184899_bf64c720f9_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184899_bf64c720f9_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Если что-то забыли купить по недомыслию в Зальцбурге, можно наверстать в Вене:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101358_1f9c57048a_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101358_1f9c57048a_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В целом, район очень типичный, «венский»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184889_12e7c03c6d_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184889_12e7c03c6d_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109296590_0fc3183391_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109296590_0fc3183391_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И вот одна из контрольных точек нашего маршрута: Ruprechtskirche - старейшая церковь в Вене:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843626_71da7f1014_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843626_71da7f1014_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пасмурно и серо, конечно, но уж как есть.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975387_9b627c0135_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975387_9b627c0135_b.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>Ruprechtskirche посвящена Святому Руперту Зальцбургскому, покровителю торговцев солью. Расположена в северной части Старого города, неподалёку от площади Хоермаркт. Храм построен в период между 796 и 829 годами. Архитектурное убранство относится к романскому стилю.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975392_f02cee9871_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975392_f02cee9871_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Согласно легенде, Рупрехтскирхе была основана Кунальдом и Гизалрихом, товарищами Руперта в период его пребывания в сане епископа Зальцбурга. Первое упоминание о ней, как о старейшем храме Вены, относится к 1200 году. После уничтожения римского поселения, город начал расти вокруг церкви. Здесь было место отправления религиозных обрядов, прежде чем эта функция была передана церкви Святого Стефана в 1147 году.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975402_cc664341db_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975402_cc664341db_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107974187_d75f5ceda5_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107974187_d75f5ceda5_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843631_ff8d090559_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843631_ff8d090559_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975377_43c371d193_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975377_43c371d193_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Отправляемся дальше, точнее поворачиваем налево по Юденгассе (говорящее название)…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184839_91b8801c86_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184839_91b8801c86_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>… и выходим на «рыночную» площадь Hoher Markt, к часам Анкер:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100153_37647c799b_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100153_37647c799b_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p><em> Часы Анкер («Якорь») были установлены в 1914 году, идея и реализация профессора Franz Matsch. Каждый день в 12:00 эти часы показывают 10-ти минутное представление (играет музыка и через циферблат проходят фигуры великих людей)</em>.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109183579_fcf06b61b0_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109183579_fcf06b61b0_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184824_bc73505520_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184824_bc73505520_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101283_b23b62f7aa_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101283_b23b62f7aa_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843546_6761e6f4be_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843546_6761e6f4be_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297745_076ba46343_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297745_076ba46343_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108842436_4e599d6bff_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108842436_4e599d6bff_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975347_5a0b072677_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975347_5a0b072677_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот совершенно не помню, где мы обедали. Но ближе к вечеру я обнаруживаю нас снова в центре, около Грабена:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843516_043058b4d3_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843516_043058b4d3_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843496_6e122ea95c_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843496_6e122ea95c_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297710_8434404392_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297710_8434404392_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109101223_55cb5babbb_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109101223_55cb5babbb_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И мы оказываемся в какой-то момент в церкви Святого Петра (она же Петерскирхе):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184744_45aa2b0fce_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184744_45aa2b0fce_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184724_b1e6f4b290_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184724_b1e6f4b290_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975267_4316392d6b_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975267_4316392d6b_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109184719_b4e51250e6_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109184719_b4e51250e6_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297680_ef79c216f0_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297680_ef79c216f0_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109296545_4d92b90257_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109296545_4d92b90257_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И потом, напоследок вновь гуляем по вечерней Вене. Нам же еще надо поесть в Вене венский шницель!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297655_04bd69e7cf_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297655_04bd69e7cf_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109100118_c884376130_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109100118_c884376130_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и он, венский шницель, в небольшой венской кафешке «Prückel» не слишком далеко от Венской оперы! То есть, венское всё, что только можно.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54108843431_012493abc7_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54108843431_012493abc7_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Шницель и сладковатый картофельный салат – вкус помню совершенно отчетливо…</p>
+<p>А уж потом, основательно посидев и дав отдых ногам, мы прошлись пешком вдоль венского «бульварного кольца» - по Паркринг, Кертнерринг, Опернринг, Бургринг, мимо здания парламента, мимо Городского театра (Burgtheater) до Ратуши. Шел мокрый снег, но всё вокруг было красиво, шницель насытил нас до ночи включительно, так что всё было хорошо.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109297635_bf5f020b91_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109297635_bf5f020b91_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54107975197_1cd5bacedf_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54107975197_1cd5bacedf_b.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/54109183559_f4233a1b54_b.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/54109183559_f4233a1b54_b.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот. Надеюсь, я не очень утомил читателя, добравшегося со мной до финальной точки моего рассказа о давней-давней поездке. Мне просто хотелось это записать. Ну и, как обычно, хочется поделиться красотой. Вдруг кто-то прямо сейчас решится поехать в новогодний Зальцбург?!</p>
+  </article>
+</div>
+<script>
+(function() {
+  var pending = []; // images that entered the buffer zone, not yet loading/loaded
+  var loading = false;
+
+  function distanceFromViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;      // above viewport
+    if (rect.top > vh) return rect.top - vh;        // below viewport
+    return 0;                                       // on screen right now
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        if (d === 0) break; // already on screen -- can't beat that
+      }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var img = pickNext();
+    if (!img) return;
+    loading = true;
+    loadImage(img, img.getAttribute('data-src'));
+  }
+
+  function loadImage(img, src) {
+    img.onload = function() {
+      img.classList.add('loaded');
+      img.removeAttribute('data-src');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      // Flickr (or the network) hiccuped on this one request -- don't give
+      // up on it and don't block everything else behind it. Free the
+      // queue immediately, and let this image rejoin the pending pool
+      // after a short, growing backoff so it gets picked up again.
+      loading = false;
+      var attempt = (img._retryCount || 0) + 1;
+      img._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() {
+        pending.push(img);
+        processQueue();
+      }, delay);
+      processQueue();
+    };
+    img.src = src;
+  }
+
+  // Images join the pending pool once they're within reach; every time a
+  // slot frees up, pickNext() re-checks CURRENT positions and grabs
+  // whichever pending image is closest to (or actually on) screen right
+  // now -- so a fast scroll or scrollbar drag doesn't leave visible
+  // photos stuck behind everything the scroll happened to pass over.
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>

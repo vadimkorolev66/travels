@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Восточная Бретань — от Арзона до Сен-Мало</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  nav.toc,
+  article > p,
+  article > h2,
+  article > ul.summary-list,
+  article > blockquote.citation {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.masthead {
+    max-width: none;
+    padding: 8vw 0 4vw;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://live.staticflickr.com/65535/49821015786_58b1e7bbee_o.jpg') center 10% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  nav.toc {
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+    font-family: var(--sans);
+  }
+  nav.toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li { margin: 0 0 0.85rem; break-inside: avoid; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.3;
+    font-size: 0.98rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent-soft); color: var(--accent); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 3.9rem 0 1.4rem;
+    padding-top: 0.2rem;
+    color: var(--text);
+    position: relative;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin-bottom: 1.1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-soft); }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+  a:hover { color: #6b5228; }
+  a.internal-link-pending {
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--accent-soft);
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.summary-list {
+    background: #f4f1ea;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem 1.6rem 2.4rem;
+    margin: 0 0 3rem;
+  }
+  ul.summary-list li { margin-bottom: 0.7rem; }
+  ul.summary-list li:last-child { margin-bottom: 0; }
+  blockquote.citation {
+    margin: 2rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  blockquote.citation p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  figure.photo { margin: 2.6rem 0; }
+  figure.photo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.08), 0 8px 24px rgba(43,41,37,0.06);
+  }
+  img.lazy-photo {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 40px;
+    background: var(--line);
+  }
+  img.lazy-photo.loaded { opacity: 1; }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 2.2rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  p.epigraph {
+    text-align: right;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+  p.fin {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  p.subhead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { width: 88%; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17.5px; }
+    .wrap { width: 90%; padding: 10vw 0 16vw; }
+    header.masthead h1 { font-size: 1.85rem; }
+    nav.toc ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Восточная Бретань — от Арзона до Сен-Мало</h1>
+  </header>
+
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      <ul>
+    <li><a href="#предисловие">Предисловие</a></li>
+    <li><a href="#в-путь">В путь!</a></li>
+    <li><a href="#ванн-он-же-ван">Ванн, он же Ван</a></li>
+    <li><a href="#рошфор-ан-тер">Рошфор-ан-Тер</a></li>
+    <li><a href="#мон-сен-мишель">Мон-Сен-Мишель</a></li>
+    <li><a href="#сен-мало">Сен-Мало</a></li>
+    <li><a href="#канкаль">Канкаль</a></li>
+    <li><a href="#динан">Динан</a></li>
+    <li><a href="#сен-мало-продолжение">Сен-Мало. Продолжение.</a></li>
+    <li><a href="#фужер">Фужер</a></li>
+    <li><a href="#париж-окончание">Париж. Окончание.</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <article>
+<h2 id="предисловие">Предисловие</h2>
+<p>2020-й год. Апрель. Карантин. Так тщательно и с любовью распланированная поездка по Закавказью в конце апреля – начале мая с грохотом накрылась медным тазом. Для нас с женой, пристрастившихся к путешествиям в разные новые края пару раз в год, это довольно грустно. И похоже, что рассказа о новых местах, при самом благоприятном раскладе, придется ждать (мне - как автору, вам – как читателям) еще год, как минимум. Печаль, печаль… Нельзя ли с этим что-нибудь сделать?</p>
+<p>Пушкин, будучи запертым в карантине в Болдино (и, что уж там, не выезжавший за границу вообще никогда в жизни), оставил нам целый ворох прекрасных творений. Ну так то ж Пушкин. C другой стороны, от нас никто не требует шедевров, так ведь? И ведь есть же еще поездки, которые случились в относительно недалеком прошлом, но в эпоху, когда я еще не пристрастился к написанию здесь рассказов о наших путешествиях? Есть такие. Более того, я уже дважды такие рассказы-воспоминания писал, и через два и через три года после собственно поездок, углубляясь все дальше в прошлое, и писания мои были вполне благосклонно встречены. Я даже как-то письменно зарекся писать о еще более ранних поездках, чтобы не вводить в заблуждение будущих путешественников в случае, если что-то сильно изменилось с тех пор. Но у нас же форс-мажор, правда? Изоляция, и прочее?</p>
+<p>Что ж. Рискнем. Заглядываем на одну из дальних полок памяти и выуживаем на свет пачку пожелтевших фотографий. Что это у нас? О, Франция! 2014 год, бог ты мой. Как будто в прошлой жизни. И это Бретань, любимая Бретань. А вот лежат какие-то документы, файлы с расписаниями, гостиничные квитанции… Хм. А, была не была. Попробуем, развлечемся. Смахнем пыль с воспоминаний, пересмотрим фотографии и заново обработаем некоторые из них, зальем их в облако и возьмемся за перо.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816574576_912666fd8c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816574576_912666fd8c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Итак, 2014-й год, конец апреля. Поедем мы с вами так: сначала дневным рейсом Аэрофлота из Шереметьево в 12:40 отправимся в Париж. Оттуда на следующий день с утра – на TGV в Бретань: через Ренн в Ванн (буду писать с двумя буквами и Ренн, и Ванн – мне как-то привычнее для глаза. Хотя Ванн довольно часто пишут как «Ван» и правильно делают). В Ванне мы с женой уже были раньше. Ночевали в нем, гуляли по нему. И совсем недавно, кажется, но нет - на самом деле, за семь лет до описываемой поездки. Поэтому в этот раз – только небольшой кружок по старому городу, на пару часов, и мы движемся дальше на запад - на два дня и две ночи едем на побережье, к нашим друзьям, уже достаточно давно на том момент (да и до сих пор) там живущим. С другом на его машине мы на следующий день едем посмотреть на Рошфор-ан-Тер – есть тут такая туристическая деревушка.</p>
+<p>На следующее утро друг отвозит нас в Ванн, на вокзал, и оттуда на поезде мы возвращаемся в Ренн – административный центр Бретани. Это будет, до некоторой степени, наша база для поездок. А именно: на следующий день мы едем из Ренна на автобусе компании Keolis в Мон-Сен-Мишель (час с четвертью в пути), с ночевкой в гостинице Hotel Vert «на материке». Смотрим на МСМ днем, и потом возвращаемся на него поздно вечером.</p>
+<p>На следующий день, с утра – назад в Ренн, снова на автобусе Keolis; там спешим на находящийся рядышком ж/д вокзал. Оттуда практически сразу (через полчаса после прибытия автобуса) отправляется наш поезд в Сен-Мало (снова ровно час с четвертью в дороге). Там мы останавливаемся в старом городе, прямо в «Intramuros», на две ночи. Гуляем по городу, по его стенам, смотрим на приливы-отливы, едим отменно вкусные галеты и блины, о чем впереди.</p>
+<p>На следующий день на автобусе едем из Сен-Мало в городок Канкаль, про который положено обязательно сказать, что это - «устричная столица» Бретани и чуть-ли не всей Франции. Это у нас как раз 30-е апреля, завтра Первомай, кoгда особо не разъездишься. Но еще у нас рядом есть городок Динан, вот туда можно съездить и погулять по нему. Второго числа на поезде возвращаемся обратно в Ренн. Гуляем по Ренну, наконец – там тоже есть симпатичный старинный квартальчик.</p>
+<p>На следующий день с утра едем из Ренна в еще один полубретонский-полунормандский городок недалеко от Ренна – Фужер (Fougères). Средневековая крепость, одна из крупнейших в Европе из дошедших до наших дней, да и вообще симпатичное место.</p>
+<p>Вечером возвращаемся из Ренна в Париж на TGV. И там у нас еще вся суббота и утро воскресенья, перед отлетом в Москву. Гуляем по Парижу.</p>
+<p>Вот карта наших перемещений по Бретани:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816987972_6f5d408c74_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816987972_6f5d408c74_o.png" alt="" loading="lazy"></noscript></figure>
+<h2 id="в-путь">В путь!</h2>
+<p>Итак, взвыли турбины, «…наш полет проходит на высоте…», “Votre passeport, s’il vous plaît”, поезд RER, станция «Denfert-Roschereau”, и вот он - бульвар Распай, где мы заселяемся в нашу гостиницу. Время уже послеобеденное, мы перекусываем в кафешке на бульваре Монпарнас – нам по пути, и движемся к Люксембургскому саду, оттуда - по бульвару Сен-Мишель (он же «Бульмиш»), мимо фонтанов на площади Сорбонны, к набережной, на остров Ситэ, к Нотр-Даму. Постепенно смеркается.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816042603_9b1982544d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816042603_9b1982544d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816885407_5297a4c9f8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816885407_5297a4c9f8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Возвращаемся к себе в на бульвар Распай уже довольно поздно. Гостиничка крохотная, но нам же просто бросить кости и переночевать - сойдет.</p>
+<p>Утром отправляемся на вокзал Монпарнас, прямо пешком – по бульвару мимо кладбища Монпарнас (туда мы еще заглянем через неделю, на обратном пути). Билеты на TGV до Ванна куплены уже давно, так что просто садимся и через три часа выходим под яркое бретонское солнце, друг встречает нас с машиной у поезда, мы кидаем в багажник чемоданы. У него еще пара срочных дел в городе, договариваемся созвониться и встретиться с ним в центре часа через 2, а мы пока идем прогуляться по знакомым улицам, до самого порта.</p>
+<h2 id="ванн-он-же-ван">Ванн, он же Ван</h2>
+<p>Немного <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD_(%D0%B3%D0%BE%D1%80%D0%BE%D0%B4,_%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F)" target="_blank" rel="noopener noreferrer">истории</a>:</p>
+<blockquote class="citation"><p>Название "Ван" ("Vannes") происходит от венетов, приморского кельтского племени, населявшего в юго-западной части Арморики до вторжения римлян в Галлию. Венеты активно торговали с соседями-бриттами; весомой составляющей этой торговли было зерно, выращенное на Ближнем Востоке...<br>
+В 56 году до н.э. венеты были разбиты римским флотом в районе нынешнего поселка Локмарьякер («Битва при Морбиане»); многие венеты были либо убиты, либо проданы в рабство.<br>
+В V-VII веках оставшиеся галлы были вытеснены или ассимилированы волнами иммигрантов-бриттов, спасавшихся от вторжений саксов в Британию.<br>
+Под бретонским названием "Гвенед" ("Gwened") (также производным от венетского) город был центром независимого герцогства или королевства, называвшегося Бро-Венед или Бро-Эрег (на бретонском "Ваннете" или "земля Гверега", по имени одного из его первых правителей Вароха I (Гверега), считавшего себя потомком Карадога Сухорукого).<br>
+В V веке была основана епархия Вана, в 461 году прошел Ванский собор.<br>
+...Ванн служил резиденцией герцогов Бретонских; позже здесь заседал парламент Бретани.<br>
+…В 753 году король франков Пипин Короткий разгромил бретонцев и занял Ван. Для сдерживания бретонцев, он организовал буферную зону, "Бретонскую марку" - территорию позднейших графств Ренн, Нант, Ван и часть Мэна. Ван стал одной из столиц новой марки.<br>
+…В сентябре 818 года король франков Людовик I Благочестивый собрал в Ване большую армию, с которой выступил против бросившего ему вызов короля Бретани Морвана.<br>
+Частично разрушенный во время нашествий норманнов в X веке, город пережил много осад, прежде чем стать любимой резиденцией герцогов Жана V и Жана VI.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816885307_d07ec14705_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816885307_d07ec14705_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816885347_b21eec2b97_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816885347_b21eec2b97_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816042423_1006165a03_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816042423_1006165a03_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Самое «ванновское» место:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816885262_40a6280bcc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816885262_40a6280bcc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816574346_c8c3017830_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816574346_c8c3017830_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816042348_e9143f23b1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816042348_e9143f23b1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мимо старых крепостных стен:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816885222_5244fb1573_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816885222_5244fb1573_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и порт.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816885367_daf99f207d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816885367_daf99f207d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816574311_0a62a41224_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816574311_0a62a41224_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816885167_a8448be25f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816885167_a8448be25f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И тут звонит телефон. «Вы где» - «мы тут», и примерно через час мы дома у наших друзей. Запах океана, ночное небо, усыпанное мириадами звезд – так, как редко бывает у нас в Подмосковье, только в августе, на даче, вдали от городских огней, когда ночи уже прохладны, млечный путь во все небо над головой, все тихо, только иногда где-то в темноте ночного сада с гулким звуком падает на землю яблоко и с шорохом откатывается в траву… Но я отвлекся. Вот только одна фотография, сделанная в доме друзей, которую позволю себе сюда добавить:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816574291_8cdd90812e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816574291_8cdd90812e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>После обеда гуляем по берегам недалеко от Сарзо (Sarzeau). Вначале с тихой, безветренной стороны, по побережью залива Морбиан:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816885107_223e349281_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816885107_223e349281_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816042198_650c88da01_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816042198_650c88da01_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816885002_47b1a7d6fe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816885002_47b1a7d6fe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816574086_7732656ef6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816574086_7732656ef6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>A потом перебираемся в Арзон. Вот и его порт:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816884872_0f2017bef9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816884872_0f2017bef9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816884852_e86c54bd88_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816884852_e86c54bd88_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816042038_3895827f1e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816042038_3895827f1e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Заходим здесь же в маленький магазин и покупаем нам с женой по хорошей непромокаемой и непродуваемой штормовке: мне - красную, ей - светло-голубую. Давно мечтал о таких, и Бретань – самое подходящее место искать хорошую куртку-штормовку. Ну, те что мы купили, конечно, были не самые супер-пупер – были и в два-три раза дороже, для состоятельных и стильных яхтсменов, но все же наши тоже неплохие, грех жаловаться. До сих пор они у нас при деле, за шесть лет хуже не стали.</p>
+<h2 id="рошфор-ан-тер">Рошфор-ан-Тер</h2>
+<p>На следующий день наш друг решил свозить нас в какое-нибудь интересное место, относительно недалеко. Я отдал ему на откуп вопрос «куда», и в результате мы вчетвером (он поехал с дочкой, которой на тот момент было лет пять) оказались в деревне Рошфор-ан-Тер (Rochefort-en-Terre) – это примерно 50 минут на машине. Ну, такая открыточно-живописная деревушка. Было, правда, пасмурно, иногда принимался дождик, так что, возможно, получилось не так ярко, как могло бы.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816041878_e7084afc77_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816041878_e7084afc77_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816041913_06bb773773_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816041913_06bb773773_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816884642_1dc571d72d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816884642_1dc571d72d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816041813_52f4e084af_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816041813_52f4e084af_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573766_fb455cda81_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573766_fb455cda81_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573926_d1d70799cc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573926_d1d70799cc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573966_dfdfdf5e7c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573966_dfdfdf5e7c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816041998_1a985efb66_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816041998_1a985efb66_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Рядом, на окраине – небольшой замок, именуемый <a href="https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Rochefort-en-Terre" target="_blank" rel="noopener noreferrer">Château de Rochefort-en-Terre</a>. Строительство начато в 12 веке, закончено в двадцатые годы прошлого. Владельцы сменялись на протяжении веков многократно; сейчас он выкуплен коммуной Rochefort-en-Terre и превращен в музей.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816884547_53b3316517_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816884547_53b3316517_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пейзаж около шато:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573691_a7ca0552d3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573691_a7ca0552d3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Это - старый собор в центре деревни:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573631_79921efbce_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573631_79921efbce_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Погуляли, купили парочку сувениров, и отправились обратно на побережье в районе Арзона. Причем сразу проехали прямо на берег океана. Ветер заставлял наклоняться навстречу ему, чтобы удерживаться на месте; я в первый раз понял, что у телефона очень приличная парусность! И это при том, что никакого не то, что шторма – никакого «свежего ветра» с точки зрения мореплавания нет даже близко. Так – легкий ветерок.</p>
+<p>Выход к океану:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573536_626d36be22_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573536_626d36be22_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816884357_bfb551f94d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816884357_bfb551f94d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573491_b97822b220_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573491_b97822b220_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816041523_ebc5db9668_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816041523_ebc5db9668_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573466_a20f527cdd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573466_a20f527cdd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573456_ee89dfd05a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573456_ee89dfd05a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Видно, что объектив забрызган мелкой водяной пылью:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816041478_76444c477c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816041478_76444c477c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573411_5c4fdd5db5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573411_5c4fdd5db5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну и хватит, наверное, морских фотографий? Вечер провели дома у друзей (в следующий раз мы тут окажемся в 2017-м, семейство к тому моменту еще слегка разрастется, но место для нас по-прежнему будет).</p>
+<p>Утром на машине – в Ванн, а уже оттуда и дальше мы перемещались «на общественном транспорте». Для начала – на TGV в Ренн. Оттуда, с автовокзала, на междугороднем <a href="https://keolis-armor.com/12-Le-Mont-St-Michel-depuis-Rennes-en-bus.html" target="_blank" rel="noopener noreferrer">автобусе компании Keolis</a> отправляемся в Мон-Сен-Мишель.</p>
+<h2 id="мон-сен-мишель">Мон-Сен-Мишель</h2>
+<p>В Мон-Сен-Мишель мы ездили с ночевкой, и тогда, в 2014, и в прошлом, 2019 году, и настойчиво всем рекомендую делать также. Это дает возможность (а) никуда не торопиться в принципе и (б) походить по острову (исключая само аббатство наверху) ночью. Фотографий много в этом рассказе не будет, но для полноты рассказа несколько штук выложу.</p>
+<p>Вот так, мерзким холодным дождем, он нас встретил на полпути:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816884137_9457bd7930_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816884137_9457bd7930_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но выглядел Мон-Сен-Мишель от этого еще более впечатляющим.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816884092_5292fd686f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816884092_5292fd686f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Я тогда снимал с рук, без монопода, как сделал бы сейчас, так что особой четкости при таком свете ожидать не стоит:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816884052_e529ceb163_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816884052_e529ceb163_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но пока мы до него добрались (спасибо арзонским штормовкам, кстати!), небо прояснилось.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573306_caeb8dddd7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573306_caeb8dddd7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В сувенирной лавочке за стенами Мон-Сен-Мишеля:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816884037_4f8cd74a3f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816884037_4f8cd74a3f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883987_d74f5d195b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883987_d74f5d195b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573216_7ef0c5e76e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573216_7ef0c5e76e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883947_a56bd7675b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883947_a56bd7675b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Полустертый крест на маленьком кладбище:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816041218_00f90b48fa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816041218_00f90b48fa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Размытый путь и вдоль кривые тополя»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883922_d3422b9a71_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883922_d3422b9a71_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Всюду жизнь:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816041168_3ef989648f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816041168_3ef989648f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816041088_a8a2027a96_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816041088_a8a2027a96_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>После дождя:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883852_a5103f75e4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883852_a5103f75e4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Залив:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883827_472039bc4c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883827_472039bc4c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тени от облаков:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816573016_21e5e5f932_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816573016_21e5e5f932_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040953_b6b5c0e505_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040953_b6b5c0e505_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040998_0f5e8c38a3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040998_0f5e8c38a3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040898_750fcce0a4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040898_750fcce0a4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В храме аббатства:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816572871_101f1fb06c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816572871_101f1fb06c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В трапезной:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883672_9b89fe82c9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883672_9b89fe82c9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Снова залив и облака:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883642_9cf1c22d73_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883642_9cf1c22d73_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883592_e0cb50c4af_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883592_e0cb50c4af_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид на аббатство снизу:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040808_fe6ae704fa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040808_fe6ae704fa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид на залив с тыльной стороны аббатства:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816572761_16f0f9b439_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816572761_16f0f9b439_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И снова пейзаж с облаками:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883577_6716f48187_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883577_6716f48187_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В общем, вот, как-то так.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040698_fc838ac30b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040698_fc838ac30b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883517_970187f7bf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883517_970187f7bf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На материковой части, где мы ночевали и питали свои организмы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816572611_c129583173_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816572611_c129583173_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040618_6e9ec28e7f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040618_6e9ec28e7f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Эх…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883402_267582aab0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883402_267582aab0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пойти на кухню, поесть, что ли?</p>
+<p>Приличных фото от нашей ночной вылазки на Мон-Сен-Мишель, в общем-то, нет. Так что не буду позориться.</p>
+<p>Ну и пара слегка раскрашенных утренних видов на Мон-Сен-Мишель с дамбы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821015786_58b1e7bbee_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821015786_58b1e7bbee_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883342_d352fb7807_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883342_d352fb7807_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А нам с вами пора забрать чемоданы, сесть на автобус Keolis до Ренна, там пересесть на электричку до Сен-Мало, и отправиться в «город пиратов».</p>
+<h2 id="сен-мало">Сен-Мало</h2>
+<p>До этого момента название Сен-Мало у меня однозначно ассоциировалось в голове с жюль-верновским романом «Приключения дядюшки Антифера» - не самым популярным, но у меня он в детстве был дома, и потому перечитан был неоднократно. Вот только что прочел в Википедии о нем, что в СССР он издавался единственный раз, в 1959-ом году. Ну, да, судя по романтической желтизне его страниц, очень похоже на это время. Цитата из краткого изложения фабулы на Вики: <em>«Имея долготу острова, Бен-Омар и Саук, притворившийся клерком Бен-Омара Назимом, отправляются в Сен-Мало к наследнику паши и владельцу широты, моряку в отставке, Пьеру-Сервану-Мало "дядюшке" Антиферу»</em>.</p>
+<p>Вот. Цифр долготы сокровища у нас, к сожалению, не было, так что мы поехали просто из любознательности. Гостиницу я забронировал, как советовали предшественники, в той части, которая называется «Intramuros» («Внутри стен») - в той части этого сурового серого портового города, которую можно было бы назвать «историческим центром», если бы не вторая мировая.</p>
+<p>У города была куча названий: французское Сен-Мало́ (Saint-Malo), бретонское Sant-Maloù, на языке галло Saent-Malo, по латыни Macloviopolis, Maclovia, Aletha, Alleco, Aeronis Insula. Вот его сверхкраткая <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD-%D0%9C%D0%B0%D0%BB%D0%BE" target="_blank" rel="noopener noreferrer">история</a>:</p>
+<blockquote class="citation"><p>Город возник в начале VI века, когда бритты под давлением англов и саксов стали переселяться на южный берег Ла-Манша... Своё наименование получил в честь Святого Мало. В раннем средневековье на месте Сен-Мало было предместье города Алет, служившего местопребыванием епископа в земле кориосолитов. Городом Сен-Мало стал после того, как в середине XII века епископ Жан из Шатильона перенёс сюда из Алета епископскую кафедру. За обладание крепостью на острове в устье реки в XIV-XV вв. долго спорили герцоги Бретани и короли Франции. Золотой век Сен-Мало пришёлся на XVI век, когда он стал гнездовьем прибрежных каперов и добился значительной степени автономии от королевских наместников... Грандиозные городские укрепления создавались по проектам знаменитого инженера-фортификатора Вобана. Основание в Бретани порта Лорьян для торговли с заморскими колониями подорвало значение Сан-Мало как основной гавани Бретани. К концу XVIII века эпоха процветания была для Сен-Мало в прошлом.<br>
+…При высадке союзников в 1944 году на территорию материковой Европы старый город был практически стёрт с лица земли. То, что сегодня видят туристы, было воссоздано в 1948-1960 гг.</p></blockquote>
+<p>Но следует сказать, что воссоздано сердце города было весьма тщательно, так что и не скажешь, что это все отстроено заново относительно недавно.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040528_3aa4be53be_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040528_3aa4be53be_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Кстати, обратите внимание что <em>каперы</em>, упоминаемые в тексте, это то же самое, что <em>корсары</em>, НО отнюдь не то же, что <em>пираты</em>! Корсары, в отличие от пиратов, действовали с официального одобрения властей своей страны (подкрепленного официальной грамотой), захватывая суда неприятеля. Но для читающего подростка это были все такие неважные вещи…</p>
+<p>Внутри Собора св. Викентия (Cathédrale Saint-Vincent de Saint-Malo):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040528_3aa4be53be_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040528_3aa4be53be_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p><em>Начало строительства датируется 1146 годом на территории монастыря, основанного в 1108 году. Изначально собор построен в готическом стиле с некоторыми романскими элементами. Основная часть работ продолжалась до конца XV века. Позже внесены детали стилей эпохи Ренессанса и классицизма. Здание сильно пострадало во время бомбардировки города в 1944 году. Освящение восстановленного храма состоялось в 1972 году</em>. – <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B1%D0%BE%D1%80_%D0%A1%D0%B5%D0%BD-%D0%9C%D0%B0%D0%BB%D0%BE" target="_blank" rel="noopener noreferrer">отсюда</a>.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883287_dd0944ec3f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883287_dd0944ec3f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Яхты в порту Сен-Мало:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883267_a95a71a340_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883267_a95a71a340_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883222_956fab67b2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883222_956fab67b2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Классический вид на восстановленный старый город с конца длинного мола:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883182_b3c75f96dc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883182_b3c75f96dc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот здесь наверное, кстати будет карта (точнее, спутниковая съемка) «старого города» - этот мол на ней слева внизу:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49820691253_231beb961d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49820691253_231beb961d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Маленький пляжик у начала мола:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883162_ca6a936069_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883162_ca6a936069_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Единственно правильное назначение пушек:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816572286_85cc471db6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816572286_85cc471db6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В прилив на близлежащие островки с фортами Гран-Бе (Grand-Bé) и Пети-Бе (Petit-Bé) не попасть. Что ж, подождем… У нас два дня есть.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816883117_f4876f03ea_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816883117_f4876f03ea_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040343_e629a685ae_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040343_e629a685ae_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На аэрофотосъемке, кстати, видно, что во время отлива на Гран-Бе «не зарастет народная тропа»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821233836_f26e5e4458_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821233836_f26e5e4458_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И мы дальше, через денек, это увидим воочию.</p>
+<p>А это вот Fort National, справа на карте островов, он более доступен:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040303_46a6306f33_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040303_46a6306f33_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816572201_deeb918775_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816572201_deeb918775_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816572106_707af8360c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816572106_707af8360c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Портовые силуэты:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816572086_b5a8080e17_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816572086_b5a8080e17_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ночной порт Сен-Мало:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040103_32e950cbcb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040103_32e950cbcb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="канкаль">Канкаль</h2>
+<p>Ну что ж, а утром мы сядем с вами на автобус и поедем в Канкаль! Нас ждут (не дождутся, ага) устрицы!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882832_2f7058841f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882832_2f7058841f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p><em>С XI века <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D0%BA%D0%B0%D0%BB%D1%8C" target="_blank" rel="noopener noreferrer">Канкаль</a> был важным рыболовным портом; местные рыбаки в своих плаваниях доходили до берегов Ньюфаундленда, но основным источником дохода местных жителей стал сбор устриц. В 1545 году парижские эшевены заключили контракт с Канкалем о поставке свежих устриц два раза в неделю к королевскому столу, за что король Франциск I даровал Канкалю статус города.</em></p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816039988_42b8256c87_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816039988_42b8256c87_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Скульптурная группа в центре Канкаля говорит сама за себя:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821687972_86b396c9d6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821687972_86b396c9d6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p><em>Более ста миллионов устриц ежегодно добываются из морских вод в районе Канкаля, поэтому еще в 1787 году король Людовик XVI издал указ, регулирующий проведение работ по углублению морского дна, чтобы избежать истощения природного месторождения устриц.</em></p>
+<p>В церкви Канкаля:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821376406_81ff851384_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821376406_81ff851384_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пока вы читали, мы уже все съели…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040073_5bcd14888e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040073_5bcd14888e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На туристическом устричном рыночке:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821687897_e38bdffa5d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821687897_e38bdffa5d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«А сюда мы будем кидать кости» (С)</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882787_3604633c80_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882787_3604633c80_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816040033_b5a1c62b18_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816040033_b5a1c62b18_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Не знаю, как назвать следующую фотографию… «Мы с Тамарой ходим парой»?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882702_10a62f98ef_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882702_10a62f98ef_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Лимончики придают устрицам фотогеничности, конечно:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816571901_75930cf622_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816571901_75930cf622_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Устрицы, что меня удивило, действительно сильно разнятся вкусом. Самые дешевые и корявые – очень соленые и не особо вкусны, по крайней мере, просто так, безо всего. Лимон не спасает. А вот те, что покруглее и подороже, именуемые «Belon» – существенно менее просоленные и вкусом поприятнее. Вот они:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816571896_38cddd286f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816571896_38cddd286f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В Канкале отлив:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821376241_8920a7f2e4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821376241_8920a7f2e4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821687797_73fe9767f9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821687797_73fe9767f9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821687772_0d4ee14045_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821687772_0d4ee14045_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вон они, проступают сквозь воду, устричные фермы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821376121_72593cf9af_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821376121_72593cf9af_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Еще про отлив:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821687652_036ce701f3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821687652_036ce701f3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821376036_0c01872a03_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821376036_0c01872a03_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну, а мы возвращаемся на автобусе в Сен-Мало.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49820836738_5747c0686e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49820836738_5747c0686e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="динан">Динан</h2>
+<p>Наша следующая цель – открыточный городок Динан. Не очень люблю откровенно открыточные места, но мы тут, в Сен-Мало, совсем рядом – ладно, съездим, полюбуемся.</p>
+<blockquote class="citation"><p>В документах Динан упоминается с XI века, в это время здесь был основан бенедиктинский монастырь. В 1283 году герцог Жан I Бретонский воздвиг городские валы и башни Динана, часть из которых сохранилась до нашего времени. В 1357 году, во время войны за бретонское наследство Бертран Дюгеклен и его брат Оливье успешно защищали город, осажденный английскими войсками и бретонцами, верными Жану V де Монфору.<br>
+…После битвы при Сен-Обен-Дю-Кормье в 1488 году город покорился королю Франции. В последующие годы Динан продолжает процветать, чему способствовало наличие порта на судоходной реке Ранс, к северу от города впадающей в Ла-Манш. Динан контролирует речной путь, по которому перевозятся грузы в Сен-Мало...<br>
+…Несмотря на пожар в 1907 году, который разрушил пять деревянных домов, и бомбардировку в августе 1944 года, город Динан не претерпел большие изменения с начала XX века. Динан — город, сохранивший многие средневековые памятники, он объявлен «городом искусства и истории»</p></blockquote>
+<p>По аллее от автовокзала Динана к старому городу:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821687557_7219dc5f53_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821687557_7219dc5f53_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну, по старому городу особо мне комментировать нечего, так что вот просто подборка фотографий:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882662_aa274a9db8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882662_aa274a9db8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821375951_ecbbdc9b84_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821375951_ecbbdc9b84_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816039843_a5da6f2548_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816039843_a5da6f2548_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816571806_32d353fdf6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816571806_32d353fdf6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882612_78a61796a1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882612_78a61796a1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816039783_8ffb8dd328_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816039783_8ffb8dd328_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816571706_9e1b9810c2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816571706_9e1b9810c2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816039688_9c6be3a2b8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816039688_9c6be3a2b8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821375886_5c6465313e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821375886_5c6465313e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821375801_e9b7b3c8dd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821375801_e9b7b3c8dd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821375601_efc5351052_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821375601_efc5351052_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В самом низу старого города, виды на речку Ранс и мост:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821687322_9e3db13166_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821687322_9e3db13166_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821375641_5d39b7610a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821375641_5d39b7610a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Поднимаемся обратно в горку:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49820836293_5a40989ab6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49820836293_5a40989ab6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821375511_9232e50c68_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821375511_9232e50c68_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821687097_646f4dd389_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821687097_646f4dd389_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821687017_e3933997dc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821687017_e3933997dc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821375376_417a38ffb6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821375376_417a38ffb6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49820836098_3530da4774_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49820836098_3530da4774_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И мы снова возвращаемся в Сен-Мало.</p>
+<h2 id="сен-мало-продолжение">Сен-Мало. Продолжение.</h2>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882472_3273ddeba8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882472_3273ddeba8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882492_db24f82a74_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882492_db24f82a74_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Очень необычно, кстати, выглядит поверхность песчаного дна по время отлива: из ее глубинного слоя выдавливаются на поверхность какие-то песчаные же трубочки-«червячки»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816039588_69e368585a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816039588_69e368585a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Никогда такого не видел:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816039553_741fc0b19c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816039553_741fc0b19c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570676_9f7dc87a7c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570676_9f7dc87a7c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Разница высоты моря в прилив и отлив огромна:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882402_423da7ba4e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882402_423da7ba4e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Согласно <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B8%D0%BB%D0%B8%D0%B2_%D0%B8_%D0%BE%D1%82%D0%BB%D0%B8%D0%B2" target="_blank" rel="noopener noreferrer">Википедии</a>: <em> На Европейском континенте самые высокие приливы (до 13,5 м) наблюдаются в Бретани у города Сен-Мало. Здесь приливная волна фокусируется береговой чертой полуостровов Корнуолл (Англия) и Котантен (Франция).</em></p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882372_906f9be9c8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882372_906f9be9c8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816039488_07ed1df380_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816039488_07ed1df380_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816039473_566afc2b08_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816039473_566afc2b08_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882332_6407bbfcba_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882332_6407bbfcba_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816039423_620d96a0d1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816039423_620d96a0d1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На островке Fort National:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816571426_e82daf03d2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816571426_e82daf03d2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816571411_d1eaf53353_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816571411_d1eaf53353_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882232_31b8c2b382_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882232_31b8c2b382_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816571366_5d6d9c15c4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816571366_5d6d9c15c4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816039258_f373238ab8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816039258_f373238ab8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882122_33c0586651_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882122_33c0586651_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816571311_59ef266c3a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816571311_59ef266c3a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816882047_c053e22596_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816882047_c053e22596_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816571231_9450b47ec0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816571231_9450b47ec0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881982_5fdcf76b9e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881982_5fdcf76b9e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816571196_9797b5b4d5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816571196_9797b5b4d5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сегодня во Франции – первое мая, что означает – мало кто работает, мало кто куда-то вас повезет, и куча ландышей, как компенсация за неудобства!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881907_e27d0b5b76_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881907_e27d0b5b76_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816571136_b2cbac34e6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816571136_b2cbac34e6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881782_7bf7048775_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881782_7bf7048775_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сквозь открытые двери «пиратского» магазина для детей:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816038953_b805535d39_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816038953_b805535d39_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Странные незнакомые предметы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570991_f3eea10ba3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570991_f3eea10ba3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Морская бело-голубая мода:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881722_094f9e5f30_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881722_094f9e5f30_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Продавщицы ландышей:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816038878_f90ea099ae_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816038878_f90ea099ae_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816038843_572464a8d2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816038843_572464a8d2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Алфавитное:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881607_28d32d0d39_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881607_28d32d0d39_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Медитация перед шоколадным фонтаном:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881567_f93367f4c4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881567_f93367f4c4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Молодость:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881512_63242c8074_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881512_63242c8074_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Цветение:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816038533_18c30a9884_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816038533_18c30a9884_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А мы снова на берегу. Картинки отлива:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570721_94c06883d4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570721_94c06883d4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881347_0f01106849_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881347_0f01106849_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881307_e44259e458_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881307_e44259e458_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пора перекусить. Хочется сытных бретонских галет с сидром и сладких блинов с соленой карамелью и кофе. Нашли просто отличное (как оказалось) место: <a href="http://www.creperie-saint-malo.com/" target="_blank" rel="noopener noreferrer">«Подсолнух»</a>. Блинная маленькая, плотно набитая народом, причем, что всегда хороший признак, довольно много французов (уж не знаю, местных или нет, но неважно). Мы приютились за маленьким столиком у стены, сразу направо от входной двери. Обслуживают молниеносно. При нас бедная хозяйка даже упала, поскользнувшись практически на бегу на каменных плитах. И ооочень вкусно. Так что советую наведаться – судя по интернету, они здравствуют и поныне.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816038508_b7ca96cd31_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816038508_b7ca96cd31_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Трубочки жареного сыра как украшение галет. Ммм.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570476_06ce0a7aca_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570476_06ce0a7aca_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881247_399a49fd0f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881247_399a49fd0f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Наша «Fée Des Crêpes» - «Фея блинов»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821595691_2be3a76e0d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821595691_2be3a76e0d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пока ждем галет и блинов, исподтишка снимаю посетителей:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821058113_90a6bf22cb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821058113_90a6bf22cb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821595656_5edfe0f9a1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821595656_5edfe0f9a1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49821058273_d5276df3da_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49821058273_d5276df3da_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Отличное название кафе, оно же инструкция, как его найти:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570426_1e355d9fb7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570426_1e355d9fb7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Памятная доска Шатобриану – его могила на островке Гран-Бе:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816038448_844e31c45f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816038448_844e31c45f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Снова пляж:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881142_020bb0a055_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881142_020bb0a055_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570336_e7f23c23ed_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570336_e7f23c23ed_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816038363_8884706ea6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816038363_8884706ea6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881087_d8ae13164b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881087_d8ae13164b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570281_6686b16783_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570281_6686b16783_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Отлив:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816881062_173de11d6a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816881062_173de11d6a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570241_81c3e1609d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570241_81c3e1609d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816880977_454bf2d0e7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816880977_454bf2d0e7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49822221663_a0afc48337_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49822221663_a0afc48337_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570176_f4661ab809_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570176_f4661ab809_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49822756751_23ac1fb521_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49822756751_23ac1fb521_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49823072867_bc98aec5de_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49823072867_bc98aec5de_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570166_f7a4b928e5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570166_f7a4b928e5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49822756846_c14f77c081_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49822756846_c14f77c081_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На Гран-Бе, вид в сторону Пети-Бе:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49822221598_df5267b5a8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49822221598_df5267b5a8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570141_fa5bc32f32_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570141_fa5bc32f32_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816038103_dd30a6f5e6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816038103_dd30a6f5e6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570076_d29662ef5e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570076_d29662ef5e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570111_e2b6ee8b79_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570111_e2b6ee8b79_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816038063_393d412231_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816038063_393d412231_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И вот как выглядит дорожка на Пети-Бе в отлив:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49822756701_4a4f82bc87_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49822756701_4a4f82bc87_o.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="фужер">Фужер</h2>
+<p>Ну вот. Пора нам вернуться из Сен-Мало в Ренн. Сам Ренн мы тоже посмотрели, во второй половине следующего дня, хотя и немного. И как-то у меня он не остался в памяти, не запомнился. И фотографий тоже практически нет. Так что про Ренн я ничего не напишу. Погуляли, дошли до квартала с коломбажем, нашли какой-то ресторанчик довольно большой, практически «общепит», поели там уже поздно вечером, когда стемнело. Возможно, Ренн проигрывает, если смотреть на него после Сен-Мало и Динана. В общем, я так и не почувствовал его.</p>
+<p>А наутро следующего дня мы решили съездить в Фужер (Fougères) – заранее еще не знали точно, поедем или нет, в моем плане он стоял со знаком вопроса. Но вроде бы времени хватало – возвращение в Париж вечером, расписание транспорта вполне позволяло смотаться в Фужер и обратно – это 40 км от Ренна. Автобус номер 91 идет 1 ч 10 мин от автовокзала Ренна до автовоказала Фужера. А мы живем в трех минутах ходьбы от автовокзала.</p>
+<blockquote class="citation"><p>Замок Фужера впервые упоминается в X веке — тогда это было простое деревянное укрепление, расположенное на скалистом хребте, доминировавшим над долиной реки Нансон и окружающими болотами. Фужер находился на пересечении двух римских дорог — из Шартра в Каре и из Авранша в Нант.<br>
+Первый замок Фужера был взят королем Англии Генрихом II в 1166 году и разрушен. Рауль II де Фужер построил более внушительное сооружение, и оно стало оплотом, защищавшим границы Бретани от Мон-Сен-Мишеля до Нанта. Однако географическое положение и интересы сеньоров Фужера часто склонялись в пользу Франции. Когда Рауль III де Фужер предложил свои владения королю Людовику IX, бретонский герцог Пьер I в 1231 году захватил город, но затем был вынужден отдать его королю. Дочь Рауля III, Жанна де Фужер, провела новые фортификационные работы и украсила город; конец XIII века был периодом мира и процветания для Фужера.<br>
+…Разоренное грабежами во время Столетней войны население Фужера обратилось за помощью к герцогству Бретань, и в 1428 году город был присоединен к Бретани. В 1449 году арагонский авантюрист Франсуа де Сюрьен, находящийся на службе у англичан, захватил и разграбил город с целью заставить Бретань вступить в союз с Англией. В городе было совершено много убийств, что вызвало обратную реакцию бретонского герцог Франциска I, выступившего против Англии. Франциск I вступил в союз с королем Франции Карлом VII и взял Фужер после долгой осады.<br>
+…Фужер поддержал шуанов, которые в 1793 года захватили город; спустя несколько недель республиканцы вернулись в Фужер, после чего город в течение восьми лет неоднократно переходил из рук в руки, что сопровождалось массовыми убийствами и грабежами.<br>
+8 июня 1944 года, в ходе операции "Оверлорд" Фужер подвергся массированной бомбардировке авиацией союзников, в результате которой погибло 300 человек и уничтожено большинство общественных и промышленных объектов.</p></blockquote>
+<p>Ну, и наконец, про замок: <em>Замок Фужер XII века; замок является одним из самых впечатляющих французских замков, занимая площадь в 2 гектара, и считается одной из самой больших средневековых крепостей в Европе. Он состоит из трех корпусов, стены которых прекрасно сохранились, а его тринадцать башен поражают своим величием, некоторые из них можно посетить.</em></p>
+<p>Прогуляемся по Фужеру?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816880747_042b4eec75_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816880747_042b4eec75_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49822756666_4a30d7721e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49822756666_4a30d7721e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816570036_9d0176c33a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816570036_9d0176c33a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816569976_7367cef727_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816569976_7367cef727_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816880657_76c542d34c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816880657_76c542d34c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816569916_dcda766a4b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816569916_dcda766a4b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49823072667_9e99e8d6c9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49823072667_9e99e8d6c9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В парке, спускающемся от церкви Сен-Леонар (l'église Saint-Léonard) к ручью, высоко на другом берегу которого раскинулся замок, попадаются вот такие стойки с цитатами разных авторов, воспевающих Фужер:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816569911_d889f3fc08_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816569911_d889f3fc08_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И вот такие, практически нормандские пейзажи вдали открываются с холма, на котором расположился парк:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816880597_c1fc9d43be_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816880597_c1fc9d43be_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816880542_4094588a51_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816880542_4094588a51_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вон там внизу, вдали – замок:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816880532_ed5536cb5a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816880532_ed5536cb5a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816569801_dd1493e638_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816569801_dd1493e638_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816880462_5e06cf0839_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816880462_5e06cf0839_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816569731_475186ffbd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816569731_475186ffbd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816037623_89bd6f2a60_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816037623_89bd6f2a60_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816037573_0802fb5dac_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816037573_0802fb5dac_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816880317_ae0b997513_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816880317_ae0b997513_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816569631_b064719b7c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816569631_b064719b7c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816880257_94bec6d337_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816880257_94bec6d337_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вывеска салона тату:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816037458_95fec1d6e0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816037458_95fec1d6e0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пара фотографий из церкви Сен-Сюльпис-де-Фужер (Église Saint-Sulpice de Fougères), которая расположена у самых стен замка:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816037433_f77817c956_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816037433_f77817c956_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Церковь Сен-Сюльпис была самым первым приходом Фужера, основана в (XI веке, реконструирована в XV и XVI веках. Хоры относятся к XVIII веку, витражи - XV и XX веков.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49822227573_b4720fd664_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49822227573_b4720fd664_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816880117_6c5806a983_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816880117_6c5806a983_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот мы и добрались до самого замка.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49822762696_2f8c300097_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49822762696_2f8c300097_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот <a href="https://www.castleseurope.ru/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F/%D1%84%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F/%D0%B7%D0%B0%D0%BC%D0%BE%D0%BA-%D1%84%D1%83%D0%B6%D0%B5%D1%80/" target="_blank" rel="noopener noreferrer">здесь</a> подробно написано про сам замок, не буду повторяться. А <a href="https://chateau-fougeres.com/fr" target="_blank" rel="noopener noreferrer">здесь</a> – сайт самого замка со всей нужной практической информацией.</p>
+<p>Сейчас там написано, что работает без перерывов, но я помню, то мы попали на какой-то обеденный перерыв, который должен был закончиться минут через сорок. И мы пошли перекусить галет и выпить сидра в одну из кафешек на площади напротив входа в ворота замка.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49823078882_e3783186a1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49823078882_e3783186a1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49822762451_beeeca5158_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49822762451_beeeca5158_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Кафешка называлась “Le Raoul II” и отличалась максимально возможной неспешностью обслуживания. Просто максимальной. Хотя нет – было один раз еще медленнее, в одном кафе в Риме.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816037413_ddb1f21e9f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816037413_ddb1f21e9f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816037388_5e765a8138_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816037388_5e765a8138_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тоже ждут:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816880057_e1e5ff29f0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816880057_e1e5ff29f0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Хорошо, что на улице жарко, а мы никуда не торопимся…</p>
+<p>Ну, что несколько фотографий из замка:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816037333_097b0b1602_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816037333_097b0b1602_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вон вдали – церковь Saint-Léonard, откуда мы спустились, и парк на склонах холма, с цитатами на прозрачных стойках:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879987_452f9f9e65_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879987_452f9f9e65_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Так выглядит город со стен замка:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879997_8d2d648de3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879997_8d2d648de3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879947_87e1821c10_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879947_87e1821c10_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Saint-Léonard сквозь витраж в одной из башен:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879982_acd6b44cd9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879982_acd6b44cd9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Старая лестница внутри замка:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879937_bd42479d4c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879937_bd42479d4c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49822762201_c6d601d316_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49822762201_c6d601d316_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Когда-то здесь кипела жизнь…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879907_ddf5f67586_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879907_ddf5f67586_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49823078742_4c8168a7d7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49823078742_4c8168a7d7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49822762506_18ec4159e2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49822762506_18ec4159e2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид со стен на город:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49823078572_10eb307cc0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49823078572_10eb307cc0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49823078627_82082ca815_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49823078627_82082ca815_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49823078687_39a880d762_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49823078687_39a880d762_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот, вроде бы все про Фужер. И про Ренн. И про Сен-Мало. И про Динан. И про Канкаль.</p>
+<p>Нас ждет TGV до Парижа. И там у нас будет еще полтора дня. И мы не будем отсиживаться в гостинице, не правда ли?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816569201_6cda5146b4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816569201_6cda5146b4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="париж-окончание">Париж. Окончание.</h2>
+<p>Ну что ж, и еще немного прогулок по Парижу. Две вещи, которые не надоедают – бродить по кладбищам и толкаться на рынках в выходной день. Начнем с первого, по порядку. Кладбище Монпарнас совсем рядом с нашей гостиницей, так что идем туда.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816037153_402ee01282_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816037153_402ee01282_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879867_b02da9099a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879867_b02da9099a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816569171_fc5f910439_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816569171_fc5f910439_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816037103_95d17d75ba_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816037103_95d17d75ba_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879737_4491a423d7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879737_4491a423d7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879717_b27a571778_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879717_b27a571778_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816037023_0264d0f325_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816037023_0264d0f325_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816036998_8a10883a28_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816036998_8a10883a28_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816569011_748f980800_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816569011_748f980800_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816035128_6d812334d1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816035128_6d812334d1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Очень индивидуальные надгробья встречаются:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816878102_f5dc97b573_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816878102_f5dc97b573_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816567276_568c0fe16e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816567276_568c0fe16e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816035158_13df132049_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816035158_13df132049_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49823078322_d34b91fd5d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49823078322_d34b91fd5d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну и, само собой, не пройти мимо этой могилы непутевого и знаменитого сына Иосифа Карловича Гинзбурга и Ольги Борисовны Бесман, с неизменными билетиками на метро и пачками сигарет:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49822226858_e1ba5983b0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49822226858_e1ba5983b0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это – субботний рынок на бульваре Эдгара Кине, почти за стеной от кладбища:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816036933_047a1c7ff3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816036933_047a1c7ff3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816036893_d823732c22_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816036893_d823732c22_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879592_2d5970a450_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879592_2d5970a450_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Парижанка. Уже парижанка! -</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879577_fb1532c3a8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879577_fb1532c3a8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816036788_78866b53ee_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816036788_78866b53ee_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879542_45d8d68db0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879542_45d8d68db0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568846_0da615f84d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568846_0da615f84d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879492_873c897531_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879492_873c897531_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816036723_5deb9b5509_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816036723_5deb9b5509_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568791_115aea674c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568791_115aea674c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Как я люблю финики и кофе со сливками!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568761_283ebce70d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568761_283ebce70d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и «санкционочка»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879447_fdc4347bb5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879447_fdc4347bb5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Торговцы в хорошем настроении:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568711_b27f3332fa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568711_b27f3332fa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568671_b16d399f0c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568671_b16d399f0c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816036623_786d6a9366_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816036623_786d6a9366_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Рыбка</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816036608_0f114a311c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816036608_0f114a311c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>и паэлья</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879357_112b9dbf3b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879357_112b9dbf3b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А мы теперь отправимся в квартал Сен-Жермен, погуляем там, поглазеем на субботнюю парижскую жизнь!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568566_aee08a511d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568566_aee08a511d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568546_5b9857ae5a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568546_5b9857ae5a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568531_a701d596b4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568531_a701d596b4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568471_ca557c221e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568471_ca557c221e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879147_81c0391cf6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879147_81c0391cf6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879137_809d335705_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879137_809d335705_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879122_0aa8ef7472_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879122_0aa8ef7472_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879102_22ffa9c011_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879102_22ffa9c011_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568371_41e1237bd0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568371_41e1237bd0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879067_b54c61d23f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879067_b54c61d23f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816879052_fb5025b434_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816879052_fb5025b434_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816036278_e2442c0f1d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816036278_e2442c0f1d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816036203_4c75b64ec5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816036203_4c75b64ec5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568276_1c6fdd6da8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568276_1c6fdd6da8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816036098_7b10b9ef99_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816036098_7b10b9ef99_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816878957_85fce62a21_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816878957_85fce62a21_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816878952_62b620bc1c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816878952_62b620bc1c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Перекур»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568176_c5c5c376e1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568176_c5c5c376e1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816878897_87bbf7202b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816878897_87bbf7202b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А мы уже добрались, похоже, до Пантеона, до Сент-Этьенн-дю-Мон:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568116_a111fa5e93_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568116_a111fa5e93_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816568091_322d8f279d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816568091_322d8f279d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816035933_e514ca6439_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816035933_e514ca6439_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816035918_9b71f82ea6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816035918_9b71f82ea6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816878797_cac780a8ac_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816878797_cac780a8ac_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816035818_5fe57a2997_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816035818_5fe57a2997_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816567986_94ce2206db_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816567986_94ce2206db_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>У букинистов на набережных Сены:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816878747_6773e77f61_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816878747_6773e77f61_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816567946_f365f8df8c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816567946_f365f8df8c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Собор. Фрагменты:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816567921_a1df558ba5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816567921_a1df558ba5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816878667_6b4454c153_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816878667_6b4454c153_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816035713_f0d4b45e6c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816035713_f0d4b45e6c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На берегу Сены. Ощущается некоторая размолвка. Надеюсь, они помирятся:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816567881_9c73a03ece_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816567881_9c73a03ece_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Лебеди тут с голоду не умрут, бесспорно:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816878592_e65dbcf085_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816878592_e65dbcf085_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Утиный выводок:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816878552_365c4c22dc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816878552_365c4c22dc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тяжкий труд фотографа:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816035573_63792e9555_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816035573_63792e9555_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Солнце валится к закату:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816878477_8ce15062f4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816878477_8ce15062f4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Институт Франции:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816878447_7bffdece0c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816878447_7bffdece0c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сейчас, в 2020-м, это называется «социальное дистанцирование»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816035448_6e7cb0fe0c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816035448_6e7cb0fe0c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот здесь все хорошо. Ну, по крайней мере, сейчас:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816878342_1fc66e254a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816878342_1fc66e254a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вертикали Парижа:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816567546_6c5156d3cc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816567546_6c5156d3cc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Баржи на Сене:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816035333_3b8d12296a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816035333_3b8d12296a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Two towers»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816567511_8bdf932a1c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816567511_8bdf932a1c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816035243_c99e60df89_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816035243_c99e60df89_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И снова над Парижем спускается вечер…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816567471_6bc1d60589_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816567471_6bc1d60589_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/49816885387_029f20c16c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/49816885387_029f20c16c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну что ж. Неожиданно быстро я написал этот рассказ. Не знаю, как вы – я получил удовольствие! Мне было приятно вновь вспомнить то путешествие весной четырнадцатого, в надежде, что этот морок пройдет, и фраза «наш полет проходит на высоте…» снова зазвучит и снова станет предвестником новых ярких впечатлений. Чего и всем нам желаю, и на этом не прощаюсь, но говорю «до новых встреч!»</p>
+  </article>
+</div>
+<script>
+(function() {
+  var pending = []; // images that entered the buffer zone, not yet loading/loaded
+  var loading = false;
+
+  function distanceFromViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;      // above viewport
+    if (rect.top > vh) return rect.top - vh;        // below viewport
+    return 0;                                       // on screen right now
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        if (d === 0) break; // already on screen -- can't beat that
+      }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var img = pickNext();
+    if (!img) return;
+    loading = true;
+    loadImage(img, img.getAttribute('data-src'));
+  }
+
+  function loadImage(img, src) {
+    img.onload = function() {
+      img.classList.add('loaded');
+      img.removeAttribute('data-src');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      // Flickr (or the network) hiccuped on this one request -- don't give
+      // up on it and don't block everything else behind it. Free the
+      // queue immediately, and let this image rejoin the pending pool
+      // after a short, growing backoff so it gets picked up again.
+      loading = false;
+      var attempt = (img._retryCount || 0) + 1;
+      img._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() {
+        pending.push(img);
+        processQueue();
+      }, delay);
+      processQueue();
+    };
+    img.src = src;
+  }
+
+  // Images join the pending pool once they're within reach; every time a
+  // slot frees up, pickNext() re-checks CURRENT positions and grabs
+  // whichever pending image is closest to (or actually on) screen right
+  // now -- so a fast scroll or scrollbar drag doesn't leave visible
+  // photos stuck behind everything the scroll happened to pass over.
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>

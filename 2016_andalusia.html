@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Цвета Андалусии — белые города, песчаные дворцы, алое фламенко</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  nav.toc,
+  article > p,
+  article > h2,
+  article > ul.summary-list,
+  article > blockquote.citation {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.masthead {
+    max-width: none;
+    padding: 8vw 0 4vw;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://img-fotki.yandex.ru/get/369579/2188450.1f/0_1e895c_55b263ef_orig') center 40% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  nav.toc {
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+    font-family: var(--sans);
+  }
+  nav.toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li { margin: 0 0 0.85rem; break-inside: avoid; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.3;
+    font-size: 0.98rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent-soft); color: var(--accent); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 3.9rem 0 1.4rem;
+    padding-top: 0.2rem;
+    color: var(--text);
+    position: relative;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin-bottom: 1.1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-soft); }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+  a:hover { color: #6b5228; }
+  a.internal-link-pending {
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--accent-soft);
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.summary-list {
+    background: #f4f1ea;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem 1.6rem 2.4rem;
+    margin: 0 0 3rem;
+  }
+  ul.summary-list li { margin-bottom: 0.7rem; }
+  ul.summary-list li:last-child { margin-bottom: 0; }
+  blockquote.citation {
+    margin: 2rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  blockquote.citation p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  figure.photo { margin: 2.6rem 0; }
+  figure.photo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.08), 0 8px 24px rgba(43,41,37,0.06);
+  }
+  img.lazy-photo {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 40px;
+    background: var(--line);
+  }
+  img.lazy-photo.loaded { opacity: 1; }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 2.2rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  p.epigraph {
+    text-align: right;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+  p.fin {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  p.subhead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { width: 88%; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17.5px; }
+    .wrap { width: 90%; padding: 10vw 0 16vw; }
+    header.masthead h1 { font-size: 1.85rem; }
+    nav.toc ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Цвета Андалусии — белые города, песчаные дворцы, алое фламенко</h1>
+  </header>
+
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      <ul>
+    <li><a href="#предисловие">Предисловие</a></li>
+    <li><a href="#малага">Малага</a></li>
+    <li><a href="#гранада">Гранада</a></li>
+    <li><a href="#кордова">Кордова</a></li>
+    <li><a href="#севилья">Севилья</a></li>
+    <li><a href="#севилья-день-второй">Севилья. День второй.</a></li>
+    <li><a href="#кадис">Кадис</a></li>
+    <li><a href="#севилья-продолжение">Севилья. Продолжение.</a></li>
+    <li><a href="#малага-перед-возвращением-домой">Малага. Перед возвращением домой.</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <article>
+<h2 id="предисловие">Предисловие</h2>
+<p>А не спеть ли и мне свою песню про Андалусию? Ну, хотя бы пару куплетов добавить от себя к нашему разноголосому хору?</p>
+<p>Я тут подумал: чем, прежде всего, меня всегда влекла к себе Андалусия? Мне кажется, звуком своего имени, а потом уже всем остальным. Ан-да-лу-си-я. Произносишь его медленно – и рождается множество образов, частью «испанских», частью «арабских». И цвета этих образов – ослепительно белый, охра и терракота. А поверх – брызги красного, местами. Вряд ли я один такой?..</p>
+<p>Как писал Александр Дюма (жаль, он не имел возможности высказать это прямо на этом форуме, за отсутствием такового в его время, и ему, бедняге, пришлось ради этого писать отдельную книжку «Сальтеадор»): «Андалусия, расположенная между Африкой и Европой, так сказать, край серединный, — она наделена красотами одной и богатствами другой, но лишена их неприятных, тягостных особенностей: тут растительность, пышную, как в Митидже, орошают прохладные воды Пиренеев; тут нет испепеляющего зноя Туниса, ни жестоких морозов России.» Видимо, знал человек, о чем пишет.</p>
+<p>Для нас с женой это было наше первое путешествие в Испанию. Пока единственное, но очень надеюсь, что не последнее. И хотя говорят, что Андалусия – это ни разу не Испания, и вообще – ехать надо сразу в Страну Басков (есть и такое радикальное мнение среди моих друзей), начать знакомство с Испанией с Андалусии, по-моему, совсем не плохо. Мы так и поступили. Тому уже почти два года назад, в 2016-м, в самом конце апреля. Своим ходом, как обычно – на автобусах и поездах.</p>
+<p>Что это было:</p>
+<p>- Авиарейсом «Аэрофлота» из Москвы в Малагу (билеты приемлемой стоимости, благодаря насыщенности направления на Коста-дель-Соль и прочие курорты юга Испании).</p>
+<p>- Полтора дня в Малаге – две ночевки в хостеле, в семейном номере на двоих. Стаи зеленых попугаев в кронах пальм. Кафедральный собор и Манкита. Военный парад, испанские военные «мущщины» с щетиной и курчавой грудью. Наше гражданское размахивание красно-желто-красными флажками на обочине. Алькасаба и Гибральфаро. Вино и фламенко.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769132/2188450.1e/0_1e8931_6161a280_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769132/2188450.1e/0_1e8931_6161a280_orig" alt="" loading="lazy"></noscript></figure>
+<p>- Автобусом ALSA в Гранаду.</p>
+<p>- Два дня в Гранаде. Две экскурсии в Альгамбру (пусть будет такая транскрипция) и сады Хенералифе – первая дневная, без дворцов Насридов, и, под конец следующего дня, ночная – уже по дворцам. Ночная, конечно, впечатляет. Альбайсин (два раза туда ходили гулять, и почти заблудились один раз, но совсем заплутать не удалось, увы). Гранадский собор и королевская Капелла. И тапас, тапас, тапас.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025205/2188450.20/0_1e8978_2b4e2a79_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025205/2188450.20/0_1e8978_2b4e2a79_orig" alt="" loading="lazy"></noscript></figure>
+<p>- Автобусом ALSA в Кордову.</p>
+<p>- Один день в Кордове. Ни на что не похожая и где-то даже пугающая мечеть-собор Мескита. Ночной зефир струит эфир, шумит, бежит Гвадалквивир. Кордовские дворики и сальморехо.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368796/2188450.20/0_1e8987_c8446fdc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368796/2188450.20/0_1e8987_c8446fdc_orig" alt="" loading="lazy"></noscript></figure>
+<p>- На поезде RENFE в Севилью.</p>
+<p>- Два дня в Севилье. Все, что могли посмотреть в Севилье – посмотрели. Собор с Хиральдой и королевский Алькасар, площадь Испании и парк Мария-Луиза, Palacio de Lebrija.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373752/2188450.23/0_1e8a1c_6ad7d97b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373752/2188450.23/0_1e8a1c_6ad7d97b_orig" alt="" loading="lazy"></noscript></figure>
+<p>- На поезде RENFE в Кадис.</p>
+<p>- День-вечер-ночь в Кадисе. Солнце, садящееся в океан под аплодисменты публики на мысе. Ночное гуляние по набережной.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.23/0_1e8a2d_28037655_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.23/0_1e8a2d_28037655_orig" alt="" loading="lazy"></noscript></figure>
+<p>- Возвращение в Севилью, и еще день там. Дом Пилата, Макарена, множество церквей и просто уличная жизнь.</p>
+<p>- Возвращение в Малагу, чтобы на утро отправиться в аэропорт. Рыбка в уютной бодеге поздно вечером и голосистые торговцы на утреннем оживленном рынке Атаразанас.</p>
+<p>Сойдет для первого раза?</p>
+<p>Билеты на все поезда и все автобусы куплены заранее через Интернет (сайты <a href="http://www.renfe.com/EN/viajeros/index.html" target="_blank" rel="noopener noreferrer">RENFE</a> и <a href="https://www.alsa.com/en/web/bus/alsa-experience/plan-your-journey/purchase-channels/internet" target="_blank" rel="noopener noreferrer">ALSA</a>). То же самое касается обеих экскурсий в гранадскую Альгамбру (я покупал на ticketmaster.es, но с тех пор, похоже, произошли изменения, так что я приведу вот эту ссылку: <a href="https://tickets.alhambra-patronato.es/en/" target="_blank" rel="noopener noreferrer">https://tickets.alhambra-patronato.es/en/</a>). Ну и использовал Booking.com для всех гостиниц в поездке.</p>
+<p>Среди рассказов об Андалусии, имевшихся к тому моменту на форуме, меня очень впечатлили и усилили желание туда поехать, прежде всего <a href="http://forum.awd.ru/viewtopic.php?p=848873#p848873" target="_blank" rel="noopener noreferrer">«Испания: 5 городов за 5 дней (центр и Андалусия)»</a> и <a href="http://forum.awd.ru/viewtopic.php?p=1506148#p1506148" target="_blank" rel="noopener noreferrer">«Прогулки по Андалусии (Малага, Ронда, Антекера)»</a> уважаемого savl1 и первая (единственная на тот момент) часть рассказа <a href="http://forum.awd.ru/viewtopic.php?p=5964242#p5964242" target="_blank" rel="noopener noreferrer">«Андалусия в условиях кризиса. Малага-Гранада-Кордова-Севилья-Кадис»</a> столь же уважаемой Mara-Li. Спасибо большое авторам!</p>
+<p>Кроме того, я штудировал путеводители - «Андалусия и Севилья» серии «Томас Кук» и «Андалусия» серии «Оранжевый гид».</p>
+<p>Подготовка также включала мое примерно четырехмесячное интенсивное изучение испанского языка, по часу-полтора в день. Это я пишу, конечно, из чистого хвастовства. Это было вовсе необязательно, но как-то давно хотелось прикоснуться и к этому языку, а вот повода не было. И вот он, отличный повод, наконец, замаячил на горизонте. Ну, что сказать – приятно все же иметь возможность хоть чуть-чуть, но пообщаться, обменяться осмысленной парой предложений с персоналом в гостиницах, с продавцами в лавках, с кассирами в кассах. Я даже выдержал десять минут разговора с таксистом (дамой) в Гранаде (так сложилось – пришлось взять, когда уезжали). Очень старался не оплошать, и, вроде, не слишком оплошал: я ее понимал, что-то такое про нас рассказывал, она меня понимала, «чего же боле? Свет решил, что он умен и очень мил» (С). На самом деле мне просто нравится учить новые языки.</p>
+<p>Ну, а теперь немножко больше подробностей и, конечно, фотографии…</p>
+<h2 id="малага">Малага</h2>
+<p>Из аэропорта в Малагу мы прибыли уже ночью, на электричке. И той же ночью в номере меня покусали злобные москиты. Меня вообще комары кусают везде и всегда, а тут местные твари прямо-таки вошли во вкус. И, несмотря на то, что в нашем номере в хостеле над кроватью висела противомоскитная сетка, полностью ее закрывающая по кругу, они таки забирались под нее и хрустели и чавкали у меня над ухом моей собственной сочной плотью, гулко глотая мои драгоценные эритроциты. Я, конечно, перед этим окно-то открыл на ночь – проветрить, иначе совсем душно. Ну, и заслуженно получил свое. В общем, спал так себе. И на этом, пожалуй, о плохом – все.</p>
+<p>Утром разгородили жалюзи - погода была отличная, и наше знакомство c Малагой мы начали с визита в кафедральный собор. Из Вики (я, с вашего позволения, буду приводить ниже всякие историко-архитектурные справки прямыми цитатами оттуда и еще двух-трех сайтов, которые первыми попадаются в поисковой выдаче): «Строительство собора в Малаге началось в 1528 году на месте арабской мечети и завершилось в 1782 году... Проектом предусматривалось здание с двумя башнями, но из-за нехватки средств была возведена только одна башня. Поэтому Малагский собор носит в народе название «Ла Манкита» (исп. La Manquita — «Однорукая дама»).»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.1e/0_1e8919_41ca7089_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.1e/0_1e8919_41ca7089_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1d/0_1e890b_ac2c2348_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1d/0_1e890b_ac2c2348_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/759574/2188450.1e/0_1e8912_bd3b7456_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/759574/2188450.1e/0_1e8912_bd3b7456_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.1e/0_1e8914_ba53d7ec_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.1e/0_1e8914_ba53d7ec_orig" alt="" loading="lazy"></noscript></figure>
+<p>Как написано на одном сайте, «кстати, куда именно ушли деньги, выделенные на постройку второй башни, толком неизвестно. Но официальная версия — на помощь Америке в борьбе за независимость.» Как нам все это близко…</p>
+<p>И еще, с того же сайта: «кафедральный собор Малаги — второй по высоте храм в Андалусии. Выше него только Хиральда в Севилье. Высота здания достигает 115 м, 84 м — такова высота северной башни храма.»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.1e/0_1e8918_1695b3ed_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.1e/0_1e8918_1695b3ed_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1d/0_1e890d_5067cca9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1d/0_1e890d_5067cca9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e890e_6ae85fb4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e890e_6ae85fb4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906518/2188450.1e/0_1e890f_9a699fca_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906518/2188450.1e/0_1e890f_9a699fca_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1d/0_1e890c_3e5f6aad_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1d/0_1e890c_3e5f6aad_orig" alt="" loading="lazy"></noscript></figure>
+<p>Выйдя из собора, мы было направили наши стопы в сторону крепости Алькасабы, но тут неожиданно выяснилось, что в городе происходит какое-то действо. Народ стекается вниз, ближе к набережным, точнее – к Парковой аллее (Paseo del Parque). Мы, конечно, тоже устремились туда. Не прошло и десяти минут – нам вручили по испанскому флажку средней величины (хранится теперь дома в шкафу за стеклом), дабы махать при прохождении воинских подразделений. А как отказать, когда такая девушка вручает тебе лично, улыбаясь и глядя прямо тебе в глаза, испанский флаг!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1023055/2188450.1e/0_1e8913_c87332de_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1023055/2188450.1e/0_1e8913_c87332de_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e8915_6e792362_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e8915_6e792362_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, а жене моей вообще только дай поучаствовать в любой аутентичной «движухе».</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1e/0_1e8917_74e6fc0f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1e/0_1e8917_74e6fc0f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.1e/0_1e8916_d176ebf1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.1e/0_1e8916_d176ebf1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Постфактум выяснил, что мы присутствовали на Параде Королевской гвардии и подразделений испанского Легиона (Parada militar de la Guardia Real "Málaga 2016"). Даже нашел, спустя два-то года, <a href="https://www.youtube.com/watch?v=eXYTm422iIY" target="_blank" rel="noopener noreferrer">видео на Youtube</a>с этого празднества. Поискал нас на этом видео, но мы были на противоположной стороне аллеи и метров в ста левее…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/965297/2188450.1e/0_1e8911_38c35070_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/965297/2188450.1e/0_1e8911_38c35070_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1023055/2188450.1e/0_1e891a_91ea3097_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1023055/2188450.1e/0_1e891a_91ea3097_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.1e/0_1e891b_764b1cb7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.1e/0_1e891b_764b1cb7_orig" alt="" loading="lazy"></noscript></figure>
+<p>Военные были разные – и в исторических костюмах при историческом же оружии и современные подразделения (причем в них наличествовали и девушки). Похоже, военная форма испанского легионера предполагает (1) ухоженную густую щетину, (2) закатанные рукава рубашки и (3) расстегнутые верхние пуговицы на груди, обнажающие непременно волосатую курчавую грудь. Жена была исключительно вдохновлена парадом! Ну, а я так, с фотоаппаратом рядышком присутствовал. Тоже, конечно, втянул живот и попытался было расстегнуть украдкой свою рубашку на груди, да вспомнил, что я в футболке. Неудачник, в общем. Что делать…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/517076/2188450.1e/0_1e891c_fac8f03e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/517076/2188450.1e/0_1e891c_fac8f03e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e891d_94270328_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e891d_94270328_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/749077/2188450.1e/0_1e891e_96282fb2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/749077/2188450.1e/0_1e891e_96282fb2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.1e/0_1e891f_4f8d4307_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.1e/0_1e891f_4f8d4307_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906517/2188450.1e/0_1e8920_64511261_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906517/2188450.1e/0_1e8920_64511261_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e8921_44c2da8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e8921_44c2da8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e8924_cc167e29_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e8924_cc167e29_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну а потом мы отправились в Алькасабу. Согласно Вики, «крепость Малага (исп. Alcazaba de Málaga) — арабское фортификационное сооружение… Основана в VIII веке, однако основные строительные работы проводились в середине XI века для правителей династии Зиридов в Гранаде... Крепость считается лучше всего сохранившейся алькасабой в Испании…». Про Алькасабу можно более подробно почитать, например, <a href="https://ispaniagid.ru/alcazaba-starinnaya-arabskaya-krepost-malagi/" target="_blank" rel="noopener noreferrer">вот тут</a>).</p>
+<p>Ну а от меня - несколько фотографий Алькасабы изнутри и снаружи:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765007/2188450.1e/0_1e8928_aff9984f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765007/2188450.1e/0_1e8928_aff9984f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.1e/0_1e8922_75a86e33_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.1e/0_1e8922_75a86e33_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/965297/2188450.1e/0_1e8925_f2134034_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/965297/2188450.1e/0_1e8925_f2134034_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025205/2188450.1e/0_1e8929_66b665f9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025205/2188450.1e/0_1e8929_66b665f9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/965297/2188450.1e/0_1e8923_8c3693b3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/965297/2188450.1e/0_1e8923_8c3693b3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.1e/0_1e8926_a5841186_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.1e/0_1e8926_a5841186_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/967052/2188450.1e/0_1e8927_560bcf79_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/967052/2188450.1e/0_1e8927_560bcf79_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.1e/0_1e892a_ba4f6bd1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.1e/0_1e892a_ba4f6bd1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.1e/0_1e892b_487b29f8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.1e/0_1e892b_487b29f8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e892c_6730cb2d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e892c_6730cb2d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765189/2188450.1e/0_1e892d_11090c56_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765189/2188450.1e/0_1e892d_11090c56_orig" alt="" loading="lazy"></noscript></figure>
+<p>Выше Алькасабы находится другая крепость – Гибральфаро. Обе крепости соединяются между собой дорогой, обнесённой зигзагообразными стенами. «Эти два укреплённых строения в XI — XIV вв. формировали оборонительную систему, которая считалась самой могущественной во всей мавританской Испании».</p>
+<p>В общем, обливаясь потом (было уже жарко, и мы еще не акклиматизировались), вскарабкались мы на Гибральфаро. Вот несколько видов из Алькасабы и Гибральфаро в сторону моря и в сторону Малаги:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765189/2188450.1e/0_1e892e_2bb62542_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765189/2188450.1e/0_1e892e_2bb62542_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368796/2188450.1e/0_1e892f_5bd978bb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368796/2188450.1e/0_1e892f_5bd978bb_orig" alt="" loading="lazy"></noscript></figure>
+<p>В центре – Манкита, слева – Алькасаба:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.1e/0_1e8930_3f0f61ff_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.1e/0_1e8930_3f0f61ff_orig" alt="" loading="lazy"></noscript></figure>
+<p>На улицах Малаги тем временем проходил ежегодный испанский кинофестиваль (см. <a href="https://en.wikipedia.org/wiki/M%C3%A1laga_Film_Festival" target="_blank" rel="noopener noreferrer">тут</a> и <a href="http://www.visitcostadelsol.com/whats-on/malaga-film-festival-2016-p81541" target="_blank" rel="noopener noreferrer">тут</a>), так что публика соответствовала. Порой довольно колоритные персонажи попадались, когда мы гуляли по улицам.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.1e/0_1e8910_7138b639_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.1e/0_1e8910_7138b639_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/987895/2188450.1e/0_1e8936_ce162e4a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/987895/2188450.1e/0_1e8936_ce162e4a_orig" alt="" loading="lazy"></noscript></figure>
+<p>А ближе к вечеру мы пришли в ресторанчик <a href="http://www.restaurantevinomio.es/en/" target="_blank" rel="noopener noreferrer">Vino mio</a> на Plaza Jerónimo Cuervo, где еще из Москвы мы забронировали столик на представление фламенко, как советовал savl1.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e8937_ddf60589_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1e/0_1e8937_ddf60589_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.1e/0_1e8938_c85fcdde_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.1e/0_1e8938_c85fcdde_orig" alt="" loading="lazy"></noscript></figure>
+<p>В общем, несмотря на то, что это все, очевидно, попадает прямо в разряд «типичного туристического развлекалова», должен признать, что мы получили удовольствие и от еды с вином и от самого представления. Даже такое, «коммерческое», фламенко все равно довольно притягательно.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.1e/0_1e8932_e65fd239_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.1e/0_1e8932_e65fd239_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/940943/2188450.1e/0_1e8933_f3782c74_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/940943/2188450.1e/0_1e8933_f3782c74_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373339/2188450.1e/0_1e8934_c7f1b89d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373339/2188450.1e/0_1e8934_c7f1b89d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/988220/2188450.1e/0_1e8935_7c298643_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/988220/2188450.1e/0_1e8935_7c298643_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906517/2188450.1e/0_1e8939_e1a57ac_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906517/2188450.1e/0_1e8939_e1a57ac_orig" alt="" loading="lazy"></noscript></figure>
+<p>Как оказалось, как раз снаружи ресторана на небольшой площади перед театром Сервантеса располагалась «красная ковровая дорожка» кинофестиваля, так что площадь ближе к ночи была запружена народом – в основном, совсем молодыми людьми, которые жаждали лицезреть своих кумиров, а то и – предел мечтаний – сделать с ними селфи.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.1e/0_1e893a_a5391c8d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.1e/0_1e893a_a5391c8d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/517076/2188450.1e/0_1e893b_473cbd1e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/517076/2188450.1e/0_1e893b_473cbd1e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.1f/0_1e8942_11bef433_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.1f/0_1e8942_11bef433_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e8943_3e10325b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e8943_3e10325b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/904305/2188450.1f/0_1e894c_58964147_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/904305/2188450.1f/0_1e894c_58964147_orig" alt="" loading="lazy"></noscript></figure>
+<p>А на следующий день ровно в 10 утра мы погрузились на автобус ALSA и отправились в Гранаду (стоимость одного билета была 15.03 евро на тот момент ).</p>
+<h2 id="гранада">Гранада</h2>
+<p>В Гранаде мы доехали от автовокзала до центра города на автобусе SN1, без пересадок. Вот <a href="http://www.transportesrober.com/transporte/planificador.htm" target="_blank" rel="noopener noreferrer">здесь</a> имеется планировщик по Гранаде, который поможет вам составить ваш собственный маршрут. И вот как выглядит в нем поездка от автовокзала до Plaza Nueva:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/988220/2188450.24/0_1e8ee0_ce9c7de3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/988220/2188450.24/0_1e8ee0_ce9c7de3_orig" alt="" loading="lazy"></noscript></figure>
+<p>Мы жили в гостинице <a href="https://www.booking.com/hotel/es/puertadelasgranadas.ru.html?aid=325219" target="_blank" rel="noopener noreferrer">Puerta de las Granadas</a> прямо у подножья холма, над которым высится Альгамбра. Это совсем рядом с Plaza Nueva, прямо на улочке, поднимающейся к Альгамбре. С другой стороны, и Альбайсин и королевская Капелла тоже недалеко, что удобно.</p>
+<p>Ну, и как сейчас пишут, «чтобы два раза не вставать» - про написание «Альгамбра». Конечно, более правильно звучало бы «Аль-Амбра», но есть уже литературная традиция, и я не буду пытаться ее исправить. Мы же говорим «Париж», «Генрих IV» и прочее и не морщимся, правда ведь?</p>
+<p>Итак, в первый же наш день у нас были забронированы билеты в Альгамбру на время с 14:00 до 20:00. К сожалению, я припозднился и успел купить только билеты, дающие право на посещение условно «внешней» части Альгамбры (Алькасабы, «Башни бодрствования» (Torre de la Vela) и дворца Карла V) плюс садов Хенералифе на соседнем холме, без осмотра внутренних помещений дворцов Насридов (стоимость билетов – 8.40 с носа – вот они, электронные билетики, лежат…). А в сами дворцы мы пойдем поздно вечером (точнее, запускают в 22:30, и нужно прибыть чуть заранее) второго дня нашей гранадской жизни – это отдельные билеты (по 9.40 евро на апрель 2016-го). И, в общем, я не жалею, что так вышло – получилось хорошее сочетание.</p>
+<p>Вид из Альгамбры на «белый квартал» Альбайсин:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1f/0_1e8944_d3dd6ebb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1f/0_1e8944_d3dd6ebb_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вики: «Альбайсин был добавлен в список Всемирного наследия ЮНЕСКО к уже охраняемым крепости Альгамбра и садам Хенералифе как богатое хранилище народной архитектуры мавров, которая гармонично соединяется с традиционной архитектурой Андалусии... Холм, на котором расположен Альбайсин, был заселён ещё во времена Древнего Рима. В середине VIII века правитель региона Асап бен Абдеррахман построил крепость (касба) на месте современной Плаза-де-Сан-Николас... В период правления династии Насридов город процветал, что отразилось в развитии Альбаисина в середине XIV века — он стал кварталом арабских и еврейских мастеров и торговцев. После завершения Реконкисты в 1492 году население Альбаисина выросло до 60 тыс. человек. Сочетание крещёных оставшихся арабов и притоком христианского населения дало новый толчок развитию квартала...»</p>
+<p>A это вид в противоположную сторону, на горы Сьерра-Невада:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.1f/0_1e8945_292d2a6e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.1f/0_1e8945_292d2a6e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.1e/0_1e893d_4a957fa0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.1e/0_1e893d_4a957fa0_orig" alt="" loading="lazy"></noscript></figure>
+<p>Одно из сооружений в комплексе Альгамбра - Дворeц Карла V.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/486600/2188450.1e/0_1e893e_bdd1fc70_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/486600/2188450.1e/0_1e893e_bdd1fc70_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вики: «Испанский король Карлос, и в то же время император Священной Римской империи Карл V, взял в жёны в 1526 году Изабеллу Португальскую, которая приходилась ему двоюродной сестрой. Карл V в Испании почти не жил, за что получил прозвище «отсутствующий король». Но свадьба прошла в городе Севилья. После бракосочетания молодожёны перебрались в тихую Гранаду и несколько месяцев прожили в апартаментах бывших мавританских халифов в Альгамбре. Небольшие помещения чуждой для короля мавританской архитектуры привлекали своей экзотикой и необычностью. Но жить в них король не хотел, потому что статус короля Испании и императора вынуждал иметь роскошную и большую по размерам резиденцию.</p>
+<p>Так возник замысел создать новый и роскошный дворец именно в Альгамбре. На восточном участке крепостного двора был пустырь, который и отвели под будущий дворец. ...Но его строительство так и не было закончено, и король в нём никогда не жил. С 1958 года в здании располагается Му­зей изо­бра­зительных ис­кусств.»</p>
+<p>Да – мы еще <a href="https://www.ozon.ru/context/detail/id/143591999/" target="_blank" rel="noopener noreferrer">купили книжку</a> «Альгамбра под микроскопом. Иллюстрированный путеводитель по Альгамбре и Хенералифе», на русском. Как написано на сайте Озона, «этот путеводитель создавался два десятка лет исследователями всего комплекса Альгамбры. Помимо интересного текста с характеристикой всех объектов комплекса, включает 422 цв. фотографии, гравюры, карты, схемы, информацию о режиме работы музея и т.д. Для всех, кто увлечен Альгамброй, книга будет очень увлекательной»). «Увлечен… - увлекательной…», ну да ладно, оставим придирки. Ну, в общем, да, детально и довольно познавательно.</p>
+<p>Итак, мы походили по Альгамбре; прошлись по «нижним» и «верхним» садам Хенералифе…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765674/2188450.1f/0_1e894d_15a8ba5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765674/2188450.1f/0_1e894d_15a8ba5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.1f/0_1e894e_b52d1490_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.1f/0_1e894e_b52d1490_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/770612/2188450.1f/0_1e8948_c18a21b8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/770612/2188450.1f/0_1e8948_c18a21b8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/965297/2188450.1f/0_1e8949_a791acc7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/965297/2188450.1f/0_1e8949_a791acc7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.1f/0_1e894f_33807182_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.1f/0_1e894f_33807182_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.1f/0_1e8950_b2e8eb6a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.1f/0_1e8950_b2e8eb6a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e8951_bfe143db_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e8951_bfe143db_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368796/2188450.1f/0_1e8952_bfab545_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368796/2188450.1f/0_1e8952_bfab545_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768352/2188450.1f/0_1e8953_ab2d770d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768352/2188450.1f/0_1e8953_ab2d770d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.1f/0_1e8954_67a2bbf2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.1f/0_1e8954_67a2bbf2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765189/2188450.1f/0_1e894a_bd3152d2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765189/2188450.1f/0_1e894a_bd3152d2_orig" alt="" loading="lazy"></noscript></figure>
+<p>Спустились по затененным ступеням лестницы, по перилам которой, журча, сбегают вниз вдоль лестницы ручейки воды; посидели там на скамейке с видом на Альгамбру; жена даже задремала на моем плече минут на десять.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.1f/0_1e894b_aebc687d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.1f/0_1e894b_aebc687d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.1e/0_1e893f_60c35b17_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.1e/0_1e893f_60c35b17_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.1e/0_1e8940_83c30d45_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.1e/0_1e8940_83c30d45_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.1f/0_1e8941_c75c928c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.1f/0_1e8941_c75c928c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/749077/2188450.1f/0_1e8946_5acab125_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/749077/2188450.1f/0_1e8946_5acab125_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361712/2188450.1f/0_1e8959_747df204_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361712/2188450.1f/0_1e8959_747df204_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/965297/2188450.1f/0_1e8947_9bd7d116_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/965297/2188450.1f/0_1e8947_9bd7d116_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765007/2188450.1f/0_1e8956_ef0c4eb6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765007/2188450.1f/0_1e8956_ef0c4eb6_orig" alt="" loading="lazy"></noscript></figure>
+<p>Тут уже и солнце слегка ослабло, и воздух посвежел. Мы спустились обратно вниз, перешли на другую сторону Plaza Nueva и поднялись на Альбайсин. Это, конечно, большое удовольствие – гулять по его выбеленным улочкам. Заблудиться легко, и ничего плохого в этом нет…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/987895/2188450.1f/0_1e8971_b0789704_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/987895/2188450.1f/0_1e8971_b0789704_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.1f/0_1e895b_3179935f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.1f/0_1e895b_3179935f_orig" alt="" loading="lazy"></noscript></figure>
+<p>На торговых улицах нижнего Альбайсина:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/766539/2188450.1f/0_1e8955_31acbf93_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/766539/2188450.1f/0_1e8955_31acbf93_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979410/2188450.1e/0_1e893c_ee6da1ca_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979410/2188450.1e/0_1e893c_ee6da1ca_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361712/2188450.1f/0_1e8957_8a3361de_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361712/2188450.1f/0_1e8957_8a3361de_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e895f_a8189fb2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e895f_a8189fb2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e896c_231a8b11_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e896c_231a8b11_orig" alt="" loading="lazy"></noscript></figure>
+<p>Шикарный вид на Альгамбру открывается со смотровой площадки Mirador San Nicolás, довольно высоко расположенной на холме Альбайсин, практически на уровне самой Альгамбры…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.1f/0_1e8958_54208d14_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.1f/0_1e8958_54208d14_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479612/2188450.1f/0_1e895a_4c96db9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479612/2188450.1f/0_1e895a_4c96db9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1f/0_1e8963_1d385d2c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1f/0_1e8963_1d385d2c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Мостовая у San Nicolás:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/909751/2188450.1f/0_1e895d_520b9e9d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/909751/2188450.1f/0_1e895d_520b9e9d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/964814/2188450.1f/0_1e895e_dbca46ee_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/964814/2188450.1f/0_1e895e_dbca46ee_orig" alt="" loading="lazy"></noscript></figure>
+<p>Колоритный гитарист на San Nicolás. Прямо-таки страстно пел.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.20/0_1e897b_a6e74121_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.20/0_1e897b_a6e74121_orig" alt="" loading="lazy"></noscript></figure>
+<p>Гуляли по Альбайсину до вечера (на Сакромонте, правда, так и не перебрались).</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.20/0_1e8976_1edf9e0c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.20/0_1e8976_1edf9e0c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/517076/2188450.20/0_1e8977_11669c48_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/517076/2188450.20/0_1e8977_11669c48_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.20/0_1e8975_f509c13d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.20/0_1e8975_f509c13d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477095/2188450.20/0_1e897c_c6ff0e96_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477095/2188450.20/0_1e897c_c6ff0e96_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/987895/2188450.20/0_1e897d_84cdd9b5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/987895/2188450.20/0_1e897d_84cdd9b5_orig" alt="" loading="lazy"></noscript></figure>
+<p>Потом спустились вниз, и незамысловато поужинали в какой-то из многочисленных едален на открытом воздухе на набережной ручейка Дарро, между холмами Альгамбры и Альбайсина, на площадке, именуемой Paseo de los Tristes, около Paseo del Padre Manjón.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/904305/2188450.20/0_1e8986_9f859de_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/904305/2188450.20/0_1e8986_9f859de_orig" alt="" loading="lazy"></noscript></figure>
+<p>Утром второго дня мы отправились в Гранадский собор и Королевскую капеллу. Гранадский собор (кратко именуемый La Santa Iglesia Catedral Metropolitana de la Encarnación de Granada) возводился в XVI-XVII вв. как олицетворение освобождения города от мавров. Стоит он на месте бывшей мечети. Детали о соборе можно найти, например, <a href="https://ispaniagid.ru/catedral-de-granada/" target="_blank" rel="noopener noreferrer">здесь</a> (опять сайт этого парня один из первых в поиске). Вообще, довольно монументальное впечатление он производит изнутри.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.1f/0_1e8962_9b9621b7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.1f/0_1e8962_9b9621b7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.1f/0_1e8960_949da18_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.1f/0_1e8960_949da18_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765007/2188450.1f/0_1e8961_ad6843d9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765007/2188450.1f/0_1e8961_ad6843d9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/987895/2188450.1f/0_1e8964_9a6c9707_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/987895/2188450.1f/0_1e8964_9a6c9707_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.1f/0_1e8965_f27fae6a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.1f/0_1e8965_f27fae6a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768352/2188450.1f/0_1e896a_43c0d209_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768352/2188450.1f/0_1e896a_43c0d209_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025205/2188450.20/0_1e896d_4cdb531b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025205/2188450.20/0_1e896d_4cdb531b_orig" alt="" loading="lazy"></noscript></figure>
+<p>В XVI веке с северной стороны к храму была пристроена Королевская капелла - усыпальница католических королей Изабеллы Кастильской и Фердинанда Арагонского. Помимо католических королей, в капелле покоятся тела их дочери королевы Хуаны Безумной и её мужа Филиппа Красивого (подробнее можно посмотреть <a href="https://ispaniagid.ru/capilla-real-de-granada/" target="_blank" rel="noopener noreferrer">здесь</a>.</p>
+<p>Ну, и снова на Альбайсин, неторопливо гулять, ибо времени до вечерней экскурсии во Дворцы Насридов еще полно…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.1f/0_1e8966_a54e71aa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.1f/0_1e8966_a54e71aa_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e8968_f11b0663_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e8968_f11b0663_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.1f/0_1e895c_55b263ef_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.1f/0_1e895c_55b263ef_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.1f/0_1e8969_832b4b6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.1f/0_1e8969_832b4b6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e896b_d2dbdd22_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e896b_d2dbdd22_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e896e_6dea5846_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e896e_6dea5846_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/909751/2188450.1f/0_1e896f_8eb24fd3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/909751/2188450.1f/0_1e896f_8eb24fd3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e8970_48a6d808_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1f/0_1e8970_48a6d808_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.1f/0_1e8972_32057f49_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.1f/0_1e8972_32057f49_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.20/0_1e8973_8ddc9312_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.20/0_1e8973_8ddc9312_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373339/2188450.20/0_1e8974_7420f6c1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373339/2188450.20/0_1e8974_7420f6c1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/517076/2188450.20/0_1e8979_5b6f62e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/517076/2188450.20/0_1e8979_5b6f62e_orig" alt="" loading="lazy"></noscript></figure>
+<p>Горы Сьерра-Невада в просвете между белыми домами Альбайсина:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.20/0_1e897a_38ac042d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.20/0_1e897a_38ac042d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.20/0_1e897e_3fed5b5a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.20/0_1e897e_3fed5b5a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.20/0_1e897f_a3c1df9a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.20/0_1e897f_a3c1df9a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.20/0_1e8980_144651d6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.20/0_1e8980_144651d6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.20/0_1e8981_fce2af11_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.20/0_1e8981_fce2af11_orig" alt="" loading="lazy"></noscript></figure>
+<p>И снова Альгамбра:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1023055/2188450.20/0_1e8983_c2f66c79_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1023055/2188450.20/0_1e8983_c2f66c79_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765189/2188450.20/0_1e8985_f0eec81b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765189/2188450.20/0_1e8985_f0eec81b_orig" alt="" loading="lazy"></noscript></figure>
+<p>Здесь, внизу Альбайсина, мы перекусили супчиком и какими-то тапас, но очень вкусно:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.1f/0_1e8967_abfd8111_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.1f/0_1e8967_abfd8111_orig" alt="" loading="lazy"></noscript></figure>
+<p>Минус ночной экскурсии только один. Он в том, что она - ночная. То есть снимать практически невозможно без штатива. Вот нашел в архивах только пару фотографий орнаментов на стенах дворцов, снятых на смартфон…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765189/2188450.1d/0_1e8901_2c4651a5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765189/2188450.1d/0_1e8901_2c4651a5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1d/0_1e8903_fe6ab396_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1d/0_1e8903_fe6ab396_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368796/2188450.1d/0_1e8904_73fcad98_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368796/2188450.1d/0_1e8904_73fcad98_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025205/2188450.1d/0_1e8908_c51b95e4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025205/2188450.1d/0_1e8908_c51b95e4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361712/2188450.1d/0_1e8909_e2ada5a5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361712/2188450.1d/0_1e8909_e2ada5a5_orig" alt="" loading="lazy"></noscript></figure>
+<p>А так – впечатляет очень. Журчание фонтанчиков во двориках, черное небо, Альбайсин весь в огнях фонарей, обнажающих позади себя белые пятна стен…</p>
+<p>И утром мы уехали на автобусе ALSA в Кордову. Сначала доехали от гостиницы до того же автовокзала. Вот тут пришлось взять такси – у жены, что в народе называется, «вступило в спину» - очевидно, последствие неудачного вытаскивания в самолете записной книжки, упавшей между креслом и иллюминатором. Такие мы спортсмены. Я ей теперь это регулярно припоминаю. Такси обошлось, кажется, в 8 евро – не много. Но в автобусе ALSA всякие потряхивания на неровностях тоже доставляли неприятные моменты.</p>
+<p>По обеим сторонам дороги пейзаж был всю поездку неизменным: неохватные взглядом уходящие за горизонт рощи оливковых деревьев. Теперь понимаю, почему испанское оливковое масло есть даже у нас. Вот несколько фотографий со смартфона; извините за качество – я воспользовался тем, что в автобусе есть WiFi и выкладывал эти фотографии для близких друзей на Facebook прямо оттуда:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1d/0_1e8906_b74cff9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1d/0_1e8906_b74cff9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/988220/2188450.1d/0_1e890a_ba9eb631_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/988220/2188450.1d/0_1e890a_ba9eb631_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="кордова">Кордова</h2>
+<p>В Кордове тоже доехали на местном автобусе от автовокзала почти до нашей гостиницы. Вот <a href="https://www.aucorsa.es/uploads/attachments/1585/autobusescordoba.pdf" target="_blank" rel="noopener noreferrer">здесь</a> можно изучить план автобусных маршрутов в Кордове:</p>
+<p>Мы остановились в <a href="https://www.booking.com/hotel/es/maestre.ru.html?aid=325219" target="_blank" rel="noopener noreferrer">Hotel Maestre</a>, вполне приличном для ночевки, это на углу Romero Barros и San-Fernando (остановка автобуса San-Fernando). Поэтому нас устраивал автобус 03 (фиолетовая линия). На скриншоте из google maps автобус - возможно, как раз 03 - стоит именно на нужной остановке, на другой стороне улицы - выделено желтым маркером – на месте мы не сразу нашли эту остановку, и толково нам никто помочь не смог.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1032271/2188450.24/0_1e8edf_621ddc1e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1032271/2188450.24/0_1e8edf_621ddc1e_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот эта же локация <a href="https://www.google.ru/maps/place/RENFE-Est.Buses+OESTE/@37.8855173,-4.7891521,377a,35y,352.87h,46.11t/data=!3m1!1e3!4m13!1m7!3m6!1s0xd6cdf26f95e0aef:0x4df1d2e8108456c3!2z0JrQvtGA0LTQvtCx0LAsINCY0YHQv9Cw0L3QuNGP!3b1!8m2!3d37.8881751!4d-4.7793835!3m4!1s0xd6cdf5d9aa8fe01:0xddff6b389bd8e1af!8m2!3d37.888615!4d-4.7904468" target="_blank" rel="noopener noreferrer">на самой гуглокарте</a>. А вот <a href="https://moovitapp.com/lines?lgid=279332&amp;lid=797945&amp;epochDay=17608&amp;utm_source=seo_lines&amp;customerId=4908&amp;metroId=2944&amp;lang=en" target="_blank" rel="noopener noreferrer">линия этого маршрута на планировщике</a>:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.24/0_1e8ede_27f5a347_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.24/0_1e8ede_27f5a347_orig" alt="" loading="lazy"></noscript></figure>
+<p>Немного расстроила только пасмурная погода в этот день, из-за чего краски, конечно, померкли.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.20/0_1e8982_31d748e8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.20/0_1e8982_31d748e8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.20/0_1e8984_7c68b248_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.20/0_1e8984_7c68b248_orig" alt="" loading="lazy"></noscript></figure>
+<p>Но Мескита все равно удивительна, в любую погоду. Католический собор, проросший, как опухоль, сквозь огромную мусульманскую мечеть, магометанские своды на античных колоннах, Христос на кресте под арабской вязью. Сумасшествие и красота.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/909751/2188450.20/0_1e8988_9be17f26_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/909751/2188450.20/0_1e8988_9be17f26_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.20/0_1e8989_e00ace83_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.20/0_1e8989_e00ace83_orig" alt="" loading="lazy"></noscript></figure>
+<p>Об истории Мескиты можно почитать во множестве мест, но все же давайте я приведу несколько фрагментов, например, <a href="http://alandalus.ru/andalucia/provincia-cordoba/cordoba/mezquita.html" target="_blank" rel="noopener noreferrer">вот отсюда</a>, чтобы было понятно, о чем идет речь:</p>
+<p>«Мескита (исп. Mezquita) или Кордовская мечеть - это несомненная визитная карточка Кордовы, а также одна из ярчайших достопримечательностей всей Андалусии. Имея площадь в 23 400 кв.м., Мескита является самой большой мечетью, построенной на территории Европы, а в средние века она считалась второй по величине мечетью в мире. Кроме того, Кордовская мечеть общепризнанно считается самой грандиозной и красивой мечетью в Испании, оставшейся в наследство от мавританского периода…</p>
+<p>Мескита строилась в течение нескольких столетий под руководством ряда правящих эмиров, каждый из которых вносил свою лепту в это поистине уникальное архитектурное сооружение. К окончанию строительства она насчитывала 1 293 колонны, 280 люстр, а также 1 445 более мелких светильников. Справедливости ради следует отметить, что колонны, использовавшиеся при строительстве Мескиты, не были изготовлены мавританскими мастерами: для строительства были использованы мраморные колонны, принадлежащие более раннему римскому периоду, привезенные из окрестных населенных пунктов…</p>
+<p>Кордовская мечеть была построена на месте древней базилики вестготов, носящей название Сен Висенте, фрагменты которой можно и сегодня увидеть через толстое прозрачное стекло, установленное в полу одной из частей Мескиты. Строительство Мескиты началось во времена правления первого эмира Кордовы, Абд-ар-Рахмана I, занявшего пост эмира Кордовы в 756 году.</p>
+<p>Вследствие того, что в работах участвовали византийские зодчие, в архитектуре Кордовской Мескиты воплотилось удивительное сочетание мусульманской и христианской культур. К примеру, в этот период в мечети был создан ряд мозаик с характерным византийским акцентом. Даже сама планировка архитектурного ансамбля напоминает христианский крест, образуемый в перспективе михрабом и уникально направленными потоками света через окна.</p>
+<p>В 1237 году Кордова была отвоевана войсками, возглавляемыми королем Фердинандом III по прозвищу Святой (исп. El Santo). Как и в других отвоеванных у мусульман городах, освобожденное христианское население мечтало стереть воспоминания о многовековом господстве мусульман и полностью перестроить Кордовскую Мескиту, превратив ее в христианский собор. Однако, правящие христианские короли понимали всю уникальность и ценность создававшегося веками сооружения и не позволили его разрушить. Тем не менее, был запланирован ряд работ по перепланировке и реконструкции мечети в кафедральный собор Кордовы.</p>
+<p>Прошло почти 300 лет, прежде чем начались масштабные работы по перестройке Кордовской Мескиты, в ходе которых она утратила часть своей уникальной архитектуры. Основным сторонником и инициатором скорейших реформ выступал местный епископ. Работы по реконструкции были начаты в 1523 году. Сегодня в этом архитектурном комплексе можно увидеть фрагмент древнего храма вестготов, мусульманскую мечеть, бывшую главным религиозным объектом Кордовского Халифата, а также христианский кафедральный собор. Это архитектурное сооружение настолько уникально, что оно отнесено ко Всемирному Наследию Человечества и находится под охраной ЮНЕСКО.» Уфф. Обещаю больше не загружать вас такими длинными цитатами.</p>
+<p>Это Мескита:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/909849/2188450.20/0_1e898a_7d40089b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/909849/2188450.20/0_1e898a_7d40089b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.20/0_1e8996_51109e00_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.20/0_1e8996_51109e00_orig" alt="" loading="lazy"></noscript></figure>
+<p>И это тоже Мескита!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/940943/2188450.20/0_1e898b_76cefcfa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/940943/2188450.20/0_1e898b_76cefcfa_orig" alt="" loading="lazy"></noscript></figure>
+<p>И это Мескита!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979410/2188450.20/0_1e898c_abb61b8f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979410/2188450.20/0_1e898c_abb61b8f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979410/2188450.20/0_1e898d_b32c1ca3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979410/2188450.20/0_1e898d_b32c1ca3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.20/0_1e898e_c3111cda_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.20/0_1e898e_c3111cda_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.20/0_1e898f_a929093_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.20/0_1e898f_a929093_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025205/2188450.20/0_1e8990_2a1a151a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025205/2188450.20/0_1e8990_2a1a151a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.20/0_1e8991_afbf5068_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.20/0_1e8991_afbf5068_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373752/2188450.20/0_1e8997_9041d295_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373752/2188450.20/0_1e8997_9041d295_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.20/0_1e8998_837ca5b7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.20/0_1e8998_837ca5b7_orig" alt="" loading="lazy"></noscript></figure>
+<p>Больше всего поражают места, где одно перетекает в другое:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/940943/2188450.20/0_1e8992_3a5f88c5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/940943/2188450.20/0_1e8992_3a5f88c5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/988220/2188450.20/0_1e8995_3d8c8190_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/988220/2188450.20/0_1e8995_3d8c8190_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/517076/2188450.20/0_1e8999_423b989e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/517076/2188450.20/0_1e8999_423b989e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/967052/2188450.20/0_1e899a_883704d8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/967052/2188450.20/0_1e899a_883704d8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768352/2188450.20/0_1e899b_d060c8b0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768352/2188450.20/0_1e899b_d060c8b0_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот как такое может вообще быть? Глаза не верят себе…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.20/0_1e899c_81e538d5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.20/0_1e899c_81e538d5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.20/0_1e8993_4ccd65a6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.20/0_1e8993_4ccd65a6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.20/0_1e8994_e4570eed_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.20/0_1e8994_e4570eed_orig" alt="" loading="lazy"></noscript></figure>
+<p>Потом мы побродили по еврейскому кварталу (он же - Худерия) рядом с Мескитой, он достаточно колоритный. Яркие окна на фоне белых стен, цветы в горшках на этих стенах. Заглянули и на «Цветочную улицу» (Calleja de las Flores) – в общем, ничего особенного по отношению к другим улицам Худерии – ну, чуть больше цветов висит снаружи.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479612/2188450.20/0_1e899d_16ebf933_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479612/2188450.20/0_1e899d_16ebf933_orig" alt="" loading="lazy"></noscript></figure>
+<p>А вот кордовские дворики-патио за ажурными решетками – это действительно замечательно.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/965297/2188450.20/0_1e899e_d1a382d2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/965297/2188450.20/0_1e899e_d1a382d2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/749077/2188450.20/0_1e89a2_d1560428_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/749077/2188450.20/0_1e89a2_d1560428_orig" alt="" loading="lazy"></noscript></figure>
+<p>Поужинали здесь же, в Худерии, в El Patio Andaluz. Пока писал текст, в голове всплыло любимое вкусное слово «Сальморехо». Саль-мо-ре-хо... Это вот прям то, что я люблю – кордовский вариант – не гаспаччо, а именно сальморехо. Очень вкусно и сытно. С удовольствием заказывал его в разных местах. Выложу сюда картинку из интернета (<a href="http://chispamasomenos.com/salmorejo-cordobes/" target="_blank" rel="noopener noreferrer">вот отсюда</a>).</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361712/2188450.24/0_1e8a5c_dde3bdf3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361712/2188450.24/0_1e8a5c_dde3bdf3_orig" alt="" loading="lazy"></noscript></figure>
+<p>И еще одна</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1023055/2188450.24/0_1e8a5d_9eb83211_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1023055/2188450.24/0_1e8a5d_9eb83211_orig" alt="" loading="lazy"></noscript></figure>
+<p>Но я, похоже, отвлекся (видимо, просто проголодался!). Продолжим.</p>
+<p>Вот римский мост через Гвадалквивир, рядом с Мескитой.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.20/0_1e89a0_4efb3475_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.20/0_1e89a0_4efb3475_orig" alt="" loading="lazy"></noscript></figure>
+<p>В Википедии про него написано следующее: «Построен после битвы при Мунде, состоявшейся в 45 году до нашей эры, и имел важное стратегическое значение. Мост был отреставрирован в X веке при арабах и неоднократно восстанавливался также после Реконкисты. На северном берегу у Римского моста располагаются ворота Пуэрта-дель-Пуэнте, когда-то служившие для прохода через городскую крепостную стену.</p>
+<p>На противоположном от Мескиты берегу находится башня Калаорра, средневековая сторожевая башня, ныне музей. В центральной части моста находится памятник архангелу Рафаилу XVII века работы Бернабе Гомеса дель Рио. До середины XX века Римский мост оставался единственным мостом Кордовы через Гвадалквивир. С 2004 года Римский мост является пешеходным.»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/988220/2188450.20/0_1e899f_17d36171_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/988220/2188450.20/0_1e899f_17d36171_orig" alt="" loading="lazy"></noscript></figure>
+<p>И снова отступление. Именно здесь, в Кордове, мы постепенно начали привыкать, что апельсины - они везде. Они осыпаются с деревьев на улицах и валяются прямо на газонах и на мостовой, закатываясь под припаркованные машины. Апельсин-дичок, так сказать. Вот опять телефоно-фото:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/770612/2188450.1d/0_1e8900_6d53ad56_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/770612/2188450.1d/0_1e8900_6d53ad56_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.1d/0_1e8907_66763fda_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.1d/0_1e8907_66763fda_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну что ж, день в Кордове постепенно подошел к концу. Закат над Мескитой:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/965297/2188450.20/0_1e89a1_baa9a17b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/965297/2188450.20/0_1e89a1_baa9a17b_orig" alt="" loading="lazy"></noscript></figure>
+<p>А с утра на вокзал – на этот раз расположенный рядом автовокзалом железнодорожный, и на поезде – в Севилью!</p>
+<h2 id="севилья">Севилья</h2>
+<p>Итак, из Кордовы мы приехали в Севилью на поезде RENFE (45 минут в пути, билет стоит 18.05 евро), сели на автобус прямо напротив главного входа в вокзал (выходить нужно вперед по ходу поезда, не вбок) и доехали почти до нашей гостиницы в центре. Закинули вещи, и пошли гулять по городу, двигаясь в сторону Королевского Алькасара.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.20/0_1e89a3_aae519fe_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.20/0_1e89a3_aae519fe_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.21/0_1e89aa_b09ee571_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.21/0_1e89aa_b09ee571_orig" alt="" loading="lazy"></noscript></figure>
+<p>Что нам скажет по поводу Алькасара Википедия? Ну во-первых, она скажет, что «Алька́сар (исп. Alcázar от араб. — «крепость», «укреплённый замок») — название крепостей или дворцов в Испании и Португалии, построенных во время правления арабов, между VIII и XIV веками. Во многих городах Испании есть алькасары. Дворцы, построенные в мавританском стиле после изгнания арабов, часто также называются алькасарами.» А во-вторых, она нам расскажет, что «Севи́льский Алькáсар (исп. Reales Alcázares de Sevilla)… изначально являлся фортом мавров, несколько раз расширялся. Первый дворец был построен династией Альмохадов. Большая часть современного комплекса была построена на развалинах арабской крепости королём Кастилии Педро I, начало строительства относят к 1364 году. Дворец является одним из лучших сохранившихся примеров мудехарской архитектуры. Добавленные позже (в период правления Карла V) готические элементы контрастируют с доминантным исламским стилем.</p>
+<p>В течение почти 700 лет это был дворец испанских королей. Верхние покои Алькасара и сейчас используются королевской семьёй в качестве официальной резиденции в Севилье.</p>
+<p>По размерам севильский Алькасар уступает ансамблю Альгамбра в Гранаде. Затейливые полы, потолки и стены представляют собой искусные произведения, достигающие наибольших высот изящества и роскоши в комнате Карла V и в Посольском зале (Salón de Embajadores). Девичье патио (Patio de las Doncellas) известно своими фризами, изразцами и лепниной. Общее ощущение элегантного летнего убежища дополняют красиво постриженные сады с благоухающими розами и апельсиновыми деревьями вдоль аллей.»</p>
+<p>Вот как-то так. Все правда, подтверждаю. «Игру Престолов» абы где снимать не станут.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/486600/2188450.21/0_1e89a9_22675c6d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/486600/2188450.21/0_1e89a9_22675c6d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.21/0_1e89a6_1dfdd86_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.21/0_1e89a6_1dfdd86_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.21/0_1e89a7_138233_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.21/0_1e89a7_138233_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.21/0_1e89a8_bf66c252_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.21/0_1e89a8_bf66c252_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.21/0_1e89ab_bb761ef7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.21/0_1e89ab_bb761ef7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1030038/2188450.21/0_1e89ac_427a4ecf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1030038/2188450.21/0_1e89ac_427a4ecf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1023055/2188450.21/0_1e89ad_832b624d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1023055/2188450.21/0_1e89ad_832b624d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/749077/2188450.21/0_1e89ae_f3c53aff_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/749077/2188450.21/0_1e89ae_f3c53aff_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/770612/2188450.21/0_1e89af_a15bd388_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/770612/2188450.21/0_1e89af_a15bd388_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765779/2188450.21/0_1e89b0_7ceb517a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765779/2188450.21/0_1e89b0_7ceb517a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.21/0_1e89b1_fc162295_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.21/0_1e89b1_fc162295_orig" alt="" loading="lazy"></noscript></figure>
+<p><a href="https://ispaniagid.ru/reales-alcazares-de-sevilla/" target="_blank" rel="noopener noreferrer">Цитирую</a>): «Официальные приёмы проводились в Зале Послов (Salón de Embajadores), который строили почти 12 лет. Его форма — квадрат со стороной 10 м. Уникальна центральная стена зала, которая оформлена фризом, состоящим из пятидесяти шести ниш. В каждой нише красуется портрет испанских королей, начиная от самого первого правителя вестготов, заканчивая Филиппом III. Арки в форме подков и позолоченный потолок украшены безупречной гипсовой резьбой.»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765779/2188450.21/0_1e89b2_13fa1405_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765779/2188450.21/0_1e89b2_13fa1405_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.21/0_1e89b6_49aaf5f9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.21/0_1e89b6_49aaf5f9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370744/2188450.21/0_1e89b7_179b024e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370744/2188450.21/0_1e89b7_179b024e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.21/0_1e89b4_1f663bda_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.21/0_1e89b4_1f663bda_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.21/0_1e89b5_b5bdb249_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.21/0_1e89b5_b5bdb249_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/987895/2188450.21/0_1e89b8_8eca5cd0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/987895/2188450.21/0_1e89b8_8eca5cd0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/987895/2188450.21/0_1e89ba_923e276c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/987895/2188450.21/0_1e89ba_923e276c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот это место называется los baños de Doña María de Padilla. «Бани донны Марии де Падилья» — это цистерны для сбора дождевой воды под Patio del Crucero.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.21/0_1e89bd_aad1e42d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.21/0_1e89bd_aad1e42d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Судя по следующему фото, похоже, я еще не очень утомился фотографировать Алькасар к этому моменту…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/988220/2188450.21/0_1e89bb_829e27a1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/988220/2188450.21/0_1e89bb_829e27a1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Сады Алькасара:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/965297/2188450.21/0_1e89c0_8b9ab6ab_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/965297/2188450.21/0_1e89c0_8b9ab6ab_orig" alt="" loading="lazy"></noscript></figure>
+<p>Обитатель садов Алькасара:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.21/0_1e89b9_89b77503_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.21/0_1e89b9_89b77503_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.21/0_1e89bc_a96f7f4b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.21/0_1e89bc_a96f7f4b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370224/2188450.21/0_1e89be_becea340_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370224/2188450.21/0_1e89be_becea340_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вид на башню Севильского собора - знаменитую «Хиральду» – но пока только снаружи, мы сюда придем завтра и проникнем внутрь…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979410/2188450.21/0_1e89a4_694ba7e3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979410/2188450.21/0_1e89a4_694ba7e3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.21/0_1e89bf_d2e52daa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.21/0_1e89bf_d2e52daa_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477095/2188450.21/0_1e89c1_8f252107_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477095/2188450.21/0_1e89c1_8f252107_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/940943/2188450.21/0_1e89c3_fa2571ca_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/940943/2188450.21/0_1e89c3_fa2571ca_orig" alt="" loading="lazy"></noscript></figure>
+<p>Улицы и бары Севильи…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.21/0_1e89c4_bfba17f5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.21/0_1e89c4_bfba17f5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.21/0_1e89c5_51dd5877_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.21/0_1e89c5_51dd5877_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.21/0_1e89a5_daaffb5f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.21/0_1e89a5_daaffb5f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.21/0_1e89c6_6eaa57a6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.21/0_1e89c6_6eaa57a6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.21/0_1e89c7_c3579d8d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.21/0_1e89c7_c3579d8d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1023055/2188450.21/0_1e89c8_c752dab7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1023055/2188450.21/0_1e89c8_c752dab7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.21/0_1e89c9_5e0e8645_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.21/0_1e89c9_5e0e8645_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.21/0_1e89ca_fbb64008_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.21/0_1e89ca_fbb64008_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.21/0_1e89cb_162321f9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.21/0_1e89cb_162321f9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906517/2188450.21/0_1e89cc_a7edf525_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906517/2188450.21/0_1e89cc_a7edf525_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.21/0_1e89cd_b2ac8be0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.21/0_1e89cd_b2ac8be0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.22/0_1e89df_bf43d524_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.22/0_1e89df_bf43d524_orig" alt="" loading="lazy"></noscript></figure>
+<p>Квартал Санта-Крус недалеко от Алькасара. Был построен евреями, бежавшими от преследований из Толедо. Довольно живописный.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/963722/2188450.21/0_1e89ce_a9f1dda0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/963722/2188450.21/0_1e89ce_a9f1dda0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.22/0_1e89d0_4bee3f1e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.22/0_1e89d0_4bee3f1e_orig" alt="" loading="lazy"></noscript></figure>
+<p>В этот момент «Севилья» играет с «Валенсией»...</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.21/0_1e89cf_717d611_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.21/0_1e89cf_717d611_orig" alt="" loading="lazy"></noscript></figure>
+<p>В местной церквушке рядом с нашим обиталищем:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477095/2188450.21/0_1e89d2_69b46c84_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477095/2188450.21/0_1e89d2_69b46c84_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.21/0_1e89d3_101266f8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.21/0_1e89d3_101266f8_orig" alt="" loading="lazy"></noscript></figure>
+<p>Еще сходили вот в это место, довольно любопытное - дворец графини де Лебриха (Palacio de Lebrija). Здесь так: вход с осмотром только первого этажа – 6 евро, и в любой момент, а с осмотром еще и второго этажа – 9 евро, и только с экскурсией, соответственно, только в определенные моменты (<a href="http://www.palaciodelebrija.com/Visitas.html" target="_blank" rel="noopener noreferrer">http://www.palaciodelebrija.com/Visitas.html</a>). И снимать наверху нельзя. Мы ограничились нижним этажом, чтобы не ждать экскурсию - там тоже довольно симпатично. А коллекция, что на втором этаже, по отзывам, довольно эклектичная, многие вещи в полутемных шкафах, т. п. В общем, «зелен виноград»…</p>
+<p>А интерьеры и правда, красивы, включая античные мозаики на полу, перевезенные из Италики.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.22/0_1e89de_14b7a00a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.22/0_1e89de_14b7a00a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.21/0_1e89d4_bd0e2331_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.21/0_1e89d4_bd0e2331_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1023055/2188450.21/0_1e89d5_3f224c9d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1023055/2188450.21/0_1e89d5_3f224c9d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.21/0_1e89dc_9fb9d829_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.21/0_1e89dc_9fb9d829_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/987895/2188450.21/0_1e89dd_db074103_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/987895/2188450.21/0_1e89dd_db074103_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/967052/2188450.22/0_1e89e5_6dce9407_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/967052/2188450.22/0_1e89e5_6dce9407_orig" alt="" loading="lazy"></noscript></figure>
+<p>И снова – на улицах города:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025205/2188450.22/0_1e89d6_5d068ee1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025205/2188450.22/0_1e89d6_5d068ee1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.22/0_1e89d7_aec1e11c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.22/0_1e89d7_aec1e11c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/508799/2188450.22/0_1e89d8_4faeb761_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/508799/2188450.22/0_1e89d8_4faeb761_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e89d9_dcccc904_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e89d9_dcccc904_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="севилья-день-второй">Севилья. День второй.</h2>
+<p>Утренняя Севилья просыпается и потягивается.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025205/2188450.22/0_1e89da_ac1f460c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025205/2188450.22/0_1e89da_ac1f460c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.22/0_1e89db_c9ace05d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.22/0_1e89db_c9ace05d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну а мы движемся в сторону Собора…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.22/0_1e89e0_c38782e2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.22/0_1e89e0_c38782e2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/966391/2188450.22/0_1e89e1_e7a62eeb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/966391/2188450.22/0_1e89e1_e7a62eeb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361460/2188450.22/0_1e89e2_21b48aa1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361460/2188450.22/0_1e89e2_21b48aa1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e89e3_539e92e2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e89e3_539e92e2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1023055/2188450.22/0_1e89e6_2e5e8e54_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1023055/2188450.22/0_1e89e6_2e5e8e54_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну что ж, вот мы и добрались до Кафедрального собора Севильи.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.21/0_1e89c2_d51796c7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.21/0_1e89c2_d51796c7_orig" alt="" loading="lazy"></noscript></figure>
+<p>Это крупнейший готический собор в Европе. Слово Википедии: «Построен в 1401—1519 годах на месте бывшей мечети, оставшейся после Реконкисты. Имеет длину около 116 м и ширину 76 м. В мрачной тени собора (<em>неожиданный язык для Википедии! – aвтор</em>) хранится немало реликвий и сокровищ, в том числе картины Мурильо, Веласкеса, де Сурбарана и Гойи. Говорят (<em>и тут счет становится 2:0 в пользу Википедии как источника знаний! – aвтор</em>), что крест собора сделан из первого золота, привезённого Колумбом из Америки, а в соборе, как утверждают (<em>3:0!</em>), захоронены останки мореплавателя. Свинцовая гробница Колумба в 1544 году была перевезена из Севильи в кафедральный собор Санто-Доминго. Считается, что в 1795 году его останки были перенесены в Гавану, а сто лет спустя — из Гаваны в Севилью. Но где-то по дороге всё перепуталось, и теперь принято считать, что останки в Севильском соборе принадлежат сыну Колумба — Диего.</p>
+<p>Рядом находится так называемая «Хиральда» — колокольня высотой 114 метров с богатыми узорами и орнаментами, вместившая 22 гармонично настроенных колокола. Была построена как минарет в 1196 году Абу Юсуфом Якубом, высота её составляла 82 метра. 32-метровую надстройку добавили в 1568 году.»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.22/0_1e89e7_d1a06ad8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.22/0_1e89e7_d1a06ad8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.22/0_1e89e8_e366fb5c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.22/0_1e89e8_e366fb5c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e89e9_b7c09531_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e89e9_b7c09531_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/966391/2188450.22/0_1e89ea_fa2a217f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/966391/2188450.22/0_1e89ea_fa2a217f_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот <a href="https://www.google.com/maps/@37.3857439,-5.9931732,2a,73.7y,191.26h,96.9t/data=!3m6!1e1!3m4!1s7gqaUlEfPUtFeMJkErIW9A!2e0!7i13312!8i6656" target="_blank" rel="noopener noreferrer">здесь на google.maps можно посмотреть</a> на внутреннее убранство собора, покрутиться по сторонам, посмотреть на его своды. Рекомендую попробовать - дает неплохой эффект присутствия.</p>
+<p><a href="https://ispaniagid.ru/catedral-de-sevilla/" target="_blank" rel="noopener noreferrer">Здесь</a>, в частности, можно еще почитать об истории собора. А я тем временем покажу вам свои фотографии оттуда.</p>
+<p>У надгробия, <em>как-то связанного</em> с Колумбом:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/987895/2188450.22/0_1e89eb_7ca6cd4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/987895/2188450.22/0_1e89eb_7ca6cd4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.22/0_1e89ed_683f9a21_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.22/0_1e89ed_683f9a21_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.22/0_1e89ee_177a334a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.22/0_1e89ee_177a334a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.22/0_1e89ef_dbb77089_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.22/0_1e89ef_dbb77089_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/940943/2188450.22/0_1e89f0_9085977_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/940943/2188450.22/0_1e89f0_9085977_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.22/0_1e89f1_1639ef06_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.22/0_1e89f1_1639ef06_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.22/0_1e89f2_49b6a280_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.22/0_1e89f2_49b6a280_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765189/2188450.22/0_1e89ec_813d0a1d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765189/2188450.22/0_1e89ec_813d0a1d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477095/2188450.22/0_1e89f3_a46e14ee_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477095/2188450.22/0_1e89f3_a46e14ee_orig" alt="" loading="lazy"></noscript></figure>
+<p>Согласно «Оранжевому гиду», «сердцем собора является Главная капелла (Capilla Mayor), в которой установлен впечатляющий золотой алтарь (retablo) работы фламандца Питера Данкарта. Алтарь изображает 45 сцен из жизни Христа.»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/965297/2188450.22/0_1e89f4_c5da94f8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/965297/2188450.22/0_1e89f4_c5da94f8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e8a00_97c2e356_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e8a00_97c2e356_orig" alt="" loading="lazy"></noscript></figure>
+<p>В ризнице:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e89f5_5e4f2af5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e89f5_5e4f2af5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769006/2188450.22/0_1e89f6_c1a3b867_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769006/2188450.22/0_1e89f6_c1a3b867_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1023055/2188450.22/0_1e89f7_62c4b4c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1023055/2188450.22/0_1e89f7_62c4b4c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.22/0_1e8a01_7b5e49fb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.22/0_1e8a01_7b5e49fb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e89f8_67df2920_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e89f8_67df2920_orig" alt="" loading="lazy"></noscript></figure>
+<p>Реставраторы за работой. Нашатырем несет за версту!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/985272/2188450.22/0_1e89fa_a7dc3e6f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/985272/2188450.22/0_1e89fa_a7dc3e6f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/518060/2188450.22/0_1e89fb_b96e1d4b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/518060/2188450.22/0_1e89fb_b96e1d4b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.22/0_1e89fc_3580b94a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.22/0_1e89fc_3580b94a_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну а мы, походив по Собору и поднявшись на смотровую площадку на Хиральде, вышли на улицу и отправились в сторону Площади Испании, мимо Севильского университета и театра Лопе-де-Вега.</p>
+<p>Вот и Plaza de España:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.23/0_1e8a02_657810de_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.23/0_1e8a02_657810de_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e89fe_6ca215a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e89fe_6ca215a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/907951/2188450.22/0_1e89f9_e6b1439_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/907951/2188450.22/0_1e89f9_e6b1439_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373752/2188450.23/0_1e89fd_f606bf5b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373752/2188450.23/0_1e89fd_f606bf5b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1023055/2188450.23/0_1e89ff_dbca68d7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1023055/2188450.23/0_1e89ff_dbca68d7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/964814/2188450.23/0_1e8a0b_2f4d47cf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/964814/2188450.23/0_1e8a0b_2f4d47cf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.22/0_1e8a03_82867492_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.22/0_1e8a03_82867492_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/940943/2188450.22/0_1e8a04_b74740c8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/940943/2188450.22/0_1e8a04_b74740c8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.23/0_1e8a0d_ceef3eb6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.23/0_1e8a0d_ceef3eb6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/517076/2188450.22/0_1e8a05_9fe983db_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/517076/2188450.22/0_1e8a05_9fe983db_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370224/2188450.23/0_1e8a0e_95a7447d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370224/2188450.23/0_1e8a0e_95a7447d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.22/0_1e8a06_cf67ae28_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.22/0_1e8a06_cf67ae28_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/967052/2188450.23/0_1e8a0c_9950b2ce_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/967052/2188450.23/0_1e8a0c_9950b2ce_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025205/2188450.22/0_1e8a07_5f3f3e42_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025205/2188450.22/0_1e8a07_5f3f3e42_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.22/0_1e8a08_ec0418a6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.22/0_1e8a08_ec0418a6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.22/0_1e8a09_bd7baf36_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.22/0_1e8a09_bd7baf36_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/940943/2188450.23/0_1e8a0a_f8934769_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/940943/2188450.23/0_1e8a0a_f8934769_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вечерняя Севилья:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/940943/2188450.23/0_1e8a1a_5e006dab_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/940943/2188450.23/0_1e8a1a_5e006dab_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e8a10_eee9b8e0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.22/0_1e8a10_eee9b8e0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.23/0_1e8a11_f410f9bd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.23/0_1e8a11_f410f9bd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.23/0_1e8a12_7b60d839_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.23/0_1e8a12_7b60d839_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.23/0_1e8a13_892641a2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.23/0_1e8a13_892641a2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/988220/2188450.23/0_1e8a18_17dd1461_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/988220/2188450.23/0_1e8a18_17dd1461_orig" alt="" loading="lazy"></noscript></figure>
+<p>Будущее испанского футбола где-то здесь:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1023055/2188450.23/0_1e8a19_6bbbe90b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1023055/2188450.23/0_1e8a19_6bbbe90b_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="кадис">Кадис</h2>
+<p>Примерно 2 часа 45 минут на поезде (и за 12.85 евро с носа) – и мы в Кадисе (ударение на первом слоге).</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.23/0_1e8a1b_7635d55d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.23/0_1e8a1b_7635d55d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/985272/2188450.23/0_1e8a16_377cd2ce_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/985272/2188450.23/0_1e8a16_377cd2ce_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370224/2188450.23/0_1e8a14_28eac19c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370224/2188450.23/0_1e8a14_28eac19c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361712/2188450.23/0_1e8a15_95b62397_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361712/2188450.23/0_1e8a15_95b62397_orig" alt="" loading="lazy"></noscript></figure>
+<p>«Кадис был основан финикийцами около 1100 года до н.э. и претендует на звание старейшего города Западной Европы. Финикийцы называли его Гадир или Гадер, греки – Гадира или Гадейра, римляне - Га́дес... У финикинян Агадир был отнят карфагенянами. Именно отсюда начинали свои знаменитые плавания Ганнон и Гимилькон. После Второй пунической войны (206 год до н. э.) Гадес перешёл к римлянам. Цезарь дал городу муниципальные права. В конце I века до н. э. географ Страбон ошибочно считал Гадес вторым по численности населения городом в Римской империи. Позже Агадир подпал под власть вандалов, вестготов и арабов.</p>
+<p>У греков и византийцев Кадис считался «краем света»; была даже поговорка «дальше Кадиса и пути нет» (её употребляет, например, Григорий Богослов в «Похвальном слове» Василию Великому)» - Вики.</p>
+<p>«Старейший город Западной Европы»… (по другим, более заслуживающим доверия, источникам – «старейший морской порт Европы») Как было не побывать?</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.23/0_1e8a1d_f254a15a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.23/0_1e8a1d_f254a15a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979410/2188450.23/0_1e8a17_6a76be9a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979410/2188450.23/0_1e8a17_6a76be9a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.23/0_1e8a1e_ca55d440_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.23/0_1e8a1e_ca55d440_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.23/0_1e8a2c_e0fa62f1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.23/0_1e8a2c_e0fa62f1_orig" alt="" loading="lazy"></noscript></figure>
+<p>«Рыбак рыбака…»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/964814/2188450.23/0_1e8a1f_83e8cc1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/964814/2188450.23/0_1e8a1f_83e8cc1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.23/0_1e8a20_6c812f7a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.23/0_1e8a20_6c812f7a_orig" alt="" loading="lazy"></noscript></figure>
+<p>Типичные длиннющие улочки старинного центра Кадиса.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370224/2188450.23/0_1e8a21_b06fb4df_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370224/2188450.23/0_1e8a21_b06fb4df_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370224/2188450.23/0_1e8a22_d8268460_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370224/2188450.23/0_1e8a22_d8268460_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/362196/2188450.23/0_1e8a23_62d204c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/362196/2188450.23/0_1e8a23_62d204c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979410/2188450.23/0_1e8a24_272d2893_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979410/2188450.23/0_1e8a24_272d2893_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.23/0_1e8a25_4dffa54a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.23/0_1e8a25_4dffa54a_orig" alt="" loading="lazy"></noscript></figure>
+<p>«Боевые подруги» Мое любимое фото из этой поездки!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025205/2188450.23/0_1e8a26_92b3f731_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025205/2188450.23/0_1e8a26_92b3f731_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.23/0_1e8a27_6bae2560_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.23/0_1e8a27_6bae2560_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/940943/2188450.23/0_1e8a28_b0738a3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/940943/2188450.23/0_1e8a28_b0738a3_orig" alt="" loading="lazy"></noscript></figure>
+<p>«Оранжевый гид»: «Уже Колумб начинал свое последнее путешествие отсюда, а не из Севильи, а позже, когда Гвадалквивир заилился и стал непроходим для крупных морских судов, Кадис окончательно отвоевал у андалусской столицы звание главного порт в торговле с бескрайними американскими колониями. Именно сюда приходили груженные золотом инков и ацтеков корабли конкистадоров, именно в кадисском порту разгружали первые корабли с грузом невиданных в Европе ранее плодов – помидоров, картофеля и какао…»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.23/0_1e8a29_4a758448_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.23/0_1e8a29_4a758448_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/764457/2188450.24/0_1e8a38_c6de8ac1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/764457/2188450.24/0_1e8a38_c6de8ac1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025205/2188450.23/0_1e8a2a_2ef44525_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025205/2188450.23/0_1e8a2a_2ef44525_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.23/0_1e8a32_10065623_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.23/0_1e8a32_10065623_orig" alt="" loading="lazy"></noscript></figure>
+<p>Закат над Атлантикой. Такое ощущение, что многие пришли на пляж Калета около мыса, на котором стоит бастион Санта-Каталина целенаправленно, чтобы полюбоваться закатом. Когда солнце село в воду, народ от души поаплодировал. Примерно как пилоту авиалинии за хорошо проделанную работу.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769006/2188450.24/0_1e8a39_233640a7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769006/2188450.24/0_1e8a39_233640a7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/985135/2188450.24/0_1e8a3b_384c69ca_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/985135/2188450.24/0_1e8a3b_384c69ca_orig" alt="" loading="lazy"></noscript></figure>
+<p>Обратно в гостиницу шли ночью вдоль длинной пустынной набережной, прочь от старого города. Непроглядная темень над Атлантикой. В моем правом ухе и в левом ухе жены звучит довлатовский «Компромисс». Удивительное воспоминание…</p>
+<h2 id="севилья-продолжение">Севилья. Продолжение.</h2>
+<p>Утром мы вернулись в Севилью, и у нас был еще целый огромный солнечный день погулять по ее улицам.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/517076/2188450.23/0_1e8a2b_f7eb1586_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/517076/2188450.23/0_1e8a2b_f7eb1586_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/517076/2188450.23/0_1e8a2e_c6efc261_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/517076/2188450.23/0_1e8a2e_c6efc261_orig" alt="" loading="lazy"></noscript></figure>
+<p>В этот день мы устремились в Дом Пилата (Casa de Pilatos) —один из самых красивых и известных дворцов Севильи). Он назван так якобы потому, что являлся копией дворца Понтия Пилата. «Строительство дворца началось в конце XV века по приказу Педро Энрикеса де Киньонес и его супруги Каталины де Риберы, основателей андалусской ветви рода Энрикесов, и было закончено их сыном, Фадрике Энрикесом де Рибера (1-м маркизом Тарифа), который и дал дворцу такое название в честь своего паломничества в Иерусалим, которое он совершил в 1519 году. Семейная легенда гласит, что расстояние, которое отделяет руины иерусалимского дворца Понтия Пилата и Голгофу, такое же, которое разделяет севильский дворец и часовню за пределами городских стен, называемую Крус-дель-Кампо. В Севилье стали считать, что дом является копией дворца. С 1520-х годов во время Страстной недели в Севилье отсюда стали начинать Богослужение Крестного пути.</p>
+<p>Помимо отделки в стиле мудехар, во дворце примечательны плафоны с росписями Франциско Пачеко, серия изображений корриды Франсиско Гойи и три полотна Луки Джордано, висящие в библиотеке. После угасания рода герцогов Алькала, которые постоянно проживали во дворце, он перешёл по наследству к герцогам Мединасели и служит их домом по настоящее время.»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/964814/2188450.23/0_1e8a2f_d99f3494_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/964814/2188450.23/0_1e8a2f_d99f3494_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/964814/2188450.23/0_1e8a30_625147cd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/964814/2188450.23/0_1e8a30_625147cd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/905956/2188450.23/0_1e8a31_f4adf571_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/905956/2188450.23/0_1e8a31_f4adf571_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.23/0_1e8a33_a9c1a4ca_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.23/0_1e8a33_a9c1a4ca_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1030038/2188450.23/0_1e8a34_1fb862c8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1030038/2188450.23/0_1e8a34_1fb862c8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.23/0_1e8a35_33ce89a2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.23/0_1e8a35_33ce89a2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.24/0_1e8a3c_c8049fbe_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.24/0_1e8a3c_c8049fbe_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.24/0_1e8a3d_68463e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.24/0_1e8a3d_68463e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.24/0_1e8a3e_7990295a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.24/0_1e8a3e_7990295a_orig" alt="" loading="lazy"></noscript></figure>
+<p>А потом направились вдаль от центра, в Макарену, прошлись по кварталам в окрестностях Basílica de la Macarena…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.23/0_1e8a3f_9622b2d2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.23/0_1e8a3f_9622b2d2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.24/0_1e8a40_c973c3d3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.24/0_1e8a40_c973c3d3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.24/0_1e8a43_8d93c733_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.24/0_1e8a43_8d93c733_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/912106/2188450.24/0_1e8a41_ed99fb98_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/912106/2188450.24/0_1e8a41_ed99fb98_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/764457/2188450.24/0_1e8a44_c0cc92d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/764457/2188450.24/0_1e8a44_c0cc92d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/967052/2188450.24/0_1e8a42_1d4ee7c5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/967052/2188450.24/0_1e8a42_1d4ee7c5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025205/2188450.23/0_1e8a36_ff83a254_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025205/2188450.23/0_1e8a36_ff83a254_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.23/0_1e8a37_563725c2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.23/0_1e8a37_563725c2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/908969/2188450.23/0_1e8a3a_6201baaa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/908969/2188450.23/0_1e8a3a_6201baaa_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/987895/2188450.24/0_1e8a45_bc29ef3a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/987895/2188450.24/0_1e8a45_bc29ef3a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373752/2188450.24/0_1e8a46_e1d24fae_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373752/2188450.24/0_1e8a46_e1d24fae_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.24/0_1e8a47_8d4c5228_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.24/0_1e8a47_8d4c5228_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.24/0_1e8a48_e277707c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.24/0_1e8a48_e277707c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, а к ужину вернулись в Старый город вблизи Собора и Санта-Крус.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.24/0_1e8a49_a2b7467d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.24/0_1e8a49_a2b7467d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.24/0_1e8a4a_bf7168cd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.24/0_1e8a4a_bf7168cd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/940943/2188450.24/0_1e8a4d_4ce2b880_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/940943/2188450.24/0_1e8a4d_4ce2b880_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="малага-перед-возвращением-домой">Малага. Перед возвращением домой.</h2>
+<p>Ну, и несколько фотографий последних часов в Малаге. Вечером - Ботанический сад</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765007/2188450.24/0_1e8a4c_40fd5503_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765007/2188450.24/0_1e8a4c_40fd5503_orig" alt="" loading="lazy"></noscript></figure>
+<p>и вкусная рыбка в Bodegas Quitapenas (http://www.quitapenas.es/en/) – рекомендую.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.24/0_1e8a4b_3941b187_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.24/0_1e8a4b_3941b187_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/988220/2188450.24/0_1e8a4f_1f5bdebe_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/988220/2188450.24/0_1e8a4f_1f5bdebe_orig" alt="" loading="lazy"></noscript></figure>
+<p>Это вот тоже где-то в Малаге, на задворках оживленных улиц:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.24/0_1e8a4e_f10c0138_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.24/0_1e8a4e_f10c0138_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.24/0_1e8a50_d4543f86_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.24/0_1e8a50_d4543f86_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.24/0_1e8a51_3bca32b6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.24/0_1e8a51_3bca32b6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.24/0_1e8a52_3f540f28_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.24/0_1e8a52_3f540f28_orig" alt="" loading="lazy"></noscript></figure>
+<p>А утром перед отлетом - замечательный центральный рынок Малаги «Атаразанас» (в переводе с мавританского – «корабельная верфь»). На рынке можно купить еду и поесть у столика. Что мы и сделали.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/906092/2188450.24/0_1e8a53_1a23f858_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/906092/2188450.24/0_1e8a53_1a23f858_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.24/0_1e8a54_8b48d45b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.24/0_1e8a54_8b48d45b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.24/0_1e8a55_eed7d317_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.24/0_1e8a55_eed7d317_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769132/2188450.24/0_1e8a56_58a5aa07_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769132/2188450.24/0_1e8a56_58a5aa07_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/979651/2188450.24/0_1e8a57_54904a2b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/979651/2188450.24/0_1e8a57_54904a2b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765189/2188450.24/0_1e8a58_477d0353_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765189/2188450.24/0_1e8a58_477d0353_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.24/0_1e8a59_8177b37f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.24/0_1e8a59_8177b37f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.24/0_1e8a5a_9b2bd25c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.24/0_1e8a5a_9b2bd25c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/909751/2188450.24/0_1e8a5b_7e1d7b75_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/909751/2188450.24/0_1e8a5b_7e1d7b75_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот такая у нас вышла Андалусия в наш первый раз. Весьма разнообразная и нигде не скучная. В общем – решайтесь, езжайте, кто еще не бывал там - не пожалеете.</p>
+<p>И спасибо за внимание.</p>
+<p>«От Севильи до Гренады</p>
+<p>В тихом сумраке ночей</p>
+<p>Раздаются серенады,</p>
+<p>Раздается стук мечей;</p>
+<p>Много крови, много песней</p>
+<p>Для прелестных льется дам —</p>
+<p>Я же той, кто всех прелестней,</p>
+<p>Песнь и кровь мою отдам!»</p>
+<p><em>(песня Дон-Кихота затихает вдали….)</em></p>
+  </article>
+</div>
+<script>
+(function() {
+  var pending = []; // images that entered the buffer zone, not yet loading/loaded
+  var loading = false;
+
+  function distanceFromViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;      // above viewport
+    if (rect.top > vh) return rect.top - vh;        // below viewport
+    return 0;                                       // on screen right now
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        if (d === 0) break; // already on screen -- can't beat that
+      }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var img = pickNext();
+    if (!img) return;
+    loading = true;
+    loadImage(img, img.getAttribute('data-src'));
+  }
+
+  function loadImage(img, src) {
+    img.onload = function() {
+      img.classList.add('loaded');
+      img.removeAttribute('data-src');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      // Flickr (or the network) hiccuped on this one request -- don't give
+      // up on it and don't block everything else behind it. Free the
+      // queue immediately, and let this image rejoin the pending pool
+      // after a short, growing backoff so it gets picked up again.
+      loading = false;
+      var attempt = (img._retryCount || 0) + 1;
+      img._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() {
+        pending.push(img);
+        processQueue();
+      }, delay);
+      processQueue();
+    };
+    img.src = src;
+  }
+
+  // Images join the pending pool once they're within reach; every time a
+  // slot frees up, pickNext() re-checks CURRENT positions and grabs
+  // whichever pending image is closest to (or actually on) screen right
+  // now -- so a fast scroll or scrollbar drag doesn't leave visible
+  // photos stuck behind everything the scroll happened to pass over.
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>

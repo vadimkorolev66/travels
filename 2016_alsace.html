@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Эльзас — глоток холодного рислинга в тени виноградной лозы</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  nav.toc,
+  article > p,
+  article > h2,
+  article > ul.summary-list,
+  article > blockquote.citation {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.masthead {
+    max-width: none;
+    padding: 8vw 0 4vw;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8001_4aa8881e_orig') center 40% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  nav.toc {
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+    font-family: var(--sans);
+  }
+  nav.toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li { margin: 0 0 0.85rem; break-inside: avoid; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.3;
+    font-size: 0.98rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent-soft); color: var(--accent); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 3.9rem 0 1.4rem;
+    padding-top: 0.2rem;
+    color: var(--text);
+    position: relative;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin-bottom: 1.1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-soft); }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+  a:hover { color: #6b5228; }
+  a.internal-link-pending {
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--accent-soft);
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.summary-list {
+    background: #f4f1ea;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem 1.6rem 2.4rem;
+    margin: 0 0 3rem;
+  }
+  ul.summary-list li { margin-bottom: 0.7rem; }
+  ul.summary-list li:last-child { margin-bottom: 0; }
+  blockquote.citation {
+    margin: 2rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  blockquote.citation p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  figure.photo { margin: 2.6rem 0; }
+  figure.photo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.08), 0 8px 24px rgba(43,41,37,0.06);
+  }
+  img.lazy-photo {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 40px;
+    background: var(--line);
+  }
+  img.lazy-photo.loaded { opacity: 1; }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 2.2rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  p.epigraph {
+    text-align: right;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+  p.fin {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  p.subhead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { width: 88%; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17.5px; }
+    .wrap { width: 90%; padding: 10vw 0 16vw; }
+    header.masthead h1 { font-size: 1.85rem; }
+    nav.toc ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Эльзас — глоток холодного рислинга в тени виноградной лозы</h1>
+  </header>
+
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      <ul>
+    <li><a href="#предисловие">Предисловие</a></li>
+    <li><a href="#москва-страсбург">Москва - Страсбург</a></li>
+    <li><a href="#страсбург-вечер">Страсбург. Вечер.</a></li>
+    <li><a href="#страсбург-утро">Страсбург. Утро.</a></li>
+    <li><a href="#барр">Барр</a></li>
+    <li><a href="#селеста">Селеста</a></li>
+    <li><a href="#замок-о-кенигсбург">Замок О-Кенигсбург</a></li>
+    <li><a href="#кольмар">Кольмар</a></li>
+    <li><a href="#риквир-юнавир-рибовилле">Риквир – Юнавир - Рибовилле</a></li>
+    <li><a href="#эгисхайм">Эгисхайм</a></li>
+    <li><a href="#домой">Домой</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <article>
+<p><em>Краткое содержание</em> (чтобы сразу бросить читать, если неинтересно):</p>
+<ul class="summary-list">
+  <li><em>Кто:</em> мы с женой, как обычно (тьфу-тьфу-тьфу, как положено говорить идейным материалистам)</li>
+  <li><em>Когда:</em> давным-давно, в конце лета 2016-го года.</li>
+  <li><em>Где:</em> по Эльзасу от Страсбурга до Кольмара и обратно. Точнее примерно так: два с половиной дня в Страсбурге, полтора дня в Барре, два дня в Селесте (а оттуда в Верхний Кенигсбург), три дня в Кольмаре (оттуда в один из дней - в Riquewihr, откуда пешком до Ribeauvillé рукой подать, а в другой день - в Eguisheim), и через Страсбург домой. В общем, довольно обычный маршрут в окрестностях Винной дороги Эльзаса. Не мы первые, не мы последние.</li>
+  <li><em>Как:</em> где-то на электричках, где-то на автобусах, но в основном на своих двоих (то есть, четверых). Никаких автомобилей.</li>
+</ul>
+<p>Вы все еще читаете? И, что, вы серьезно намерены убить свое время чтением этого рассказа? Хм. Ну тогда начнем…</p>
+<h2 id="предисловие">Предисловие</h2>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8001_4aa8881e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8001_4aa8881e_orig" alt="" loading="lazy"></noscript></figure>
+<p>Жаркий август в Эльзасе. Дорога, вьющаяся вдоль бесконечных виноградников. Приземистые, похожие друг на друга компактные деревушки в коричнево-розовых тонах и шпили их церквей. Непременные бокалы с зелеными ножками и капли воды, оседающие на их прохладных округлых боках. Душистые грозди винограда, нагретые полуденным палящим солнцем. Развалины старинных замков на склонах темно-зеленых холмов. Городки в фахверках и цветах. Аисты в гнездах на черепичных крышах.</p>
+<p>Примерно такой калейдоскоп ярких картинок отпечатался у меня в памяти.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1c/0_1e800c_dfd31317_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1c/0_1e800c_dfd31317_orig" alt="" loading="lazy"></noscript></figure>
+<p>Как мы попали в Эльзас вообще? Если говорить про мой опыт выбора очередного направления путешествия с помощью этого форума, то это обычно происходит так: я натыкаюсь на отчет, где меня цепляют фотографии. Еще круче, если это хорошие фотографии плюс живой текст. И я вдруг ощущаю, что мне это близко. И раз автору <em>там</em> понравилось, и он там <em>такое</em> и <em>так</em> увидел, то и мне наверняка там понравится тоже. Тогда решение поехать в те же края возникает практически сразу, без долгих раздумий.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.1d/0_1e8169_62a9b6e8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.1d/0_1e8169_62a9b6e8_orig" alt="" loading="lazy"></noscript></figure>
+<p>Оглядываясь назад, вижу почти за каждой нашей поездкой такой рассказ, который решительно потянул за собой. Ну а уже потом, конечно, я начинаю читать и другие отчеты, иногда (но далеко не всегда) даже более информативные и полезные для технической части подготовки. Но главное уже случилось – решение уже принято – я увидел почти вживую это место. Видимо, автор постарался, чтобы это произошло, и у него получилось. Ну что ж, я тоже буду стараться. Вдруг кто-то увидит далекие места моими глазами, и ему тоже туда захочется.</p>
+<p>Это и будет моей целью.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373752/2188450.1d/0_1e8167_b78eabce_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373752/2188450.1d/0_1e8167_b78eabce_orig" alt="" loading="lazy"></noscript></figure>
+<p>В случае Эльзаса, мне помнится, для меня таким текстом совершенно точно явился первый эльзасский рассказ <a href="http://forum.awd.ru/viewtopic.php?t=226794" target="_blank" rel="noopener noreferrer">«Пешком по винной дороге Эльзаса»</a> уважаемой <em>luchar</em>. И фотографии маков у дороги были, как ни странно, последней каплей. Уже после, бесповоротно решив тоже попутешествовать по Эльзасу, по окрестностям винной дороги, я с удовольствием почитал <a href="http://forum.awd.ru/viewtopic.php?t=271684" target="_blank" rel="noopener noreferrer">Винная дорога Эльзаса. Пикник на обочине 2015</a> и, наверное, пару других.</p>
+<p>И мы поехали в Эльзас.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373752/2188450.1d/0_1e816b_77d0e412_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373752/2188450.1d/0_1e816b_77d0e412_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="москва-страсбург">Москва - Страсбург</h2>
+<p>Ну, не то чтобы я встал из-за компьютера и начал паковать чемоданы. До поездки было еще полгода. Так что, для начала я купил билеты (и собственно, это все, что я покупал заранее в этот раз, помимо бронирований жилья). Сейчас проверил - похоже, и сегодня один из самых приемлемых способов добраться до Страсбурга из Москвы – это комбинированный рейс Люфтганзы: из Домодедова до Франкфурта самолетом, а оттуда <a href="https://www.lufthansa.com/ru/ru/lufthansa-express-bus" target="_blank" rel="noopener noreferrer">экспресс-автобусом Люфтганзы</a> – до Страсбурга. Билет покупается один на оба плеча. Времени после посадки на то, чтобы пройти погранконтроль, получить багаж, подняться по эскалаторам наверх и дойти до площадки отправления автобусов вполне достаточно – согласно текущему расписанию на следующий август (это пишется в феврале 2018-го), сейчас это от полутора до двух часов. Водитель автобуса просто сверяет ваши билеты со своим списком. В сумме получается на все путешествие от 8 до 10 часов.</p>
+<p>Вот <a href="https://www.lufthansa.com/mediapool/pdf/82/media_98765482.pdf" target="_blank" rel="noopener noreferrer">здесь</a> висит схема, где можно найти площадку отправления Express Bus в аэропорту Франкфурта (желтый кружок в центре ее верхней части). Не скажу, правда, что она (схема) идеальна для понимания того, как туда дойти. Но, в принципе, желтые большие указатели на Lufthansa Express Bus в зоне прилета хорошо видны, и нужно просто следовать за ними. Однако где-то в средней части пути они куда-то пропали, и я на всякий случай, чтобы не промахнуться, спросил дорогу у служащего аэропорта (он все одно бездельничал, болтая с коллегой). И получил вполне исчерпывающие указания в духе «прямо, за поворотом - направо и вверх по эскалатору». И правда, не обманул. А дальше указатели снова стали попадаться часто, и мы уже шли вполне уверенно.</p>
+<p>Итак, в Страсбург мы прибыли уже в сумерках. Автобус останавливается прямо около ж.д. вокзала; практически от этой же точки мы и будем уезжать через полторы недели обратно в аэропорт Франкфурта.</p>
+<h2 id="страсбург-вечер">Страсбург. Вечер.</h2>
+<p>Заселились мы в гостиницу на полпути между вокзалом и старым городом и, будучи уже весьма голодными, отправились искать, где бы утолить это чувство. Чем-нибудь, желательно, сразу прямо-таки страсбургским… Двигаясь в сторону набережной, по направлению к La Petite France, мы вскоре наткнулись на <a href="https://www.google.ru/maps/place/Rive+Gauche/@48.5835786,7.7380229,19.46z/data=!4m13!1m7!3m6!1s0x4796c8495e18b2c1:0x971a483118e7241f!2z0KHRgtGA0LDRgdCx0YPRgNCzLCDQpNGA0LDQvdGG0LjRjw!3b1!8m2!3d48.5734053!4d7.7521113!3m4!1s0x4796c84bb5226e35:0xeea3e9850a3c0a88!8m2!3d48.5834322!4d7.7381844" target="_blank" rel="noopener noreferrer">местечко, называемое Rive Gauche</a>. Место без особых претензий, но как раз чтобы накормить голодных путников. И вкусили мы в первый раз за поездку (а таких «разов» будет еще много) знаменитый эльзасский «tarte flambée» (она же «Flammekueche»). Первая мысль, конечно – это же пицца! Но, как мудро замечено на <a href="http://www.seriouseats.com/recipes/2015/02/classic-tarte-flambee-alsatian-pizza-recipe.html" target="_blank" rel="noopener noreferrer">одном сайте</a>, «it looks like a pizza, it cooks like a pizza, but don't make the mistake of actually thinking it's a pizza». Классическая начинка тарт фламбе — белый сыр (fromage blanc, похожий на мягкий творог), иногда с добавкой сливок (crème fraiche), сверху лук и кусочки бекона. Вот <a href="https://www.adeline-cuisine.fr/recettes/tarte-flambee-flammekueche/" target="_blank" rel="noopener noreferrer">здесь</a> можно прочитать еще один рецептик.</p>
+<p>Но понятно, что туристов надо заманивать, поэтому теперь этих tarte flambée везде предлагается более десятка разновидностей с начинкой на любой вкус. Помимо классического, нам обоим еще понравился с сыром Эмменталь. Ну, и по бокалу Гевюрцтраминера к этой пиц… простите, - la tarte flambée мы тоже не могли не заказать, раз мы в Эльзасе, правда? Мы – люди принципиально пешие, а это дает известную свободу в выборе напитков!</p>
+<p>Ну, а затем мы перешли Le Canal des Faux-Remparts, огибающий исторический центр с северной стороны, и пошли гулять по вечерней Маленькой Франции... Я всегда особенно люблю и ценю вот этот вечер первого дня поездки; утром ты еще был в своей квартире в Москве, на условной «3-ей улице Строителей, дом 25 квартира 12». А вечером идешь по вымощенной камнем улице среди средневековых фахверковых домов, мимо готических соборов, вдоль рядов освещенных окон ресторанчиков и кафе, в городе, где ты еще ничего не видел... В общем, контраст.</p>
+<p>Вот он – мой первый снимок в вечернем Страсбурге:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ed5_406c8c3c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ed5_406c8c3c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Почти сразу после того, как Страсбург стал французским (1681 год), а именно, в 1686 году, инженер Вобан начал строительство плотины, чтобы иметь возможность заполнять водой оборонительные рвы вокруг города. Плотину строили до 1700 года, а потом, спустя почти два века, с 1865 по 1870 год ее надстраивали. По ней можно прогуляться (мы это сделаем потом, днем), ибо с нее открывается симпатичный вид на каналы La Petite France со Страсбургским собором вдали. Вечером она красиво подсвечена:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.16/0_1e7ed3_1bcebdcb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.16/0_1e7ed3_1bcebdcb_orig" alt="" loading="lazy"></noscript></figure>
+<p>Три канала, просматривающиеся с плотины Вобана, названы по названиям трех водяных мельниц, на которые из них подавалась вода. Четвертый канал уже был вполне себе «водной артерией», плюс, как водится, использовался для полоскания шкур кожевниками.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ed4_3c5d132b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ed4_3c5d132b_orig" alt="" loading="lazy"></noscript></figure>
+<p>Не торопясь, мы прошли от плотины Вобана через весь квартал La Petite France…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.16/0_1e7ed7_b635d346_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.16/0_1e7ed7_b635d346_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ed8_b71c6ee2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ed8_b71c6ee2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.16/0_1e7ed9_9ff54b64_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.16/0_1e7ed9_9ff54b64_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7eda_8b59c945_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7eda_8b59c945_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.16/0_1e7edb_874d5da6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.16/0_1e7edb_874d5da6_orig" alt="" loading="lazy"></noscript></figure>
+<p>Как многие знают, происхождение названия «Маленькая Франция» не такое романтическое, как может показаться, - примерно настолько же, насколько и слово «французская болезнь» из лексикона русской литературы. Тут в XVI веке располагался профильный госпиталь по лечению соответствующих заболеваний.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.16/0_1e7edc_3f18e63a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.16/0_1e7edc_3f18e63a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7edd_b1af3828_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7edd_b1af3828_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.16/0_1e7ede_6ffbb5ba_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.16/0_1e7ede_6ffbb5ba_orig" alt="" loading="lazy"></noscript></figure>
+<p>Популярное место – маленькая площадь Place Benjamin Zix у каналов:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.16/0_1e7edf_fbce0417_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.16/0_1e7edf_fbce0417_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.16/0_1e7ee0_f474a198_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.16/0_1e7ee0_f474a198_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ee1_ed37340d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ee1_ed37340d_orig" alt="" loading="lazy"></noscript></figure>
+<p>«La Maison des Tanneurs» рядом с этой площадью:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ee2_a7620351_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ee2_a7620351_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.16/0_1e7ee3_510ef9d7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.16/0_1e7ee3_510ef9d7_orig" alt="" loading="lazy"></noscript></figure>
+<p>И незаметно мы дошли до главного собора Страсбурга.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.16/0_1e7ee5_1ba43190_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.16/0_1e7ee5_1ba43190_orig" alt="" loading="lazy"></noscript></figure>
+<p>Страсбургский собор – характерного розового цвета эльзасского песчаника. Одной башни у него нет, и он, конечно, в этом не одинок – взять, хотя бы, асимметричный Собор святого Стефана в Вене или Собор Антверпенской Богоматери в, соответственно, Антверпене. И вообще – одна башня – еще не признак недостроенности, ведь могло быть так и задумано. Однако Страсбургский собор именно недостроен, и именно он мне почему-то показался каким-то несчастным и страдающим из-за своей очевидной недоделанности. Вообще я думаю, что ничего страшного не было бы, если бы его достроили сейчас – уже через пару веков это будет точно такая же часть его многовековой истории. Ведь в любом случае такие средневековые соборы (а Страсбургский начал строиться в 1277 году) уже, как правило, состоят из частей, которые создавались с огромными временными промежутками… Вот такая крамольная мысль.</p>
+<p>Но я отвлекся.</p>
+<p>Фасад собора, хоть и искусно освещенный, трудно оценить во всей красе – к нему подходишь по довольно узкой улице.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7ee4_9c11c9f7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7ee4_9c11c9f7_orig" alt="" loading="lazy"></noscript></figure>
+<p>Когда мы обошли его справа, то неожиданно вовремя попали на очередной сеанс красочного светового шоу – на боковую стену собора проецировался, назовем это, «мультфильм». Со звуком, конечно. Мой рюкзак осмотрели, и нас пропустили на соборную площадь (между самим собором и дворцом Rohan) . Не знаю, кто был первым, но эта тема с Light shows стала «вирусной» - во многих городах Франции и вообще Европы в последние годы делают такое зрелище. Но я бы сказал что то, что мы увидели, было сделано очень талантливо. Картинка четко вписывалась в архитектурные элементы собора; я бы даже сказал, что именно собор был главным героем повествования. Фотографировать с рук ночью, конечно, получается не очень, но вот несколько фотографий.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ee6_203f4e0c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ee6_203f4e0c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/770851/2188450.16/0_1e7ee7_d5aac2e8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/770851/2188450.16/0_1e7ee7_d5aac2e8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.16/0_1e7ee8_7a5a5f5b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.16/0_1e7ee8_7a5a5f5b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1032407/2188450.16/0_1e7ee9_2db6884b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1032407/2188450.16/0_1e7ee9_2db6884b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.16/0_1e7eea_abf8b6cf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.16/0_1e7eea_abf8b6cf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7eeb_6bf45592_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7eeb_6bf45592_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7eec_2492b069_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7eec_2492b069_orig" alt="" loading="lazy"></noscript></figure>
+<p>И вот только что нашел для вас видео на официальном канале Страсбурга:</p>
+<p>Световое шоу 16-го года (но это не совсем то, что видели мы):</p>
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/aD9WszhH9Y4" title="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+<p>и новое шоу, 17-го года:</p>
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/kR4NodTSHE4" title="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+<p>Так что первый вечер наших прогулок по городу оказался даже насыщенней, чем я ожидал.</p>
+<h2 id="страсбург-утро">Страсбург. Утро.</h2>
+<p>Ну а наутро мы уже пошли знакомиться с городом более основательно. Снова начали со стороны La Petite France и ее каналов – вот несколько картинок оттуда. Они (картинки), конечно, не оригинальны, ну тут уж что поделать. Все равно же красиво…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.16/0_1e7eed_b5d92f7a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.16/0_1e7eed_b5d92f7a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7eef_db010b62_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7eef_db010b62_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.16/0_1e7ef0_b42b01ca_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.16/0_1e7ef0_b42b01ca_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.16/0_1e7ef1_70bb1755_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.16/0_1e7ef1_70bb1755_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1027383/2188450.16/0_1e7ef2_92691623_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1027383/2188450.16/0_1e7ef2_92691623_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.16/0_1e7ef3_2b90f24c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.16/0_1e7ef3_2b90f24c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.16/0_1e7eee_6d3400a2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.16/0_1e7eee_6d3400a2_orig" alt="" loading="lazy"></noscript></figure>
+<p>Зашли в лютеранскую церковь Св. Фомы, чтобы после этого двинуться дальше вдоль набережных Илли.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.16/0_1e7ef4_bc71ff1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.16/0_1e7ef4_bc71ff1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Это вот современная иконопись. «Тайная вечеря», видимо:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.16/0_1e7ef5_6da5ce16_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.16/0_1e7ef5_6da5ce16_orig" alt="" loading="lazy"></noscript></figure>
+<p>Переходя с берега на берег, сворачивая в узкие улицы без особого плана – время-то есть (мы отвели себе на Страсбург аж два с половиной дня), мы шли по старому городу…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7ef6_56df8823_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7ef6_56df8823_orig" alt="" loading="lazy"></noscript></figure>
+<p>Прекрасные длинношеие эльзасские бутылки (и случайное почти-что-селфи)</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.16/0_1e7ef7_886d2200_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.16/0_1e7ef7_886d2200_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/750182/2188450.16/0_1e7ef8_3aec3947_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/750182/2188450.16/0_1e7ef8_3aec3947_orig" alt="" loading="lazy"></noscript></figure>
+<p>Отличное граффитти, на мой вкус:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.16/0_1e7ef9_9ddc0a7a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.16/0_1e7ef9_9ddc0a7a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.17/0_1e7efa_2a6bf5b7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.17/0_1e7efa_2a6bf5b7_orig" alt="" loading="lazy"></noscript></figure>
+<p>Карусель на площади Гутенберга:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.17/0_1e7efb_41f85e63_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.17/0_1e7efb_41f85e63_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1028622/2188450.17/0_1e7efc_a67b22e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1028622/2188450.17/0_1e7efc_a67b22e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.17/0_1e7efd_80818ea2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.17/0_1e7efd_80818ea2_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот и первые аисты, наконец:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7efe_30fdce0f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7efe_30fdce0f_orig" alt="" loading="lazy"></noscript></figure>
+<p>Прошли пока мимо страсбургского Собора (придем завтра). Вот как он выглядит днем:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7eff_61cdad82_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7eff_61cdad82_orig" alt="" loading="lazy"></noscript></figure>
+<p>По пути глотнули по бокалу вина и по чашечке кофе</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.17/0_1e7f00_6184bb35_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.17/0_1e7f00_6184bb35_orig" alt="" loading="lazy"></noscript></figure>
+<p>и сразу проверили зрение</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.17/0_1e7f01_bc79ec08_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.17/0_1e7f01_bc79ec08_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480022/2188450.17/0_1e7f03_ba7f5c6d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480022/2188450.17/0_1e7f03_ba7f5c6d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768352/2188450.17/0_1e7f02_2e7a346a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768352/2188450.17/0_1e7f02_2e7a346a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7f04_685a9284_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7f04_685a9284_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361460/2188450.17/0_1e7f05_184dd475_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361460/2188450.17/0_1e7f05_184dd475_orig" alt="" loading="lazy"></noscript></figure>
+<p>…и дошли до протестантской церкви святого Павла, построенной в самом конце XIX века в неоготическом стиле. Вид с моста Овернь:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.17/0_1e7f06_8272d63_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.17/0_1e7f06_8272d63_orig" alt="" loading="lazy"></noscript></figure>
+<p>А Иль течет дальше</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.17/0_1e7f07_e19e34c5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.17/0_1e7f07_e19e34c5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7f08_f740c40e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7f08_f740c40e_orig" alt="" loading="lazy"></noscript></figure>
+<p>От церкви св. Павла мы повернули направо и через несколько минут оказались в университетском квартале. Обойдя здание L’Université populaire européenne, по Университетской улице, пройдя мимо пары факультетов, мы дошли до <a href="https://www.google.ru/maps/@48.581776,7.7680646,205a,35y,333.56h,45.05t/data=!3m1!1e3?hl=ru" target="_blank" rel="noopener noreferrer">Ботанического сада</a>, довольного интересного.</p>
+<p>Вот, например, симпатичный цветущий кактус оттуда:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/770851/2188450.17/0_1e7f09_37850b4c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/770851/2188450.17/0_1e7f09_37850b4c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Из всего разнообразия флоры меня особенно впечатлили вот эти замечательные камнеподобные растения. По-русски, как я потом выяснил, эти суккуленты называются «литопсы», что и означает в переводе с древнегреческого «камнеподобные». На фоне настоящих камней литопсы и отличить непросто без табличек перед ними.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.17/0_1e7f0a_c8b260e0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.17/0_1e7f0a_c8b260e0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.17/0_1e7f0b_64befbb4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.17/0_1e7f0b_64befbb4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7f0c_b6d42360_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7f0c_b6d42360_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1018509/2188450.17/0_1e7f0d_9024bbb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1018509/2188450.17/0_1e7f0d_9024bbb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.17/0_1e7f0e_ff3aa901_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.17/0_1e7f0e_ff3aa901_orig" alt="" loading="lazy"></noscript></figure>
+<p>Этот прудик - тоже часть Ботанического сада:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.17/0_1e7f0f_323886c7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.17/0_1e7f0f_323886c7_orig" alt="" loading="lazy"></noscript></figure>
+<p>До этого момента было просто облачно, а тут погода стала окончательно портиться, начал накрапывать дождь, и мы побежали укрыться в павильоне тропической растительности.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.17/0_1e7f10_eb49a6ba_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.17/0_1e7f10_eb49a6ba_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.17/0_1e7f11_13f5a8f9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.17/0_1e7f11_13f5a8f9_orig" alt="" loading="lazy"></noscript></figure>
+<p>Пока посмотрели на его обитателей, дождь утих, и мы пошли дальше – наш путь лежал в сторону Европарламента и Европейского суда по правам человека.</p>
+<p>Сами эти здания интересно снять как-то не получилось, уж больно пасмурно было. Вот картинки из интернета, просто, чтобы представить себе этот квартал:</p>
+<p>Европарламент с двух ракурсов</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1028622/2188450.1d/0_1e8032_a12b86d3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1028622/2188450.1d/0_1e8032_a12b86d3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1018509/2188450.1d/0_1e8034_7e6bba0e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1018509/2188450.1d/0_1e8034_7e6bba0e_orig" alt="" loading="lazy"></noscript></figure>
+<p>и Дворец прав человека:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7ed2_34849e3f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7ed2_34849e3f_orig" alt="" loading="lazy"></noscript></figure>
+<p>Поглазели мы на царство европейских чиновников, и повернули обратно к старому городу.</p>
+<p>Сторожевой кот у двери хозяйского домика:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.17/0_1e7f12_19c0c8b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.17/0_1e7f12_19c0c8b_orig" alt="" loading="lazy"></noscript></figure>
+<p>По пути заглянули в минимаркет и купили мааааленький симпатичный ярко-зеленый штопор, наполовину пластиковый (забыли захватить свой из дома, а ведь хотели). Выглядел он вообще одноразовым, на первый взгляд, и стоил примерно столько же. Но прослужил нам верой и правдой все наше небольшое путешествие, все перенес, и сейчас обрел законное место в ящике кухонного стола. Я про него еще расскажу.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.17/0_1e7f14_49025526_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.17/0_1e7f14_49025526_orig" alt="" loading="lazy"></noscript></figure>
+<p>Из забавного – наблюдали с набережной Илли, как с другой стороны реки мужики ловили рыбу. Прямо на наших глазах им удалось подцепить здоровенный экземпляр. Я, признаться, не рыбак, не опознаю эту рыбину, да и неважно. Ведь не карась точно!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.17/0_1e7f15_5369ff0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.17/0_1e7f15_5369ff0_orig" alt="" loading="lazy"></noscript></figure>
+<p>Мужики вдвоем пытались его усмирить чуть ли не минуту, но увы – добыча сорвалась и исчезла в глубинах. Причем тот, что в перчатках, похоже, таки руки себе ободрал.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/770851/2188450.17/0_1e7f16_c8e74c0c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/770851/2188450.17/0_1e7f16_c8e74c0c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7f17_4b5dcc02_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7f17_4b5dcc02_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.17/0_1e7f18_546a6654_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.17/0_1e7f18_546a6654_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7f19_babaa6a1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.17/0_1e7f19_babaa6a1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.17/0_1e7f1a_489a6652_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.17/0_1e7f1a_489a6652_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.17/0_1e7f1b_280cc149_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.17/0_1e7f1b_280cc149_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.17/0_1e7f1c_f97e3798_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.17/0_1e7f1c_f97e3798_orig" alt="" loading="lazy"></noscript></figure>
+<p>Итак, продолжим...</p>
+<h2 id="барр">Барр</h2>
+<p>С утра мы сели в электричку на главном вокзале Страсбурга; сорок минут – и мы на месте. В Барре – тишина, народу - пара человек на улице. Только что немного побрызгал дождь, и воздух свеж и вкусен. По сравнению со Страсбургом - глухомань. О чем и мечталось. В ближайшие два дня еще будет дождить. Ну, так это же прекрасно – мокрая мостовая, капли дождя на листьях и прочее – все, что мы с вами любим фотографировать. Забегая вперед –мы еще успеем пожалеть, что благословенные дожди закончились, спекаясь под палящим солнцем в тридцати-с-лишним-градусную жару на дороге меж Riquewihr и Ribeauvillé…</p>
+<p>Днем мы медленно гуляли по Барру под дождем, под зонтами; в том числе прошлись и вдоль «пограничной» улицы, отделяющей город от холмов, на которых раскинулись виноградники, но было чересчур сыро и пасмурно, так что в этот первый день туда, на холмы, мы не стали подниматься.</p>
+<p>А уже ближе к вечеру, когда дождь закончился, я прихватил с собой фотоаппарат, и мы снова гуляли по извилистым улицам.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.18/0_1e7f34_3da018d1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.18/0_1e7f34_3da018d1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.18/0_1e7f35_123035a3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.18/0_1e7f35_123035a3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f36_d588a1bc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f36_d588a1bc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.18/0_1e7f37_14fdecbc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.18/0_1e7f37_14fdecbc_orig" alt="" loading="lazy"></noscript></figure>
+<p>Мэрия:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.18/0_1e7f38_3914c4f3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.18/0_1e7f38_3914c4f3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1028622/2188450.18/0_1e7f39_b06ea90e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1028622/2188450.18/0_1e7f39_b06ea90e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.18/0_1e7f3a_84dcdb48_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.18/0_1e7f3a_84dcdb48_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.18/0_1e7f3b_c78a7556_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.18/0_1e7f3b_c78a7556_orig" alt="" loading="lazy"></noscript></figure>
+<p>Удачно попал в кадр черный кот:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.18/0_1e7f3c_994133b4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.18/0_1e7f3c_994133b4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1032407/2188450.18/0_1e7f3d_b72eadbc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1032407/2188450.18/0_1e7f3d_b72eadbc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.18/0_1e7f3e_2685751d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.18/0_1e7f3e_2685751d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.18/0_1e7f3f_dc13620d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.18/0_1e7f3f_dc13620d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, а ночь прошла… довольно странно, скажем так. Видимо, еще в Страсбурге жена подхватила какую-то вирусную инфекцию с единственным симптомом – очень высокой температурой. Я думаю, такой высокой ни у кого из нас не было уж лет тридцать. Мы ее не меряли – нечем было, но по ощущениям – 39+. И сбить ее стандартными средствами из походной аптечки не особо получалось. Конечно, сильно сбивать мы и не хотели, но и 39 тоже уже ни в какие ворота… В общем, полночи жену буквально колотил озноб под четырьмя очень теплыми толстыми одеялами – я на нее навалил все, что были в нашем жилище, а сам дремал рядом просто в верхней одежде, укрывшись ветровкой.</p>
+<p>Утром жене было уже гораздо лучше. Температура еще, похоже, была, но уже совершенно небольшая. Мы решили, что она отлежится, почитает книжку до обеда, по крайней мере, а я пойду, пройдусь по окрестностям. Ну а потом мы созвонимся и решим, как действовать дальше.</p>
+<p>Утренний Барр:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f40_f9e0a1d2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f40_f9e0a1d2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.18/0_1e7f41_de9e384d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.18/0_1e7f41_de9e384d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.18/0_1e7f42_7b9e093_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.18/0_1e7f42_7b9e093_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.18/0_1e7f43_552c93a8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.18/0_1e7f43_552c93a8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.18/0_1e7f44_8c5e01a7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.18/0_1e7f44_8c5e01a7_orig" alt="" loading="lazy"></noscript></figure>
+<p>И я пошел наверх, на холм с виноградниками, предвкушая красивые виды. И «предчувствия его не обманули!». Так что на следующий день с утра, перед тем, как ехать дальше, в Селесту, я с удовольствием притащил сюда и жену, полностью оправившуюся, показал и ей эти красоты.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.18/0_1e7f45_fc81820_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.18/0_1e7f45_fc81820_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f46_54de1ebd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f46_54de1ebd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.18/0_1e7f47_4edf33d8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.18/0_1e7f47_4edf33d8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.18/0_1e7f48_b2dd53_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.18/0_1e7f48_b2dd53_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.18/0_1e7f49_1fb7da25_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.18/0_1e7f49_1fb7da25_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.18/0_1e7f4a_75202887_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.18/0_1e7f4a_75202887_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.18/0_1e7f4b_a610dca1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.18/0_1e7f4b_a610dca1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.18/0_1e7f4c_c097cafc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.18/0_1e7f4c_c097cafc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f4d_d762afee_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f4d_d762afee_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.18/0_1e7f4e_6e85ef1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.18/0_1e7f4e_6e85ef1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.18/0_1e7f4f_57e4d76a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.18/0_1e7f4f_57e4d76a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f52_b60da244_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f52_b60da244_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.18/0_1e7f53_79b056dd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.18/0_1e7f53_79b056dd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f54_80bcfb7b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f54_80bcfb7b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.18/0_1e7f56_d4aaec1a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.18/0_1e7f56_d4aaec1a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.18/0_1e7f57_2a49328d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.18/0_1e7f57_2a49328d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.18/0_1e7f58_779ac0fd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.18/0_1e7f58_779ac0fd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f59_a8a476ed_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.18/0_1e7f59_a8a476ed_orig" alt="" loading="lazy"></noscript></figure>
+<p>Прошелся повыше, по лесным дорогам и тропам:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.18/0_1e7f5a_8f04f247_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.18/0_1e7f5a_8f04f247_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361460/2188450.18/0_1e7f5b_4aa24999_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361460/2188450.18/0_1e7f5b_4aa24999_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.18/0_1e7f5c_6e4697b2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.18/0_1e7f5c_6e4697b2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/770851/2188450.19/0_1e7f5d_3721ffce_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/770851/2188450.19/0_1e7f5d_3721ffce_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.19/0_1e7f5e_4f40af81_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.19/0_1e7f5e_4f40af81_orig" alt="" loading="lazy"></noscript></figure>
+<p>Где-то в середине дня я вернулся к нашему гестхаусу. У жены от температуры и слабости не осталось ни малейшего следа – подруга моя снова была бодра и полна сил. Удивительная была штука, в общем, и вроде бы обошлось без последствий.</p>
+<p>Мы пообедали, и жена сказала, что вполне готова пойти смотреть на город и его окрестности и вообще рвалась пойти пешком до замка Andlau. В результате мы прошли через весь Барр по Rue de la Vallée Saint-Ulrich, в сторону замка Andlau, но все же решили прямо к нему не подниматься (мне казалось, что это будет ненужной нагрузкой после такой встряски для организма – в общем, я перестраховался). Просто свернули в лес по левую сторону от дороги. И побродив по лесным тропам, пройдя через «перекресток трех дубов» (Carrefour des trois chênes, как было обозначено на указателях), мы вышли к виноградникам, простирающимся вокруг деревушки Mittelbergheim. В предзакатном мягком свете картинка была весьма идиллическая…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f5f_2096a32f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f5f_2096a32f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f60_8298b63f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f60_8298b63f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.19/0_1e7f61_559bc173_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.19/0_1e7f61_559bc173_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f62_b3294d4f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f62_b3294d4f_orig" alt="" loading="lazy"></noscript></figure>
+<p>Необычные облака</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f63_63153d6c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f63_63153d6c_orig" alt="" loading="lazy"></noscript></figure>
+<p>В самОм Миттельбергхайме какой-то встретившийся нам местный житель буквально насильно погнал нас, как гусей, смотреть на старинную маслобойню чуть в стороне от главной улицы и издалека строго следил, чтобы мы до нее дошли и не увиливали. Вспомнился хранитель кладбища у Джерома К. Джерома - не удержусь от цитаты:</p>
+<blockquote class="citation"><p>« - Все в порядке, сэр! Я иду, иду. Все в порядке, сэр! Не спешите.<br>
+Я поднял глаза и увидел лысого старика, который ковылял по кладбищу, направляясь ко мне; в руках у него была огромная связка ключей, которые тряслись и гремели при каждом его шаге.<br>
+С молчаливым достоинством я махнул ему рукой, чтобы он уходил. Но старик все приближался, неумолчно крича:<br>
+- Я иду, сэр, иду! Я немного хромаю. Теперь я уже не такой прыткий, как раньше. Сюда, сэр!<br>
+- Уходите, - повторил я, - оставьте меня, пока я не перелез через стену и не убил вас.<br>
+Старик, видимо, удивился.<br>
+- Разве вы не хотите посмотреть могилы? - спросил он…<br>
+На минуту старик растерялся. Он протер глаза и пристально посмотрел на меня. Снаружи я был достаточно похож на человека. Старик ничего не понимал.<br>
+- Вы приезжий? - спросил он. - Вы не живете здесь?<br>
+- Нет, не живу,- сказал я. - Если бы я жил здесь, вы бы здесь не жили.<br>
+- Ну, значит, вы хотите посмотреть могилы, - сказал старик. - Гробницы, знаете, закопанные люди, памятники.»</p></blockquote>
+<p>Ну что ж, сделали человеку приятное – посмотрели…</p>
+<p>А утром, как я уже писал, сначала я поволок жену на холмы, любоваться открывающимся оттуда пейзажем, ну и напоследок мы вдвоем прогулялись по дороге, петляющей меж виноградников над Барром…</p>
+<p>И уже ближе к обеду, выпив по чашечке кофе у наших хозяев, отправились дальше - чемодан, вокзал, Селеста.</p>
+<h2 id="селеста">Селеста</h2>
+<p>Название «СелестА» (ударение на конце слова) происходит, согласно немецкому путеводителю, от слова scladistat, что означает «местность на болоте», поскольку город находится в центре местности, называемой «Рид», которая часто затоплялась водами Или. Утверждается также, что некогда город был резиденцией франкских королей, и сам Карл Великий справлял здесь рождество аж в 775 году. Потом городок переходил из рук в руки; немцы строили укрепления, французы разрушали. В общем, потрепало городок, как и весь Эльзас и Лотарингию. В городе множество красивых старинных домов, фахверковых, с нависающими балконами; несколько церквей, в частности, романская Sainte-Foy de Sélestat и готическая однобашенная Eglise Saint-Georges. Решил вывесить вот такой вид исторического центра Селесты, кочующий по французским туристическим сайтам – здесь видны обе:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1d/0_1e8033_fb31ea85_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1d/0_1e8033_fb31ea85_orig" alt="" loading="lazy"></noscript></figure>
+<p>Я так смело склоняю название «Селеста», хотя, возможно, это и не совсем правильно. Но как-то не склонять было бы совсем странно. Так что – склоняем.</p>
+<p>Погуляв по улицам Селесты и проголодавшись, на крошечной площади Рыбного Рынка (Place du Marché aux Poissons), прямо под стенами Sainte-Foy de Sélestat, мы вдруг обнаружили три или четыре пустых столика. На столиках лежали меню, вокруг никого не было видно. И никакого намека на вывеску. Правда, дверь в близлежащем доме была открыта, и ступени уходили куда-то вниз в полутьму. Мы уселись, почитали меню – выглядело вполне привлекательно: и холодные супы, и что-то «на второе», и все вполне недорого. Я подошел поближе к двери и остановился в некотором замешательстве. Но меня (точнее, видимо, мои ноги) уже увидели, и вскоре по ступенькам вскарабкалась женщина, уже в возрасте, и мы обсудили с ней наши кулинарные мечтания на тот момент. Она снова скрылась внизу, и через какое-то время попеременно с еще одной тетушкой, примерно тех же лет, принесла нам еду. Уже не помню, что там было, но помню, что было прямо очень по-домашнему вкусно. Я попробовал осторожно спросить, почему при столь отличной кухне и расположении (столики стояли прямо у старинного колодца и под сенью собора с другой стороны) у них такой полуподпольный способ кормить людей? Оказалось, что, да, так и есть - полуподпольный. Они сами владеют булочной в том же доме на первом этаже (вход в нее оказался с противоположной стороны). Вот <a href="https://www.google.ru/maps/@48.2595074,7.4559021,3a,75y,79.74h,102.13t/data=!3m6!1e1!3m4!1sT6Dqa1-VLngYAmERQ-7t9Q!2e0!7i13312!8i6656" target="_blank" rel="noopener noreferrer">эта площадь на гуглокартах</a>, оцените location (слева на углу дома виден вход в булочную). То есть их основное занятие – это вот эта булочная. Но им очень нравится готовить. А для того, чтобы кормить людей, нужно получать кучу всяких лицензий и прочего. А может быть, просто нельзя совмещать, я мог не понять тонкостей. Поэтому они это дело не афишируют. Кормят из-под полы, так сказать. В общем, забавно.</p>
+<p>В ожидании обеда:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f64_ee36d4ff_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f64_ee36d4ff_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.19/0_1e7f65_448a36ea_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.19/0_1e7f65_448a36ea_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f66_22d546ad_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f66_22d546ad_orig" alt="" loading="lazy"></noscript></figure>
+<p>А вот эта же площадь чуть позже:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.19/0_1e7f69_f2a73e7d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.19/0_1e7f69_f2a73e7d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Раз уж я упомянул тот немецкий путеводитель, русской версией которого мы пользовались, не могу не привести кусочек про Sainte-Foy de Sélestat, который меня совершенно умилил: «Внутри интересна сохранившая, по-видимому, от предшествующей церкви крипта, подобная крипте церкви Гроба Господнего в Иерусалиме. Здесь находится литая фигурка неизвестной женщины из Сент-Фуа, найденная при раскопках <em>и, вероятно, представляющая собой Хильдегарду Бюренскую. Во всяком случае, улыбка на лице излучает необыкновенную нежность.</em>» Прелесть ведь.</p>
+<p>У стен собора:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f68_5c0da402_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f68_5c0da402_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот еще разная Селеста:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.19/0_1e7f67_86d787e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.19/0_1e7f67_86d787e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f6a_f357d7d7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f6a_f357d7d7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/770851/2188450.19/0_1e7f6b_d4aa3174_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/770851/2188450.19/0_1e7f6b_d4aa3174_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.19/0_1e7f6c_f2310a9a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.19/0_1e7f6c_f2310a9a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1030038/2188450.1d/0_1e8175_4c5d1b1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1030038/2188450.1d/0_1e8175_4c5d1b1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f6d_8b540059_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f6d_8b540059_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.19/0_1e7f6e_cf7b529e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.19/0_1e7f6e_cf7b529e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.19/0_1e7f70_37f97da3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.19/0_1e7f70_37f97da3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f71_ddcada88_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f71_ddcada88_orig" alt="" loading="lazy"></noscript></figure>
+<p>А еще в Селесте мы, пожалуй, в первый раз почувствовали, что культ аистов, повсеместный в Эльзасе – это не просто нечто «для туристов», чтобы продавать магнитики, игрушки и прочее, а вполне существенная часть национальной идентичности. Даже в исторической части мы видели на крыше нескольких высоких башен гнезда аистов (крыша на пару метров вокруг была характерного беловатого цвета), а в каждом гнезде – по семейной аистиной паре. Когда я увидел такую пару снизу, то было подумал сначала, что это что-то типа инсталляции, для пущей красоты (дело шло к сумеркам, а аисты стояли практически неподвижно). Но потом кто-то из них пошевелился, и я осознал свою неправоту. В общем, они и правда живые, и они повсюду!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.19/0_1e7f72_b4701840_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.19/0_1e7f72_b4701840_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1027383/2188450.19/0_1e7f73_e73218df_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1027383/2188450.19/0_1e7f73_e73218df_orig" alt="" loading="lazy"></noscript></figure>
+<p>В Рибовилле мы видели такое гнездо даже на крыше пожарного брандмауэра. И ничего, молодцы, не прогоняют.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.19/0_1e7f74_93ebcf35_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.19/0_1e7f74_93ebcf35_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.19/0_1e7f75_8f8063e6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.19/0_1e7f75_8f8063e6_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="замок-о-кенигсбург">Замок О-Кенигсбург</h2>
+<p>На второй день мы съездили из Селесты в замок О-Кенигсбург. Туда от ж/д вокзала возит автобус-шаттл («navette»), прямо к замку. Вот <a href="http://www.haut-koenigsbourg.fr/fr/infos-pratiques/navette-haut-koenigsbourg/" target="_blank" rel="noopener noreferrer">их сайт</a>, там вся информация об этом автобусе. Замок посмотреть, безусловно, стОит, он и сам по себе красив, и внутри очень интересен, и виды от него на Рейнскую долину открываются великолепные (он расположен на вершине холма высотой 750 метров). Посмотрите на вывешенную выше фотографию Селесты с высоты птичьего полета – там вдали по центру, почти у верхнего края виден этот замок. Нам с вами туда.</p>
+<p>Могу посоветовать посмотреть вот <a href="http://www.selestat-haut-koenigsbourg.com/en/emerveiller/chateau-du-haut-koenigsbourg.htm" target="_blank" rel="noopener noreferrer">этот сайт</a>, там много полезной информации об этом замке. И вот позволю себе повесить отдельно две фотографии с этого сайта – мне с такого ракурса не снять, что досадно - чтобы дать общее представление об О-Кенигсбурге. Первая фотография - просто "ах":</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.16/0_1e7ed0_db7a5b13_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.16/0_1e7ed0_db7a5b13_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.16/0_1e7ecf_8ad50945_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.16/0_1e7ecf_8ad50945_orig" alt="" loading="lazy"></noscript></figure>
+<p>Единственное, что надо иметь в виду, что весь замок – это чистая реконструкция, хотя и очень тщательная, на основе большой подготовительной работы по изучению развалин того замка, что был когда-то на этом месте, и других средневековых замков этого региона. Во время тридцатилетней войны он был полностью разграблен шведами. И когда город Селеста подарил замок в 1889 году Вильгельму II, он наполовину лежал в развалинах (хорош, кстати, подарочек!) Но Вильгельм II очень хотел восстановить его, дабы прославить династию Гогенцоллернов, к которой он принадлежал, и подчеркнуть преемственность со старинными династиями Гогенштауфенов и Габсбургов (а им в разное время этот замок когда-то принадлежал – первым где-то в XII, вторым – где-то в XVI веке). В общем, те самые «скрепы»; ну, вы знаете. И архитектор Бодо Эберхардт, внимательно изучив результаты археологических раскопок этого и других замков такого типа, его в 1900-1908 годах полностью отстроил. Вот фото замка до реставрации, в 1859-м году:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ed1_a73b6adc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.16/0_1e7ed1_a73b6adc_orig" alt="" loading="lazy"></noscript></figure>
+<p>И примерная картинка «до» и «после» (взято <a href="http://www.crdp-strasbourg.fr/data/albums/chateaux_hk02/index.php?img=5&amp;parent=33" target="_blank" rel="noopener noreferrer">вот отсюда</a>):</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.1d/0_1e8031_4ac5a1d1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.1d/0_1e8031_4ac5a1d1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, не совсем то же, что восстановить римский Форум, конечно, но тоже труд огромный. То есть, то, что вы увидите – это то, как МОГ бы выглядеть этот замок. Как сказано в том же любимом путеводителе, «он мог бы служить прототипом средневековых замков и великолепным наглядным пособием». Но замок и правда красив и интересен. Твердая пятерка за реставрацию.</p>
+<p>Вот виды, открывающиеся от верхней площадки, рядом со входом в замок. Вдали видны леса Шварцвальда; справа (на фотографии не видно) можно было разглядеть заснеженные вершин Альп. Внизу расположился городок Сент-Ипполит (Saint-Hippolyte) - трудно назвать это деревней; самое близкое слово, наверное, это французское «commune» – что-то вроде нашего «поселка».</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f76_b875c722_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f76_b875c722_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f77_16d5c3d2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f77_16d5c3d2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f78_396a346a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f78_396a346a_orig" alt="" loading="lazy"></noscript></figure>
+<p>Перед входом в замок, помимо касс, имелось нечто вроде камеры хранения, куда положено сдавать всякие колющие, режущие и прочие опасные предметы. Наличествовал и секьюрити – огромный темнокожий мужчина атлетического сложения и устрашающего вида досматривал рюкзаки и сумки, и если что находил из «опасного», направлял сдать в тот «киоск» с камерой хранения. Суровость гигантского охранника полностью нивелировалась присутствием ангельского вида девочки лет примерно четырех-пяти – очевидно, его дочки. Скучающая дочурка (не с кем было оставить, видимо), с головой в мелких косичках и разнообразных цветных бантиках развлекала себя, крутясь сначала вокруг одной папиной ноги, потом другой, потом снова первой, и так далее. На очередь досматриваемых туристов не обращала никакого внимания.</p>
+<p>Когда дошла очередь до нас, на вопрос «колющее-режущее имеется?» я, как честный человек, ответил «Да!». Охранник вопросительно посмотрел на меня сверху вниз с высоты своих двух метров; я порылся в рюкзаке и извлек на свет штопор. Тот самый, купленный в Страсбурге, ярко-зеленый. Охранник вздохнул («господи, еще один слабоумный на мою голову»), но попросил сдать, для порядка. Я сдал. Парень в киоске посмотрел на меня с подозрительно похожим выражением лица, положил мой драгоценный штопор на полочку и выдал номерную квитанцию. Мне почему-то вспомнилось, как в любимом с детства «Двадцать лет спустя» Гримо придирался к формально «колющим» и «режущим» предметам в камере герцога Бофора, чтобы завоевать доверие начальства Венсенского замка. Но я отвлекся. Итак, мы проникли на охраняемую территорию и пошли гулять по замку. Вот несколько фотографий оттуда.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f79_b3c0e030_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f79_b3c0e030_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f7a_d79d1866_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f7a_d79d1866_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f7b_d076396d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f7b_d076396d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.19/0_1e7f7c_5916057c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.19/0_1e7f7c_5916057c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.19/0_1e7f7d_88ef58c2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.19/0_1e7f7d_88ef58c2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.19/0_1e7f7e_78cd1317_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.19/0_1e7f7e_78cd1317_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.19/0_1e7f7f_993e4cd9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.19/0_1e7f7f_993e4cd9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.19/0_1e7f80_5ef53210_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.19/0_1e7f80_5ef53210_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.19/0_1e7f81_abe305dd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.19/0_1e7f81_abe305dd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.19/0_1e7f82_fad8f54d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.19/0_1e7f82_fad8f54d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.19/0_1e7f83_720a1789_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.19/0_1e7f83_720a1789_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.19/0_1e7f84_f16bbec6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.19/0_1e7f84_f16bbec6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f85_f4e55aeb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f85_f4e55aeb_orig" alt="" loading="lazy"></noscript></figure>
+<p>Классический ракурс фотографий из О-Кенигсбурга:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f86_1a9f1c59_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f86_1a9f1c59_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f87_5b81528c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.19/0_1e7f87_5b81528c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f88_76385423_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f88_76385423_orig" alt="" loading="lazy"></noscript></figure>
+<p>У подножья замка:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f89_2fc7bb53_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.19/0_1e7f89_2fc7bb53_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.19/0_1e7f8a_93fe2720_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.19/0_1e7f8a_93fe2720_orig" alt="" loading="lazy"></noscript></figure>
+<p>…При выходе из замка я снова подошел в камере хранения – теперь там сидела женщина. Я протянул квитанцию. Она спросила: «У вас был нож?». Я с достоинством ответил: «Нет. Лучше!» Она отыскала ячейку, всплеснула руками и издала звук… Ну, примерно, как если бы ей впервые показали новорожденного племянника в коляске. «Un petit tire-bouchon!... Quel délice! Adorable!» («Маленький штопор! Какая прелесть!» и т.п.) В общем, меня там будут помнить.</p>
+<p>(Из важного: если вам нужно будет что-то сдать – например, штопор – обязательно имейте с собой какой-нибудь документ (паспорт), а лучше его скан. Это вообще совет универсальный – мы всегда таскаем в рюкзаках ксерокопии паспортов.)</p>
+<p>Мы заранее решили, что вниз будем спускаться пешком. Начало спуска - в проеме каменных перил прямо у входа в замок – как раз там, где стоят столики и откуда открывается панорама долины. А дальше – по указателям. Я, правда, еще подсматривал регулярно в «Maps me» на смартфоне – там, как правило, нанесены все самые незначительные лесные тропы. А троп тут полно. Сначала спускались серпантином, потом спуск стал пологим, и мы шли практически прямо.</p>
+<p>Дорога была довольно симпатичной; шли мы не торопясь.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.19/0_1e7f8b_4f760828_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.19/0_1e7f8b_4f760828_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.19/0_1e7f8c_4f2dbcf6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.19/0_1e7f8c_4f2dbcf6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361460/2188450.19/0_1e7f8d_be57eba2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361460/2188450.19/0_1e7f8d_be57eba2_orig" alt="" loading="lazy"></noscript></figure>
+<p>Это был первый день начинающейся недельной жары, но мы шли по лесу, все время в тени, и поэтому ее еще не ощутили. Наш путь лежал мимо зоологического парка «Обезьянья гора» (<a href="https://www.montagnedessinges.com/" target="_blank" rel="noopener noreferrer">La Montagne des Singes</a>), популярного среди семей с детьми и дальше, в поселок Шатнуа (Châtenois). Там мы сядем на самый обычный рейсовый автобус до Селесты – до нее останется всего километров пять, но идти вдоль дороги там очень неудобно. Уже почти спустившись в долину, остановились на березовой опушке леса перекусить и задействовать, наконец, тот самый tire-bouchon.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f8f_63e59f8c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.19/0_1e7f8f_63e59f8c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.1a/0_1e7f91_a0533c66_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.1a/0_1e7f91_a0533c66_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну и вечером снова погуляли по старому городу.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7f92_10b5082d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7f92_10b5082d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7f94_ce26737_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7f94_ce26737_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7f95_97a8cff2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7f95_97a8cff2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7f96_9c26a58e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7f96_9c26a58e_orig" alt="" loading="lazy"></noscript></figure>
+<p>А завтра с утра – чемодан, вокзал, Кольмар!</p>
+<p><em>Продолжение следует</em></p>
+<p>Ну что же, не будем откладывать продолжение в долгий ящик.</p>
+<h2 id="кольмар">Кольмар</h2>
+<p>Кольмар – место туристическое, глянцевое, яркое. Утверждается, что его название происходит от латинского «Коломбариум» («Голубятня»), в каковом качестве он упоминается в 823 году при Людовике Добродушном. Для нас он был, помимо предмета с собственной живописностью, базой для вылазок в Riquewihr (Риквир) + Hunawihr + Ribeauvillé (Рибовилле) в второй из трех дней и в Eguisheim (Эгисхайм , он же Эгишем, он же Эгисем) – в третий.</p>
+<p>Основное украшение Кольмара – протекающая через него речка Лош (Lauch), точнее дома, стоящие по ее берегам. А еще точнее - два конкретных вида: виды с моста, где эту речку пересекает улица Turenne, и виды на набережную Poissonerie в квартале, называемом Маленькой Венецией. Если вы не предъявите фотографии с этими видами, то никого и никогда вы не убедите, что были в Кольмаре. Я вот, например, подготовился:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480022/2188450.1a/0_1e7f97_8513b0ed_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480022/2188450.1a/0_1e7f97_8513b0ed_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.1a/0_1e7fb2_699cdaa7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.1a/0_1e7fb2_699cdaa7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.1a/0_1e7f9b_c65f2456_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.1a/0_1e7f9b_c65f2456_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.1a/0_1e7f9d_e28c71f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.1a/0_1e7f9d_e28c71f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1a/0_1e7f9e_903521b1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1a/0_1e7f9e_903521b1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, а дальше, с чувством выполненного, хотя и странного, долга, можно гулять по Кольмару.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7fb3_b8a2980e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7fb3_b8a2980e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1a/0_1e7f99_2ec32f9e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1a/0_1e7f99_2ec32f9e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.1a/0_1e7f9a_9252fce8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.1a/0_1e7f9a_9252fce8_orig" alt="" loading="lazy"></noscript></figure>
+<p>Можно прогуляться вокруг площади Старой Таможни (L’Ancienne douane) и попасть <a href="https://www.google.ru/maps/@48.0758572,7.3592876,3a,75y,291.06h,92.54t/data=!3m6!1e1!3m4!1safCTyQRbpdQTLIGDX1LnKQ!2e0!7i13312!8i6656" target="_blank" rel="noopener noreferrer">в прекрасное место</a>, где любители виноградной лозы пробуют и покупают разнообразные эльзасские вина – в основном, конечно, Гевюрцтраминер, Рислинг, Сильванер и Пино-гри (в порядке убывания популярности).</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fa1_d4583d7d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fa1_d4583d7d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fa2_d96ce43e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fa2_d96ce43e_orig" alt="" loading="lazy"></noscript></figure>
+<p>Как вы должны были догадаться, мы в стороне, конечно, не остались – пять бутылок мы купили здесь (и еще три, до разрешенного аэрофлотовского лимита – в Рибовилле).</p>
+<p>А можно отказаться от этих соблазнов, повернуться спиной к этим латентным пьянчугам и полюбоваться на один из нескольких известных кольмарских фонтанов – фонтан Швенди <a href="https://www.google.ru/maps/@48.0759085,7.3595356,3a,82.5y,218.75h,93.83t/data=!3m6!1e1!3m4!1sHNH9fOr7MqDqhH0SVM82vQ!2e0!7i13312!8i6656" target="_blank" rel="noopener noreferrer">в центре той же площади</a>:</p>
+<p>Этот фонтан, авторства Огюста Бартольди (1898), украшен статуей Lazarus von Schwendi (1522-1583), генерала, кольмарского военачальника при императоре Максимилиане II. Участвовал в войне против турок, побывал в Венгрии, и оттуда, по легенде, привез на родину сорта винограда из Токая. По этой причине Бартольди изобразил его в виноградной лозой в руке.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1028622/2188450.1a/0_1e7f9f_461cb238_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1028622/2188450.1a/0_1e7f9f_461cb238_orig" alt="" loading="lazy"></noscript></figure>
+<p>В окрестностях тут, кстати, довольно много всяких заведений, вполне демократичных, где приезжий народ питается по вечерам. Как поступили и мы.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1032407/2188450.1a/0_1e7fa0_b3b12763_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1032407/2188450.1a/0_1e7fa0_b3b12763_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1a/0_1e7fa3_66612980_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1a/0_1e7fa3_66612980_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fa4_d7df0748_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fa4_d7df0748_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fa5_89dba88_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fa5_89dba88_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1a/0_1e7fa6_4b271401_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1a/0_1e7fa6_4b271401_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.1a/0_1e7fa7_198a31d3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.1a/0_1e7fa7_198a31d3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7fa8_f5834745_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7fa8_f5834745_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.1a/0_1e7fa9_9354604c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.1a/0_1e7fa9_9354604c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1a/0_1e7faa_31ec6065_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1a/0_1e7faa_31ec6065_orig" alt="" loading="lazy"></noscript></figure>
+<p>Можно дойти и до собора св. Мартина (Cathédrale Saint-Martin). Строился с 1235 по 1365 год. Вот, кстати, еще один пример одноглавого недостроенного собора.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.1a/0_1e7fba_5a7ee5c3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.1a/0_1e7fba_5a7ee5c3_orig" alt="" loading="lazy"></noscript></figure>
+<p>Но с боков он вполне симпатичен. Вот еще его фото, найденное в интернете:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370744/2188450.1d/0_1e8041_4f6020e4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370744/2188450.1d/0_1e8041_4f6020e4_orig" alt="" loading="lazy"></noscript></figure>
+<p>Внутри него наткнулись вот на такую карту, где каждый гость может воткнуть кнопку в точку, откуда он приехал. Мы тоже присоединились к «флеш-мобу».</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.1a/0_1e7fab_f3b94c6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.1a/0_1e7fab_f3b94c6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.1a/0_1e7fac_bc7f9544_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.1a/0_1e7fac_bc7f9544_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.1a/0_1e7fad_3292c0ca_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.1a/0_1e7fad_3292c0ca_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7fbc_11587448_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7fbc_11587448_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fae_33903029_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fae_33903029_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1a/0_1e7fbb_60c0388f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1a/0_1e7fbb_60c0388f_orig" alt="" loading="lazy"></noscript></figure>
+<p>А недалеко он него есть еще и Доминиканский собор, тоже приятный на вид (вот фото с французской Вики:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/940943/2188450.1d/0_1e8309_13a0fef7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/940943/2188450.1d/0_1e8309_13a0fef7_orig" alt="" loading="lazy"></noscript></figure>
+<p>Этот строился примерно с 1289 по 1346, то есть, в общем, ровесник собора св. Мартина.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1032407/2188450.1a/0_1e7faf_74f1d55d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1032407/2188450.1a/0_1e7faf_74f1d55d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.1a/0_1e7fb0_39e8a09_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.1a/0_1e7fb0_39e8a09_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.1a/0_1e7fb1_a2bebf28_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.1a/0_1e7fb1_a2bebf28_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/371487/2188450.1a/0_1e7fbd_70ff6ecd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/371487/2188450.1a/0_1e7fbd_70ff6ecd_orig" alt="" loading="lazy"></noscript></figure>
+<p>Если пройти еще всего квартал в том же направлении, то можно заглянуть на улицу Têtes, где имеется еще один «must see» – «Дом голов» (La Maison des Têtes). Не знаю… На нас как-то он вообще особого впечатления не произвел. Может быть, потому, что уже сгущались сумерки, и потому, что мы уже изрядно притомились к этому моменту, учитываю все усиливающуюся жару днем. Может быть. Да, он необычный, конечно, на фоне окружающих домов. Напомнил мне почему-то Андалусию, Севилью.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361460/2188450.1a/0_1e7fc1_80cb6d3e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361460/2188450.1a/0_1e7fc1_80cb6d3e_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот еще немножко предзакатного и вечернего Кольмара, в том числе знаменитые вывески:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.1b/0_1e7fc2_85592f69_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.1b/0_1e7fc2_85592f69_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7fbe_d660ef07_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1a/0_1e7fbe_d660ef07_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1b/0_1e7fc5_c88c206c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1b/0_1e7fc5_c88c206c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fc3_f07ef56_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fc3_f07ef56_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.1a/0_1e7fbf_e393d5e8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.1a/0_1e7fbf_e393d5e8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fc4_922d2ebb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fc4_922d2ebb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1b/0_1e7fc0_f16d133b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1b/0_1e7fc0_f16d133b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fb4_978bab3c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fb4_978bab3c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fb5_bcb810e9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fb5_bcb810e9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.1a/0_1e7fb6_6d66f059_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.1a/0_1e7fb6_6d66f059_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1a/0_1e7fb7_e734dc6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1a/0_1e7fb7_e734dc6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1a/0_1e7fb8_dba8a3f0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1a/0_1e7fb8_dba8a3f0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fb9_1f600621_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1a/0_1e7fb9_1f600621_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.1b/0_1e7fc6_ea54a43a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.1b/0_1e7fc6_ea54a43a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1018509/2188450.1b/0_1e7fc7_ff454e40_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1018509/2188450.1b/0_1e7fc7_ff454e40_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fc8_312c96e1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fc8_312c96e1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1b/0_1e7fc9_221990f9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1b/0_1e7fc9_221990f9_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="риквир-юнавир-рибовилле">Риквир – Юнавир - Рибовилле</h2>
+<p>На следующий день мы запланировали «поход» (слышу даже отсюда хохот настоящих туристов). Ну я же сказал – в кавычках «поход», ну что вы. От ж. д. вокзала Кольмара (мы поселились всего минутах в десяти пешком от него) мы доехали на обычном автобусе до Риквира. А обратно вернулись на автобусе из Рибовилле. Между ними всего-то пять километров (Hunawihr втиснулся аккурат посередине). Но, учитывая +32 на улице, и это только в тени, и желание все же погулять по этим городкам, подняться на холмы над ними и пофотографировать оттуда, и мечты завалиться на траву где-нибудь в виноградниках и переждать там под сенью лоз самую жару (все выполнено!), программа представлялась вполне насыщенной.</p>
+<p>В целом, не знаю, что и рассказать про эти городки. Ходить там, конечно, приятнее по боковым улицам, где тише и малолюднее. С ужасом представляю себе, каково приходится местным жителям, живущим в домах на их главных улицах. К такому потоку людей, мне кажется, привыкнуть невозможно.</p>
+<p>Но фотографии все равно, конечно, там получаются сочные. Вот колоритная парочка:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1028622/2188450.1b/0_1e7fca_23ae5280_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1028622/2188450.1b/0_1e7fca_23ae5280_orig" alt="" loading="lazy"></noscript></figure>
+<p>Колокол отбивает полдень, стая голубей описывает круги вокруг колокольни…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1b/0_1e7fcb_39e20f60_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1b/0_1e7fcb_39e20f60_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1b/0_1e7fcc_4c05fb38_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1b/0_1e7fcc_4c05fb38_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fcd_bbe144e9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fcd_bbe144e9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fce_2ecdcda2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fce_2ecdcda2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.1b/0_1e7fcf_d6cb82d8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.1b/0_1e7fcf_d6cb82d8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.1b/0_1e7fd0_7e64d396_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.1b/0_1e7fd0_7e64d396_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.1b/0_1e7fd1_53b93de5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.1b/0_1e7fd1_53b93de5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1b/0_1e7fd2_8b82b8e8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1b/0_1e7fd2_8b82b8e8_orig" alt="" loading="lazy"></noscript></figure>
+<p>Надпись над окном из Biblia Vulgata – «Да не дремлет и не спит хранящий Израиля»:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.1b/0_1e7fd3_b3c01d23_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.1b/0_1e7fd3_b3c01d23_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1b/0_1e7fd4_fdfcb35e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1b/0_1e7fd4_fdfcb35e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1b/0_1e7fd5_63713eb5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1b/0_1e7fd5_63713eb5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1b/0_1e7fd7_22aab419_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1b/0_1e7fd7_22aab419_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.1b/0_1e7fd8_8ba3371_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.1b/0_1e7fd8_8ba3371_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1b/0_1e7fd9_f2101ae4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1b/0_1e7fd9_f2101ae4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1b/0_1e7fda_6bcc9649_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1b/0_1e7fda_6bcc9649_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.1b/0_1e7fdb_d419677d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.1b/0_1e7fdb_d419677d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1018509/2188450.1b/0_1e7fdc_3d362185_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1018509/2188450.1b/0_1e7fdc_3d362185_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fdd_b7529180_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fdd_b7529180_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.1b/0_1e7fde_38a2caa0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.1b/0_1e7fde_38a2caa0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1b/0_1e7fdf_47d9f53e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1b/0_1e7fdf_47d9f53e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fe0_cb870ac9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fe0_cb870ac9_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну и классика: вывески Жан-Жака Вальца по прозвищу «Ганзи» (1873 – 1951):</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1b/0_1e7fe1_1f3f5dd4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1b/0_1e7fe1_1f3f5dd4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.1b/0_1e7fe2_a10717e6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.1b/0_1e7fe2_a10717e6_orig" alt="" loading="lazy"></noscript></figure>
+<p>Не уверен, правда, что все на моих фотографиях – это его работы. Ну и не важно.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1018509/2188450.1b/0_1e7fe3_35b0c9f7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1018509/2188450.1b/0_1e7fe3_35b0c9f7_orig" alt="" loading="lazy"></noscript></figure>
+<p>В магазинчиках и на улицах Риквира:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fe4_e07759c8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fe4_e07759c8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361460/2188450.1b/0_1e7fe5_1c6f0de9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361460/2188450.1b/0_1e7fe5_1c6f0de9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.1b/0_1e7fe6_c7068be1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.1b/0_1e7fe6_c7068be1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1b/0_1e7fe7_3de6abaf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1b/0_1e7fe7_3de6abaf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.1b/0_1e7fe8_ebd9bdf2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.1b/0_1e7fe8_ebd9bdf2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1b/0_1e7fe9_4edb6ba8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1b/0_1e7fe9_4edb6ba8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1b/0_1e7fea_d0977b8a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1b/0_1e7fea_d0977b8a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.1b/0_1e7feb_cacb5670_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.1b/0_1e7feb_cacb5670_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fec_8132a19d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fec_8132a19d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1b/0_1e7fed_c3df7553_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1b/0_1e7fed_c3df7553_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1b/0_1e7fee_ef83fe70_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1b/0_1e7fee_ef83fe70_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fef_cf2e818a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7fef_cf2e818a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.1b/0_1e7ff0_1a4144ba_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.1b/0_1e7ff0_1a4144ba_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот в этом подвальчике мы купили холодную бутылочку рислинга местного производства:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7ff1_e841219_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1b/0_1e7ff1_e841219_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.1b/0_1e7ff2_243993cd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.1b/0_1e7ff2_243993cd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1c/0_1e7ff3_5ed5026d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1c/0_1e7ff3_5ed5026d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.1c/0_1e7ff4_700ba922_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.1c/0_1e7ff4_700ba922_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e7ff5_1981b99e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e7ff5_1981b99e_orig" alt="" loading="lazy"></noscript></figure>
+<p>Выбрались из Риквира и направились на холмы с виноградниками в сторону Hunawihr и Ribeauvillé…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.1c/0_1e7ff6_74a6996b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.1c/0_1e7ff6_74a6996b_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вид на Риквир из виноградников:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1c/0_1e7ff7_2932c29f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1c/0_1e7ff7_2932c29f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1028622/2188450.1c/0_1e7ff8_f8673d07_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1028622/2188450.1c/0_1e7ff8_f8673d07_orig" alt="" loading="lazy"></noscript></figure>
+<p>Наполненная солнечным светом гроздь (мы попробовали несколько ягод – очень вкусно)</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.1c/0_1e7ff9_dbd4735e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.1c/0_1e7ff9_dbd4735e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e7ffa_e414cfc9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e7ffa_e414cfc9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1c/0_1e7ffb_58335991_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1c/0_1e7ffb_58335991_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.1c/0_1e7ffc_f40ce39a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.1c/0_1e7ffc_f40ce39a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e7ffd_8e95b347_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e7ffd_8e95b347_orig" alt="" loading="lazy"></noscript></figure>
+<p>Наше спасение от жары (горло потом, конечно, поболело):</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.1c/0_1e7fff_edcfaf4c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.1c/0_1e7fff_edcfaf4c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Снова Риквир (трудно перестать фотографировать):</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8000_3ee05aef_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8000_3ee05aef_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8001_4aa8881e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8001_4aa8881e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1c/0_1e8002_5e01af83_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1c/0_1e8002_5e01af83_orig" alt="" loading="lazy"></noscript></figure>
+<p>Hunawihr:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8003_2b05b008_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8003_2b05b008_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1c/0_1e8004_f59c0278_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1c/0_1e8004_f59c0278_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8005_59983da_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8005_59983da_orig" alt="" loading="lazy"></noscript></figure>
+<p>Развалины замков Сент-Ульрих, Гирсберг и О-Рибопьер (сверху). Легенда прекрасна – якобы в двух нижних замках некогда жили два брата. По утрам тот, кто вставал раньше, будил второго, стреляя из лука в ставни его замка. Догадываетесь, что с ними случилось в одно прекрасное утро?... Это называется «естественный отбор». Аминь.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1018509/2188450.1c/0_1e8006_15b8629_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1018509/2188450.1c/0_1e8006_15b8629_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8007_f492f3aa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8007_f492f3aa_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8008_ec39d4e9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8008_ec39d4e9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1017530/2188450.1c/0_1e8009_f8dee25c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1017530/2188450.1c/0_1e8009_f8dee25c_orig" alt="" loading="lazy"></noscript></figure>
+<p>А вот где-то здесь, в тени, мы улеглись на траву, и глотнули риквирского рислинга. И просто отдохнули от жары</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1c/0_1e800a_17b0781b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1c/0_1e800a_17b0781b_orig" alt="" loading="lazy"></noscript></figure>
+<p>(Отступление: Надеюсь, вы не решите, что мы с женой - пьяницы, этого нет даже и близко :)). Да, мы оба любим и ценим хорошее вино. Но нам обоим обычно хватает всего по одному бокалу - к сожалению или к счастью - ибо во втором острота восприятия вкуса и запаха уже притупляется.)</p>
+<p>А мы, отдохнув, продолжили путь...</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.1c/0_1e800b_8863cc4c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.1c/0_1e800b_8863cc4c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1c/0_1e800d_2a3497f5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1c/0_1e800d_2a3497f5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.1c/0_1e800e_c32425ec_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.1c/0_1e800e_c32425ec_orig" alt="" loading="lazy"></noscript></figure>
+<p>Лаванда по углам виноградников:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e800f_f9a51108_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e800f_f9a51108_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8010_6aecfa50_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8010_6aecfa50_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот и Рибовилле (он же Rappoltsweiler по-немецки и Rappschwihr по-эльзасски. То есть, казалось бы, если уж Риквир, то тогда уж и Раппшвир. Но нет!):</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8011_ec2794d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8011_ec2794d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8012_ea09ba99_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8012_ea09ba99_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361460/2188450.1c/0_1e8013_7e3a1cce_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361460/2188450.1c/0_1e8013_7e3a1cce_orig" alt="" loading="lazy"></noscript></figure>
+<p>В церкви:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1028622/2188450.1c/0_1e8014_8131ebb9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1028622/2188450.1c/0_1e8014_8131ebb9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8015_233be760_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8015_233be760_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну и вечером в Кольмаре – не мог пройти мимо, конечно. Благо жена понимает и подзатыльников не отвешивает…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8016_4845714_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8016_4845714_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8017_8550f6a3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e8017_8550f6a3_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="эгисхайм">Эгисхайм</h2>
+<p>И, наконец, в последний день (жара все усиливалась) мы поехали (и снова на автобусе) в Eguisheim – это в другую сторону от Кольмара. Прогноз обещал, что дня через два пекло спадет, и снова будет хорошо. Отлично, ребята, только мы как раз будем уже дома, а там вообще плюс десять обещают… Насколько я помню (сейчас перепроверил, чтобы не подводить) – это был 208 автобус от вокзала Кольмара, который едет извилистым путем, но прямо до самого Эгисхайма.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7ecd_6d3d6cd3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.16/0_1e7ecd_6d3d6cd3_orig" alt="" loading="lazy"></noscript></figure>
+<p>Есть еще и маршрут 440, но он не заезжает в сам Эгисхайм, останавливаясь в стороне от него, на основного автодороге, так что там еще нужно пройти пешком полкилометра. У обоих практически по одному-единственному нужному нам рейсу в день – в районе 12:20. Но у 440-го был (и сейчас, зимой, есть) еще рейс утром, примерно в 7:50 (а сейчас, зимой, у него второго, дневного, рейса нет вообще, как я погляжу). И нам бы надо было, конечно, успевать на него, и мы хотели, но, увы, не получилось. Поэтому мы, сердито нахохлившись, погуляли по утреннему Кольмару, физически ощущая, как все сильнее припекает солнце. А к двенадцати часам, в самую жару (я знаю, мы молодцы!), двинулись в сторону вокзала.</p>
+<p>Вот еще раз скажу – есть приятные бантики и рюшечки в http://www.vialsace.eu: если выбранный рейс - последний в этот день, он специально предупреждает об этом. Но большой минус (по сравнению, например, с тем же австрийским OBB Scotty) – нет простых кнопок «показать следующие рейсы» или «показать предыдущие рейсы». Правда, можно в один клик просто скачать расписание маршрута целиком в pdf.</p>
+<p>Итак, Эгисхайм, жара. Половина первого пополудни. Обратный автобус в 17:10. Времени полно. Мы гуляем по тенистым сторонам улиц (где это возможно – а возможно не всегда – улицы закольцованы вокруг центра). Смотрим. Как там сказано у Бродского: «На сетчатке моей – золотой пятак. Хватит на всю длину потемок.»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1c/0_1e8018_f839ab4a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1c/0_1e8018_f839ab4a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480022/2188450.1c/0_1e8019_46960572_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480022/2188450.1c/0_1e8019_46960572_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e801a_a8c76e55_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1c/0_1e801a_a8c76e55_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e801b_63a56ad5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e801b_63a56ad5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1018509/2188450.1c/0_1e801c_d71bd0e7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1018509/2188450.1c/0_1e801c_d71bd0e7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1c/0_1e801d_5c392fcc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1c/0_1e801d_5c392fcc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.1c/0_1e801e_c837beae_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.1c/0_1e801e_c837beae_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1c/0_1e801f_ace6ed97_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1c/0_1e801f_ace6ed97_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1c/0_1e8020_4051350e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1c/0_1e8020_4051350e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.1c/0_1e8021_94832fd1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.1c/0_1e8021_94832fd1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1018509/2188450.1c/0_1e8022_9bbd53ed_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1018509/2188450.1c/0_1e8022_9bbd53ed_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.1c/0_1e8023_c5e73ed2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.1c/0_1e8023_c5e73ed2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373240/2188450.1c/0_1e8024_9c0b126f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373240/2188450.1c/0_1e8024_9c0b126f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1c/0_1e8025_5bdc063d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1c/0_1e8025_5bdc063d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/475949/2188450.1d/0_1e8026_15749674_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/475949/2188450.1d/0_1e8026_15749674_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1028622/2188450.1d/0_1e8027_2548c63c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1028622/2188450.1d/0_1e8027_2548c63c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.1d/0_1e8028_6e751894_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.1d/0_1e8028_6e751894_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025106/2188450.1d/0_1e8029_9bbf0665_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025106/2188450.1d/0_1e8029_9bbf0665_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну и потом мы снова вышли в виноградники за пределами городка</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509531/2188450.1d/0_1e802a_1b1debad_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509531/2188450.1d/0_1e802a_1b1debad_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1d/0_1e802b_c81e5301_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1d/0_1e802b_c81e5301_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.1d/0_1e802c_861d549d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.1d/0_1e802c_861d549d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.1d/0_1e802d_66a94468_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.1d/0_1e802d_66a94468_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769660/2188450.1d/0_1e802e_198b4dbb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769660/2188450.1d/0_1e802e_198b4dbb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/1025946/2188450.1d/0_1e802f_9e55f282_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/1025946/2188450.1d/0_1e802f_9e55f282_orig" alt="" loading="lazy"></noscript></figure>
+<p>Около автобусной остановки. Возвращаемся в Кольмар.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1d/0_1e8030_92f25569_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1d/0_1e8030_92f25569_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="домой">Домой</h2>
+<p>Ну а наутро мы поехали на электричке в Страсбург, это где-то полчаса, с часовым запасом на всякий случай, чтобы не упустить наш Lufthansa Express Bus.</p>
+<p>Его остановка в сотне метров слева от входа в «стеклянное» здание железнодорожного вокзала – <a href="https://www.google.ru/maps/@48.583704,7.734062,3a,60y,301.2h,76.5t/data=!3m6!1e1!3m4!1sbCjlO9SdzMLOgzTGdyykRA!2e0!7i13312!8i6656" target="_blank" rel="noopener noreferrer">вот здесь</a>).</p>
+<p>Собственно, вот и все. Я, признаюсь, получил большое удовольствие, описывая эту поездку спустя полтора года – как будто снова только что съездил. Похоже, это самый дешевый, в смысле денежных затрат, вариант путешествий – извлекать все заново из памяти и из фотографий. Плюс помог и фейсбук в качестве записной книжки – там я вкратце рассказывал самым близким друзьям и родным о наших приключениях по мере продвижений по Эльзасу. И дневник жены, который она только в путешествиях и ведет, с той же целью – когда-нибудь потом вспомнить детали. Совсем недавно я опробовал здесь этот способ – написать о путешествии спустя аж три года (это была Грузия), и мне понравилось. Так что это мой второй опыт написания не совсем по горячим следам. Но на более глубокие отступления в прошлое я, наверное, не решусь. Если только для себя – думаю, многие сведения уже будут неактуальны, и есть шанс ввести в заблуждение тех, кто только планирует путешествие. А на это мы пойти не можем! Надеюсь, что следующий рассказ будет вновь по горячим следам (тьфу-тьфу-тьфу, как и положено говорить идейным материалистам).</p>
+<p>Ну что ж. Всем, кто дочитал – спасибо, и удачи в путешествиях. А тем, кто не дочитал или вообще не стал читать … – тоже удачи. И всем – здоровья!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/510105/2188450.1d/0_1e816d_669a7ec9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/510105/2188450.1d/0_1e816d_669a7ec9_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот он - мой герой!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/967052/2188450.1d/0_1e824f_b4f51a01_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/967052/2188450.1d/0_1e824f_b4f51a01_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/967052/2188450.1d/0_1e8176_aadeb5ab_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/967052/2188450.1d/0_1e8176_aadeb5ab_orig" alt="" loading="lazy"></noscript></figure>
+<p class="fin">F&nbsp;&nbsp;I&nbsp;&nbsp;N</p>
+  </article>
+</div>
+<script>
+(function() {
+  var pending = []; // images that entered the buffer zone, not yet loading/loaded
+  var loading = false;
+
+  function distanceFromViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;      // above viewport
+    if (rect.top > vh) return rect.top - vh;        // below viewport
+    return 0;                                       // on screen right now
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        if (d === 0) break; // already on screen -- can't beat that
+      }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var img = pickNext();
+    if (!img) return;
+    loading = true;
+    loadImage(img, img.getAttribute('data-src'));
+  }
+
+  function loadImage(img, src) {
+    img.onload = function() {
+      img.classList.add('loaded');
+      img.removeAttribute('data-src');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      // Flickr (or the network) hiccuped on this one request -- don't give
+      // up on it and don't block everything else behind it. Free the
+      // queue immediately, and let this image rejoin the pending pool
+      // after a short, growing backoff so it gets picked up again.
+      loading = false;
+      var attempt = (img._retryCount || 0) + 1;
+      img._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() {
+        pending.push(img);
+        processQueue();
+      }, delay);
+      processQueue();
+    };
+    img.src = src;
+  }
+
+  // Images join the pending pool once they're within reach; every time a
+  // slot frees up, pickNext() re-checks CURRENT positions and grabs
+  // whichever pending image is closest to (or actually on) screen right
+  // now -- so a fast scroll or scrollbar drag doesn't leave visible
+  // photos stuck behind everything the scroll happened to pass over.
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>

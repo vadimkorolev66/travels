@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Три коротких маршрута нашего летнего отпуска. Часть третья: Таруса</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  nav.toc,
+  article > p,
+  article > h2,
+  article > ul.summary-list,
+  article > blockquote.citation {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.masthead {
+    max-width: none;
+    padding: 8vw 0 4vw;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://live.staticflickr.com/65535/51893568129_19725c3e6c_o.jpg') center 40% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  nav.toc {
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+    font-family: var(--sans);
+  }
+  nav.toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li { margin: 0 0 0.85rem; break-inside: avoid; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.3;
+    font-size: 0.98rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent-soft); color: var(--accent); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 3.9rem 0 1.4rem;
+    padding-top: 0.2rem;
+    color: var(--text);
+    position: relative;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin-bottom: 1.1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-soft); }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+  a:hover { color: #6b5228; }
+  a.internal-link-pending {
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--accent-soft);
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.summary-list {
+    background: #f4f1ea;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem 1.6rem 2.4rem;
+    margin: 0 0 3rem;
+  }
+  ul.summary-list li { margin-bottom: 0.7rem; }
+  ul.summary-list li:last-child { margin-bottom: 0; }
+  blockquote.citation {
+    margin: 2rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  blockquote.citation p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  figure.photo { margin: 2.6rem 0; }
+  figure.photo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.08), 0 8px 24px rgba(43,41,37,0.06);
+  }
+  img.lazy-photo {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 40px;
+    background: var(--line);
+  }
+  img.lazy-photo.loaded { opacity: 1; }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 2.2rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  p.epigraph {
+    text-align: right;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+  p.fin {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  p.subhead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { width: 88%; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17.5px; }
+    .wrap { width: 90%; padding: 10vw 0 16vw; }
+    header.masthead h1 { font-size: 1.85rem; }
+    nav.toc ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Три коротких маршрута нашего летнего отпуска. Часть третья: Таруса</h1>
+  </header>
+
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      <ul>
+    <li><a href="#день-первый-знакомство-с-тарусой">День первый. Знакомство с Тарусой.</a></li>
+    <li><a href="#день-второй-таруса-музей-цветаевых">День второй. Таруса. Музей Цветаевых.</a></li>
+    <li><a href="#день-третий-поленово-и-бёхово">День третий. Поленово и Бёхово.</a></li>
+    <li><a href="#день-четвертый-тарусская-картинная-галерея">День четвертый. Тарусская картинная галерея.</a></li>
+    <li><a href="#день-пятый-музей-паустовского-почуевская-долина">День пятый. Музей Паустовского. Почуевская долина.</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <article>
+<p>Этот рассказ – третья часть моего отчета о трех последовавших одна за другой коротких – на четыре дня каждая – поездках из Москвы на общественном транспорте (в основном, поездах; в паре мест – еще и на такси) в ходе нашего с женой двухнедельного отпуска в августе 2021 года. Сначала мы съездили в Суздаль и Владимир, захватив рассвет в лугах за Боголюбово, у церкви Покрова-на-Нерли; я рассказал об этой части нашего отпуска <a href="2021_three_routes_1.html" target="_blank" rel="noopener noreferrer">здесь</a>.</p>
+<p>После этого мы вернулись на сутки в Москву и затем съездили на пару дней в Коломну, а оттуда – еще на пару дней в Константиново. Об этой части я написал <a href="2021_three_routes_2.html" target="_blank" rel="noopener noreferrer">тут</a>. И снова мы вернулись на сутки в Москву (ну вот такое у нас было ограничение в этот раз, по семейным обстоятельствам). И наконец, последние четыре дня мы намеревались провести в Тарусе. Никогда в ней не были и очень хотели сюда.</p>
+<p>И вот мы тут!</p>
+<p>Как я уже писал в <a href="2021_three_routes_1.html" target="_blank" rel="noopener noreferrer">предисловии к первой части</a>, поселились мы в гостинице <a href="https://sp.booking.com/hotel/ru/gostinitsa-tarusa.ru.html?aid=325219" target="_blank" rel="noopener noreferrer">«Таруса»</a> и, в целом, не жалеем. Из немного странного тут – система оплаты: каждые сутки оплачивались отдельно. То есть, каждый день я подходил на ресепшен и оплачивал очередной «транш», и так четыре раза. Не сказать, чтоб удобно.</p>
+<p>Плюс нам не очень повезло в первый день нашего приезда: прошедшая чуть раньше гроза с ливнем и штормовым ветром оставила Тарусу без электричества. Во дворе гостиницы на маленьком грузовичке урчал дизельный генератор, но на всё его мощности, конечно, хватить не могло, включая горячую пищу в ресторане при гостинице. Так что в первый вечер мы поели что-то холодное и ходили вечером по полутемному городу. Но к утру все было уже в порядке.</p>
+<p>Прибыли мы в Тарусу 18-го августа, а уезжали поздно вечером 22-го. Так что времени у нас было полно, и мы смогли не только походить по самой Тарусе и ее музеям, но и погулять по природе в окрестностях Тарусы. Музеев в результате у нас в копилке оказалось четыре, по музею в день: 19-го августа - музей семьи Цветаевых, 20-го – музей-усадьба «Поленово», 21-го – Тарусская картинная галерея, 22 -го музей Константина Паустовского. Что касается природы вокруг Тарусы - тут есть совершенно замечательные места, и я о них обязательно расскажу, с картами и фотографиями.</p>
+<p>Ну и, конечно, при желании эти четыре дня можно было бы спрессовать в два. Но зачем, если дней – четыре, и мы просто отдыхаем?</p>
+<p>Основным источником информации при подготовке для меня послужил отчет уважаемой Chegem <a href="https://forum.awd.ru/viewtopic.php?f=619&amp;t=400828#p10401187" target="_blank" rel="noopener noreferrer">Таруса - Поленово, три дня в мае 2021</a>, рекомендую прочитать; он весьма подробен, и там очень много полезного. Я не буду его дублировать. Расскажу о наших четырёх тарусских днях, о красоте Тарусы, Бёхово, их окрестностей. И, возможно, если у вас будет время, вы тоже захотите на эти места взглянуть.</p>
+<p>Ну, поехали.</p>
+<h2 id="день-первый-знакомство-с-тарусой">День первый. Знакомство с Тарусой.</h2>
+<p>Приехали мы в Тарусу в середине дня. До Серпухова – поездом, а из Серпухова на такси.</p>
+<p>Из Серпухова можно, конечно, приехать и на автобусе, но в условиях пандемии мы старались не подвергаться лишним рискам, когда их можно было избежать без особых сложностей. В наших организмах плескался спутниковский «бустер» трехнедельной давности, так что в принципе всё от нас зависящее мы предприняли. Но, как известно, прививка не гарантирует того, что вы не заболеете, а лишь существенно снижает риски и самого факта заболевания, и его тяжелого течения. То есть вероятность по-прежнему была ненулевая, хотя и в несколько раз меньше. А заболеть, пусть даже относительно нетяжело, в отпуске тоже не очень хотелось. Я помню свой бронхит, с которым я приехал весной в 2013-м году во Флоренцию, а потом оттуда и в Венецию – ничего приятного, я вам скажу, да и впечатления сильно смазываются.</p>
+<p>Ну так вот. Как я уже написал выше, приехали мы в середине дня, и, поскольку в этот день у нас ничего конкретного запланировано не было, я начал знакомство с Тарусой, как я люблю – с берега реки; в нашем случае - Оки. Ну, не сразу от Оки – все же сначала мы прошли от нашей гостиницы по улице Розы Люксембург до улицы Декабристов, переходящей в улицу Ленина, и по ней вышли на набережную.</p>
+<p>С названиями улиц в Тарусе типичная для всех малых российских городов катастрофа: Пролетарская, Советская, Пионерская, Комсомольская, Карла Маркса, Фридриха Энгельса, Клары Цеткин, Карла Либкнехта, Коммунальная, Луначарского, Урицкого, Володарского, Свердлова, Ворошилова… Помимо улицы Ленина есть еще и переулок Ленина. Чтоб уж наверняка. На втором месте по насыщенности – подальше от центра - группа «литературных улиц»: Горького, Пушкина, Достоевского, Некрасова, Маяковского. Есть и улица Паустовского, есть и - к счастью - улица Марины Цветаевой. И только на коттеджных окраинах, через которые мы проходили по пути к долине Песчаного ручья, человеческие названия – Вишневая, Земляничная, Грибная, Цветочная. И даже улица Грёз, что уже кажется некоторым перебором! 😊</p>
+<p>Итак, мы вышли на высокий берег Оки у памятника павшим в боях за Родину. Но вместо того, чтобы, как нормальные туристы, повернуть направо и пойти вдоль парка на набережной, с его памятниками Марине Цветаевой, Белле Ахмадуллиной, Константину Паустовскому, мы пошли влево и спустились прямо к воде. И вот – моя первая Таруса:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740322395_87e372194e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740322395_87e372194e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Видите справа, очень далеко, на фоне холмов у самого горизонта белое пятнышко? Это Поленово, дом-музей. Отправимся туда послезавтра на моторной лодке.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739427181_d1163642cc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739427181_d1163642cc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666933_6cdf2b062a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666933_6cdf2b062a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Здесь по центру за деревьями – Собор Святых Апостолов Петра и Павла. Вот он снова:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740071494_92181cf9bb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740071494_92181cf9bb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739430141_dddf40cc18_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739430141_dddf40cc18_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Эти каменистые берега – у впадения к Оку маленькой речки Тарусы (или Таруски, как ее иногда называют). Вот это устье:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739430126_f13671e7ae_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739430126_f13671e7ae_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666863_10aa2042ac_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666863_10aa2042ac_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ока в сторону Поленово:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666868_39af5ea3fa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666868_39af5ea3fa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666843_e00aa359f1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666843_e00aa359f1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На телефоне у меня нашлось вот еще такое фото из нашего первого полу-дня – это замечательный проект «Окна в прошлое», совсем недавний, 2020 года:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740071144_8f05253bfe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740071144_8f05253bfe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Такие стойки можно найти в разных местах, с очень нетривиальными сведениями о городе на «скрижалях» справа и слева от «окна». Вот, например:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827857262_9f76606f2f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827857262_9f76606f2f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Уже в сумерках мы прошлись по набережной туда-обратно, вернулись к нашей гостинице, убедились, что света все еще нет, и решили прогуляться дальше от центра по той же улице (напомню, «Розы Люксембург»). Немедленно после пересечения ею Тарусской улицы город превратился в тихий дачный поселок, так что, обернувшись назад, было странно видеть оживленное автомобильное движение по Тарусской улице мимо нашей гостиницы – как будто через стекло. Мы прошли по этой «дачной» Тарусе мимо наших будущих целей – мимо музея Цветаевых и, подальше, мимо переулка, упирающегося в конце в дачу-музей Константина Паустовского. Дошли да старого кладбища, но перед ним свернули направо, тоже по типичной дачной улочке, спускающейся вниз…</p>
+<p>И, следуя по ней, вышли мы на совершенно изумительное место – широкий луг, обрамленный лесом; над лугом едва заметно сгущался вечерний туман. Дорога, которая вывела нас в луга, поворачивала за лесистым холмом так круто, что совершенно скрывала Тарусу, и было трудно поверить, что город начинается буквально в трехстах метрах. Тишина и красота.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666818_50cccce1d2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666818_50cccce1d2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738608412_275bb18c60_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738608412_275bb18c60_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739430041_1301771342_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739430041_1301771342_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мне так тут понравилось, что мы почти каждый день заглядывали сюда под вечер. Ну, кроме, пожалуй, послезавтрашнего дня, когда закат мы встречали на моторке, возвращаясь из «Поленово».</p>
+<p>Как оказалось потом, здесь прекрасен не только этот вечерний вид на луга. Здесь очень красивый и необычный лес, взбирающийся по холму слева и переходящий в старое кладбище. И здесь очень красивый, укрытый деревьями, бережок речки Тарусы, справа от этого же луга. Но обо всем – в свое время.</p>
+<p>А пока – вот дорога на этот луг и на этот бережок:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51835003787_efa2dec450_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51835003787_efa2dec450_o.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="день-второй-таруса-музей-цветаевых">День второй. Таруса. Музей Цветаевых.</h2>
+<p>Экскурсию в <a href="http://www.kaluga-museum.ru/dom_cvetaevih" target="_blank" rel="noopener noreferrer">музей Цветаевых</a> мы заказывали за пару недель, по телефону, на этот день, на 16:30.</p>
+<p>Сначала я договорился на одно время, но спустя пару дней мне перезвонили и попросили разрешения перенести на час. Ок, не вопрос, перенесли.</p>
+<p>А до этого у нас была уйма времени, и пришла пора прогуляться по городу при свете дня. План был таков – погулять, дойти до «Марининого камня» (о нём – ниже), а от него – еще дальше, до пляжа; искупаться (по крайней мере, половине личного состава экспедиции), вернуться в город, пообедать, когда проголодаемся, где-нибудь в центре – там, где окажемся в это время, и отправиться в музей. А после музея Цветаевых, ближе к вечеру, отправиться в полюбившиеся «луга», и там устроить маленький тихий пикник на закате. Для которого заказать заранее шашлык в месте, горячо рекомендуемом на форуме: «Магазин шашлыка», в двух шагах от нашей гостиницы – ул. Розы Люксембург, 3.</p>
+<p>Пойдем гулять по Тарусе? Начнем с парка на набережной.</p>
+<p>Собор Св. Апостолов Петра и Павла на площади:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666773_2293c06dbd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666773_2293c06dbd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>С сайта sobory.ru: <em>Вначале в Тарусе стоял деревянный собор, освященный в честь Святителя Николая. Во время пожара, бушевавшего в городе в 1779 году, он сгорел. В 1785 году приступили к постройке нового собора. Проектировал собор и осуществлял надзор за его строительством известный архитектор Иван Денисович Ясныгин... Строился собор на средства императрицы Екатерины II. Закончили строительство только в 1789 году. Вначале собор выстроили продолговатым, с трехъярусной колокольней, а затем в XIX веке пристроили два придела, после чего храм приобрел форму усеченного креста... Здание каменное, с каменной колокольней и оградой из железной решетки, поставили которую в 1871 году. Вскоре собор освятили в честь свв. апп. Петра и Павла.</em></p>
+<p>Памятники в парке на набережной над Окой:</p>
+<p>Марина Цветаева:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740071259_5b8fc13f21_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740071259_5b8fc13f21_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Памятник был установлен в октябре 2006 года по проекту архитектора Бориса Мессерера и скульптора Владимира Соскиева. Рядом посажено деревце красной рябины; понятно, неслучайно.</p>
+<p>И недалеко – Белла Ахмадулина (читавшая, кстати, стихи Цветаевой на открытии памятника Марине):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738608342_07304b9677_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738608342_07304b9677_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p><a href="https://www.kalugaresort.ru/item/818/" target="_blank" rel="noopener noreferrer">Отсюда</a>: <em>Белла Ахмадулина… любила отдыхать в Тарусе. Поэтесса называла Тарусу «городом-музой». Два цикла стихотворений - «Тарусский цикл» и «101-й километр» были написаны Беллой Ахмадулиной именно здесь.</em> Памятник в городском парке – дар ее мужа городу. <em>Автор скульптуры и архитектурного решения - народный художник России Борис Мессерер, супруг Беллы Ахмадулиной. Памятник установлен в 2013 году.</em></p>
+<p>И третий памятник в городском парке: Константину Паустовскому:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740319355_bb4c27dfdb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740319355_bb4c27dfdb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Из <a href="https://rg.ru/2012/08/27/reg-cfo/pamyatnik-anons.html" target="_blank" rel="noopener noreferrer">статьи в газете</a> за 2012 год:</p>
+<blockquote class="citation"><p>В связи со 120-летием со дня рождения Константина Паустовского, которое отмечается в этом году, к празднованию дня Тарусского района в райцентре установили памятник великому русскому писателю. На его открытие приехали автор и исполнитель проекта, скульптор, действительный член Академии архитектурного наследия Вадим Церковников…<br>
+Жизнь и творчество Паустовского тесно связаны с Тарусой - городком на Оке, где он прожил более двадцати лет. "Я не променяю среднюю Россию на самые прославленные и потрясающие красоты земного шара, - писал Константин Паустовский. - Всю нарядность Неаполитанского залива с его пиршеством красок я отдам за мокрый от дождя ивовый куст на песчаном берегу Оки или за извилистую речонку Таруску - на ее скромных берегах я теперь часто и подолгу живу".</p></blockquote>
+<p>Около памятника:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740071334_0f6ce78022_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740071334_0f6ce78022_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Виды на Оку из городского парка:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666748_c221f32042_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666748_c221f32042_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пристань:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666713_d9685009e1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666713_d9685009e1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740071219_16ddb913c4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740071219_16ddb913c4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666523_4a3d5b1691_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666523_4a3d5b1691_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739429821_4d96b30bd1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739429821_4d96b30bd1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот здесь на карте я нанес дорогу от городского парка до памятника «Камень Марины Цветаевой» и дальше – на пляж.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51839308070_ebd66eda79_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51839308070_ebd66eda79_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Дорога ведет мимо кафе «Тарусское время» - мы туда зайдем через пару дней. А чуть правее, там, где фиолетовый кружок - на гуглокарте даже нет еще ничего в этом месте – есть теперь еще одно кафе, младший брат (или сестра) «Тарусского времени». Вот оно:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666453_8bbd53c346_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666453_8bbd53c346_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Крупным планом:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739429756_f5ef7e1db2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739429756_f5ef7e1db2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот тут мы и перекусим на обратном пути, перед походом в музей Цветаевых.</p>
+<p>А пока мы еще не голодны, движемся мимо. Тут, кстати, на заборе за кафе – крупные репродукции старинных фотографий с видами Тарусы. Вот лишь парочка:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740321880_19c0587704_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740321880_19c0587704_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666393_e86dec9527_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666393_e86dec9527_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А мы проходим по улице Каляева. Вот такие тут перила у здания детской библиотеки:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738608032_1c7d74c511_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738608032_1c7d74c511_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В конце улица Каляева ныряет вниз и делает крутой вираж у часовни Боголюбской иконы Божьей Матери:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666323_ac009ce2bd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666323_ac009ce2bd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739427121_59e9d8bc2d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739427121_59e9d8bc2d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Затем дорога снова круто поднимается наверх, и мы оказываемся прямо под Воскресенской церковью:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666243_11e45b8825_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666243_11e45b8825_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Интересное и подробное описание истории этой церкви можно найти на сайте <a href="https://sobory.ru/article/?object=04070" target="_blank" rel="noopener noreferrer">sobory.ru</a>, оно взято из журнала "Православные Храмы. Путешествие по святым местам", выпуск №149, 2015 г. Вот пара абзацев из него:</p>
+<blockquote class="citation"><p>Согласно летописным источникам, в начале ХIII века в Тарусе был монастырь. Располагалась Петровская мужская обитель рядом с Воскресенской горой; там же находилась деревянная церковь Воскресения Христова - предшественница нынешнего каменного храма. Древнюю деревянную церковь ждала участь большинства деревянных строений того времени - её позже сожгли крымцы, причём, по местной легенде, вместе с укрывшимися в ней местными жителями. Тарусские Писцовые книги 1628-1629 годов сообщают, что осталась "в околоградном стану пустошь, что было село Воскресенское, а в нем место церковное Воскресения Христова... от московского пожару, как крымский царь Москву сжег".<br>
+Видимо, в том же 1628 году началось строительство Воскресенского храма в камне. Судя по всему, его закончили к середине 50-х годов ХVII века; впрочем, эта датировка весьма приблизительна, хотя в некоторых источниках можно встретить и точную дату - 1654 год. Но это в известной мере условность, просто в письменных источниках именно в этом году Воскресенская церковь числится каменной. Святынями новой церкви стали реликвии Петровского монастыря, который судьба тоже не пощадила. Увы, первый каменный Воскресенский храм действовал меньше полувека. Он обветшал, превратился в руину, само место снова запустело, а земли перешли во владение крестьян серпуховского Владычного монастыря. Однако тарусяне не хотели жить без Воскресенского храма и принялись просить о его восстановлении. К 1757 году храм снова был отстроен…<br>
+К концу ХIХ столетия приход настолько увеличился, что встал вопрос о новом расширении храма… Составили детальный проект её перестойки. Так у Воскресенского храма появился ещё один придел - во имя святителя Димитрия, митрополита Ростовского. Да и сама церковь стала выглядеть иначе, превратившись в памятник псевдорусского стиля: крыльцо, кровлю и колокольню украсили декоративные шатры, у приделов появились главки-луковицы, соответствующим стало декоративное оформление.</p></blockquote>
+<p>А мы движемся дальше, вдоль Оки…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666198_f0ef8a959a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666198_f0ef8a959a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740070784_2d326dc9c2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740070784_2d326dc9c2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот и «камень Марины Цветаевой». Он же «кенотаф». Необычный памятник.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740070749_d4d1e8436c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740070749_d4d1e8436c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Он расположен под так называемым «Мусатовским косогором» — местом на берегу Оки, где находится могила художника Борисова-Мусатова. История камня такова (из <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D0%BD%D0%BE%D1%82%D0%B0%D1%84_%D0%9C%D0%B0%D1%80%D0%B8%D0%BD%D1%8B_%D0%A6%D0%B2%D0%B5%D1%82%D0%B0%D0%B5%D0%B2%D0%BE%D0%B9" target="_blank" rel="noopener noreferrer">википедии</a>):</p>
+<blockquote class="citation"><p>Камень находится рядом с тропинкой вдоль реки Оки, которой Марина и Анастасия Цветаевы ходили с дачи «Песочное» в дом Добротворских или тётушки Тьо. Когда-то, во времена детства Марины, здесь стояла часовенка.<br>
+Неподалёку от этого места располагались фруктовый сад и хлыстовское кладбище. В то время в районе Тарусы существовала секта духовных христиан — хлыстов, или христоверов. Поэтому здесь были их захоронения. Женщины секты именовали себя одним отчеством — Кирилловны. К 1895 году эту секту ликвидировали… Уже на чужбине, в Париже, в эссе «Хлыстовки» Цветаева писала:<br>
+«Я бы хотела лежать на тарусском хлыстовском кладбище, под кустом бузины, в одной из тех могил с серебряным голубем, где растет самая красная и крупная в наших местах земляника. Но если это несбыточно, если не только мне там не лежать, но и кладбища того уже нет, я бы хотела, чтобы на одном из тех холмов, которыми Кирилловны шли к нам в Песочное, а мы к ним в Тарусу, поставили с тарусской каменоломни камень: «Здесь хотела бы лежать МАРИНА ЦВЕТАЕВА.»<br>
+И камень с такой надписью был установлен. В 1962 году киевский студент-филолог и поклонник поэзии Цветаевой Семён Островский на свою стипендию установил первый камень неподалеку от этого места. Но его вскоре убрали, в том числе и по желанию дочери Марины Цветаевой Ариадны Сергеевны Эфрон, в то время построившей в Тарусе дом и жившей здесь время от времени. Ариадна Эфрон в своей книге пишет: «Мальчишка совершенно нищий, в обтрёпанных штанцах, всё сделал сам, голыми руками, — на стипендию — да тут не в деньгах дело! Сумел убедить исполком, сумел от директора каменоломни получить глыбу и транспорт, нашёл каменотёсов — всё в течение недели, под проливным дождём, движимый единственным стремлением выполнить волю… И мне, дочери, пришлось бороться с ним и побороть его. Всё это ужасно. Трудно рассудку перебарывать душу, в этом всегда есть какая-то кривда. В данном случае — кривда вполне определённая. Что делать! Что поделаешь!». Ариадна Эфрон беспокоилась, что самовольная установка камня может помешать выходу в свет сборника стихов матери — «нерукотворный памятник поэту сейчас важнее». Через несколько месяцев Семён Островский получил письмо от Ариадны Сергеевны, которая выражала сожаление о случившемся.<br>
+...Том стихов Марины Цветаевой вышел в 1965 г. И только 9 октября 1988 года на углу часовни, некогда стоявшей здесь, установили второй камень. Он выстоял.</p></blockquote>
+<p>А мы с вами движемся дальше, на пляж…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740321705_99c146ed29_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740321705_99c146ed29_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738605457_fea82c8196_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738605457_fea82c8196_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На пляже жена совершила акт гуманизма – спасла почти утонувшую в водах Оки стрекозу. Вынесла ее и усадила мне на плечо сушить крылья.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738607797_27cdc57d7a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738607797_27cdc57d7a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Еще из живности, обитающей прямо у пляжа:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740070664_bdd49f6560_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740070664_bdd49f6560_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ужик был весьма быстрым.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666063_c99a3a2da8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666063_c99a3a2da8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид с пляжа в сторону городского парка и собора:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738607742_d889942b9e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738607742_d889942b9e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На обратном пути поднялись на «Мусатовский косогор». Вот маленькое кладбище на нем:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738607702_fb60129f45_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738607702_fb60129f45_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666028_ef80decdde_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666028_ef80decdde_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот могила Борисова-Мусатова:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739666008_9c2dd1f398_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739666008_9c2dd1f398_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Постарайтесь запомнить, как она выглядит – у нас будет повод ее вспомнить пару дней спустя.</p>
+<p>Продолжаем путь обратно в центр, и на этот раз поднимаемся прямо к самой Воскресенской церкви:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739429256_7039b6d37a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739429256_7039b6d37a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740321555_8124557cd3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740321555_8124557cd3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Виды с ровной площадки на косогоре у церкви – очень впечатляющие:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738607612_192a739510_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738607612_192a739510_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Как я уже говорил, на обратном пути мы заглянули поесть в кафе на улице Каляева. Очень приятное по оформлению (да и по обслуживанию, по крайней мере, в это день, было существенно лучше, чем старое «Тарусское время», где мы тоже окажемся в этом путешествии, но в другой день). Вот его интерьер (фото с телефона):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827857227_9e75821938_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827857227_9e75821938_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Кофеек:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827857212_33da2960f5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827857212_33da2960f5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну а теперь, подкрепившись, зайдем в «магазин шашлыка», закажем, чтобы забрать где-то через час, забежим в гостиницу переодеться (жарко!) и отправимся в музей Цветаевых – он тут совсем рядом, буквально в двухстах метрах.</p>
+<p>Музей очень интересный, с богатой экспозицией.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829529970_2ffb3dc660_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829529970_2ffb3dc660_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Детально я его не фотографировал; за подробным описанием могу адресовать вас на <a href="http://www.kaluga-museum.ru/dom_cvetaevih" target="_blank" rel="noopener noreferrer">сайт музея</a>. Небольшая цитата:</p>
+<p><em>Музей был открыт 4 октября 1992г. – в год 100-летия со дня рождения поэта М.И. Цветаевой. Музей располагается в восстановленном «Доме Тьо». Деревянное одноэтажное здание было куплено в 1899г. дедом Марины Цветаевой по материнской линии А.Д. Мейном. После его смерти в доме последние 20 лет своей жизни жила его вторая жена, которую малолетние сестры М. и А. Цветаевы прозвали «Тьо». Цветаевы часто бывали в этом доме летом. В нем они жили во время приездов в Тарусу не в летнее время. М.Цветаева еще приезжала в этот дом летом 1912г. вместе с молодым мужем С. Эфроном. В 1903 г. Тьо специально для Цветаевых построила соседний дом (гостевой флигель). Сохранившийся мемориальный деревянный, одноэтажный флигель ... выкуплен у владельцев и передан музею. Находится в процессе музеефикации. </em></p>
+<p>Это флигель – довольно приземистое и колоритное внутри здание – вот телефонное фото:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828921208_e8ba18cffa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828921208_e8ba18cffa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Официально он не является частью экспозиции, но если попросить – вас в него сводят. А может быть, уже и является.</p>
+<p>А после музея семьи Цветаевых мы сбегали назад, забрали готовый шашлык, и снова пошли по знакомой дороге, сворачивая направо перед старым кладбищем, на полюбившийся луг:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740070444_3c253dc9c1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740070444_3c253dc9c1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740321490_7cae5cfde3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740321490_7cae5cfde3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И вот тут мы открыли для себя очень красивый, укрытый сверху деревьями, берег речки Таруски. На карте, которую я выше уже вывешивал, зеленая стрелочка показывает, где удобно подойти к ней. Еще я искал фото этого места с высоты, и нашел фотографию с дрона:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51836692925_e784b76c20_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51836692925_e784b76c20_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>(позаимствовал из инстаграм-аккаунта <a href="https://www.instagram.com/p/CS2WcPmMI26/" target="_blank" rel="noopener noreferrer">lastochka.tarusa</a>)</p>
+<p>Вдали – как раз место, откуда мы на этот луг выходим, и та самая дорога, по которой мы пришли. А под нами – берега Таруски. Посмотрите, какие тут прекрасные виды, прямо у воды:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740321475_86da6d0750_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740321475_86da6d0750_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739427086_8e6920183b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739427086_8e6920183b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739665783_b175da8a59_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739665783_b175da8a59_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738607462_22a252c2ea_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738607462_22a252c2ea_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Зеркальная поверхность Таруски:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739665753_c796868027_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739665753_c796868027_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот, теперь уже с чистой совестью можно усесться поудобней в траве на лугу и перекусить. Вот с таким фоном:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740068209_acbb057871_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740068209_acbb057871_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739665708_467e087093_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739665708_467e087093_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот мой трехногий друг, он отдыхает от своих фото-дел, пока мы едим шашлык под бутылочку португальского вина:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828807256_e602dda0ab_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828807256_e602dda0ab_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Закат, стрекочут цикады, и темнота постепенно смыкается вокруг…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739428941_94feb65e56_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739428941_94feb65e56_o.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="день-третий-поленово-и-бёхово">День третий. Поленово и Бёхово.</h2>
+<p>Наутро, позавтракав, отправляемся на пристань. Заранее решили, что не будем привязываться по времени к пароходику, на котором тоже можно добраться до Поленово (а оно - на другой стороне Оки, примерно в трех километрах вниз по реке – то есть, влево, если смотреть на Оку). Рядом с пристанью скучают «водные таксисты» со своими моторными катерами, и договориться не проблема - я к ним на всякий случай уже подходил накануне, когда мы шли в «Марининому камню», но они уверили, что заранее договариваться большого смысла нет – всегда есть лодки; кто будет свободен по очереди – отвезет без проблем. Цена, наверное, плавает; насколько я помню, мы отдали 1500. Отличный дядька отвез нас к пляжу Поленово, мы взяли его телефон, и вечером, на закате, позвонили ему уже из Бёхово, где были в этот момент – он даже уже и забыл про нас, оказывается. Он как раз стоял со своей лодкой у Поленово, так что через три минуты был уже у нас. Оплата - после возвращения в Тарусу. В общем, очень удобно, и стОит того. Вот тут стрелочки указывают место, куда мы приехали, и откуда возвращались:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51835952816_41677717e1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51835952816_41677717e1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Дорога от Оки к Большому дому и Аббатству:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740321260_5f78d3eb7f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740321260_5f78d3eb7f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В <a href="https://polenovo.ru/" target="_blank" rel="noopener noreferrer">музее-заповеднике «Поленово»</a> мы загодя закупились билетами на две экскурсии – в «Большой Дом» и в мастерскую художника «Аббатство», с разницей примерно в час, кажется. В выставочный зал «Фахверк» билеты мы покупали на месте – там тоже оказалась очень достойная экспозиция живописи.</p>
+<p>Вот <a href="https://polenovo360.com/index.html" target="_blank" rel="noopener noreferrer">здесь</a> есть весьма неплохой виртуальный тур по музею-заповеднику, в том числе можно походить по комнатам обоих этажей Большого Дома, покрутиться и поглазеть на мебель, потыкать в иконки, чтобы посмотреть на исторические фотографии и на картины, висящие на стенах и тому подобное. Довольно интересно.</p>
+<p>(<a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B5%D0%BD%D0%BE%D0%B2%D0%BE" target="_blank" rel="noopener noreferrer">отсюда</a>).</p>
+<blockquote class="citation"><p>Василий Дмитриевич Поленов приобрел имение на высоком берегу Оки в 1890 году и перебрался туда из Москвы вместе с семьей. В нем художник возводит постройки по собственному проекту. Поленов мечтал, что усадьба станет «гнездом художников», а со временем превратится в первый провинциальный общедоступный музей.<br>
+«Мы в Бёхове стали строить временный домик, потом обращенный в кухню. <…> На Петровской ярмарке в Тарусе купили все необходимые плошки да ложки, устроили дом и перевезли ребят, Митю и Катю», - вспоминала жена художника Наталья Васильевна Поленова.<br>
+В своем имении Поленовы пережили и революцию 1917 года. Послереволюционные годы переживали с трудом.<br>
+«Мы, т. е. Наталья Васильевна, Митя и я, живем в нашей усадьбе близ Бёхова. Дочери наезжают из Москвы. Они работают, кто рисует, кто вышивает, кто слушает лекции и переводит. Я пишу этюды и иногда продаю. Вообще трудно теперь зарабатывать…<…> Вот третий год, что Россию постигает неурожай, а в результате голод», - писал Поленов в 1920-х годах.<br>
+Еще при жизни художника в усадьбе открылся музей. Его посещали, как школьники и отдыхающие ближайших санаториев, так и крестьяне, чему сам художник очень радовался.<br>
+И сам художник, и его жена были похоронены около церкви Святой Троицы, которую Василий Дмитриевич Поленов построил по просьбе крестьян в селе Бёхово.<br>
+Среди наиболее ценных экспонатов графики, картин и скульптур представлены коллекции археологии (Древняя Греция и Древний Египет, VII—VI века до н.э.), оружия, мемориальных книг. В коллекции музея хранится не только работы художника В.Д. Поленова, но и его учеников: К.А. Коровина и И.И. Левитана</p></blockquote>
+<p>Вот несколько моих фотографий Большого дома:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739665558_a153c3fb5f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739665558_a153c3fb5f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739665533_e9a6217f26_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739665533_e9a6217f26_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740069949_bb6f49ba71_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740069949_bb6f49ba71_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Аббатство»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739427041_ec4ace3725_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739427041_ec4ace3725_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739665633_66c6716a79_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739665633_66c6716a79_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Одна из просек, ведущих к Оке от Большого дома:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740321070_09eda9891e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740321070_09eda9891e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739428716_d9ed9596ca_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739428716_d9ed9596ca_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это просека в сторону Тарусы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738607067_903a56573f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738607067_903a56573f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Букет на подоконнике в Большом Доме:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739665343_bc15a391a2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739665343_bc15a391a2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В «Аббатстве», помимо прочего интересного, впечатляющая коллекция самодельных кукол для домашнего театра Поленовых:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828921158_612c626d2f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828921158_612c626d2f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828920128_1245ea254d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828920128_1245ea254d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828921128_1dae5251a1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828921128_1dae5251a1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829529845_f15215a9aa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829529845_f15215a9aa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И вот еще несколько фото на телефон из «Большого дома», чтобы просто дать общее представление о декоре:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829529805_fe2dc27192_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829529805_fe2dc27192_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829529790_f64c35dc5c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829529790_f64c35dc5c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828806221_44dd58626d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828806221_44dd58626d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828807076_8ca5e9451e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828807076_8ca5e9451e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829150099_86ca54a129_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829150099_86ca54a129_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828807056_ec62d791d5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828807056_ec62d791d5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829529680_c27ca5733e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829529680_c27ca5733e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну и, конечно, бриллиант коллекции: эскиз знаменитой картины «Христос и грешница». Сама картина датирована 1888 годом и принадлежит Государственному Русскому музею в Санкт-Петербурге. Размер — 325 × 611 см:</p>
+<figure class="photo"><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Wassilij_Dimitriewitsch_Polenow_005.jpg/1280px-Wassilij_Dimitriewitsch_Polenow_005.jpg" alt="" class="lazy-photo"><noscript><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Wassilij_Dimitriewitsch_Polenow_005.jpg/1280px-Wassilij_Dimitriewitsch_Polenow_005.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Здесь же, в Большом доме, висит полноформатный (307 × 585 см) эскиз, выполненный углём на холсте. Висит в отдельной комнате, где можно посидеть и полюбоваться им:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829150054_d0b8ed0860_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829150054_d0b8ed0860_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p><em> Над этой картиной художник работал почти 20 лет. В 1868 году он делает первый графический эскиз, а затем на долгое время оставляет свою задумку. Затем следует десятилетний перерыв, а в 1881-1882 гг. Поленов совершил путешествие в Палестину, где исследовал земной путь Христа, знакомился с реалиями восточной жизни, делал этюды, снимал фотографии, собирал костюмы, изучал особенности архитектуры, быта, природы — потому что ему хотелось подойти к своей работе над картиной с наибольшей исторической точностью, до самых мелких деталей…</em></p>
+<p>Из воспоминаний К. А. Коровина: <em>"В большом особняке дома, у сада, в Кудальне, куда я пришел, Поленов показывал мне свои этюды Палестины. Они были разнообразны. От самых маленьких, не более вершка, до больших. Они были колоритны, талантливы. Генисаретское озеро, храм Соломона, часовня Гроба Господня и много других. — Я начинаю большую картину, — сказал он мне, — “Христос и грешница”. У меня к вам просьба. В свободное время вы немножко попозируйте мне, полчаса. Я с вас немного попишу. Мне нужно. У Поленова в большой комнате-мастерской было особенно нарядно. Висели старые восточные материи, какие-то особенные кувшины, оружие, костюмы. Все это он привез с Востока.</em></p>
+<p>Побольше можно почитать о картине, например, в <a href="https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%BE%D1%81_%D0%B8_%D0%B3%D1%80%D0%B5%D1%88%D0%BD%D0%B8%D1%86%D0%B0_(%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%B0_%D0%9F%D0%BE%D0%BB%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0)" target="_blank" rel="noopener noreferrer">этой статье</a> в Википедии.</p>
+<p><em>…В мае 1884 года Поленовы вернулись из Италии в Россию. Летом 1885 года художник работал в усадьбе Меньшово, расположенной под Подольском, где он создал полноформатный эскиз картины «Христос и грешница», выполненный углём на холсте. Окончательную версию картины Поленов писал в 1886—1887 годах в кабинете Саввы Мамонтова в его доме на Садовой-Спасской улице в Москве</em>. На 15-й выставке Товарищества передвижных художественных выставок («передвижников») картину купил император Александр III за цену существенно выше той, которую за нее изначально предлагал Третьяков.</p>
+<p><em>На средства, вырученные от продажи картины «Христос и грешница», Поленов купил участок земли на верхней Оке, где по его же проекту был построен большой дом — ныне там находится Государственный мемориальный историко-художественный и природный музей-заповедник В. Д. Поленова. Сама же картина находилась в Зимнем дворце, а затем, при образовании Русского музея, в 1897 году была передана в его коллекцию</em>.</p>
+<p>В Поленово есть и один из эскизов Христа, вот этот:</p>
+<figure class="photo"><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Polenov_Christ_study_Polenovo.jpg/498px-Polenov_Christ_study_Polenovo.jpg" alt="" class="lazy-photo"><noscript><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Polenov_Christ_study_Polenovo.jpg/498px-Polenov_Christ_study_Polenovo.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Итак, побывав в «Аббатстве», в Большом доме и в «Фахверке», мы отправились прогуляться по обширному парку «Поленово».</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738606992_321132fd67_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738606992_321132fd67_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>День был жаркий; мы прогулялись через парк, дошли до кафе «Поленово» у автостоянки около входа на территорию музея-заповедника «со стороны суши» и перекусили там. Затем снова зашли в заповедник и, пройдя его насквозь, вновь вышли к Оке, к тому же пляжу, на который мы высадились утром. Ну тут, как можно догадаться, жена отправилась плавать, а я нашел где-то тенёк – просто мне всегда лень переодеваться «туда», переодеваться «обратно», и эта лень довольно часто оказывается немного сильнее желания оказаться в воде.</p>
+<p>А затем мы отправились в соседнюю деревню Бёхово по тропе вдоль берега – на кусочке карты, вывешенном в начале этой части рассказа, её хорошо видно. Добравшись до Бёхово, приходится взобраться на весьма крутой склон, чтобы подняться на место, обозначенное на той же карте как «Бёховский обрыв». Вид оттуда на Оку и дали, расстилающиеся за ней, очень впечатляющий. Как я понимаю, эти виды с Бёховского обрыва запечатлены в сериале «Участок» с Сергеем Безруковым. Но сам я его не смотрел.</p>
+<p>На этот обрыв мы с вами вернемся ближе к закату, а пока пойдем через кладбище в сторону церкви, спроектированной самим Василием Поленовым. Если снова обернуться в сторону Оки, то вот как это будет выглядеть:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739428576_91b221d7e9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739428576_91b221d7e9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот – само кладбище, обычный сельский погост:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740320430_e1c96e8335_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740320430_e1c96e8335_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Там, на кладбище, в дальней от Оки стороне, нетрудно найти захоронение самого Василия Поленова и его жены – прекрасное, безо всякого пафоса:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739665248_7a6292475b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739665248_7a6292475b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот так видна Бёховская церковь прямо от ограды кладбища:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739664833_5b15e6b61b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739664833_5b15e6b61b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740320775_438d2f6e13_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740320775_438d2f6e13_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Она очень необычная. Мы обошли ее со всех сторон, полюбовались.</p>
+<blockquote class="citation"><p>...К началу XX века церковь обветшала, и по просьбе местных прихожан было решено старую разобрать и выстроить новую. Новая церковь из кирпича возведена в 1904—1906 годах неподалёку от сельского кладбища по проекту и на средства Василия Поленова и позже обнесена каменной оградой. Освящена церковь в 1907 году. Эта церковь изображена на картине Поленова «Золотая осень».<br>
+Храм был закрыт в 1934 году, колокола сняты и разбиты, церковное имущество разграблено, каменную церковную ограду разобрали на фундамент корпусов пионерского лагеря.<br>
+Во время Великой Отечественной войны (1941—1945) немецкие войска обстреливали из миномётов и орудий позиции советских войск в Бёхове. Осколки посекли кровлю и стены храма, но большого урона не принесли.<br>
+После войны сын художника и директор музея-заповедника Дмитрий Поленов продолжительное время доказывал чиновникам, что храм — это часть музея и должен быть ему передан. Взят под охрану, как памятник архитектуры в 1965 году, после чего был сделан технический проект реставрационных работ, которые продолжались в 1972—1985 годах. В результате реставрации церковь восстановлена полностью со всеми ранее утраченными архитектурными и строительными деталями.<br>
+В здании с 5 октября 1985 года размещался выставочный зал музея-заповедника. На первой выставке экспонировались работы Василия Поленова, его сестры Елены, Константина Коровина, Исаака Левитана, Марии Якунчиковой.<br>
+По просьбе прихожан в Тульскую епархию храм возвращён верующим в 1989 году и освящён.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740320655_f8979b249f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740320655_f8979b249f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739428346_29738c0887_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739428346_29738c0887_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740320520_56f6cd8e02_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740320520_56f6cd8e02_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Солнце опускалось всё ниже, свет теплел, и я, уж извините, поспешил снова к Оке, на обрыв.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739664763_e44257990a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739664763_e44257990a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Теперь очередь жены усесться в сторонке и ждать меня.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738606502_dd7593146e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738606502_dd7593146e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740320245_9a9b3d3f64_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740320245_9a9b3d3f64_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Свет и облака менялись каждые пять минут, и я всё не мог насытиться…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739664533_0404a3cf21_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739664533_0404a3cf21_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну, а затем, как я уже писал, мы позвонили нашему «капитану», и он с пляжа в Поленово заехал за ними сюда, в Бёхово; мы спустились вниз с обрыва, забрались на лодку и понеслись обратно в Тарусу. Фотоаппарат я побоялся замочить, так что вот вам пейзажи с моторки на телефон:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828920923_05406f2276_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828920923_05406f2276_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829149104_02f8763bf7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829149104_02f8763bf7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827856867_5d5ff50906_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827856867_5d5ff50906_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот такой получился шикарный день…</p>
+<h2 id="день-четвертый-тарусская-картинная-галерея">День четвертый. Тарусская картинная галерея.</h2>
+<p>Сегодня у нас – почти свободный день, день без обязательств. Каникулы. Отпуск. Гуляем, где хотим, по Тарусе.</p>
+<p>Сегодня пасмурно, и начнем мы, по настроению, со старого кладбища, которое до этого мы огибали, не доходя. Здесь вот кладбище – это примерно синяя рамка. А сиреневая за ней – это тот замечательный «прозрачный лесопарк», куда мы попадем попозже.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51835003722_47341dd059_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51835003722_47341dd059_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740320105_61ae005a6b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740320105_61ae005a6b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739426941_44fff7f9ae_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739426941_44fff7f9ae_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Могила дочки Марины Цветаевой, Ариадны Эфрон:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740320085_254e408fc8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740320085_254e408fc8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Одним углом кладбище выходит на косогор со стороны Тарусы; когда проходишь по дороге под ним, кладбище даже не видно снизу:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739664458_c118f8f230_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739664458_c118f8f230_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и тот лесистый парк на другой склоне холма; в него можно попасть и просто пройдя через кладбище насквозь. Мы по нему гуляли в два дня, этот и следующий, кажется, так что вот фотографии из обоих дней, кажется. Но есть только телефонные, извините:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829149729_48eb329432_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829149729_48eb329432_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829528840_e19bd8bff5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829528840_e19bd8bff5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828920613_cd63f7958d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828920613_cd63f7958d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827856612_bb4f336f80_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827856612_bb4f336f80_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828806591_291845b531_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828806591_291845b531_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828920563_a38770ac6c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828920563_a38770ac6c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На обратном пути «в центр» прошли мимо чайной «Второе дыхание»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740320040_9eb6707bb4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740320040_9eb6707bb4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>К сожалению, испить чайку не удалось, но пару съедобных сувениров мы у них купили:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738606202_a6478b4395_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738606202_a6478b4395_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739664333_29e4f93ded_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739664333_29e4f93ded_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739427786_74339f21fd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739427786_74339f21fd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А теперь давайте снова прогуляемся по Тарусе, до Воскресенской церкви. И давайте зайдем по пути в Тарусскую картинную галерею, что примыкает к Собору Св. апостолов Петра и Павла. Тут как раз проходит тематическая выставка:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828806926_c8683f6fe6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828806926_c8683f6fe6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот несколько работ с выставки, без атрибутирования – просто, что привлекло взгляд:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829529590_cebfdfd452_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829529590_cebfdfd452_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829149959_983fff9133_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829149959_983fff9133_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827856827_c921616ce8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827856827_c921616ce8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828806856_450969cdec_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828806856_450969cdec_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829149929_ee0e51f5f4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829149929_ee0e51f5f4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот такое вот прекрасное лежит; называется «Брамс на отдыхе в Альпах». Почему бы и нет?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828806206_e747a516cf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828806206_e747a516cf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828920778_68917e0db0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828920778_68917e0db0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вестимо, бык и Европа:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828806806_389ca4e883_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828806806_389ca4e883_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828806796_3ed9e5edb6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828806796_3ed9e5edb6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот замечательная совершенно серия: семейство Волковых делает (паяет? Я не очень понял, в какой это технике) вот такие композиции:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829529450_371c8d91f7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829529450_371c8d91f7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот этот трибьют Шагалу с другого ракурса (оказалось, я и на обычный фотоаппарат пару вещей тут снял):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739427781_f0d05856b4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739427781_f0d05856b4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Ночные волки»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829529430_f8aa5e2577_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829529430_f8aa5e2577_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Клоун»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738606107_21962aba90_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738606107_21962aba90_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это вот – памяти Борисова-Мусатова:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829149824_3abe1761b6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829149824_3abe1761b6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Она же, чуть поближе. Помните памятник на могиле Борисова-Мусатова на кладбище над «Марининым камнем»?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829529400_068a03c59f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829529400_068a03c59f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Какая тут замечательная Ока. Прямо настоящая река. Отражения под противоположным берегом. Волны за катером. И всё – в полузамкнутой раме. Отлично.</p>
+<p>Ну и вот еще одна:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829149834_964268af3c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829149834_964268af3c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вообще выставка немаленькая.</p>
+<p>Тут пришло время подкрепиться, и мы зашли в «Тарусское время». Интерьер дворика весьма интересный:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829529365_5757d61e8c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829529365_5757d61e8c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828920643_76a911a413_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828920643_76a911a413_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828806666_f8fffa84e8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828806666_f8fffa84e8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот обслуживали как-то не очень торопливо. Возможно, из-за наплыва народа в этот момент…</p>
+<p>Вот мы и снова у Воскресенской церкви. Но сегодня было и правда пасмурно, так что я снимал мало. Просто гуляли. У нас же отпуск и релакс…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738606052_7b22875646_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738606052_7b22875646_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740319920_95a3c81f3c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740319920_95a3c81f3c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="день-пятый-музей-паустовского-почуевская-долина">День пятый. Музей Паустовского. Почуевская долина.</h2>
+<p>Ну и несколько слов про наш последний день в Тарусе. Уезжаем в Серпухов мы вечером, после восьми, а до этого наш день разделен на две части. В первой половине у нас билеты в музей Константина Паустовского, который от нашей гостиницы тоже совсем недалеко – между нами и кладбищем. Так что идем туда. Там набирается небольшая группа, человек шесть, и нам сначала проводят, так сказать, вводную беседу снаружи (мы сидим на скамеечках), а потом разрешают зайти в дом, где жил Паустовский, посмотреть изнутри.</p>
+<p>(<a href="https://m.vest-news.ru/article/54914" target="_blank" rel="noopener noreferrer">отсюда</a>).</p>
+<blockquote class="citation"><p>В Тарусе Константин Георгиевич прожил последние тринадцать творческих лет. Семья Паустовского приехала в этот город весной 1955 года. Константину Георгиевичу в то время было 60 лет. Здесь семья писателя купила на улице Пролетарской половину дома, расположенного на высоком берегу извилистой речки Тарусы.<br>
+В Тарусе Паустовский написал много произведений, вошедших в золотой фонд литературы. Он не только писал, но и активно участвовал в общественной и культурной жизни города. Учитывая эти заслуги, в мае 1968 года Паустовскому решением местного горсовета депутатов трудящихся присвоено звание «Почетный гражданин города Тарусы».<br>
+14 июля 1968 года Константин Георгиевич умер в Москве. Похоронен в Тарусе на городском кладбище.<br>
+Начиная с празднования 100-летнего юбилея Паустовского в Тарусе ежегодно проводится литературный праздник, посвященный его памяти</p></blockquote>
+<p>Посмотреть хорошие фотографии из дома-музея Константина Паустовского можно вот <a href="https://vadimrazumov.ru/582690.html" target="_blank" rel="noopener noreferrer">здесь</a>, я нашел этот ЖЖ только сейчас, в процессе подготовки отчета. А я снимал только на телефон, вот несколько фото:</p>
+<p>Во дворе, при входе в дом:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829149594_265a9790e1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829149594_265a9790e1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Рабочий кабинет и другие комнаты:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828806501_b00de60b4f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828806501_b00de60b4f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829149519_a70487140b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829149519_a70487140b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827856567_7a4834f796_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827856567_7a4834f796_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828920513_9ba6a18506_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828920513_9ba6a18506_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827856502_fb59fa9cba_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827856502_fb59fa9cba_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А теперь, выйдя из музея Паустовского, мы отправимся далеко, совсем на другой край Тарусы, снова «на природу». Там есть симпатичное место, называемое по-разному – долиной Песчаного ручья, Почуевской долиной. И даже «долиной Грёз». В паре мест пишут, что это место назвали «долиной Грёз, потому что здесь любила гулять Марина Цветаева». Не вижу логики, но это не так уж важно. Неизвестно, кто и когда её так назвал, но, судя по всему, не сама Марина Цветаева. Вроде бы, она в своих воспоминаниях её не упоминает. Вполне допускаю, что она здесь гуляла, и, если так, это место должно было ей понравиться.</p>
+<p>Идти пешком долго, минут сорок. В конце пути, перед самой долиной (или самым оврагом, в зависимости от романтичности рассказчика) снова соприкасаемся с Паустовским – спускаемся в низину по улице его имени. Вот примерно то место (фиолетовая рамка) вокруг Песчаного ручья (летом почти пересохшего, правда), где и правда симпатично в хорошую погоду (оранжевая линия – улица Паустовского):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51835003822_4f26183093_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51835003822_4f26183093_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Наверняка, и осенью тут красиво. А летом, при солнце – вот так:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739427466_58181609db_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739427466_58181609db_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740319615_517442caa3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740319615_517442caa3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740319655_e4dc561517_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740319655_e4dc561517_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739664123_0e96eb17a5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739664123_0e96eb17a5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740068069_ffe361e4c8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740068069_ffe361e4c8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740319580_6315d298f0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740319580_6315d298f0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738605747_c1fcfa08e6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738605747_c1fcfa08e6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738605722_24f25cdd87_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738605722_24f25cdd87_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот, как-то так. Хорошо тут, правда?</p>
+<p>Ну а мы отправляемся в обратный путь. Последний взгляд на Оку с площадки перед Воскресенской церковью:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739426856_dd7a421ee1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739426856_dd7a421ee1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738605667_7304aab473_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738605667_7304aab473_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Последние фото памятников в парке на набережной:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740068434_b57e01463a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740068434_b57e01463a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739427221_8b97d2963b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739427221_8b97d2963b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Идем в гостиницу, пакуем вещи, сдаем ключи. Но у нас еще полчаса до отправления в Серпухов (на такси – мы по-прежнему шикуем). И мы, конечно, снова быстрым шагом устремляемся на луга у речки Тарусы. И не напрасно. Успеваем застать последние всполохи заката:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738605617_8011e8ed72_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738605617_8011e8ed72_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739663438_d061ec339d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739663438_d061ec339d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И на этом с Тарусой, для первого раза, мы прощаемся.</p>
+<p>Напоследок - из забавного. В Серпухове, на железнодорожном вокзале, долго искали, откуда будет отправляться наш поезд. Уже давно стемнело. На площади, левее пешеходного моста над путями, темнеет громада вокзала, мощные стены которого подсвечены снаружи слабым оранжевым светом. Заходим внутрь – огромные помещения, высоченные потолки, свет горит, но пусто и абсолютно безлюдно. Ни-ко-го. В одном углу обнаруживаем светящийся синим маленький мониторчик со списком ближайших поездов. Наш – присутствует, и в ожидаемое время. Уже неплохо. Но откуда отходит – ни слова. А путей, вообще говоря, там под мостом виднеется немало, с десяток. Хм. Идем в пригородные кассы - они на площади, под другую сторону от подхода к мосту. В маленькую амбразуру спрашиваю: «А откуда пойдет такой-то поезд на Москву, не подскажете?» Добрая женщина отвечает «А со второго пути пойдет!» «А где второй путь?» «А там спросите». Идем к мосту. Указателей, где какой путь – никаких (по крайней мере, мы не увидели). Поднимаемся на мост. Тут ситуация становится чуть более понятной – похоже, что для пассажирских поездов работает единственная платформа – на ней горят фонари и присутствует народ. И видны билетные турникеты внизу лестницы. Но я решаю сначала спуститься без чемоданов – не улыбается бегать с ними вверх-вниз, мост довольно высокий.</p>
+<p>Спускаюсь вниз, подхожу к служителю, который присматривает за турникетами и, видимо, ловит за ногу тех, кто пытается перепрыгнуть. Спрашиваю: «не подскажете, вторая платформа – это тут?» Железнодорожник разворачивается ко мне лицом, расправляет плечи и говорит с некоторой обидой: «Не вторая платформа, а второй путь!» Я посыпаю голову пеплом, но главное – ура, это она. Поднимаюсь за чемоданами, мы спускаемся и проходим на платформу. Тут, уже на самой платформе, вполне логичный указатель:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829149024_c96ea2bc32_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829149024_c96ea2bc32_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Второй путь - в одну сторону, одиннадцатый – в другую. Чего непонятного? Собственно, мы, пользователи станции Крюково Октябрьской ж/д, удобством для пассажиров тоже не избалованы («Внимание! С третьей платформы, пятого зонного пути, отправляется поезд…»).</p>
+<p>Наш поезд еще через десять минут. Садимся на скамейку. Мимо проходит пара девушек, тоже не местных, и тоже возмущенных недостатком информации. У них это находит выражение в чудесной фразе, которую одна из них с негодованием произносит, проходя как раз мимо нас:</p>
+<p>«Да у них тут даже таблА нету!»</p>
+<p>Ну и правда же… Что уж… ТаблА и правда нет!</p>
+<p>Засим я прощаюсь с вами. Отпуск закончился.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740068494_1e14e2d5ff_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740068494_1e14e2d5ff_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну, и чтобы как-то завершить этот триптих. В России, даже совсем недалеко от Москвы, полно природных красот и красот, созданных руками человека. Полно мест, где можно вплотную соприкоснуться с историей. Как говорит Антон Птушкин: "Путешествуйте, оно того стоит".</p>
+  </article>
+</div>
+<script>
+(function() {
+  var pending = []; // images that entered the buffer zone, not yet loading/loaded
+  var loading = false;
+
+  function distanceFromViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;      // above viewport
+    if (rect.top > vh) return rect.top - vh;        // below viewport
+    return 0;                                       // on screen right now
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        if (d === 0) break; // already on screen -- can't beat that
+      }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var img = pickNext();
+    if (!img) return;
+    loading = true;
+    loadImage(img, img.getAttribute('data-src'));
+  }
+
+  function loadImage(img, src) {
+    img.onload = function() {
+      img.classList.add('loaded');
+      img.removeAttribute('data-src');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      // Flickr (or the network) hiccuped on this one request -- don't give
+      // up on it and don't block everything else behind it. Free the
+      // queue immediately, and let this image rejoin the pending pool
+      // after a short, growing backoff so it gets picked up again.
+      loading = false;
+      var attempt = (img._retryCount || 0) + 1;
+      img._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() {
+        pending.push(img);
+        processQueue();
+      }, delay);
+      processQueue();
+    };
+    img.src = src;
+  }
+
+  // Images join the pending pool once they're within reach; every time a
+  // slot frees up, pickNext() re-checks CURRENT positions and grabs
+  // whichever pending image is closest to (or actually on) screen right
+  // now -- so a fast scroll or scrollbar drag doesn't leave visible
+  // photos stuck behind everything the scroll happened to pass over.
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>

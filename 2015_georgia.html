@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Грузия — по волнам моей фотопамяти</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  nav.toc,
+  article > p,
+  article > h2,
+  article > ul.summary-list,
+  article > blockquote.citation {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.masthead {
+    max-width: none;
+    padding: 8vw 0 4vw;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://img-fotki.yandex.ru/get/477594/2188450.14/0_1e64eb_b3300372_orig') center 40% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  nav.toc {
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+    font-family: var(--sans);
+  }
+  nav.toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li { margin: 0 0 0.85rem; break-inside: avoid; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.3;
+    font-size: 0.98rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent-soft); color: var(--accent); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 3.9rem 0 1.4rem;
+    padding-top: 0.2rem;
+    color: var(--text);
+    position: relative;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin-bottom: 1.1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-soft); }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+  a:hover { color: #6b5228; }
+  a.internal-link-pending {
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--accent-soft);
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.summary-list {
+    background: #f4f1ea;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem 1.6rem 2.4rem;
+    margin: 0 0 3rem;
+  }
+  ul.summary-list li { margin-bottom: 0.7rem; }
+  ul.summary-list li:last-child { margin-bottom: 0; }
+  blockquote.citation {
+    margin: 2rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  blockquote.citation p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  figure.photo { margin: 2.6rem 0; }
+  figure.photo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.08), 0 8px 24px rgba(43,41,37,0.06);
+  }
+  img.lazy-photo {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 40px;
+    background: var(--line);
+  }
+  img.lazy-photo.loaded { opacity: 1; }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 2.2rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  p.epigraph {
+    text-align: right;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+  p.fin {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  p.subhead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { width: 88%; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17.5px; }
+    .wrap { width: 90%; padding: 10vw 0 16vw; }
+    header.masthead h1 { font-size: 1.85rem; }
+    nav.toc ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Грузия — по волнам моей фотопамяти</h1>
+  </header>
+
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      <ul>
+    <li><a href="#тбилиси-день-первый">Тбилиси. День первый</a></li>
+    <li><a href="#гергети">Гергети</a></li>
+    <li><a href="#давид-гареджа">Давид Гареджа</a></li>
+    <li><a href="#сигнахи">Сигнахи</a></li>
+    <li><a href="#греми">Греми</a></li>
+    <li><a href="#некреси">Некреси</a></li>
+    <li><a href="#киндзмараули">Киндзмараули</a></li>
+    <li><a href="#тбилиси-снова">Тбилиси. Снова.</a></li>
+    <li><a href="#джвари-и-мцхета">Джвари и Мцхета</a></li>
+    <li><a href="#уплисцихе">Уплисцихе</a></li>
+    <li><a href="#мцхета-светицховели">Мцхета. Светицховели</a></li>
+    <li><a href="#тбилиси-сухой-рынок">Тбилиси. «Сухой рынок»</a></li>
+    <li><a href="#светицховели">Светицховели</a></li>
+    <li><a href="#и-напоследок">И напоследок...</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <article>
+<p>…На площади Авлабари дул пронизывающий ветер. Спустилась ночь, мы были голодны, да и изрядно подмерзли, пока пробирались по плохо освещенным улицам мимо разрушенных или просто заброшенных домов старого армянского квартала. Над дверями множества мелких лавочек неизвестного назначения горели разноцветными неоновыми огнями округлые грузинские буквы, нам неведомые. Зябнущие люди спешили к станции метро, встречный поток, кутаясь от ветра в шарфы и поднимая воротники, растекался по расходящимся от метро кривоватым улицам с разбитой мостовой. Было неуютно.</p>
+<p>На углу стояло несколько разномастных такси. В одной из них курил, опустив стекло и высунув локоть наружу, немолодой водитель с седой щетиной на щеках. «Ну что, попробую спросить, авось не съест» - решил я.</p>
+<p>- Здравствуйте! - сказал я, подойдя ближе и наклонившись к водительскому окну.- Не подскажете, где тут можно поесть двум голодным и замерзшим москвичам? Что-нибудь непонтовое, не ресторан, а чтобы простая горячая домашняя грузинская еда. Ну, вот, куда бы вы сами пошли, если бы проголодались?</p>
+<p>Водитель выслушал меня с довольно мрачным лицом. Когда я закончил, он немного помедлил, и затем, покрутив ручку, закрыл окно. «Отличное начало!» - расстроившись, подумал я…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.10/0_1e6425_e0778fdd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.10/0_1e6425_e0778fdd_orig" alt="" loading="lazy"></noscript></figure>
+<p>Так началась для нас поездка по Грузии. Это было в 2015 году, в конце апреля, и воспоминания становятся все менее детальными… Но все же они есть, яркие и разнообразные. И есть фотографии, и много неплохих (скромность – мой конек). Я наткнулся на них буквально пару недель назад, и решил, что там все же есть чем поделиться, жалко же, ей-богу. И как раз впереди новогодние каникулы. Будет чем заняться. И пусть это будет не отчет с сухими деталями и советами (с тех пор уже прошло больше двух с половиной лет, и что-то наверняка изменилось), а просто попытка оживить воспоминания и вспомнить наши тогдашние впечатления и наше настроение тех прекрасных дней…</p>
+<p>Опустим очевидное вступление в духе «нам всегда очень нравилась Грузия, и мы всегда мечтали туда съездить». Это, конечно, абсолютная правда, но это и так всем понятно. У нас было чуть больше недели в конце апреля, прямо перед майскими праздниками. И мы решили, что откладывать больше нельзя.</p>
+<p>Мы купили и проштудировали хороший свежий путеводитель по Грузии, забронировали жилье, связались с местным гидом. Забегая вперед - в один из дней он свозил нас из Тбилиси на машине в древний пещерный город Уплисцихе, а в другой день - в монастырь Давид-Гареджа на границе с Азербайджаном (и то и другое очень и очень рекомендуем, если только хорошая погода). От Давида-Гареджи он добросил нас до Сигнахи, и мы распрощались. Сигнахи слишком глянцев после реконструкции, чтобы быть по-честному красивым, но все равно приятен для глаза. Переночевав там, мы проехались по Кахетии, по храмам и монастырям Алазанской долины и окрестностей. Заехали, конечно, на заводы Киндзмараули, накупили там вина. В монастырь Гергети (для меня это была цель номер два после собственно Тбилиси) нас возил на машине друг сына нашей хозяйки в Тбилиси, молодой бородатый парень, в темных очках – внешне, натуральный ваххабит. Ну, точнее, возил до села Степанцминда и обратно – дальше вверх к монастырю возят местные на полноприводных джипах. И то до конца доехать нам не удалось – в горах на дорогах все еще лежал глубокий снег, так что последнюю пару километров мы шли пешком.</p>
+<p>И все и везде угощали нас своим домашним вином – Саперави либо Ркацители (и везде оно было вкуснейшее). Угощений было не избежать, да мы и не собирались избегать. Зайдешь, бывало, в крошечный магазинчик в Тбилиси купить молока и булку – хозяин достает из-под прилавка стаканчик, и наливает свое Саперави – попробовать. Потому что именно у него Саперави – правильный, как надо, по дедовскому рецепту. Не то что, в других местах – помои, даже и сравнивать не стоит. Только у него. Пять литров отдаст буквально даром. Отвезешь, дарагой, домой, друзей угостишь, э? Но ведь и правда – душистое вкуснейшее вино…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477594/2188450.14/0_1e64eb_b3300372_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477594/2188450.14/0_1e64eb_b3300372_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, а мы с вами вернемся на Авлабари, в наш первый вечер в Тбилиси.</p>
+<p>… Покрутив ручку и подняв стекло, седобородый водила открыл дверцу и, покряхтев, выбрался наружу. Подошел к багажнику, приоткрыл его и снова захлопнул. – У нас машины не запирают теперь, Мишико порядок навел, – пояснил он. – Пащли! – с прекрасным грузинским акцентом сказал таксист. – У меня тут у друга кафе недалеко, там и поедим. И, не дожидаясь ответа, пошел вперед, по одной из улочек, отходящих от Авлабари.</p>
+<p>Через пять минут мы отогревались, сидя за столиком в маленьком полуподвальном зальчике кафе. Перед нами на тарелках лежали горячие хачапури по-имеретински (лепешки с имеретинским сыром внутри, если кто не знает). Бокалы были наполнены домашним Ркацители. Где-то на кухне спешно готовились свежие хинкали (с телятиной и зеленью, насколько я могу припомнить).</p>
+<p>За соседним столом сидела большая компания – мужчины и женщины средних лет; похоже, коллеги или приятели, шумно что-то обсуждали, перебивая друг друга и смеясь. Говорили то по-грузински, то вдруг иногда переходили на русский, потом опять на грузинский. Мы наблюдали за ними исподтишка. В какой-то момент один из них принялся рассказывать по-грузински какой-то анекдот; остальные, похохатывая, предвкушали развязку. Развязка неожиданно прозвучала по-русски: «А я не комсомолец, я азербайджанец!» - компания закисла в хохоте на полминуты. Мы улыбались. «Наш» водитель пил чай за столиком напротив и болтал с хозяином. Перед нами появились тарелки с дымящимися горячими хинкали. Жизнь налаживалась…</p>
+<p>Это был последний холодный день последней холодной недели весны. Прямо с утра светило яркое теплое солнце, и оно было с нами во все оставшиеся дни (ну ладно, в предпоследний день, на Гомборском перевале, когда мы возвращались из Кахетии в Тбилиси, нас таки один раз застал ливень. И немного подождило на следующий день с утра, когда мы снова гуляли по Тбилиси).</p>
+<p>Ну что ж, а теперь – фотографии. Иногда с комментариями. Иногда и без. Иногда и Википедия помогала. Еще раз расшаркаюсь – это не отчет по поездке. Это просто колоритный Тбилиси, красивая Кахетия, впечатляющие горы… Короче говоря, прекрасная Грузия, какой мы ее увидели.</p>
+<h2 id="тбилиси-день-первый">Тбилиси. День первый</h2>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e6533_85a41f48_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e6533_85a41f48_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/879536/2188450.15/0_1e6532_d4c08f7a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/879536/2188450.15/0_1e6532_d4c08f7a_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вдали - храм Преображения Господня (на самом деле, совсем свежий, уже нашего века):</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.10/0_1e641d_9bc1d969_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.10/0_1e641d_9bc1d969_orig" alt="" loading="lazy"></noscript></figure>
+<p>Крепость Нарикала над Тбилиси и ее окрестности.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361460/2188450.10/0_1e641e_e04f7f44_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361460/2188450.10/0_1e641e_e04f7f44_orig" alt="" loading="lazy"></noscript></figure>
+<p>Это вид со стороны Нарикалы на другой берег Куры. Вдали блестит огромный новый храм Цминда Самеба - архитектурная доминанта квартала Авлабари:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.10/0_1e641f_c2872dfb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.10/0_1e641f_c2872dfb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.10/0_1e6420_669d053a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.10/0_1e6420_669d053a_orig" alt="" loading="lazy"></noscript></figure>
+<p>Девочки в национальных костюмах на свадьбе у храма св. Николая на Нарикале:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.10/0_1e6421_fbafb5a6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.10/0_1e6421_fbafb5a6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.10/0_1e6422_9ed63439_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.10/0_1e6422_9ed63439_orig" alt="" loading="lazy"></noscript></figure>
+<p>На улицах Тифлиса. Это, конечно – город кошек.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.10/0_1e6423_f22e53f1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.10/0_1e6423_f22e53f1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/914553/2188450.10/0_1e6424_4f80e55b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/914553/2188450.10/0_1e6424_4f80e55b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.10/0_1e6426_965558ed_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.10/0_1e6426_965558ed_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874316/2188450.10/0_1e6427_a273c51b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874316/2188450.10/0_1e6427_a273c51b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.10/0_1e6428_74aae15e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.10/0_1e6428_74aae15e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/878590/2188450.10/0_1e6429_8a0fa47c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/878590/2188450.10/0_1e6429_8a0fa47c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.10/0_1e642a_e955ea70_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.10/0_1e642a_e955ea70_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.10/0_1e642b_57078fa0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.10/0_1e642b_57078fa0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.10/0_1e642c_1f5fa310_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.10/0_1e642c_1f5fa310_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/3505/2188450.10/0_1e642d_91c7dbca_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/3505/2188450.10/0_1e642d_91c7dbca_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.10/0_1e642e_99f23604_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.10/0_1e642e_99f23604_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.10/0_1e642f_e5a8eaf3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.10/0_1e642f_e5a8eaf3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892702/2188450.10/0_1e6430_83e53ff5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892702/2188450.10/0_1e6430_83e53ff5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894110/2188450.10/0_1e6431_df8fb54a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894110/2188450.10/0_1e6431_df8fb54a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892702/2188450.10/0_1e6432_40aff3a2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892702/2188450.10/0_1e6432_40aff3a2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.10/0_1e6433_4652b0e8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.10/0_1e6433_4652b0e8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.10/0_1e6434_57c960da_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.10/0_1e6434_57c960da_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/25939/2188450.10/0_1e6435_5899aa0b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/25939/2188450.10/0_1e6435_5899aa0b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897385/2188450.10/0_1e6436_5886b8e2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897385/2188450.10/0_1e6436_5886b8e2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897385/2188450.10/0_1e6437_5b8d3c4c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897385/2188450.10/0_1e6437_5b8d3c4c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Кошка бронзовая и кошка натуральная:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.10/0_1e6438_3c53aaad_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.10/0_1e6438_3c53aaad_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вид на стены Нарикалы ночью (снимал с рук, извините):</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897385/2188450.10/0_1e6439_fbbe0bcc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897385/2188450.10/0_1e6439_fbbe0bcc_orig" alt="" loading="lazy"></noscript></figure>
+<p>Световой фонтан:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.11/0_1e643a_9edafb67_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.11/0_1e643a_9edafb67_orig" alt="" loading="lazy"></noscript></figure>
+<p>Певица в джаз-кафе:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477594/2188450.10/0_1e643b_5d8a34d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477594/2188450.10/0_1e643b_5d8a34d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Объявления на водосточных трубах очень фотогеничны.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897139/2188450.10/0_1e643c_64def2da_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897139/2188450.10/0_1e643c_64def2da_orig" alt="" loading="lazy"></noscript></figure>
+<p>Храм Преображения, днем:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896349/2188450.11/0_1e643d_260b29ba_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896349/2188450.11/0_1e643d_260b29ba_orig" alt="" loading="lazy"></noscript></figure>
+<p>Церковь Рождества Пресвятой Богородицы в Тбилиси:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/879536/2188450.11/0_1e643e_5a258a2c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/879536/2188450.11/0_1e643e_5a258a2c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.11/0_1e643f_c54f2e66_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.11/0_1e643f_c54f2e66_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894110/2188450.11/0_1e6440_bd7e19e3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894110/2188450.11/0_1e6440_bd7e19e3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.11/0_1e6441_74a081a0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.11/0_1e6441_74a081a0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897385/2188450.11/0_1e6442_4f767082_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897385/2188450.11/0_1e6442_4f767082_orig" alt="" loading="lazy"></noscript></figure>
+<p>Снова на улицах Тбилиси:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.11/0_1e6443_8d6075c1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.11/0_1e6443_8d6075c1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892702/2188450.11/0_1e6444_5816c3d1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892702/2188450.11/0_1e6444_5816c3d1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.11/0_1e6445_d6698678_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.11/0_1e6445_d6698678_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.11/0_1e6446_ca13985f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.11/0_1e6446_ca13985f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.11/0_1e6447_ce4c6de3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.11/0_1e6447_ce4c6de3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/46114/2188450.11/0_1e6448_60ff480d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/46114/2188450.11/0_1e6448_60ff480d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот тот самый наш путеводитель по Грузии:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.11/0_1e6449_b634f0b6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.11/0_1e6449_b634f0b6_orig" alt="" loading="lazy"></noscript></figure>
+<p>Театр марионеток Резо Габриадзе:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.11/0_1e644a_565c4edb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.11/0_1e644a_565c4edb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373339/2188450.11/0_1e644e_a87409cd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373339/2188450.11/0_1e644e_a87409cd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896349/2188450.11/0_1e644f_8d7256aa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896349/2188450.11/0_1e644f_8d7256aa_orig" alt="" loading="lazy"></noscript></figure>
+<p>Мозаика около театра марионеток:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.11/0_1e644b_c72b19f5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.11/0_1e644b_c72b19f5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.11/0_1e644c_b71632da_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.11/0_1e644c_b71632da_orig" alt="" loading="lazy"></noscript></figure>
+<p>Афиша театра Резо Габриадзе:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897139/2188450.11/0_1e644d_a2aead5b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897139/2188450.11/0_1e644d_a2aead5b_orig" alt="" loading="lazy"></noscript></figure>
+<p>И снова мы у церкви Рождества Пресвятой Богородицы:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.11/0_1e6450_aac2d518_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.11/0_1e6450_aac2d518_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/965297/2188450.11/0_1e6451_13de0887_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/965297/2188450.11/0_1e6451_13de0887_orig" alt="" loading="lazy"></noscript></figure>
+<p>Попали неожиданно на венчание. Я немного пофотографировал. Надеюсь, ничего не нарушил.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.11/0_1e6452_c90006da_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.11/0_1e6452_c90006da_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/510105/2188450.11/0_1e6453_1c399fce_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/510105/2188450.11/0_1e6453_1c399fce_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/47043/2188450.11/0_1e6454_78815b45_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/47043/2188450.11/0_1e6454_78815b45_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.11/0_1e6455_47111d73_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.11/0_1e6455_47111d73_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/25939/2188450.11/0_1e6456_29f56df3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/25939/2188450.11/0_1e6456_29f56df3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.11/0_1e6457_fead506f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.11/0_1e6457_fead506f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.11/0_1e6458_19366766_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.11/0_1e6458_19366766_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896349/2188450.11/0_1e6459_b0336ab8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896349/2188450.11/0_1e6459_b0336ab8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.11/0_1e645a_7cb46504_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.11/0_1e645a_7cb46504_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.11/0_1e645b_f352ef02_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.11/0_1e645b_f352ef02_orig" alt="" loading="lazy"></noscript></figure>
+<p>Часы на театре марионеток:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897385/2188450.11/0_1e645c_8f9e2918_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897385/2188450.11/0_1e645c_8f9e2918_orig" alt="" loading="lazy"></noscript></figure>
+<p>Люди на улицах. Пока еще не нужно обязательно получать письменное согласие каждого :</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.11/0_1e645d_425229d3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.11/0_1e645d_425229d3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.11/0_1e645e_716439e4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.11/0_1e645e_716439e4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.11/0_1e645f_d9657838_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.11/0_1e645f_d9657838_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897385/2188450.11/0_1e6460_5af75f22_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897385/2188450.11/0_1e6460_5af75f22_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.11/0_1e6461_b1e72a4a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.11/0_1e6461_b1e72a4a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.11/0_1e6462_5ff544fd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.11/0_1e6462_5ff544fd_orig" alt="" loading="lazy"></noscript></figure>
+<p>Туфелька:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.11/0_1e6463_d80c3226_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.11/0_1e6463_d80c3226_orig" alt="" loading="lazy"></noscript></figure>
+<p>Черный и белый:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.11/0_1e6464_5563ca20_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.11/0_1e6464_5563ca20_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/25939/2188450.11/0_1e6465_4eefec92_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/25939/2188450.11/0_1e6465_4eefec92_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/965297/2188450.11/0_1e6466_ef0facfd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/965297/2188450.11/0_1e6466_ef0facfd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894110/2188450.11/0_1e6467_44dd2e05_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894110/2188450.11/0_1e6467_44dd2e05_orig" alt="" loading="lazy"></noscript></figure>
+<p>«Канатка» на Нарикалу</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/878590/2188450.11/0_1e6468_aa4c79b3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/878590/2188450.11/0_1e6468_aa4c79b3_orig" alt="" loading="lazy"></noscript></figure>
+<p>У серных бань:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.11/0_1e6469_ee3532b3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.11/0_1e6469_ee3532b3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/93451/2188450.11/0_1e646a_db37af89_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/93451/2188450.11/0_1e646a_db37af89_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.11/0_1e646b_33129638_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.11/0_1e646b_33129638_orig" alt="" loading="lazy"></noscript></figure>
+<p>Не наше. Мы просто гуляли по окраинам Тбилиси, шли мимо домика. На улице стоял столик, почти на тротуаре:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477594/2188450.11/0_1e646c_15247c10_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477594/2188450.11/0_1e646c_15247c10_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897139/2188450.11/0_1e646d_fc0c1eee_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897139/2188450.11/0_1e646d_fc0c1eee_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.11/0_1e646e_9bfa1058_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.11/0_1e646e_9bfa1058_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.12/0_1e646f_1b613d6b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.12/0_1e646f_1b613d6b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.12/0_1e6470_4b2ff888_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.12/0_1e6470_4b2ff888_orig" alt="" loading="lazy"></noscript></figure>
+<p>Храм Цминда Самеба ночью. Хоть и новодел, но довольно красивый:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894414/2188450.12/0_1e6471_158f2ccc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894414/2188450.12/0_1e6471_158f2ccc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.12/0_1e6472_b6d4dbd5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.12/0_1e6472_b6d4dbd5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.12/0_1e6473_8c0af7a6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.12/0_1e6473_8c0af7a6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/47043/2188450.12/0_1e6474_c902228_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/47043/2188450.12/0_1e6474_c902228_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="гергети">Гергети</h2>
+<p>Вики: <em>«Троицкая церковь в Гергети (груз. გერგეტის წმინდა სამება, Гергетис Цминда Самеба) расположена на высоте 2 170 м у подножья Казбека вдоль Военно-Грузинской дороги в грузинской деревне Гергети ... Построенная в XIV веке святыня является единственным крестово-купольным храмом в области Хеви. Подле храма сохранилась средневековая колокольня.»</em></p>
+<p>Очень хотел поехать и посмотреть. Поехали и посмотрели.</p>
+<p>Это я снимал в крепости Ананури, на полдороге к Гергети, на север от Тбилиси.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897139/2188450.12/0_1e6475_a88b66ca_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897139/2188450.12/0_1e6475_a88b66ca_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.12/0_1e6476_18fc4cd5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.12/0_1e6476_18fc4cd5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962386/2188450.12/0_1e6477_cef2a5d4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962386/2188450.12/0_1e6477_cef2a5d4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897385/2188450.12/0_1e6478_c01c73e1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897385/2188450.12/0_1e6478_c01c73e1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.12/0_1e6479_fd3a998c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.12/0_1e6479_fd3a998c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/46114/2188450.12/0_1e647a_ee2f9ce1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/46114/2188450.12/0_1e647a_ee2f9ce1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Горы недалеко от Гудаури:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/965297/2188450.12/0_1e647b_7a2ff5fb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/965297/2188450.12/0_1e647b_7a2ff5fb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893194/2188450.12/0_1e647c_fcd356e5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893194/2188450.12/0_1e647c_fcd356e5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874316/2188450.12/0_1e647d_2027f14_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874316/2188450.12/0_1e647d_2027f14_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.12/0_1e647e_3ca192fa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.12/0_1e647e_3ca192fa_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897139/2188450.12/0_1e647f_c01689b0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897139/2188450.12/0_1e647f_c01689b0_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот и он, храм Св.Троицы в Гергети. Красив до невозможности. Пушкин писал о нем:</p>
+<blockquote class="citation"><p>«Высоко над семьею гор,<br>
+Казбек, твой царственный шатер<br>
+Сияет вечными лучами.<br>
+Твой монастырь за облаками,<br>
+Как в небе реющий ковчег,<br>
+Парит, чуть видный, над горами.<br>
+Далекий, вожделенный брег!»</p></blockquote>
+<p>И он же:</p>
+<p><em>«…белые оборванные тучи перетягивались через вершину горы, и уединенный монастырь, озаренный лучами солнца, казалось, плавал в воздухе, несомый облаками».</em></p>
+<p>Это – вид снизу, с дороги у Степанцминды:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894110/2188450.12/0_1e6480_d3606b23_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894110/2188450.12/0_1e6480_d3606b23_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/878955/2188450.12/0_1e6481_518e144_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/878955/2188450.12/0_1e6481_518e144_orig" alt="" loading="lazy"></noscript></figure>
+<p>А это уже около него, в горах:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477594/2188450.12/0_1e6482_c80a962d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477594/2188450.12/0_1e6482_c80a962d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.12/0_1e6483_b5a4ee3b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.12/0_1e6483_b5a4ee3b_orig" alt="" loading="lazy"></noscript></figure>
+<p>Казбек то пропадал в тумане, то появлялся. Впечатляющее зрелище.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.12/0_1e6484_77ba1c39_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.12/0_1e6484_77ba1c39_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.12/0_1e6485_de0e2b41_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.12/0_1e6485_de0e2b41_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.12/0_1e6486_98a8ea4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.12/0_1e6486_98a8ea4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/878955/2188450.12/0_1e6487_3db2ffd0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/878955/2188450.12/0_1e6487_3db2ffd0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874316/2188450.12/0_1e6488_baa1c436_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874316/2188450.12/0_1e6488_baa1c436_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.12/0_1e6489_c9834675_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.12/0_1e6489_c9834675_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.12/0_1e648a_de05d81b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.12/0_1e648a_de05d81b_orig" alt="" loading="lazy"></noscript></figure>
+<p>Снова Казбек в тумане:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.12/0_1e648b_ce9d072e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.12/0_1e648b_ce9d072e_orig" alt="" loading="lazy"></noscript></figure>
+<p>Орнамент у входа:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/46114/2188450.12/0_1e648c_b3b9ad99_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/46114/2188450.12/0_1e648c_b3b9ad99_orig" alt="" loading="lazy"></noscript></figure>
+<p>Горное село у дороги, на обратном пути в Тбилиси:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.12/0_1e648d_b0eb3248_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.12/0_1e648d_b0eb3248_orig" alt="" loading="lazy"></noscript></figure>
+<p>И вечер в Тбилиси:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.12/0_1e648e_71fe0866_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.12/0_1e648e_71fe0866_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.12/0_1e648f_fedb62b1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.12/0_1e648f_fedb62b1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/25939/2188450.12/0_1e6490_974324d0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/25939/2188450.12/0_1e6490_974324d0_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="давид-гареджа">Давид Гареджа</h2>
+<p>Вики:</p>
+<blockquote class="citation"><p>«Комплекс грузинских пещерных монастырей VI века, расположенный в 60 км к юго-востоку от Тбилиси, на грузинско-азербайджанской границе, и простирающийся на 25 км вдоль склонов полупустынного Гареджийского кряжа. Государственная граница между Грузией и Азербайджаном делит монастырский комплекс Давид-Гареджи на две части.<br>
+Комплекс представляет собой высеченные в скалах около 20 монастырей... Главным монастырем считается лавра св. Давида, которая находится на северном склоне горы, разделяющей Грузию и Азербайджан. Граница проходит по вершине горы, которую грузинские историки называют Удабно, по названию одного из монастырей. Этот монастырь находится на азербайджанской территории — на южном склоне горы. Помимо них на южном склоне горы расположены более 100 пещер, которые использовались монахами в качестве келий.»</p></blockquote>
+<p>Дорога из Тбилиси к Давид-Гареджа сама по себе очень красива.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/878590/2188450.12/0_1e6491_d7c99669_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/878590/2188450.12/0_1e6491_d7c99669_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894414/2188450.12/0_1e6492_caf7376b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894414/2188450.12/0_1e6492_caf7376b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897139/2188450.12/0_1e6493_b01afab_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897139/2188450.12/0_1e6493_b01afab_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894110/2188450.12/0_1e6494_6a6a0e5c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894110/2188450.12/0_1e6494_6a6a0e5c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.12/0_1e6495_73885aa6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.12/0_1e6495_73885aa6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477594/2188450.12/0_1e6496_288c8b6c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477594/2188450.12/0_1e6496_288c8b6c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.12/0_1e6498_b3e7dd78_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.12/0_1e6498_b3e7dd78_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.12/0_1e6499_96050f5d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.12/0_1e6499_96050f5d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.12/0_1e649a_bfd82ac5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.12/0_1e649a_bfd82ac5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894110/2188450.12/0_1e649b_c3f64f6f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894110/2188450.12/0_1e649b_c3f64f6f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.12/0_1e649c_1d4326f8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.12/0_1e649c_1d4326f8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.13/0_1e64b4_90420015_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.13/0_1e64b4_90420015_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.13/0_1e64b5_74eed66_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.13/0_1e64b5_74eed66_orig" alt="" loading="lazy"></noscript></figure>
+<p>Забираемся наверх, на гряду, где проходит граница. Виды потрясающие.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894110/2188450.12/0_1e649d_97ed631d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894110/2188450.12/0_1e649d_97ed631d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/93451/2188450.12/0_1e649e_d64e7e7e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/93451/2188450.12/0_1e649e_d64e7e7e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874316/2188450.12/0_1e649f_fd35a413_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874316/2188450.12/0_1e649f_fd35a413_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.13/0_1e64a0_74eb424c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.13/0_1e64a0_74eb424c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/47043/2188450.13/0_1e64a1_629d5dc6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/47043/2188450.13/0_1e64a1_629d5dc6_orig" alt="" loading="lazy"></noscript></figure>
+<p>Долина со стороны Азербайджана. Далеко внизу видны парящие над долиной хищные птицы:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.13/0_1e64a2_880bde09_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.13/0_1e64a2_880bde09_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.13/0_1e64a3_60a3eca8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.13/0_1e64a3_60a3eca8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897385/2188450.13/0_1e64a4_27341288_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897385/2188450.13/0_1e64a4_27341288_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897139/2188450.13/0_1e64a5_a3cbed41_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897139/2188450.13/0_1e64a5_a3cbed41_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64a6_f9cbeed3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64a6_f9cbeed3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.13/0_1e64a7_ac573567_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.13/0_1e64a7_ac573567_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.13/0_1e64a8_471cc769_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.13/0_1e64a8_471cc769_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893194/2188450.13/0_1e64a9_de78e0a0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893194/2188450.13/0_1e64a9_de78e0a0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64aa_241210e6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64aa_241210e6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/47043/2188450.13/0_1e64ab_6c7ffe86_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/47043/2188450.13/0_1e64ab_6c7ffe86_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64ac_d3819445_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64ac_d3819445_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/3505/2188450.13/0_1e64ad_a5525c24_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/3505/2188450.13/0_1e64ad_a5525c24_orig" alt="" loading="lazy"></noscript></figure>
+<p>Лавра св. Давида внизу со стороны Грузии. Технически продвинутая!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.13/0_1e64ae_88ee01f2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.13/0_1e64ae_88ee01f2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/878955/2188450.13/0_1e64af_deffce18_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/878955/2188450.13/0_1e64af_deffce18_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64b0_a32b1370_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64b0_a32b1370_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894110/2188450.13/0_1e64b1_9c85c747_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894110/2188450.13/0_1e64b1_9c85c747_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.13/0_1e64b2_98150eaa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.13/0_1e64b2_98150eaa_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.13/0_1e64b3_7040f931_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.13/0_1e64b3_7040f931_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="сигнахи">Сигнахи</h2>
+<p>Вики: <em>«маленький городок в восточной Грузии, на склоне горы, в историческом регионе Кахети … Расположен на террасах, соединяющихся извилистыми крутыми улицами.. Славится одноименной крепостью, входящей в список самых известных и крупных крепостей Грузии. Стены Сигнахской крепости чудесным образом уцелели и сегодня окружают старую часть города и выходят далеко за городские границы. По периметру стен сохранились 28 сторожевых башен, с которых открывается замечательный вид на Алазанскую долину..»</em></p>
+<p>По дороге в Сигнахи:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.13/0_1e64b6_bd41d897_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.13/0_1e64b6_bd41d897_orig" alt="" loading="lazy"></noscript></figure>
+<p>Виды на Алазанскую долину и главный Кавказский хребет:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.13/0_1e64b7_9baf75e8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.13/0_1e64b7_9baf75e8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/879536/2188450.13/0_1e64b8_4fafd316_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/879536/2188450.13/0_1e64b8_4fafd316_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/879536/2188450.13/0_1e64b9_d3b289d3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/879536/2188450.13/0_1e64b9_d3b289d3_orig" alt="" loading="lazy"></noscript></figure>
+<p>Застали дождь над Алазанской долиной:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.13/0_1e64ba_585ebf8f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.13/0_1e64ba_585ebf8f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64bb_cae5539a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64bb_cae5539a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.13/0_1e64bc_5ae82055_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.13/0_1e64bc_5ae82055_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.13/0_1e64bd_a20c5e16_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.13/0_1e64bd_a20c5e16_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.13/0_1e64be_49dc8fdc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.13/0_1e64be_49dc8fdc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.13/0_1e64bf_5032532_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.13/0_1e64bf_5032532_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.13/0_1e64c0_7bb51293_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.13/0_1e64c0_7bb51293_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64c1_74416aae_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64c1_74416aae_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897385/2188450.13/0_1e64c2_a0c3375d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897385/2188450.13/0_1e64c2_a0c3375d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.13/0_1e64c3_469938b6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.13/0_1e64c3_469938b6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.13/0_1e64c4_e076b103_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.13/0_1e64c4_e076b103_orig" alt="" loading="lazy"></noscript></figure>
+<p>Улицы Сигнахи:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/25939/2188450.13/0_1e64c5_b4879f5c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/25939/2188450.13/0_1e64c5_b4879f5c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477594/2188450.13/0_1e64c6_9b8cbcaf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477594/2188450.13/0_1e64c6_9b8cbcaf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.13/0_1e64c7_bb9803e2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.13/0_1e64c7_bb9803e2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.13/0_1e64c8_d1b88d07_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.13/0_1e64c8_d1b88d07_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.13/0_1e64c9_997b0be5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.13/0_1e64c9_997b0be5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897385/2188450.13/0_1e64ca_822ec142_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897385/2188450.13/0_1e64ca_822ec142_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.13/0_1e64cb_89caf1a1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.13/0_1e64cb_89caf1a1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894414/2188450.13/0_1e64cc_c22df115_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894414/2188450.13/0_1e64cc_c22df115_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.13/0_1e64cd_782b9373_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.13/0_1e64cd_782b9373_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64ce_cff6a7af_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.13/0_1e64ce_cff6a7af_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/770851/2188450.13/0_1e64cf_45b55e37_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/770851/2188450.13/0_1e64cf_45b55e37_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.13/0_1e64d0_eee0581c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.13/0_1e64d0_eee0581c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893194/2188450.13/0_1e64d1_d9ca0f3f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893194/2188450.13/0_1e64d1_d9ca0f3f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/93451/2188450.14/0_1e64d2_ec0b5fbb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/93451/2188450.14/0_1e64d2_ec0b5fbb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373339/2188450.14/0_1e64d3_d914450b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373339/2188450.14/0_1e64d3_d914450b_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="греми">Греми</h2>
+<p>Вики: <em>«Греми — архитектурный памятник XVI века — царская крепость в грузинской исторической области Кахетия. Город Греми был столицей Кахетинского царства в XVI—XVII веках. Крепость с церковью Архангелов — это всё, что осталось от некогда процветающего города Греми.»</em></p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/878590/2188450.14/0_1e64d4_3c3cfdfd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/878590/2188450.14/0_1e64d4_3c3cfdfd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.14/0_1e64d5_9c101faa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.14/0_1e64d5_9c101faa_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/5214/2188450.14/0_1e64d6_5db9436c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/5214/2188450.14/0_1e64d6_5db9436c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897139/2188450.14/0_1e64d7_6c3a07a9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897139/2188450.14/0_1e64d7_6c3a07a9_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="некреси">Некреси</h2>
+<p>Монастырь Некреси - место, откуда по Грузии начало распространяться христианство. Древнейший храм здесь - церковь Иоанна Крестителя - относится к IV веку н.э. Рядом - церковь Пресвятой Девы Марии восьмого века, построенная в форме базилики. Вообще, создание храмового комплекса приписывают одному из ассирийских отцов, пришедших проповедовать христианство – Або Некресскому. С вершины холма, где расположены сооружения Некреси, открывается прекрасный вид на Алазанскую долину, со стороны, противоположной Сигнахи:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.14/0_1e64d8_35273a2d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.14/0_1e64d8_35273a2d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.14/0_1e64d9_acb8423_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.14/0_1e64d9_acb8423_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/3505/2188450.14/0_1e64db_1c7fad1b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/3505/2188450.14/0_1e64db_1c7fad1b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.14/0_1e64dc_b1ecf758_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.14/0_1e64dc_b1ecf758_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.14/0_1e64dd_bfb01a96_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.14/0_1e64dd_bfb01a96_orig" alt="" loading="lazy"></noscript></figure>
+<p>Винохранилище, или «марани» в Некреси:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897139/2188450.14/0_1e64da_8873e00f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897139/2188450.14/0_1e64da_8873e00f_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="киндзмараули">Киндзмараули</h2>
+<p>Ну, тут особо комментировать нечего. Священный трепет.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.14/0_1e64de_598e6668_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.14/0_1e64de_598e6668_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.14/0_1e64df_d4a9ab44_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.14/0_1e64df_d4a9ab44_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.14/0_1e64e0_ec595ec0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.14/0_1e64e0_ec595ec0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.14/0_1e64e1_58b66ddf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.14/0_1e64e1_58b66ddf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892702/2188450.14/0_1e64e2_1038c214_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892702/2188450.14/0_1e64e2_1038c214_orig" alt="" loading="lazy"></noscript></figure>
+<p>Едешь вдоль Алазанской долины – названия сел и деревень как бы намекают: Гурджаани, Ахашени, Мукузани, Вазисубани, Цинандали…</p>
+<p>Река Алазани и одноименная долина:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.14/0_1e64e3_7b8d7c35_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.14/0_1e64e3_7b8d7c35_orig" alt="" loading="lazy"></noscript></figure>
+<p>Монастырь Алаверди:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.14/0_1e64e6_e7c4c7d1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.14/0_1e64e6_e7c4c7d1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.14/0_1e64e4_abcb73fb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.14/0_1e64e4_abcb73fb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896349/2188450.14/0_1e64e5_f35176de_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896349/2188450.14/0_1e64e5_f35176de_orig" alt="" loading="lazy"></noscript></figure>
+<p>Чтобы было чуть понятнее - это квеври (кувшины, которые закапываются в землю по горловину, для производства вина по специальной кахетинской технологии) у монастыря Старая Шуамта:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.14/0_1e64e7_b235567d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.14/0_1e64e7_b235567d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.14/0_1e64e8_88bca8da_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.14/0_1e64e8_88bca8da_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="тбилиси-снова">Тбилиси. Снова.</h2>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.14/0_1e64e9_acd0e45e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.14/0_1e64e9_acd0e45e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.14/0_1e64ea_710ee066_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.14/0_1e64ea_710ee066_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896349/2188450.14/0_1e64ec_325dc4c1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896349/2188450.14/0_1e64ec_325dc4c1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e650b_a1d6ce29_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e650b_a1d6ce29_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.15/0_1e650c_31a452f7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.15/0_1e650c_31a452f7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e650d_5caf33a5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e650d_5caf33a5_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="джвари-и-мцхета">Джвари и Мцхета</h2>
+<p>И, конечно, мы съездили в Мцхету, древнюю столицу Грузии, и поднялись к храму Джвари. Вики: <em>«Джвари (груз. ჯვარი, досл. «крест») — грузинский монастырь и храм VII века… Расположен на вершине горы у слияния Куры и Арагви близ Мцхеты — там, где, согласно историческим источникам, воздвигла крест святая равноапостольная Нина. Джвари — один из шедевров архитектуры по совершенству архитектурных форм и первый в Грузии памятник Всемирного наследия.»</em></p>
+<p>И скажу вам, что насчет совершенства архитектурных форм – это все правда. Минимализм и абсолютная вписанность в ландшафт.</p>
+<p>По пути к Джвари:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.14/0_1e64ed_3d706717_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.14/0_1e64ed_3d706717_orig" alt="" loading="lazy"></noscript></figure>
+<p>Джвари:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.14/0_1e64f3_8b5a951f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.14/0_1e64f3_8b5a951f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.14/0_1e64ef_5982d320_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.14/0_1e64ef_5982d320_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/46114/2188450.14/0_1e64f0_7697a234_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/46114/2188450.14/0_1e64f0_7697a234_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/876523/2188450.14/0_1e64f1_3e2a5023_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/876523/2188450.14/0_1e64f1_3e2a5023_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.14/0_1e64f2_36f2a729_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.14/0_1e64f2_36f2a729_orig" alt="" loading="lazy"></noscript></figure>
+<p>Сразу из Джвари мы поехали в этот день Уплисцихе (с тем самым нашим гидом, с которым мы списались из Москвы). Но к Джвари и в Мцхету мы вернемся еще раз, сами, буквально следующий день, уже без гида – хотелось еще раз побродить неспешно. Так что фото будут дальше. А пока</p>
+<h2 id="уплисцихе">Уплисцихе</h2>
+<p>Вики: <em>«Уплисци́хе (груз. უფლისციხე — досл. Божья Крепость) — древний пещерный город, один из первых городов на территории Грузии. Уплисцихе высечен в скале, расположенной в 12 км к востоку от города Гори на левом берегу реки Кура. Город возник в конце II — в начале I тысячелетия до н. э., пережил несколько подъёмов и спадов, был окончательно покинут в XIX веке и является, таким образом, многослойным археологическим объектом, одним из важнейших памятников грузинской культуры. Уникальность памятника заключается в том, что он, благодаря своему устройству, сохранил в себе остатки архитектурных и культовых сооружений, построенных на протяжении нескольких тысячелетий. В период расцвета Уплисцихе включал в себя более 700 пещер и пещерных сооружений, из которых только 150 сохранились к настоящему времени.»</em></p>
+<p>Холм на подъезде к Уплисцихе:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.14/0_1e64f4_75b0c0f2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.14/0_1e64f4_75b0c0f2_orig" alt="" loading="lazy"></noscript></figure>
+<p>Лестница в скале, ведущая к пещерам:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/878590/2188450.14/0_1e64f5_adcfa640_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/878590/2188450.14/0_1e64f5_adcfa640_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962386/2188450.14/0_1e64f6_3d32588e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962386/2188450.14/0_1e64f6_3d32588e_orig" alt="" loading="lazy"></noscript></figure>
+<p>У подножья Уплисцихе:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892702/2188450.14/0_1e64f7_19693db9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892702/2188450.14/0_1e64f7_19693db9_orig" alt="" loading="lazy"></noscript></figure>
+<p>Пещеры:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/47043/2188450.14/0_1e64f8_90ffac50_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/47043/2188450.14/0_1e64f8_90ffac50_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897139/2188450.14/0_1e64f9_ad8b5408_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897139/2188450.14/0_1e64f9_ad8b5408_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.14/0_1e64fa_191f479f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.14/0_1e64fa_191f479f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892702/2188450.14/0_1e64fb_2ed85ae9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892702/2188450.14/0_1e64fb_2ed85ae9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/93451/2188450.14/0_1e64fc_b1e13d9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/93451/2188450.14/0_1e64fc_b1e13d9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/3505/2188450.14/0_1e64fd_317758ed_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/3505/2188450.14/0_1e64fd_317758ed_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/47043/2188450.14/0_1e64fe_52cabcc2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/47043/2188450.14/0_1e64fe_52cabcc2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.14/0_1e64ff_37acfc10_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.14/0_1e64ff_37acfc10_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.14/0_1e6500_1eb879bd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.14/0_1e6500_1eb879bd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.14/0_1e6501_3115d9c7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.14/0_1e6501_3115d9c7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.14/0_1e6502_2268b3cd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.14/0_1e6502_2268b3cd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477594/2188450.14/0_1e6503_9b957a65_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477594/2188450.14/0_1e6503_9b957a65_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894110/2188450.14/0_1e6504_41da28b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894110/2188450.14/0_1e6504_41da28b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/25939/2188450.15/0_1e6505_4a4f50bb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/25939/2188450.15/0_1e6505_4a4f50bb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893194/2188450.15/0_1e6506_50cf8933_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893194/2188450.15/0_1e6506_50cf8933_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="мцхета-светицховели">Мцхета. Светицховели</h2>
+<p>Вики:</p>
+<blockquote class="citation"><p>«Мцхета - древнейший город Грузии, основан в 5-м веке до н.э. По преданию город основал легендарный Мцхетос… В IV веке до н. э. картлийским царём Азо (Азови) объявлена столицей Картлийского царства. С конца V века н. э. столица Картлийского царства переведена в Тбилиси. До окончания строительства собора Самеба во Мцхете находилась кафедра Патриарха Грузии.»<br>
+«Светицховели (груз. სვეტიცხოველი — животворящий столп) — кафедральный патриарший храм Грузинской православной церкви в честь 12 Апостолов, в городе Мцхета, который на протяжении тысячелетия являлся главным собором всей Грузии. Числится среди памятников Всемирного наследия. Является одним из главных духовных центров православной Грузии.<br>
+Среди сохранившихся исторических сооружений Светицховели является самым большим в Грузии… Ещё в IV веке принявший христианство царь Мириан III по совету равноапостольной Нины выстроил первую в Грузии деревянную церковь, которая не дошла до сегодняшних дней… Во II половине V века благочестивый царь Вахтанг I Горгасал выстроил на месте этой церкви базилику... В XI веке на месте поврежденной базилики католикос Грузии Мелкиседек I воздвиг храм. Ныне существующая крестовокупольная четырёхстолпная трёхнефная церковь во имя Двенадцати Апостолов строилась с 1010 по 1029».</p></blockquote>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/914553/2188450.15/0_1e6508_84dacf32_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/914553/2188450.15/0_1e6508_84dacf32_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897139/2188450.15/0_1e6509_b46951a4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897139/2188450.15/0_1e6509_b46951a4_orig" alt="" loading="lazy"></noscript></figure>
+<p>Джвари. Вид от Светицховели.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897139/2188450.15/0_1e650a_df260368_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897139/2188450.15/0_1e650a_df260368_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897385/2188450.16/0_1e67db_666d2520_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897385/2188450.16/0_1e67db_666d2520_orig" alt="" loading="lazy"></noscript></figure>
+<p>И, как я сказал, к Светицховели мы еще вернемся…</p>
+<h2 id="тбилиси-сухой-рынок">Тбилиси. «Сухой рынок»</h2>
+<p>Известный «блошиный рынок» Тбилиси. Можно фотографировать все подряд – все интересно.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892702/2188450.15/0_1e6507_f721a023_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892702/2188450.15/0_1e6507_f721a023_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/47043/2188450.15/0_1e650e_f83a63b3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/47043/2188450.15/0_1e650e_f83a63b3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e650f_88f8af54_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e650f_88f8af54_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.15/0_1e6510_e3ee45d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.15/0_1e6510_e3ee45d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.15/0_1e6511_f279f65b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.15/0_1e6511_f279f65b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.15/0_1e6512_3b62d88e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.15/0_1e6512_3b62d88e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892702/2188450.15/0_1e6513_ed35b5a9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892702/2188450.15/0_1e6513_ed35b5a9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874316/2188450.15/0_1e6514_9f172d83_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874316/2188450.15/0_1e6514_9f172d83_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e6515_296aef3d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e6515_296aef3d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/879536/2188450.15/0_1e6516_616443f5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/879536/2188450.15/0_1e6516_616443f5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.15/0_1e6517_1b310c84_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.15/0_1e6517_1b310c84_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.15/0_1e6518_84b65ef2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.15/0_1e6518_84b65ef2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962386/2188450.15/0_1e6519_cf95da43_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962386/2188450.15/0_1e6519_cf95da43_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/879536/2188450.15/0_1e651a_190ce4fa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/879536/2188450.15/0_1e651a_190ce4fa_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.15/0_1e651b_115c130e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.15/0_1e651b_115c130e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.15/0_1e651c_a265b93f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.15/0_1e651c_a265b93f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894110/2188450.15/0_1e651d_ca7f6b16_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894110/2188450.15/0_1e651d_ca7f6b16_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.15/0_1e651e_1227f4f3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.15/0_1e651e_1227f4f3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892702/2188450.15/0_1e651f_c772f580_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892702/2188450.15/0_1e651f_c772f580_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/3505/2188450.15/0_1e6520_b4d5d67c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/3505/2188450.15/0_1e6520_b4d5d67c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765007/2188450.16/0_1e67d9_2aae6eec_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765007/2188450.16/0_1e67d9_2aae6eec_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/931298/2188450.16/0_1e67d8_88007f11_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/931298/2188450.16/0_1e67d8_88007f11_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874316/2188450.16/0_1e67d5_e89cf305_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874316/2188450.16/0_1e67d5_e89cf305_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893753/2188450.16/0_1e67d7_6f344bb0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893753/2188450.16/0_1e67d7_6f344bb0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768352/2188450.16/0_1e67da_a2bb6959_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768352/2188450.16/0_1e67da_a2bb6959_orig" alt="" loading="lazy"></noscript></figure>
+<p>И просто фото тбилисских улиц:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.15/0_1e6521_fbc6ca36_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.15/0_1e6521_fbc6ca36_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/3909/2188450.15/0_1e6522_2141502f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/3909/2188450.15/0_1e6522_2141502f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.15/0_1e6523_5767b4e9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.15/0_1e6523_5767b4e9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/93451/2188450.15/0_1e6524_693cb20_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/93451/2188450.15/0_1e6524_693cb20_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="светицховели">Светицховели</h2>
+<p>Светицховели. Красивая архитектура, замечательные песнопения.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.15/0_1e6525_c5cc460a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.15/0_1e6525_c5cc460a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.15/0_1e6526_efdf2c75_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.15/0_1e6526_efdf2c75_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/46114/2188450.15/0_1e6527_97a93ea0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/46114/2188450.15/0_1e6527_97a93ea0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.15/0_1e652c_3d41c933_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.15/0_1e652c_3d41c933_orig" alt="" loading="lazy"></noscript></figure>
+<p>Певчие:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.15/0_1e6528_139ab69d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.15/0_1e6528_139ab69d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Спевка:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.15/0_1e6529_206b9c4c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.15/0_1e6529_206b9c4c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Джвари:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e652a_67cdb7ad_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e652a_67cdb7ad_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894110/2188450.15/0_1e652b_773fad04_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894110/2188450.15/0_1e652b_773fad04_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e652d_bc81cf25_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877959/2188450.15/0_1e652d_bc81cf25_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874801/2188450.15/0_1e652e_d68e3bf1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874801/2188450.15/0_1e652e_d68e3bf1_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="и-напоследок">И напоследок...</h2>
+<p>Вот как-то так. Такой я увидел Грузию. Не разочаровала ни в чем.</p>
+<p>Ну и, напоследок, знакомьтесь – наш Вергилий, таксист с Авлабари. Тот самый. В молодости служил на Байконуре, кстати.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880375/2188450.15/0_1e652f_7f1fa9a6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880375/2188450.15/0_1e652f_7f1fa9a6_orig" alt="" loading="lazy"></noscript></figure>
+<p>В последний день перед отлетом мы возвращались к себе через Авлабари и вдруг увидели его на привычном месте, в ожидании пассажиров. Направились к нему. Он увидел нас еще издалека, заулыбался, вылез, захлопнул дверцу и, как само собой разумеющееся, пошел с нами в то же самое кафе.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877700/2188450.15/0_1e6530_13a65174_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877700/2188450.15/0_1e6530_13a65174_orig" alt="" loading="lazy"></noscript></figure>
+<p>Крепко обнялись на прощание. Надеемся, что у него все хорошо.</p>
+<p>Хозяина мы попросили сделать нам с собой пару хачапури в коробках - угостить домашних в Москве вечером. И ничего, довезли, в целости и сохранности.</p>
+<p>Прошло почти три года. И ничего не изменилось. Мы продолжаем хотеть снова съездить в Грузию. Там мы свои среди своих. По-прежнему. Это ощущение дорогого стоит. Грузия, мы любим тебя. Гмадлобат. ჩემი გული შენთან არის.</p>
+  </article>
+</div>
+<script>
+(function() {
+  var pending = []; // images that entered the buffer zone, not yet loading/loaded
+  var loading = false;
+
+  function distanceFromViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;      // above viewport
+    if (rect.top > vh) return rect.top - vh;        // below viewport
+    return 0;                                       // on screen right now
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        if (d === 0) break; // already on screen -- can't beat that
+      }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var img = pickNext();
+    if (!img) return;
+    loading = true;
+    loadImage(img, img.getAttribute('data-src'));
+  }
+
+  function loadImage(img, src) {
+    img.onload = function() {
+      img.classList.add('loaded');
+      img.removeAttribute('data-src');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      // Flickr (or the network) hiccuped on this one request -- don't give
+      // up on it and don't block everything else behind it. Free the
+      // queue immediately, and let this image rejoin the pending pool
+      // after a short, growing backoff so it gets picked up again.
+      loading = false;
+      var attempt = (img._retryCount || 0) + 1;
+      img._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() {
+        pending.push(img);
+        processQueue();
+      }, delay);
+      processQueue();
+    };
+    img.src = src;
+  }
+
+  // Images join the pending pool once they're within reach; every time a
+  // slot frees up, pickNext() re-checks CURRENT positions and grabs
+  // whichever pending image is closest to (or actually on) screen right
+  // now -- so a fast scroll or scrollbar drag doesn't leave visible
+  // photos stuck behind everything the scroll happened to pass over.
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>

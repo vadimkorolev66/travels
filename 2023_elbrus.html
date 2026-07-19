@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Неделя в Приэльбрусье</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  nav.toc,
+  article > p,
+  article > h2,
+  article > ul.summary-list,
+  article > blockquote.citation {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.masthead {
+    max-width: none;
+    padding: 8vw 0 4vw;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://live.staticflickr.com/65535/53461347506_0ea082387a_o.jpg') center 40% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  nav.toc {
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+    font-family: var(--sans);
+  }
+  nav.toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li { margin: 0 0 0.85rem; break-inside: avoid; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.3;
+    font-size: 0.98rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent-soft); color: var(--accent); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 3.9rem 0 1.4rem;
+    padding-top: 0.2rem;
+    color: var(--text);
+    position: relative;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin-bottom: 1.1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-soft); }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+  a:hover { color: #6b5228; }
+  a.internal-link-pending {
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--accent-soft);
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.summary-list {
+    background: #f4f1ea;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem 1.6rem 2.4rem;
+    margin: 0 0 3rem;
+  }
+  ul.summary-list li { margin-bottom: 0.7rem; }
+  ul.summary-list li:last-child { margin-bottom: 0; }
+  blockquote.citation {
+    margin: 2rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  blockquote.citation p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  figure.photo { margin: 2.6rem 0; }
+  figure.photo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.08), 0 8px 24px rgba(43,41,37,0.06);
+  }
+  img.lazy-photo {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 40px;
+    background: var(--line);
+  }
+  img.lazy-photo.loaded { opacity: 1; }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 2.2rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  p.epigraph {
+    text-align: right;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+  p.fin {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  p.subhead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { width: 88%; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17.5px; }
+    .wrap { width: 90%; padding: 10vw 0 16vw; }
+    header.masthead h1 { font-size: 1.85rem; }
+    nav.toc ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Неделя в Приэльбрусье</h1>
+  </header>
+
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      <ul>
+    <li><a href="#предисловие">Предисловие.</a></li>
+    <li><a href="#день-первый-экотропа">День первый. Экотропа.</a></li>
+    <li><a href="#день-второй-чегет-и-озеро-донгуз-орун-кёль">День второй. Чегет и озеро Донгуз-Орун-Кёль.</a></li>
+    <li><a href="#день-третий-ущелье-адыл-су">День третий. Ущелье Адыл-Су.</a></li>
+    <li><a href="#день-четвертый-эльбрус-и-девичьи-косы">День четвертый. Эльбрус и «Девичьи косы».</a></li>
+    <li><a href="#день-пятый-снова-донгуз-орун-кёль-и-ручей-медвежий">День пятый. Снова Донгуз-Орун-Кёль и ручей Медвежий.</a></li>
+    <li><a href="#день-шестой-ущелье-ирик-чат">День шестой. Ущелье Ирик-Чат.</a></li>
+    <li><a href="#день-седьмой-к-водопаду-терскол">День седьмой. К водопаду Терскол.</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <article>
+<p>Неделя в Приэльбрусье, или как было бы хорошо немного похудеть</p>
+<h2 id="предисловие">Предисловие.</h2>
+<p>Итак, сейчас, в феврале 2024-го, когда Подмосковье завалило снегом по пояс, самое время, мне кажется, сесть поудобнее и вспомнить наше с женой недельное августовское Приэльбрусье. Мы никогда там прежде не были, но горные тропы манят, а Альпы теперь несколько далековаты/дороговаты. Поэтому из разных районов, куда можно было бы отправить в предгорьях Кавказа, мы, по некоторому размышлению, решили начать с Приэльбрусья. А до этого заехать дня на три в Кисловодск – тоже первый раз.</p>
+<p>Что обычно имеется в виду, когда говорится «Приэльбрусье»? Это, вообще говоря, официальное название национального парка, ну, а если проще – это территория, расположенная к северу от гряды гор Большого Кавказского хребта, но к югу и юго-востоку от Эльбруса, который расположился слегка «выше» этой гряды. Можно сказать, наверное, что Приэльбрусье – это окрестности верхней части Баксанского ущелья, начинающегося как раз от подножья Эльбруса, недалеко от поселка Терскол и тянущегося далеко на северо-восток. Вот тут на карте, я отметил Терскол и зону вокруг него, где будут сосредоточены наши маршруты:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53521429390_d312440a06_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53521429390_d312440a06_o.png" alt="" loading="lazy"></noscript></figure>
+<p>Баксанское ущелье уходит от Терскола к правому верхнему краю карты; хорошо видна белая "звездочка" Эльбруса к северо-западу от Терскола и цепочка заснеженных вершин Кавказского хребта, идущего ниже. Ущелья, расположенные к югу от Баксанского ущелья, на значительном протяжении находятся в погранзоне, поскольку южнее хребта – уже Грузия. Так что нам с вами понадобятся пропуска в погранзону, о чем скажу далее.</p>
+<p>* * *</p>
+<p>Август на Северном Кавказе выдался в 23-м году, мягко скажем, теплый. В аэропорту «Минводы» жара обрушилась на голову сразу всеми своими 34-мя градусами; в Кисловодске все три дня было примерно 30-32, плюс облачно и душно, и только выбравшись из такси в центре Терскола мы вдохнули свежий горный воздух, и в сравнении с предыдущими днями всю неделю было просто прекрасно – всего 20-22-24 градуса днем.</p>
+<p>В Терсколе мы остановились в маленькой, относительной новой, трехэтажной гостинице «Zzz», практически в центре. Окна наши выходили на дорогу, которая была в полусотне метров, и я опасался, что шум не даст спать ночью или утром. Но спали мы отлично – видимо, достаточно уставали за день. Завтракали там же, внизу, в приятной маленькой столовой, обедали на маршруте, а ужинали в каком-нибудь кафе - либо на поляне Чегет, либо в Терсколе. Одновременно с нами в отеле обитала группа альпинистов-любителей, которые готовились под руководством гида подняться на Эльбрус (и, вроде бы, успешно поднялись).</p>
+<p>Куда мы успели сходить за 7 дней нашего обитания в Терсколе? Дайте припомнить…</p>
+<p>В первый день, после приезда - прогулка по экотропе. Прошлись от Терскола до Поляны Азау (оттуда поднимаются на склон Эльбруса на современных комфортабельных подъемниках), а на следующий день утром начали наш маршрут этой же экотропой, но в противоположном направлении - от Терскола до Поляны Чегет (оттуда поднимаются, неудивительно, на Чегет, но на гораздо более примитивных открытых креселках). Путь от Терскола до Поляны Азау примерно раза в два длиннее, чем до Поляны Чегет. Во втором случае нам пришлось перейти по мосту через Баксан на противоположную сторону, и именно это, очевидно, оказалось для моста фатально – на следующий день его смыло (виноват!), и с этого дня на поляну Чегет или обратно мы ходили/ездили в обход, вдоль шоссе.</p>
+<p>На второй день, дойдя с утра до Поляны Чегет по экотропе, мы поднялись на склон Чегета на двух креселках – сначала двухместной, и потом, еще выше, на одноместной. Дальше мы прошли где-то половину пути до вершины Чегета (точнее, до вершины, куда доходят обычные туристы без снаряжения) – собирались дойти до верха, но для меня это оказалось чересчур для первого же подъема (а потому что лишний вес еще никому в горах не помогал!), и мы с полпути вернулись, спустились к началу верхней канатки и прошлись, почти горизонтально, до озерца Донгуз-Орун-Кёль – вот эту тропу я бы как раз и советовал в качестве самой первой, для акклиматизации.</p>
+<p>В районе самого озера тропа входит в погранзону – стоят щиты с грозными предупреждениями, и дальше можно пройти, только имея выписанные в ФСБ Кабардино-Балкарии личные пропуска. Мы их заблаговременно оформили прямо через «Госуслуги» с доставкой заказным письмом на домашний адрес – оба пропуска пришли в течение двух недель, а то и быстрее. Предъявлять нам их пришлось не в этот день, но, вообще, дважды – в начале тропы вдоль ущелья Адыл-Су и на погранзаставе у Донгуз-Орун-Кёль, когда на четвертый день мы решили пройти мимо озера подальше, погулять по долине вдоль ручья Медвежий.</p>
+<p>Вот <a href="https://xn--07-9kc9a5a.xn--p1ai/wp-content/uploads/2022/03/Elbruski.jpg" target="_blank" rel="noopener noreferrer">здесь</a> можно скачать и посмотреть реестр маршрутов в Приэльбрусье (взято с <a href="https://xn--07-9kc9a5a.xn--p1ai/mapkbr" target="_blank" rel="noopener noreferrer">кбр07.рф</a>). Они перенумерованы, и номера нужных вам потребуется указать при оформлении пропуска. Можно, конечно, с запасом. Пишут, что кто-то вроде бы просто указывал что-то типа «маршруты 1-77», и такое прокатывало. Не могу ни подтвердить, ни опровергнуть: я перечислил в наших заявках только пять или шесть маршрутов, на которых мы собирались или могли при желании оказаться.</p>
+<p>Ну, и раз зашла речь о картах, вот <a href="https://www.google.com/maps/d/u/0/viewer?mid=1RmJiB6VFGxZZv7x6WLU63MyOnBE&amp;femb=1&amp;ll=43.245369654620156%2C42.593498396958324&amp;z=12" target="_blank" rel="noopener noreferrer">ссылка</a> на еще одну, где можно извлечь полезную информацию о маршрутах, кликая на разные значки. Не уверен, правда, насколько она поддерживается в актуальном состоянии. Во всяком случае, погранпункт по тропе на озеро Донгуз-Орун сейчас уже там, где показано, не действует – просто стоит будка, а проверяют гораздо дальше, уже за поворотом к леднику Медвежий.</p>
+<p>В третий день мы совместили сразу два цели – подъем от Поляны Азау у подножья Эльбруса на его склон в «пенсионерском режиме» - на трех последовательных подъемниках. А потом - переезд назад в Терскол и трек к водопаду «Девичьи косы» - хотел попасть туда ближе к закату и попал. Хотя тоже чуть не сдох под конец, ибо пришлось выжимать из себя все силы – солнце уже почти село, когда мы вышли к водопаду.</p>
+<p>Кстати, от Терскола до Поляны Азау и потом обратно в Терскол мы перемещались на такси – взяли телефон у одного из водителей (они как раз поджидают клиентов почти напротив нашей гостиницы, на другой стороне дороги). И в дальнейшем пользовались его услугами по забросу на исходные точки и потом отвозу наших уставших тел и рюкзаков обратно в Терскол.</p>
+<p>В частности, на четвертый день мы поехали с ним в район альплагеря «Джан-туган», чтобы пройти трек вдоль ущелья Адыл-Су (погранзона!) до так называемой «Зеленой гостиницы» - широкой поляны под самым горным хребтом - и обратно, что заняло практически весь световой день.</p>
+<p>На пятый день мы решили немножко отдохнуть, с утра доехать на такси до Поляны Чегет (мост через Баксан, напомню, снесло) и снова пройтись от первой станции подъемника на Поляне Чегет траверсом до озера Донгуз-Орун-Кель, и, оставив его позади, углубиться в погранзону (благо пропуск есть) и прогуляться вдоль ручья Медвежий, текущего с другой стороны Чегета относительно Терскола. Ручей, все вокруг цветет, и никого, кроме нас. Хорошо! А потом уже можно не торопиться на последний спуск канатки вниз, а спуститься на поляну Чегет своими ногами, хотя уже и в сумерках.</p>
+<p>День шестой – трек вдоль ущелья Ирик-Чат, по которому течет речка Ирик. Трек начинается от дальнего края поселка «Эльбрус». Туда и обратно нас доставляет тот же таксист (договариваемся с ним накануне). Подъем там в начале довольно суровый (во всяком случае, для меня – жена у меня достаточно легенькая, а вес - это прямо критично, как я убедился в очередной раз), но к этому времени я все же немного окреп, так что одолел, не граф. Не скажу, что «бодро», но тем не менее, без особых проклятий, хотя и с остановками на отдышаться. Зато после первого этапа, после крутого довольно набора первых сотен метров высоты, дальше тропа идет практически горизонтально и виды прекрасны.</p>
+<p>Ну, и, наконец, день седьмой – никуда не выезжая из Терскола, подъем к одноименному водопаду. Вот тут, пожалуй, было жарковато, первый день за все время тут, плюс поднимались туда толпы народу, так что не могу сказать, что очень понравилось. Но все равно хорошо: что-то новое!</p>
+<p>Вот тут я набросал схему наших маршрутов, очень условно, по дням, плюс добавил названия нескольких ключевых пунктов:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53521396370_f06215580d_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53521396370_f06215580d_o.png" alt="" loading="lazy"></noscript></figure>
+<p>Про подготовку – почти все, что мне хотелось бы узнать заранее, я выяснил из рассказа <a href="https://forum.awd.ru/viewtopic.php?f=616&amp;t=397929" target="_blank" rel="noopener noreferrer">Пешком по Приэльбрусью</a>, написанного Julia69. Отличный отчет и красивые фотографии! Только я бы относительно пары-тройки мест сделал оговорку, «дисклеймер», для таких как я, не особо спортивных ребят – там, где они с мужем идут бодро и энергично, я буду не бодро и энергично идти, а медленно тащиться, порой проклиная все на свете. А я не такой уж хилый, и по равнине хожу каждый день много и охотно. Но лишний вес все же есть, и в горах это становится сильно ощутимо. Это, конечно, исключительно проблемы такого читателя, как я, а не отчета – он отличный, – но просто делайте поправку на свою подготовку и форму! :-)</p>
+<p>Ну, и, традиционно, несколько фото в качестве «тизера»:</p>
+<p>Баксан:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461481273_9861319ee4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461481273_9861319ee4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В ущелье Адыл-Су:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461345991_4f32747e2c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461345991_4f32747e2c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вершины Эльбруса:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347506_0ea082387a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347506_0ea082387a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>По пути к «Девичьим косам»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347456_f1fbb13605_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347456_f1fbb13605_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479618_91e06a21ca_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479618_91e06a21ca_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Долина реки Ирик:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422887_d633aaae06_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422887_d633aaae06_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461754650_731e4864b2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461754650_731e4864b2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну что ж, если заинтересовал, давайте расскажу поподробнее от там как не-альпинисты ходят по Приэльбрусью, не переключайтесь.</p>
+<h2 id="день-первый-экотропа">День первый. Экотропа.</h2>
+<p>Итак, мы перебрались из Кисловодска в Терскол, на такси. Я полистал несколько предложений такси в интернете – показалось дороговато. Попросил девушку на ресепшене нашей небольшой гостиницы в Кисловодске позвонить «своим» таксистам и сказать нам их условия. Условия были немного получше, так что с таким водителем мы и отправились.</p>
+<p>В Кисловодске, как я уже писал, было жарко и душно, так что все три дня мы почти все время с утра до позднего вечера наматывали километры по огромному кисловодскому парку, по самым разным размеченным маршрутам. В том числе, поднимались пару раз наверх, мимо памятника Лермонтову - туда, куда обычно поднимаются на фуникулере. Но нам надо было готовиться к Терсколу, так что мы пользовались случаем немножко нагрузиться. Про Кисловодск я рассказывать тут не буду – не та тема, но вот пару фотографий двух закатов, которые мы застали на холмах Парка, выложу, не удержусь:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422687_0647dee073_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422687_0647dee073_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461755575_74968ee586_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461755575_74968ee586_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461758330_503be8492f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461758330_503be8492f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А теперь – ррраз – три часа, и мы в Терсколе. Я вышел на балкон нашего третьего этажа, и виды тут у нас будут такие:</p>
+<p>Направо – в сторону дороги до Поляны Азау:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461758295_36fba151ef_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461758295_36fba151ef_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>У правого края здесь – самый низ поросшего соснами склона, по которому серпантином карабкается вверх тропа к водопаду «Девичьи косы». Вот так виден нам этот склон, если немного развернуться в его сторону:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461758290_50b62c9cc1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461758290_50b62c9cc1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот тут, на гуглокарте, вся эта тропа отлично видна в центре:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53522463733_a853c2919b_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53522463733_a853c2919b_o.png" alt="" loading="lazy"></noscript></figure>
+<p>Вид прямо с балкона – на склон Чегета с той стороны от речки Баксан:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461659184_0e1f583d98_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461659184_0e1f583d98_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Если приглядеться – хорошо видны подъемники вдоль его верхнего, темно-зеленого края. А вдали, чуть в дымке – склон горы Донгуз-Орун, и виден верх ледника «Семерка» - самая верхняя горизонтальная палочка цифры «7». Вот тут немного трехмерной перспективы в этом направлении:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53521393542_00cd40b8ca_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53521393542_00cd40b8ca_o.png" alt="" loading="lazy"></noscript></figure>
+<p>Глаз, наконец, радуется встрече с горами. Хорошо же!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461481293_a72d2d66e8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461481293_a72d2d66e8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ладно, не будем время зря терять! Далеко мы в этот день уже не доберемся, но «экотропа»-то вдоль Баксана совсем рядом. Перешли на другую сторону шоссе, и долго пытались пробиться к ней коротким путем, который нам mapsme обещал, но безуспешно – строительство везде идет ударными темпами, везде заборы, заборы, сетки. В конце концов, нашли путь, и на следующий день пошли уже сразу им. Давайте, что ли, нарисую его. Но все может измениться – может быть, в этом году откроется какой-нибудь из прежде перегороженных.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53522289921_6850e3da81_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53522289921_6850e3da81_o.png" alt="" loading="lazy"></noscript></figure>
+<p>Вот тут наш путь – зеленая линия прямо от нашего отеля (красный прямоугольник) до моста через Баксан. Большой плюс этого маршрута (особенно на обратно пути!) – он проходит мимо маленького кафе-ресторана «Кьочхар» (сиреневый прямоугольник). Очень уютный и с хорошей кормежкой, очень нам полюбился. Мы там трижды, кажется, ужинали, если не четырежды. Претендуют также на то, что знаменитая <a href="http://a-pesni.org/ww2/folk/baksanskaja.php" target="_blank" rel="noopener noreferrer">«Баксанская песня»</a> ( «Помнишь, товарищ, белые снега, / Стройный лес Баксана, блиндажи врага. / Помнишь гранату и записку в ней / Под скалистым гребнем для грядущих дней.») была написана именно в нем.</p>
+<p>Ну вот мы и добрались до шумного Баксана – вот такой он рядом с мостом:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461481273_9861319ee4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461481273_9861319ee4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460425342_d0c3ca2505_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460425342_d0c3ca2505_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот и «экотропа» уходит сквозь лес в сторону Поляны Азау:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461481248_66ab5fe427_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461481248_66ab5fe427_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422657_4704908201_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422657_4704908201_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461478398_a547219fd3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461478398_a547219fd3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460425312_e77f8ea4d7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460425312_e77f8ea4d7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Шли мы по ней, шли. По лесу идти очень приятно, но потом тропа нарушается свежепостроенной огромной парковкой, и приходится огибать ее по широкой засыпанной крупным щебнем отмостке – не особо здорово. Шли дальше, пока не начало темнеть – уже видны были строения на Поляне Азау, и мы решили, что наш долг исполнен, можно и возвращаться. А с гор как раз начал опускаться ежевечерний туман…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461659149_ae8f6e623f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461659149_ae8f6e623f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Уже в сумерках, встретили в Терсколе меланхоличного быка. Он медленно брел по тротуару в гордом одиночестве, и время от времени печально мычал. В одном месте тротуар был с одной стороны отделен от проезжей части металлическими парапетом, а с другой стороны ограничен стеной дома. И наш грустный бык медленно цокал в одном направлении, а навстречу ему шла стайка молодых девчонок, которые не сразу его заметили, а когда заметили, были уже в паре метров перед ним и вдруг резко осознали, что с быком им там не разойтись, и это будет не проблема быка. Визг, крик, все бегут назад. Но бык, как и положено философу, никак на этот шум не отреагировал и продолжал свой путь, размышляя о бренности жизни. Мы дали ему имя «Кьеркегор». Звучит почти по-балкарски.</p>
+<h2 id="день-второй-чегет-и-озеро-донгуз-орун-кёль">День второй. Чегет и озеро Донгуз-Орун-Кёль.</h2>
+<p>На следующий день, с утра, проделав тот же путь от дома до моста через Баксан, и перейдя его,</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348996_bbb5c97c71_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348996_bbb5c97c71_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>мы отправляемся по «эко-тропе» в сторону Поляны Чегет:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461755475_5b2d1c26e6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461755475_5b2d1c26e6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Выходим на Поляну Чегет, высматриваем, где нижний подъемник, оплачиваем отдельно вход на территорию Национального парка Приэльбрусье (200 рэ), получаем бумажку, которую нам пришлось показать впоследствии один-единственный раз – ее проверили в том месте, где расходятся тропы на водопад «Девичьи косы» и на водопад «Терскол». Дальше оплачиваем полный билет на подъем и плюхаемся на скамью двухместного открытого подъемника. Рюкзаки с палками приходится пристраивать на коленях. Фотографировать не рискую, чтобы не выронить чего-нибудь. На площадке между первым и вторым (одноместным) подъемником немного прогуливаемся, заходим в знаменитое кафе «Приют» («У Визбора»), но «завтрак с видом на Эльбрус» нам сейчас не нужен – мы еще не голодны. Виды отсюда и правда неплохие. Но мы поднимаемся на следующей, уже одноместной, канатке еще выше, и уже здесь виды совсем замечательные. И на сам Эльбрус с его двойной вершиной</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461346201_2e9712d87a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461346201_2e9712d87a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461758240_524c59ba79_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461758240_524c59ba79_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И на водопад «Девичьи косы» (примерно так переводится название «Чыранбаши-суу») на высоте примерно 2800 м - его прекрасно видно на противоположном склоне – вон он, чуть левее центра:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461481228_c98fe4419b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461481228_c98fe4419b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И на обсерваторию «Терскол» выше и правее его:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461481213_a9daa80793_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461481213_a9daa80793_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И, в противоположной стороне, на ледник «Семерка», повисший на крутом склоне горы Донгуз-Орун (4454м):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461758225_4a3c298504_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461758225_4a3c298504_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот его верхняя часть в телеобъектив:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348961_a22aaa19e6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348961_a22aaa19e6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А здесь под «Семеркой» видно ярко-зеленое озерцо Донгуз-Орун-Кёль:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460425237_d6fe4496f6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460425237_d6fe4496f6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот так выглядит одноместная канатка сверху и чуть со стороны:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461478373_e886fe26b8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461478373_e886fe26b8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Снова Донгуз-Орун-Кёль (кстати, оно находится на высоте 2515 метров над уровнем моря):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461758210_193fd3a756_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461758210_193fd3a756_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Отсюда оно не кажется таким уж симпатичным, но это отсюда. На деле, тропа к нему – сплошное удовольствие.</p>
+<p>Ну и еще один классический вид – на вершины Большого и Малого Когутая (3819 м и 3750 м, соответственно), левее Донгуз-Оруна:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461659114_9e240f7c92_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461659114_9e240f7c92_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Как было у Визбора: «Приду сюда хотя б весной / И встану в час заката / - Два Когутая надо мной, / Как два балкарских брата».</p>
+<p>А Эльбрус понемногу закрывается облаками, но это добавляет ему фотогеничности (и сегодня, и завтра тоже добавит):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461481163_46e645ba42_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461481163_46e645ba42_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461758180_4ca28eb119_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461758180_4ca28eb119_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну и дальше была попытка вскарабкаться на Чегет, и раздраженное осознание на полпути, что, похоже, пока не готов, и только сам в этом виноват – не успел себя привести в форму в этом году перед горами. Ну, то есть, можно сдохнуть, но подняться, но вроде цели такой не ставилось :) Дня через четыре, думаю, я уже был бы готов подняться, но это так и осталось «бы», так что несчитова.</p>
+<p>Ладно, с несколько уязвленным самолюбием (моим) - и поделом - решили вернуться на промежуточную станцию подъемника и пойти до того зеленого озерца – там практически без подъемов-спусков.</p>
+<p>А еще там пониже и, соответственно, гораздо зеленее:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422617_61099d6ab8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422617_61099d6ab8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461481118_ca31cd5d6c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461481118_ca31cd5d6c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот и озеро. Оно наполовину пересохшее; питают его ручей Медвежий, вытекающий из одноименного ледника между вершинами Чегеткара (3785 м) и Малый Донгуз-Орун (3769 м), и ручей Донгуз-Орун-Баксан, который отсюда виден как небольшой водопад; он падает в озеро со стороны горы Накра-Тау (4269 м):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348906_ab9584b7fa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348906_ab9584b7fa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А там, за хребтом, за перевалом – уже Грузия.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461758145_fcaf82df13_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461758145_fcaf82df13_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656484_c12462b5b9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656484_c12462b5b9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460425142_f46a87d0cb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460425142_f46a87d0cb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422592_2e8c9cce3c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422592_2e8c9cce3c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461659049_d373ba1842_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461659049_d373ba1842_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461758120_f223e65014_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461758120_f223e65014_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422577_7bab702bc3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422577_7bab702bc3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот по этой тропе мы и подошли уже почти вплотную к погранзоне:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461478323_890cdec358_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461478323_890cdec358_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348856_3078228049_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348856_3078228049_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вокруг все в цвету!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348861_3f7b186871_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348861_3f7b186871_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461755370_60a4e66064_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461755370_60a4e66064_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Воон справа вдали уже щиты видны о входе в погранзону:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461481043_bd5ddfcb68_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461481043_bd5ddfcb68_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461658994_2bf792ce5c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461658994_2bf792ce5c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но мы сегодня туда и не пойдем, а то есть шанс не успеть обратно на последний подъемник, и придется спускаться на Поляну Чегет ногами, а пока что-то не хочется (спустимся через несколько дней).</p>
+<p>Отправляемся в обратный путь. Вдали видно уходящее между склонами прочь Баксанское ущелье:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461658999_25f16a1a62_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461658999_25f16a1a62_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Здесь когда-то был погранпункт, где проверяли пропуска, но теперь погранзону перенесли подальше, за озеро, а будка осталась:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460425037_71b7fdc42b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460425037_71b7fdc42b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Снова перспектива Баксана:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461481003_5fecb8e5d0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461481003_5fecb8e5d0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это мы уже миновали погран-будку, и это взгляд с тропы назад, в сторону озера:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461758060_02c6675568_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461758060_02c6675568_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Горные ручьи журчат повсюду:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461478298_1bb83ba904_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461478298_1bb83ba904_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мы набирали в них воду для питья…</p>
+<p>Озеро все дальше, скрылось за изгибами склонов:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348716_e056a2467d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348716_e056a2467d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Зато «Семерка» снова в кадре!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422522_822ea59b7f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422522_822ea59b7f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656399_177e4687dd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656399_177e4687dd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348726_b7d457f228_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348726_b7d457f228_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348656_3b36a82e87_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348656_3b36a82e87_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461480933_1e64bb87eb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461480933_1e64bb87eb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Погран-будочка уже далеко позади:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460424972_0a7404bc82_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460424972_0a7404bc82_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656389_1008087a09_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656389_1008087a09_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Братья-Когутаи почти над головой:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461755290_226eb3d110_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461755290_226eb3d110_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461346096_3e25bd83bf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461346096_3e25bd83bf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Теплый предвечерний свет:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461658904_549eb9c669_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461658904_549eb9c669_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461757950_ddc80ea210_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461757950_ddc80ea210_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461480868_7d12311ef0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461480868_7d12311ef0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461480898_766aea560e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461480898_766aea560e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348576_b39c5b5bda_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348576_b39c5b5bda_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Возвращаемся к последнему подъемнику не только мы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422467_01ac648048_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422467_01ac648048_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А с Чегета уже сползает туман, и последние спускающиеся с самого верха возникают из него почти мистическим образом:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53524513497_2fa7c85584_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53524513497_2fa7c85584_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пока мы минут двадцать стояли в очередь на спуск, туман густел на глазах:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461757900_64908923b1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461757900_64908923b1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Поужинали мы здесь же, на поляне Чегет, в кафе «Панорама» - все было вкусно, и обслужили быстро (и официантка была симпатичная!). А вот наш второй визит сюда же в один из следующих дней как-то совсем другое впечатление оставил. Все равно было вкусно, но оооочень долго.</p>
+<p>А в первый день сгоряча объелись там, так что пешочком пошли до Терскола, чтобы хоть как-то растрястись. Там тропа есть параллельно шоссе, но не по самому шоссе, что приятно.</p>
+<p>Вот и второй день (ну или полуторный, на самом деле) подошел к концу…</p>
+<h2 id="день-третий-ущелье-адыл-су">День третий. Ущелье Адыл-Су.</h2>
+<p>На третий день у нас в планах ущелье Адыл-Су. Более-менее с утра, но не совсем – часов в 10 – мы отправляемся с нашим таксистом к альплагерю «Джан-Туган», давней турбазе «Бауманки» (см схему в самом начале отчета). Договариваемся, что он нас будет ждать там же в 17:00, и отправляемся вверх по ущелью. Почти сразу минуем пункт пограничников, предъявляем наши пропуска, нас регистрируют в компьютере, мы обещаем вернуться до вечера и отправляемся в путь – сначала тропа совсем немного идет по краю каменной россыпи:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461658844_b665bbbd0c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461658844_b665bbbd0c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461480798_1040c7f4dc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461480798_1040c7f4dc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460424837_cb2b41b58e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460424837_cb2b41b58e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461755235_f324c4e21b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461755235_f324c4e21b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461757840_441c6663c0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461757840_441c6663c0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348501_89205fc30a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348501_89205fc30a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Дальше вверх по относительно крутой тропе, но это ненадолго – затем дальше везде будет очень плавный набор высоты. В какой-то момент тропа (которая до этого выглядит скорее как заросшая проселочная дорога, по которой вполне проедет джип) упирается в брод через горный ручей и дальше колея от колес снова видна, хотя и не четко, уже на противоположном берегу. Но переходить ручей вброд не нужно – нужно продолжать двигаться по левой стороне вперед, вдоль скал, хотя издалека кажется, что там нет никакой тропы и пройти невозможно. Тропа есть; в особенно узких местах провешены металлические тросики, и уже потом через несколько десятков метров, есть «мост» на другую сторону, состоящий из нескольких огромных валунов поперек течения, и пары тросов и веревок поверх них, выполняющего роль перил – переход вполне безопасный. И дальше тропа уже идет вдоль того же ручья по противоположному берегу.</p>
+<p>Вот этот мостик, если смотреть на него с другого берега (взял с телефона жены):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525410687_23cb5ca902_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525410687_23cb5ca902_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот разные фотографии ручья около этого моста:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461658759_8bba90d72e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461658759_8bba90d72e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348426_682512971e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348426_682512971e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461346031_b351d13e56_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461346031_b351d13e56_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тут мы перебираемся по «мосту» на другой берег, и дальше наш путь ведет вооон к тому ручью, сбегающему сверху по камням далеко впереди:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656304_a106a23068_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656304_a106a23068_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461346026_1d0e881be5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461346026_1d0e881be5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Будем подниматься по склону справа от него:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348411_bc8aa1d816_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348411_bc8aa1d816_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461480668_11bf076312_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461480668_11bf076312_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460424707_e21d56c021_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460424707_e21d56c021_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422422_a2bce36479_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422422_a2bce36479_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид назад:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461757700_965d04785f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461757700_965d04785f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461658639_273bddc3b8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461658639_273bddc3b8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461755175_67b977ab62_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461755175_67b977ab62_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348311_e3ee8b98bc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348311_e3ee8b98bc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460424662_b197da6153_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460424662_b197da6153_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Облака сменяются солнцем, и снова находят облака, и вид долины каждый раз меняется…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461345991_4f32747e2c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461345991_4f32747e2c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461480553_68cfffc784_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461480553_68cfffc784_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Забираемся на гребень, окружающий «кратер» озера Башкара:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348256_b4d7e4948f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348256_b4d7e4948f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В противоположном направлении, на юг, прямо под нами раскинулась та самая «Зеленая гостиница». У меня почему-то не нашлось фотографий, так что опять прибегну к телефону моей половинки:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526741920_815a112ab3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526741920_815a112ab3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526309346_144ae094a6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526309346_144ae094a6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526486288_24006bd058_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526486288_24006bd058_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526742040_f8c7cb228f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526742040_f8c7cb228f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525410667_5ffc1c4010_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525410667_5ffc1c4010_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526624764_84887454ef_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526624764_84887454ef_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526309286_4f7a3605d3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526309286_4f7a3605d3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Согласитесь, облака очень украшают? А мы еще немного проходим по гребню вперед (дальше снова пошли мои фото-закрома):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461480513_29eba1b2c1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461480513_29eba1b2c1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Слева от озера Башкара видно озеро Капа:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461757580_4ffd2a9e83_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461757580_4ffd2a9e83_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот тут, около камней на гряде, мы устраиваемся перекусить:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461755130_30e2ed6a23_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461755130_30e2ed6a23_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348196_62265d7fc2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348196_62265d7fc2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вдали уже хорошо виден язык ледника:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461757550_0694c5d93d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461757550_0694c5d93d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461345971_5956c40fd0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461345971_5956c40fd0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот как выглядят эти озера и ледник Башкара, благодаря которому они существуют, в 3D:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53528521637_3a1728dde2_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53528521637_3a1728dde2_o.png" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53529607533_0dd887c070_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53529607533_0dd887c070_o.png" alt="" loading="lazy"></noscript></figure>
+<p>Ну что ж, пора и разворачиваться. Решили назад пройти по каменистому гребню над озером и спуститься к ручью уже потом. Это было ошибкой – идти там поверху крайне неудобно, так что стоило бы спуститься с гребня назад, в сторону «Зеленой гостиницы», и возвращаться под ним, вдоль ручья. Но, так или иначе, мы по гребню проползли, спустились при первой же возможности и продолжили свой путь вниз вдоль ручья:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461478143_441139228c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461478143_441139228c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461478133_9361ca3a90_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461478133_9361ca3a90_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461480438_4b02d28886_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461480438_4b02d28886_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348166_1654193e5c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348166_1654193e5c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461348101_57410b3e51_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461348101_57410b3e51_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461757435_defa61658f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461757435_defa61658f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Уже в самом низу тропы свет становится очень красивым, - потому что, как обычно, опускается туман:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460424392_82e560e115_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460424392_82e560e115_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461480273_7bb80a9313_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461480273_7bb80a9313_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Таксист наш уже нас ждет, отвозит нас до нашего отеля, и оттуда, уже налегке, мы отправляемся на поиски места, где бы поесть. И как раз в этот вечер в первый раз попадаем в кафе «Кьочхар», где как раз только для нас двоих и нашелся столик. И как-то так удачно мы там поели, что немедленно это место облюбовали и для нескольких наших последующих ужинов. И вкусно, и сытно, и обстановка приятная, что еще нужно?</p>
+<h2 id="день-четвертый-эльбрус-и-девичьи-косы">День четвертый. Эльбрус и «Девичьи косы».</h2>
+<p>Утром на третий день мы сразу отправились на такси на Поляну Азау, чтоб не тратить время. С Поляны Азау на склон Эльбруса поднимаются на трех последовательных подъемниках, вполне цивилизованных. И Эльбрус, конечно, красавец, ничего не скажешь.</p>
+<p>Вот так он видится со второй промежуточной станции «Мир» (3500 м). Справа видна цепочка кабинок последней линии подъемника:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460424347_e53fc5e688_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460424347_e53fc5e688_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Виды в противоположную сторону, на гряды вершин Большого Кавказского Хребта, тоже поразительно красивы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656134_4d070ec8e8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656134_4d070ec8e8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ледник, сползающий с Эльбруса, кажется в двух шагах:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347946_e8d695dd4d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347946_e8d695dd4d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461480173_e8fd9ea30b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461480173_e8fd9ea30b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это мы еще не поднялись на самый верх!</p>
+<p>Вон и Когутаи узнаваемые вдали:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460424287_85b6f0230d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460424287_85b6f0230d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422267_b1efe904b1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422267_b1efe904b1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вон и обсерватория «Терскол», невидимая снизу, из долины:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461755030_027107d655_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461755030_027107d655_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461757225_1823d896fd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461757225_1823d896fd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Снова ледник и виды в сторону вершин Кавказского хребта:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347881_5eeff0b889_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347881_5eeff0b889_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461480123_30202860c4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461480123_30202860c4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461757230_1e53a03357_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461757230_1e53a03357_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461480088_ceaba1179f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461480088_ceaba1179f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461658164_459dfdd37f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461658164_459dfdd37f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347761_08e11dc0fe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347761_08e11dc0fe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347771_5f836e08f6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347771_5f836e08f6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Снова вид на запад, в сторону ледника:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460424122_e953bb8040_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460424122_e953bb8040_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460424072_86556d3767_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460424072_86556d3767_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347721_b386ffa915_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347721_b386ffa915_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422262_8ea283b884_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422262_8ea283b884_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Облака прямо как я люблю. Украшают горный пейзаж замечательно. Почти окрестности Маттерхорна.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461754990_6966664bea_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461754990_6966664bea_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347711_88c7af7808_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347711_88c7af7808_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но со стороны Эльбруса небо пока синее-синее.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347671_25c7577468_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347671_25c7577468_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну, почти. Уже появляются первые облака и с этой стороны:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422237_057f899b0c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422237_057f899b0c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Это мы уже поднялись на самую верхнюю стацию, «Гарабаши» (3847 метров).</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422232_cef57b3e1c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422232_cef57b3e1c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ощущается, конечно, что воздух здесь более разрежен, но без нагрузки это совсем не мешает.</p>
+<p>Хороша видна широкая трасса, поднимающаяся еще довольно далеко вперед и вверх; снегоходы и ратраки довозят по ней еще выше - снегоходы до уровня чуть выше 4000 метров, ратраки еще выше, до 5100 - практически до начала так называемой "косой полки". Но видны и группы людей, идущих по этой трассе пешком.</p>
+<p>А вот эти ратраки вблизи:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525410016_da6a6de85a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525410016_da6a6de85a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53524513542_ef6f7ac204_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53524513542_ef6f7ac204_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Палатка с видом на «семерку»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479953_04f0466585_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479953_04f0466585_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422222_dd0cc4e6c5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422222_dd0cc4e6c5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Девчонки отрываются:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525846995_1e1884d0ac_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525846995_1e1884d0ac_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Здесь ратраки хорошо видны на склоне:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461757015_b55c9bbde6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461757015_b55c9bbde6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Облака быстро заволакивают небо над вершинами Эльбруса, но они кучевые, так что все равно красиво:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656099_ab4e1bfb96_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656099_ab4e1bfb96_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но затем первая порция облаков куда-то сдувается, и небо временно снова синеет:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479883_5a33e0f24c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479883_5a33e0f24c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756975_bd9824633e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756975_bd9824633e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461658009_4ceb4265a3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461658009_4ceb4265a3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Народу вокруг – тьма.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525586823_6a394862e7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525586823_6a394862e7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656094_00d745d503_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656094_00d745d503_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525846885_294909f4a6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525846885_294909f4a6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А я все снимаю горы. Трудно остановиться.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479828_3a35cf047b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479828_3a35cf047b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423927_ab49e8b4a6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423927_ab49e8b4a6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479838_e787ae8e00_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479838_e787ae8e00_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423922_65c9f009c9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423922_65c9f009c9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347581_fef4460b6b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347581_fef4460b6b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657939_387b5fbd58_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657939_387b5fbd58_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423872_fbbf1a6db0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423872_fbbf1a6db0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Жена тем времен слепила маленького снеговичка в полторы ладони длиной, сняли маленькое видео для внучки: «снеговик показывает Эльбрус».</p>
+<p>Облака – такая красота. Моя фото-слабость.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423837_b0b8acc6ab_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423837_b0b8acc6ab_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479773_1375aba05c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479773_1375aba05c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347516_6276b30f6f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347516_6276b30f6f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Как белый снежный пожар, бушуют над Эльбрусом:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347506_0ea082387a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347506_0ea082387a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мне-то хорошо, а вот тем, кто у вершины, думаю, не очень.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479753_8fee2ab17d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479753_8fee2ab17d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756855_6ee8195643_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756855_6ee8195643_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347481_ab7f2aaa24_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347481_ab7f2aaa24_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479713_aa940e5448_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479713_aa940e5448_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но пора и назад. На спуск пришлось даже очередь отстоять минут десять.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53524513442_796196b2e8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53524513442_796196b2e8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Позвонили нашему таксисту, он примчался за нами из Терскола и довез назад. Высадились мы не доезжая нашего отеля, примерно около мечети – там напротив как раз незаметно ответвляется от шоссе дорога, идущая прямо под склоном, которая еще через полкилометра раздваивается на две грунтовки – ведущую к водопаду «Девичьи косы» (наша сегодняшняя цель) и водопаду «Терскол» (цель нашего последнего дня):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525417007_497e53c71e_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525417007_497e53c71e_o.png" alt="" loading="lazy"></noscript></figure>
+<p>Поднявшись на пару витков серпантина, идущего, что очень удачно в жаркий день, в тени сосен, сели на склоне под одной из них перекусить. Мимо как раз топал на спуск какой-то отряд младшего школьного возраста, какой-то пацан у них явно незадолго до этого удачно и основательно рассадил коленку – текла кровь, а у их вожатого-растяпы с собой никаких аптечек не случилось. Ну, снабдили их парой спиртовых салфеток и пластырями, куда ж без них.</p>
+<p>И снова потопали вверх. Серпантин довольно монотонный, пока идет среди соснового бора, но все равно в тени идти приятно. И снова одолжу у жены несколько фото с телефона:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526742020_9951251039_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526742020_9951251039_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525410612_f32db7ced7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525410612_f32db7ced7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525410522_60ce73a57e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525410522_60ce73a57e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526486233_644ac70415_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526486233_644ac70415_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А потом, когда первый раз деревья расступаются, виды становятся просто прекрасны.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423747_ffbe347aab_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423747_ffbe347aab_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461345826_80c00c7839_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461345826_80c00c7839_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Над горами справа висит туча, и раз три доносятся далекие раскаты грома, что несколько напрягает. Ну ладно, посмотрим, как будет дальше. Будет обидно, если придется разворачиваться из-за погоды. Да и небо будет серым и унылым. Но пока это не так, топаем вперед и вверх. Подъем относительно некрутой, но затяжной, без ровных участков – где покруче, где более пологий.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422157_8ff4a3b671_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422157_8ff4a3b671_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но небо пока меня полностью устраивает!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347406_1506c4dd61_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347406_1506c4dd61_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот только приходится идти быстрее, чем хочется, потому что водопада все нет и нет – каждый раз ожидаю увидеть его за очередной складкой холма – а там снова очередной «тягун» по каменистой дороге, еще и разбитой местами колесами джипов, а солнце все ниже!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347446_076ece91c6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347446_076ece91c6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423672_0139e89018_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423672_0139e89018_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Свет шикарный, но когда уже водопад-то?!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461754875_5c71743792_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461754875_5c71743792_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756710_1d729a2ea1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756710_1d729a2ea1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Грозовая туча вроде бы ушла обратно за горы, но облака, как обычно ближе к вечеру, начинают наползать с разных сторон.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479643_6982be01e1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479643_6982be01e1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479618_91e06a21ca_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479618_91e06a21ca_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В сторону водопада уже никто не идет – мы, да еще пара одиночек:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423612_b46c6b0c45_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423612_b46c6b0c45_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Свет над Поляной Азау:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756635_3ab36f8bd5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756635_3ab36f8bd5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот, наконец, после очередного поворота, когда я уже начал всерьез думать, что не дойду, показываются «Девичьи косы». И свет еще вполне себе, можно перевести дыхание и отдохнуть.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657669_69a48a8046_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657669_69a48a8046_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657659_95c927b1a7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657659_95c927b1a7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347311_08ab20c8d6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347311_08ab20c8d6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657619_cd8e561481_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657619_cd8e561481_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Свет, как заказывал!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479528_9e061f0443_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479528_9e061f0443_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756555_8fe78dd9a7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756555_8fe78dd9a7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657594_1d8d9e8c16_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657594_1d8d9e8c16_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422132_21e4a26daf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422132_21e4a26daf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347246_37cfdd50be_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347246_37cfdd50be_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461754830_e639c996c3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461754830_e639c996c3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461477828_fdec7565af_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461477828_fdec7565af_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Давайте уже подойдем к водопаду вплотную, он того заслуживает. Да и мы тоже.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347176_3daae3f2a1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347176_3daae3f2a1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479448_d245448644_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479448_d245448644_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347156_5b5696aa41_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347156_5b5696aa41_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот. Мы молодцы, я доволен «уловом». Пора и назад.</p>
+<p>Туман все наползает…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461347126_8286dd580d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461347126_8286dd580d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657464_b2b09744ed_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657464_b2b09744ed_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Как мы вовремя дошли!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423457_50ab65de57_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423457_50ab65de57_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пока мы там около водопада бродили, подошли последние «посетители» - семья с тремя разновозрастными детьми – и устроились в беседке на отдых. Мы даже слегка заволновались, когда же они собираются назад – было очевидно, что темнеет быстро, а нам еще идти и идти вниз. В сосновый серпантин мы вступали уже в полной темноте и светили себе телефонами под ноги. Если бы не каменистая, местами размытая, с торчащими из колеи там и тут булыжниками, колея, то идти было бы, как и говорить правду - легко и приятно. Но нет, на такой дороге не расслабиться.</p>
+<p>И уже при выходе из леса в нижней части дороги нас нагнало многодетное семейство, так что вышли на шоссе мы вместе. Пора поспешать в кафе «Кьочхар» - хочу лагман. И вообще мы голодные уже.</p>
+<p>И напоследок – еще несколько фоточек с телефона сопровождающего лица, не могу не поделиться:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526624744_3392532f11_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526624744_3392532f11_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525410607_417f304f2a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525410607_417f304f2a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526741975_1ff1f472da_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526741975_1ff1f472da_o.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="день-пятый-снова-донгуз-орун-кёль-и-ручей-медвежий">День пятый. Снова Донгуз-Орун-Кёль и ручей Медвежий.</h2>
+<p>Сегодня нам захотелось отдыха и красоты вместо очередных наборов высоты, и мы решили, что хочется снова пройти до озера Донгуз-Орун (можно без «Кёль», что и переводится как «озеро»), но пройти дальше, в погранзону. Погода солнечная, долины и склоны гор в цвету – прогуляемся. Прошлись на этот раз пешком до Поляны Чегет (все еще вдоль шоссе, не по «экотропе»), поднялись на первом подъемнике. Пара, усаживающаяся на скамейку подъемника перед нами, в суете потеряла солнечные очки, ахали-охали, но подъемник уже влек их тела на гору, так что мы забрали себе «трофей» и отдали им по прибытии наверх. Ну, и отправились снова по знакомой тропе в сторону озера.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525729614_91b9fba3c8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525729614_91b9fba3c8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525410061_ec65f36692_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525410061_ec65f36692_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Поскольку мы никуда не торопились, я позволял себе притормаживать ради фотографирования всякой ботаники…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461345766_864b69e9dc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461345766_864b69e9dc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657424_ca0c1d74a4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657424_ca0c1d74a4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461754805_f9af6ca15b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461754805_f9af6ca15b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Прошли мимо синих щитов, возвещающих о входе в погранзону.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525587083_aab2492873_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525587083_aab2492873_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но только лишь еще метров через триста, когда тропа повернула вправо за очередной складкой склона, показалась погранзастава – небольшая огороженная территория с маленькой казармой под плоской зеленой крышей, такими же маленькими хозпостройками и спортивными турниками. Блеснул солнечным бликом какой-то оптический прибор – нас заметили, и пока мы подходили ближе по тропе, идущей метрах в пятидесяти от заставы, из ворот вышел и неторопливо пошел нам наперерез молодой пограничник. Предусмотрительная жена, не дожидаясь, громко сообщила ему, что «У нас все в порядке, все документы есть!» Он улыбнулся и сказал: «Отлично, сейчас все проверим!» И, надо сказать, очень внимательно прочел оба пропуска. Я решил уточнить, куда нам можно здесь идти без того, чтобы за нами выслали вооруженную погоню. Лейтенант сказал, что вдоль Медвежьего ручья можно куда угодно, а в сторону Грузии, вон по той тропе с другого конца озера – только до некоего «креста». Попросил дальше не уходить, чтобы им не пришлось за нами ехать. На том и порешили. Как выяснилось впоследствии, пока я рылся в рюкзаке, доставая пропуска, жена времени тоже не теряла, поэтому только с ее слов могу добавить: лейтенант был симпатичный, с отличной фигурой, стройный и широкоплечий. Я почему-то даже внимания на это не обратил. Но верю как себе.</p>
+<p>Долина ручья, если смотреть вверх вдоль нее. Справа – склон Чегета.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756405_f6d3b53508_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756405_f6d3b53508_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и кони погранцов пасутся:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461345731_5bb48ab580_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461345731_5bb48ab580_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тепло, и все цветет!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756375_135164a3de_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756375_135164a3de_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657384_1450eb025a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657384_1450eb025a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461477783_d2954b8713_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461477783_d2954b8713_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Взгляд назад, в сторону Донгуз-Оруна:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479298_eae4c95122_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479298_eae4c95122_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756335_032db8d98d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756335_032db8d98d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Уйдя достаточно далеко от погранзаставы, завалились на траву. Тишина, никого, только мелкие горные ручейки, сбегая с Чегета, шумят в траве. Хорошо. Повалялись под солнцем, потом жена даже почитала книжку, захваченную с собой, ну, а я побродил вокруг с фотоаппаратом…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756335_032db8d98d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756335_032db8d98d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422037_526601b2c0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422037_526601b2c0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479268_c8883b022e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479268_c8883b022e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756305_a018b1e174_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756305_a018b1e174_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>До ледника, кажется, рукой подать:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479253_0d77a97a1f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479253_0d77a97a1f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461345716_d9362e91b7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461345716_d9362e91b7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422032_b3a30aafa8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422032_b3a30aafa8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657254_fc4c0b156c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657254_fc4c0b156c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756240_7e3e585392_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756240_7e3e585392_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423282_e7683ce60d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423282_e7683ce60d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479158_49e3322579_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479158_49e3322579_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479168_d9c9b85603_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479168_d9c9b85603_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Солнце яркое, очки-«хамелеоны» мои почти черные, фотографирую практически вслепую – на видоискателе не вижу ничего…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756180_6fe80f4d21_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756180_6fe80f4d21_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461346881_95d7dd7ba3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461346881_95d7dd7ba3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Начинают порой набегать облака…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461477718_b6cba24817_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461477718_b6cba24817_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну, пора и в обратную сторону.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479228_d9144e3a79_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479228_d9144e3a79_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657279_e82295b894_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657279_e82295b894_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461754760_c71798ab5d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461754760_c71798ab5d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423312_6aa0b232dc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423312_6aa0b232dc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422002_c1986e9372_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422002_c1986e9372_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461345646_14fdfa6dbe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461345646_14fdfa6dbe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423217_a4f10fe961_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423217_a4f10fe961_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Здесь вот погранзастава снова показалась – вдали, слева, темно-зеленое пятно:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461479088_1e1dc644a9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461479088_1e1dc644a9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Снова проходим мимо лошадок:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657159_83ecf6f43b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657159_83ecf6f43b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423177_ae68673865_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423177_ae68673865_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Подошли к ручью:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657109_c391a05ee6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657109_c391a05ee6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но на ту сторону перейти не решились – струсили, если без обиняков. Уж больно мост стремноват показался, никаких перил:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657094_1bb6ed75f9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657094_1bb6ed75f9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вроде и прочный, но… как-то очень живо представляется, что на это «мосту» чуть доски сыграют, ты пошатнешься – и в ручей, прямо на камни. А нога, естественно, застрянет между перекладинами. А я парень ловкий, я могу, если что. Я уже ломал ногу в, казалось бы, безопасной ситуации, спасибо, давно было – но помню хорошо. Точнее, нога прекрасно помнит. Жена не особо горит желанием «посмотреть на озеро с другой стороны» (ну, или делает вид, чтобы я не расстраивался), так что не стали убиваться об упущенной возможности. В общем, слишком живое воображение порой нам мешает. Так-то на фото смотришь – нормальный мостик, чего там.</p>
+<p>Ладно, пойдем на выход из погранзоны и спустимся к озеру поближе в этот раз.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657084_00bdfee458_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657084_00bdfee458_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Последний взгляд назад, на долину:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461754720_728b8bb6e2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461754720_728b8bb6e2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657049_fea0509332_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657049_fea0509332_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вон там еле заметная тропинка на склоне на той стороне ручья, по которой мы не поднялись:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461756020_35ef94ed7c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461756020_35ef94ed7c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но в отчете у Julia69 можно найти и фотографии озера, снятые оттуда.</p>
+<p>Тени облаков все перекатываются через долину Медвежьего…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657014_b222273b78_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657014_b222273b78_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Да и вообще облаков становится много:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461657009_3cdb61fa98_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461657009_3cdb61fa98_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот речка (или ручей?), текущая в Баксан из озера Донгуз-Орун-Кёль:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460423057_f242e644f5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460423057_f242e644f5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461754710_acd742e042_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461754710_acd742e042_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот пара фотографий телефонных, оставшихся от нашего спуска к озеру:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526741970_c2976d6c14_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526741970_c2976d6c14_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526624719_98909bdf1f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526624719_98909bdf1f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Дальше у меня фотографий почему-то нет – начало смеркаться, свет ушел, а мы дошли назад до станции первого подъемника и начали спускаться вниз к Поляне Чегет, своими ногами. Дорога очень каменистая, по сторонам тоже особо не посмотришь, так что не могу сказать, что получили такое уж удовольствие. Но спустились, куда мы денемся. Вышли прямо на берег того самого ручья Донгуз-Орун-Баксан, текущего из озера Донгуз-Орун и уже довольно шумного в этой своей части и, пройдя вдоль него мимо разных заброшенных деревянных построек, выбрались сбоку к Поляне Чегет. Вот тут этот спуск на гуглокарте, тропа хорошо видна в верхней части (обратите внимание, что внизу имеет смысл сделать лишний крюк вправо и чуть назад, зато спуск будет не такой крутой):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526484968_0eb598797c_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526484968_0eb598797c_o.png" alt="" loading="lazy"></noscript></figure>
+<p>И пошли поужинать в уже знакомое кафе «Панорама». Поели вкусно, как и в первый раз, но что-то в этот раз ну так долго нас (и не только нас) обслуживали… Часа полтора, наверное, там просидели. Ну да ладно, все равно устали, никуда не торопимся, все равно где дать ногам отдых.</p>
+<p>И снова напоследок: хорошая телефонная фотография с видом на Баксанское ущелье, понятно чьего авторства…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526741965_e5e0790afb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526741965_e5e0790afb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="день-шестой-ущелье-ирик-чат">День шестой. Ущелье Ирик-Чат.</h2>
+<p>Сегодня едем с утра с нашим таксистом (что-то дороговато он запросил в этот раз, но мы больше с ним никуда и не собираемся) в поселок Эльбрус. Мы уже почти доезжали до него, так как дорога на Адыл-Су поворачивает с основного баксанского шоссе вправо практически перед этим поселком. А теперь нам нужно ущелье слева – Ирик-Чат. Мы подъезжаем вплотную к узкой горловине ущелья на краю поселка, договариваемся с водителем о времени, когда примерно он будет ждать нашего звонка, чтобы нас забрать. И начинаем забираться по довольно крутому серпантину, по сухому выжженному склону, под прямыми лучами солнца. Тут вот примерная схема нашего сегодняшнего трека:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526291267_a2873ffce5_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526291267_a2873ffce5_o.png" alt="" loading="lazy"></noscript></figure>
+<p>После первого подъема и выхода на небольшой горизонтальный участок вид назад у нас такой:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461478863_7b68c9b352_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461478863_7b68c9b352_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Там вдаль и влево как раз уходит ущелье Адыл-Су, а прямо видны четырехтысячники Бжедух, Чатынтау и Шхельда. Дальше за ними уже Грузия.</p>
+<p>К нарзанным источникам, которые тут рядом (есть указатели), мы спускаться не стали, зато полазили окрест по красивым сосновым холмикам, над обрывом, под которым далеко внизу шумит Ирик, и отправились на следующий (и последний) крутой участок подъема – к «Песчаным замкам».</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461477663_7b4162185a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461477663_7b4162185a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460421932_afab9b3ee4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460421932_afab9b3ee4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот и они:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656964_138dceb49c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656964_138dceb49c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Обходим их слева и углубляемся в старый сосновый лес, прячемся от солнца. Дальше тропа идет по лесу практически горизонтально пару километров. Тут вот несколько телефонных фото с этой тропы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526741860_d70af8cc16_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526741860_d70af8cc16_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525410492_a46e51218a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525410492_a46e51218a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525410497_84bbf11a31_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525410497_84bbf11a31_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На другом берегу Ирика:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526624684_896b8d295c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526624684_896b8d295c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53525410552_bf3530bc71_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53525410552_bf3530bc71_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В каком-то месте тропа идет по широкому ровному плато, тут пасутся коровы и в большом количестве живут в земляных норках суслики. Девушки-туристки бегают за ними с телефонами, стараясь подстеречь момент, когда какой-нибудь суслик, решив, что все ушли, выглянет из норы. Жена тоже отдала дань этому спорту:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526486153_1b5fae4d84_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526486153_1b5fae4d84_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Если в начале этого длинного почти горизонтального участка маршрута Ирик шумел в ущелье в сотне метров внизу, то после этих пройденных двух километров тропа оказывается на одном уровне с ним. И виды с тропы открываются замечательные – с Эльбрусом вдали:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461477648_1c8c5e47d9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461477648_1c8c5e47d9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тем временем слева находят довольно темные тучи:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656929_d30d087961_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656929_d30d087961_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Бурный Ирик:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422982_4053742778_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422982_4053742778_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это вид в обратную сторону:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422942_09ce237907_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422942_09ce237907_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461755830_c868c1bc8b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461755830_c868c1bc8b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461478748_b76a24ddd8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461478748_b76a24ddd8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Впереди у нас – Эльбрус, но его тоже заволакивает облаками:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461478753_339f12f4c7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461478753_339f12f4c7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Наконец, мы выходим на большую относительно ровную площадку прямо на берегу Ирика, который здесь течет спокойно, не стесняемый скалами с боков. Здесь туристы ставят палатки. Воду можно набрать прямо из водопада неподалеку впереди.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422887_d633aaae06_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422887_d633aaae06_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461346501_a24dc81f04_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461346501_a24dc81f04_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461346476_66b95323ae_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461346476_66b95323ae_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461755740_e88d71bbf9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461755740_e88d71bbf9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461346411_ebf09b16fb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461346411_ebf09b16fb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На другом берегу Ирика пасется табун лошадей:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656729_e57e7bb4fc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656729_e57e7bb4fc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461346406_0af4d9971d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461346406_0af4d9971d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И снова вид назад:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656719_7461e342d6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656719_7461e342d6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот еще пара фото с телефона, не могу отказаться от них:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526486143_e16debd001_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526486143_e16debd001_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А тут вот свет совершенно волшебно пробивается сквозь дыру в облаках, и телефон делает такой вот необычный HDR:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526486113_37819a633c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526486113_37819a633c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мы устраиваемся на камнях перекусить перед обратной дорогой. И тут начинается дождь, да еще и сильный, и холодный. Достаем старые верные декатлоновские накидки, прячемся под ними вместе с рюкзаками, пережидаем минут пятнадцать. Дождь постепенно заканчивается, мы убираем за собой мусор и отправляемся в обратный путь. Впереди нас, похоже, прошел небольшой грозовой фронт – гром, который слышался из-за склонов справа, теперь слышен впереди слева, и явно удаляется. И, дойдя до соснового бора, обнаруживаем, что нам в некотором смысле повезло – тут не просто дождь прошел, а неслабый такой град – вся земля усыпана белыми шариками, где-то сантиметр или чуть меньше в диаметре. Дождь все еще временами припускал, так что фотоаппарат я берег, шли мы под накидками, но вот фото с телефона жены:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526309186_24f3228e60_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526309186_24f3228e60_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526486138_ea5e5fc388_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526486138_ea5e5fc388_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На обратном пути я фотографировал мало. Постепенно смеркалось, от Песчаных замков мы спускались, показалось, чуть ли не час. Когда вышли на сторону склона, обращенную к поселку, я позвонил нашему водиле, так что, когда мы спустились вниз и вышли на дорогу, он уже ехал через поселок навстречу нам. Пора и в «Кьочхар»!</p>
+<p>В общем, это был прекрасный день и очень красивый трек. Не назвал бы его «прогулкой», отнюдь, особенно в начале, но красота его, безусловно, стОит затраченных усилий.</p>
+<h2 id="день-седьмой-к-водопаду-терскол">День седьмой. К водопаду Терскол.</h2>
+<p>Итак, это наш последний полный день в Приэльбрусье. И мы решили потратить его на «местный» подъем – к водопаду «Терскол». Начало – там же, где и на «Девичьи косы», но около пункта проверки пропуска в Национальный парк напротив маленькой продуктовой лавочки нам не налево вверх, а прямо вперед. Сегодня, наверное, самый жаркий день, и народу вперед идет множество, и сзади и спереди нас. Ну ничего, вперед!</p>
+<p>На этом телефонном фото – взгляд назад где-то с середины пути; видно, что мы не одни на маршруте!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526624674_64849d19ef_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526624674_64849d19ef_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526624639_5db6aa5817_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526624639_5db6aa5817_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526741855_25848dce5a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526741855_25848dce5a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526486063_728ae7b5e5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526486063_728ae7b5e5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Идем вверх, вверх, и вот, наконец, вдали показывается наш водопад:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53526624634_d1ff5b6eb7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53526624634_d1ff5b6eb7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тут нас опять накрывает приличный дождь, и мы привычно прячемся на некоторое время под накидками под жухлой березкой. Но дождь быстро прекращается (чтобы потом снова возобновиться еще пару раз на нашем пути вниз).</p>
+<p>Но пока дождя нет, я брожу по кочкам с фотоаппаратом.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461755675_708d64a644_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461755675_708d64a644_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460422772_709c0ea18c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460422772_709c0ea18c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461478548_9940bc5f7a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461478548_9940bc5f7a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656669_0c1465ef45_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656669_0c1465ef45_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461346341_0d2c1a2cf0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461346341_0d2c1a2cf0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Начало ручья Терскол:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461346331_9e07d28129_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461346331_9e07d28129_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461656634_57bfb26472_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461656634_57bfb26472_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мостик через него на сторону водопада:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461478503_2d4ecf1d7e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461478503_2d4ecf1d7e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461346301_120abc968b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461346301_120abc968b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460421842_ac58a6cc1e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460421842_ac58a6cc1e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53460421822_9ecd01f04e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53460421822_9ecd01f04e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/53461477583_3f7b95bf76_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/53461477583_3f7b95bf76_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот, пожалуй, и все, фотографии иссякли. И наш седьмой день в Приэльбрусье заканчивается.</p>
+<p>Ну что ж. Я очень доволен. Очень. Все было отлично, и с погодой, и с едой, и с жильем, и маршруты получились, как хотелось. Если бы меня спросили, где понравилось больше всего, то, наверное, я бы сказал, что в ущельях Адыл-Су и Ирик-Чат, примерно в равной степени. Но и Эльбрус красив на станции Гарабаши. И «Девичьи косы» тоже оказались на удивление красивы, я не ожидал даже – и не сам водопад, а именно тропа к нему; но нам повезло увидеть ее в «золотой час», в предвечернем свете; думаю, что в жестком дневном освещении впечатление могло быть совсем не то.</p>
+<p>И засим я оканчиваю дозволенные речи. Спасибо, что были с нами!</p>
+  </article>
+</div>
+<script>
+(function() {
+  var pending = []; // images that entered the buffer zone, not yet loading/loaded
+  var loading = false;
+
+  function distanceFromViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;      // above viewport
+    if (rect.top > vh) return rect.top - vh;        // below viewport
+    return 0;                                       // on screen right now
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        if (d === 0) break; // already on screen -- can't beat that
+      }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var img = pickNext();
+    if (!img) return;
+    loading = true;
+    loadImage(img, img.getAttribute('data-src'));
+  }
+
+  function loadImage(img, src) {
+    img.onload = function() {
+      img.classList.add('loaded');
+      img.removeAttribute('data-src');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      // Flickr (or the network) hiccuped on this one request -- don't give
+      // up on it and don't block everything else behind it. Free the
+      // queue immediately, and let this image rejoin the pending pool
+      // after a short, growing backoff so it gets picked up again.
+      loading = false;
+      var attempt = (img._retryCount || 0) + 1;
+      img._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() {
+        pending.push(img);
+        processQueue();
+      }, delay);
+      processQueue();
+    };
+    img.src = src;
+  }
+
+  // Images join the pending pool once they're within reach; every time a
+  // slot frees up, pickNext() re-checks CURRENT positions and grabs
+  // whichever pending image is closest to (or actually on) screen right
+  // now -- so a fast scroll or scrollbar drag doesn't leave visible
+  // photos stuck behind everything the scroll happened to pass over.
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>

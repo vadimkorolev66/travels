@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Три коротких маршрута нашего летнего отпуска. Часть вторая: Коломна и Константиново</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  nav.toc,
+  article > p,
+  article > h2,
+  article > ul.summary-list,
+  article > blockquote.citation {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.masthead {
+    max-width: none;
+    padding: 8vw 0 4vw;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://live.staticflickr.com/65535/51740529969_7f36a1e7f4_o.jpg') center 40% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  nav.toc {
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+    font-family: var(--sans);
+  }
+  nav.toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li { margin: 0 0 0.85rem; break-inside: avoid; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.3;
+    font-size: 0.98rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent-soft); color: var(--accent); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 3.9rem 0 1.4rem;
+    padding-top: 0.2rem;
+    color: var(--text);
+    position: relative;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin-bottom: 1.1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-soft); }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+  a:hover { color: #6b5228; }
+  a.internal-link-pending {
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--accent-soft);
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.summary-list {
+    background: #f4f1ea;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem 1.6rem 2.4rem;
+    margin: 0 0 3rem;
+  }
+  ul.summary-list li { margin-bottom: 0.7rem; }
+  ul.summary-list li:last-child { margin-bottom: 0; }
+  blockquote.citation {
+    margin: 2rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  blockquote.citation p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  figure.photo { margin: 2.6rem 0; }
+  figure.photo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.08), 0 8px 24px rgba(43,41,37,0.06);
+  }
+  img.lazy-photo {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 40px;
+    background: var(--line);
+  }
+  img.lazy-photo.loaded { opacity: 1; }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 2.2rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  p.epigraph {
+    text-align: right;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+  p.fin {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  p.subhead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { width: 88%; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17.5px; }
+    .wrap { width: 90%; padding: 10vw 0 16vw; }
+    header.masthead h1 { font-size: 1.85rem; }
+    nav.toc ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Три коротких маршрута нашего летнего отпуска. Часть вторая: Коломна и Константиново</h1>
+  </header>
+
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      <ul>
+    <li><a href="#коломна-и-тихо-шлёпает-в-голутвин-глотая-вздохи-на-ходу">Коломна. «И тихо шлёпает в Голутвин, глотая вздохи на ходу».</a></li>
+    <li><a href="#коломна-день-первый">Коломна. День первый.</a></li>
+    <li><a href="#коломна-день-второй">Коломна. День второй.</a></li>
+    <li><a href="#константиново-над-окой">Константиново. Над Окой.</a></li>
+    <li><a href="#константиново-в-поисках-березового-ситца">Константиново. В поисках «березового ситца».</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <article>
+<h2 id="коломна-и-тихо-шлёпает-в-голутвин-глотая-вздохи-на-ходу">Коломна. «И тихо шлёпает в Голутвин, глотая вздохи на ходу».</h2>
+<p>Этот рассказ – вторая часть моего трехчастного отчета о трех последовавших одна за другой коротких – на четыре дня каждая – поездках из Москвы на общественном транспорте (в основном, поездах; в паре мест – еще и на такси) в ходе нашего с женой двухнедельного отпуска в августе 2021 года. Первая поездка была по маршруту Москва – Суздаль – Владимир – Боголюбово – Москва; я рассказал о ней <a href="2021_three_routes_1.html" target="_blank" rel="noopener noreferrer">здесь</a>.</p>
+<p>Вторая, о которой немножко (или множко) расскажу в тексте, который вы сейчас читаете, была такой: Москва – Коломна – Константиново – Москва. Процитирую свое же описание этого фрагмента нашего отпуска, как он кратко описан в предисловии к первой части: <em>из Москвы в Коломну на поезде, два дня в Коломне, потом дальше на поезде до Рыбного, оттуда берем такси до Константиново и два дня живем в нем. Ну и снова до Рыбного, и оттуда на поезде до Москвы.</em></p>
+<p>Географически, про Коломну надо знать одну простую вещь – это городок у впадения Москвы-реки в Оку. На самом деле, Коломну еще рассекает третья маленькая речка, Коломенка, впадающая в Москву-реку.</p>
+<p>Ж/д вокзал в Коломне называется вкусным именем «Голутвин»; поезда до него идут от Казанского вокзала; если это фирменный поезд, то всего лишь примерно полтора часа. От вокзала «Голутвин» до нашей гостиницы с пафосным названием <a href="https://sp.booking.com/hotel/ru/hermitage-kolomna.ru.html?aid=325219" target="_blank" rel="noopener noreferrer"> Hermitage</a>, близ Коломенского Посада, на такси еще десять минут, и мы на месте. Ну «гостиница» - это громко сказано, это несколько номеров на третьем этаже вполне советского административного здания, своего рода «бизнес-центра». Но номера хорошие, вполне современно обставленные, большие, чистые, с хорошим кондиционером. Во всяком случае, наш номер был таковым, нам понравился, и я вполне готов снова рассмотреть эту гостиницу как вариант, если вдруг решим съездить сюда на выходные снова, просто погулять по городу.</p>
+<p>А такое желание у нас после двух дней в Коломне есть. Коломна (ну, по крайней мере, ее исторический центр – кремль, посад, и ближайшие к ним окрестности) оставила очень приятное впечатление. Сюда хочется вернуться, именно «не загадывая», просто на денек – сесть в поезд и приехать, и погулять по ней снова. Чистенькая, но не пластмассовая; деревянные дома, по большей части, в хорошем состоянии; дороги (опять же – могу сказать только за исторический центр) хорошие (в этом плане, к большому сожалению, тот же прекрасный Суздаль пока проигрывает, и с большим отрывом. Возможно, сказывается, что Коломна – это Подмосковье? Другие объемы денежных вливаний?)</p>
+<p>Перед поездкой прочел два-три отчета на нашем форуме, из них выделю рассказ уважаемого savl1 <a href="https://forum.awd.ru/viewtopic.php?f=619&amp;t=308605" target="_blank" rel="noopener noreferrer">«Коломна: кремль, пастила и тени легенд минувших времён»</a>. Отдельного путеводителя по Коломне раздобыть не удалось, так что информацию собирал по кусочкам из Интернета.</p>
+<p>Уже на месте очень помогли две большие карты-схемы, купленные в так называемом «Музее-навигаторе» прямо у Пятницких ворот кремля. Одна называется «Коломенский Кремль», вторая – «Коломенский Посад». Именуемые в подзаголовках «картами для вольногуляющих» (уже вкусно!), они прекрасно оформлены, абсолютно современный дизайн, очень удобны, вот лежат сейчас передо мной. Их даже раскрывать приятно. Вот <a href="https://kolomna-navigator.ru/wp-content/themes/foodica/images/map.pdf" target="_blank" rel="noopener noreferrer">здесь</a>можно найти и скачать их карту посада, хотя бы просто, чтобы оценить стиль. Карту кремля я на их сайте сейчас не вижу, но снаружи, в виде буклетов, эти две карты выглядят вот так:</p>
+<figure class="photo"><img data-src="https://kolomna-navigator.ru/wp-content/uploads/2021/03/%D0%9A%D0%B0%D1%80%D1%82%D0%B0-%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-%D0%9A%D1%80%D0%B5%D0%BC%D0%BB%D1%8C.jpg" alt="" class="lazy-photo"><noscript><img src="https://kolomna-navigator.ru/wp-content/uploads/2021/03/%D0%9A%D0%B0%D1%80%D1%82%D0%B0-%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-%D0%9A%D1%80%D0%B5%D0%BC%D0%BB%D1%8C.jpg" alt="" loading="lazy"></noscript></figure>
+<p>и</p>
+<figure class="photo"><img data-src="https://kolomna-navigator.ru/wp-content/uploads/2021/03/%D0%9A%D0%B0%D1%80%D1%82%D0%B0-%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-%D0%9F%D0%BE%D1%81%D0%B0%D0%B4.jpg" alt="" class="lazy-photo"><noscript><img src="https://kolomna-navigator.ru/wp-content/uploads/2021/03/%D0%9A%D0%B0%D1%80%D1%82%D0%B0-%D0%9A%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-%D0%9F%D0%BE%D1%81%D0%B0%D0%B4.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На их сайте можно также найти информацию <a href="https://kolomna-navigator.ru/category/museums/" target="_blank" rel="noopener noreferrer">о других популярных музеях Коломны</a>.</p>
+<p>Ну, раз их симпатичную карту Коломенского кремля я не нашел, повешу здесь вот такую карту, взятую <a href="http://kolomna-kremlin.org/post/12" target="_blank" rel="noopener noreferrer">отсюда</a>:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51815823360_2d08728600_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51815823360_2d08728600_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Буду ссылаться на нее при случае.</p>
+<h2 id="коломна-день-первый">Коломна. День первый.</h2>
+<p>Но мы, выйдя из нашей гостиницы на первую встречу с Коломной, не пойдем прямо к кремлю. Мы сделаем вид, что нам туда вовсе и не надо, и пойдем, гуляя и глазея по сторонам, с нашей Ветеринарной в противоположную кремлю сторону.</p>
+<p>(Прямо услышал сейчас голос Евгения Стеблова – доктора Мортимера из «Собаки Баскервилей», помните, вот это вот: «Мы не сядем на грязный пароход… Мы сядем на прекрасный пятимачтовый корабль и поплывём. И вернёмся здоровыми.»)</p>
+<p>Выйдем на неширокую, совсем-совсем боковую, Гончарную улицу и неторопливо пойдем по ней, по посаду. Так что первое, на что мы наткнемся, будет храм Богоявления в Гончарах:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51817567645_ff29861c7e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51817567645_ff29861c7e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>До 1680-х он именовался храмом Спаса Нерукотворного. <em>Четверик церкви, увенчанный небольшим пятиглавием, был перестроен в 1800-1804. Тогда же в стиле классицизма выстроены трапезная с Введенским и Харалампиевским приделами и колокольня. Место крещения Филарета, митр. Московского (в 1792). </em> И, как пишут, единственная не закрывавшаяся в советское время церковь в городе.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51817195459_3a93ffe696_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51817195459_3a93ffe696_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Напротив - редкость для посада - пришедший в упадок домик. Просто фотогеничный (каким часто бывает распад):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740780685_a85b5f4b7b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740780685_a85b5f4b7b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Еще один старый домик на Гончарной:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739891326_4579906d84_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739891326_4579906d84_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сворачиваем на Посадскую улицу, на ней в районе дома 48 есть вот такой примечательный сарайчик:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740780625_bc68da4510_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740780625_bc68da4510_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И вот такая колоритная дверь в самом доме 48:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740125768_4995783de5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740125768_4995783de5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это мы в маленьком переулочке отходящем от Посадской: уютный уголок:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739891226_63db374883_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739891226_63db374883_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Здесь, в глубине, притаилась церковь Никиты Мученика:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739068467_5bb5e786d1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739068467_5bb5e786d1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Церковь Никиты Мученика — приходской храм, построен в 1695 году. <em>Никитский храм был заложен во времена правления царя Алексея Михайловича в 1655 году, построен в традициях московского барокко. В XIX веке был перестроен и приобрёл "архитектурные облики стиля ампир"</em> (это не я, это Википедия). <em>...В советский период храм был разрушен и разграблен. В начале 2000-х годов было принято решение вернуть Православной церкви разрушенное здание храма... Реставрация трапезной была завершена в 2011 году. В 2016 году в день Воздвижения Животворящего Креста Господня на церковь были установлены маковки с крестами.</em></p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51817241584_9953c9088e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51817241584_9953c9088e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>С другой стороны Посадской улицы – здание земской больницы XIX века, с табличкой</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739891176_df070e0b86_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739891176_df070e0b86_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Идем дальше по Посадской улице…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739060362_f7355d18cc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739060362_f7355d18cc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И наконец, по правую руку выплывает «звезда» среди окрестных храмов: церковь Николы-на-Посаде, или просто Никольская:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739890241_4703fa0712_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739890241_4703fa0712_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>(<a href="https://colomna.ru/organization/religiya/khram_nikoly_na_posade/" target="_blank" rel="noopener noreferrer">отсюда</a>).</p>
+<blockquote class="citation"><p>Одна из красивейших церквей коломенского посада храм Николы-на-Посаде. Первое упоминание о ней встречается в писцовых книгах 1577–1578 годов. Ныне существующая каменная церковь была построена в 1716 году. Её главный престол освящён в честь Воскресения Словущего, придельный храм – Святителя Николая.<br>
+Изначально храм в XVII веке был в архитектурном стиле «московского узорочья», а в XVIII веке внешние архитектурные формы были изменены на стиль раннего барокко.<br>
+Его верх украшают 106 кокошников в пять рядов и «пучковое» пятиглавие. Это уникальная особенность храма.<br>
+…Во время пожара 14 сентября 1792 года церковь сильно пострадала. При восстановлении она была перестроена – срублены наличники, изменена форма апсиды, кокошники накрыты железной крышей – «колпаком». До прихода советской власти серьёзных потрясений храм больше не переживал. В годы гонений на религию здесь были уничтожены ценные иконы и росписи стен, датируемые 1820–1840 годами. Стены полностью побелены и лишь кое-где можно различить остатки старинных росписей.<br>
+От отдельно стоящей колокольни, построенной одновременно с храмом, остался нижний ярус. Верхний повреждён при снятии большого колокола в начале 1930-х годов, позднее разобран. В 1970-х годах Никольский храм начали реставрировать. Мастерами был восстановлен старый декор, открыты кокошники и возвращены наличники.<br>
+В 1990-х годах Никольский (Воскресенский) храм по решению городской администрации был передан старообрядческой общине.</p></blockquote>
+<p>Но, к сожалению, то ли последний ремонт был некачественный, то ли по другим причинам, но краска на купольной части довольно сильно пооблупилась, так что храм требует нового ремонта, как минимум косметического:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739891101_6af1e6bbcb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739891101_6af1e6bbcb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Выложу еще одно фото, не удержусь. Знаете, что это? Это скриншот из Google maps в режиме прогулки по улицам! Так удачно у них получилось, неожиданно.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51817658590_58a0897ed2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51817658590_58a0897ed2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот она же, Николы-на-Посаде, на следующий день – мы снова проходили мимо нее, но было уже солнечно, а не пасмурно, небо голубело, и краски были поярче.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740525359_6f09274c07_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740525359_6f09274c07_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740775380_dfd8938f1a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740775380_dfd8938f1a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740521514_6b28452937_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740521514_6b28452937_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А на противоположной стороне Посадской улицы, на углу с Арбатской, расположилось совершенно замечательное, на мой взгляд, местечко: музей «Коломенская пастила», или «Музей со вкусом», как они себя <a href="http://kolomnapastila.ru/museum/" target="_blank" rel="noopener noreferrer">называют</a>. Это – вид на него уже изнутри, с заднего дворика музея:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739891041_908da916cd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739891041_908da916cd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Место очень приятное, действительно со вкусом стилизованное. Вообще это нечто типа театрализованного музея, со своими программами, но можно просто прийти, пройти мимо музея в их внутренний дворик, сесть за симпатичный изящный столик в тени деревьев, заказать душистого чаю с настоящей пастилой по старинным рецептам, и просто отдохнуть. Нам повезло – кроме нас, во дворике в этот момент не было никого…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740125478_ab27c7d388_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740125478_ab27c7d388_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740530109_e44b0a7a53_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740530109_e44b0a7a53_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739068202_c4facfa12c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739068202_c4facfa12c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740529969_7f36a1e7f4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740529969_7f36a1e7f4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739890851_4dda817525_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739890851_4dda817525_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740529899_73102c205c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740529899_73102c205c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739890726_d64cddb9ee_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739890726_d64cddb9ee_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739890706_33031788c2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739890706_33031788c2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Нетрудно (было бы желание) представить, что ты и впрямь на время оказался где-то в начале XIX века.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740529794_6e1d5bd2a7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740529794_6e1d5bd2a7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740529769_a706a6555e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740529769_a706a6555e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот «наш» столик:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739890576_383b23595d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739890576_383b23595d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740779905_84649dcb4f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740779905_84649dcb4f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Очень приятное место; мы и через день, с утра перед отъездом, забежали сюда «позавтракать» (опять же, попить чаю с мармеладом ручной выделки)</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739067837_7a90403cbc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739067837_7a90403cbc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739067797_27b937fa1a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739067797_27b937fa1a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740124938_4007c78fe4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740124938_4007c78fe4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Напротив «Коломенской пастилы» - музей-судьба «Дом самовара», вполне заслуживающий визита, как оказалось, но мы туда попадем завтра. А сейчас, напившись чаю, идем дальше по Посадской…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739890311_11b32ae156_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739890311_11b32ae156_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739060257_ca55af2660_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739060257_ca55af2660_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740124843_593888021a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740124843_593888021a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740779660_4f6059615f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740779660_4f6059615f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739890161_056f1f3566_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739890161_056f1f3566_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740779555_4e83e4d79c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740779555_4e83e4d79c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сворачиваем на Москворецкую и, как следует из её названия, попадаем по ней к набережной Москвы-реки. Проходим мимо плавучего отеля-ресторана «40-й Меридиан Арбат» и лицезреем памятник водовозу – важной и уважаемой некогда профессии:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739060227_9c798a804b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739060227_9c798a804b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На набережной – отметки уровней, куда поднималась вода в разные годы. Стильно, кстати сделаны; тут тоже любят кованные металлические штуки:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740779530_ef23f09fb3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740779530_ef23f09fb3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739890121_1a75577c20_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739890121_1a75577c20_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А как вам вот такой почтовый ящик?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740124553_6d7f819116_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740124553_6d7f819116_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740779490_d61313335d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740779490_d61313335d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну а мы тем временем оказались на улице Зайцева, которая приведет нас от Москвы-реки, точнее, от Бобреневского плавучего моста (завтра пойдем по нему на ту сторону, к Бобреневскому монастырю) прямо к Пятницким воротам Коломенского кремля.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740124528_73bfc70db6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740124528_73bfc70db6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739889991_a5e6434d73_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739889991_a5e6434d73_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Не доходя до кремля, мы встречаемся с еще одним музеем, где можно поесть – «Музеем калача».</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740779240_2492384762_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740779240_2492384762_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740779255_655264b520_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740779255_655264b520_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740529044_6583999494_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740529044_6583999494_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739067367_7551a2a108_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739067367_7551a2a108_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пару калачей мы, конечно, купили, и вечерком в номере у себя «заточили». Ну, так. Пресновато показалось. Понятно, что они «традиционные», и в те далекие времена многие могли только мечтать о таком куличе по праздникам. Это мы балованные просто.</p>
+<p>А это прекрасное животное встретило нас при входе в кремль, стоит прямо поперек мостовой перед Пятницкими воротами:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740117453_38dcf4bb07_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740117453_38dcf4bb07_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Проходим через ворота одной из немногих сохранившихся башен и незаметно оказываемся уже внутри кремля, который теперь практически и не огорожен вовсе…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740528924_6019a81416_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740528924_6019a81416_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Посмотрите снова на карту коломенского кремля, которую я повесил в начале рассказа. Там видно, какие части кремлевских стен и какие башни дошли до наших дней (он раскрашены в красный цвет). Очень небольшие части.</p>
+<p>Википедия:</p>
+<blockquote class="citation"><p>Коломенский кремль — одна из самых больших и мощных крепостей своего времени, которая строилась в 1525—1531 годах в Коломне, во времена правления Василия III. Московское княжество к тому времени уже присоединило Новгородскую республику и Псков и стремилось укрепить южные границы в борьбе с татарами — Казанским и Крымским ханствами.<br>
+…Коломенский кремль неоднократно подвергался разрушению во время набегов татар на Русь. Практически ни один поход ханов Золотой Орды не обходился без захвата Коломны.<br>
+…разгром Коломны крымским ханом Мехмедом I Гиреем в 1521 году ускорил замену деревянных городских укреплений каменными, задуманную ещё после пожара 1483 года, опустошившего город.<br>
+…В XVI веке, после того как были возведены каменные стены, врагам ни разу не удавалось взять приступом Коломенский кремль. Да и во времена Смуты польские интервенты и отряды «тушинского вора» проникали в Коломну не в результате штурма крепости, а вследствие нерешительности и предательских настроений временщиков, окончательно запутавшихся в смене царских особ.<br>
+…Устояв в битвах, кремль не выдержал атак времени и мирных жителей, разобравших на строительный материал значительную часть стен и башен в XVIII — начале XIX века. Известно, что только указ Николая I в 1826 году прекратил подобное в Коломне и других городах, но многие памятники уже были утрачены, порой полностью. Коломне повезло чуть больше, потому что частично крепость сохранилась, реставрирована и доступна.</p></blockquote>
+<p>Коломенский кремль мало уступал Московскому. Вот несколько чисел: площадь Коломенского - 24 га, Московского - 28 га; периметр - 1640 м. и 2335 м., а количество башен - 17 и 20, соответственно.</p>
+<blockquote class="citation"><p>Существует версия, что строительством Коломенского кремля руководил итальянский архитектор Алевиз Фрязин (Старый), который принимал участие и в возведении стен и башен Московского Кремля и взял его за образец при строительстве Коломенского. На это указывает, например, срок постройки Коломенского кремля. Кремль был построен за шесть лет, что говорит о том, что строители крепости имели большой опыт, ведь сопоставимое по масштабам строительство в столице длилось более десяти лет.<br>
+Коломенский кремль, как и крепости других русских городов того периода (Великий Новгород, Ивангород, Нижний Новгород, Зарайск и Тула), имеет итальянские черты. Во многом повторяются фортификационные формы североитальянских крепостей, таких как Турин, Милан, Верона и др. Кроме общих строительных приёмов и итальянских архитектурных деталей, таких как машикули — бойницы подошвенного боя в башнях, боевой парапет с зубцами в форме ласточкиного хвоста, гранёные башни основной ограды, отводные башни и прочее, отмечаются и другие черты сходства Московского и Коломенского кремлей.</p></blockquote>
+<p>Чем еще порадовал коломенский кремль: вот такие дома можно найти прямо на его территории!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740528879_570503d3f7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740528879_570503d3f7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Двинемся в сторону «сердца» коломенского кремля – Соборной площади с Успенским кафедральным собором. Вот он, таким мы увидели его в первый вечер:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739067137_e11027415b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739067137_e11027415b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739889721_47864997d6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739889721_47864997d6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот так он выглядит, если выйти на Соборную площадь с другой стороны и посмотреть на его фасад:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740778985_de927a2518_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740778985_de927a2518_o.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>Трёхкупольный собор был заложен в 1379 году великим князем Дмитрием Донским после первой победы русских войск над Ордой в битве на реке Воже. Строительство собора длилось один год. Предположительно, в росписи его принимал участие Феофан Грек.<br>
+Собор простоял до 1673 года, когда был из-за ветхости разобран. На его месте в течение 10 лет зодчим Мелетием Алексеевым был возведён новый храм, сохранившийся до наших дней.<br>
+В 1804 году храм заново расписали. В 1929 году храм был закрыт и разграблен, захоронения коломенских архипастырей разорены.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739066987_5b3ea04bdd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739066987_5b3ea04bdd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>В 1989 году собор был возвращён Русской православной церкви. Настоятелем стал протоиерей Николай Качанкин. Под его руководством Успенский собор был восстановлен. Также были восстановлены приписные храмы: Храм Тихвинской иконы Божией матери и Храм Воскресения Словущего.<br>
+Святыня храма, Донская икона Божией Матери, сопутствовала великому князю Дмитрию Донскому во время его ратного подвига на поле Куликовом. Образ Пресвятой Богородицы, созданный преподобным Феофаном Греком, был очень почитаем на Руси. Перед ним молился, отправляясь в Казанский поход, царь Иван Грозный. После победы он увёз чудотворный образ в Москву, приказав создать для коломенского Успенского храма два точных списка.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739066927_543aab8d91_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739066927_543aab8d91_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Слева – белая колокольня Успенского собора. <em>Первоначально колокольня была каменной. К концу XVII века она обветшала и по инициативе коломенского архиепископа Никиты В 1692 вместо неё построена новая из кирпича. В 1929, когда в результате кампании большевиков по борьбе с религией Успенский собора был разорён, с колокольни сбросили колокола. В 1962 под руководством Е. Р. Куницкой колокольня была отреставрирована. В 1990 колокольню отреставрировали вновь, а в декабре того же года на неё повесили 8 новых колоколов.</em></p>
+<p>Соборная площадь на закате:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739067027_b6eaeed2fb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739067027_b6eaeed2fb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740124148_10401cb0d8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740124148_10401cb0d8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Голубая - церковь Покрова Пресвятой Богородицы на территории Свято-Троицкого Ново-Голутвина монастыря, построенная в 1680-е годы и сильно перестроенная в 1823-м.</p>
+<blockquote class="citation"><p>После Октябрьской революции, в советское время, монастырь и его храмы были закрыты, разорены и долгое время находились в запустении. Позже в Сергиевской церкви разместилось общежитие иногородних рабочих, затем в храме размещался производственный цех, а потом — художественная мастерская.<br>
+Только в 1989 году храм был передан епархии, и в нём начались реставрационные работы. В 1996 году ремонт был окончен и 14 октября этого же года Покровский храм был освящен... Церковь вновь стала называться Покровской с Сергиевским приделом.</p></blockquote>
+<p>Здесь Ново-Голутвин монастырь – слева:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740778950_3246a4c15e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740778950_3246a4c15e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740528584_543e72a9d0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740528584_543e72a9d0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Здесь на переднем плане – так называемый «Музей органической культуры», а на заднем - Собор Воздвижения Честного Креста Господня в Успенском Брусенском монастыре.</p>
+<p>Снова «Музей органической культуры» - домик уж больно симпатичный:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740778830_d5968b4ede_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740778830_d5968b4ede_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это – взгляд назад, на Ново-Голутвин монастырь:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740117423_124a28d4b4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740117423_124a28d4b4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Абрис Собора Воздвижения Креста на фоне затянутого облаками неба:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740778805_004a9eddd3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740778805_004a9eddd3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Успенский Брусенский монастырь – один из двух монастырей на территории Коломенского кремля.</p>
+<blockquote class="citation"><p>Монастырь основан в 1552 году, и изначально был мужским. В Смутное время он сильно пострадал и был восстановлен как женский. До середины XVIII века все строения монастыря, за исключением храма, были деревянными… В 1848—1855 годах … были возведены собор, три жилых корпуса и хозяйственные постройки...</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739889406_6ee8b07aa1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739889406_6ee8b07aa1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В 1922 году монастырь был закрыт, его насельницы выселены, а здания приспособлены под общежитие и овощехранилище... В дальнейшем были разрушены надвратная колокольня и завершения Крестовоздвиженского собора. В 1971—1980 годах … проведена реставрация Успенской церкви, в результате которой ей возвращён первоначальный облик.<br>
+В 1997 году монастырь был возобновлён, и с этого времени постепенно реставрируются его здания. В 2006 году завершено восстановление Крестовоздвиженского собора.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739889376_43d399a903_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739889376_43d399a903_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Взгляд вдоль улицы Лажечникова; слева видны архитектурные элементы Крестовоздвиженского монастыря:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740778710_22aeef4ee8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740778710_22aeef4ee8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739066647_630ecca29c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739066647_630ecca29c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Еще улица Лажечникова; мы сюда еще вернемся завтра:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740778630_2de01bf2f4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740778630_2de01bf2f4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739060172_be2cea7f1d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739060172_be2cea7f1d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740123653_77495a9359_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740123653_77495a9359_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739066512_134b1494b8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739066512_134b1494b8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вернемся назад по улице Лажечникова до перекрестка и повернем налево, на улицу Лазарева.</p>
+<p>Так называемая «Шевлягинская бассейка», одна из двух (пока) в городе:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740528339_d0cf5cf3b7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740528339_d0cf5cf3b7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>(<a href="http://mosprogulka.ru/places/shevljaginskaja_bassejka_kolomna" target="_blank" rel="noopener noreferrer">отсюда</a>).</p>
+<blockquote class="citation"><p>Это уникальный памятник историческому коломенскому водопроводу, построенному в начале 20 века, представляющий собой воссозданную по дореволюционным чертежам копию водоразборной колонки тех времён.<br>
+Колонка - действующая и подключена к городскому водопроводу; по замыслу вода из неё может использоваться как питьевая. Её чугунный восьмигранный корпус украшен изящным рисунком, а также рельефными изображениями цветов. В прошлом в городе существовало шесть подобных колонок; своё народное название - "шевлягинские бассейки" - они получили по фамилии почётной гражданки Марии Шевлягиной, которая в начале 20 века безвозмездно спонсировала строительство коломенского водопровода.</p></blockquote>
+<p>Забавно, что на гуглокарте на этом месте все еще видна обычная водяная колонка.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739066447_d270feda6a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739066447_d270feda6a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Следуя по улице Лазарева, доходим до довольно большого сохранившегося куска кремлевских стен. Сначала вот этот отдельный фрагмент (это еще не внешняя стена):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739889091_6456cf1bf5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739889091_6456cf1bf5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И наконец, большой сохранившийся фрагмент основной стена кремля, начинающийся с «Маринкиной башни»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739066392_de94200202_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739066392_de94200202_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Это</p>
+<blockquote class="citation"><p>одна из семи сохранившихся до наших дней башен Коломенского кремля. Построена в 1525—1531. Размещалась между Грановитой (сохранилась) и Борисоглебской башнями кремля.<br>
+Башня имеет несколько названий:<br>
+«Маринкина башня» - принято считать, что название Маринкина башня получила от своей знаменитой узницы Марины Мнишек, которая, по легенде, в 1614 году находилась в заключении в этой башне и здесь же скончалась, либо, по одному из популярных вариантов легенды, обернулась сорокой и улетела через окно-бойницу.<br>
+«Коломенская башня». Название объясняется положением башни у реки Коломенки.<br>
+«Круглая башня». Название происходит оттого, что издалека высокая двадцатигранная башня казалась круглой.<br>
+«Наугольная башня». Название объясняется угловым положением башни в северо-западном углу кремля.</p></blockquote>
+<p>Завернем за угол…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740123433_10a4cbb375_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740123433_10a4cbb375_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Через дорогу видна церковь Михаила Архангела, построенная в конце XVIII века:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740778405_a6e909c5d4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740778405_a6e909c5d4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p><em>В советское время, с 1930-х и до 2007 года в здании церкви находился городской Краеведческий музей. В 2007 году храм был передан верующим, началась реставрация, в мае 2007 года в храме начались богослужения.</em></p>
+<p>…Мы с вами у Грановитой башни, также одной из семи башен Коломенского Кремля, сохранившихся до наших дней; она построена в 1525—1531 годах:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739066277_f02d60963d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739066277_f02d60963d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740771985_6a1dca60f8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740771985_6a1dca60f8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740778295_118f09bc66_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740778295_118f09bc66_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А солнце садится все ниже… Красивый закат сегодня в Коломне!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740778125_8ceb4a743f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740778125_8ceb4a743f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну а мы с вами неторопливо возвращаемся к Соборной площади…</p>
+<p>Небо над Конькобежным центром рядом с кремлем:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740778070_967d3105af_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740778070_967d3105af_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Прекрасное предзакатное небо!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740123033_0cd8d0d8a4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740123033_0cd8d0d8a4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В этом ракурсе (с улицы Болотникова), кстати, по сравнению с предыдущими фотографиями ансамбля Соборной площади, хорошо видно храм Тихвинской иконы Божией Матери – красное здание слева. <em>Построен в 1776 году тщанием</em> (так и написано! замечательно!) <em>местного купца Ивана Мещанинова. В 1861 году на пожертвования купца Филиппа Назаровича Тупицына храм значительно расширили. Он стал пятиглавым и трёхпрестольным.</em></p>
+<p>Ну, а дальше было все традиционно.</p>
+<blockquote class="citation"><p>В конце 1920-х гг. храм был закрыт, уничтожено его внутреннее убранство и все главы.<br>
+Возвращён общине Успенского собора в 1989 г. В 1990-х гг. восстановлено пять глав, иконостасы левого и правого приделов, расписаны купол, паруса. Все иконописные и живописные работы выполнены коломенскими мастерами. Воссоздаётся центральный иконостас.</p></blockquote>
+<p>Вот она – поближе:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739888531_43e6a75096_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739888531_43e6a75096_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Завтра мы и в Успенский собор, и в эту церковь заглянем…</p>
+<p>А закат-то сегодня прямо огненный!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739065982_aa139cabe5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739065982_aa139cabe5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740122933_8b2e53770e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740122933_8b2e53770e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это (нет, не могу – какое небо…). А это (соберись, тряпка!)… это школа, номер 3. Бывшее приходское соборное училище. <em>Построено в 1865 году, расширено в 1912 году и завершило формирование современного ансамбля Соборной площади</em>.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739060097_b1a6d3dae3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739060097_b1a6d3dae3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Рядом с Успенским собором расположен еще один достойный внимания храм – Воскресения Словущего.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740122808_3bf1e31845_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740122808_3bf1e31845_o.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>Дата постройки храма неизвестна. 18 января 1366 года в этом храме венчались святой благоверный князь Дмитрий Донской и святая княгиня Евдокия (в иночестве Евфросиния) Суздальская.<br>
+Храм неоднократно перестраивался. Помимо главного престола — в память обновления Храма Воскресения Христова в Иерусалиме — в трапезной части он имел ещё два алтаря.<br>
+В 1929 году древний храм был закрыт. Были уничтожены его глава, колокольня, ограда. Утрачено всё внутреннее убранство. Церковное здание использовалось под спортивный зал.<br>
+Храм возвращен приходу Успенского собора в 1990-х годах. В нём временно разместилась иконописная мастерская. В 2003 году с полной замены кровли началась реставрация церкви. В настоящее время приписан к Успенскому собору.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740527804_ef258e15b3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740527804_ef258e15b3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В Воскресенской церкви находились древние образы «Сошествие во ад» XIV в. и «Святая Троица» XV в., ныне хранящиеся в Третьяковской галерее.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739065757_4db2f7a4ff_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739065757_4db2f7a4ff_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И так постепенно подошел к концу наш первый день – даже не день, а половинка – в подмосковной Коломне…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739065732_b83f6d4a3b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739065732_b83f6d4a3b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="коломна-день-второй">Коломна. День второй.</h2>
+<p>А с утра на второй день мы направились, для начала, в «Музей самовара», который прямо напротив музея «Коломенская пастила», где мы чаевничали вчера. Я обычно с большим скепсисом отношусь к такого рода музеям, когда, кажется, пытаются на пустом месте сделать аттракцион (в буквальном смысле этого слова) для туристов. И редко в них захожу. А тут вот решили всё же зайти. И не пожалели. Это и правда <a href="http://domsamovara.ru/" target="_blank" rel="noopener noreferrer">музей</a>.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740527029_9b0c7e4afb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740527029_9b0c7e4afb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Огромная (более 500 экспонатов!) коллекция самых разных самоваров разных эпох и приравненных к ним приборов (а также утюгов и керосиновых ламп), собранная семьей Буровых. Вот, поснимал там немножко:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740777610_184ebfce21_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740777610_184ebfce21_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739888226_364bb8f492_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739888226_364bb8f492_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739065487_a62f4bbf36_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739065487_a62f4bbf36_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740527599_1f35c9c4b4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740527599_1f35c9c4b4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739065612_0edc847deb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739065612_0edc847deb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740122478_71ef0e63b0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740122478_71ef0e63b0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739888091_26ac4ca636_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739888091_26ac4ca636_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739888061_4c1faee026_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739888061_4c1faee026_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740521719_f44916e15e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740521719_f44916e15e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740777425_766d718cc6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740777425_766d718cc6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740777410_57751b1326_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740777410_57751b1326_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739887911_b15e44a99d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739887911_b15e44a99d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740527214_8459cb34ff_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740527214_8459cb34ff_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739887851_fbbfa2af11_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739887851_fbbfa2af11_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739065197_a6e83b655b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739065197_a6e83b655b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739065227_e856a62bd4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739065227_e856a62bd4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740521694_e1e8de32d2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740521694_e1e8de32d2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739887761_4fda7895df_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739887761_4fda7895df_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740527054_349f1899dc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740527054_349f1899dc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Здесь же, в соседней комнате – своего рода микро-музей русской старины – множество старинных предметов быта, крестьянского и помещичьего. О назначении некоторых из них догадаться довольно сложно, но любезная смотрительница ответит на все вопросы. Как оказалось, я тут снимал на только телефон. Обычно я не выкладывают телефонные фото из-за их качества, но в этих трех мини-отчетах решил отойти от этого правила и добавить в рассказ телефоно-фото, сделанные в некоторых местах, то ли по причине плохого освещения, так что снять что-то достойное я не рассчитывал, то ли по причине запрета на фотографирование. Я тут их как раз просмотрел и решил, что можно выложить, не так это и ужасно. Так что вот несколько таких фото из «внутреннего музея русской старины»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827858782_4293b46c15_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827858782_4293b46c15_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829151794_413b0201a4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829151794_413b0201a4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828922843_cb5ec89701_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828922843_cb5ec89701_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828809011_8de047f6fa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828809011_8de047f6fa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827858667_a82f0b0813_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827858667_a82f0b0813_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827858687_052b2dd952_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827858687_052b2dd952_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829531525_76bfafaef7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829531525_76bfafaef7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Маслобойка:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828808901_9e8f98e1e4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828808901_9e8f98e1e4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828808881_896f5b5946_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828808881_896f5b5946_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829151584_856573fd40_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829151584_856573fd40_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829531390_0b05a869d2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829531390_0b05a869d2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829531365_58aab14d19_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829531365_58aab14d19_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот. Как-то так.</p>
+<p>Отправляемся дальше, иногда немножко повторяясь в своем пути по Посаду:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740526959_ea8c7b5efd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740526959_ea8c7b5efd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740526934_ba485bbabb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740526934_ba485bbabb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но сегодня гораздо солнечнее, чем было вчера днем.</p>
+<p>На углу Посадской и Москворецкого переулка:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739065037_7e85885c6d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739065037_7e85885c6d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740777045_e87f4cf5ea_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740777045_e87f4cf5ea_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>У Пятницких ворот. Справа – вход в «Музей-навигатор», где мы разжились теми самыми картами кремля и посада:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740526859_a91332f801_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740526859_a91332f801_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Нет, тучи снова находят:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740526824_3d7975a996_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740526824_3d7975a996_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>С улицы Лазарева, идущей вглубь кремля от Пятницких ворот, мы сворачиваем на этот раз направо, на улицу Исаева. В ее конце, по правую руку, находится очень интересный <a href="https://mrf.museumart.ru/" target="_blank" rel="noopener noreferrer">Музей российской фотографии</a>.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828807841_de62908da3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828807841_de62908da3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тут я тоже фотографировал только на телефон, поэтому качество, мягко говоря, не очень. Но очень рекомендую посетить этот музей, особенно, если вы неравнодушны к фотографии – очень достойная экспозиция, начиная с самых первых фотоаппаратов и впечатляющих пластинок с очень качественными дагерротипами. Включая, например, фотопортреты императора Александра II и его супруги, 1850-го года. Фотопортрет! 1850-го года!И <a href="https://mrf.museumart.ru/exposition/main/room-1" target="_blank" rel="noopener noreferrer">множество других</a>, столько же впечатляющих, сохранившихся в отличном качестве. Вот некоторые из моих телефоно-фотографий, просто, чтобы представить себе, что увидите (стеклянные витрины сильно бликуют, так что простите):</p>
+<p>Император у меня вообще получился сильно смазанным:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828808776_d9c76c3ea8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828808776_d9c76c3ea8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но это же фотография! Не портрет какой-то придворный! «Это документ, между прочим!» (на этот раз – голосом Андрея Мягкова из «Иронии судьбы».)</p>
+<p>Его супруга:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828808751_df3c7e0de6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828808751_df3c7e0de6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827858432_2b99e4867a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827858432_2b99e4867a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828808686_259e3f066d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828808686_259e3f066d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это - Феликс Юсупов (тут есть несколько фотографий с костюмированного императорского бала 1903-года):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829531255_ba0f7db7df_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829531255_ba0f7db7df_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828922478_bcc356c77a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828922478_bcc356c77a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А кстати, отвлекаясь на минутку: вы знали, что изображения на, наверное, самых популярных в СССР игральных картах «Русский стиль» основаны как раз на фотографиях участников этого, последнего, костюмированного императорского бала в 1903 году? Я узнал совсем недавно, хотя это факт довольно известный. Изображения <em>создал художник Юрий Иванов. Но не с нуля. Он перерисовал дореволюционную колоду карт, которую изначально разработали в немецкой фирме "Дондорф" в 1911 году, а выпуск начали в 1913 на Императорской карточной фабрике. Выпуск этих карт был приурочен к празднованию трехсотлетия дома Романовых, а изображены на них... сам Николай II, некоторые члены его семьи, а также свитские. На этой колоде они - в русских костюмах XVII века, эпохи царя Алексея Михайловича, в которых император, его близкие и приближенные танцевали на знаменитом трехдневном балу 1903 года. Бал проводился в стилистике и антураже XVII столетия...</em></p>
+<p><em> Все 390 гостей императорского бала были наряжены в стиле придворных всех мастей, бояр и боярынь, стрельцов и горожанок, воевод и крестьянок допетровской эпохи. Эскизы костюмов разработал художник Сергей Соломко, а шили их лучшие портные Российской империи.</em></p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51830712641_45e06cb73a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51830712641_45e06cb73a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>О том, кто конкретно изображен на той или иной карте, можно прочитать, например, <a href="https://zen.yandex.ru/media/ryzhij_rycar/na-populiarnoi-v-sssr-kolode-kart-semia-poslednego-russkogo-imperatora-5e9ea216dd625f3a39c018fd" target="_blank" rel="noopener noreferrer">здесь</a>, а множество других фотографий с этого бала найти <a href="https://photochronograph.ru/2020/01/05/kostyumirovannyj-bal-1903-goda-v-sankt-peterburge/" target="_blank" rel="noopener noreferrer">здесь</a>.</p>
+<p>Старинные фотоаппараты:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828806331_35b0018577_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828806331_35b0018577_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>(тут получилось немного селфи вашего покорного слуги):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827858317_567f6187b4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827858317_567f6187b4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829531130_8667cf772c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829531130_8667cf772c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829151324_b676a03efb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829151324_b676a03efb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829151304_26f5afa807_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829151304_26f5afa807_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829531025_8de2cbf6dc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829531025_8de2cbf6dc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828808401_f3f3e6ed1a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828808401_f3f3e6ed1a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829151234_8be099ddff_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829151234_8be099ddff_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827858102_6dcd6c650f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827858102_6dcd6c650f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тут уже, кажется, зал с более современными аппаратами (музей большой, имейте в виду, - несколько больших комнат, очень много экспонатов):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829530940_178d5f5900_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829530940_178d5f5900_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829530900_e330b6aa58_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829530900_e330b6aa58_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827856352_dc1bd50be6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827856352_dc1bd50be6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829151094_b6385a0fa4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829151094_b6385a0fa4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827858002_83170275e2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827858002_83170275e2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828808171_106f75c46d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828808171_106f75c46d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828921983_264c1b754a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828921983_264c1b754a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829151014_c4916de96e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829151014_c4916de96e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828808106_a5a9dfe828_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828808106_a5a9dfe828_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829530745_a57d9361c7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829530745_a57d9361c7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Какой мужчина!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828806286_45fbb78a44_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828806286_45fbb78a44_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829150964_5ef1f4d6e7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829150964_5ef1f4d6e7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828808016_57e505deb5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828808016_57e505deb5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828921838_6419018802_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828921838_6419018802_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну и в последнем зале, как вершина эволюции российского фотоискусства – репродукции работ Юрия Роста:</p>
+<p>Белла Ахмадуллина:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829530555_53987ac562_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829530555_53987ac562_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Фаина Раневская:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828921768_25f4f91a5c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828921768_25f4f91a5c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ульяна Лопаткина:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829150739_db33370538_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829150739_db33370538_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В общем, стОящий музей.</p>
+<p>Движемся дальше? Надо зайти в Успенский собор и в церковь Тихвинской Богоматери. Тут опять я прибегну к помощи фотографий с телефона, просто, чтобы не оставить вас без картинки того, как выглядят отреставрированные памятники сейчас.</p>
+<p>Для начала, сам Успенский собор:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828807806_4f3db8ec85_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828807806_4f3db8ec85_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829150664_a161932738_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829150664_a161932738_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828921643_01324421a4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828921643_01324421a4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828921593_cb83d13d70_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828921593_cb83d13d70_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И приятные для глаза темно-синие цвета росписей церкви Тихвинской Богоматери:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828807631_e06e7209c5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828807631_e06e7209c5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828807596_9d6e23a7ba_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828807596_9d6e23a7ba_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828920203_d210f4d801_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828920203_d210f4d801_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На Соборной наблюдаются экскурсии:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740776975_6b5799a285_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740776975_6b5799a285_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740776890_af01227be5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740776890_af01227be5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740776845_dd9e80f8a1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740776845_dd9e80f8a1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739064742_06fc2dfdde_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739064742_06fc2dfdde_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мы снова у Грановитой башни:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739060012_505e6cce8b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739060012_505e6cce8b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тут «Арбатом» является улица Лажечникова, очевидно:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739064732_eeffe61b3d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739064732_eeffe61b3d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Имеется музей <a href="https://xn--80ajbkfdbgjlfcbim2aw1b.xn--p1ai/" target="_blank" rel="noopener noreferrer">«Коломенский патефон»</a>, но попасть в него нам не удалось – нужно было записываться на экскурсию заранее.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740121748_fbe8efc758_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740121748_fbe8efc758_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740526539_b59244f543_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740526539_b59244f543_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740121683_ec200d55aa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740121683_ec200d55aa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739064547_0f033bf5f6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739064547_0f033bf5f6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739064487_59a63413cf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739064487_59a63413cf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот церковь Успения Пресвятой Богородицы в Успенском Брусненском монастыре (вчера я вам показывал его пестрый Крестовоздвиженский собор, который прямо выходит стеной на улицу Лажечникова):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740771780_90c84ac62f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740771780_90c84ac62f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Еще несколько открыточных видов улицы Лажечникова, колоризованных и наоборот:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739064442_ab8541c941_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739064442_ab8541c941_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740121578_b3c345780c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740121578_b3c345780c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740776450_5f61d98cc0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740776450_5f61d98cc0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Симпатичные деревянные домики на улице Казакова, отходящей от Лажечникова:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739064357_ee5014575a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739064357_ee5014575a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740776390_3f0125d02d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740776390_3f0125d02d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Снова уже виденный нами «Музей органической культуры»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740526244_602ff5e904_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740526244_602ff5e904_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739886881_028ac8337b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739886881_028ac8337b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740526159_a6a212bb64_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740526159_a6a212bb64_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739882756_fcffb78ab5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739882756_fcffb78ab5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Хорошо… Просто гуляем и отдыхаем… Возвращаемся через Пятницкие ворота к посаду:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739882756_fcffb78ab5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739882756_fcffb78ab5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740526094_a5b958cc34_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740526094_a5b958cc34_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Теперь в моих планах – спуститься к плавучему мосту через Москву-реку, перейти на другую сторону и пройтись до Богородице-Рождественского Бобренева мужского монастыря на другой стороне, в полутора километров.</p>
+<p>Вперед!</p>
+<p>Вот этот мост, в процессе разведения, для пропуска очередного пароходика (тоже телефоно-фото):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827857482_05bea92348_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827857482_05bea92348_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Москва-река, как раз с этого моста:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740526049_02d67b0544_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740526049_02d67b0544_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А так видна вдали Соборная площадь в разрывах зелени, немного не доходя до монастыря:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740121308_14ac9c6c73_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740121308_14ac9c6c73_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сам монастырь предстал пред нашими очами примерно вот так:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740776110_56ff6f9391_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740776110_56ff6f9391_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>То есть практически стройплощадка. Тут делают еще и парк перед ним заодно:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739064082_8cb8d03eed_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739064082_8cb8d03eed_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну ладно, что ж. Будет серия «Будни великих строек»…</p>
+<p>Я все мечтал найти место, откуда можно будет красиво сфотографировать ансамбль соборной площади через реку. Долго искал место, долго шел по краю поля, искал проход к воде через плотные и высокие заросли кустарника. Нашел! Есть такое место. И я, конечно, не первый, кто его нашел, судя по утоптанности склона и выкопанных в нем земляных ступеньках. Виды на склоне дня отличные:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740525894_329bae82a2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740525894_329bae82a2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740121158_5db139cc8e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740121158_5db139cc8e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739063962_0eda10ffa4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739063962_0eda10ffa4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Сдаю» точку и подходы к ней:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51821462540_22167ddf8c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51821462540_22167ddf8c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вернулись к Пятницким воротам. Здесь у нас есть еще музей «мануфактура «Душистыя радости»» (не сбиться бы в числе кавычек). Он был уже закрыт, но его витрины прекрасны (снова - телефонные фото):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828807531_daa55e28e5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828807531_daa55e28e5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828921433_15f3c4bdaa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828921433_15f3c4bdaa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51828807496_aacd8183bb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51828807496_aacd8183bb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51829150399_bb0028ae60_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51829150399_bb0028ae60_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Солнце садится, а мы топаем домой…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739063937_5c0ba95f07_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739063937_5c0ba95f07_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В голубых сумерках церковь Николы на Посаде как-то особенно хороша:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740121043_a0c8ac0cb9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740121043_a0c8ac0cb9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>…И, наконец, утром в день отъезда мы снова сбегали в «Коломенскую пастилу», впитать колорит далекого прошлого.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739063902_326b446045_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739063902_326b446045_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид с заднего дворика:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739059922_74212b59c2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739059922_74212b59c2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740120973_f6f7677f51_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740120973_f6f7677f51_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И снова прошлись кружок по Посаду.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739886446_93abbc6a87_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739886446_93abbc6a87_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740775680_4d2f0365a8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740775680_4d2f0365a8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739063797_24175cc749_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739063797_24175cc749_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740525524_69b85befbd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740525524_69b85befbd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740525499_b6098da67a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740525499_b6098da67a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740525454_440d6dc712_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740525454_440d6dc712_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739063692_bfd03a27db_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739063692_bfd03a27db_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740775350_c19de72f5b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740775350_c19de72f5b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740775315_5fd7785c6b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740775315_5fd7785c6b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Да, вот еще. Есть на посаде, на Арбатской улице, довольно необычный памятник: «скамья Анны Ахматовой» между 12 и 14 домами:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51827857317_470ee33f24_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51827857317_470ee33f24_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>За зеленью, разросшейся около дома, ее практически не видно и легко пропустить – даже <a href="https://www.google.ru/maps/@55.1058998,38.7696951,3a,75y,202.18h,83.85t/data=!3m6!1e1!3m4!1sKqISKnqjnqkUVJrUNOLsHg!2e0!7i13312!8i6656?hl=ru" target="_blank" rel="noopener noreferrer">здесь</a>, на панораме улицы от Google maps ее можно не сразу опознать - справа за кустом.</p>
+<p>Процитирую <a href="https://raven-yellow.livejournal.com/68247.html" target="_blank" rel="noopener noreferrer">отсюда</a>: <em>В Коломне Ахматова побывала всего однажды - 16 июля 1936 года. Здесь она пыталась отыскать дом писателя Бориса Пильняка. Во время поездки Анну Ахматову сопровождали Сергей Шервинский и Лев Горнунг. Они долго гуляли по Коломне, осматривали кремль, однако дом самого писателя не нашли. Но остались памятные снимки, на одном из них Ахматова отдыхает на скамейке на улице Арбатской.</em></p>
+<p>Вот это фото:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51832485021_275007aaa8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51832485021_275007aaa8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На заднем плане видна звонница нашей многоглавой церкви Николы-на-Посаде. Сейчас этой звонница нет – снесена вплоть до первого яруса в 30-х годах, а когда-то она выглядела вот так:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51832485046_3dbd7b75fe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51832485046_3dbd7b75fe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Здесь есть еще одно неординарное, даже «культовое», место – «Бутылочный ангел Венечки Ерофеева» в Водовозном переулке:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740525219_dfc39d3ca7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740525219_dfc39d3ca7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вениамин Ерофеев, поэма «Москва-Петушки»: «…Помолитесь, ангелы, за меня. Да будет светел мой путь, да не преткнусь о камень, да увижу город, по которому столько томился. А пока вы уж простите меня - пока присмотрите за моим чемоданчиком, я на десять минут отлучусь. Мне нужно выпить кубанской, чтобы не угасить порыв…».</p>
+<p>Ангелы Венечки Ерофеева появились в Коломне на II Международном яблочно-книжном фестивале "Антоновские яблоки".</p>
+<p>(<a href="https://vittasim.livejournal.com/251048.html" target="_blank" rel="noopener noreferrer">отсюда</a>):</p>
+<blockquote class="citation"><p>Автор мозаичных полотен «Ангелы Венички Ерофеева» - резидент Арткоммуналки 2012 года Анфим Ханыков.<br>
+“Слава богу, помог выбраться из синей ямы. Алкоголизм - это тяжелый физический труд - думал я, когда пилил бутылки и складывал из них ангелов. Около четырехсот бутылок собрано по рюмочным, ресторанам, помойкам и лесам города Коломна. Спасибо жителям Коломны за пустую посуду. Всё распилено, уложено и никогда больше не будет использовано по назначению. Да хранят вас ангелы от страшного недуга пьянства.” Анфим Ханыков</p></blockquote>
+<p>Там же, <a href="https://vittasim.livejournal.com/251048.html" target="_blank" rel="noopener noreferrer">по ссылке</a>, можно найти больше подробностей об этом арт-объекте; про Арткоммуналку можно почитать <a href="https://kolomna-navigator.ru/artkommunalka_i_rezidenciya/" target="_blank" rel="noopener noreferrer">здесь</a>.</p>
+<p>И еще один домик по нашему маршруту, на углу Москворецкой улицы и Москворецкого переулка:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739885996_f66b4c5d8e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739885996_f66b4c5d8e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну, а нам пора в гостиницу забрать чемоданчики, на вокзал, попрощаться с полюбившейся Коломной и продолжить наше путешествие. Будем удаляться от Москвы – едем на электричке до станции Рыбное. Оттуда нам будет ближе всего добраться до Константиново.</p>
+<h2 id="константиново-над-окой">Константиново. Над Окой.</h2>
+<p>Сразу скажу – здесь не будет ничего интересного про Константиново как музей-усадьбу, как место рождения Есенина, про то, где и что там лучше посмотреть, где припарковаться или поесть. Если Вы напали на этот отчет поиском по слову «Константиново» - простите великодушно. И подумайте хорошенько прежде, чем продолжать.</p>
+<p>(Опечатался вначале, написал почему-то «как музей-судьбу». И призадумался. Что бы это могло быть такое, интересно, что можно было бы назвать таким словом – музей-судьба? Красивое было бы название. Есть варианты?)</p>
+<p>Если все же сказать пару слов про то, из чего состоит музей-заповедник, то это <em>дом родителей С.А. Есенина, в котором он родился 3 октября 1895 года, земская начальная школа, которую окончил Сергей Есенин, церковь Казанской Божьей Матери, в которой было зарегистрировано его рождение, дом священника Смирнова, сыгравшего важную роль в судьбе поэта, и усадьба Кашиной («Анны Снегиной») с парком</em>.</p>
+<p>Учитывая к тому же, что из современного Есенину здесь мало что сохранилось (насколько я читал), я не очень рвался на экскурсии. Просто было интересно провести пару дней на этой же земле. Посмотреть на те же ландшафты, на которые смотрел Есенин. Полюбоваться закатами-рассветами с высоких берегов Оки.</p>
+<p>…Довольно смешно получилось с первым же выходом «на высокий берег на крутой». Ближайшее к нашему обиталищу место, где проще всего выйти на обрывистый яр, и откуда с довольно большой высоты открывается красивейший вид на Оку и окрестные луга – это площадка сразу за церковью Казанской иконы Божьей Матери. Вот на этой карте эта церковь обозначена зеленым прямоугольником, а обзорная площадка - красным кружочком:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51824756878_8a17936d8f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51824756878_8a17936d8f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Чтобы выйти на эту площадку, приходится пройти через территорию музея-заповедника – а она огорожена везде, где только можно. Но когда мы уже прошли через эту территорию (вход на нее в это время был свободный) и почти вышли на берег Оки через калитку в ограде церкви, нас остановила женщина (вероятно, смотритель или экскурсовод) и строго спросила, есть ли у нас билеты на какую-либо из экскурсионных программ? Я ответил, что вообще-то нет, но мы только что приехали, жить будем в самом Константиново и завтра обязательно придем на экскурсию (я не кривил душой, мы так и планировали – все же зайти на час-полтора в реставрированные-реконструированные домики). Дама посмотрела с некоторым подозрением, как мне показалось, но пропустила «к виду на Оку». Я немного удивился от таких строгостей. И с этого момента еще меньше захотел с этим "музеем-заповедником" связываться. Простите, если кого-то задел этими словами.</p>
+<p>Мы вышли на смотровую, посмотрели с высоты на Оку, но вокруг стояли полтора десятка экскурсантов, и я решил, что вернусь сюда на рассвете – вряд ли тут будут строго спрашивать в четыре утра, оплатил ли я этот вид. Хотя… я бы не очень поразился.</p>
+<p>Мимо церкви мы вернулись обратно на территорию и прошли немного дальше по улице, и там, метров через сто, начиналась дорожка вправо, которая тоже выходила на холмы над Окой, правда, чуть пониже той смотровой площадки. И дальше эта дорожка вилась по склону и постепенно выходила к самой Оке (оранжевая линия на карте). Так что вот вам мои первые впечатления в тот вечер:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740120408_78e44b0e42_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740120408_78e44b0e42_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И снова - последнее предупреждение: я буду рассказать (и показывать) в основном про природу, вокруг Константиново и его окрестностей. О музее больше ни слова не будет.</p>
+<p>Вы все еще читаете? Тогда мы идем к вам.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740525059_641a3835ef_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740525059_641a3835ef_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739063282_85989d790a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739063282_85989d790a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот мы и на берегу Оки:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740521499_d51bba7dfb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740521499_d51bba7dfb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Жена устремилась в воду, как обычно это происходит с ней при виде воды. Ну а я так, просто отдыхал после дороги, валяясь на песочке.</p>
+<p>...А ближе к закату мы поднимались от Оки обратно вверх по длинному крутому подъему, уже подальше - фактически, на другом конце Константиново. Иногда останавливались просто послушать цикад и полюбоваться закатом. Делаюсь чем могу:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740524964_8c187ab334_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740524964_8c187ab334_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740775020_e450f884c4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740775020_e450f884c4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739885806_95a37870d3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739885806_95a37870d3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740120233_1d48144420_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740120233_1d48144420_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739063132_d57f88ce81_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739063132_d57f88ce81_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740524769_496dfeae36_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740524769_496dfeae36_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739063037_541e6ac3bc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739063037_541e6ac3bc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739062997_ace2c935e7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739062997_ace2c935e7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Еще?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739062947_8c7c584650_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739062947_8c7c584650_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739062822_f334677138_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739062822_f334677138_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739062732_85af573793_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739062732_85af573793_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739062707_45d94f8a0f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739062707_45d94f8a0f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739062672_330ccb7f6f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739062672_330ccb7f6f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739885216_58a13394ba_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739885216_58a13394ba_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740524234_3d7a84268a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740524234_3d7a84268a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739885086_351dc30490_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739885086_351dc30490_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот, примерно ради такого я сюда и ехал!</p>
+<h2 id="константиново-в-поисках-березового-ситца">Константиново. В поисках «березового ситца».</h2>
+<p>День второй для меня начался затемно, по будильнику. Сбоку мне было невнятно сказано «нет, иди один». О чем потом было много сожалений. Ну что ж, глотнул кофею, закинул рюкзак за спину и вышел на улицу. Вокруг постепенно светает, тихо, еще прохладно, и я спешу ко вчерашней церкви иконы Казанской Божьей Матери. На этот раз никто не охраняет выход на «смотровую площадку». Так что в одиночестве встретил там рассвет, который освещал розовым светом уходящие до горизонта луга на другом берегу Оки…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740774135_201857bf14_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740774135_201857bf14_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739062367_b8a360906b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739062367_b8a360906b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Потом спустился по крутому склону пониже.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739062267_2ff22f4aa1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739062267_2ff22f4aa1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740119303_9be8311df1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740119303_9be8311df1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739884781_131ea1a7f1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739884781_131ea1a7f1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот виды на Оку в другую сторону от поднимающегося солнца:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740119153_7a16bc3135_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740119153_7a16bc3135_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740119113_6d2662380d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740119113_6d2662380d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740523654_0a6460fea5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740523654_0a6460fea5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740773660_8912d33dd0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740773660_8912d33dd0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тем временем Ока на востоке уже сверкает металлическим раскаленным блеском:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740119048_0e1f62f211_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740119048_0e1f62f211_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739061877_e0aacafe24_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739061877_e0aacafe24_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739061812_d2f5b673a2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739061812_d2f5b673a2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот как-то так. Потом вернулся домой и даже еще часок поспал.</p>
+<p>А сегодня у нас будет довольно странный «поход». Хотели побродить по окрестным лесам, поискать тот самый «березовый ситец», и вообще, погулять по просторам, по лугам, по полям.</p>
+<p>Жена уверяла, что, когда мы ехали из Рыбного, совсем недалеко отсюда, она видела ну очень красивую березовую рощу. И очень хотела туда попасть. Я пытался найти на карте такую, близко расположенную, березовую рощу - увы. Но жена была неумолима. Ну, в целом, я тоже был не против пройтись по природе, а направление «похода» было мне не так важно. Так что мы запаслись едой и питьем, чтобы устроить маленький пикник в качестве обеда, и отправились в путь.</p>
+<p>Сначала мы шли по вдоль молодого березняка, заросшего канадским золотарником, который распространяется последние годы с пугающей скоростью в наших широтах.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740523474_0cdd27de47_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740523474_0cdd27de47_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739884396_133902ab71_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739884396_133902ab71_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот на этой карте, где я решил показать начало нашего микро-похода (ну, как «микро» - вернулись мы только ближе к закату), эта часть пути – оранжевая линия:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51824664076_7dcd8a7f8b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51824664076_7dcd8a7f8b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сам березняк довольно частый, и с подлеском, так что ходить по нему - не особо хорошая идея. Я зашел вглубь максимум метров на десять, чтобы сделать пару снимков.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740117048_ba463a9011_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740117048_ba463a9011_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740773430_6d204013ac_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740773430_6d204013ac_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Зато потом мы шли километра два по совершенно замечательной тропе (точнее, двум колеям лесной автомобильной дороги), идущей в лесоразделительной полосе между двумя полями (желтая линия на карте). На карте она кажется узкой-узкой, в три дерева, но на самом деле, когда идешь по ней, не просвечивают ни поле слева, ни поле справа. Сама полоса вот тут справа (и видна еще одна дорога, идущая прямо полю поля параллельно ей):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740773370_174afa3907_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740773370_174afa3907_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот та дорога в лесополосе, по которой мы шли, в тени и прохладе:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739061507_dff6679be9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739061507_dff6679be9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740523254_d0aacd8eb2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740523254_d0aacd8eb2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Местами это почти дубовый «лес», местами – почти березовый, местами - смешанный.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739884191_97771a5e75_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739884191_97771a5e75_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740523169_48afa81412_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740523169_48afa81412_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ближе к автодороге на Рыбное и правда обнаружился небольшой просторный березнячок, но «не тот», по уверению жены. Ладно, топаем через него дальше.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739884106_cd56359e3b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739884106_cd56359e3b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739061252_f4940a0e04_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739061252_f4940a0e04_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но, правду сказать, и тут уже очень хорошо…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739883961_9915ab1859_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739883961_9915ab1859_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740773025_4861810a5f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740773025_4861810a5f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В общем, в поисках «того» березового «ситца» мы забрались довольно далеко, а солнце пекло довольно немилосердно. Хорошо, воды взяли вдоволь.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740118258_7a191cf2b5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740118258_7a191cf2b5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но, кажется, мы в конце концов, вроде бы нашли «тот». Он был малюсенький, хотя и симпатичный, и выглядел вот так:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740118218_e88f7eb267_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740118218_e88f7eb267_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну ладно. Развернулись, пошли обратно другими тропами – спрямили путь через коттеджный поселок, недалеко от Раменок, прошли мимо церкви Ксении Петербургской, снова по направлению к полюбившейся лесополосе. Золотарник бушует везде. Он выглядит намного симпатичнее борщевика, конечно, но, по сути, такое же зло в перспективе, как я понимаю.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739883691_6082c8437e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739883691_6082c8437e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В начале лесополосы, под березками, мы устроили привал. Поели-попили, повалялись, глядя на легкие облака, проплывающие в голубом небе. И тронулись дальше. Я хотел ближе к закату дойти не обратно до Константиново, а до селения именуемого «Федякино» - тоже выходящего в Оке, но «левее», если смотреть по карте. Это Федякино известно почти так же хорошо, как Константиново, по замечательной причине: везде, где рассказывается про Константиново, можно встретить, с небольшими вариациями, следующую информацию:</p>
+<p><em>Константиново. Название селения - по фамилии землевладельца Константинова. Впервые упоминается в 1619 году в жалобе местных крестьян царю Михаилу Федоровичу на крестьян села Федякино, уличенных в грабежах.</em></p>
+<p>Там, в Федякино (как выяснилось), можно, обойдя два новых шикарных землевладения, по тропинке выйти на вершину холма, откуда открывается замечательный вида на излучину Оки, на луга и холмы вокруг.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740522719_c389001f96_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740522719_c389001f96_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740522549_d0656edea5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740522549_d0656edea5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тут мы и уселись, прямо в траве, и стали ждать заката…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739883581_8022f35184_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739883581_8022f35184_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740772660_d13a375d0c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740772660_d13a375d0c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739883466_ea6446df26_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739883466_ea6446df26_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740772560_8017fb01aa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740772560_8017fb01aa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739060672_0a0f31c75e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739060672_0a0f31c75e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740117768_f5ddf2a7ca_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740117768_f5ddf2a7ca_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740117753_8ed639dd64_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740117753_8ed639dd64_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740522209_be7100ee11_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740522209_be7100ee11_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740772340_8e7f0d7940_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740772340_8e7f0d7940_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740522169_803b9f6e31_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740522169_803b9f6e31_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740522154_ff9640b53a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740522154_ff9640b53a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740522114_5373511cdd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740522114_5373511cdd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот и дождались заката. И нам пора топать восвояси. Вернулись в Константиново уже в полной темноте.</p>
+<p>Как видите, я вас не обманул – мы были в Константиново, не побывав в Константиново. Музею-заповеднику – долгих лет и процветания, как-то не сложилось у нас с ним. А природа тут и вправду красивая. Конечно, даже и спорить не стану, если вы скажете, что такую природу можно было бы найти и гораздо ближе. Конечно. Но… Все же ощущать себя в «том самом» Константиново было интересно, это добавляло какие-то нюансы. И плюс я теперь представляю эти места, и это почему-то приятно. Так что я рад, что мы сюда на пару дней съездили.</p>
+<p>А назавтра собрали вещички, вызвали машину, доехали до Рыбного как раз к нашему поезду до Москвы. И на этом наш второе четырехдневное мини-путешествие закончилось. А послезавтра мы едем в третье - в Тарусу. Но об этом – <a href="2021_three_routes_3.html" target="_blank" rel="noopener noreferrer">в отдельной третьей части отчета</a>. Приступаю к написанию.</p>
+  </article>
+</div>
+<script>
+(function() {
+  var pending = []; // images that entered the buffer zone, not yet loading/loaded
+  var loading = false;
+
+  function distanceFromViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;      // above viewport
+    if (rect.top > vh) return rect.top - vh;        // below viewport
+    return 0;                                       // on screen right now
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        if (d === 0) break; // already on screen -- can't beat that
+      }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var img = pickNext();
+    if (!img) return;
+    loading = true;
+    loadImage(img, img.getAttribute('data-src'));
+  }
+
+  function loadImage(img, src) {
+    img.onload = function() {
+      img.classList.add('loaded');
+      img.removeAttribute('data-src');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      // Flickr (or the network) hiccuped on this one request -- don't give
+      // up on it and don't block everything else behind it. Free the
+      // queue immediately, and let this image rejoin the pending pool
+      // after a short, growing backoff so it gets picked up again.
+      loading = false;
+      var attempt = (img._retryCount || 0) + 1;
+      img._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() {
+        pending.push(img);
+        processQueue();
+      }, delay);
+      processQueue();
+    };
+    img.src = src;
+  }
+
+  // Images join the pending pool once they're within reach; every time a
+  // slot frees up, pickNext() re-checks CURRENT positions and grabs
+  // whichever pending image is closest to (or actually on) screen right
+  // now -- so a fast scroll or scrollbar drag doesn't leave visible
+  // photos stuck behind everything the scroll happened to pass over.
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>

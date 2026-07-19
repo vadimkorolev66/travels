@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Альпы в августе — от озера к озеру, от Австрии к Баварии</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  nav.toc,
+  article > p,
+  article > h2,
+  article > ul.summary-list,
+  article > blockquote.citation {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.masthead {
+    max-width: none;
+    padding: 8vw 0 4vw;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://img-fotki.yandex.ru/get/478662/2188450.8/0_1e24a3_5de382fd_orig') center 40% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  nav.toc {
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+    font-family: var(--sans);
+  }
+  nav.toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li { margin: 0 0 0.85rem; break-inside: avoid; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.3;
+    font-size: 0.98rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent-soft); color: var(--accent); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 3.9rem 0 1.4rem;
+    padding-top: 0.2rem;
+    color: var(--text);
+    position: relative;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin-bottom: 1.1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-soft); }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+  a:hover { color: #6b5228; }
+  a.internal-link-pending {
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--accent-soft);
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.summary-list {
+    background: #f4f1ea;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem 1.6rem 2.4rem;
+    margin: 0 0 3rem;
+  }
+  ul.summary-list li { margin-bottom: 0.7rem; }
+  ul.summary-list li:last-child { margin-bottom: 0; }
+  blockquote.citation {
+    margin: 2rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  blockquote.citation p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  figure.photo { margin: 2.6rem 0; }
+  figure.photo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.08), 0 8px 24px rgba(43,41,37,0.06);
+  }
+  img.lazy-photo {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 40px;
+    background: var(--line);
+  }
+  img.lazy-photo.loaded { opacity: 1; }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 2.2rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  p.epigraph {
+    text-align: right;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+  p.fin {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  p.subhead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { width: 88%; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17.5px; }
+    .wrap { width: 90%; padding: 10vw 0 16vw; }
+    header.masthead h1 { font-size: 1.85rem; }
+    nav.toc ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Альпы в августе — от озера к озеру, от Австрии к Баварии</h1>
+  </header>
+
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      <ul>
+    <li><a href="#предисловие">Предисловие</a></li>
+    <li><a href="#про-планирование-и-транспорт">Про планирование и транспорт</a></li>
+    <li><a href="#в-путь">В путь</a></li>
+    <li><a href="#эбензее">Эбензее</a></li>
+    <li><a href="#feuerkogel">Feuerkogel</a></li>
+    <li><a href="#штробль">Штробль</a></li>
+    <li><a href="#schwarzensee">Schwarzensee</a></li>
+    <li><a href="#шафберг">Шафберг</a></li>
+    <li><a href="#берхтесгаден">Берхтесгаден</a></li>
+    <li><a href="#wimbachklamm">Wimbachklamm</a></li>
+    <li><a href="#almbachklamm">Almbachklamm</a></li>
+    <li><a href="#от-ramsau-до-hintersee">От Ramsau до Hintersee</a></li>
+    <li><a href="#hintersee">Hintersee</a></li>
+    <li><a href="#nationalpark-berchtesgaden">NationalPark Berchtesgaden</a></li>
+    <li><a href="#kehlsteinhaus">Kehlsteinhaus</a></li>
+    <li><a href="#вена-вместо-послесловия">Вена. Вместо послесловия</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <article>
+<h2 id="предисловие">Предисловие</h2>
+<p>Предположим странное: вы хотите в отпуск. У вас есть только пара недель. Например, в августе (вы бы, может, и хотели бы в октябре, но, увы, по-другому не получается). И в этот раз вы не хотите в отпуске «духовно развиваться», «культурно просвещаться», и «расти над собой». Вы просто хотите отдохнуть, проветрить голову, вы жаждете природы. При этом вам никогда не улыбалось валяться в жаре на берегу моря. Вы любите, чтобы пейзаж перед глазами регулярно менялся и любите перемещаться своими ногами. При этом вас хлебом не корми, чтобы фоном были горы, а чуть поближе чтобы озеро, в котором горы бы отражались. А вокруг чтобы леса и цветущие луга. Или чтобы горы вокруг, а озеро или озера – там, далеко внизу.</p>
+<p>А еще у вас есть Шенген. И старушка Европа вам очень по душе.</p>
+<p>И тогда вы смотрите в сторону Альп. Довольно пристально смотрите. Ну, а если уж речь зашла про озера, то, с некоторой вероятностью, вы смотрите не куда-то, а в сторону гор и озер австрийского Зальцкаммергута и его окрестностей…</p>
+<p>В первый раз я уже смотрел туда пару лет назад. Произошло это не случайно: я последовал, как дети за Гаммельнским крысоловом (я очень надеюсь, что это прозвучит исключительно как комплимент!), за пером и объективом автора, разделяющего со мной некоторые увлечения (например, к французской Бретани и к фотографии) – <em>monkey_puzzle</em>. Читайте и получайте удовольствие: <a href="http://forum.awd.ru/viewtopic.php?t=241773" target="_blank" rel="noopener noreferrer">Гляжусь в тебя, как в зеркало, до головокружения... (Бавария + Зальцкаммергут)</a>.</p>
+<p>И в результате я там был, и мед я пил. Да ладно - мед ли? (Но сейчас не об этом!) Но в то время я ленился писать отчеты. Я и сейчас ленюсь не меньше (тссс!), но веду тяжелую и изнурительную борьбу с собой.</p>
+<p>Итак, в этом августе мы с женой снова решили съездить в Зальцкаммергут. Ну, то есть, я предложил, а жена согласилась. Как и <a href="2015_bavaria_salzkammergut.html" target="_blank" rel="noopener noreferrer">два года назад</a>, мы хотели проехать исключительно своим ходом, но по иному маршруту. Плюс снова, как и два года назад, решили заехать в недальний баварский Берхтесгаден (Berchtesgaden). В первый раз мы оказались там в довольно пасмурную и временами дождливую погоду, так что я тогда остался развалинами Рейхстага неудовлетворен (С). Забегая вперед – Рамзау с его классической церквушкой мы и в этот раз застали лишь в (практически единственный) пасмурный день. Хотя бы не в дождь, как тогда, уже лучше. Будем утешаться этим.</p>
+<p>Наш приятель, который сейчас, в середине октября, путешествует по Германии и заехал в эти места, решил сыпануть немного соли на эту мою рану и как раз сегодня прислал мне свое айфоно-фото «той самой» церкви в Рамзау. На фоне синего-синего неба и в окружении желтеющего осеннего леса. Безо всяких комментариев, ибо слышал мои стенания, подобные тем, что вы прочли выше. Ну что тут скажешь… люди вообще жестоки!</p>
+<p>Вариант поездки, опробованный нами с женой этим августом и нам понравившийся (иначе бы и писать не стал), был составлен мной довольно произвольно, без особых претензий на «наилучшесть», но все же опираясь на сведения, почерпнутые из разных отчетов с форума.</p>
+<p>Выглядела поездка так:</p>
+<p>* Прилет из Москвы в Вену. Из аэропорта на поезде до Вены, на ж/д вокзал Wien Hauptbahnhof. Поезд Вена – Зальцбург с пересадкой на станции Attnang-Puchheim на местную электричку до городка Ebensee.</p>
+<p>* Городок Ebensee (Австрия) на озере Traunsee - три дня.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.8/0_1e24a3_5de382fd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.8/0_1e24a3_5de382fd_orig" alt="" loading="lazy"></noscript></figure>
+<p>* Переезд на электричке дальше до Бад-Ишля, и оттуда на 150-м автобусе, идущем на Зальцбург, до городка Strobl (Штробль) - автобус в него заезжает по пути. Время в пути – примерно час с небольшим.</p>
+<p>* Городок Штробль (Австрия) на озере Wolfgangsee – три дня.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.b/0_1e2523_8230e76a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.b/0_1e2523_8230e76a_orig" alt="" loading="lazy"></noscript></figure>
+<p>* На привычном 150-м автобусе до Зальцбурга, с пересадкой на площади Mirabelplatz на автобус 840, идущий до Берхтесгадена.</p>
+<p>* Городок Berchtesgaden (Германия) недалеко от озера Königssee – три дня.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.8/0_1e2478_fd006bfb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.8/0_1e2478_fd006bfb_orig" alt="" loading="lazy"></noscript></figure>
+<p>* На 840-м автобусе назад в Зальцбург, и оттуда на поезде до Вены.</p>
+<p>* Ну и в конце мы отвели себе два дня, чтобы погулять по австрийской столице. Всего два, потому что в Вене мы уже бывали-живали и по ней походили (правда, зимой), но все же перед возвращением домой хотели снова заглянуть в замечательный венский Музей истории искусств. Ну, и побродить по Вене летом и сравнить с ней же новогодней тоже было интересно.</p>
+<p>Вот, как-то так. Вот карта нашего, в общем-то, неторопливого путешествия, точнее – места базовых дислокаций. Фиолетовым цветом залиты озера, у которых мы жили, на которые мы ходили, ездили, где плавали:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373238/2188450.f/0_1e25fa_15503db_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373238/2188450.f/0_1e25fa_15503db_orig" alt="" loading="lazy"></noscript></figure>
+<p><em>Постскриптум к предисловию</em></p>
+<p>Любите ли вы ходить по озерам и горам с фотоаппаратом так, как люблю я? то есть всеми силами души вашей, со всем энтузиазмом, со всем исступлением, к которому только способна пылкая молодость, жадная и страстная до впечатлений?.. Кхм. Кажется, кто-то это (или почти это) уже писал раньше. И, кстати, на каких это антресолях я откопал пылкую молодость?..</p>
+<h2 id="про-планирование-и-транспорт">Про планирование и транспорт</h2>
+<p>Перед тем как вывалить на вас фотографии (мой основной побудительный мотив!), вспомню о совести и поделюсь для начала некоторыми общими практическими советами.</p>
+<p>Есть отличный планировщик на сайте австрийских железных дорог, именуемый <a href="http://fahrplan.oebb.at/bin/query.exe/en?" target="_blank" rel="noopener noreferrer">ÖBB Scotty</a>, и, конечно, есть соответствующие приложения для смартфонов. Многократно пользовался, очень удобно. На телефоне можно, в частности, запросить нужные расписания для сложных (составных) маршрутов и сохранить результаты в приложении для просмотра offline.</p>
+<p>Билеты от Вены до Эбензее (а это с пересадкой, и поезда были разных типов) я покупал заранее, на <a href="https://tickets.oebb.at/en/ticket" target="_blank" rel="noopener noreferrer">сайте ÖBB</a>, причем билеты можно было купить сразу на полный маршрут за один раз, а не на каждый перегон отдельно. Удобно. Обратный билет от Зальцбурга до Вены я покупал на месте, на вокзале Зальцбурга в автомате, и это было намного дороже. И отнюдь не только потому, что Зальцбург дальше от Вены. Но я не хотел быть привязанным на обратном пути к конкретному поезду, поэтому и не покупал заранее. А так как поезда Зальцбург – Вена ходят по две штуки в час, уехать не было проблематично.</p>
+<p>Еще несколько простых советов (многим, наверное, очевидных). Советы непрофессиональные; скажу сразу – я не горный турист. Просто из личного опыта нашего «хайкинга» в разных местах.</p>
+<p>- В горах вам понадобится трекинговая обувь. Прочная подошва с хорошим сцеплением – это даже важнее, на мой взгляд, чем высота ботинок, но последнее тоже не помешает – позволяет не перенапрягаться голеностопу. Стопа не должна быть стиснута, но и болтаться слишком свободно тоже не должна (даже при условии плотной шнуровки в верхней части) – будет неудобно на спусках. Мы не ходили в «вибрамах» всюду, отнюдь. Просто с утра мы брали их с собой в рюкзаках и переобувались, когда было понятно, что уже пора.</p>
+<p>- Вам могут здорово облегчить горные переходы (а особенно – спуски) трекинговые палки. Для таких несложных переходов, как были у нас, не так уж важны детали – все эти anti-stress, и прочие маркетинговые фишки. Главное, чтобы палки просто были. И не поленитесь, подгоните ремни по руке. Про перевоз палок в ручной клади или в багаже – я почитал форумы; информация разнилась, и я решил не рисковать. Но наши – телескопические, из трех секций – в сложенном виде в чемодан не помещались даже по диагонали. Но зато они легко разбирались совсем, на составные трубки, и уже в таком виде отлично легли в чемодан у стеночки. Они легкие, и места почти не занимают.</p>
+<p>- Особенно актуально летом: всегда берите с собой воду с запасом. А еще лучше (и намного лучше, поверьте) – изотоник. В Австрии бутылки с разными спортивными изотониками можно было купить прямо в местных супермаркетах (мы ходили, так вышло, почти везде в супермаркеты SPAR). Опытные люди пишут, что можно просто привезти с собой растворимые таблетки и разводить водой на месте. Но мы не привезли, и покупали готовый изотоник с витаминами в бутылочках. Жажду утоляет в разы лучше, чем просто вода, которую «я пью – мне все мало». Соответственно, и требуется его меньше. Мы брали с собой и изотоник, и воду (ну, там, умыться, руки помыть, голову смочить).</p>
+<p>- Не ленитесь, мажьтесь кремом от загара. И тщательно, а не как я. Я один раз помазал шею тем, что осталось на ладонях после того, как хорошо смазал руки – и шея сгорела (полдня на высоте порядка 1600), и довольно сильно, с пузырями. При том, что на мне была льняная шапка с полями со всех сторон (но не слишком широкими), да и здесь я под нашим неярким солнцем ходил по улицам вроде бы не так уж мало в течение лета. Так что, как мне казалось, мне вообще не угрожает обгореть. «Но наше северное лето, карикатура южных зим, мелькнет и нет, известно это…» Пушкин – наше все.</p>
+<p>- Бактерицидный пластырь – берите много, не жалейте. Один раз в год и палка стреляет. Первый раз со мной такое было – стоял где-то на маршруте, никого не трогал, починял примус, на слегка наклонной тропе; вдруг трение покоя неожиданно сменилось трением скольжения – короче говоря, ботинки мои вдруг поехали на мелкой гальке, я поехал вместе с ними (из чувства товарищества, быть может, ложного). А я, как назло, держал фотоаппарат в руках, и поэтому очень старался его не повредить, когда падал. Не повредил, прикрыл собой. А вот локоть из-за этого ободрал довольно качественно. Буквально на пустом месте. Пластыря понадобилось немало, после промывки водой.</p>
+<p>- Если возможны поздние пешие возвращения – возьмите с собой фонарик. Мы опять забыли в этот раз. Можно, конечно, светить телефоном. Но если параллельно вас ведет навигатор с прожорливым GPS, то нехудо бы не тратить заряд на фонарик. Как выяснилось, кстати, почти всегда ночью вполне достаточно просто света от экрана телефона – вело- и пешие дороги везде, как правило, в идеальном состоянии, белеют в темноте, и достаточно просто чуть подсвечивать. Конечно, я говорю о дорожках уже в равнинной части. Не стоит рисковать и дотягивать до темноты без фонаря на горных тропах. Короче – берите фонарик с собой, не утянет.</p>
+<p>Про воду – уже не совет, а просто так, впечатление. Воду везде, где мы были (Вену не считаем), можно было пить сырой из-под крана. В отелях, в апартаментах. Мы специально спрашивали – можно. И какая же она вкусная! А тут… Что ни купишь в бутылках – одно расстройство. И это хорошо еще, что не буквально.</p>
+<p>Еще из полезностей. Вот <a href="https://salzkammergut.ttgmaps.at/en/" target="_blank" rel="noopener noreferrer">по этой ссылке</a> имеется старая добрая топографическая карта с линиями высот, что полезно при самостоятельном составлении маршрутов в такой местности. Невзирая на название страницы, под ней лежит – сюрприз! – детальная топокарта всего мира от KOMPASS-Karten GmbH. Включая, например (я же сразу полез проверять), исключительно детальные лесные и парковые тропинки в моем родном городе.</p>
+<p>Есть, кстати, разные сайты, на которых можно посмотреть высоты интересующих вас точек на карте, просто ткнув в точку, а также посмотреть высотные профили между парами точек. Например, <a href="http://www.topocoding.com/" target="_blank" rel="noopener noreferrer">здесь</a>. Но есть и другие, это просто как пример.</p>
+<p>Ну, и, наконец, есть десятки сайтов, на которых можно скачать себе и загрузить в смартфон самые разные треки, пройденные вашими предшественниками. Тоже удобно – прикинуть времена, перепады высот, и подумать, а не пройти ли и вам так же. Вот <a href="https://www.salzkammergut.at/en/hiking-trails-in-the-salzkammergut.html" target="_blank" rel="noopener noreferrer">один из таких сайтов</a>.</p>
+<p>Ну, вроде все. В путь?</p>
+<h2 id="в-путь">В путь</h2>
+<p>Ну что, достанем, кряхтя, из-под полатей старые растрескавшиеся гусли-самогуды и почнем нашу повесть…</p>
+<p>Прилетели мы в Вену днем. Из аэропорта на поезде Railjet приехали в город, на «главный» вокзал Wien Hauptbanhhof (это быстро, примерно 15 минут, и дешево). На самом деле, можно было бы брать билеты на прямой Railjet от аэропорта Schwechat до нужной нам Attnang-Puchheim, и сейчас, задним числом, мне не очень понятно, почему я так не сделал. У меня в голове, видимо, засело то, как мы путешествовали наш предыдущий зимний вояж, с несколькими днями в Вене перед отъездом в Зальцбург. И я решил, что билеты до Attnang-Puchheim я возьму примерно на такой же поезд, как и тогда, с главного вокзала Вены, и оставлю часа полтора времени до поезда про запас, если вдруг рейс из Москвы задержится. Но ничего не задержалось, и на главном вокзале мы спокойно посидели в кошерном (буквально, а не переносно!) кафе (шли мимо, и парень-официант подозвал нас и предложил нам попробовать их фалафель). Поели разного-вкусного, привыкая к мысли, что отпуск начинается, мы уж здесь, все нормально и можно начать релаксировать.</p>
+<p>Отступление: при покупке ж/д билетов на Railjet на сайте, online, есть также возможность дополнительно (за 6 евро, кажется) зарезервировать конкретное место. Это почти всегда, наверное, просто перестраховка. Но когда я покупал билеты от Wien Hbf до Ebensee, я этой опцией решил воспользоваться на всякий случай – не очень хотелось три с лишним часа стоять или сидеть на чемодане в тамбуре (я нарисовал себе такую апокалиптическую картину) после авиаперелета. Но мест свободных в вагоне было и так достаточно. На зарезервированных нами местах (правда, удобных, у столика, можно ноги вытянуть – возможно, зарезервированные места всегда там) успела расположиться молодая семья с маленькой девочкой. Я сначала решил, что места не наши (то, что они зарезервированы, было видно – над ними на маленьком табло горят начальная и конечная станции перегона, на котором места зарезервированы – там как раз светилось что-то типа “Wien Hbf - Attnang-Puchheim”). Но молодой папа быстро понял, что они заняли наши места, и вознамерился их нам уступить. Я сражался как лев, и победил – они с детенышем остались сидеть там, а мы сели на свободные места по соседству.</p>
+<p>… «До какой едем?» - спросила жена. Этим обычно ограничивается ее участие в планировании перемещений, она больше по организации наших походов по музеям, выставкам и прочего культпросвета после того, как перемещения уже известны. «Attnang-Puchheim» - ответил я. Жена посмотрела на меня недоверчиво, предполагая, что я так шучу. Это же не Таиланд, в конце концов. Я ткнул пальцем в сторону табло в конце вагона. «Н-ну хорошо. Скажешь тогда, когда наша» - сказала она на это и углубилась в чтение…</p>
+<p>На станции Attnang-Puchheim мы вышли и пересели (просто перейдя от одного края платформы на другой) на местную электричку-«кукушку» до Ebensee. Электричка не спеша везла нас мимо Гмундена, вдоль берегов вытянувшегося в длину Траунзее, на противоположный край озера. Закатный свет освещал горы на другом берегу озера. Контраст с утренней серой Москвой не мог не радовать. И тут мне пора начинать уже что-то показывать потихоньку, наверное?</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.9/0_1e24b9_41ed6bd3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.9/0_1e24b9_41ed6bd3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/749077/2188450.9/0_1e24b6_fdf20752_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/749077/2188450.9/0_1e24b6_fdf20752_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="эбензее">Эбензее</h2>
+<p>На Траунзее мы провели три дня. Ну, что сказать – вполне симпатичное место. Что было стОящего упоминания в эти дни:</p>
+<ul class="summary-list">
+  <li>подъем в горы по тропе в сторону вершины Feuerkogel, но не до самой вершины, а до нижнего уровня второго подъемника (чуть выше уровня 1100 м), и возвращение обратно.</li>
+  <li>спонтанная поездка на электричке до станции Traunkirchen Bahnhof, дабы посмотреть на собственно Traunkirchen, «торговый знак» озера Traunsee, и возвращение вдоль берега, под ночным небом, обратно домой.</li>
+  <li>прогулка до водопада Rindbachfall.</li>
+  <li>подъем на Feuerkogel (1592 м) на фуникулере, и небольшой трекинг по тропам, ведущим по горам от этой вершины.</li>
+  <li>поездка (на попутке) до озер Langbathseen (это всего километрах в семи от Ebensee), и прогулка вокруг обоих (дальнее из озер, Hinterer Langbathsee, особенно красиво).</li>
+</ul>
+<p>А теперь давайте поподробнее и с картинками.</p>
+<p>Приехали мы ближе к сумеркам, заселились, и пошли гулять по «нашей», «старой» части городка – таковая есть даже здесь.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.8/0_1e249e_514796bc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.8/0_1e249e_514796bc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.8/0_1e249f_3c14e13e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.8/0_1e249f_3c14e13e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.8/0_1e24a0_7c8cae98_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.8/0_1e24a0_7c8cae98_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/372565/2188450.9/0_1e24a4_25b829d1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/372565/2188450.9/0_1e24a4_25b829d1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Был вечер субботы – народ гулял на всех перекрестах и малюсеньких площадях, большими компаниями. Пили пиво, ели неизбежные сосиски с капустой, пели песни - все, как положено. И, как обычно, взрослые и дети вместе; агрессивных и даже просто сильно пьяных не наблюдалось. Утром мы прошли по тем же улицам – все чисто, выметено, ни следа ночного "разгула"…</p>
+<p>Наутро была разведка боем в окрестностях, включая небольшой подъем по маршруту, ведущему в сторону вершины Feuerkogel - просто посмотреть, как тут с тропами, и размять ноги.</p>
+<p>В паре мест (специально отмеченных на картах mapsme как «точки обзора») обнаруживались скамейки для путников и открывались приятные виды на городок и Траунзее.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516365/2188450.9/0_1e24a5_fad33021_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516365/2188450.9/0_1e24a5_fad33021_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.9/0_1e24a6_3f61b0fe_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.9/0_1e24a6_3f61b0fe_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.9/0_1e24a7_13203210_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.9/0_1e24a7_13203210_orig" alt="" loading="lazy"></noscript></figure>
+<p>В одном из таких мест на земле лежал камень со словами из Книги Моисея:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.8/0_1e24a1_7f4e311e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.8/0_1e24a1_7f4e311e_orig" alt="" loading="lazy"></noscript></figure>
+<p>По дороге наверх есть симпатичная церквушка, очень фотогеничная:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.8/0_1e24a3_5de382fd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.8/0_1e24a3_5de382fd_orig" alt="" loading="lazy"></noscript></figure>
+<p>Как и везде в Австрии и Германии, все маршруты хорошо размечены. На желтых табличках для каждого маршрута указан пункт назначения, примерная длительность в часах и минутах, и условная сложность (синий кружок – легкая, красный – сложная). Плюс также обозначается наличие по пути какой-нибудь «харчевни» и время до нее.</p>
+<p>Поскольку это была просто тренировка, и сил еще было полно, во второй половине дня мы прошли через Ebensee, и дальше, по долине, прогулялись до небольшого водопада Rindbachfall…</p>
+<p>Вид на холодное озеро. Купаться не очень тянет, не правда ли?</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.9/0_1e24aa_1b87fcce_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.9/0_1e24aa_1b87fcce_orig" alt="" loading="lazy"></noscript></figure>
+<p>А вот место, где Траун впадает в Траунзее, завершая свой длинный путь через несколько озер. Под именем «Коппертраун» он, вобрав воды нескольких озер, протекает через Бад-Аусзее и уже как просто «Траун» (судя по картам) впадает в Хальстаттерзее у Обертрауна; затем снова вытекая из Хальстаттерзее с другого края, он несет свои воды в Бад-Ишль, и уже оттуда устремляет свой бег к Эбензее. Хорошо, что не дальше – у меня кончились синонимы к слову «течет»…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.9/0_1e24af_ea76c978_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.9/0_1e24af_ea76c978_orig" alt="" loading="lazy"></noscript></figure>
+<p>По дороге на водопад:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.9/0_1e24b7_7e061fd9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.9/0_1e24b7_7e061fd9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.9/0_1e24ac_72914847_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.9/0_1e24ac_72914847_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.10/0_1e2a2d_b1a1f37e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.10/0_1e2a2d_b1a1f37e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/876984/2188450.10/0_1e2a2c_761d0d20_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/876984/2188450.10/0_1e2a2c_761d0d20_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.9/0_1e24b0_ee397c64_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.9/0_1e24b0_ee397c64_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.9/0_1e24b1_8ab1f16c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.9/0_1e24b1_8ab1f16c_orig" alt="" loading="lazy"></noscript></figure>
+<p>У водопада:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.9/0_1e24b2_e5b72816_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.9/0_1e24b2_e5b72816_orig" alt="" loading="lazy"></noscript></figure>
+<p>и, собственно, цель – сам водопад, не велик и не мал:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.9/0_1e24b3_24ba728d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.9/0_1e24b3_24ba728d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Пара фотографий с обратной дороги:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877150/2188450.9/0_1e24b4_f9409c88_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877150/2188450.9/0_1e24b4_f9409c88_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.9/0_1e24b5_2349a85a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.9/0_1e24b5_2349a85a_orig" alt="" loading="lazy"></noscript></figure>
+<p>* * *</p>
+<p>На второй день с утра, ура, светило солнце.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893904/2188450.9/0_1e24b8_2100fbd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893904/2188450.9/0_1e24b8_2100fbd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.9/0_1e24ba_827a001a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.9/0_1e24ba_827a001a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.9/0_1e24bb_30645341_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.9/0_1e24bb_30645341_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.9/0_1e24bc_4a737dba_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.9/0_1e24bc_4a737dba_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/898391/2188450.9/0_1e24bd_a6a93b97_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/898391/2188450.9/0_1e24bd_a6a93b97_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.9/0_1e24be_ca63de7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.9/0_1e24be_ca63de7_orig" alt="" loading="lazy"></noscript></figure>
+<p>Мы поднялись в горы по «красной» тропе в сторону вершины Feuerkogel, но не до самой вершины, а до нижнего уровня второго подъемника (это чуть выше уровня 1100 м). По дороге открывался вид на «новую» часть Эбензее:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.9/0_1e24c1_8f985bee_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.9/0_1e24c1_8f985bee_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вдали, на фоне противоположной горы медленно и лениво перемещались едва видимые крохотные парапланы. Тут их должно быть четыре или пять, считайте:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/898391/2188450.9/0_1e24c2_9efd5c98_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/898391/2188450.9/0_1e24c2_9efd5c98_orig" alt="" loading="lazy"></noscript></figure>
+<p>С поляны у подножья подъемника было видно Траунзее, усеянное парусами кайтов. Ярко выделяется зеленая вода Трауна.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.9/0_1e24bf_9618f752_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.9/0_1e24bf_9618f752_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.9/0_1e24c0_57b92a09_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.9/0_1e24c0_57b92a09_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.9/0_1e24c3_f5cef59a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.9/0_1e24c3_f5cef59a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477137/2188450.9/0_1e24c4_7132bfe2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477137/2188450.9/0_1e24c4_7132bfe2_orig" alt="" loading="lazy"></noscript></figure>
+<p>Полюбовались мы на все это, передохнули и пошли вниз. Cнова та же церковь на обратном пути – не смог пройти мимо:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.9/0_1e24c6_9f6e3baa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.9/0_1e24c6_9f6e3baa_orig" alt="" loading="lazy"></noscript></figure>
+<p>Под вечер нас обуяла охота к перемене мест, и мы вдруг решили проехать на электричке пару остановок до станции Traunkirchen Bahnhof, посмотреть на собственно Traunkirchen и его окрестности на закате:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.9/0_1e24c7_ee44a3f3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.9/0_1e24c7_ee44a3f3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.9/0_1e24c8_70ff9831_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.9/0_1e24c8_70ff9831_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.9/0_1e24cf_ca39b672_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.9/0_1e24cf_ca39b672_orig" alt="" loading="lazy"></noscript></figure>
+<p>(Если что – на последней фотографии не Traunkirchen, а просто лодочный домик :))</p>
+<p>Местная фауна тоже радовала глаз:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.9/0_1e24c5_84eaee25_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.9/0_1e24c5_84eaee25_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.9/0_1e24c9_fb29cca2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.9/0_1e24c9_fb29cca2_orig" alt="" loading="lazy"></noscript></figure>
+<p>А потом мы вернулись домой пешком, вдоль берега, под ночным небом. Это на самом деле, недалеко, чуть больше пяти километров. Старая автодорога, ведущая вдоль берега озера, была какое-то время назад переведена в статус велосипедной (а новая автодорога идет частично в тоннеле в толще горы). Так что по этой старой автодороге можно спокойно прогуляться даже ночью. Что мы и сделали. А на следующий день нас ждал Feuerkogel.</p>
+<h2 id="feuerkogel">Feuerkogel</h2>
+<p>На третий день мы поднялись на Feuerkogel (1592 м) на фуникулере (вот <a href="http://www.wels.at/welsmarketing/events/veranstaltungskalender/oesterreich/poi/430001781/feuerkogel-seilbahn-ebensee.html" target="_blank" rel="noopener noreferrer">сайт с указанием расписания его работы</a>, если оно вдруг изменится в будущем.</p>
+<p>Виды в окрестностях верхней станции ожидаемо живописны.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/914553/2188450.9/0_1e24ca_764fd11_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/914553/2188450.9/0_1e24ca_764fd11_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.9/0_1e24cb_482e510f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.9/0_1e24cb_482e510f_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вагончик фуникулера. Понаехали, понимаешь…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476913/2188450.9/0_1e24cc_29abb967_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476913/2188450.9/0_1e24cc_29abb967_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вид в сторону городка Гмунден на противоположном от Эбензее краю озера.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.9/0_1e24cd_67840fd1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.9/0_1e24cd_67840fd1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ледник Дахштайн вдали.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.9/0_1e24ce_956fae1f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.9/0_1e24ce_956fae1f_orig" alt="" loading="lazy"></noscript></figure>
+<p>Его видно, наверное, отовсюду в этой части Зальцкаммергута.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480528/2188450.a/0_1e24d8_c4312f6f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480528/2188450.a/0_1e24d8_c4312f6f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373339/2188450.a/0_1e24d9_bf7c7e45_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373339/2188450.a/0_1e24d9_bf7c7e45_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476913/2188450.9/0_1e24d0_36181c3c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476913/2188450.9/0_1e24d0_36181c3c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот здесь внизу виден кусочек Vorderer Langbathsee - ближнего из двух озер Langbathseen.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.9/0_1e24d1_46fbaf02_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.9/0_1e24d1_46fbaf02_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.9/0_1e24d2_6d28b9ef_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.9/0_1e24d2_6d28b9ef_orig" alt="" loading="lazy"></noscript></figure>
+<p>Мы туда отправимся с вами, как только нагуляемся здесь, наверху.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/963734/2188450.9/0_1e24d3_5140f18c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/963734/2188450.9/0_1e24d3_5140f18c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Если присмотреться, вдали видны пасущиеся коровы. Тихий перезвон колокольчиков разносится очень далеко в горах:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.9/0_1e24d4_44973a17_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.9/0_1e24d4_44973a17_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.a/0_1e24d5_bdc73fef_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.a/0_1e24d5_bdc73fef_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/749077/2188450.a/0_1e24d6_de49a752_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/749077/2188450.a/0_1e24d6_de49a752_orig" alt="" loading="lazy"></noscript></figure>
+<p>А это тот самый второй зимний подъемник, к нижней станции которого мы вчера забирались по лесной тропе:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.9/0_1e24d7_39badbf9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.9/0_1e24d7_39badbf9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.a/0_1e24da_8b04e8e2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.a/0_1e24da_8b04e8e2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.a/0_1e24db_4476ee89_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.a/0_1e24db_4476ee89_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/963734/2188450.a/0_1e24dc_d2c16c2a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/963734/2188450.a/0_1e24dc_d2c16c2a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370294/2188450.a/0_1e24dd_129d54e2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370294/2188450.a/0_1e24dd_129d54e2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.a/0_1e24de_2d99e692_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.a/0_1e24de_2d99e692_orig" alt="" loading="lazy"></noscript></figure>
+<p>Прошлись по разным тропам наверху. Их там довольно много, в том числе есть многочасовые сложные переходы; но мы дошли лишь до недальнего Helmeskogel (1630 м).</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509292/2188450.a/0_1e24df_4f492d6e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509292/2188450.a/0_1e24df_4f492d6e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/749077/2188450.a/0_1e24e0_bd2aee27_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/749077/2188450.a/0_1e24e0_bd2aee27_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.a/0_1e24e1_be1d4e24_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.a/0_1e24e1_be1d4e24_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.a/0_1e24e2_7ee9c44e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.a/0_1e24e2_7ee9c44e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/877150/2188450.a/0_1e24e3_37422e57_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/877150/2188450.a/0_1e24e3_37422e57_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.a/0_1e24e4_6be9e45_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.a/0_1e24e4_6be9e45_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.a/0_1e24e5_e4fba459_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.a/0_1e24e5_e4fba459_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.a/0_1e24e6_8c6d4afe_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.a/0_1e24e6_8c6d4afe_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.a/0_1e24e7_f22262cb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.a/0_1e24e7_f22262cb_orig" alt="" loading="lazy"></noscript></figure>
+<p>Перекусили там же, наверху, около станции подъемника и спустились вниз, снова на фуникулере. Все это у нас заняло первую половину дня. А во второй мы собрались на озера Langbathseen.</p>
+<p>Вообще, в Ebensee с локальным транспортом мы толком разобраться не успели. Есть какие-то автобусы, есть некое маршрутное такси по требованию (звонить за два часа, вас заберут). Но мы везде ходили своими ногами. Лишь с озерами Langbathseen вышло исключение – вообще-то, туда мы тоже решили пойти пешком; это около семи километров – вроде бы, недалеко. Но выяснилось, что идти, несмотря на очень симпатичную природу вокруг (дорога идет в ущелье, вдоль горной речки), неудобно – шоссе довольно узкое, и велодорожки не оказалось. Мы шли по краю шоссе, прижимаясь к обочине; это было не очень комфортно. Где-то через километр рядом притормозила молодая девушка на «Гольфе», и предложила подвезти, она как раз едет на озера. Собственно, кроме как на озера, особо там некуда ехать было по этой дороге. Рабочий день подходил к концу, и все ломанулись купаться, поэтому и такой трафик. (Само озеро Traunsee, на котором стоит Ebensee, довольно холодное и для купания не особо используется; в основном, похоже, для кайтинга и парусного спорта). Мы с женой переглянулись, и, отпихивая друг друга, полезли внутрь. На озерах мы (ну, будем честны, не «мы», а только жена) искупались и гуляли до темноты, когда народ уже совсем схлынул.</p>
+<p>Для начала - вот ближнее озеро, Vorderer Langbathsee:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.a/0_1e24e8_a1be2cc9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.a/0_1e24e8_a1be2cc9_orig" alt="" loading="lazy"></noscript></figure>
+<p>Со стороны автодороги у озера большая парковка, ресторан, и купается куча приехавшего народа. С другой стороны – безлюдно: частное владение, какой-то Schloss («замок»).</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.a/0_1e24e9_8f53a01d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.a/0_1e24e9_8f53a01d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893240/2188450.a/0_1e24ea_e2e8769c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893240/2188450.a/0_1e24ea_e2e8769c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Отправимся по дороге вдоль озера в его направлении – нам же все равно надо в ту сторону, чтобы дойти до Hinterer Langbathsee.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477137/2188450.a/0_1e24eb_996ad5a5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477137/2188450.a/0_1e24eb_996ad5a5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.a/0_1e24ec_46543e0b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.a/0_1e24ec_46543e0b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.a/0_1e24ee_c4687041_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.a/0_1e24ee_c4687041_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768352/2188450.a/0_1e24ef_81320c98_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768352/2188450.a/0_1e24ef_81320c98_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.a/0_1e24f1_11a1331c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.a/0_1e24f1_11a1331c_orig" alt="" loading="lazy"></noscript></figure>
+<p>На дальнем озере Hinterer Langbathsee, куда мы попали, когда уже начинало понемногу смеркаться, было только двое рыбаков на лодке, девушка с молодым человеком и огромным псом, который (я про пса) без устали бросался в озеро за брошенной ему палкой и обратно. Ну и мы. Из вышеперечисленных, в сгущающихся сумерках плавали моя жена (ее не удержать) и пес. Ну, в какой-то момент, еще подъехали двое велосипедистов – отец и сын-подросток, быстро искупались, оделись и поехали дальше.</p>
+<p>Озеро Hinterer Langbathsee прямо очень красиво, откуда ни посмотри…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.a/0_1e24f2_2078dfd5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.a/0_1e24f2_2078dfd5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.a/0_1e24f4_ee7371d6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.a/0_1e24f4_ee7371d6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370294/2188450.a/0_1e24f7_745a27a9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370294/2188450.a/0_1e24f7_745a27a9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/914553/2188450.a/0_1e24f8_b09f011b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/914553/2188450.a/0_1e24f8_b09f011b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.a/0_1e24f9_61d22d2c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.a/0_1e24f9_61d22d2c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.a/0_1e24fa_46f3863b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.a/0_1e24fa_46f3863b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.a/0_1e24fb_33ce5420_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.a/0_1e24fb_33ce5420_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/963734/2188450.a/0_1e24fd_55fb5260_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/963734/2188450.a/0_1e24fd_55fb5260_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476913/2188450.a/0_1e24fe_d8b5d069_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476913/2188450.a/0_1e24fe_d8b5d069_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.a/0_1e2500_9bb9577_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.a/0_1e2500_9bb9577_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.a/0_1e2501_4b9a0cc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.a/0_1e2501_4b9a0cc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893904/2188450.a/0_1e2502_a708262f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893904/2188450.a/0_1e2502_a708262f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.a/0_1e2503_91f97f5c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.a/0_1e2503_91f97f5c_orig" alt="" loading="lazy"></noscript></figure>
+<p>И снова дорога – вокруг Hinterer Langbathsee:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.a/0_1e2504_ec86a8b4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.a/0_1e2504_ec86a8b4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.a/0_1e2506_4f6bb5d3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.a/0_1e2506_4f6bb5d3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.a/0_1e2507_643fbe06_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.a/0_1e2507_643fbe06_orig" alt="" loading="lazy"></noscript></figure>
+<p>Обогнув озеро по этой лесной дороге, снова выходим на берег Hinterer Langbathsee, уже с другой стороны:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.a/0_1e2508_aaba5802_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.a/0_1e2508_aaba5802_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.b/0_1e250c_155b7207_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.b/0_1e250c_155b7207_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.b/0_1e250d_aee3d932_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.b/0_1e250d_aee3d932_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.b/0_1e250e_5a6aab16_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.b/0_1e250e_5a6aab16_orig" alt="" loading="lazy"></noscript></figure>
+<p>А вот весьма, на мой взгляд, фотогеничный вездесущий житель лесов Зальцкаммергута:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479032/2188450.b/0_1e250f_1b11057c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479032/2188450.b/0_1e250f_1b11057c_orig" alt="" loading="lazy"></noscript></figure>
+<p>И снова Hinterer Langbathsee:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.b/0_1e2510_938e6e2e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.b/0_1e2510_938e6e2e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.b/0_1e2511_fd216f28_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.b/0_1e2511_fd216f28_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/963734/2188450.b/0_1e2512_30f3aeb5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/963734/2188450.b/0_1e2512_30f3aeb5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.b/0_1e2513_cee6ae5c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.b/0_1e2513_cee6ae5c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.b/0_1e2514_8856776d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.b/0_1e2514_8856776d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.b/0_1e2516_9b1483f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.b/0_1e2516_9b1483f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.b/0_1e2517_df8dd8be_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.b/0_1e2517_df8dd8be_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ручей, соединяющий оба озера:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.b/0_1e2518_a88650ee_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.b/0_1e2518_a88650ee_orig" alt="" loading="lazy"></noscript></figure>
+<p>И вот мы снова выходим на ближнее озеро, чтобы полюбоваться «замком» уже с противоположной стороны, почти в сумерках:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.b/0_1e2519_72a74e15_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.b/0_1e2519_72a74e15_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.b/0_1e251a_bee40b7b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.b/0_1e251a_bee40b7b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.b/0_1e251c_c8aa6566_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.b/0_1e251c_c8aa6566_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.b/0_1e251d_b5b0fd8d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.b/0_1e251d_b5b0fd8d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.b/0_1e251e_dc658335_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.b/0_1e251e_dc658335_orig" alt="" loading="lazy"></noscript></figure>
+<p>Темнело на глазах, но меня согревало наличие клочка бумаги, на котором наша хозяйка написала нам телефон такси (я у нее попросил, на всякий случай – никогда не знаешь). И потом, когда уже совсем стемнело, и мы возвращались от дальнего озера к ближнему, я позвонил по этому номеру. Через двадцать минут за нами примчалась колоритная пожилая фрау на видавшем лучшие годы Мерседесе (свадебный подарок?), и с ручной собачкой на заднем сиденье. Собачка, было видно, привыкла так кататься с разными незнакомыми людьми. А 20 евро – ну что уж. Не так уж чрезмерно много за вечернюю прогулку вдвоем в абсолютной тишине вокруг опустевшего горного озера.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.b/0_1e251f_9dccdff1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.b/0_1e251f_9dccdff1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Завершая рассказ про эти озера, я могу сказать, что после наших двух с половиной путешествий по Зальцкаммергуту (двух летних и одного зимнего), озеро Hinterer Langbathsee в моем личном рейтинге (безусловно, и неполном, и субъективном) теперь заняло вторую строчку. Я уверен, конечно, что есть и еще маленькие красивые озера, окруженные горами, и я даже видел как минимум еще в одном отчете примерно такого же типа весьма симпатичное озерцо. Но из тех, что я видел своими глазами в Зальцкаммергуте тире Баварии, Hinterer Langbathsee второе по красоте. Ну, спросите же меня: «что же в этом моей рейтинге на первом месте?»; дайте же мне повод показать несколько позапрошлогодних фотографий прекрасного озера Obersee, недалеко от которого мы были и в этом году, но не доехали туда. Это, конечно, не совсем Зальцкаммергут уже, это Бавария, но очень близко, так что засчитывается. Вот оно, Оберзее, спрятавшееся в горной котловине позади длиннющего Königssee:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.f/0_1e25f0_f6dc0b28_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.f/0_1e25f0_f6dc0b28_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.f/0_1e25f1_6195c1dd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.f/0_1e25f1_6195c1dd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.f/0_1e25f2_d700972c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.f/0_1e25f2_d700972c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373630/2188450.f/0_1e25ef_3038a9e5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373630/2188450.f/0_1e25ef_3038a9e5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.f/0_1e25ed_d2af6f6a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.f/0_1e25ed_d2af6f6a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.f/0_1e25ec_16fd6e57_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.f/0_1e25ec_16fd6e57_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476474/2188450.f/0_1e25eb_4bad725d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476474/2188450.f/0_1e25eb_4bad725d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, а наши три дня подошли к концу, и пора нам покинуть Traunsee и двигаться дальше, к следующему озеру на нашем пути - это будет Wolfgangsee.</p>
+<h2 id="штробль">Штробль</h2>
+<p>С утра мы упаковались (трекинговые палки на этот раз были просто сунуты в рюкзак), дошли до нашего «полустанка», дождались «кукушку» и по долине речки Traun доехали до Бад-Ишля. Электричка пропускала встречный поезд, и поэтому пришла с опозданием (что не характерно) минут в 10. Это нам чуть не стоило упущенного автобуса (уже дважды в прошлом возивший нас старый знакомец «150-й на Зальцбург»). Автобус уже почти отъехал, когда мы, запыхавшись, подбежали к нему. Женщина-водитель остановилась, заглушила мотор, вышла и помогла нам запихнуть чемоданы и рюкзаки в отсек для багажа). Через полчаса мы высадились на остановке в Штробле.</p>
+<p>Wolfgangsee – гораздо более курортное место, нежели Traunsee. И вообще, судя по публике, автомобилям и магазинам в центре, Штробль – такое «понтовое» место «для состоятельных дам и господ». Ну, каждому свое. Природа здесь столь же красива, как и в других местах, и нас это устроило.</p>
+<p>В Штробле мы тоже провели три дня. Отличное место (я, кажется, повторяюсь? :) )</p>
+<p>Что было стОящего, если коротко:</p>
+<ul class="summary-list">
+  <li>живописная вечерняя прогулка вдоль берега озера до поселка Gschwendt (пять километров туда, и пять обратно, уже почти ночью).</li>
+  <li>«поход» по горно-лесным дорогам до озера Schwarzensee и вокруг него. Плюс искупаться, пообедать, и обратно. Суммарно – километров 15.</li>
+  <li>поездка на кораблике в еще более курортный городок Sankt-Wolfgang (полное название - Sankt-Wolfgang-im-Salzkammergut) на том же озере. Цель очевидная - подъем на двухвагонном «горном поезде» с зубчатым сцеплением на вершину Schafberg (1782 м). Потом спуск оттуда пешком обратно до Sankt-Wolfgang (спуск потрясающе красивый в первой, верхней части, но, прямо скажем, довольно нудный в своей нижней лесной части). На кораблике - обратно в Штробль.</li>
+</ul>
+<p>Прогулка вдоль берега озера, противоположного тому, где расположен Sankt-Wolfgang, очень живописна.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.b/0_1e2523_8230e76a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.b/0_1e2523_8230e76a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.b/0_1e2525_955757e9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.b/0_1e2525_955757e9_orig" alt="" loading="lazy"></noscript></figure>
+<p>В нескольких местах встречаются «образовательные скамейки» со справками о местной флоре и фауне:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476913/2188450.b/0_1e2526_5b2d4a49_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476913/2188450.b/0_1e2526_5b2d4a49_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, а мы идем дальше. Солнце клонится к закату, и свет для человека с фотоаппаратом – просто мечта.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.b/0_1e2527_509cf70b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.b/0_1e2527_509cf70b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.b/0_1e2529_ac24bfd7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.b/0_1e2529_ac24bfd7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.b/0_1e252a_90fc96ae_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.b/0_1e252a_90fc96ae_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.b/0_1e252b_e8d741f5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.b/0_1e252b_e8d741f5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.b/0_1e252c_d7c0829b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.b/0_1e252c_d7c0829b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.b/0_1e252d_29ae2e5c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.b/0_1e252d_29ae2e5c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/518060/2188450.b/0_1e2530_a75fbe0a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/518060/2188450.b/0_1e2530_a75fbe0a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.b/0_1e252e_c0aea593_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.b/0_1e252e_c0aea593_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вид на Санкт-Вольфганг на другом берегу:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.b/0_1e252f_36a97d63_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.b/0_1e252f_36a97d63_orig" alt="" loading="lazy"></noscript></figure>
+<p>По соседней дорожке нас обгоняют достаточно многочисленные велосипедисты:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.b/0_1e2531_89fd37a5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.b/0_1e2531_89fd37a5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.b/0_1e2532_1ae2cf24_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.b/0_1e2532_1ae2cf24_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509292/2188450.b/0_1e2533_3b57e274_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509292/2188450.b/0_1e2533_3b57e274_orig" alt="" loading="lazy"></noscript></figure>
+<p>Снова вид на Санкт-Вольфганг:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.b/0_1e2534_69a2087c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.b/0_1e2534_69a2087c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.b/0_1e2535_dbe10dac_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.b/0_1e2535_dbe10dac_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.b/0_1e2536_218750ed_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.b/0_1e2536_218750ed_orig" alt="" loading="lazy"></noscript></figure>
+<p>В паре мест вдоль дорожки (там параллельно идут вело- и пешеходная тропы) стоят деревянные S-образные скамьи-качалки.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.b/0_1e2537_43a31441_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.b/0_1e2537_43a31441_orig" alt="" loading="lazy"></noscript></figure>
+<p>Садишься, ноги оказываются почти в уровень с головой, и качаешься, глядя на озеро. Точнее, я себе так это представляю – качалась, само собой, жена. Рядом с одним из таких «кресел-качалок» обнаружился столбик с прозрачным пластиковым ящиком на нем, закрытым крышкой, но не запертым. Внутри лежала большая губка – ну, если был дождь или, скажем, роса - не садиться же на мокрую скамейку. Как это по немецко-австрийски, правда?</p>
+<p>Забавно, что на гуглокарте эти качалки видны со спутника – я люблю, по возвращении, виртуально «походить» по уже знакомым местам.</p>
+<p>А когда уж совсем стемнело, мы развернулись и пошли назад в Штробль. На этот раз уже никого не встречая и не обгоняя – ни пешеходов, ни велосипедистов...</p>
+<h2 id="schwarzensee">Schwarzensee</h2>
+<p>Путь на озеро Schwarzensee начинается с обхода довольно забавного холма Bürglstein:</p>
+<p><a href="https://www.google.ru/maps/@47.7147407,13.4693419,593a,35y,38.25h,65.96t/data=!3m1!1e3" target="_blank" rel="noopener noreferrer">https://www.google.ru/maps/@47.7147407,13.4693419,593a,35y,38.25h,65.96t/data=!3m1!1e3</a></p>
+<p>С другой его стороны можно спуститься к стадиону, пересечь его, и дальше пройти по шоссе метров двести вправо, до забавного указателя, приглашающего заглянуть к местному резчику по дереву:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/876984/2188450.f/0_1e2a28_fd518047_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/876984/2188450.f/0_1e2a28_fd518047_orig" alt="" loading="lazy"></noscript></figure>
+<p>Это как раз и по пути на Шварцензее, так что мы и заглянули, и даже прикупили в подарки какую-то мелкую забавную рожицу.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.b/0_1e2539_c153119e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.b/0_1e2539_c153119e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370294/2188450.b/0_1e253a_b66ea2d7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370294/2188450.b/0_1e253a_b66ea2d7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.c/0_1e253b_5aed0412_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.c/0_1e253b_5aed0412_orig" alt="" loading="lazy"></noscript></figure>
+<p>Дальше мы ориентировались на тропы в приложении mapsme, они довольно круты и каменисты, и поднимаются через лес до уже более «нормальной» дороги, которая идет вправо вдоль холмов, то немного поднимаясь, то опускаясь.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/371487/2188450.c/0_1e253d_546faf12_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/371487/2188450.c/0_1e253d_546faf12_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.c/0_1e253c_8bfd737b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.c/0_1e253c_8bfd737b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768352/2188450.c/0_1e2540_512e2e02_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768352/2188450.c/0_1e2540_512e2e02_orig" alt="" loading="lazy"></noscript></figure>
+<p>Время от времени сквозь листву открываются симпатичные виды на Wolfgangsee и Bürglstein:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.c/0_1e253e_9c65bcdf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.c/0_1e253e_9c65bcdf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.c/0_1e253f_70e11af9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.c/0_1e253f_70e11af9_orig" alt="" loading="lazy"></noscript></figure>
+<p>Через какое-то время (в километрах, это где-то около пяти), мы наконец добрались до Schwarzensee.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.c/0_1e2547_9dd931de_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.c/0_1e2547_9dd931de_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.c/0_1e2545_5633e2f8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.c/0_1e2545_5633e2f8_orig" alt="" loading="lazy"></noscript></figure>
+<p>Не могу сказать, что оно очень уж прям такое красивое. Озеро как озеро. Что мы, озер в Австрии не видали? Не сравнить с теми же Obersee или Hinterer Langbathsee. Понятно, что для фотогеничности ему просто не хватает близких гор – тут только лесистые холмы вокруг. Обошли вокруг озера (дорога была весьма приятная).</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.c/0_1e2541_2c637730_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.c/0_1e2541_2c637730_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896238/2188450.c/0_1e2542_b5b382ff_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896238/2188450.c/0_1e2542_b5b382ff_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.c/0_1e2543_bfaec047_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.c/0_1e2543_bfaec047_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.c/0_1e2544_fb0129fc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.c/0_1e2544_fb0129fc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.c/0_1e2546_eb180270_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.c/0_1e2546_eb180270_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.c/0_1e2548_c345716d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.c/0_1e2548_c345716d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Озеро совсем нетеплое, но… я знаю человека, которого не остановить, если вода рядом. Ладно, посидим, подождем…</p>
+<p>Зато рядом есть пара кафе-ресторанчиков, и там можно поесть свежую форель, выловленную в этом же озере. И она, правда, вкусная…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.c/0_1e2549_bb230e58_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.c/0_1e2549_bb230e58_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476913/2188450.c/0_1e254a_6426d3e6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476913/2188450.c/0_1e254a_6426d3e6_orig" alt="" loading="lazy"></noscript></figure>
+<p>Обратно шли другим путем. Начинаясь вполне идиллически,</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.c/0_1e254b_ff034651_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.c/0_1e254b_ff034651_orig" alt="" loading="lazy"></noscript></figure>
+<p>он дальше спускался прямо вдоль скалистых склонов, иногда по довольно узким тропам (но в таких местах имелись металлические тросики со стороны обрыва):</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480528/2188450.f/0_1e29b7_9c6834d5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480528/2188450.f/0_1e29b7_9c6834d5_orig" alt="" loading="lazy"></noscript></figure>
+<p>А ближе к концу спуска так вообще была металлическая лестница с несколькими десятками пролетов. Удобно, но уж очень долго и монотонно. Пролет, еще один пролет, небольшой поворот, снова пролет, пролет, пролет. И так минут десять.</p>
+<p>Наконец, вышли к людям.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.c/0_1e254c_46e1bd9c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.c/0_1e254c_46e1bd9c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896238/2188450.c/0_1e254d_b1021110_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896238/2188450.c/0_1e254d_b1021110_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.c/0_1e254e_16348f4f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.c/0_1e254e_16348f4f_orig" alt="" loading="lazy"></noscript></figure>
+<p>И домой, в Штробль, снова вокруг холма Bürglstein:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.c/0_1e254f_9ed92ae1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.c/0_1e254f_9ed92ae1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.c/0_1e2550_81d2ed1a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.c/0_1e2550_81d2ed1a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768352/2188450.c/0_1e2551_20ef2533_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768352/2188450.c/0_1e2551_20ef2533_orig" alt="" loading="lazy"></noscript></figure>
+<p>Неожиданно - скалолаз на Bürglstein:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893904/2188450.f/0_1e2a29_f9de7832_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893904/2188450.f/0_1e2a29_f9de7832_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/963734/2188450.c/0_1e2555_f7e076bf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/963734/2188450.c/0_1e2555_f7e076bf_orig" alt="" loading="lazy"></noscript></figure>
+<p>И наконец – спокойный вечерний Вольфгангзее:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.c/0_1e2552_dd8a111_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.c/0_1e2552_dd8a111_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.c/0_1e2553_5980718a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.c/0_1e2553_5980718a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/914553/2188450.c/0_1e2554_bf97a4ab_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/914553/2188450.c/0_1e2554_bf97a4ab_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="шафберг">Шафберг</h2>
+<p>На следующий день, который обещал быть жарким (и сдержал обещание – было примерно 31 в тени), мы решили воспользоваться хорошей погодой (ибо дальше прогноз пугал ливнями и грозой) и подняться на «горном поезде» с зубчатым сцеплением на вершину Schafberg (1782 м). Для этого из Штробля надо было переплыть на кораблике в еще более курортный городок Sankt-Wolfgang.</p>
+<p>Вот собственно вид на озеро с берегов Штробля. Вдали наверху видна вершина Шафберга, слегка скрытая облаком; нам туда:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.b/0_1e2521_3638f35_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.b/0_1e2521_3638f35_orig" alt="" loading="lazy"></noscript></figure>
+<p>Расписания и цены корабликов по озеру Wolfgangsee и поездов на вершину Schafberg, как по отдельности, так и вместе, можно скачать вот здесь:</p>
+<p><a href="http://www.wolfgangseeschifffahrt.at/content/website_schafbergbahn/de_at.html" target="_blank" rel="noopener noreferrer">http://www.wolfgangseeschifffahrt.at/content/website_schafbergbahn/de_at.html</a></p>
+<p>В ожидании кораблика. Утка на причале:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.c/0_1e2557_3a07d98e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.c/0_1e2557_3a07d98e_orig" alt="" loading="lazy"></noscript></figure>
+<p>Утренний Штробль с озера</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.c/0_1e2558_a36a5ead_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.c/0_1e2558_a36a5ead_orig" alt="" loading="lazy"></noscript></figure>
+<p>Итак, полчаса плавания, и мы в Санкт-Вольфганге. Оттуда - подъем на «поезде» на Schafberg. Вот тот самый «паровозик из Ромашково»:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.c/0_1e2559_235591ed_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.c/0_1e2559_235591ed_orig" alt="" loading="lazy"></noscript></figure>
+<p>Пытаться делать фотографии через окно, пока такой паровозик трудолюбиво тянет пару вагонов все выше и выше, конечно, очень хочется (я и сам не удержался). Но особо интересного ничего не выйдет – мешает лес, особенно в нижней части, и, вдобавок, гораздо более красивые виды все же открываются с вершины и в ее окрестностях. Вот там, да… Красота, просто дух захватывает.</p>
+<p>Вот так выглядит «вокзал» наверху, у вершины Шафберга:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.c/0_1e255a_c80c2064_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.c/0_1e255a_c80c2064_orig" alt="" loading="lazy"></noscript></figure>
+<p>И несколько видов с вершины:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.c/0_1e255b_10c1560a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.c/0_1e255b_10c1560a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373339/2188450.c/0_1e255c_e3d83283_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373339/2188450.c/0_1e255c_e3d83283_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.c/0_1e255d_6bc90b19_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.c/0_1e255d_6bc90b19_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вид на одно из самых известных озер Зальцкаммергута - Mondsee:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.c/0_1e255e_5f4f026f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.c/0_1e255e_5f4f026f_orig" alt="" loading="lazy"></noscript></figure>
+<p>Сразу два больших озера - Mondsee и Attersee:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480528/2188450.c/0_1e255f_33b965a1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480528/2188450.c/0_1e255f_33b965a1_orig" alt="" loading="lazy"></noscript></figure>
+<p>И снова «наше» Wolfgangsee:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.c/0_1e2560_b511e4b1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.c/0_1e2560_b511e4b1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.c/0_1e2561_3b22e8b3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.c/0_1e2561_3b22e8b3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.c/0_1e2563_974adf01_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.c/0_1e2563_974adf01_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370294/2188450.c/0_1e2564_1c6848eb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370294/2188450.c/0_1e2564_1c6848eb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.c/0_1e2565_fea3ae21_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.c/0_1e2565_fea3ae21_orig" alt="" loading="lazy"></noscript></figure>
+<p>Знакомый ледник Dachshtein вдали:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.c/0_1e2566_8578f172_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.c/0_1e2566_8578f172_orig" alt="" loading="lazy"></noscript></figure>
+<p>Над станцией:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.c/0_1e2567_ffabd336_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.c/0_1e2567_ffabd336_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.c/0_1e2569_9b8e2266_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.c/0_1e2569_9b8e2266_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вид на Санкт-Вольфганг:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.c/0_1e256a_a395d1d1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.c/0_1e256a_a395d1d1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/914553/2188450.c/0_1e256b_110c0f48_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/914553/2188450.c/0_1e256b_110c0f48_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.d/0_1e256c_2ab0926d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.d/0_1e256c_2ab0926d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Снова Мондзее:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.d/0_1e256e_f17b5cc8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.d/0_1e256e_f17b5cc8_orig" alt="" loading="lazy"></noscript></figure>
+<p>Но я бы очень советовал отойти от верхней станции подальше вдоль хребта, походить там, где нет народа, а потом спуститься оттуда «козьими тропами» (слабо отличимыми от каменных россыпей вокруг, но тем не менее, размеченными красно-бело-красными триколорами) по склонам до уровня промежуточной станции. Имейте в виду, все же хотя бы умеренная физическая подготовка для этого желательна. Указатели на некоторых тропах прямо предупреждают об этом – дескать, нужна «горная подготовка», вы идете на свой страх и риск:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/900241/2188450.10/0_1e2c2a_7a58610c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/900241/2188450.10/0_1e2c2a_7a58610c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну что ж, значит, на страх и риск. (На самом деле, не особо страх и не слишком уж риск).</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.d/0_1e256f_d0eef302_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.d/0_1e256f_d0eef302_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.d/0_1e2570_168d3289_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.d/0_1e2570_168d3289_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373339/2188450.d/0_1e2573_f029e80b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373339/2188450.d/0_1e2573_f029e80b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.d/0_1e2574_7d3e63e7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.d/0_1e2574_7d3e63e7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.10/0_1e2a2a_ad220fbd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.10/0_1e2a2a_ad220fbd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.d/0_1e2575_31de7408_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.d/0_1e2575_31de7408_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.d/0_1e2571_6851f1c7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.d/0_1e2571_6851f1c7_orig" alt="" loading="lazy"></noscript></figure>
+<p>Поезд на склоне:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.d/0_1e2572_def011c5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.d/0_1e2572_def011c5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.d/0_1e2576_70a83f6d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.d/0_1e2576_70a83f6d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.10/0_1e2a2b_ed0e0366_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.10/0_1e2a2b_ed0e0366_orig" alt="" loading="lazy"></noscript></figure>
+<p>Обернемся назад:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.d/0_1e2578_d34effe_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.d/0_1e2578_d34effe_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893904/2188450.d/0_1e2579_1c30a74c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893904/2188450.d/0_1e2579_1c30a74c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893904/2188450.d/0_1e257a_e65579a7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893904/2188450.d/0_1e257a_e65579a7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.d/0_1e257b_9f2975db_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.d/0_1e257b_9f2975db_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот уж близко холм, где располагается промежуточная станция:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.d/0_1e257c_3ea20c88_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.d/0_1e257c_3ea20c88_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.d/0_1e257d_1f9f6d49_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.d/0_1e257d_1f9f6d49_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/898391/2188450.d/0_1e257e_7abbb0d3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/898391/2188450.d/0_1e257e_7abbb0d3_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вокруг промежуточной станции тоже очень красиво, там тоже очень и очень стоит погулять вволю по окрестностям.</p>
+<p>Здесь мы, кстати, столкнулись в очередной раз с непуганностью местной фауны, от насекомых до кур и собак. В этот раз нами заинтересовалась бабочка. Бабочка, судя по поведению, плотно «сидела» на лосьоне от загара. Пока мы сидели на скамейке, отдыхали и любовались видами, она уселась жене на палец и начала собирать свой «нектар».</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/872132/2188450.10/0_1e2c2b_b41fb90a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/872132/2188450.10/0_1e2c2b_b41fb90a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.10/0_1e2c2c_c8d9ad09_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.10/0_1e2c2c_c8d9ad09_orig" alt="" loading="lazy"></noscript></figure>
+<p>Потом бабочка перелетела на другую руку. Потом на солнечные очки. Залезла под очки и долго копалась там. Вылезла. Тем временем мы собрались дальше. Бабочку немного раздражала необходимость взлетать, пока жена одевала рюкзак, но она была терпелива, и просто перелетала с руки на руку. Мы тронулись в путь; бабочка снова села на запястье и поехала с нами. Иногда мы поглядывали на нее – тут! И только уже в лесу, спускаясь по каменистой тропе, мы обнаружили, что она пропала. Видимо, трясло сильно, и она разочаровалась в нас как в транспорте.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/371487/2188450.d/0_1e257f_818f6640_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/371487/2188450.d/0_1e257f_818f6640_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370744/2188450.d/0_1e2580_9feea465_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370744/2188450.d/0_1e2580_9feea465_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.d/0_1e2581_85f1ba16_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.d/0_1e2581_85f1ba16_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.d/0_1e2582_6491a095_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.d/0_1e2582_6491a095_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.d/0_1e2583_6e147172_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.d/0_1e2583_6e147172_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.d/0_1e2584_1bc4799e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.d/0_1e2584_1bc4799e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.d/0_1e2585_8d4b5c0c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.d/0_1e2585_8d4b5c0c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.d/0_1e2586_a0a0ddef_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.d/0_1e2586_a0a0ddef_orig" alt="" loading="lazy"></noscript></figure>
+<p>А вот дальше выбирайте сами. Я бы не стал хвалить дальнейший спуск. Дорога в основном идет в лесу, на большом протяжении она была «свежеотремонтирована» - то есть, засыпана довольно крупным щебнем. Идти не очень неудобно. И смотреть особо не на что. И фотографировать тоже. Но, возможно, кому-то это не покажется веским доводом. В общем, спуститься пешком, конечно, можно, что мы и сделали. Но можно сесть на поезд на промежуточной станции и спуститься на нем.</p>
+<p>Какая удача, думал я потом, что на следующий день лило как из ведра, и мы весь этот день вынужденно просидели в «нашей» квартире, отдыхая после этого спуска. Контраст с предыдущим днем был разителен. Дождь шел весь день, не переставая:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.d/0_1e2587_f06e1118_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.d/0_1e2587_f06e1118_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, и завершая рассказ про Schafberg: вот здесь можно посмотреть круговую панораму с камер на вершине: <a href="https://schafberg.panomax.com/" target="_blank" rel="noopener noreferrer">https://schafberg.panomax.com/</a>.</p>
+<h2 id="берхтесгаден">Берхтесгаден</h2>
+<p>В Берхтесгаден из Штробля перебраться тоже несложно. Снова садимся на 150-й автобус, и едем до Зальцбурга. Там нужно пересесть на автобус 840. Сделать это можно и на конечной станции (площадь Südtiroler Platz перед ж/д вокзалом), а можно раньше - в старом городе, на Mirabelplatz. 150-й останавливается на боковой улице, так что нужно выйти на главную, перейти ее на другую сторону (нам же нужно направление «от ж.д. вокзала») и найти нужную остановку среди нескольких. Вот здесь можно скачать план остановок на этой площади: <a href="https://salzburg-verkehr.at/service/downloads/liniennetz-und-umgebungsplaene/" target="_blank" rel="noopener noreferrer">https://salzburg-verkehr.at/service/downloads/liniennetz-und-umgebungsplaene/</a>, там, где на странице перед ссылкой написано <em>«Umgebungsplan Salzburg Mirabellplatz»</em>. Вы приезжаете на 150-м автобусе на «терминал С», а перейти будет нужно на «терминал H». Вы справитесь. Возможно, к вечеру, но справитесь.</p>
+<p>Еще из транспортных полезностей. В Берхтесгадене, где бы вы ни поселились, хозяева выдают вам (под залог) гостевые магнитные карточки. По ним вы бесплатно и безлимитно ездите на любых автобусах в окрестностях Берхтесгадена, в том числе довольно далеко. Просто прикладываете их к валидатору у водителя (он покажет). С площади перед ж.д. вокзалом Берхтесгадена (которым мы так и не воспользовались в этом качестве) отправляется с десяток разных автобусов во все стороны, включая Зальцбург. Расписания висят там же. Но если что – планировщик ÖBB Scotty все знает и все вам спланирует. Кроме того, вот здесь можно посмотреть схему автобусных линий <a href="http://www.rvo-bus.de/oberbayernbus/view/mdb/regiobusfranken/oberbayernbus/mdb_183234_liniennetzplan_berchtesgaden.pdf" target="_blank" rel="noopener noreferrer">http://www.rvo-bus.de/oberbayernbus/view/mdb/regiobusfranken/oberbayernbus/mdb_183234_liniennetzplan_berchtesgaden.pdf</a> (ссылка отсюда: <a href="http://www.rvo-bus.de/oberbayernbus/view/fahrplan/liniennetzplan.shtml" target="_blank" rel="noopener noreferrer">http://www.rvo-bus.de/oberbayernbus/view/fahrplan/liniennetzplan.shtml</a>).</p>
+<p>Так что, если вы собираетесь много ездить по разным направлениям – селитесь не слишком далеко от вокзала. В первый наш раз в Берхтесгадене мы выбрали гестхауз довольно далеко, от него самого приходилось ехать минут 5 до центра Берхтесгадена. Сейчас мы учли ошибки, жили почти напротив вокзала, и было очень удобно.</p>
+<p>Ну, и в Берхтесгадене мы тоже провели три дня.</p>
+<p>Что было стОящего:</p>
+<ul class="summary-list">
+  <li>подъем вдоль ущелья Wimbachklamm (на территории Nationalpark Berchtesgaden) до Wimbachgrieshütte (около 7 километров, с набором высоты примерно 700 метров, с ~500 до ~1200), спуск обратно (7 км, с полдороги начал моросить дождь) и пешее поздневечерне-ночное возвращение пешком обратно в Berchtesgaden по тропам и велодорожкам вдоль речки Ramsauerache (еще примерно 7 км).</li>
+  <li>подъем вдоль ущелья Almbachklamm до Theresienklause, и возвращение по холмам между живописными альпийскими деревушками в Berchtesgaden, через Almbachweg, мимо церкви Maria Gern (с заходом в нее, конечно) вдоль ручья Gerner (около 8 км).</li>
+  <li>поездка на автобусе до Ramsau, и оттуда прогулка до Hintersee (порядка 5-6 км), с катанием на лодочке по последнему.</li>
+  <li>поездка на автобусе прямо до Hintersee, и оттуда подъем по территории Natonalpark Berchtesgaden, между Hirshbichlstrasse и ручьем Klausbach до Mooswachtkapelle (это уже на территории Австрии). Это примерно 8 км, первая половина равнинная, потом ближе к концу долины подъем становится круче, суммарно перепад около 400 метров, с 800 до примерно 1200 м. Возвращение обратно к озеру Hintersee. И снова катание на лодочке, чтобы вознаградить себя за труды праведные.</li>
+  <li>Подъем на двух автобусах на «орлиное гнездо» (Kehlsteinhaus) с резиденцией («чайным домиком»), построенной для Адольфа Г.</li>
+</ul>
+<p>Упоминаю о нем, хотя в «стОящее» его включать бы и не следовало. Мое глубокое убеждение – оно того не стоит. Виды с горы, безусловно, красивы (я покажу), но никак не более, а, скорее, менее чем с того же Schafberg или c «Five fingers» в Obertraun. А народу полно, толкотня, места наверху мало, не особо разгуляешься. И недешево, ибо очень раскрученное место. Просто у нас было время в последний день с утра перед возвращением в Вену, мы решили смотаться туда, расписание как раз позволяло. В общем, нам не особо понравилось.</p>
+<p>Итак, вперед.</p>
+<h2 id="wimbachklamm">Wimbachklamm</h2>
+<p>До нижней, стартовой, точки Wimbachklamm вы доезжаете за минут 15 на автобусе 846 (автобус «на Hintersee» – можно ориентироваться по большому электронному табло на лобовом стекле всех автобусов). Переходите дорогу, и, следуя указателям, идете по дорожке. Если вы хотите посмотреть на водопады в ущелье, придется заплатить небольшую денежку в кассе справа по ходу. Там вам дадут специальный жетон, который нужно будет опустить через сотню метров у турникета, через который идет тропа, спускающаяся в ущелье. Если не хотите к водопадам, а рветесь дальше, вверх по долине, в горы (как мы в этот, второй, раз), идете просто прямо по дороже, она идет выше ущелья с водопадами, параллельно ему. Дорога там отличная, но имейте в виду – это постоянно пологий подъем вверх, все 7-8 километров. Зато обратно идти будет легко!</p>
+<p>Там красиво, очень советую побывать. В первый раз, <a href="2015_bavaria_salzkammergut.html" target="_blank" rel="noopener noreferrer">два года назад</a>, мы там шли сразу после ночных проливных дождей, и со всех сторон из лесов, покрывающих склоны гор с обеих сторон, поднимался туман. Леса поднимались почти отвесно в небо и скрывались в облаках. Очень необычно и очень красиво. Вот несколько фотографий тогдашнего туманного Wimbachklamm’а.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/963734/2188450.f/0_1e25f5_6789755c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/963734/2188450.f/0_1e25f5_6789755c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373339/2188450.f/0_1e25f6_ac9311f0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373339/2188450.f/0_1e25f6_ac9311f0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478910/2188450.f/0_1e25f8_a2965dda_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478910/2188450.f/0_1e25f8_a2965dda_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/749077/2188450.f/0_1e25f9_be15b769_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/749077/2188450.f/0_1e25f9_be15b769_orig" alt="" loading="lazy"></noscript></figure>
+<p>Еще один плюс – в отличие от Königssee или «Орлиного гнезда», раскрученных туристических мест, – ущелья Nationalpark Berchtesgaden как-то не так известны. Например, про Wimbachklamm я узнал в первый наш приезд уже на месте, случайно, листая какой-то местный туристический проспект, который нам всучил хозяин гестхауза. И мы решили «а чего бы и не съездить? Это же совсем рядом». И не прогадали. Место не «must see», а стало быть, что? Правильно – нет жителей Поднебесной. Никто не делает многочисленные селфи «на фоне». Как вот тут, у Königssee, не могу удержаться, простите :) :</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509402/2188450.f/0_1e25ea_e990f438_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509402/2188450.f/0_1e25ea_e990f438_orig" alt="" loading="lazy"></noscript></figure>
+<p>Зато вокруг величественные горы, почти высохшее летом русло горной реки, с ободранными сухими стволами деревьев, который весной нес мощный поток… А через 4 или 5 километров есть кафе, где можно подкрепиться горячей едой и выпить кофе.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.d/0_1e2588_aea26522_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.d/0_1e2588_aea26522_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.d/0_1e2589_a5900c35_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.d/0_1e2589_a5900c35_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.d/0_1e258a_50fbce09_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.d/0_1e258a_50fbce09_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.d/0_1e258b_3c06c4ce_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.d/0_1e258b_3c06c4ce_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.d/0_1e258c_7f5f19f3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.d/0_1e258c_7f5f19f3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370294/2188450.d/0_1e258d_d60763aa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370294/2188450.d/0_1e258d_d60763aa_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476913/2188450.d/0_1e258e_5140d4e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476913/2188450.d/0_1e258e_5140d4e_orig" alt="" loading="lazy"></noscript></figure>
+<p>По мере подъема, растительность постепенно, но заметно меняется. Вот уже вокруг карликовые сосны:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.d/0_1e258f_5c42b583_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.d/0_1e258f_5c42b583_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893904/2188450.d/0_1e2590_54c8b785_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893904/2188450.d/0_1e2590_54c8b785_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478076/2188450.d/0_1e2591_e06b6a39_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478076/2188450.d/0_1e2591_e06b6a39_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/749077/2188450.d/0_1e259a_93f4dcb8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/749077/2188450.d/0_1e259a_93f4dcb8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.d/0_1e2592_91a29445_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.d/0_1e2592_91a29445_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361712/2188450.d/0_1e2593_335b5a72_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361712/2188450.d/0_1e2593_335b5a72_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.d/0_1e2595_69a15f3a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.d/0_1e2595_69a15f3a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.d/0_1e2597_c1f7331e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.d/0_1e2597_c1f7331e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361712/2188450.d/0_1e2596_aa5b313c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361712/2188450.d/0_1e2596_aa5b313c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.d/0_1e2599_b1997b0e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.d/0_1e2599_b1997b0e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478076/2188450.d/0_1e2598_25f7f1a9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478076/2188450.d/0_1e2598_25f7f1a9_orig" alt="" loading="lazy"></noscript></figure>
+<p>И вот примерно здесь мы решили - пора и честь знать, уже смеркается:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/894110/2188450.10/0_1e2c2d_673746d5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/894110/2188450.10/0_1e2c2d_673746d5_orig" alt="" loading="lazy"></noscript></figure>
+<p>В этот раз мы решили не торопиться со спуском и не стремиться успеть на последний автобус. Решили, что дойдем пешком, не развалимся. Не развалились. Возвращались в Берхтесгаден по тропам и велодорожкам вдоль речки Ramsauerache (еще примерно 7 км от автобусной остановки Wimbachklamm) поздно вечером (в 10—11 вечера, когда в августе уже давно темно; в частности, из-за окружающих гор). «Ночной» путь для нас прокладывал навигатор в приложении mapsme, и, в общем, очень качественно нас вел. Звездное небо над нами свело бы с ума Иммануила Канта.</p>
+<h2 id="almbachklamm">Almbachklamm</h2>
+<p>Ущелье Almbachklamm несколько более известно, до него тоже минут 15 на автобусе, но в другую сторону. При входе (на это раз безусловно платном) можно купить мраморные шарики, которые (как утверждается) обтачиваются друг об друга в жерновах тут же расположенной старинной водяной мельницы. Вот теперь и у меня стоит на полке один такой…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.d/0_1e259b_f36b7c33_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.d/0_1e259b_f36b7c33_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373339/2188450.d/0_1e259c_6eb4e71f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373339/2188450.d/0_1e259c_6eb4e71f_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ущелье узкое на всем протяжении, в отличие от Wimbachklamm, где узкое ущелье и водопады только в начальной, платной части. И поэтому живописен Almbachklamm скорее своими водопадиками на каждом шагу, чем видами на окружающие горы. Это как раз здесь, на Almbachklamm, я умудрился навернуться, просто стоя на одном месте, и ободрать локоть. В общем, мне Wimbachklamm кажется поинтереснее, но это уж точно дело вкуса.</p>
+<p>Almbachklamm:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.d/0_1e259d_3010b3ea_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.d/0_1e259d_3010b3ea_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370744/2188450.d/0_1e259e_2e6279fe_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370744/2188450.d/0_1e259e_2e6279fe_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370744/2188450.e/0_1e259f_a40c6946_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370744/2188450.e/0_1e259f_a40c6946_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.e/0_1e25a0_9764d2a1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.e/0_1e25a0_9764d2a1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.e/0_1e25a1_7b22b4fb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.e/0_1e25a1_7b22b4fb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.e/0_1e25a2_86328b36_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.e/0_1e25a2_86328b36_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.e/0_1e25a3_4b5c67a7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.e/0_1e25a3_4b5c67a7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.e/0_1e25a4_e8110bb6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.e/0_1e25a4_e8110bb6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373339/2188450.e/0_1e25a5_b6d5f565_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373339/2188450.e/0_1e25a5_b6d5f565_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368408/2188450.10/0_1e2a36_12c220c0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368408/2188450.10/0_1e2a36_12c220c0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.e/0_1e25a7_d64b9af7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.e/0_1e25a7_d64b9af7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.e/0_1e25a8_ee88b58d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.e/0_1e25a8_ee88b58d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.e/0_1e25a9_7efaaaad_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.e/0_1e25a9_7efaaaad_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.e/0_1e25aa_e643d875_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.e/0_1e25aa_e643d875_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477137/2188450.e/0_1e25ab_ec3e5154_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477137/2188450.e/0_1e25ab_ec3e5154_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880237/2188450.10/0_1e2a2e_eee7f8c7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880237/2188450.10/0_1e2a2e_eee7f8c7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370294/2188450.e/0_1e25ad_7b0b64f6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370294/2188450.e/0_1e25ad_7b0b64f6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896349/2188450.10/0_1e2a30_d4baddf6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896349/2188450.10/0_1e2a30_d4baddf6_orig" alt="" loading="lazy"></noscript></figure>
+<p>Симпатичный скол камня:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.e/0_1e25af_d7e5bcc7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.e/0_1e25af_d7e5bcc7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880237/2188450.10/0_1e2a31_338e58a9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880237/2188450.10/0_1e2a31_338e58a9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.e/0_1e25b1_bef8bcc3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.e/0_1e25b1_bef8bcc3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370744/2188450.e/0_1e25b5_376dae15_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370744/2188450.e/0_1e25b5_376dae15_orig" alt="" loading="lazy"></noscript></figure>
+<p>В общем, все довольно однообразно, хотя и приятно для глаз.</p>
+<p>Но! Но зато в верхней части ущелья есть подъем наверх по левой стороне (все размечено указателями, как обычно), через лес, на гребень ущелья. Там, по другую сторону, открывается долина, полого спускающаяся в сторону Берхтесгадена, очень красивая, с замечательными каноническими альпийскими лугами и деревушками. У самого выхода из леса в долину стоит гестхаус с кафе, где можно вкусно перекусить и отдохнуть на террасе, любуясь видом, перед тем как тронуться по дороге, вымощенной если не желтым кирпичом, то хорошим ровным асфальтом:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.e/0_1e25b2_d3a0580c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.e/0_1e25b2_d3a0580c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Пейзажи по обе стороны дороги очень фотогеничны, порой даже череcчур:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.e/0_1e25b3_1e7eb6a8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.e/0_1e25b3_1e7eb6a8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.e/0_1e25b4_459b965_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.e/0_1e25b4_459b965_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.e/0_1e25b6_b73123b5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.e/0_1e25b6_b73123b5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.e/0_1e25b7_43a18b80_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.e/0_1e25b7_43a18b80_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361712/2188450.e/0_1e25b8_ac045c89_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361712/2188450.e/0_1e25b8_ac045c89_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.e/0_1e25bb_c9fa536_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.e/0_1e25bb_c9fa536_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893904/2188450.e/0_1e25bc_fe1b3cbb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893904/2188450.e/0_1e25bc_fe1b3cbb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.e/0_1e25bd_70de6cf9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.e/0_1e25bd_70de6cf9_orig" alt="" loading="lazy"></noscript></figure>
+<p>Кошка:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.e/0_1e25be_a42c6905_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.e/0_1e25be_a42c6905_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.e/0_1e25bf_993bc863_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.e/0_1e25bf_993bc863_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.e/0_1e25c0_b020601e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.e/0_1e25c0_b020601e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896349/2188450.10/0_1e2a32_193fc3be_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896349/2188450.10/0_1e2a32_193fc3be_orig" alt="" loading="lazy"></noscript></figure>
+<p>Иногда концентрация составляющих ингредиентов "альпийской красоты" превышает все разумные пределы, и картинка выглядит постановочной, а не настоящей:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.e/0_1e25c3_37ed5af8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.e/0_1e25c3_37ed5af8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.e/0_1e25c4_b13d13ae_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.e/0_1e25c4_b13d13ae_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.e/0_1e25c5_acbc8895_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.e/0_1e25c5_acbc8895_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893904/2188450.e/0_1e25c6_a47d77c2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893904/2188450.e/0_1e25c6_a47d77c2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/897810/2188450.10/0_1e2a33_58940066_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/897810/2188450.10/0_1e2a33_58940066_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893904/2188450.e/0_1e25c9_a6afeeeb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893904/2188450.e/0_1e25c9_a6afeeeb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.e/0_1e25ca_8adcdfe7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.e/0_1e25ca_8adcdfe7_orig" alt="" loading="lazy"></noscript></figure>
+<p>По дороге, где-то в середине пути, вам встретится церковь Maria Gern. Она, в общем, ничем не хуже знаменитой церквушки в Рамзау (Ramsau). Не исключаю даже, что половина людей спутает их друг с другом, если не будет видно речки, которая рядом с церковью в Рамзау. Но зато она вдали от автобусных маршрутов, и поэтому что? Правильно, здесь нет наших соседей-китайцев.</p>
+<p>Забегая чуть вперед... С церковью в Рамзау (безусловно, очень симпатичной) одна беда, и мы ее наблюдали в первый наш приезд. Выглядит это так. Тишина, идиллия. Узенькая стройная церковь с высоким шпилем на фоне гор. Горная речка шумит перед церковью. Деревянный мостик через речку. Народу – ну два-три человека. И тут подъезжает туристический автобус. Останавливается. Из него выгружается человек двадцать-тридцать черноголовых туристов, которые устремляются, буквально бегом, на то место с другой стороны мостика, откуда обычно все (и я, конечно. Виновен!) ее фотографируют. Треть фотографирует церковь, две трети с селфи-стиками делают селфи на мосту, спиной к церкви. Вторые, очевидно, мешают первым. Первые терпят. У водителя автобуса – свое расписание: «Цигель, цигель – «Михаил Светлов»…. Это нашествие продолжается минут 5, не более, потом все погружаются обратно в автобус. Через минуту – снова тишина и идиллия. Овечки пасутся на альпийских лугах вокруг церкви…</p>
+<p>Раз уж вспомнил - вот «мой», не совсем канонический Рамзау из прошлой поездки:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.f/0_1e25ee_a8723f6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.f/0_1e25ee_a8723f6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/876984/2188450.10/0_1e2a37_10099e1f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/876984/2188450.10/0_1e2a37_10099e1f_orig" alt="" loading="lazy"></noscript></figure>
+<p>Церковь Maria Gern тоже красивая, только вот речки нет. Хотя на открытках она тоже получается очень приятной на фоне гор. Открытки, кстати, можно купить внутри (при нас там не было ни души). Открытки и книжечки стоят свободно, рядом указаны цены. Около них есть просто ящичек-копилка, куда можно/нужно кинуть соответствующие монетки.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.f/0_1e25cd_f131887_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.f/0_1e25cd_f131887_orig" alt="" loading="lazy"></noscript></figure>
+<p>Maria Gern:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.e/0_1e25d0_903c4ab0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.e/0_1e25d0_903c4ab0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516365/2188450.e/0_1e25cf_c4fdf7b5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516365/2188450.e/0_1e25cf_c4fdf7b5_orig" alt="" loading="lazy"></noscript></figure>
+<p>Внутри церкви:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.e/0_1e25ce_15c288b2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.e/0_1e25ce_15c288b2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.e/0_1e25cc_7bcb7c6c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.e/0_1e25cc_7bcb7c6c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Еще полчаса по дороге – и мы окончательно спускаемся в Берхтесгаден. День был прекрасен. Хотя локоть слегка и саднит.</p>
+<h2 id="от-ramsau-до-hintersee">От Ramsau до Hintersee</h2>
+<p>В Рамзау в этот раз мы тоже съездили, на следующий день. Благо, все рядом:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/880237/2188450.f/0_1e29b5_eba12489_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/880237/2188450.f/0_1e29b5_eba12489_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.f/0_1e25d3_1986876_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.f/0_1e25d3_1986876_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.e/0_1e25d1_26c013ab_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.e/0_1e25d1_26c013ab_orig" alt="" loading="lazy"></noscript></figure>
+<p>Перед тем, как уже почти выйти по тропе из Рамзау в сторону озера Hintersee, мы подверглись нападению курицы-попрошайки. Довольно упитанная несушка ходила вокруг наших ног, описывая восьмерки, заглядывала в глаза и совершенно по-собачьи подскуливала и выпрашивала угощение. Никогда не слышал, чтоб курица скулила, но что я знаю о курицах, городской неопытный житель, если они не в виде филе. Ну что, поделились с ней кусочками яблока. Она тянула шею, становилась на цыпочки и жадно склевывала их ладони.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/875526/2188450.10/0_1e2a35_62ff8669_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/875526/2188450.10/0_1e2a35_62ff8669_orig" alt="" loading="lazy"></noscript></figure>
+<p>Синим небом, как видно ниже, нас погода опять не побаловала, но все равно – прогулка от Рамзау до Хинтерзее по лесной дороге довольно приятна:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373339/2188450.f/0_1e25d4_9d62d858_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373339/2188450.f/0_1e25d4_9d62d858_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.f/0_1e25d5_288779ac_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.f/0_1e25d5_288779ac_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.f/0_1e25d6_73c3ec28_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.f/0_1e25d6_73c3ec28_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ручей Ramsau-ache:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.f/0_1e25d7_58b8d1e6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.f/0_1e25d7_58b8d1e6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/372565/2188450.f/0_1e25d8_2bb9a2a9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/372565/2188450.f/0_1e25d8_2bb9a2a9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768352/2188450.f/0_1e25d9_85b9e761_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768352/2188450.f/0_1e25d9_85b9e761_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.f/0_1e25dd_719a04ad_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.f/0_1e25dd_719a04ad_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.f/0_1e25df_82a0bdc2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.f/0_1e25df_82a0bdc2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370744/2188450.f/0_1e25da_f4b52ae3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370744/2188450.f/0_1e25da_f4b52ae3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.f/0_1e25dc_a6ef3709_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.f/0_1e25dc_a6ef3709_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="hintersee">Hintersee</h2>
+<p>В этот день солнце только начало пробиваться сквозь облака, и как только оно появлялось, озеро Хинтерзее сразу становилось очень фотогеничным. Очень советую, если получится, взять лодочку (обычную только, а не водный велосипед) и покататься по озеру. Это стоит 6 евро за полчаса, 10 за час. Берите на час – думаю, полчаса пролетят слишком быстро.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.f/0_1e25db_e0000e99_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.f/0_1e25db_e0000e99_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476913/2188450.f/0_1e25de_b9e17106_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476913/2188450.f/0_1e25de_b9e17106_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516365/2188450.f/0_1e25e1_58e460dd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516365/2188450.f/0_1e25e1_58e460dd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.f/0_1e25e2_8643653f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.f/0_1e25e2_8643653f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.f/0_1e25e3_400d0056_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.f/0_1e25e3_400d0056_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.f/0_1e25e4_41110953_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.f/0_1e25e4_41110953_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896238/2188450.6/0_1e2431_e532e812_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896238/2188450.6/0_1e2431_e532e812_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.f/0_1e25e0_a34c7f7b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.f/0_1e25e0_a34c7f7b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.f/0_1e25e5_eb8eb784_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.f/0_1e25e5_eb8eb784_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.6/0_1e2432_f2a3c04e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.6/0_1e2432_f2a3c04e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.6/0_1e2433_6b9beac9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.6/0_1e2433_6b9beac9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.6/0_1e2434_60b9e658_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.6/0_1e2434_60b9e658_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370744/2188450.6/0_1e2436_a89c9ef6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370744/2188450.6/0_1e2436_a89c9ef6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/914553/2188450.6/0_1e2437_592aee22_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/914553/2188450.6/0_1e2437_592aee22_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/898391/2188450.6/0_1e2438_d3856d10_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/898391/2188450.6/0_1e2438_d3856d10_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.6/0_1e2439_9f202cea_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.6/0_1e2439_9f202cea_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.6/0_1e243a_4b0a0379_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.6/0_1e243a_4b0a0379_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.6/0_1e243b_3b25c379_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.6/0_1e243b_3b25c379_orig" alt="" loading="lazy"></noscript></figure>
+<p>Покатавшись по озеру, и ожидая автобуса, который вернет нас в Берхтесгаден, мы прошлись немного по дороге на запад от озера.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509292/2188450.6/0_1e243c_6e80c4a5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509292/2188450.6/0_1e243c_6e80c4a5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370744/2188450.6/0_1e243d_5d782e2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370744/2188450.6/0_1e243d_5d782e2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.6/0_1e243e_6d82a0ab_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.6/0_1e243e_6d82a0ab_orig" alt="" loading="lazy"></noscript></figure>
+<p>И неожиданно наткнулись на стелу, извещающую, что перед нами вход в NationalPark Berchtesgaden (опять! и здесь тоже!).</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.6/0_1e243f_3608ee1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.6/0_1e243f_3608ee1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Рядом обнаружили привычные желтые указатели с маршрутами, в том числе вполне "вегетарианскими" по длительности – на 2-3 часа в одну сторону:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/874316/2188450.10/0_1e2c2e_5df2bd4b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/874316/2188450.10/0_1e2c2e_5df2bd4b_orig" alt="" loading="lazy"></noscript></figure>
+<p>И мы загорелись приехать сюда на следующий день прямо с утра и отправиться в долину Национального парка. Вместо того, чтобы ехать на Königssee, как я собирался изначально. Но на Königssee мы уже ездили в прошлый раз, а там если что и стоит смотреть повторно, как мне кажется, то даже не само Königssee, а озеро Obersee недалеко от его дальнего берега. Я уже писал о нем выше, когда рассказывал про Hinterer Langbathsee. И, взвесив варианты – снова съездить на Obersee или пойти по прежде нехоженным тропам в NationalPark Berchtesgaden, мы двумя голосами против нуля выбрали второе. И ничуть не пожалели.</p>
+<h2 id="nationalpark-berchtesgaden">NationalPark Berchtesgaden</h2>
+<p>Первая половина дороги (как и везде здесь, содержащейся в идеальном состоянии) абсолютно ровная, так, что даже непривычно после предыдущих дней.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.7/0_1e2440_bcf900a6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.7/0_1e2440_bcf900a6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/898391/2188450.7/0_1e2441_ad1f9171_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/898391/2188450.7/0_1e2441_ad1f9171_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.7/0_1e2444_f8f9baf9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.7/0_1e2444_f8f9baf9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370294/2188450.7/0_1e2445_15fb3caf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370294/2188450.7/0_1e2445_15fb3caf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.7/0_1e2447_2d3551ea_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.7/0_1e2447_2d3551ea_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.7/0_1e2448_cfeedf64_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.7/0_1e2448_cfeedf64_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/749077/2188450.7/0_1e244b_26d230e8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/749077/2188450.7/0_1e244b_26d230e8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.7/0_1e244c_c1256b8a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.7/0_1e244c_c1256b8a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.7/0_1e244e_a4597285_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.7/0_1e244e_a4597285_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.7/0_1e244f_d35f6bfe_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.7/0_1e244f_d35f6bfe_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370294/2188450.7/0_1e2450_2b8b5275_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370294/2188450.7/0_1e2450_2b8b5275_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370744/2188450.7/0_1e2451_1eb56689_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370744/2188450.7/0_1e2451_1eb56689_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.7/0_1e2452_529cacdd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.7/0_1e2452_529cacdd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478076/2188450.7/0_1e2453_d3100d66_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478076/2188450.7/0_1e2453_d3100d66_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.7/0_1e2454_75846471_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.7/0_1e2454_75846471_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.7/0_1e2455_147364e3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.7/0_1e2455_147364e3_orig" alt="" loading="lazy"></noscript></figure>
+<p>Но потом тропа начинает подъем, все более существенный. и выходит в зону альпийских лугов, где вокруг открываются огромные пространства, и виды просто потрясающие. Фотография этого ощущения пространства не передает. Ну, то есть, мне не удалось передать, давайте так.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370744/2188450.7/0_1e2456_37771f4e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370744/2188450.7/0_1e2456_37771f4e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480528/2188450.7/0_1e2457_967c22fd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480528/2188450.7/0_1e2457_967c22fd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.7/0_1e2458_5049dac4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.7/0_1e2458_5049dac4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370294/2188450.7/0_1e2459_e6eafe4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370294/2188450.7/0_1e2459_e6eafe4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509063/2188450.7/0_1e245a_a45bce2d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509063/2188450.7/0_1e245a_a45bce2d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Местный философ. Смотрит с вековечной грустью. Дает себя погладить:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.7/0_1e245b_16ede104_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.7/0_1e245b_16ede104_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.7/0_1e245c_d4ddcfcc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.7/0_1e245c_d4ddcfcc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.7/0_1e245d_11191373_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.7/0_1e245d_11191373_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370294/2188450.7/0_1e245e_100ebc0c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370294/2188450.7/0_1e245e_100ebc0c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.7/0_1e245f_ec0536de_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.7/0_1e245f_ec0536de_orig" alt="" loading="lazy"></noscript></figure>
+<p>При этом пешеходная тропа вьется между горным ручьем слева и вполне качественным шоссе, идущим по центру долины. По шоссе ходит регулярный местный автобус (на него, вроде бы, не распространяется карточка «гостя земли Берхтесгаден», но мы не проверяли). Вдоль долины у него несколько остановок, на каждой висит расписание, так что, если будет тяжко, можно в любой момент свернуть к шоссе, дождаться автобуса и поехать назад к выезду из Национального парка.</p>
+<p>Почти в самом конце пешеходная дорожка сливается с шоссе, которое перегораживает шлагбаум (!) Это госграница между Германией и Австрией. Жалко, что какая-нибудь ободранная коза, щиплющая траву, не была привязана к шлагбауму, было бы очень колоритно. Пешеходная тропинка просто огибает шлагбаум по обочине.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.7/0_1e2460_8c972c8a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.7/0_1e2460_8c972c8a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.7/0_1e2461_fc594a34_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.7/0_1e2461_fc594a34_orig" alt="" loading="lazy"></noscript></figure>
+<p>На территории сопредельного государства мы немного посидели, перекусили чем было и тронулись в обратный путь. Примерно вот так, как эти девушки:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.7/0_1e2462_839483cd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.7/0_1e2462_839483cd_orig" alt="" loading="lazy"></noscript></figure>
+<p>Непривычные для равнинных жителей облака:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.7/0_1e2463_a0956270_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.7/0_1e2463_a0956270_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893904/2188450.7/0_1e2465_adf189f1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893904/2188450.7/0_1e2465_adf189f1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Обратите внимание: «радуга» в облаках – это не хроматические аберрации объектива, это так оно и есть на самом деле.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.7/0_1e2467_16e08922_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.7/0_1e2467_16e08922_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893904/2188450.7/0_1e2464_7ecd0697_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893904/2188450.7/0_1e2464_7ecd0697_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/962950/2188450.7/0_1e2466_746e5d69_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/962950/2188450.7/0_1e2466_746e5d69_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369167/2188450.7/0_1e2468_d9688061_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369167/2188450.7/0_1e2468_d9688061_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.7/0_1e2469_6fc34ded_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.7/0_1e2469_6fc34ded_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516365/2188450.7/0_1e246a_35276342_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516365/2188450.7/0_1e246a_35276342_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.7/0_1e246b_14a6acb2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.7/0_1e246b_14a6acb2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893904/2188450.7/0_1e246c_191658a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893904/2188450.7/0_1e246c_191658a_orig" alt="" loading="lazy"></noscript></figure>
+<p>У выхода из парка наблюдали, как чистенькие немецкие коровки, повинуясь внутреннему голосу, сами заканчивали пастись на лугах и, группами по трое-четверо, незаметно смешавшись с толпой туристов, возвращающихся из Национального парка, брели домой, на вечернюю дойку. Старшие – степенно, с чувством собственного достоинства и соблюдая Ordnung («Die erste Kolonne marchiert, die zweite Kolonne marschiert…»); молодняк – наперегонки, срезая путь через подлесок.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/518060/2188450.7/0_1e246e_7d39f852_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/518060/2188450.7/0_1e246e_7d39f852_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.7/0_1e246d_587448e7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.7/0_1e246d_587448e7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.7/0_1e246f_6164c9c3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.7/0_1e246f_6164c9c3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.7/0_1e2470_538dcccb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.7/0_1e2470_538dcccb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.7/0_1e2471_1010fe58_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.7/0_1e2471_1010fe58_orig" alt="" loading="lazy"></noscript></figure>
+<p>В предзакатном свете озеро Хинтерзее было особенно симпатично. Мы как раз успели на хороший свет, я очень старался.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768352/2188450.7/0_1e2472_56adb986_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768352/2188450.7/0_1e2472_56adb986_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361712/2188450.8/0_1e2473_e45ac96a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361712/2188450.8/0_1e2473_e45ac96a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/967052/2188450.8/0_1e2474_98c710c3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/967052/2188450.8/0_1e2474_98c710c3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.8/0_1e2475_811fb0eb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.8/0_1e2475_811fb0eb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/898391/2188450.8/0_1e2476_d5b31a25_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/898391/2188450.8/0_1e2476_d5b31a25_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.8/0_1e2477_dac3a45a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.8/0_1e2477_dac3a45a_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, не уезжать же было сразу, в последний-то день? Придушили внутреннее земноводное, и вновь взяли лодку, у того же мужичка, вдали от остановки, и покатались еще.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.8/0_1e2478_fd006bfb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.8/0_1e2478_fd006bfb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.8/0_1e2479_6d94dd13_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.8/0_1e2479_6d94dd13_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.8/0_1e247a_562ab14a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.8/0_1e247a_562ab14a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/892397/2188450.8/0_1e247b_64079b38_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/892397/2188450.8/0_1e247b_64079b38_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="kehlsteinhaus">Kehlsteinhaus</h2>
+<p>На следующий день с утра мы, выписавшись и оставив багаж, поднялись на «орлиное гнездо», оно же Kehlsteinhaus, оно же “The Eagle’s Nest”.</p>
+<p>Сначала вас поднимает обычный рейсовый автобус, до большой площадки у подножия самой крутой части горы, а затем вы покупаете билеты и садитесь на специальные автобусы-«шаттлы», которые возят от этой площади по крутому серпантину до (почти) вершины, кавалькадами по пять автобусов. Серпантин довольно узкий, и есть только пара карманов, чтобы разъехаться, поэтому все времена у автобусов выверены. Приехав наверх, тут же регистрируетесь на рейс обратно (просто исходного билета туда-обратно недостаточно, нужно его проштамповать) и проходите по тоннелю к нижней площадке большого лифта (там холодно, имейте в виду!), и уже на лифте поднимаетесь на самый верх. И там наблюдаете некоторое количество народа. Ну, я уже поплакался выше на ту тему:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896238/2188450.8/0_1e247c_536c5a9e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896238/2188450.8/0_1e247c_536c5a9e_orig" alt="" loading="lazy"></noscript></figure>
+<p>Виды с «орлиного гнезда». Самые красивые - в сторону Königssee. Если приглядеться, то виды электрокораблики, которые возят по нему туристов:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/893240/2188450.8/0_1e247d_5e0adc43_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/893240/2188450.8/0_1e247d_5e0adc43_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509292/2188450.8/0_1e247e_b8aa6a0a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509292/2188450.8/0_1e247e_b8aa6a0a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373867/2188450.8/0_1e247f_a24a7e0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373867/2188450.8/0_1e247f_a24a7e0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509292/2188450.8/0_1e2480_40612d13_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509292/2188450.8/0_1e2480_40612d13_orig" alt="" loading="lazy"></noscript></figure>
+<p>«Мы - вольные птицы, пора, брат, пора…»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477847/2188450.8/0_1e2481_b1de6960_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477847/2188450.8/0_1e2481_b1de6960_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509739/2188450.8/0_1e2482_829ba8c5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509739/2188450.8/0_1e2482_829ba8c5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896238/2188450.8/0_1e2483_6efe1ffa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896238/2188450.8/0_1e2483_6efe1ffa_orig" alt="" loading="lazy"></noscript></figure>
+<p>Спуститься можно и не на лифте, а по удобному небольшому пешему серпантину по склону (что мы и сделали). Далее все в обратном порядке – на «шаттле» вниз, потом на регулярном автобусе до вокзала в Берхтесгадене. Возвращаемся в гостиницу, забираем багаж, снова на вокзал, и на 840-м – в Зальцбург. Это где-то полчаса в пути. Ну а там - вокзал Salzburg Hbf – кассы – Railjet – Вена. Прощай, Зальцкаммергут, или до свидания? Кто знает…</p>
+<h2 id="вена-вместо-послесловия">Вена. Вместо послесловия</h2>
+<p>Ну вот, почти все и рассказал вам по теме нашего небольшого летнего путешествия по озерам Австрии и краешка Баварии. Я думаю, примешивать сюда рассказ о Вене не стоит: есть гораздо лучшие специалисты на форуме, и подробные полезные отчеты. Но я все же сделаю себе поблажку в качестве поощрения за преодоленную леность - выложу несколько фотографий, сделанных в Вене в эти два дня, что мы там провели, перед тем, как поблагодарить терпеливых читателей этого отчета и попрощаться, надеюсь, до следующих встреч.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.8/0_1e2485_9022c4a8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.8/0_1e2485_9022c4a8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.8/0_1e2486_7636ca2f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.8/0_1e2486_7636ca2f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.8/0_1e2488_9a4d84c8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.8/0_1e2488_9a4d84c8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361712/2188450.8/0_1e2489_a5f2eb31_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361712/2188450.8/0_1e2489_a5f2eb31_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/369579/2188450.8/0_1e248a_dc3e09a8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/369579/2188450.8/0_1e248a_dc3e09a8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.8/0_1e248b_7c7e39ec_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.8/0_1e248b_7c7e39ec_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/967052/2188450.8/0_1e248c_60ea08b8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/967052/2188450.8/0_1e248c_60ea08b8_orig" alt="" loading="lazy"></noscript></figure>
+<p>"Ударим автопробегом!" Случайно попали на мероприятие клуба старых автомобилей. Были весьма колоритные. И машины и персоналии:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/896238/2188450.8/0_1e248d_5eb2c582_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/896238/2188450.8/0_1e248d_5eb2c582_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.8/0_1e248e_b23531f4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.8/0_1e248e_b23531f4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.8/0_1e248f_7fa9de19_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.8/0_1e248f_7fa9de19_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/898391/2188450.8/0_1e2490_90bb1e24_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/898391/2188450.8/0_1e2490_90bb1e24_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516062/2188450.8/0_1e2491_90cf83dc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516062/2188450.8/0_1e2491_90cf83dc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.8/0_1e2492_d9125640_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.8/0_1e2492_d9125640_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/898391/2188450.8/0_1e2493_90c9ac6a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/898391/2188450.8/0_1e2493_90c9ac6a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/373339/2188450.8/0_1e2494_90f38578_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/373339/2188450.8/0_1e2494_90f38578_orig" alt="" loading="lazy"></noscript></figure>
+<p>Иногда глянешь и прямо вот чувствуешь, что обращаются не к кому-то, а именно к тебе. Ну, потому что, а к кому же еще??</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768352/2188450.8/0_1e2495_38c03208_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768352/2188450.8/0_1e2495_38c03208_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480479/2188450.8/0_1e2496_33107071_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480479/2188450.8/0_1e2496_33107071_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/518060/2188450.8/0_1e2497_77ae0b33_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/518060/2188450.8/0_1e2497_77ae0b33_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/518060/2188450.8/0_1e2498_3e4a5f52_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/518060/2188450.8/0_1e2498_3e4a5f52_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/752268/2188450.8/0_1e2499_73d8c15d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/752268/2188450.8/0_1e2499_73d8c15d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/509292/2188450.8/0_1e249a_f0de9e44_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/509292/2188450.8/0_1e249a_f0de9e44_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516365/2188450.8/0_1e249b_3c51eda7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516365/2188450.8/0_1e249b_3c51eda7_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот, как-то так. Спасибо, что были с нами. Всем – удачи и интересных путешествий! И, очевидно, вкусных шницелей!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/368754/2188450.8/0_1e249c_95944d00_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/368754/2188450.8/0_1e249c_95944d00_orig" alt="" loading="lazy"></noscript></figure>
+  </article>
+</div>
+<script>
+(function() {
+  var pending = []; // images that entered the buffer zone, not yet loading/loaded
+  var loading = false;
+
+  function distanceFromViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;      // above viewport
+    if (rect.top > vh) return rect.top - vh;        // below viewport
+    return 0;                                       // on screen right now
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        if (d === 0) break; // already on screen -- can't beat that
+      }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var img = pickNext();
+    if (!img) return;
+    loading = true;
+    loadImage(img, img.getAttribute('data-src'));
+  }
+
+  function loadImage(img, src) {
+    img.onload = function() {
+      img.classList.add('loaded');
+      img.removeAttribute('data-src');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      // Flickr (or the network) hiccuped on this one request -- don't give
+      // up on it and don't block everything else behind it. Free the
+      // queue immediately, and let this image rejoin the pending pool
+      // after a short, growing backoff so it gets picked up again.
+      loading = false;
+      var attempt = (img._retryCount || 0) + 1;
+      img._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() {
+        pending.push(img);
+        processQueue();
+      }, delay);
+      processQueue();
+    };
+    img.src = src;
+  }
+
+  // Images join the pending pool once they're within reach; every time a
+  // slot frees up, pickNext() re-checks CURRENT positions and grabs
+  // whichever pending image is closest to (or actually on) screen right
+  // now -- so a fast scroll or scrollbar drag doesn't leave visible
+  // photos stuck behind everything the scroll happened to pass over.
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>

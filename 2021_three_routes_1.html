@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Три коротких маршрута нашего летнего отпуска. Часть первая: Суздаль и Владимир</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  nav.toc,
+  article > p,
+  article > h2,
+  article > ul.summary-list,
+  article > blockquote.citation {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.masthead {
+    max-width: none;
+    padding: 8vw 0 4vw;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://live.staticflickr.com/65535/51892272407_cb677a6695_o.jpg') center 40% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  nav.toc {
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+    font-family: var(--sans);
+  }
+  nav.toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li { margin: 0 0 0.85rem; break-inside: avoid; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.3;
+    font-size: 0.98rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent-soft); color: var(--accent); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 3.9rem 0 1.4rem;
+    padding-top: 0.2rem;
+    color: var(--text);
+    position: relative;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin-bottom: 1.1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-soft); }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+  a:hover { color: #6b5228; }
+  a.internal-link-pending {
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--accent-soft);
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.summary-list {
+    background: #f4f1ea;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem 1.6rem 2.4rem;
+    margin: 0 0 3rem;
+  }
+  ul.summary-list li { margin-bottom: 0.7rem; }
+  ul.summary-list li:last-child { margin-bottom: 0; }
+  blockquote.citation {
+    margin: 2rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  blockquote.citation p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  figure.photo { margin: 2.6rem 0; }
+  figure.photo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.08), 0 8px 24px rgba(43,41,37,0.06);
+  }
+  img.lazy-photo {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 40px;
+    background: var(--line);
+  }
+  img.lazy-photo.loaded { opacity: 1; }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 2.2rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  p.epigraph {
+    text-align: right;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+  p.fin {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  p.subhead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { width: 88%; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17.5px; }
+    .wrap { width: 90%; padding: 10vw 0 16vw; }
+    header.masthead h1 { font-size: 1.85rem; }
+    nav.toc ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Три коротких маршрута нашего летнего отпуска. Часть первая: Суздаль и Владимир</h1>
+  </header>
+
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      <ul>
+    <li><a href="#предисловие-про-что-это-я-собрался-поведать">Предисловие. Про что это я собрался поведать.</a></li>
+    <li><a href="#часть-1-суздаль-апрель">Часть 1. Суздаль. Апрель.</a></li>
+    <li><a href="#часть-2-суздаль-август">Часть 2. Суздаль. Август.</a></li>
+    <li><a href="#часть-3-владимир">Часть 3. Владимир</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <article>
+<h2 id="предисловие-про-что-это-я-собрался-поведать">Предисловие. Про что это я собрался поведать.</h2>
+<p>А поведать (ну, точнее, просто написать небольшой рассказ, для вас и для собственной памяти) я собрался про то, как мы с женой провели две недели августовского отпуска в 2021 году, в коронавирусную почти безвыездную эпоху, имея, по семейным обстоятельствам, следующее граничное условие: надолго из Москвы (точнее, Зеленограда) не уезжать - максимум, дня на четыре-пять. Плюс, путешествуем мы, традиционно, общественным транспортом и своими ногами. Учитывая, что раньше мы были путешественники, в основном, «заграничные», а по нашей России и ближайшим соседям ездили нечасто, такие условия давали прекрасную возможность исправить этот перекос и поездить по красивым местам, расположенным в ближайших к Подмосковью областях.</p>
+<p>И взял я карту и начал думать…</p>
+<p>Один пункт для меня был ясен: Суздаль. Несмотря на то, что мы там прожили четыре дня в конце этого апреля и посмотрели на все, что можно, в нем и в его окрестностях. Я хотел увидеть его снова, хотел увидеть его покрытым зеленой листвой, увидеть его монастыри и храмы возвышающимися над зелеными лугами, в тени зеленых деревьев.</p>
+<p>Ну, а раз Суздаль, то и Владимир, который был для меня неведом до сих пор. А где Владимир, там и Покров-на-Нерли, конечно – как я могу называть себя фотолюбителем, не побывав там на рассвете?</p>
+<p>Итак, один «радиус» прорисовался: Москва – Суздаль – Владимир – Боголюбово – Москва. Дня на четыре. Это же еще и отпуск: гулять-бродить… Две ночевки в Суздале, две во Владимире, и домой. Это и будет темой первой части моего рассказа.</p>
+<p>А что дальше? Всегда хотел побывать в подмосковной Коломне. Симпатичный городок, судя по рассказам на Форуме. Почему нет – доехали до «трех вокзалов», сели на поезд, пара часов и мы там! А там есть что посмотреть, судя, опять же, по отчетам коллег. Ок, а что у нас там еще по тому же направлению? А вот есенинское Константиново там не так далеко, хотя уже в Рязанской области. Можно и взглянуть. Там же и природа должна быть красива – высокие берега Оки, леса, «березовый ситец», вот это всё. Можно снять какой-нибудь деревенский домик на пару дней, встретить рассветы-закаты над Окой, погулять по лесам-полям.</p>
+<p>Хорошо, вот и второй «радиус» на четыре дня: Москва – Коломна - Константиново – Москва. Из Москвы в Коломну на поезде, два дня в Коломне, потом дальше на поезде до Рыбного, оттуда берем такси до Константиново и два дня живем в нем. Ну и снова до Рыбного, и оттуда на поезде до Москвы. И это будет <a href="2021_three_routes_2.html" target="_blank" rel="noopener noreferrer">вторая часть</a> моего рассказа.</p>
+<p>Отлично. Но есть еще дня четыре. Что еще? Я слышал, что есть городок, тоже не так далеко от Москвы, где очень непросто жилось некогда девочке Марусе. Хм. Цветаевы, Паустовский, Поленов. Да, хочу туда. И давно. И название красивое: «Таруса».</p>
+<p>«А как насчет съездить в Тарусу на несколько деньков?» спросил я подругу дней моих суровых. «Будешь смеяться – вчера смотрела видео, там Катерина Гордеева так вкусно рассказывала про Тарусу. Хотела тебе предложить.» Так что всё сошлось. Москва – Таруса – Москва. <a href="2021_three_routes_3.html" target="_blank" rel="noopener noreferrer">Часть третья</a>.</p>
+<p>Я потер руки: отпуск вырисовывался богатый на новые впечатления. Но он же требовал подготовиться, почитать и посмотреть, чтобы провести эти дни максимально интересно и продуктивно.</p>
+<p>А для начала еще и забронировать то, что надо бы забронировать. В первую очередь – билеты на поезда. Иду на сайт РЖД, покупаю все билеты. Теперь жилье. Иду на Booking. В Суздале бронирую апартаменты в районе бульвара Всполье, с новыми кирпичными трехэтажками, который при этом буквально в пяти минутах ходьбы от Спасо-Ефимьева монастыря (вот в <a href="https://sp.booking.com/hotel/ru/uiutnaia-kvartirka-na-vspol-e.ru.html?aid=325219" target="_blank" rel="noopener noreferrer">этом же доме</a>, но не эти апартаменты, наших сейчас не вижу). Весной жили <a href="https://sp.booking.com/hotel/ru/apartamenty-u-vasilisy.ru.html?aid=325219" target="_blank" rel="noopener noreferrer">в аналогичных апартаментах</a>, тоже на Всполье, но с другой стороны от дороги, в соседнем, таком же новом жилом комплексе. И тогда, в апреле, нам в целом все понравилось, но в той квартире не было кондиционера. Но то в апреле. А тут все же начало августа, и я решил найти нечто похожее, но с ним. Выбор был не очень большой, но ок, нашел, забронировал.</p>
+<p>Во Владимире выбрал симпатичную гостиницу прямо в центре, <a href="https://sp.booking.com/hotel/ru/u-zolotykh-vorot.ru.html?aid=325219" target="_blank" rel="noopener noreferrer">«У Золотых Ворот»</a>, нам очень понравилась. После второй ночевки во Владимире выезжали оттуда рано утром, часа в четыре с небольшим, чтобы успеть к рассвету у церкви Покрова-на-Нерли. Договорились с девушкой-администратором накануне, нам выдали завтрак сухпайком. С утра мы должны были бы освободить номер - это был у нас день отъезда. Но день обещался быть очень и очень жарким, а поезд у нас обратно в Москву довольно поздно вечером. В общем, подумали мы, подумали. И оплатили еще одни сутки, чтоб весь день был наш, и можно было прийти в номер, принять душ и отдохнуть по-человечески. Тот же номер нам оставить не могли, но дали другой, поменьше. Так что с вечера мы упаковались и утром перед выездом в Боголюбово оставили вещи прямо в номере и вышли к такси, никого не побеспокоив. Когда вернулись, наши вещи уже перенесли в наш новый номер, мы приехали довольные, но уставшие и невыспавшиеся, была жара, так что мы ни разу не пожалели, что решили оплатить номер еще на сутки.</p>
+<p>В Коломне забронировал на две ночи гостиницу <a href="https://sp.booking.com/hotel/ru/hermitage-kolomna.ru.html?aid=325219" target="_blank" rel="noopener noreferrer">«Hermitage»</a> рядом с Посадом, в довольно скучном на вид здании, где эта гостиница занимает один этаж в некоем подобии бизнес-центра с общей охраной внизу. Но внутри номер был неожиданно хорош: большой, чистый, довольно уютный, так что я бы там остановился снова при случае.</p>
+<p>В Константиново сняли <a href="https://sp.booking.com/hotel/ru/dom-166.ru.html?aid=325219" target="_blank" rel="noopener noreferrer">«летний домик»</a>, тоже через Букинг, у хозяина, который живет в «большом» коттедже со своей семьей и сдает два небольших летних домика в дальней части своего «землевладения»: один побольше, один поменьше. Мы почитали описания и отзывы (а они варьировались в довольно широком диапазоне), и взяли тот, что побольше. Ну, в целом, приемлемо для двух дней, тем более там с выбором жилья небогато, конечно. На мой взгляд, для уровня предоставляемого сервиса это стоит раза в два дороже, чем следовало бы. Но - отсутствие конкуренции...</p>
+<p>Ну и в Тарусе, после долгих сравнений и чтения отзывов, выбрал, собственно, гостиницу <a href="https://sp.booking.com/hotel/ru/gostinitsa-tarusa.ru.html?aid=325219" target="_blank" rel="noopener noreferrer">«Таруса»</a>. Оказалось так: с одной стороны, относительно комфортно, и хорошая еда в ресторане при гостинице, и на завтрак и просто так; с другой стороны, гостиница стоит прямо у автодороги, и наши окна выходили на нее, так что было немного шумновато, если не привык к этому. Но в целом ничего, неплохо.</p>
+<p>И, наконец, для поезди в Тарусу мы еще купили онлайн билеты в музеи: в музей семьи Цветаевых, в музей Константина Паустовского, а также в музей-усадьбу «Поленово», расположенную в нескольких километрах дальше по Оке на другом ее берегу. Постарались распределить их по дням достаточно свободно, чтобы и не быть слишком привязанным к месту, и, опять же, чтобы это было отпуском, отдыхом, а не «хождением по музеям».</p>
+<p>Ну и что вам сказать? Все прошло практически идеально, гораздо лучше, чем я ожидал. Особенно в плане погоды. Перед отъездом в Суздаль я пребывал в некотором унынии. Я же «типа фотограф», а прогноз – оба дня облачно и дожди, особенно под вечер. А я ж, в основном, фотографировать в этот раз и ехал, обзавидовавшись (как обычно) нашей luchar и ее туманным рассветным суздальским фотографиям. Но я смирился и отдался, как говорится в книжках, «на волю провидения». И? Мне было подарено два прекрасных заката. Один просто красивый:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51893320258_70f1dff261_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51893320258_70f1dff261_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И второй - совершенно фантастический:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51892272407_cb677a6695_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51892272407_cb677a6695_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51893883525_bc00f9e332_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51893883525_bc00f9e332_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И это были только ягодки. Вот, перед началом рассказа, еще несколько фотографий из этой «тройной поездки»:</p>
+<p>Церковь Покрова-на Нерли, рассвет:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51893232281_fd7221d2cb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51893232281_fd7221d2cb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Коломенский кремль:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51892272307_ae7378aa33_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51892272307_ae7378aa33_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Закат у излучины Оки близ Константиново:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51893568209_ee6f16f99d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51893568209_ee6f16f99d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Церковь Воскресения Христова в Тарусе:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51892272212_c9e76eb11a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51892272212_c9e76eb11a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>У ограды кладбища в Бёхово, рядом с усадьбой «Поленово»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51893568129_19725c3e6c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51893568129_19725c3e6c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но давайте обо всем по порядку? И начнем с той части нашего составного путешествия, которая связана с Суздалем и Владимиром. Не думаю, что мой рассказ получится таким уж длинным, и пытать вас потоком фотографий я тоже не буду, обещаю, но я попробую передать вам свои впечатления, и возможно, для кого-то это станет дополнительным стимулом отправиться в путешествие.</p>
+<h2 id="часть-1-суздаль-апрель">Часть 1. Суздаль. Апрель.</h2>
+<p>Как я уже написал выше, в Суздаль я обязательно хотел съездить летом, снова, после нашего весеннего «вояжа» туда.</p>
+<p>Весенняя поездка для нас была первым визитом в Суздаль; мы прожили там четыре дня, походили по церквям, музеям, монастырям, много гуляли просто по городу, прошли его вдоль и поперек, съездили в деревушку Кидекша, где на высоком берегу Нерли стоит древняя, простая, но по-своему гармоничная церковь Бориса и Глеба. Начну-ка я, пожалуй, с небольшого (или большого?) отступления в весенний Суздаль…</p>
+<p>Пару слов про подготовку. Очевидно, что в такой город, как Суздаль, гораздо лучше приезжать, основательно (ну, или хоть как-то) почитав про историю города, историю его памятников, его архитектуру, его вплетенность в историю Древней Руси. Я купил книжку, называемую «<a href="https://www.labirint.ru/books/670045/" target="_blank" rel="noopener noreferrer">Суздаль. Исторический путеводитель</a>» В.Г. Глушковой. Я через нее продрался, но, честно говоря, рекомендовать ее я бы не стал. Довольно тяжелый многословный стиль; много повторов одного и того же разными словами, плюс определенный религиозный уклон, что несколько мешает чтению. Иллюстрации черно-белые и, что хуже, маленькие. Но книжка довольно объемная, и информацию из нее извлечь все же получилось.</p>
+<p>Вторая книжка, которая оказалась в моих руках, была гораздо меньше по объему: это простенький путеводитель «<a href="https://www.ozon.ru/product/suzdal-putevoditel-4142268" target="_blank" rel="noopener noreferrer">Суздаль</a>», Т.П. Тимофеева, очень компактный и удобный для того, чтобы таскать с собой по городу, и обращаться к нему, если нужно освежить какие-то моменты. Но там информации, конечно, гораздо меньше, и одной такой книжкой не обойтись.</p>
+<p>Плюс посмотрели мы несколько видео про Суздаль (а найти хорошие среди многих десятков «пустышек» - дело непростое). В общем, некоторая картина в голове создалась, и приоритеты определились. Ну, помимо фотографирования.</p>
+<p>Весна в 2021-м выдалась довольно прохладной, в конце апреля природа только-только отогревалась и оживала, деревья только начинали покрываться зеленой, еще прозрачной зеленью, и то далеко не все. Но зато белые стены и башни церквей и монастырей ничто не загораживало. Как я уже написал, жили мы в апартаментах в северной части Суздаля, на бульваре Всполье, подальше от суеты туристического центра. Хотя какая там суета, в пандемию-то. Но тем не менее, в стороне было еще спокойнее. Ближайшим к нам (минутах в 5-7 от дома) был Спасо-Евфимиев монастырь – прекрасный музейный комплекс, стоящий посещения даже если бы билеты были в три раза дороже. Мы были в нем и весной, и хотели снова попасть туда летом, во второй приезд, но на этот раз там была немалая очередь в кассу, день был жаркий, и мы отступились.</p>
+<p>Не знаю сам зачем, но решил нарисовать маленькую «карту» для тех, кто еще не знаком с суздальской топографией, как первое приближение. В Суздале 5 монастырей (4 из них – действующие), я их и нанес на карту, надписав первыми буквами названий: Спасо-Евфимиев (недействующий; ныне - музейный комплекс), Покровский (женский), Александровский (мужской), Ризоположенский (женский) и Васильевский (мужской):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51807843834_6c8bfe7515_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51807843834_6c8bfe7515_o.png" alt="" loading="lazy"></noscript></figure>
+<p>Синяя звездочка пониже Спасо-Евфимиева монастыря – точка на высоком берегу речки Каменки, откуда, как мне кажется, лучше всего фотографировать и сам Спасо-Евфимиев, и Покровский монастыри. Дорожка к этому месту ведет от улицы Ленина – нужно перед первым домом от Спасо-Евфимиева монастыря (в сторону центра) зайти в деревянные ворота (иногда сами ворота закрыты, но рядом есть открытая калитка).</p>
+<p>Серые кружочки – это примерно те места, где мы жили в апреле и в августе. И улица, с которой мы начинали свои утренние маршруты, выходя к Смоленской церкви.</p>
+<p>Помню, что Суздаль сразу очень понравился (ну, собственно, мы и были настроены на то, чтобы он нам понравился), но расстроило убитое состояние дорог в городе, включая, казалось бы, самые важные, «представительские» улицы – например, Кремлевскую, ведущую от улицы Ленина к Рождественскому собору. И это при том, что город через три года собирался отмечать свое тысячелетие. Хоть под ноги не смотри. Отбитая, растрескавшаяся штукатурка Торговых рядов, явно взывающие к ремонту стены Ризоположенского монастыря – и это прямо через дорогу от здания городской администрации со смотрящим вдаль вождем мирового пролетариата… При этом Покровский монастырь (действующий) и Спасо-Ефимиев монастырь (который музейный комплекс) – в отличном состоянии, как и ряд других маленьких церквей (а их в Суздале более сорока). В общем, сильный визуальный контраст, который, видимо, весной особенно бросается в глаза.</p>
+<p>Вот несколько фотографий с видами Суздаля, которые я сделал тогда, весной; для начала просто вразброс. Как нам мог бы не понравиться такой Суздаль, скажите?</p>
+<p>Александровский мужской монастырь:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51804204365_55ba732b44_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51804204365_55ba732b44_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Под стенами Спасо-Евфимиева монастыря:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51803840754_660d09a442_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51803840754_660d09a442_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Покровский женский монастырь:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51803484446_80119b6542_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51803484446_80119b6542_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Суздальский кремль и Богородице-Рождественский собор:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51803599348_63edc599b0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51803599348_63edc599b0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Церковь Козьмы и Дамиана. Один из красивейших видов в Суздале, на мой взгляд:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51804203855_7045dbfdb7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51804203855_7045dbfdb7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Она же:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51804204410_88dbfdd946_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51804204410_88dbfdd946_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Снова Покровский монастырь:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51803841269_d25ec13761_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51803841269_d25ec13761_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну давайте немножко поподробней теперь разглядим Суздаль. Раз уж мы остановились на Покровском монастыре, то давайте немного поговорим о нём.</p>
+<p>Это – Благовещенская (надвратная) церковь над входом в монастырь:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51802528167_5d3bec9c7c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51802528167_5d3bec9c7c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот главный, Покровский, собор одноименного монастыря:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739407766_c6875dbbb0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739407766_c6875dbbb0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Из <a href="https://sobory.ru/article/?object=05097" target="_blank" rel="noopener noreferrer">статьи</a> на sobory.ru:</p>
+<p><em> Основание девичьего Покровского монастыря в Суздале произошло в 1364 году близ реки Каменки по желанию суздальского князя Андрея Константиновича. Строительство велось по обету князя, данному в благодарность за чудесное спасение во время плавания по Волге к Нижнему Новгороду... Первая Покровская церковь обители была деревянной… Активное каменное строительство в обители началось в XVI столетии. Великий князь Московский Василий III Иоаннович со своей первой супругой Соломонией Сабуровой, молясь о даровании наследника, часто ездили по монастырям и делали щедрые вклады. Довольно часто они посещали Суздаль. В первой четверти XVI века в Покровском монастыре возвели величественный собор, Святые ворота с надвратным Благовещенским храмом, церковь-колокольню во имя Происхождения честных древ Животворящего Креста Господня и некоторые хозяйственные постройки... Точной датировки начала и освящения собора до сих пор не существует. Исследователи называют 1510, 1514, 1515 и 1518 годы или объединяют их в один строительный период.</em></p>
+<p>В Покровский монастырь мы в первый раз заглянули довольно поздно, ближе к вечеру. Там (точнее, в сестринском корпусе) мы договорились об экскурсии, но пройти она должна была уже на следующий день, в 11 утра. «Экскурсионная группа» состояла из меня и моей жены, и приятная женщина средних лет (уроженка Суздаля, но не монашка) провела нас по Покровскому собору и усыпальнице под ним. Начала она, конечно, с озвучивания некоего явно уже тысячу раз произнесенного до этого текста, и было видно, что ей скучновато, хотя она и старается произносить свой рассказ с выражением. Но довольно быстро выяснилось, что мы, вообще говоря, «в теме» и истории Суздаля вообще и истории Покровского монастыря и его знаменитых насельниц, и тут ее глаза немедленно засветились интересом. И дальше пошло веселей, так что вместо положенных 45 минут мы разговаривали часа полтора с лишним, даже неудобно стало.</p>
+<p>А это - две красивые парные церкви у самых стен Покровского собора, но к нему не относящиеся:</p>
+<p>Церковь Николая Чудотворца:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738586882_4d3cb83337_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738586882_4d3cb83337_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Снова из <a href="https://sobory.ru/article/?object=00924" target="_blank" rel="noopener noreferrer">статьи</a> на sobory.ru:</p>
+<blockquote class="citation"><p>В начале XVII века на месте этого храма стояла деревянная церковь во имя преподобных Зосимы и Савватия Соловецких, но в 1712 году она была заменена каменной, сохранившейся и по сей день. Строительство Никольской церкви приписывают царице Евдокии Лопухиной, сосланной в 1698 году своим супругом царём Петром I в Суздальский Покровский монастырь. На свои средства Евдокия воздвигла напротив Святых ворот обители зимний храм Николая Чудотворца и пристроила к нему придел в честь преподобного Алексия, небесного покровителя её сына царевича Алексея, тогда ещё наследника престола. Никольская церковь (1712 г.) вместе с ранее построенной летней церковью Петра и Павла (1694 г.) образовала архитектурный ансамбль. По примеру этого ансамбля в Суздале с XVII по XIX века было построено немало «парных» храмов.<br>
+Как и все зимние храмы Суздаля, Никольская церковь отличается простой архитектурой и скромным декором. По своей композиции она напоминает крупные одноглавые суздальские храмы... Никольская церковь неоднократно перестраивалась, но в 1954 году её первоначальный вид был восстановлен.</p></blockquote>
+<p>Парная к ней церковь Петра и Павла:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740049889_3549a3ce4e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740049889_3549a3ce4e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Еще несколько фотографий. Вот это у нас Знаменская и Ризоположенская церкви на южной окраине Суздаля.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51803840904_e2371a1177_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51803840904_e2371a1177_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>(о них можно подробнее почитать на <a href="https://sobory.ru/article/?object=09241" target="_blank" rel="noopener noreferrer">sobory.ru</a>).</p>
+<p>Долина Каменки и Знаменская/Ризоположенская церкви:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51803840874_8eb7c1f6cb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51803840874_8eb7c1f6cb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Богородице-Рождественский Собор и соборная колокольня, вид с земляного вала со стороны улицы Варганова:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51802527752_39aa7a05a5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51802527752_39aa7a05a5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Небольшая историческая справка о Богородице-Рождественский Соборе, он же Собор Рождества Пресвятой Богородицы, тут, наверное, будет тоже уместна (весь курсив – из Википедии):</p>
+<blockquote class="citation"><p>Постройка первого собора относится к началу XII века, ко времени княжения Владимира Мономаха. Здание было построено из плинфы киевскими мастерами.<br>
+Как сообщает Лаврентьевская летопись, в 1222 году по приказу Юрия Всеволодовича обветшавшее здание было разобрано, а на его месте за три года построено новое, простоявшее до XV века.<br>
+…строительством этого собора и других крупных белокаменных храмов эпохи великого князя Юрия Всеволодовича руководил удельный князь Юрьева-Польского Святослав Всеволодович.<br>
+В 1445 году Суздаль сожгли казанские татары. В результате пожара обрушилась верхняя часть собора.<br>
+В 1528 году Геннадий, епископ Суздальский, получил от великого князя Василия III, отца Ивана Грозного, позволение на перестройку соборной церкви. В результате старые стены были разобраны до аркатурного пояса с женскими масками и заменены кирпичными. Прежде трёхглавый собор получил пятиглавое завершение и в XVII веке был расписан изнутри. Таким образом, до наших дней собор дошёл с большими изменениями. Его нижняя часть относится к XIII веку, верхняя — к XVI. В интерьере сохранилась роспись стен XIII, XV, XVII веков.<br>
+В 1233 году собор был украшен фресковой живописью ростовскими или суздальскими мастерами епископа Кирилла. Фрагменты этой росписи были открыты в 1938 году.<br>
+В соборе похоронены сыновья князя Юрия Долгорукого, князья из рода Шуйских и другие.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51803483926_892b50a95a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51803483926_892b50a95a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Немного внутреннего декора Рождественского собора, раз уж мы о нем заговорили:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738587887_ce198623ab_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738587887_ce198623ab_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740050624_01645c6db7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740050624_01645c6db7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Так называемый «выносной фонарь» XVII века:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740050614_2db32655c9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740050614_2db32655c9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740301890_91e6b3bc76_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740301890_91e6b3bc76_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Остатки старых фресок:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738587757_3d8cab8206_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738587757_3d8cab8206_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Знаменитые «суздальские врата», украшенные в византийской технике «золотой наводки» (сохранились западные и южные врата):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739409896_afd7e3381d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739409896_afd7e3381d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Никольская деревянная церковь (церковь Николы из села Глотово) на территории Суздальского кремля:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739646878_49fb6dd393_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739646878_49fb6dd393_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740050474_c11f7a52f6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740050474_c11f7a52f6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739406246_2ccda1b97b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739406246_2ccda1b97b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Построена</p>
+<blockquote class="citation"><p>в 1766 году в селе Глотово Юрьев-Польского района Владимирской области. В 1960 году церковь перевезена в Суздаль и восстановлена архитектором М. М. Шароновым. Перевоз связан с необходимостью сохранения памятника и планами развития Суздаля как туристического центра.<br>
+Храм восстановили ... в западной части древнего Суздальского кремля. Церковь представляет собой образец древнейших «клетских» храмов. Она расположена на высоком подклете и с трёх сторон обнесена открытой галереей.</p></blockquote>
+<p>Википедия утверждает, что место выбрано очень удачно. Ну… я не согласен. Мне кажется, ей тут совсем не место, учитывая, что на другом берегу Каменки, практически напротив, есть прекрасный музей деревянного зодчества. Почему не там?...</p>
+<p>Перебираем фотографии дальше. Церковь Илии Пророка на Ивановой горе (1744) на краю Ильина луга.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740303350_b09d48c7a7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740303350_b09d48c7a7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот она же в другом ракурсе:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51803599683_8cf9a5e2bb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51803599683_8cf9a5e2bb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Церковь Илии Пророка и суздальский кремль на одном фото:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740048514_3245fb3b66_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740048514_3245fb3b66_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот, кстати, и тот самый музей деревянного зодчества:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739643143_8dd12162f8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739643143_8dd12162f8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738587552_7428d31fc0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738587552_7428d31fc0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739645018_e48e201a74_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739645018_e48e201a74_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738587457_e56dd1d602_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738587457_e56dd1d602_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739409571_c7bedcd307_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739409571_c7bedcd307_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740301455_d3b8af8fa3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740301455_d3b8af8fa3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид на суздальский кремль и Богородице-Рождественский собор со стороны музея деревянного зодчества:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738587192_6facc3eb68_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738587192_6facc3eb68_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Еще один красивый вид на Александровский монастырь:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51803841389_2f12aabac5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51803841389_2f12aabac5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В стенах Александровского монастыря:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740051199_70075a0eee_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740051199_70075a0eee_o.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>По преданию, [Александровский монастырь] был основан в 1240 году Александром Невским. Монастырь получал вотчины от родственников Александра Невского — Ивана Калиты и Ивана II. По причине большого числа инокиней, ставших сиротами и ушедших в монастырь после нашествия татар, именовался Большой Лаврой.<br>
+в 1608—1610 годах монастырь сожгли дотла поляки. Ни одна постройка, сооружённая ранее XVII века, не сохранилась.<br>
+Церковь Вознесения Господня с колокольней построена в 1695 году на средства царицы Натальи Кирилловны, матери Петра I.<br>
+В 1764 году при проведении Екатериной II секуляризации земель Александровский женский монастырь был упразднён с обращением собора в приходской храм города.<br>
+В 2006 году возобновлён в качестве мужского монастыря Владимиро-Суздальской епархии.</p></blockquote>
+<p>Почти рядом с Александровским монастырем (см. карту в самом начале) у нас Ризоположенский собор на территории Ризоположенского монастыря.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740302340_d99c88d382_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740302340_d99c88d382_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сам собор небольшой и уже отреставрирован, но бОльшая часть территории монастыря по-прежнему в печальном состоянии. По крайней мере, так видится по весне.</p>
+<p>А это – тоже парные (летняя и зимняя) Антипиевская и Лазаревская церкви:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738588112_e69d1a7176_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738588112_e69d1a7176_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740050909_f623aca5d2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740050909_f623aca5d2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740303420_a636cd71ba_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740303420_a636cd71ba_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Разноцветная Антипиевская церковь стоит совсем рядом с туристической приманкой - знаменитым «домом Бальзаминова» из старого советского фильма с совсем молодым Вициным:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740298670_9f6f293dd8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740298670_9f6f293dd8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Движемся дальше, в сторону Торговых рядов и Кремля. На следующем фото - церковь Входа Господня в Иерусалим, или Входо-Иерусалимская церковь, <em>расположенная между Торговыми рядами и оборонительными укреплениями Кремля. Построена в 1702—1707 годах, в XVIII веке составляла единый архитектурный ансамбль вместе с расположенной рядом тёплой Пятницкой церковью и снесённой колокольней.</em></p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740050804_a2a197d886_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740050804_a2a197d886_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Две маленькие церковки на противоположном, низком берегу речки Каменки: церковь Богоявления (справа) и церковь Рождества Предтечи (слева):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738588077_b6c18ba433_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738588077_b6c18ba433_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Фотографии Торговых рядов выкладывать не стану – это довольно грустное зрелище. Надеюсь, что хотя бы к тысячелетнему юбилею их приведут в порядок. Но как-то пока не видно массированной подготовки. Ямы на дорогах, открывающие несколько слоев асфальта, и раздолбанные ступени Торговых рядов я фотографировал скорее для себя, но… все мы знаем, как могут выглядеть наши российские дороги, чего расстраиваться лишний раз.</p>
+<p>Хотя улицы, вроде бы, понемногу латают: какая-то единственная бригада неторопливо ремонтировала бордюры вдоль одной из дорог недалеко от Александровского монастыря. Глядишь, за три года и сделают что-то…</p>
+<p>Торговые ряды расстроили еще и небрежным отношением тех, кто занимался переводом названий исторических памятников на английский язык для иностранных туристов. Неужели было так сложно найти консультантов и выверить тексты? «Торговые ряды» именуются на вывеске «Trading Arcades». Огромные буквы, здоровенный указатель прямо в центре. Такого выражения в английском нет. Вообще. Достаточно вбить в поисковую строку и убедиться. Ну, точнее, есть такой очень специальный термин в трейдинге на рынке Forex. И все. А «торговые ряды» называются по-английски «<a href="https://en.wikipedia.org/wiki/Arcade_(architecture)" target="_blank" rel="noopener noreferrer">Shopping Arcades</a>». Ну зачем же так лажать-то, прямо в туристическом центре города, ну, ребята. Вы же «жемчужина Золотого кольца», как никак. Лицо российского туризма, можно сказать.</p>
+<p>Еще из этой же серии: огорчила гордая табличка - золотые буквы на красном фоне - на здании суздальского филиала Санкт-Петербургского (!) Государственного Института Культуры (!) (это учебное заведение многие годы было просто Суздальским художественно-реставрационным училищем, и неплохим, как мне говорили) – дескать, располагается «в здании бывшего блохинского богОдельного дома», и это написание повторено там дважды. Хотя на всех интернет-ресурсах, упоминающих это здание, написано (я проверил) правильно – «богАдельный дом», или «богАдельня».</p>
+<p>Ладно, не будем больше о грустном. И не будем занудствовать. Будем о красивом. Что тут у нас есть…</p>
+<p>Весна у Спасо-Евфимиева монастыря:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51802527982_59257e601f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51802527982_59257e601f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Первая зелень на деревьях в Спасо-Евфимиевом монастыре:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738588767_42162e52f2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738588767_42162e52f2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И первые цветы там же:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739411031_824a5a4590_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739411031_824a5a4590_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740302980_1857ba0a16_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740302980_1857ba0a16_o.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>Спасо-Евфимиев монастырь основан в 1352 году суздальско-нижегородским князем Борисом Константиновичем как крепость, призванная защищать город от внешних и внутренних врагов.<br>
+…Первоначальные деревянные постройки монастыря не сохранились, нынешний вид ансамбля сложился в XVI—XVII веках. Возведение грандиозных построек монастыря оказалось возможным благодаря крупным пожертвованиям княжеско-боярской знати. Крупные вклады были пожалованы великим князем Василием III, его сыном Иваном, князьями Пожарскими и др.<br>
+…Упоминается в Переписке Ивана Грозного с Андреем Курбским. Князь-эмигрант пишет царю: «А что за городом Суздалем имеется Спасский монастырь, где монахи весьма сребролюбивы и зело пьянственны».</p></blockquote>
+<p>Спасо-Преображенский собор на территории музейного комплекса Спасо-Евфимиева монастыря:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739646263_678233238e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739646263_678233238e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На переднем плане видна часовня-усыпальница князя Д.М. Пожарского, разрушенная в 30-е годы прошлого века и восстановленная только в 2009 году:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739410781_cf824398a1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739410781_cf824398a1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>Спасо-Преображенский собор входит в объект Всемирного наследия ЮНЕСКО под названием «Белокаменные памятники Владимира и Суздаля».</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739646238_f33939e0ed_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739646238_f33939e0ed_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Собор появился в XVI веке на месте сгоревшей деревянной церкви Спаса Преображения. В 1507—1511 годах была построена маленькая бесстолпная Спасская церковь — древнейшее из дошедших до нас каменных сооружений Спасо-Евфимиева монастыря, возведённое над могилой его основателя игумена Евфимия. В 1594 году к этой церкви было пристроено здание большого четырёхстолпного собора, а церковка переименована в Евфимиевский придел.</p></blockquote>
+<p>Внутри Спасо-Преображенского собора:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738584287_7e2aaf5071_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738584287_7e2aaf5071_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739647053_648e846bf7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739647053_648e846bf7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738589552_44a82604c7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738589552_44a82604c7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740303565_e5caf01d76_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740303565_e5caf01d76_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739647018_7721f20919_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739647018_7721f20919_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Успенская трапезная церковь в Спасо-Евфимиевом монастыре:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739646158_f8dec72ca7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739646158_f8dec72ca7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это уже Смоленская церковь, или церковь Смоленской иконы Божьей Матери (1696—1706), через дорогу от Спасо-Евфимиева монастыря. Очень симпатичная, и цвет очень приятный, теплый:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738589037_b9aaa7f461_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738589037_b9aaa7f461_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740300240_c3eaee6f1d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740300240_c3eaee6f1d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Двор Спасо-Евфимиева монастыря. На заднем плане, уже за стеной – как раз Смоленская церковь:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739646333_ec0c285bf8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739646333_ec0c285bf8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вообще в Спасо-Ефимиевом монастыре есть очень много на что посмотреть. Для меня он ничуть не менее (а, может, даже более) интересен, чем суздальский кремль с Богородице-Рождественским собором. И Спасо-Преображенский собор, и совершенно шикарные экспозиции в Братском корпусе («История российских монастырей») и в примыкающей Никольской больничной церкви («Золотая кладовая»), и колокольня, красивейшие перезвоны с которой я тщился записать вместе с видео на смартфон, без особого успеха).</p>
+<p>Но что больше всего оставляет след в Спасо-Евфимиева монастыря – это музей в помещении бывшего тюремного корпуса с экспозицией «Суздальская тюрьма. Летопись двухвековой истории». От сектантов, старообрядческих епископов, монахов-предсказателей и декабристов до ГУЛАГа. Множество документов, фотографий, и в целом экспозиция сделана с любовью и старанием. Сильное впечатление. Особенно зал, посвященный ГУЛАГу, конечно. Молодцы. Респект.</p>
+<p>…Закат на Каменке, под стенами Спасо-Евфимиева монастыря. Вдали видна старообрядческая церковь Косьмы и Дамиана в Коровниках.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51804204225_cdc79171fe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51804204225_cdc79171fe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это – место особое. Пять минут на такси от Суздаля – и вы в Кидекше. А в Кидекше у нас расположена церковь Бориса и Глеба,</p>
+<p>(Википедия)</p>
+<blockquote class="citation"><p>один из древнейших памятников белокаменного зодчества домонгольской Руси. Наиболее ранняя белокаменная постройка Северо-Восточной Руси, наряду со Спасо-Преображенским собором в Переславле Залесском. Построена в правление Юрия Долгорукого и обычно датируется 1152 годом.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51804204045_2cbc98b111_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51804204045_2cbc98b111_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Церковь в Кидекше послужила усыпальницей для одного из сыновей Юрия Долгорукого — князя белгородского и туровского Бориса Юрьевича, умершего в 1159 году. Здесь же погребена его жена Мария (ум. 1161) и их дочь Ефросиния (ум. 1202).</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51803841094_ecbf3e963a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51803841094_ecbf3e963a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739643103_54cbb07388_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739643103_54cbb07388_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид с обратной стороны, то есть со стороны Нерли:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51803841059_376503c42a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51803841059_376503c42a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Древнее граффити в церкви Бориса и Глеба, так называемая «голова Адама»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739641818_2d82c2a5b7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739641818_2d82c2a5b7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Остатки старинных настенных росписей:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739643023_f081a90ded_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739643023_f081a90ded_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739407431_93c344224e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739407431_93c344224e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это уже снова Суздаль – Васильевский мужской монастырь на окраине города. Сюда мало кто забирается.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739642848_61a4f0aaf4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739642848_61a4f0aaf4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот так виден Васильевский монастырь от храма Михаила Архангела в Михалях.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740298945_3738ea0f37_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740298945_3738ea0f37_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Михали теперь – это район Суздаля, а раньше была отдельной деревней. Вот так Михали показываются из-за пригорка, когда поднимаешься к ним от Каменки; слева направо: церкви Михаила Архангела, Фрола и Лавра и Александра Невского:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738584577_e23a6866a7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738584577_e23a6866a7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739406691_9f239ef6be_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739406691_9f239ef6be_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И под конец воспоминаний об апрельском Суздале еще пара фото «ни о чем». Просто показать. Подоконник ресторана «Огурец» рядом со Спасо-Евфимьевым монастырем – место это нам очень полюбилось, да и от дома недалеко. Так что, выбирая между ужином дома и где-то еще мы почти всегда выбирали его.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740303535_24d55925c5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740303535_24d55925c5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Все очень вкусно, не слишком дорого, приятная музыка, и обслуживают отлично.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739642123_bd926e49ba_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739642123_bd926e49ba_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мы заходили по разу еще в пару заведений – «Графин», почти напротив «Огурца», тоже вроде бы неплохо, мы там были в самый-самый первый вечер наш. Может быть, несколько перегружена «старинностью» интерьеров. Вот, кстати, этот котище – как раз из «Графина»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738589627_99c8dcefe5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738589627_99c8dcefe5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Были и еще в паре мест ближе к центру. Но «Огурец» как-то пришелся очень по душе.</p>
+<p>А вот афиша местного кинотеатра. После дождя. Такая ностальгия!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739646698_868c6eb0da_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739646698_868c6eb0da_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Улица Ленина:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738584252_a163f149bd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738584252_a163f149bd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И напоследок - туристическая «карета», особенно прекрасная на фоне окружающего. Метафора самого Суздаля, в своем роде:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739641753_4c422e6087_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739641753_4c422e6087_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740047754_8d14a985ab_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740047754_8d14a985ab_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Я, кстати, разговорился с водителем такси, который вез нас в Кидекшу, по поводу плачевного состояния дорог (а мы как раз по одной из таких туда и ехали, аккуратно лавируя между полуметровыми ямами). Водитель выразился в том смысле, что по его оценочному суждению наблюдаемая дихотомия между отреставрированными церквями и убитыми дорогами имеет своей причиной пришлый менталитет руководства города, который уже который раз сам не местный, а прислан (или сослан) на кормление из областного центра. И процитировал из Блаженного Августина: «При отсутствии справедливости, что такое государства, как не большие разбойничьи шайки; так как и самые разбойничьи шайки что такое, как не государства в миниатюре?» Ну, или как-то так. Может быть, я не совсем точно передал его слова. Язык водителя изобиловал идиоматическими выражениями, но смысл я донес более-менее точно.</p>
+<p>Итак, я (неожиданно) рассказал и показал немного нашу апрельскую поездку в Суздаль, когда мы посмотрели практически всё, что можно посмотреть, за небольшими исключениями. Которые мы собирались восполнить летом. Итак, наконец я приступаю к рассказу о первой части нашего летнего отпуска из трех частей. Поехали.</p>
+<h2 id="часть-2-суздаль-август">Часть 2. Суздаль. Август.</h2>
+<p>Ну, для начала, зачем я снова ехал в Суздаль летом? За летними видами, которых мне не хватало весной. И, несмотря на очень печальный прогноз погоды, как я уже писал в самом начале, лето отвалило мне два прекрасных суздальских заката из двух возможных. И вот первый из них, в наш первый вечер по приезде:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740063519_f927034613_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740063519_f927034613_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738600842_da98e9e563_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738600842_da98e9e563_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739422576_9ef5b44985_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739422576_9ef5b44985_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738600807_cf2373b208_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738600807_cf2373b208_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740063319_90002888c1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740063319_90002888c1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738600607_15d21bf6de_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738600607_15d21bf6de_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740314240_b2ecb39a03_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740314240_b2ecb39a03_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740063189_ceff4fd7ae_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740063189_ceff4fd7ae_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739658413_41b1c51f1a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739658413_41b1c51f1a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А наутро мы отправились по знакомым местам. В Спасо-Евфимиев была очередь на вход, у день был жаркий, и мы решили не стоять, а отправиться вдоль берега, через Александровский монастырь, в центр. Я очень хотел забраться на этот раз на смотровую площадку колокольни Ризоположенского монастыря и поснимать панорамы Суздаля оттуда же, откуда больше ста лет назад снимал свои цветные виды Суздаля Прокудин-Горский. Интересно же сравнить!</p>
+<p>Александровский монастырь, теперь летний его вид:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740059069_5369a89cf7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740059069_5369a89cf7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Верхушки Антипиевской и Лазаревской церквей над кирпичной стеной Ризоположенского монастыря:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739422126_1d84a92420_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739422126_1d84a92420_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Колокольня Ризоположенского монастыря. В ней сейчас музей колоколов на нескольких площадках по мере подъема к верхней, смотровой.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739658338_06d39604fe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739658338_06d39604fe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну что же, вот мы и наверху. Поснимаем и сравним, многое ли изменилось за сто с лишним лет:</p>
+<p>Прокудин-Горский (с сайта prokudin-gorskiy.ru):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51811802452_78a55dbd90_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51811802452_78a55dbd90_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>(<a href="http://prokudin-gorskiy.ru/library/pg/loc/1439b.jpg" target="_blank" rel="noopener noreferrer">отсюда</a>)</p>
+<p>Слева на ближнем плане – разрушенная (точнее – разобранная на кирпич) Троицкая церковь.</p>
+<p>Сейчас так:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740314075_cb89391c42_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740314075_cb89391c42_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Могу еще порекомендовать посмотреть на сравнение других видов Суздаля столетней давности на фотографиях Прокудина-Горского с современными (2009 года) фотографиями вот <a href="https://oldcolor.livejournal.com/65217.html" target="_blank" rel="noopener noreferrer">здесь </a>.</p>
+<p>Вот еще несколько моих фотографий со смотровой площадки.</p>
+<p>Вид на Спасо-Евфимиев монастырь:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738600372_3a35c689fd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738600372_3a35c689fd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид на Александровский (колокольня и церковь с зеленой кровлей на переднем плане) и Покровский (на заднем плане) монастыри:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740314055_707acc60b7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740314055_707acc60b7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>(слева – церкви Петра и Павла и Никольская).</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739421931_3315d3b7fa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739421931_3315d3b7fa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот – вид в другую сторону:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739653773_5caaba968c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739653773_5caaba968c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тут мы видим сразу несколько хорошо опознаваемых храмов: белые церкви Богоявления и Рождества Иоанна Предтечи на переднем плане, сразу за Каменкой; за ними видна церковь Ильи Пророка на холме за Ильинским лугом, та, что с зеленой кровлей; а левее и дальше, темно-красная – церковь Бориса и Глеба на Борисовской стороне. Вот еще вариант:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738599837_eea2477ba7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738599837_eea2477ba7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А здесь еще и Богородице-Рождественский собор захвачен:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739421811_96bf3e466a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739421811_96bf3e466a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот он отдельно, крупнее; справа видны сооружения на территории музея деревянного зодчества:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740062804_7163931128_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740062804_7163931128_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид немного левее, в сторону Торговых рядов. Внизу видны сдвоенные ворота Ризоположенского монастыря. Дальше вперед переливается своими красно-оранжевыми цветами колокольня Антипиевской церкви; рядом купола Лазаревской:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739421731_74f5f658f2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739421731_74f5f658f2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот так это выглядит, если сменить объектив:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738599927_84dede42b2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738599927_84dede42b2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Хорошо видны Торговые ряды со светло-зеленой кровлей. Чуть ближе к нам торчит верхушка колокольни Кресто-Никольской церкви с темным куполом и золотистым шпилем. Левее торговых рядов хорошо видна Казанская церковь. Прямо за Торговыми рядами видим светло-желтый храм Усекновения Главы Иоанна Крестителя, а справа от них – маленькую аккуратную Входо-Иерусалимскую церковь.</p>
+<p>Еще один вид, еще левее:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739658073_88c1cc74b0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739658073_88c1cc74b0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вдали прямо по центру – церковь Фрола и Лавра в Михалях; чуть правее виден храм Александра Невского. Ближе к нам – Скорбященская церковь (с колокольней-дудкой) и Цареконстантиновская (с пятью темными шпилями характерной необычной формы).</p>
+<p>Насмотревшись на панорамы Суздаля и окрестностей, поиграв на маленьких колоколах музея колоколов на нижних этажах, отправляемся дальше, мимо Антипиевской и Лазаревской церквей в сторону Торговых рядов.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740313515_77b9d5656c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740313515_77b9d5656c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Торговые ряды гораздо более оживлены, чем были весной, конечно.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739417841_2035f77f7d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739417841_2035f77f7d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740062499_1e5dc18099_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740062499_1e5dc18099_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Входо-Иерусалимская и Пятницкая (слева) церкви:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739421431_6bd4a433ff_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739421431_6bd4a433ff_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На подходах к кремлю:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739421401_62cdf22215_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739421401_62cdf22215_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740062394_ec5db8ee81_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740062394_ec5db8ee81_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Если взобраться по крутому подъему на земляной вал справа от улицы, ведущей в кремлю, то можно полюбоваться такими вот видами:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739657578_3c66149c3d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739657578_3c66149c3d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Теперь мы позади Входо-Иерусалимской и Пятницкой церквей:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738599592_3a8516cdef_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738599592_3a8516cdef_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А в другую сторону отличный вид на храм Ильи Пророка и туристические лодочки, катающиеся по Каменке:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740062329_a13873eea3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740062329_a13873eea3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну а здесь мы уже заплатили денежку, постояв в небольшой очереди у киоска при входе на территорию Кремля и, перед тем как снова отправиться Богородице-Рождественский собор и на тематическую выставку в кремлевские палаты, я гуляю по прилегающей территории:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739417816_84671f9949_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739417816_84671f9949_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Отсюда Илья-Пророк тоже симпатично смотрится:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739657513_7314a24545_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739657513_7314a24545_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну что ж, отправимся в Собор.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739657463_9d3c966c43_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739657463_9d3c966c43_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Захоронение (не буду врать, не помню чьё – кого-то из многочисленных Шуйских, возможно):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739657383_6a920d1027_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739657383_6a920d1027_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738599377_0d2552f602_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738599377_0d2552f602_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740310140_79db927222_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740310140_79db927222_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Взгляд вверх:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740062189_4ac4d4ac9a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740062189_4ac4d4ac9a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739657338_6b8b0b2e75_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739657338_6b8b0b2e75_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740062159_1a825d703e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740062159_1a825d703e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738599272_61697f927b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738599272_61697f927b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Далее хочу вам показать замечательные экспонаты выставки современной иконографии и религиозного искусства в здании кремля. Весной тут была другая выставка, тоже очень интересная, но я ее не фотографировал (кажется, мне не разрешили).</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739421016_133fd20b40_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739421016_133fd20b40_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739653668_535235fe7e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739653668_535235fe7e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740313085_3baa5d5fdf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740313085_3baa5d5fdf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740062099_2decb00cce_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740062099_2decb00cce_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420906_a0f32183f9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420906_a0f32183f9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420891_26c7df3ffd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420891_26c7df3ffd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420881_4242f27706_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420881_4242f27706_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420876_f583924356_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420876_f583924356_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740312990_7dfbb7b568_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740312990_7dfbb7b568_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Отправляемся гулять дальше. Я решаю вернуться к «нам», к Спасо-Ефимиеву монастырю, и пройти мимо него вдоль Каменки в другую сторону, чтобы позже, уже к закату (обещано облачно и небольшой дождь) вернуться на любимую фототочку напротив Покровского монастыря. Вдруг ну хоть что-то получится на скучном фоне облачно-дождливой серости. Пока пойдем мимо Спасо-Евфимиева, дальше.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739657153_e73b57b253_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739657153_e73b57b253_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739657058_b8baa03256_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739657058_b8baa03256_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Подойдем к памятнику создателям фильма «Андрей Рублев», который снимался в том числе здесь, в Суздале:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740061999_b6626e112b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740061999_b6626e112b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739657048_971cb5dd07_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739657048_971cb5dd07_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Погуляв, вернулись обратно на «наш» берег. От Спасо-Евфимиева вышли на улицу Ленина, прошли сотню метров до малозаметных ворот, дорожка через которые снова выводит на высокий берег Каменки. Ну что, все еще облачно. Вы же свидетели – на предыдущих снимках небо плотно затянуто серостью. И ничто не предвещало.</p>
+<p>Но вдруг:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740310065_60fa5c31de_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740310065_60fa5c31de_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Не может быть!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740061924_bfab2d90e8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740061924_bfab2d90e8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но нет, снова солнце скрывается в плотных тучах. Неужели это всё?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740312800_fd5b5088ea_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740312800_fd5b5088ea_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Небольшая надежда еще теплится…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740061854_8bdef00870_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740061854_8bdef00870_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну же, ну! Еще немножко просвета!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738595792_f28a4cd1e8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738595792_f28a4cd1e8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ааа! Господи, не запороть бы такое своими кривыми ручками!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420596_7142805eed_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420596_7142805eed_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ааа!!! Просто глазам своим не верю.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738598977_8f6400b5e0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738598977_8f6400b5e0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А и Покровский не отстает!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420521_ddc1038a18_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420521_ddc1038a18_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738598942_b7808581fe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738598942_b7808581fe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739656798_194b4dc2ea_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739656798_194b4dc2ea_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Покровский и Спасо-Евфимиев – на фоне фантастического заката:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739656778_e51541a96c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739656778_e51541a96c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740312655_d2c2eafd57_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740312655_d2c2eafd57_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740061734_783a130954_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740061734_783a130954_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740061694_a72e2b4296_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740061694_a72e2b4296_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738598797_2ef3d2c44b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738598797_2ef3d2c44b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739656688_cf417d6636_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739656688_cf417d6636_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739653593_d09123eab4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739653593_d09123eab4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В общем, минут двадцать, а то и полчаса сплошного праздника. Жена терпеливо сидит на травке, ждет когда её великовозрастное дитё наиграется в свои игрушки. Но всему приходит конец, и мы уже проголодались. Не сочтите за рекламу, просто «Огурец» тут в двух шагах, и проверен нами еще весной, так что в сгущающихся сумерках направляемся туда.</p>
+<p>Я был голодный, так что, в основном ел, а не фотографировал. Но вот две фоточки обнаружил у себя. Какой-то винегретик с селедочкой:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740061619_71769534b0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740061619_71769534b0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И бокал вина (традиционно фотографирую):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420346_8118818704_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420346_8118818704_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И на этом мы с Суздалем прощаемся. На самом деле мы гуляли еще долго, до полуночи, снова прошли до центра, сделали круг в районе Торговых рядов, но я уже ничего не снимал – после такого заката наступило некоторое отупение чувств.</p>
+<p>До свидания, Суздаль! Надеюсь еще приехать сюда солнечными, но снежными, зимними днями, если получится. Без зимнего Суздаля картина неполна.</p>
+<p>А мы переезжаем на пару дней во Владимир.</p>
+<h2 id="часть-3-владимир">Часть 3. Владимир</h2>
+<p>Итак, мы во Владимире. Поселились на две ночи в гостинице «У Золотых Ворот» на Большой Московской – близко до основных достопримечательностей. Гостиницу я уже хвалил – очень понравилась. Приехали мы уже днем, так что в нашем распоряжении было примерно полтора дня, но надо еще учесть, что первая половина следующего, второго дня была зарезервирована под храм Покрова-на-Нерли и Боголюбово. Так что на самом деле еще меньше. Но в целом, мы посмотрели довольно много за это время. Минимум, на который я рассчитывал, был - побывать в Успенском соборе. Слегка расширенный минимум: плюс к Успенскому собору, посмотреть на Золотые Ворота и на Дмитриевский собор.</p>
+<p>Но получилось несколько больше.</p>
+<p>День (и этот, и следующий) выдался жаркий и практически безоблачный. И начали мы с того, что прогулялись по Большой Московской улице, неплохо сохранившей архитектурный дух XIX столетия, прямо до Золотых Ворот.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738598052_df329cf804_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738598052_df329cf804_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738598032_d262f17e7f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738598032_d262f17e7f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>Построены в 1164 году при владимирском князе Андрее Боголюбском, который перенес столицу княжества во Владимир из Суздаля. Золотые ворота использовались как оборонительное сооружение и как триумфальная арка.<br>
+…Во время правления Андрея Боголюбского город опоясывался протяжённым валом и имел пять входных ворот (кроме Золотых, это Медные, Иринины или же Оринины, Серебряные и Волжские), а также внутренние ворота, соединявшие между собой части города — Ивановские и Торговые. До наших дней дошли лишь Золотые ворота.<br>
+Это были самые парадные ворота города в XII—XIII веках. Ипатьевская летопись сообщает, что князь их золотом «учини», имея в виду, что они были покрыты листами золоченой меди, ярко блестевшей на солнце и поражавшей воображение современников. Вплотную к воротам с севера и юга примыкали насыпные валы с глубокими рвами с наружной стороны. Через рвы от ворот проходил мост, выводивший за город. Высота арки достигала 14 метров… Лестница же в южной стене вела далее на верхнюю боевую площадку, имевшую зубчатые стены в виде бойниц. В центре этой площадки была возведена надвратная белокаменная церковь Положения риз Богоматери. Скорее всего, она представляла собою довольно стройный храм уже знакомого по постройкам Юрия Долгорукого типа: квадратный в плане четырёхстолпный … <c> цилиндрическим барабаном и скромным убранством в виде декоративного пояска, идущего посредине высоты фасада.<br>
+Ворота сохранились с сильными перестройками. К древним частям этого сооружения относится широкая проездная арка с мощными боковыми пилонами и боевая площадка над ними, дошедшая фрагментарно.<br>
+Частые опустошительные пожары и нашествия врагов значительно исказили облик Золотых ворот.<br>
+…В 1778 году ворота горели во время большого городского пожара. Несколько лет спустя в связи с осуществлением новой регулярной планировки города валы, примыкавшие к стенам Золотых ворот, были срыты для устройства проезда около них. Тем самым конструкции воротных опор были ослаблены, и встал вопрос о ремонте древнего сооружения. В 1795 году был принят проект архитектора Чистякова, по которому к углам пилонов были пристроены контрфорсы, заключенные в круглые башни. В это же время были переложены заново из старого камня своды ворот, а на них возведена новая церковь из кирпича, освященная в 1810 году. В таком виде Золотые ворота и дошли до настоящего времени, хотя с начала XIX века неоднократно предпринимались попытки восстановить их в первоначальных формах.</p></blockquote>
+<p>Сейчас в помещении надвратной церкви – <em>военно-историческая экспозиция. Центральное место в экспозиции занимает диорама, передающая драматические события февраля 1238 года: защиту Владимира во время штурма войсками хана Батыя… В экспозиции представлено оружие и воинское снаряжение разного времени.</em></p>
+<p>В общем, мы в музей не пошли, а взобрались на Козлов вал слева от Золотых Ворот.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740060879_94c7229fc5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740060879_94c7229fc5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На этом фото видна Троицкая церковь (в обиходе — «Красная церковь») — бывшая старообрядческая церковь, построенная в неорусском стиле в 1913-1916 годах и закрытая в ходе гонений на церковь в 1928 году. С 1974 года в ней располагается выставочный зал Владимиро-Суздальского музея-заповедника. Но мы решили, что не пойдем и туда, просто из-за недостатка времени. А отправились мы в музей «Старый Владимир» в здании бывшей водонапорной башни. Отличный музей, всячески рекомендую к посещению. Извините, что нет фотографий, там темновато для фотоаппарата, так что я ограничился тем, что снял какие-то экспонаты на телефон.</p>
+<p>После музея мы отправились мимо Спасско-Никольской церкви на Георгиевскую улицу. Не хочется говорить «местный Арбат», но я уже тем самым это сказал. Но это не недостаток, а просто аналогия. Вполне приятная улица, хотя и несколько искусственная, но с множеством забавных памятников.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738597867_24d5462b5c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738597867_24d5462b5c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Кот Баюн»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740060854_c7bc72fcc6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740060854_c7bc72fcc6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739419231_3bbd148bdc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739419231_3bbd148bdc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Пожарный»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739656618_028d189e6e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739656618_028d189e6e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Брандспойнт, кстати, работает!</p>
+<p>Забавная группа из двух фигур по обе стороны улицы, именуемая «Филёр и шалопай». У Филера уже отломали, конечно, что, что можно, но он по-прежнему все еще хорош:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420246_5a5ee6c5d3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420246_5a5ee6c5d3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420251_d1c13e7e8e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420251_d1c13e7e8e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740312455_2fafcddd97_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740312455_2fafcddd97_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и Шалопай:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740312540_6e79f66f47_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740312540_6e79f66f47_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739656563_35c6e1fede_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739656563_35c6e1fede_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>К этой же группе я бы отнес статую Аптекаря в другом конце Георгиевской улицы, рядом со зданием старинной аптеки,</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740312415_6d84d726e4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740312415_6d84d726e4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739656373_bafa08b011_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739656373_bafa08b011_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420146_666edcfa12_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420146_666edcfa12_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>и статую Художника с другой стороны от аптеки, где находится одна из смотровых площадок с видом на Успенский собор и, отчасти, долину реки Клязьмы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420111_2f2735e0b3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420111_2f2735e0b3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420101_c5638e49d8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420101_c5638e49d8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот и Успенский собор, пока только вдали:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738598497_341d4b2bdf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738598497_341d4b2bdf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Отступим чуть назад. Где-то в середине Георгиевской улицы, вправо и круто вниз, начинается Владимирский спуск. Это сразу другой мир, другой колорит. Более натуральный, что ли. Мы даже спустились по ней немного.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740309890_1318df8c98_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740309890_1318df8c98_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739655788_0ab7f6d777_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739655788_0ab7f6d777_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738597807_0fa6369850_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738597807_0fa6369850_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740060744_c8404d914d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740060744_c8404d914d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739655693_d0c3c23d8e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739655693_d0c3c23d8e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740060709_5ac0083961_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740060709_5ac0083961_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740311725_4413ff19fb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740311725_4413ff19fb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740060649_4c4e366c1c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740060649_4c4e366c1c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А еще на Георгиевской улице есть кузнечная мастерская, вокруг которой много всякого симпатичного кованого арта:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738597512_eec2abd4f9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738597512_eec2abd4f9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740311625_a467b9ae2d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740311625_a467b9ae2d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738598087_e93abb9303_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738598087_e93abb9303_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739655398_0b1729bce2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739655398_0b1729bce2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739419721_556b7c0773_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739419721_556b7c0773_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И последнее, пока помню – практически напротив Филера и Шалопая, если смотреть в сторону Большой Московской, есть совершенно замечательный гастробар по имени «22А». Это и его адрес, как можно догадаться. В меню есть очень вкусные вещи. Я нашел их случайно, не помню уже, то ли по отзывам TripAdvisor, то ли по отзывам Гугл (тут у них оценка 4.9, только что проверил) – искал место неподалеку, где пообедать перед дальнейшим продвижением к соборам. Оказалось вполне стОящее место, так что мы туда пошли пообедать и на следующий день, когда вернулись из Боголюбово. Рекомендую.</p>
+<p>А мы движемся к Успенскому собору. Вот он – во всей красе:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420016_d8549c363b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420016_d8549c363b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Очень гармоничный со стороны колокольни</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739420061_e0ebd97edd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739420061_e0ebd97edd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739656273_616034ab7d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739656273_616034ab7d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739655283_f43772cc42_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739655283_f43772cc42_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И очень массивный в основной части:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740312250_58f6a6f40c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740312250_58f6a6f40c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739419881_baeb0a4232_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739419881_baeb0a4232_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739656218_dd156df78a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739656218_dd156df78a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738598292_84d3622021_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738598292_84d3622021_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740059979_d594aa884c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740059979_d594aa884c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>Исторически, до возвышения Москвы, Свято-Успенский собор был главным (кафедральным) храмом Владимиро-Суздальской Руси, в нём венчались на великое княжение владимирские и московские князья. Памятник русского зодчества XII века, послуживший образцом для ряда более поздних соборов, в том числе Успенского собора Московского Кремля.<br>
+…Единственный храм, где сохранились подлинные, документально подтверждённые и точно датированные фрески Андрея Рублёва.</p></blockquote>
+<p>Немного истории (выдержки из статьи на Википедии):</p>
+<blockquote class="citation"><p>Первоначальный белокаменный собор был построен при великом князе Андрее Боголюбском в 1158—1160 годах. Уже в 1161 году собор был расписан.<br>
+Согласно сообщению Василия Татищева, «по снисканию бо его [Андрея Боголюбского] даде ему Бог мастеров для строения оного из умных земель»; «по оставшему во Владимире строению, а паче по вратам градским видимо, что архитект достаточный был… Мастеры же присланы были от императора Фридерика Перваго [Фридриха Барбароссы], с которым Андрей в дружбе был как ниже явится».<br>
+После пожара 1185 года Всеволод III, более известный как Всеволод Большое Гнездо, младший брат Андрея Боголюбского, значительно расширил собор. К храму были пристроены боковые галереи, и он оказался как бы внутри нового большого собора. Увеличилась также алтарная часть. Собор стал пятинефным и более вместительным.<br>
+…Когда Владимир был взят войском хана Батыя в 1238 году, в соборе заперлись великая княгиня Агафия Всеволодовна с дочерью и снохами, а также владыка Митрофан. Собор был подожжён монголами, все находившиеся в нём погибли. Агафия Всеволодовна и вся великокняжеская семья были канонизированы позже как владимирские мученики.<br>
+В 1411 году, в ходе междоусобных войн, суздальско-нижегородский княжич Даниил Борисович послал на Владимир своего союзника — татарского царевича Талыча, войско которого не гнушалось грабежами храмов; пострадал и Успенский собор. Однако значительная часть ценностей была сохранена благодаря ключарю отцу Патрикию, который успел их спрятать, а потом принял мученическую смерть под пытками, но так и не выдал язычникам место нахождения храмовых святынь.<br>
+От первоначальных фресок Успенского собора до наших дней сохранились только фрагменты. В начале XV века для украшения храма были приглашены Андрей Рублёв и Даниил Чёрный. От их росписей сохранились отдельные изображения большой композиции «Страшного суда», занимавшей всю западную часть храма, и фрагментарные изображения в алтарной части собора.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51811003180_3bc84d8a89_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51811003180_3bc84d8a89_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>(оригинал фото <a href="https://commons.wikimedia.org/wiki/File:Andrej_Rubljov_Vladimir_frescoes.jpg#/media/Файл:Andrej_Rubljov_Vladimir_frescoes.jpg" target="_blank" rel="noopener noreferrer">здесь</a>).<br>
+Большинство же дошедших до нашего времени фресок были выполнены в XIX веке.<br>
+Серьёзное обновление собора произошло во второй половине XVIII века. Посетив Владимир в 1767 году, Екатерина II распорядилась воссоздать благолепие древнего храма, выделив для этого 14 тысяч рублей. Обновление собора было проведено в духе времени, самое же главное изменение коснулось иконостаса — вместо древнего рублёвского был установлен новый, выполненный в барочном стиле.</p></blockquote>
+<p>И вот это иконостас в барочном стиле, он настолько не вяжется, как мне видится, с остальным декором собора…</p>
+<p>Но посмотреть на настоящие фрески Рублева сотоварищи, как бы плохо они ни сохранились, это очень впечатляет.</p>
+<p>После Успенского собора мы немного погуляли по парку имени Пушкина, спасаясь от жары в тени его деревьев. Начали с памятника крестителям Владимирской земли - Владимиру «Красное Солнышко» и святителю Федору (в моем неудачном ракурсе, правда, видно только Владимира, извините):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739419776_73c63a9b95_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739419776_73c63a9b95_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Памятник был создан лишь в 2007 году, в честь 850-летия переноса столицы русского государства из Киева во Владимир. Не скажу, что памятник мне понравился. Он показался мне довольно тяжеловесным, скорее саркофагом со скульптурной композицией на нем. Но это всего лишь моё личное восприятие.</p>
+<p>Зато от ограды смотровой площадки открывается прекрасный вид на сам Владимир, на ту часть, откуда мы пришли – на окрестности Георгиевской улицы, на Владимирский спуск:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740061109_4a70d3a03a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740061109_4a70d3a03a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740061099_1093bb8676_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740061099_1093bb8676_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739417611_7ac53d1f1a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739417611_7ac53d1f1a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А мы выйдем из парка имени Пушкина и через парк «Липки» отправимся с Дмитриевскому собору. Вот он:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418651_f0160fb63e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418651_f0160fb63e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Храм был возведён Всеволодом Большое Гнездо на княжеском дворе и освящён в честь великомученика Димитрия Солунского. <em>Канонический пример крестово-купольного белокаменного храма владимиро-суздальской архитектурной школы. Знаменит своей белокаменной резьбой. Входит в состав объекта Всемирного наследия под названием «Белокаменные памятники Владимира и Суздаля».</em></p>
+<p>Сведения о его возведении разнятся: по одним данным, он был построен в 1194—1197 годах; по относительно свежим летописным — в 1191 году.</p>
+<blockquote class="citation"><p>В 1237 году собору суждено было разделить судьбу столицы Владимирского княжества. Повреждённый и разграбленный монголо-татарами, храм впоследствии ещё не раз горел...<br>
+В ходе «реставрации» 1837—1839 годов по распоряжению Николая I собору был придан «первобытный вид». Из-за невежественности ревнителей старины храм тогда лишился интереснейших частей — лестничных башен и галерей, которые были ошибочно сочтены поздними привнесениями. Поскольку галереи имели функцию контрфорсов, после их уничтожения по стенам пошли трещины, а в 1903 году лопнуло железное кольцо снизу барабана.<br>
+...Глава собора была впервые позолочена после реставрационных воздействий 1950-х годов. В ходе последнего этапа реставрационных работ (1999—2004) были устроены водосточные трубы, заменили крест на куполе, создали микроклимат, а также покрыли рельефы и белый камень защитной пластической смесью.<br>
+Собор знаменит своей белокаменной резьбой — его стены украшают около 600 рельефов, изображающих святых, мифических и реальных животных. Большинство рельефов сохранились в первоначальном виде, некоторые были заменены при реставрации XIX века ... практически точными копиями.<br>
+…В связи с богатой белокаменной отделкой, которая почти полностью обволакивает храмовые стены, храм называют «белокаменной книгой».</p></blockquote>
+<p>И отделка Дмитриевского собора действительно впечатляет, и очень. Попытался передать, как мог:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740060324_29ae008005_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740060324_29ae008005_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739655228_d2bd760cc9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739655228_d2bd760cc9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739653488_687268477e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739653488_687268477e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739655128_13931d56ff_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739655128_13931d56ff_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740060259_06c2d128bb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740060259_06c2d128bb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738597192_5446ed0905_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738597192_5446ed0905_o.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>Прославление княжеской власти было главной идеей фасадной скульптуры собора, поэтому на ней изображено множество геральдических символов — львов, орлов, грифонов, кентавров, сцен охоты, борьбы зверей и т.п.<br>
+Мотивы рельефов:<br>
+улыбающиеся львы;<br>
+святой Никита избивает беса;<br>
+царь Давид, поющий и играющий на славянских гуслях;<br>
+грифон, терзающий зайца;<br>
+охотник (возможно, Геракл), убивающий льва;<br>
+скачущий всадник;<br>
+птица Сирин борется с барсом;<br>
+великий князь Всеволод Юрьевич со своими пятерыми сыновьями и многие другие.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418901_142dd654db_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418901_142dd654db_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738597057_0a1a22c1dc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738597057_0a1a22c1dc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738597002_0a03b9c5ce_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738597002_0a03b9c5ce_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418781_76fddeb793_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418781_76fddeb793_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740311085_d4efc1febd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740311085_d4efc1febd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739653423_9bf95be1fb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739653423_9bf95be1fb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418721_301598afef_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418721_301598afef_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вид на Успенский собор со стороны смотровой площадки у Дмитриевского собора:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740059969_dbba02116e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740059969_dbba02116e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Кстати, длинный корпус справа – это музейный центр "Палаты" - часть Владимиро-Суздальского музея-заповедника. Здание было построено во 2-ой половине XVIII века по приказу Екатерины II архитектором Карлом Бланком. Сейчас здесь три этажа экспозиций, и мы там как минимум час, если не полтора, провели с пользой и удовольствием. Вот их <a href="https://vladmuseum.ru/ru/geografiya-muzeya/vladimir/muzeynyy-tsentr-palaty/" target="_blank" rel="noopener noreferrer">сайт</a>. Есть картинные галереи "Русское искусство XVIII – начала XX века" (были работы Поленова, Шишкина, Айвазовского, вполне достойная галерея, в общем; рекомендую, если будет время и желание), "Шедевры древнерусской иконописи", а также довольно забавный "макет" класса старорусской школы в рамках детского музейного центра.</p>
+<p>А это – вид с той же смотровой на Богородице-Рождественский монастырь, точнее, на собор Рождества Пресвятой Богородицы и его колокольню – их хорошо видно снизу, от железнодорожного вокзала.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418666_fc25167e6d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418666_fc25167e6d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мы прошлись вокруг него уже в сумерках, и потом немного погуляли по старым кварталам Владимира. Впечатление довольно непривычное – отходишь буквально полквартала от той же Большой Московской, и уже деревянные дома вполне себе на каждом шагу.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740310960_24b6c25153_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740310960_24b6c25153_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418556_a15953a848_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418556_a15953a848_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739417481_cb789b172d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739417481_cb789b172d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А мы пошли паковаться и спать: у нас подъем за час до рассвета, чтобы с рассветом оказаться у знаменитой белокаменной церквушки Покрова-на-Нерли, одиноко стоящей среди лугов в полутора километрах от села Боголюбово…</p>
+<p>…Итак, подъем в темноте, окончательная упаковка вещей, рюкзаки – с собой, вызываю такси до Боголюбово – это очень близко, минут десять с небольшим по пустынной предрассветной дороге от центра Владимира. Пока едем, небо у горизонта уже набухает розовым, все ярче и ярче, я начинаю волноваться, что опоздаем. Вылезаем из такси прямо у перехода через железную дорогу за Боголюбово, спешим через переход. Вокруг – ни души. И по выложенной каменной плиткой тропе – через луга, еще километра полтора. И вот она. Почти не опоздали.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418521_a46ce4bba3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418521_a46ce4bba3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739654648_ae4a21b074_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739654648_ae4a21b074_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740310880_f81ddc8072_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740310880_f81ddc8072_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Стою со штативом в росистой траве, сдуру в шортах (будет жаркий день), и потревоженные мошки немилосердно кусают ноги до крови, приходится терпеть. Но вокруг тишина, красота, и никого.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740059754_965d13f8b7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740059754_965d13f8b7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот эту я сделал заставкой на мониторе:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738596687_c046964693_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738596687_c046964693_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Солнце поднимается все выше, становится все светлей и светлей…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418426_5514498b8a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418426_5514498b8a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Небо для пущей красоты – в перистых мелких облачках.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418411_6f5256232d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418411_6f5256232d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418376_e407505829_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418376_e407505829_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Да и вообще, вокруг красивый пейзаж расстилается…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740058599_5b60f1e879_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740058599_5b60f1e879_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мой приятель снимал тут буквально за неделю до меня, и ему повезло застать туман над лугами и прудом. Мне тумана не досталось. Ну ладно, и так отлично!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739654503_79d23bc6a7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739654503_79d23bc6a7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418296_54f43436f5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418296_54f43436f5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот наконец появился еще один человек, с дроном. Ну ладно, обоим места хватит.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418266_c130677eb5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418266_c130677eb5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пора, пожалуй, подойти и поближе к церковке...</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740310625_032c8ec708_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740310625_032c8ec708_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И на ней тоже каменная резьба замечательная:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740059504_df2e186007_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740059504_df2e186007_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418201_793bc39679_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418201_793bc39679_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740059464_65bcb42e40_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740059464_65bcb42e40_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Что мы знаем об этой прекрасной церкви? Ну, во-первых, когда-то она была частью монастырского комплекса, и стояла у впадения Нерли в Клязьму, которое некогда было как раз здесь, а не там, где сейчас. Вот храм Покрова-на-Нерли на дореволюционной открытке:</p>
+<figure class="photo"><img data-src="https://upload.wikimedia.org/wikipedia/commons/9/94/Nerl_Church.jpg" alt="" class="lazy-photo"><noscript><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Nerl_Church.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Из статьи на Википедии:</p>
+<blockquote class="citation"><p>… за 1158—1165 годы строительная артель Андрея Боголюбского создала ряд замечательных белокаменных построек…<br>
+Для церкви Покрова было выбрано место чуть более чем в километре от княжеского дворца при впадении Нерли в Клязьму (позднее устье сместилось на юг, оставив после себя старицу). Устье Нерли находилось на пересечении важных торговых речных путей и служило воротами во Владимирскую землю: здесь корабли поворачивали ко княжеской резиденции, отсюда разворачивалась панорама на Боголюбов с княжеским дворцом и на Владимир. Церковь должна была стать выдвинутым вперёд элементом репрезентативного ансамбля, его предвратным монументом.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740310520_165b6cd744_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740310520_165b6cd744_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Летописные свидетельства о церкви Покрова весьма скупы. В Кратком Владимирском летописце говорится: «и потом приде от Киева Андрей Юрьевич и створи Боголюбный град… и постави церкви две камены». «И постави ей храм на реце Клязме, две церкви каменны во имя святыя Богородица» — сообщает Новгородская первая летопись. Очевидно, одна из упоминаемых церквей — Покровская. Наконец, «Житие князя Андрея Боголюбского», источник 1702 года, содержит более подробные сведения. Из текста следует, что храм построен за один сезон в память об Изяславе Андреевиче, сыне князя, умершем от ран после похода в Волжскую Булгарию.</p></blockquote>
+<p>В качестве датировки, как я понимаю, сейчас принято называть 1158 год, на основании Владимирского летописца XVI века; ранее считалось, что он построен примерно в 1165-м.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739654158_9e47712b32_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739654158_9e47712b32_o.jpg" alt="" loading="lazy"></noscript></figure>
+<blockquote class="citation"><p>Церковь была освящена в честь праздника Покрова Богородицы. Однако источники, говорящие об установлении этого праздника на Руси в середине XII века по почину Андрея Боголюбского, отсутствуют, а в домонгольских летописях о церкви говорится как о посвящённой не какому-то конкретному празднику, а Богородице. Следовательно, этот праздник мог быть установлен и позднее (первые упоминания о нём относятся к XIII веку), и в этом случае церковь первоначально могла иметь какое-либо иное посвящение.<br>
+…Первоначально церковь Покрова была собором небольшого, но имевшего белокаменные укрепления монастыря, располагавшегося на стрелке Клязьмы и Нерли. Этот монастырь в конце XVI века упоминался среди патриарших домовых монастырей, во второй половине XVII века имело место его кратковременное процветание, в 1764 году он был упразднён.</p></blockquote>
+<p>Ну, и известная история о том, что <em>в 1784 году из-за низкой доходности Покровской церкви игумен Боголюбова монастыря (к которому она была приписана) добился разрешения разобрать храм на строительный материал для возведения монастырской колокольни, однако недостаток средств не позволил начать работы.</em> Иногда недостаток средств – только к лучшему.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418116_1400c943fe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418116_1400c943fe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Наконец, выпустил фотоаппарат из рук… Позавтракали, сидя прямо у пруда перед церковкой, примостившись на толстой ветке. Пока где-то высоко над головой жужжит коптер. Кофе из термоса, сэндвичи. Хорошо…</p>
+<p>Но постепенно становится все жарче. Пойдем прогуляемся дальше, к современному месту впадения Нерли в Клязьму.</p>
+<p>Это еще Нерль:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738596232_9895a80d34_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738596232_9895a80d34_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и место впадения в Клязьму:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740058539_593132ac21_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740058539_593132ac21_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В поле:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739654088_f55958dc20_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739654088_f55958dc20_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Всё она же, Покрова-на-Нерли, других тут поблизости нет:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739654043_4db469dc95_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739654043_4db469dc95_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739418006_d5bd0cfe78_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739418006_d5bd0cfe78_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740059219_b17e01a57c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740059219_b17e01a57c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пока я бродил по полю в поисках ракурсов, жена вздремнула в тени одного из стогов с четверть часика. Прошлись по полям, и отправились назад, по вымощенной в лугах тропе обратно в Боголюбово. Жара уже стояла немилосердная, а навстречу, в сторону церкви Покрова-на-Нерли, уже шли толпы людей, семей с детьми и даже с парой коптеров, летящих над ними. Как же тихо и хорошо тут было буквально часа три-четыре назад!</p>
+<p>Ну а мы снова перешли железную дорогу через мост в обратном направлении, оказавшись точно там, куда приехали утром. На противоположной стороне, недалеко от моста, через Монастырский пруд открывается красивый вид на женский Боголюбский монастырь; позже, уже ближе к монастырю, я больше не нашел подобного приятного ракурса:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738596047_fea02bbc3b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738596047_fea02bbc3b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51739417926_d79020c2fa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51739417926_d79020c2fa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51738596002_811706cfca_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51738596002_811706cfca_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В монастырь мы зашли (потребовалось подняться до автотрассы и пройти по ней с полкилометра назад), но впечатление от него осталось скорее негативное. Как-то осталось ощущение довольно коммерциализированного учреждения, поставившего дойку туристов на поток. Может быть, жара внесла свой вклад в восприятие, не знаю.</p>
+<p>Ну, мы зашли в собор, вышли, покрутились на малюсеньком пятачке, куда был открыт доступ, ничего красивого или просто привлекающего внимание не увидели, и вышли. Снова заказали такси (все – через Яндекс.Go) и вернулись во Владимир в свою гостиницу. Немного отдохнули от жары (уже в другом номере, как я писал раньше). Потом, когда жара стала спадать, вышли снова пройтись напоследок по городу. Заглянули и в «22А», пообедать, и вновь неторопливо прошлись по Георгиевской и по Большой Московской, по окрестным кварталам, пока не пришло время двигаться на вокзал, в обратный путь.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740311960_6408e43e68_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740311960_6408e43e68_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Примерно вот так прошла первая из наших трех запланированных коротких поездок. Послезавтра отправляемся в Коломну. Но об этой и последующей поездках будут отдельные отчеты, чтобы всё в кучу не смешивать, и их еще нужно написать – подобраны пока только фотографии. А мы прощаемся с Владимиром.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740311960_6408e43e68_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740311960_6408e43e68_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51740310415_0ea56ee1bb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51740310415_0ea56ee1bb_o.jpg" alt="" loading="lazy"></noscript></figure>
+  </article>
+</div>
+<script>
+(function() {
+  var pending = []; // images that entered the buffer zone, not yet loading/loaded
+  var loading = false;
+
+  function distanceFromViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;      // above viewport
+    if (rect.top > vh) return rect.top - vh;        // below viewport
+    return 0;                                       // on screen right now
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        if (d === 0) break; // already on screen -- can't beat that
+      }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var img = pickNext();
+    if (!img) return;
+    loading = true;
+    loadImage(img, img.getAttribute('data-src'));
+  }
+
+  function loadImage(img, src) {
+    img.onload = function() {
+      img.classList.add('loaded');
+      img.removeAttribute('data-src');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      // Flickr (or the network) hiccuped on this one request -- don't give
+      // up on it and don't block everything else behind it. Free the
+      // queue immediately, and let this image rejoin the pending pool
+      // after a short, growing backoff so it gets picked up again.
+      loading = false;
+      var attempt = (img._retryCount || 0) + 1;
+      img._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() {
+        pending.push(img);
+        processQueue();
+      }, delay);
+      processQueue();
+    };
+    img.src = src;
+  }
+
+  // Images join the pending pool once they're within reach; every time a
+  // slot frees up, pickNext() re-checks CURRENT positions and grabs
+  // whichever pending image is closest to (or actually on) screen right
+  // now -- so a fast scroll or scrollbar drag doesn't leave visible
+  // photos stuck behind everything the scroll happened to pass over.
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>

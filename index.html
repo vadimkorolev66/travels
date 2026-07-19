@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дневники наших путешествий</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 92%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  header.masthead {
+    max-width: none;
+    margin: 0 0 4rem;
+    padding: 8vw 0 3.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://farm5.staticflickr.com/4834/31823487168_4804b1bf8f_o.jpg') center 0% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-weight: 400;
+    font-size: 2.6rem;
+    line-height: 1.25;
+    margin: 0 0 0.7rem;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  header.masthead p {
+    font-family: var(--sans);
+    color: var(--text-soft);
+    font-size: 1.05rem;
+    margin: 0 0 0.5rem;
+  }
+  header.masthead .byline {
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  .year-group {
+    margin-bottom: 2.6rem;
+  }
+  .year-label {
+    font-family: var(--sans);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--accent-soft);
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.3rem;
+  }
+  .card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.07), 0 6px 18px rgba(43,41,37,0.05);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(43,41,37,0.10), 0 14px 28px rgba(43,41,37,0.09);
+  }
+  .card-photo {
+    flex: 0 0 42%;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--line);
+    min-height: 132px;
+  }
+  .card-body {
+    flex: 1 1 auto;
+    padding: 0.9rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card-month {
+    font-family: var(--sans);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+  .card-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    line-height: 1.35;
+    color: var(--text);
+  }
+  footer.site-footer {
+    text-align: center;
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--accent-soft);
+  }
+  @media (max-width: 700px) {
+    .wrap { width: 90%; }
+    header.masthead h1 { font-size: 2rem; }
+    .cards { grid-template-columns: 1fr; }
+    .card { flex-direction: column; }
+    .card-photo { flex: 0 0 auto; height: 150px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Дневники наших путешествий</h1>
+    <p class="byline">Мы — это Вадим и Женя Королёвы</p>
+  </header>
+
+  <main>
+    <section class="year-group">
+      <div class="year-label">2012</div>
+      <div class="cards">
+      <a class="card" href="2012_benelux.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/49901218392_a0d54efc3f_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">август</div>
+          <div class="card-title">Ностальгический рассказ о том, как не залечь на дно, путешествуя своим ходом по Бельгии и Нидерландам</div>
+        </div>
+      </a>
+      </div>
+    </section>
+    <section class="year-group">
+      <div class="year-label">2014</div>
+      <div class="cards">
+      <a class="card" href="2014_east_brittany.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/49821015786_58b1e7bbee_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">апрель</div>
+          <div class="card-title">Восточная Бретань — от Арзона до Сен-Мало</div>
+        </div>
+      </a>
+      <a class="card" href="2014_salzburg.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/54107976442_95d7722974_b.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">декабрь – январь</div>
+          <div class="card-title">Зальцбург под снегом. Воспоминание о новогодней Австрии</div>
+        </div>
+      </a>
+      </div>
+    </section>
+    <section class="year-group">
+      <div class="year-label">2015</div>
+      <div class="cards">
+      <a class="card" href="2015_georgia.html">
+        <div class="card-photo" style="background-image:url('https://img-fotki.yandex.ru/get/477594/2188450.14/0_1e64eb_b3300372_orig')"></div>
+        <div class="card-body">
+          <div class="card-month">апрель</div>
+          <div class="card-title">Грузия — по волнам моей фотопамяти</div>
+        </div>
+      </a>
+      <a class="card" href="2015_bavaria_salzkammergut.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/54425096785_db01c8f1da_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">август</div>
+          <div class="card-title">Бавария и Зальцкаммергут. Десять лет тому назад</div>
+        </div>
+      </a>
+      </div>
+    </section>
+    <section class="year-group">
+      <div class="year-label">2016</div>
+      <div class="cards">
+      <a class="card" href="2016_andalusia.html">
+        <div class="card-photo" style="background-image:url('https://img-fotki.yandex.ru/get/369579/2188450.1f/0_1e895c_55b263ef_orig')"></div>
+        <div class="card-body">
+          <div class="card-month">апрель</div>
+          <div class="card-title">Цвета Андалусии — белые города, песчаные дворцы, алое фламенко</div>
+        </div>
+      </a>
+      <a class="card" href="2016_alsace.html">
+        <div class="card-photo" style="background-image:url('https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8001_4aa8881e_orig')"></div>
+        <div class="card-body">
+          <div class="card-month">август</div>
+          <div class="card-title">Эльзас — глоток холодного рислинга в тени виноградной лозы</div>
+        </div>
+      </a>
+      </div>
+    </section>
+    <section class="year-group">
+      <div class="year-label">2017</div>
+      <div class="cards">
+      <a class="card" href="2017_bretagne.html">
+        <div class="card-photo" style="background-image:url('https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df61f_1660e0d1_orig')"></div>
+        <div class="card-body">
+          <div class="card-month">апрель</div>
+          <div class="card-title">Западная Бретань — от Бель-Иля до Уэссана</div>
+        </div>
+      </a>
+      <a class="card" href="2017_alps.html">
+        <div class="card-photo" style="background-image:url('https://img-fotki.yandex.ru/get/478662/2188450.8/0_1e24a3_5de382fd_orig')"></div>
+        <div class="card-body">
+          <div class="card-month">август</div>
+          <div class="card-title">Альпы в августе — от озера к озеру, от Австрии к Баварии</div>
+        </div>
+      </a>
+      </div>
+    </section>
+    <section class="year-group">
+      <div class="year-label">2018</div>
+      <div class="cards">
+      <a class="card" href="2018_north_italy.html">
+        <div class="card-photo" style="background-image:url('https://farm1.staticflickr.com/958/41335390605_5b8c55d78a_b.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">апрель</div>
+          <div class="card-title">Города Северной Италии, или Мост над бездной</div>
+        </div>
+      </a>
+      <a class="card" href="2018_switzerland.html">
+        <div class="card-photo" style="background-image:url('https://farm5.staticflickr.com/4912/45696010801_9791bb5db6_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">август</div>
+          <div class="card-title">Швейцария. Прогулка рядом с облаками</div>
+        </div>
+      </a>
+      </div>
+    </section>
+    <section class="year-group">
+      <div class="year-label">2019</div>
+      <div class="cards">
+      <a class="card" href="2019_normandy.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/48214170891_b5529f5d72_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">май</div>
+          <div class="card-title">Нормандия — безупречная линия горизонта</div>
+        </div>
+      </a>
+      <a class="card" href="2019_dolomites_garda.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/49002758212_92d4418297_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">август</div>
+          <div class="card-title">Доломиты и озеро Гарда. Две недели в августе</div>
+        </div>
+      </a>
+      </div>
+    </section>
+    <section class="year-group">
+      <div class="year-label">2021</div>
+      <div class="cards">
+      <a class="card" href="2021_three_routes_1.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/51892272407_cb677a6695_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">август</div>
+          <div class="card-title">Три коротких маршрута. Часть первая: Суздаль и Владимир</div>
+        </div>
+      </a>
+      <a class="card" href="2021_three_routes_2.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/51740529969_7f36a1e7f4_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">август</div>
+          <div class="card-title">Три коротких маршрута. Часть вторая: Коломна и Константиново</div>
+        </div>
+      </a>
+      <a class="card" href="2021_three_routes_3.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/51893568129_19725c3e6c_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">август</div>
+          <div class="card-title">Три коротких маршрута. Часть третья: Таруса</div>
+        </div>
+      </a>
+      <a class="card" href="2021_istanbul_nov.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/51708667204_6e57a42a07_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">ноябрь</div>
+          <div class="card-title">Стамбул. Три солнечных ноябрьских дня</div>
+        </div>
+      </a>
+      </div>
+    </section>
+    <section class="year-group">
+      <div class="year-label">2022</div>
+      <div class="cards">
+      <a class="card" href="2022_istanbul_oct.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/52482440583_c003da0526_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">октябрь</div>
+          <div class="card-title">Октябрь в Стамбуле</div>
+        </div>
+      </a>
+      </div>
+    </section>
+    <section class="year-group">
+      <div class="year-label">2023</div>
+      <div class="cards">
+      <a class="card" href="2023_armenia1.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/53065578884_082c55db69_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">апрель</div>
+          <div class="card-title">Армения. Знакомство длиной в тысячу километров</div>
+        </div>
+      </a>
+      <a class="card" href="2023_elbrus.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/53461347506_0ea082387a_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">август</div>
+          <div class="card-title">Неделя в Приэльбрусье</div>
+        </div>
+      </a>
+      </div>
+    </section>
+    <section class="year-group">
+      <div class="year-label">2024</div>
+      <div class="cards">
+      <a class="card" href="2024_armenia2.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/53726915126_c6bc16b367_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">апрель</div>
+          <div class="card-title">Возвращение в Армению. Год спустя</div>
+        </div>
+      </a>
+      <a class="card" href="2024_venice_dolomites.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/54027023736_20b39efefe_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">август</div>
+          <div class="card-title">Венеция и Доломитовые Альпы. Горячее дыхание августа</div>
+        </div>
+      </a>
+      </div>
+    </section>
+    <section class="year-group">
+      <div class="year-label">2025</div>
+      <div class="cards">
+      <a class="card" href="2025_rome.html">
+        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/54300792337_712cb31068_o.jpg')"></div>
+        <div class="card-body">
+          <div class="card-month">январь</div>
+          <div class="card-title">Рим. Пять дней в январе</div>
+        </div>
+      </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">© Вадим Королёв</footer>
+</div>
+</body>
+</html>

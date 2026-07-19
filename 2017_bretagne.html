@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Западная Бретань — от Бель-Иля до Уэссана</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  nav.toc,
+  article > p,
+  article > h2,
+  article > ul.summary-list,
+  article > blockquote.citation {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.masthead {
+    max-width: none;
+    padding: 8vw 0 4vw;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df61f_1660e0d1_orig') center 40% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  nav.toc {
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+    font-family: var(--sans);
+  }
+  nav.toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li { margin: 0 0 0.85rem; break-inside: avoid; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.3;
+    font-size: 0.98rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent-soft); color: var(--accent); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 3.9rem 0 1.4rem;
+    padding-top: 0.2rem;
+    color: var(--text);
+    position: relative;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin-bottom: 1.1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-soft); }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+  a:hover { color: #6b5228; }
+  a.internal-link-pending {
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--accent-soft);
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.summary-list {
+    background: #f4f1ea;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem 1.6rem 2.4rem;
+    margin: 0 0 3rem;
+  }
+  ul.summary-list li { margin-bottom: 0.7rem; }
+  ul.summary-list li:last-child { margin-bottom: 0; }
+  blockquote.citation {
+    margin: 2rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  blockquote.citation p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  figure.photo { margin: 2.6rem 0; }
+  figure.photo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.08), 0 8px 24px rgba(43,41,37,0.06);
+  }
+  img.lazy-photo {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 40px;
+    background: var(--line);
+  }
+  img.lazy-photo.loaded { opacity: 1; }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 2.2rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  p.epigraph {
+    text-align: right;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+  p.fin {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  p.subhead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { width: 88%; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17.5px; }
+    .wrap { width: 90%; padding: 10vw 0 16vw; }
+    header.masthead h1 { font-size: 1.85rem; }
+    nav.toc ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Западная Бретань — от Бель-Иля до Уэссана</h1>
+  </header>
+
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      <ul>
+    <li><a href="#предисловие">Предисловие</a></li>
+    <li><a href="#план-путешествия">План путешествия.</a></li>
+    <li><a href="#подготовка">Подготовка</a></li>
+    <li><a href="#париж-ванн">Париж - Ванн</a></li>
+    <li><a href="#вокруг-ванна">Вокруг Ванна</a></li>
+    <li><a href="#belle-île-en-mer">Belle île en Mer</a></li>
+    <li><a href="#belle-île-en-mer-день-второй">Belle île en Mer. День второй.</a></li>
+    <li><a href="#через-quiberon-в-quimper">Через Quiberon в Quimper</a></li>
+    <li><a href="#camaret-sur-mer">Camaret-sur-Mer</a></li>
+    <li><a href="#брест-уэссан">Брест – Уэссан</a></li>
+    <li><a href="#ouessant-день-первый">Ouessant. День первый.</a></li>
+    <li><a href="#ouessant-день-второй">Ouessant. День второй.</a></li>
+    <li><a href="#послесловие-брест-париж">Послесловие. Брест - Париж</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <article>
+<h2 id="предисловие">Предисловие</h2>
+<p>Ну что ж... (чертыхнулся, переключил раскладку на русский, начал снова). Попробую написать небольшой отчет о том, как мы с женой попутешествовали своим ходом по западной Бретани и островам в конце апреля этого (2017-го) года. Маршрут наш был приблизительно вот такой (не удалось заставить google maps нарисовать именно то, что я хотел, так что эта картинка — гибрид маршрута, нарисованного движком google maps и линий, добавленных руками):</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/202385/2188450.0/0_1df5e7_a98bc98f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/202385/2188450.0/0_1df5e7_a98bc98f_orig" alt="" loading="lazy"></noscript></figure>
+<p>Не льщу себя надеждой, что мне удастся написать что-то новое. Про прекрасную Бретань написано на этом форуме очень много. Написано и замечательным языком, и с прекрасными фотографиями. В какой-то степени, мой рассказ — это дань благодарности любимым авторам, написавшим о своих бретонских маршрутах: <em>monkey_puzzle</em> (<a href="http://forum.awd.ru/viewtopic.php?p=5613723" target="_blank" rel="noopener noreferrer">Бретань: океан, скалы, маяки...</a>, <a href="http://forum.awd.ru/viewtopic.php?p=6433527" target="_blank" rel="noopener noreferrer">Бретань: секретные места, дорожки и тропинки</a>) и <em>luchar</em> (<a href="http://forum.awd.ru/viewtopic.php?t=210464" target="_blank" rel="noopener noreferrer">От Морбиана до Финистера...</a>, <a href="http://forum.awd.ru/viewtopic.php?p=7012091" target="_blank" rel="noopener noreferrer">Легкий бретонский бриз, или по берегу моря на край земли...</a>). То есть «трибьют», как нынче говорят. Спасибо вам. Многое в нашем маршруте появилось только благодаря вашим вдохновляющим рассказам. Да и в наших более ранних поездках по другим местам часто именно ваши отчеты были для меня путеводной звездой. Так что спасибо, оптом, и за Зальцкаммергут (Обертраун чудесен) и за Эльзас (Барр — очень славный).</p>
+<p>Но сегодня давайте снова про "нашу" Бретань.</p>
+<p>Наверное, сначала надо сказать пару слов про background рассказчика, то бишь, мой. Мне нравится Франция. Очень. Больше всех других мест, где побывал и где, надеюсь, еще побываю. Возможно, в большой степени потому, что я очень люблю французский язык. В свое время начал осваивать его самостоятельно, затем с преподавателем, когда работал во французской компании. И по-прежнему язык поддерживаю. Бретонский департамент Morbihan, так сложилось, был моим первым французским департаментом, который я близко увидел. А первая любовь — она такая! И нынешняя поездка в Бретань была для меня уже, как оказалось, четвертой. Правда, это если считать и месяц стажировки, когда я толком ничего не смог посмотреть, кроме Ванна (Vannes), ибо работал по все дни, и даже в выходные, чтобы выкроить время на несколько дней на свой «первый раз в Париже». И если считать последующий полуторадневный марш-бросок туда же, «по местам боевой славы», из ностальгических побуждений, ну и просто чтобы показать Ванн жене. Но так, чтобы вдвоем проехаться основательно по многим местам, спокойно, с ночевками — это всего лишь наш второй раз в Бретани. Предыдущий «вояж» у нас случился три года назад, в 2014 году; тоже где-то дней на десять, как и в этом году. В тот раз это был, в основном, север Бретани: Сен-Мало (Saint-Malo), Канкаль (Cancale), Динан (Dinan), Мон-сен-Мишель (Le Mont-Saint-Michel), Фужер (Fougères); с Ренном (Rennes) в качестве базы для радиальных вылазок. Но все же заскочили мы тогда и на западное побережье, в Ванн, и даже съездили с моим другом и его семейством, живущего недалеко от Ванна, в Рошфор-ан-Терр (Rochefort-en-Terre).</p>
+<p>Вообще, очень рекомендую следующий способ путешествия по Бретани: лет за десять до планируемой поездки вы прилагаете все усилия (ну, или хотя бы просто не мешаете), чтобы ваши хорошие друзья уехали в Бретань надолго и обосновались там основательно. Et voilà, через десять лет вам таки есть, где остановиться на пару ночей. Очень удобно! Попробуйте. Это, в сущности, не так трудно :-P .</p>
+<h2 id="план-путешествия">План путешествия.</h2>
+<p>Ну а в этот раз, <a href="2014_east_brittany.html" target="_blank" rel="noopener noreferrer">спустя три года</a>, снова соскучившись по Бретани и соблазненный рассказами предшественниц, после долгих прикидок и перестановок, решил я, наконец, что наш план будет следующим:</p>
+<ul class="summary-list">
+  <li>В субботу, около часов одиннадцати, вылетаем из Москвы (SVO) в Париж (CDG), Аэрофлотом. В тот же день в 19:38 поезд TGV Paris-Montparnasse — Vannes.</li>
+  <li>Ночь с субботы на воскресенье, весь следующий день, и ночь на понедельник мы у друзей (см. выше «рекомендованный способ»). Особых планов мы на этот единственный день с друзьями не строили («как пойдет»). На деле мы погуляли все вместе по тропам вдоль побережья недалеко от Сарзо (Sarzeau), плюс съездили с ними в Орэ (Auray) и в Сент-Анна-д'Орэ (Saint-Anna-d’Auray). Ниже я про это рассказываю очень и очень коротко, поскольку рассказ предполагается о самостоятельном путешествии «на своих двоих». А это воскресенье слегка выбивается из темы… Но только оно. В дальнейшем все было по-честному, «своим ходом».</li>
+</ul>
+<p>В понедельник, к 9:30 утра, отвезя по дороге детей в школу, друзья забросили нас в Порт-Навало (Port-Navalo), маленький порт в Арзоне (Arzon) в устье залива Morbihan; ну, а там уже мы сели на кораблик, идущий из Vannes в Belle-Ile и заходящий по пути в Port-Navalo, и поплыли дальше вдвоем. О чем, в основном, и будет рассказ.</p>
+<p>С этого момента, наш маршрут, крупными мазками, был таков:</p>
+<ul class="summary-list">
+  <li>Кораблик Port-Navalo — Le Palais (Belle-Ile).</li>
+  <li>Полтора дня на Belle-Ile, c ночевкой.</li>
+  <li>На пароме из Le Palais в Quiberon. Переезд через Auray в Quimper (автобус + TGV) и ночевка там.</li>
+  <li>Где-то две трети дня в Quimper. Вечером переезд на автобусе в Камаре-сюр-Мер (Camaret-sur-Mer). И да, мы успели к закату на мысе Pen-Hir, мы молодцы.</li>
+  <li>День неспешных прогулок в окрестностях Camaret-sur-Mer. Вечером переезд на автобусе в Brest.</li>
+  <li>Рано утром на следующий день плывем на кораблике на остров Уэссан (Ouessant).</li>
+  <li>День, ночь и еще полдня на Quessant. Вечером на корабле обратно в Brest.</li>
+  <li>На следующий день, утром, TGV Brest – Paris-Montparnasse.</li>
+  <li>Полтора дня, с ночевкой, в Париже. Как же без Парижа-то.</li>
+  <li>И, наконец, назад: Париж (CDG) – Москва (SVO).</li>
+</ul>
+<p>Собственно, вот такую маленькую сверхкраткую шпаргалку с ключевыми временными отметками я распечатал и положил себе в поясную сумку рядом с кредитками. В любой момент можно быстро свериться и успокоиться, что не опаздываем. Или, наоборот, поторопиться:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/225029/2188450.0/0_1df5e8_6b241afd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/225029/2188450.0/0_1df5e8_6b241afd_orig" alt="" loading="lazy"></noscript></figure>
+<p>Делал такую шпаргалку первый раз, раньше как-то обходился. Но понравилось. Когда транспорт не то чтобы часто ходит, опаздывать не хочется – можно и встрять.</p>
+<p>Сразу скажу – удалось все, что запланировал. Никаких сбоев в логистике не произошло. Транспорт работал как часы. Нигде не пришлось ни нервничать, ни нестись сломя голову и высунув язык. Ну, кроме одного места, где было неспокойно, но волнения были напрасны (это было на Уэссане; я еще расскажу).</p>
+<p>Пора, наверное, разбавить скучные технические подробности несколькими фотографиями из разных точек маршрута, для затравки (дальше фотографий будет немало):</p>
+<p>Бель-Иль:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/467152/2188450.0/0_1df612_bd2574eb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/467152/2188450.0/0_1df612_bd2574eb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/9091/2188450.0/0_1df60f_b02bd0da_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/9091/2188450.0/0_1df60f_b02bd0da_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.0/0_1df618_de73b2af_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.0/0_1df618_de73b2af_orig" alt="" loading="lazy"></noscript></figure>
+<p>Камаре-сюр-Мер:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df619_94c69c8f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df619_94c69c8f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/205820/2188450.1/0_1df61d_c9ffc289_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/205820/2188450.1/0_1df61d_c9ffc289_orig" alt="" loading="lazy"></noscript></figure>
+<p>Уэссан:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df61f_1660e0d1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df61f_1660e0d1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/230858/2188450.0/0_1df61b_d7e6cd14_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/230858/2188450.0/0_1df61b_d7e6cd14_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/404236/2188450.1/0_1df61c_3beb9c9b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/404236/2188450.1/0_1df61c_3beb9c9b_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вообще, с погодой, с точки зрения фотолюбителя, мне повезло. С одной стороны, какой-то уж сильной непогоды практически не было, а, с другой стороны, почти всегда небо было "нескучным", даже в пару пасмурных дней, которые мы застали (один на Бель-Иле и один на Уэссане).</p>
+<h2 id="подготовка">Подготовка</h2>
+<p>Для начала, повторю, на всякий случай, известный факт: самый удобный способ готовить поездку по материковой части Бретани — воспользоваться <a href="http://www.breizhgo.com/fr/" target="_blank" rel="noopener noreferrer">планировщиком</a>. Очень удобный. Есть и французский, и английский интерфейс. Ни разу не подвел. Но насчет переездов между материком и островами он пока слаб.</p>
+<p>Помимо авиабилетов, заранее были куплены по интернету билеты на:</p>
+<p class="subhead">TGV Paris – Vannes и TGV Brest – Paris:</p>
+<p>Билеты покупал <a href="https://www.voyages-sncf.com/" target="_blank" rel="noopener noreferrer">здесь</a>. Я пользовался французской версией – там продажи билетов открывались почему-то раньше. По-крайней мере, пару раз я такое замечал. В момент, когда я занимался покупкой и бронированием билетов, «обратный» рейс TGV Brest – Paris на нужную мне дату и предпочтительное время еще не был открыт для продажи. Но на сайте можно было подписаться на уведомление об открытии продаж, указав свой e-mail, что я и сделал. В результате, когда оповещение пришло, я купил билеты чуть ли не в первый час продаж, очень дешево, за 20 евро с человека. Пока оплачивал, распечатывал и прочее, билеты уже подорожали почти в полтора раза (до 55 за двоих). Да и потом продолжали дорожать… Так что вышло удачно.</p>
+<p class="subhead">Корабль Port-Navalo – Le Palais (Belle-Ile), который на самом деле Vannes – Le Palais:</p>
+<p>Билеты покупал <a href="http://www.compagnie-du-golfe.fr/bateau-belle-ile-en-mer/depart-vannes-et-port-navalo/#horaires-belle-ile" target="_blank" rel="noopener noreferrer">здесь</a>. В кассе в Port-Navalo обменял распечатку на билет.</p>
+<p class="subhead">Паром Le Palais – Quiberon</p>
+<p>Билеты покупал <a href="http://www.compagnie-oceane.fr/reservation/?rub_code=53" target="_blank" rel="noopener noreferrer">здесь</a>. Распечатку обменяли на билет в порту Le Palais сразу по прибытии на Belle-Ile, чтобы на следующий день не тратить на это время.</p>
+<p class="subhead">TGV Auray – Quimper.</p>
+<p>Билеты снова покупал <a href="https://www.voyages-sncf.com/" target="_blank" rel="noopener noreferrer">здесь</a>. После оплаты сайт предложил воспользоваться их сервисом подбора гостиниц в Quimper. У меня к этому моменту была забронирована гостиница через Booking, с бесплатной отменой. Но я решил попробовать, посмотреть на предложения. И увидел ту же гостиницу, но с дополнительной скидкой, даже по сравнению с аналогичной безвозвратной покупкой через Booking. Так что я купил бронь на SNCF, а на Booking отменил. Что-то около евро 20 удержал в своих дрожащих от жадности цепких лапках таким образом :-P . «…И был известный эконом» (С). Но, вообще-то, это не про меня. У меня не слишком хорошо получается выгадывать на таких вещах…. Но приятно, когда получается.</p>
+<p class="subhead">Корабль Brest – Ouessant и Ouessant – Brest:</p>
+<p>Билеты покупал <a href="http://www.pennarbed.fr/horaires-et-tarifs/" target="_blank" rel="noopener noreferrer">здесь</a>.</p>
+<p>Тоже с обменом на билеты в порту перед посадкой. Очередь была один или два человека, и офис располагается метрах в 50-ти от трапа, так что все удобно.</p>
+<p>Ну и о проживании (не считая дня у друзей!):</p>
+<p>Все ночевки были забронированы на <em>Booking.com</em>, которым я пользуюсь все же пока чаще, чем <em>AirBnB</em>, особенно, когда нужно переночевать всего одну ночь и не хочется мороки с закупкой продуктов, завтраком и т.п. Кроме ночевки на острове Ouessant: там Booking не предлагал ничего. Так что в этом случае я воспользовался их <a href="http://www.ot-ouessant.fr/location-ouessant.html" target="_blank" rel="noopener noreferrer">собственным «островным» сервисом</a> по подбору крыши над головой.</p>
+<p>Проблема была в том, что, с одной стороны, жилья, где можно остановиться на острове, вполне достаточно, но, с другой стороны, подавляющее большинство сдает на срок, начиная с двух ночей, а мы ехали всего на одну. В результате, только <a href="http://www.ot-ouessant.fr/location-ouessant/hotel/173-hotel-restaurant-bar-le-fromveur.html" target="_blank" rel="noopener noreferrer">маленькая гостиница Le Fromveur</a> в центре "поселка городского типа" Lampole - он же столица Уэссана - оказалась подходящей.</p>
+<p>Я с ними списался (вот их <a href="http://www.hotel-fromveur.fr/" target="_blank" rel="noopener noreferrer">собственный сайт</a>); они попросили, как водится, задаток. Что обычно печально, поскольку при традиционном банковском переводе банки в обеих странах отъедают себе свою долю, делая эту операцию весьма болезненной. Можно было бы попробовать упросить их забронировать нам номер без предоплаты. Но (см. выше «рекомендованный способ») у нас были «засланные казачки», которых мы и попросили перевести за нас требуемый задаток, а им отдали потом наличными.</p>
+<p>Все остальные транспортные расходы («островные» автобусы на Belle-Ile, «материковые» автобусы Quiberon – Auray, Quimper – Camaret-sur-Mer, Camaret-sur-Mer – Brest) оплачивались на месте, в основном у водителя. Если рядом была специальная касса (как на автовокзале в Quimper) – то в кассе. Хотя, наверняка, и в этом случае водитель бы нас «обилетил», но как-то нехорошо было его напрягать при наличии десятка минут свободного времени до отправления автобуса и кассы в пятидесяти метрах безо всякой очереди.</p>
+<p>Ну вот, с технической стороной покончили. Пора в путь!</p>
+<p>Продолжение следует...</p>
+<h2 id="париж-ванн">Париж - Ванн</h2>
+<p>Билеты на самолет были куплены где-то за полгода, когда еще план поездки не сложился, и визу еще не запрашивали. Французы, кстати, ращедрились, наконец, на трехлетний «мультик». До этого разные «шенгеновские» европейцы давали годовые или (особо суровые, и при первом запросе в их визовый центр) под сроки поездки. В этот раз мы решили ехать в день прилета из Парижа прямо в Ванн (Vannes), а оттуда сразу к друзьям, живущим в Бретани неподалеку. (В самОм Ванне мы уже бывали раньше дважды. Один раз даже переночевали там, в маленькой тихой гостинице, с окнами «в сад», выходящими прямо на средневековую городскую стену, под ночной шум дождя и утреннее курлыканье голубей на подоконнике. Было очень романтично.)</p>
+<p>Оказалось, однако, что из разных способов «как добраться до Ванна» единственно приемлемым будет скоростной вечерний поезд TGV (19:38). А это значит, что у нас будет часа 4 на «вынужденно погулять по Парижу» (звучит, конечно, довольно снобистски). Я озаботился тем, можно ли будет за разумные деньги оставить наши два средних размеров чемодана в камере хранения прямо на вокзале Монпарнас. (Спойлер – <a href="http://www.garemontparnasse.paris/consignes-automatiques-bagages.php" target="_blank" rel="noopener noreferrer">да, можно</a>). Обнаружил <a href="http://www.gares360.com/" target="_blank" rel="noopener noreferrer">забавный сервис</a>, где можно «виртуально прогуляться» по интересующему вокзалу, и, более того, попросить сайт «прогулять тебя» по маршруту, который он сам построит для вас оптимальным (надеюсь) образом. Например, от входа до камеры хранения. Вот <a href="http://devaccess.itiview.com/itiview/index.php?project=140" target="_blank" rel="noopener noreferrer">ссылка для вокзала Монпарнас</a>. Мы бы, конечно, и на месте сориентировались, но все же приятнее такие вещи посмотреть заранее. <a href="https://www.gares-sncf.com/sites/default/files/field_plan_files/2016-01/pmp_n-01.pdf" target="_blank" rel="noopener noreferrer">Здесь</a> вот можно найти обычный «олдскульный» план всех этажей, если что.</p>
+<p>Итак, приехав из аэропорта на RER + метро на вокзал Монпарнас, мы сдали чемоданы и оправились вдохнуть парижского воздуха и настроения. Решили, что пойдем мимо кладбища Монпарнас, заглянем на него, традиционно; потом выйдем на бульвар Распай («на бульваре Распай, как обычно, господин Доминик у руля…»), где ночевали в прошлый наш приезд, по нему дойдем до бульвара Монпарнас и прогуляемся до Люксембургского сада. По дороге перекусим где-нибудь. Так и сделали.</p>
+<p>В кафе Bullier на бульваре Монпарнас, через дорогу от La Closerie de Lilas, мы славно и плотно поели, имея в виду, что к друзьям домой мы попадаем к полуночи, так что особо уже сегодня не поедим. Местечко оказалось неплохое и демократичное, без лишних «понтов». Луковый суп, мясо; отличный tarte-tatin, столь ценимый женой. (<a href="https://www.google.fr/maps/@48.8395311,2.3365645,3a,75y,280.54h,96.87t/data=!3m6!1e1!3m4!1saQ7Vn75m52CjSXtVI_mSfg!2e0!7i13312!8i6656" target="_blank" rel="noopener noreferrer">здесь на карте</a>) На улице было пасмурно, но мы-то приехали вообще из заснеженной холодной апрельской Москвы, так что довольствовались тем, что тепло; уже отлично!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.0/0_1df5eb_41d170d3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.0/0_1df5eb_41d170d3_orig" alt="" loading="lazy"></noscript></figure>
+<p>Зашли в Люксембургский сад, в этот раз чисто символически (ну у нас что-то типа традиции – мы заходим туда каждый раз, как приезжаем, хоть не надолго). Прошлись до большого пруда, и уже пора было разворачиваться и двигаться к вокзалу.</p>
+<p>Забрали чемоданы в камере хранения, нашли перрон, сели в поезд. (На всякий случай напомню, что билеты, купленные по интернету, не надо ни обменивать на «обычные» билеты, ни компостировать, в отличие от обычных, купленных в кассах вокзала. Вообще, насколько я помню, в этот раз за всю нашу поездку распечатки билетов у нас проверили только однажды. В поезде Paris – Vannes, например, не проверили ни разу.)</p>
+<p>В поезде было тихо. Вечер субботы, за окном смеркалось. Люди едут на выходные в провинцию, домой или к родным. Поэтому когда вдруг непонятно откуда-то (как показалось сначала) грянуло «Боже, царя храни» в мощном исполнении мужского хора, это было… как минимум, необычно. Я оглянулся в надежде увидеть двух-трех вытянувшихся в струнку правнуков эмигрантов первой волны. Но нет, не увидел...</p>
+<p>Мораль – проверяйте, до конца ли воткнут в телефон штеккер наушников. Особенно, когда нашла блажь заслушать «Коронацию» Акунина, аудиоверсия которой как раз с полного, без купюр, «Боже, царя храни» и начинается. Так что секунд пять мы развлекали попутчиков. А потом опять стало тихо и неинтересно…</p>
+<h2 id="вокруг-ванна">Вокруг Ванна</h2>
+<p>Часа через три с половиной мы высадились в Vannes, обнялись с другом, приехавшим нас встречать, и еще через полчаса были у него дома, почти на берегу моря. Тишина, вкуснейший воздух, чуть с запахом водорослей, мириады звезд на черном небе…</p>
+<p>Утром ярко светило солнце, но было довольно прохладно, так что ветровки со свитерами были вполне уместны. Побродили по тропинкам, вьющимся вдоль берега над обрывами. Океан был спокоен, ветра в этот день практически не было.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478910/2188450.1/0_1df620_ca050517_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478910/2188450.1/0_1df620_ca050517_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/224193/2188450.0/0_1df5f0_b2d5200f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/224193/2188450.0/0_1df5f0_b2d5200f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370413/2188450.0/0_1df5ef_6938b578_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370413/2188450.0/0_1df5ef_6938b578_orig" alt="" loading="lazy"></noscript></figure>
+<p>Покатались по окрестностям. Из симпатичных мест в окрестностях Vannes, куда мы бы, пожалуй, порекомендовали съездить, если путешествовать самостоятельно и иметь полдня лишних, — это городок Орэ (Auray) и его старый порт Сен-Густан (St. Goustan) на реке Лок (Loc’h). Мы попали туда в солнечный полдень. На набережной крутилась воскресная карусель для самых маленьких; работали еще кое-какие детские аттракционы. В узком кривом переулочке за открытой дверью мастерской в каменном доме трудился художник; можно было зайти, посмотреть его работы, включая, помимо крупноформатных вещей, всяческие забавные открытки, которые мы, туристы, так любим. Зашли, прикупили.</p>
+<p>Чуть не забыл — перед этим мы славно поели блинов и попили ароматный сидр в Crêperie L’Auberg’ine в расположенном неподалеку, километрах в трех, маленьком городке Sainte-Anne-d'Auray.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370413/2188450.0/0_1df5f2_57936eda_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370413/2188450.0/0_1df5f2_57936eda_orig" alt="" loading="lazy"></noscript></figure>
+<p>Но вообще-то это вовсе даже не гастрономический центр, а главная цель паломников в этой части Бретани с того момента, как Святая Анна, мать Марии, явилась некоему пахарю, причем, что замечательно, дата точно известна – 25 июля 1624 г. Есть собор, довольно симпатичный:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370413/2188450.0/0_1df5f3_539fe278_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370413/2188450.0/0_1df5f3_539fe278_orig" alt="" loading="lazy"></noscript></figure>
+<p>И уж потом, после блинного обеда, переместившись в Auray и оставив машину на стоянке, мы пошли гулять по этому городку. Вот типичный «открыточный вид» на старый город:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/224193/2188450.0/0_1df5f4_635d498b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/224193/2188450.0/0_1df5f4_635d498b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/224193/2188450.0/0_1df5f5_a92a1e6f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/224193/2188450.0/0_1df5f5_a92a1e6f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237726/2188450.0/0_1df5f6_383a506_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237726/2188450.0/0_1df5f6_383a506_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237726/2188450.0/0_1df5f7_a5035f65_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237726/2188450.0/0_1df5f7_a5035f65_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370155/2188450.0/0_1df5f8_cecb8165_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370155/2188450.0/0_1df5f8_cecb8165_orig" alt="" loading="lazy"></noscript></figure>
+<p>Солнечные часы:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370413/2188450.0/0_1df5f9_2ee6b63f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370413/2188450.0/0_1df5f9_2ee6b63f_orig" alt="" loading="lazy"></noscript></figure>
+<p>Местные девушки «с района». Одна, похоже, изучает непрошенного фотографа в отражении экрана своего смартфона:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/372788/2188450.0/0_1df5fa_58bf4ffd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/372788/2188450.0/0_1df5fa_58bf4ffd_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, и, конечно, на яхтах гордо реют бретонские флаги:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/372788/2188450.0/0_1df5fb_c5afbe23_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/372788/2188450.0/0_1df5fb_c5afbe23_orig" alt="" loading="lazy"></noscript></figure>
+<p>Заехали и еще в пару мест, но я решил, что в этом отчете, который как бы про самостоятельное «пешее» путешествие, будет некошерно говорить о местах, куда мы заехали в то воскресенье только благодаря нашим друзьям. А Auray вполне вписывался бы в график самостоятельного путешествия, если бы мы провели две ночи не у друзей, а, скажем в том же Ванне (Vannes). Так что с Орэ (Auray) моя совесть чиста. Ну а про сам Ванн, повторюсь, отлично написано, например, <a href="http://forum.awd.ru/viewtopic.php?t=210464" target="_blank" rel="noopener noreferrer">у luchar</a>. Ванн, безусловно, стОит если и не обедни, то дня, проведенного в нем.</p>
+<p>И так, потихоньку, воскресенье подошло к концу. К ужину, как выяснилось, наш друг заранее с утра прикупил свежих устриц на портовом рынке в их «деревушке». Мне было показано, как их правильно вскрывать с помощью специальных ножа и защитной рукавицы. Где-то начиная с четвертой устрицы я справлялся уже достаточно прилично. Если что — не пропаду.</p>
+<h2 id="belle-île-en-mer">Belle île en Mer</h2>
+<p>Утром в понедельник мы приехали в Port-Navalo, чтобы сесть на кораблик, идущий из Vannes на Belle-Ile. Поменяли распечатку на билет. Кораблик подошел вовремя, пассажиров было не много, ветер был не слишком сильный, ну, а облака были вполне живописны:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/229651/2188450.0/0_1df5fc_e01b94f2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/229651/2188450.0/0_1df5fc_e01b94f2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/230858/2188450.0/0_1df5fd_eb4217e9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/230858/2188450.0/0_1df5fd_eb4217e9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/404236/2188450.0/0_1df5fe_5772a31_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/404236/2188450.0/0_1df5fe_5772a31_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/230858/2188450.0/0_1df5ff_8c33193d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/230858/2188450.0/0_1df5ff_8c33193d_orig" alt="" loading="lazy"></noscript></figure>
+<p>Клише: «Белеет парус одинокий»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237726/2188450.0/0_1df600_1952066c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237726/2188450.0/0_1df600_1952066c_orig" alt="" loading="lazy"></noscript></figure>
+<p>А вот показался и Бель Иль:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/230858/2188450.0/0_1df601_7d9bdc1b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/230858/2188450.0/0_1df601_7d9bdc1b_orig" alt="" loading="lazy"></noscript></figure>
+<p>Через час плавания мы причалили в маленькой гавани Лё Пале (Le Palais), «главного» городка острова Belle-Ile. Полное французское название острова — Belle-Île-en-Mer, бретонское — Enez ar Gerveur, латинское —Vindilis (так, кстати, именуется один из паромов, курсирующих между Бель-Илем и ближайшей материковой точкой – полуостровом Киб(е)рон (Quiberon).</p>
+<p>Вот так выглядит Le Palais:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df602_b2fff2cc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df602_b2fff2cc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.0/0_1df603_c7de8427_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.0/0_1df603_c7de8427_orig" alt="" loading="lazy"></noscript></figure>
+<p>Сейчас вот нашел: Compagnie Océane, на пароме которой мы будем уплывать на Quiberon, выложила вот такое видео на своем канале на YouTube, с красивыми видами острова (в хорошую погоду, разумеется) с высоты птичьего полета. Не уверен, что не нарушаю правил, ибо в каком-то смысле это их реклама, но я рискну. Все же это про остров, а не про компанию:</p>
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/vQgcHJLbR0E" title="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+<p>Заселились мы в нашу небольшую гостиницу высоко над гаванью, и отправились на автобусную остановку, чтобы перебраться на противоположную, дикую, сторону острова.</p>
+<p>Давайте я для полноты описания вывешу тут карту острова:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/236988/2188450.6/0_1df774_83b1cdb5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/236988/2188450.6/0_1df774_83b1cdb5_orig" alt="" loading="lazy"></noscript></figure>
+<p>(вот ссылка на <a href="http://visitefrance.ru/wp-content/uploads/2015/05/%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D0%91%D0%B5%D0%BB%D1%8C-%D0%98%D0%BB%D1%8C-%D0%B0%D0%BD-%D0%BC%D1%8D%D1%80.jpg" target="_blank" rel="noopener noreferrer">оригинал</a>).</p>
+<p>Естественно, начать знакомство с островом хотелось с Port-Coton — нужно же посмотреть на скалы, которыми вдохновлялся Клод Моне.</p>
+<p>По острову ходят три автобуса, номера линий (сюрприз!) – 1 (зеленая), 2 (голубая) и 3 (оранжевая). Отправляются с одной площадки и в одно время. Разжиться расписанием можно <a href="http://www.belle-ile.com/organiser/se-deplacer-sur-lile/en-bus" target="_blank" rel="noopener noreferrer">здесь</a>. Например, весеннее расписание висит <a href="http://www.belle-ile.com/files/ot-belleile/files/fichiers/Organiser/SeDeplacer/belle_ile_bus_printemps_automne2017.pdf" target="_blank" rel="noopener noreferrer">тут</a></p>
+<p>В частности, там же есть схемка, как дойти от порта до стоянки автобусов:</p>
+<p><a href="http://www.belle-ile.com/files/ot-belleile/files/fichiers/Organiser/SeDeplacer/belle_ile_bus.jpg" target="_blank" rel="noopener noreferrer">Ссылка</a>.</p>
+<p>Если по-простому: нужно идти от порта прямо «вглубь» города вдоль канала по левой стороне до первого пешеходного мостика на другую сторону канала. Переходим, и почти сразу поднимаемся вверх. Там на возвышении (снизу не очень видно) и будет стоянка автобусов. Билеты покупаются у водителя. Мест вроде бы хватает всем.</p>
+<p>У автобусной площадки:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.0/0_1df604_a5474f2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.0/0_1df604_a5474f2_orig" alt="" loading="lazy"></noscript></figure>
+<p>Раз нам нужен Port-Coton – значит, садимся на Ligne 2 (голубая) и едем до конечной.</p>
+<p>Изначально план был – пройти пешком от Port-Coton до мыса Les Poulains, и оттуда вернуться в Le Palais на «зеленом» автобусе Ligne 2. Но мы быстро поняли (и мы не первые!), что «гладко было на бумаге, да забыли про овраги…». Линия берега очень изрезана; а виды на море, скалы, и чаек неизменно шикарны; и все просто просилось быть сфотографированным.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/467152/2188450.0/0_1df605_9ce1df83_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/467152/2188450.0/0_1df605_9ce1df83_orig" alt="" loading="lazy"></noscript></figure>
+<p>Почти Клод Моне, только Canon:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/404236/2188450.0/0_1df606_d0f62f56_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/404236/2188450.0/0_1df606_d0f62f56_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/760582/2188450.6/0_1df778_777717e8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/760582/2188450.6/0_1df778_777717e8_orig" alt="" loading="lazy"></noscript></figure>
+<p>Общение с аборигенами:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df607_1510b900_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df607_1510b900_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/230858/2188450.0/0_1df608_f14c271c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/230858/2188450.0/0_1df608_f14c271c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df609_daab8d57_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df609_daab8d57_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.0/0_1df60a_8838804e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.0/0_1df60a_8838804e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/467152/2188450.0/0_1df60b_471692db_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/467152/2188450.0/0_1df60b_471692db_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237726/2188450.0/0_1df60c_667382f1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237726/2188450.0/0_1df60c_667382f1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/467152/2188450.0/0_1df60d_4bd08b52_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/467152/2188450.0/0_1df60d_4bd08b52_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/232848/2188450.1/0_1df622_1089ff62_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/232848/2188450.1/0_1df622_1089ff62_orig" alt="" loading="lazy"></noscript></figure>
+<p>Здесь вот есть люди, для масштаба:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/515846/2188450.1/0_1df624_271f527d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/515846/2188450.1/0_1df624_271f527d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df611_ca97d913_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df611_ca97d913_orig" alt="" loading="lazy"></noscript></figure>
+<p>Есть вот такие маленькие пляжики, но на них проще попасть по морю, чем спуститься:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/467152/2188450.0/0_1df610_4e028279_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/467152/2188450.0/0_1df610_4e028279_orig" alt="" loading="lazy"></noscript></figure>
+<p>За десятки тысяч лет вода пробивает себе в толще скал дорогу:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/222565/2188450.1/0_1df623_4021be77_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/222565/2188450.1/0_1df623_4021be77_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237002/2188450.6/0_1df776_95ec1628_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237002/2188450.6/0_1df776_95ec1628_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df615_83a00482_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df615_83a00482_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/174613/2188450.0/0_1df616_cbd66adf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/174613/2188450.0/0_1df616_cbd66adf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/404236/2188450.0/0_1df617_ac0cd244_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/404236/2188450.0/0_1df617_ac0cd244_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/516998/2188450.6/0_1df775_381c1850_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/516998/2188450.6/0_1df775_381c1850_orig" alt="" loading="lazy"></noscript></figure>
+<p>Поэтому, как легко догадаться, ползли мы черепашьим темпом, да и торопиться, честно говоря, не хотелось. Погода была солнечная, хотя и ветреная; народу было немного… Так что, когда мы сделали привал с перекусом часа три спустя, маяк, стоящий недалеко от Port-Coton, все еще был в пределах видимости. В какой-то момент, вдоволь нагулявшись по берегу, мы решили не рисковать, а вернуться к исходной точке и уехать вечером «домой» в Le Palais на том же «голубом» автобусе. Итого, прибыли мы на Port-Coton на одиннадцатичасовом автобусе, а вернулись на 17:40 (самом позднем). Так что вечером было еще время перекусить в пиццерии, и потом погулять по окраинам Le Palais.</p>
+<h2 id="belle-île-en-mer-день-второй">Belle île en Mer. День второй.</h2>
+<p>На следующий день с утра небо было в свинцовых тучах, и порывы ветра швыряли дождь прямо в окна. Я расстроился, но не за нас (не сахарные), а за фотоаппарат – не хотелось подвергать его таким испытаниям. Решили не торопиться, но часов в 11 уж точно снова выдвинуться на автобусную площадку и ехать, на этот раз «зеленым» автобусом на мыс Les Poulains. Но как раз к одиннадцати часам дождь постепенно утих, а тучи стали просто плотными облаками. Контраст с предыдущим днем был, тем не менее, разительным, но Бель-Илю такая погода, конечно, подходит ничуть не меньше, а на самом деле, положа руку на сердце, гораздо больше. На самом мысу — там, где стоит дом с маяком — ветер почти сбивал с ног, но чайки (поразительно!) умудрялись удерживаться в воздухе против ветра почти неподвижно. Когда им это развлечение надоедало, они отыскивали в причудливо изъеденных водой и ветром скалах небольшие укрытые от стихии гроты и плавали в этих «гаванях», где с трудом бы заместилось три-четыре птицы.</p>
+<p>Природа, конечно, выглядит довольно сурово в пасмурную погоду…</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.1/0_1df625_1c3a62a1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.1/0_1df625_1c3a62a1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df626_ef397b18_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df626_ef397b18_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/236988/2188450.6/0_1df77b_3fbb23d6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/236988/2188450.6/0_1df77b_3fbb23d6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/470815/2188450.6/0_1df779_d39938e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/470815/2188450.6/0_1df779_d39938e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df627_530c7713_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df627_530c7713_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df628_1783aa4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df628_1783aa4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/484029/2188450.1/0_1df629_b2aea6cf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/484029/2188450.1/0_1df629_b2aea6cf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/236239/2188450.1/0_1df62a_a530902d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/236239/2188450.1/0_1df62a_a530902d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/227342/2188450.6/0_1df77a_d5c7c5bf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/227342/2188450.6/0_1df77a_d5c7c5bf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/232875/2188450.1/0_1df62b_c30b37d5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/232875/2188450.1/0_1df62b_c30b37d5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/236239/2188450.1/0_1df62c_957eaed4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/236239/2188450.1/0_1df62c_957eaed4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/236239/2188450.1/0_1df62d_852cd41b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/236239/2188450.1/0_1df62d_852cd41b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/232875/2188450.1/0_1df62e_17bcf8e0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/232875/2188450.1/0_1df62e_17bcf8e0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.1/0_1df62f_f726fcc2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.1/0_1df62f_f726fcc2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/483127/2188450.1/0_1df630_82e10f3c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/483127/2188450.1/0_1df630_82e10f3c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Итак, погуляв часа три по северному побережью, в окрестности мыса Les Poulains, мы поехали обратно, чтобы успеть забрать чемоданы из отеля и загрузиться на паром до Quiberon’а. Закупили в качестве сувениров рыбные консервы местного производства (нежнейшие), и отправились в порт.</p>
+<p>Продолжение следует...</p>
+<h2 id="через-quiberon-в-quimper">Через Quiberon в Quimper</h2>
+<p>Через 45 минут плавания на пароме Bangor (в теории, берет на борт более 300 пассажиров и пару десятков авто; но, конечно, столько не было) мы в Киброне (Quiberon). Остановка нужного нам автобуса №1 TIM до Орэ (Auray) была буквально в ста метрах от причала. Вот <a href="http://www.compagnie-oceane.fr/ftp/FR_documents/Acc%C3%A8s%20et%20stationnement%20gare%20maritime%20de%20Quiberon%20.pdf" target="_blank" rel="noopener noreferrer">здесь</a> можно посмотреть, как в целом устроен порт Quiberon.</p>
+<p>Но мы, в общем-то, порт и не видели особо. На этой схеме, на площадке, где написано Gare maritime («морской вокзал»), ровно там же, в масштабе этой карты, и остановка автобуса. У нас было минут тридцать до отправления нашей «единички», и мы пошли попить кофе с круассанами…</p>
+<p>А дальше, все как рекомендовал дружище BreizhGo:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/222565/2188450.0/0_1df5e9_a5fa8244_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/222565/2188450.0/0_1df5e9_a5fa8244_orig" alt="" loading="lazy"></noscript></figure>
+<p>Автобус приходит практически к ж.д. вокзалу; переход две минуты:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477095/2188450.0/0_1df5ea_7250dc4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477095/2188450.0/0_1df5ea_7250dc4_orig" alt="" loading="lazy"></noscript></figure>
+<p>Час на поезде, и мы в Кемпере (Quimper). Отель наш был минутах в 10 пешком от вокзала SNCF в сторону старого города. Докатили чемоданы, заселились, и пошли смотреть на Quimper.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/762837/2188450.1/0_1df640_141342aa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/762837/2188450.1/0_1df640_141342aa_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233354/2188450.1/0_1df641_afbe63d0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233354/2188450.1/0_1df641_afbe63d0_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну что сказать… Мне кажется, полдня бы на него хватило вполне. В вечер приезда, мы уже успели обойти основную часть старого города. И, поскольку мы не торопились, зашли поесть рыбки в рыбном ресторанчике Le Bar Iodé, который нам посоветовал портье. И, в общем, он действительно оказался неплохим. Расположен прямо в центре старого города, рядом с крытым рынком. Сами себя они именуют «La cave de la mer», а не ресторан. Я, правда, все же предпочитаю места с меньшими потугами изобразить высокую кухню, брызнув три капли соуса по периметру тарелки. Но искать более «земной» было поздновато, а мы проголодались. И, пожалуй, я все же утрирую; все было не так плохо, и рыба в была вкусна.</p>
+<p>На следующий день у нас было время примерного до полшестого вечера, так что мы вполне подробно посмотрели Quimper, его собор, и даже взобрались в парк на холме над городом и погуляли там.</p>
+<p>Несколько слов о соборе Quimper:</p>
+<p>«Кемперский собор – один из трех старейших готических соборов Бретани. Его строительство началось в 1239 году на фундаменте романской церкви XI века. Освящение в честь святого Корентина состоялось в 1287 году. Свой нынешний вид храм обрел в XV веке, когда были завершены своды хора, появились витражи и доделаны своды нефа.</p>
+<p>Одна из главных конструкционных особенностей собора – ориентация нефа относительно хора. По одной из версий это связано с трудностями, возникшими в ходе работ из-за характера почвы и прежнего фундамента романского собора.</p>
+<p>Кемперский собор – самый высокий в Бретани. Его высота вместе со шпилем – около 80 метров».</p>
+<p>Ну да, кривоват:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/205820/2188450.1/0_1df642_c2299349_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/205820/2188450.1/0_1df642_c2299349_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/483127/2188450.1/0_1df644_a0e44759_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/483127/2188450.1/0_1df644_a0e44759_orig" alt="" loading="lazy"></noscript></figure>
+<p>Св. Ив между Богатым и Бедным (крашеное дерево). Очень живенько, с эмоциями:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/235925/2188450.1/0_1df643_2083976c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/235925/2188450.1/0_1df643_2083976c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237815/2188450.1/0_1df645_96cfb3a1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237815/2188450.1/0_1df645_96cfb3a1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/249479/2188450.1/0_1df647_bca51f16_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/249479/2188450.1/0_1df647_bca51f16_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767483/2188450.1/0_1df648_9379c1a7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767483/2188450.1/0_1df648_9379c1a7_orig" alt="" loading="lazy"></noscript></figure>
+<p>А теперь о земном: в качестве обеда поели бретонских блинов, и с начинкой и сладких, с сидром, в Crêperie L'Ardoise — вот</p>
+<p><a href="https://www.google.ru/maps/@47.9968008,-4.1031695,3a,75y,347.29h,95.97t/data=!3m6!1e1!3m4!1scX8Jf1WnJd0pbcxuzwqdAg!2e0!7i13312!8i6656" target="_blank" rel="noopener noreferrer">здесь</a>. Вот пара фотографий оттуда:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/483127/2188450.1/0_1df649_36b95388_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/483127/2188450.1/0_1df649_36b95388_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/756497/2188450.1/0_1df64a_738e96ba_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/756497/2188450.1/0_1df64a_738e96ba_orig" alt="" loading="lazy"></noscript></figure>
+<p>И небольшая серия видов Кемпера и его обитателей:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765674/2188450.1/0_1df64b_9ba609c8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765674/2188450.1/0_1df64b_9ba609c8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/222565/2188450.1/0_1df64d_7bc795cf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/222565/2188450.1/0_1df64d_7bc795cf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/402270/2188450.1/0_1df64f_5428ba1a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/402270/2188450.1/0_1df64f_5428ba1a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/756497/2188450.1/0_1df64e_37ecb983_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/756497/2188450.1/0_1df64e_37ecb983_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478662/2188450.1/0_1df64c_cf11536_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478662/2188450.1/0_1df64c_cf11536_orig" alt="" loading="lazy"></noscript></figure>
+<p>Витрина «шоколадной фабрики». Абсолютно все (как я понял) детали выполнены из шоколада:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/216915/2188450.1/0_1df651_60f9b99a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/216915/2188450.1/0_1df651_60f9b99a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370846/2188450.1/0_1df652_d414dfc7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370846/2188450.1/0_1df652_d414dfc7_orig" alt="" loading="lazy"></noscript></figure>
+<p>Снова люди и улицы Кемпера:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233354/2188450.1/0_1df650_e50d130f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233354/2188450.1/0_1df650_e50d130f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/205820/2188450.1/0_1df653_c2d068b8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/205820/2188450.1/0_1df653_c2d068b8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237815/2188450.1/0_1df654_6c8e5a4d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237815/2188450.1/0_1df654_6c8e5a4d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.1/0_1df655_5c02014d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.1/0_1df655_5c02014d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/484029/2188450.1/0_1df656_5fcf74bc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/484029/2188450.1/0_1df656_5fcf74bc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/235925/2188450.1/0_1df657_854882b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/235925/2188450.1/0_1df657_854882b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478910/2188450.1/0_1df658_5cfcb7f5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478910/2188450.1/0_1df658_5cfcb7f5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/249307/2188450.1/0_1df659_9cb4c139_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/249307/2188450.1/0_1df659_9cb4c139_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/246155/2188450.1/0_1df65a_6a039330_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/246155/2188450.1/0_1df65a_6a039330_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/249307/2188450.1/0_1df65c_50698689_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/249307/2188450.1/0_1df65c_50698689_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/217607/2188450.1/0_1df65b_2138aefa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/217607/2188450.1/0_1df65b_2138aefa_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/246155/2188450.1/0_1df65d_eb0ce401_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/246155/2188450.1/0_1df65d_eb0ce401_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/515846/2188450.2/0_1df65e_42ce1c7f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/515846/2188450.2/0_1df65e_42ce1c7f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/372697/2188450.2/0_1df65f_674fd60d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/372697/2188450.2/0_1df65f_674fd60d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/230197/2188450.2/0_1df660_d1eb0009_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/230197/2188450.2/0_1df660_d1eb0009_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/402270/2188450.2/0_1df661_70042dc9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/402270/2188450.2/0_1df661_70042dc9_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот, как-то так я увидел для себя Кемпер.</p>
+<p>А ближе к вечеру мы отправились на автобусе 37 (автобусная станция прямо около вокзала SNCF) в следующий пункт на нашем маршруте – поселок Camaret-sur-Mer на полуострове Crozon.</p>
+<p>Сразу покаюсь. Да, я сознательно, с болью, но пожертвовал и Pointe du Raz, и островом Ile-de-Sein. Нельзя объять необъятное. Задним числом, мне кажется, выбор был правильный. Все острова за один раз – не надо. Неизбежно впечатления от какого-то из них были бы смазаны и другими островами и вообще спешкой. А я не люблю спешки вообще и путешествиях в том числе. А так – два острова, столь разных, и не подряд – мне показалось вполне достаточно для такой достаточно короткой поездки. Ну а живописный Pointe du Raz путь останется приманкой на будущее. Вдруг мы все же снова приедем в Бретань. Я бы не отказался. Тогда уж точно туда съездим.</p>
+<h2 id="camaret-sur-mer">Camaret-sur-Mer</h2>
+<p>Автобус 37 был отнюдь не экспресс, поэтому поездка заняла полтора часа, и в полвосьмого вечера мы были на месте. Тишь, глушь, благодать. Гостиница наша была прямо на берегу порта, метров двести от автобусной остановки. Порт – это громко сказано, конечно; он сейчас, в основном, предназначен для яхт; но на другой стороне можно найти и живописные остовы рыбацких баркасов, «обсиженные» такими же, как я, любителями фотогеничной рухляди с морским привкусом (фото будут).</p>
+<p>Небо было безоблачным, до заката оставалось, по моим прикидкам, где-то час с четвертью. Так что возникла надежда, что, если мы пойдем хорошим шагом, успеем на мыс Pen-Hir как раз перед закатом. Глядишь, и фотоаппарат спасибо скажет.</p>
+<p>Сказано – сделано. Я включил на смартфоне «MapsМe», на всякий случай, дабы не свернуть не туда, и бодрым шагом мы отправились сквозь притихший к вечеру (или тихий всегда?) поселок в сторону мыса. Дорога была отличная, так что дошли вовремя, и я успел немного поснимать. Правда, под конец солнце таки село в облака, но мне грех жаловаться. Я и не жалуюсь!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/479589/2188450.2/0_1df662_3972cea8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/479589/2188450.2/0_1df662_3972cea8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/249782/2188450.2/0_1df663_553866ca_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/249782/2188450.2/0_1df663_553866ca_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/195771/2188450.2/0_1df664_f020fe63_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/195771/2188450.2/0_1df664_f020fe63_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/235015/2188450.2/0_1df665_9407d1a9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/235015/2188450.2/0_1df665_9407d1a9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/372697/2188450.2/0_1df666_6bd439f7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/372697/2188450.2/0_1df666_6bd439f7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/232875/2188450.2/0_1df667_da67648b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/232875/2188450.2/0_1df667_da67648b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df619_94c69c8f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/205820/2188450.0/0_1df619_94c69c8f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/244821/2188450.2/0_1df669_57251b21_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/244821/2188450.2/0_1df669_57251b21_orig" alt="" loading="lazy"></noscript></figure>
+<p>Цитата:</p>
+<p>«На полуострове Крозон, к юго-западу от городка Камаре-сюр-Мер, находится мыс Пенир. Живописный скалистый берег считается орнитологическим заповедником. Отсюда в ясный день хорошо видны мыс Пуэнт-дю-Ра и остров Сен, а также остров Уэссан и мыс Сен-Матье... Простор, свежий ветер, прекрасные виды создают здесь удивительную атмосферу свободы… На мысе стоит памятник «Крест Пенир» (Croix de Pen-Hir), посвященный бретонцам, пережившим Вторую мировую войну. На его открытии в 1960 году присутствовал сам генерал Шарль де Голль.»</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/402270/2188450.2/0_1df66a_e071d9d1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/402270/2188450.2/0_1df66a_e071d9d1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот нашел неплохое видео окрестностей этого мемориала (с дрона, видимо, и положенное на уместную музыку):</p>
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/Q9uH8ZqlZfk" title="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+<p>«Домой» возвращались уже в темноте. И почти целый день у нас еще был завтра в запасе.</p>
+<p>Немного про сам Камаре-сюр-Мер. По-бретонски он именуется Kameled, что способствует жарким дискуссиям на тему «уж не здесь ли располагался замок Камелот из легенд о Короле Артуре». Вот например, что пишут на важную тему, где именно король Артур организовал пиршество в день Вознесения: «Le jour de l'Ascension, le roi Arthur organise une grande fête à Camelot (ou Camelotte, ou Caamelot, ou Camaalot, ou Kaamelott, ou Camelo, ou Kameled, ou Camaret)». Во французской Википедии Камаре на третьем месте в списке «кандидатов на роль Камелота». Ну, что ж… Пожелаем ему успеха на этом поприще!</p>
+<p>С утра отправились открывать для себя окрестности Camaret-sur-Mer. Вот <a href="https://img-fotki.yandex.ru/get/246155/2188450.6/0_1df77c_909376d9_orig" target="_blank" rel="noopener noreferrer">здесь</a> можно посмотреть карту окрестностей; она цвета «вырви глаз», и я даже не стал ее выставлять как картинку сюда во избежание эпилептических припадков. Но на самом деле неплохая.</p>
+<p>Прошлись, для начала, вокруг гавани.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/219501/2188450.2/0_1df66b_c93ce42d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/219501/2188450.2/0_1df66b_c93ce42d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/249479/2188450.2/0_1df66c_92eea67e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/249479/2188450.2/0_1df66c_92eea67e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.2/0_1df66d_d945ac0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.2/0_1df66d_d945ac0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/366459/2188450.2/0_1df66e_23e2ffb3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/366459/2188450.2/0_1df66e_23e2ffb3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/202427/2188450.2/0_1df66f_12cfb8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/202427/2188450.2/0_1df66f_12cfb8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/372429/2188450.2/0_1df670_1973582e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/372429/2188450.2/0_1df670_1973582e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/226827/2188450.2/0_1df671_a3be73b2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/226827/2188450.2/0_1df671_a3be73b2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/235925/2188450.2/0_1df672_5742c697_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/235925/2188450.2/0_1df672_5742c697_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237726/2188450.2/0_1df673_d59c186a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237726/2188450.2/0_1df673_d59c186a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233577/2188450.6/0_1df746_f4eebaee_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233577/2188450.6/0_1df746_f4eebaee_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.2/0_1df67d_7cd914_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.2/0_1df67d_7cd914_orig" alt="" loading="lazy"></noscript></figure>
+<p>На берегу бухты, напротив «главной набережной», стоит небольшая церковь, носящая имя Notre-Dame de Rocamadour, покровительницы моряков и рыбаков. В ней никого не было; откуда-то доносилась негромкая и удивительно приятная музыка. Оказалось, что чуть поодаль, снаружи, девушка играет на дудочке кельтские мотивы, и недурно играет. У ее ног спал беспородный собакевич. Оставили им пару монет.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/468374/2188450.2/0_1df674_aa3a4ea0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/468374/2188450.2/0_1df674_aa3a4ea0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/468374/2188450.2/0_1df675_694215ed_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/468374/2188450.2/0_1df675_694215ed_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/482931/2188450.2/0_1df676_a07aa8d1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/482931/2188450.2/0_1df676_a07aa8d1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/236239/2188450.2/0_1df677_27f6c5d4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/236239/2188450.2/0_1df677_27f6c5d4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478477/2188450.2/0_1df678_2fff4aa9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478477/2188450.2/0_1df678_2fff4aa9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233354/2188450.2/0_1df679_c45ffc18_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233354/2188450.2/0_1df679_c45ffc18_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/249782/2188450.2/0_1df67a_73a9c1ee_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/249782/2188450.2/0_1df67a_73a9c1ee_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233354/2188450.2/0_1df67b_5d294b03_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233354/2188450.2/0_1df67b_5d294b03_orig" alt="" loading="lazy"></noscript></figure>
+<p>От бухты Камаре мы пошли влево, вдоль берега, постепенно забираясь по тропе все выше. Обогнули Pointe du Grand Gouin, и поднялись, насколько было возможно, над огромным пляжем Pen Hat (до самого мыса с маяком у этого пляжа не дойти – военный объект, огорожен). Посмотрели на окрестности сверху, спустились к пляжу, и прошлись вдоль него.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370413/2188450.2/0_1df67c_a8eb4a90_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370413/2188450.2/0_1df67c_a8eb4a90_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370155/2188450.2/0_1df67e_8c4ab578_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370155/2188450.2/0_1df67e_8c4ab578_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/9091/2188450.2/0_1df67f_2d526ecc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/9091/2188450.2/0_1df67f_2d526ecc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476282/2188450.2/0_1df680_ac019ba5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476282/2188450.2/0_1df680_ac019ba5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/508985/2188450.2/0_1df681_4b286b4d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/508985/2188450.2/0_1df681_4b286b4d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.2/0_1df682_9ea48b53_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.2/0_1df682_9ea48b53_orig" alt="" loading="lazy"></noscript></figure>
+<p>…Искал «в интернетах», чем же на самом деле нам может быть любопытен Camaret-sur-Mer. Ну, помимо очередной оборонительной башни, построенной вездесущим военным инженером Вобаном. (В 2008 году двенадцать крепостей, спроектированных Вобаном, были объявлены ЮНЕСКО памятниками Всемирного наследия). И наткнулся на упоминание Камаре в связи с биографией известной художницы Зинаиды Серебряковой (девичья фамилия Лансере́; годы жизни 1884 (село Нескучное, Харьковская губерния) — 1967 (Париж, Франция); участница объединения «Мир искусства»). <a href="http://www.kultpro.ru/item_688/" target="_blank" rel="noopener noreferrer">Процитирую</a>:</p>
+<p>«Большую известность получили две серии работ, написанных во время двух путешествий Серебряковой в Марокко и шести поездок в Бретань…</p>
+<p>…портреты, пейзажи и бытовые зарисовки, созданные в разных уголках этого французского региона, составили несколько сотен наиболее выразительных и любопытных с этнографической точки зрения произведений художницы... Бретань интересовала Серебрякову еще с конца 1890-х годов, когда о ней много говорили побывавшие там в 1897 году Александр Бенуа и Евгений Лансере. Наверное, поэтому вторым местом после Версаля, куда поехала художница в парижский период, был этот регион. В июле 1925 года она с сыном Александром навестила своего дядю Александра Бенуа в городке Камаре-сюр-Мер, расположенном на вдающемся в океан мысе в департаменте Финистер. Художница создала карандашные зарисовки порта с растушевкой, работы темперой с изображением моря, скал, отличающиеся необыкновенными сочетаниями синих, зеленых и охристых оттенков.</p>
+<p>Вторая поездка в Бретань осенью 1926 года была вызвана плохим состоянием здоровья Серебряковой… доктор, к которому она обратилась, нашел, что у нее туберкулез и сказал, чтобы она немедленно уехала из Парижа. Она... уехала в Бретань». Врачи рекомендовали морской воздух, и она снова поехала в Камаре.»</p>
+<p>Вот, например, ее пейзаж «Бретань. Пляж в Камаре», написанный в 1926-м, и который сейчас находится в экспозиции Государственного Русского музея:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.6/0_1df77d_c714f1f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.6/0_1df77d_c714f1f_orig" alt="" loading="lazy"></noscript></figure>
+<p>(оригинал <a href="https://bigartshop.ru/sites/default/files/styles/1920x/public/product_images/%D0%91%D1%80%D0%B5%D1%82%D0%B0%D0%BD%D1%8C.%20%D0%9F%D0%BB%D1%8F%D0%B6%20%D0%B2%20%D0%9A%D0%B0%D0%BC%D0%B0%D1%80%D0%B5--1926.jpg" target="_blank" rel="noopener noreferrer">здесь</a></p>
+<p>Сравните с моей фотографией чуть выше. Все-таки поразительное ощущение. Есть места, где кажется, что время остановилось и ничего не происходит. По крайней мере, в пейзаже ничего не меняется.</p>
+<p>Вот здесь по ссылкам еще несколько ее известных (в том смысле, что мне их было нетрудно найти) работ, на которых запечатлена Бретань:</p>
+<p><a href="https://artchive.ru/artists/787~Zinaida_Evgenevna_Serebrjakova/works/465935~Bretan_Leskonil" target="_blank" rel="noopener noreferrer">1</a>, <a href="https://artchive.ru/artists/787~Zinaida_Evgenevna_Serebrjakova/works/465934~Bretan_Kamare" target="_blank" rel="noopener noreferrer">2</a>, <a href="https://artchive.ru/artists/787~Zinaida_Evgenevna_Serebrjakova/works/465933~Bretan_Gorodok_PonlAbbe_Port" target="_blank" rel="noopener noreferrer">3</a>, <a href="https://artchive.ru/artists/787~Zinaida_Evgenevna_Serebrjakova/works/465930~Bretan_PonlAbbe" target="_blank" rel="noopener noreferrer">4</a></p>
+<p>(Если кому-то будет интересно, вот <a href="http://eho-2013.livejournal.com/390773.html" target="_blank" rel="noopener noreferrer">здесь</a> вывешено очень много репродукций ее картин.)</p>
+<p>Еще поснимал в окрестностях это огромного и пустынного пляжа:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/202427/2188450.2/0_1df683_fabb4377_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/202427/2188450.2/0_1df683_fabb4377_orig" alt="" loading="lazy"></noscript></figure>
+<p>(вдали хорошо виден мыс Pen-Hir).</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370155/2188450.2/0_1df684_9955b38d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370155/2188450.2/0_1df684_9955b38d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370378/2188450.2/0_1df685_ddafaa0c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370378/2188450.2/0_1df685_ddafaa0c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/205820/2188450.1/0_1df61d_c9ffc289_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/205820/2188450.1/0_1df61d_c9ffc289_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/249078/2188450.2/0_1df687_482529c7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/249078/2188450.2/0_1df687_482529c7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/468374/2188450.2/0_1df688_dd282235_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/468374/2188450.2/0_1df688_dd282235_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/468374/2188450.2/0_1df689_bd4f8dfe_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/468374/2188450.2/0_1df689_bd4f8dfe_orig" alt="" loading="lazy"></noscript></figure>
+<p>Бретонские пляжи чем-то похожи на балтийские. Тот случай, когда кажется, что Бродский это писал прямо здесь:</p>
+<blockquote class="citation"><p>…Когда умру, пускай меня сюда<br>
+перенесут. Я никому вреда<br>
+не причиню, в песке прибрежном лежа.<br>
+Объятий ласковых, тугих клешней<br>
+равно бежавшему не отыскать нежней,<br>
+застираннее и безгрешней ложа.</p></blockquote>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/202385/2188450.2/0_1df68a_8a4b921a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/202385/2188450.2/0_1df68a_8a4b921a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/236239/2188450.2/0_1df68b_b3a7d8cd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/236239/2188450.2/0_1df68b_b3a7d8cd_orig" alt="" loading="lazy"></noscript></figure>
+<p>Отлив на этом пляже:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/229651/2188450.2/0_1df68c_97bdcd79_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/229651/2188450.2/0_1df68c_97bdcd79_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.2/0_1df68d_dc2c9afa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.2/0_1df68d_dc2c9afa_orig" alt="" loading="lazy"></noscript></figure>
+<p>Снова Pen-Hir и парусники:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/362196/2188450.2/0_1df68e_3b875112_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/362196/2188450.2/0_1df68e_3b875112_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/202385/2188450.2/0_1df68f_d3d0b1c5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/202385/2188450.2/0_1df68f_d3d0b1c5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/218038/2188450.3/0_1df690_d252c5a4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/218038/2188450.3/0_1df690_d252c5a4_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вообще пляж был совершенно пустынным. Понятно, что погода не предполагает купания. То прошла через него пара с «пегим псом, бегущим краем моря» (попали в кадр на одной из фотографий выше). Снова полчаса никого. Потом на пляж вышло молодое семейство:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231372/2188450.3/0_1df691_66e2cbc2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231372/2188450.3/0_1df691_66e2cbc2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233577/2188450.3/0_1df692_c5e8512b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233577/2188450.3/0_1df692_c5e8512b_orig" alt="" loading="lazy"></noscript></figure>
+<p>(Кстати, опять же напоминаю: это все - под довольно сильный ветер, который здесь не ощущается...)</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/249479/2188450.3/0_1df693_b3479381_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/249479/2188450.3/0_1df693_b3479381_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233577/2188450.3/0_1df694_e09351d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233577/2188450.3/0_1df694_e09351d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/236239/2188450.3/0_1df695_bcc5a9a7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/236239/2188450.3/0_1df695_bcc5a9a7_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну что ж, уходить не хотелось. Но нам было пора возвращаться в Camaret и собираться в путь.</p>
+<p>По дороге быстренько откушали мидий, в <a href="https://www.google.ru/maps/@48.2811549,-4.5984212,3a,75y,262.28h,82.93t/data=!3m6!1e1!3m4!1s80o4dFFGBEcUzIlYD3ogSQ!2e0!7i13312!8i6656" target="_blank" rel="noopener noreferrer">Le Goéland Farceur</a>. Забрали чемоданы из гостиницы и покатили вдоль набережной к нашему автобусу 34, отправлявшемуся в 16:00 на Брест. Переночуем, а с утра на Уэссан.</p>
+<p>Ну и «продолжение следует», конечно.</p>
+<h2 id="брест-уэссан">Брест – Уэссан</h2>
+<p>В Бресте мы были примерно через полтора часа. Отель – скромненько, но чистенько – был в прямой видимости от автовокзала, и минутах в семи от порта. Мы даже прошлись пешком до причала в тот же вечер, проверили, откуда отправляется наш утренний паром. Но все оказалось довольно просто, плутать не пришлось. <a href="https://www.google.ru/maps/place/Shipping+company+Penn+Ar+Bed/@48.3804904,-4.4868036,1126a,35y,312.42h/data=!3m1!1e3!4m5!3m4!1s0x0:0x7c0806082705fa05!8m2!3d48.3808431!4d-4.4863044" target="_blank" rel="noopener noreferrer">Вот этот причал</a>.</p>
+<p>С утра погода была пасмурна и дождлива. С одной стороны, так и должно быть: как нам всем известно, «qui voit Ouessant, voit son sang» («Кто видит Уэссан, тот видит свою кровь»). В общем, прямо «в черном-черном городе…отдай мое сердце!» и прочие ужасы. Так что погода делала все, чтобы соответствовать.</p>
+<p>И мы, дойдя до порта и обменяв распечатки на билеты, подхватили наши пожитки и взошли на борт кораблика Fromveur II. Дождь постепенно ослабел. Виды через мокрые иллюминаторы радовали глаз:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df696_c72b3dee_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df696_c72b3dee_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.3/0_1df697_fa918885_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.3/0_1df697_fa918885_orig" alt="" loading="lazy"></noscript></figure>
+<p>Fromveur II - корабль достаточно вместительный, народу перевозит много. Идет долго, часа два с половиной. Виды с палубы, новые в самом начале, наскучивают, надо признать, довольно быстро после отплытия из порта, особенно в такую пасмурную погоду. Плюс регулярно принимался моросить дождь.Так что оставалось только читать, иногда поглядывая в иллюминатор и на мониторы, развешенные в разных местах корабля, на которых транслировалась навигационная программа, помогающая понять, где мы вообще… С другой стороны, особой качки не было, и принятые с утра на всякий случай таблетки "авиаморя", наверное, были ни к чему.</p>
+<p>Вот пара видов с кормы Fromveur II:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.3/0_1df698_bc552328_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.3/0_1df698_bc552328_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df699_a3a03503_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df699_a3a03503_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769553/2188450.3/0_1df69a_2300c2a7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769553/2188450.3/0_1df69a_2300c2a7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df69b_f6c59105_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df69b_f6c59105_orig" alt="" loading="lazy"></noscript></figure>
+<p>Где-то через полчаса оставили вдали слева по курсу Camaret-sur-Mer… Приблизительно на полпути корабль делает стоянку в Le Conquet, последнем материковом порту. В теории, можно было бы доехать из Бреста до него на автобусе и уже здесь сесть на корабль. Но мы не стали так делать. На фотографиях Le Conquet и его окрестности выглядят очень симпатично в хорошую погоду. Но у нас с погодой в первую половину дня было не очень.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df69c_857b5b81_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df69c_857b5b81_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df69d_3e8758e1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df69d_3e8758e1_orig" alt="" loading="lazy"></noscript></figure>
+<h2 id="ouessant-день-первый">Ouessant. День первый.</h2>
+<p>Еще час пути, еще одна промежуточная остановка — на острове Molène — и мы вплываем в бухту долгожданного острова Ouessant. У гавани дежурят несколько микроавтобусов, подходить можно к любому, договариваться только «туда» или сразу «туда и обратно». Мы сделали второе, и в результате пришлось несколько поволноваться, ибо девушка-водитель приехала за нами на следующий день с небольшим опозданием, поскольку почему-то собиралась везти нас на какой-то корабль, отправляющийся в 17:30, а вовсе не наш в 17:00. Там, на месте сбора, стоял еще один «трансферный» и почти пустой автобус побольше, так что можно было уехать и на нем. Но в последний момент, когда мы уже почти решились на это, таки приехала наша жизнерадостная автоледи и домчала нас и еще двоих любителей суровой романтики практически вовремя. Хотя корабль отплыл буквально минут через пять после нашего прибытия к причалу; мы были, пожалуй, среди последнего десятка загрузившихся.</p>
+<p>Ну, что бы такого рассказать интересного про Уэссан перед тем, как выкладывать его красоты… По-бретонски он зовется Enez Eusa. Согласно Википедии, «размеры 7 км на 4 км, население 863 человека. 1 июня 1794 года в Атлантическом океане произошло крупное морское сражение между флотами Великобритании и Франции. Несмотря на то, что расстояние до места сражения составляло примерно 740 км к западу от острова, оно получило название Битва при Уэссане, или Славное первое июня.»</p>
+<p>Ну, следует заметить, что «сражений при Уэссане» было несколько, в том числе несколько в ходе войны за независимость США. Вот картина, изображающая более раннюю битву, 27 июля 1778:</p>
+<figure class="photo"><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Combat_d%27Ouessant_juillet_1778_par_Theodore_Gudin.jpg/1200px-Combat_d%27Ouessant_juillet_1778_par_Theodore_Gudin.jpg" alt="" class="lazy-photo"><noscript><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Combat_d%27Ouessant_juillet_1778_par_Theodore_Gudin.jpg/1200px-Combat_d%27Ouessant_juillet_1778_par_Theodore_Gudin.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Также остров «известен» тем, что, очевидно, является самой западной точкой метропольной (без заморских территорий) Франции.</p>
+<p>А теперь — неожиданное и приятное открытие! Среди тех самых восьмисот живых душ острова Уэссан имеется не кто иной, как композитор Ян Тиерсен (Yann Tiersen), получивший мировую известность благодаря саундтреку к фильму «Amélie» (если буквоедствовать, то по-французски фильм называется более длинно: «Le fabuleux destin d'Amélie Poulain» - переведем как «Невероятная судьба Амели Пулен» ). Более того, в сентябре прошлого, 2016, года у него вышел альбом, который называется просто «EUSA» (это — бретонское название острова, как я уже написал выше). Он сам называет этот альбом «музыкальной картой Уэссана». Название каждой композиции – это какое-то место на острове.</p>
+<p>Процитирую Яна: «Вообще на создание «Eusa» влияла природа. На острове я много гоняю на велосипеде по пустынным местам. Там другая жизнь, другой ритм и другие люди — мы с соседями как большая семья. Много животных. При этом очень богатая культура. Ощущается связь времён: старые постройки, красивые церкви. И бретонский язык — это совершенно иной мир. Я выучил его как-то довольно естественно: ходил и спрашивал народ, как то называется, как это, как высказать такую-то мысль и так далее.» Вот официальное видео одной из композиций, записанное прямо на острове (до боли знакомая музыка!):</p>
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/KwwwWz6Ef3I" title="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+<p>И погода там, на видео, примерно такая, в какую мы приехали, наконец, на «маршрутке» в Ламполь.</p>
+<p>Вот здесь можно послушать весь альбом; он на любителя, конечно, но я даже рекомендую включить это видео фоном прямо сейчас, когда вы читаете этот отчет:</p>
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/X_YJrbDooO8" title="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+<p>У меня, например, просмотр фотографий острова ложится на него просто идеально. Не исключаю, конечно, очевидного эффекта самовнушения…</p>
+<p>Ну вот. Забросили вещи в свой маленький номер-каюту, и конечно, немедленно вперед — на побережье, к маякам, к Le Créac'h, к Nividic, к La Jument. Всего маяков на Ouessant пять, но эти самые популярные и «фотогеничные».</p>
+<p>Вот они все на симпатичной карте острова "под старину", на которую я случайно наткнулся, готовя этот рассказ:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.6/0_1df773_885cede4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.6/0_1df773_885cede4_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, здравствуй, всем знакомая овечка! Теперь и у меня есть твое фото.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df69e_82c1bb71_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df69e_82c1bb71_orig" alt="" loading="lazy"></noscript></figure>
+<p>Минут за пятнадцать нетерпеливого шага, почти бегом, дошли до огромного Le Créac'h. Прямо под ним – музей маяков и бакенов. И это наверняка интересно, но я поглядывал на небо, и было непонятно, то ли сейчас зарядит ливень на весь день, то ли ураган. Сами посмотрите, можно ли было чего-то ждать хорошего от такого "драматичного" неба! Поэтому, пока было сухо, мы все же решили пройти по берегу.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.3/0_1df69f_a6fd0cbe_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.3/0_1df69f_a6fd0cbe_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.3/0_1df6a0_6c3fc614_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.3/0_1df6a0_6c3fc614_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.3/0_1df6a1_2e8fcac1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.3/0_1df6a1_2e8fcac1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6a2_3ac6b778_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6a2_3ac6b778_orig" alt="" loading="lazy"></noscript></figure>
+<p>Тут на мою спутницу вдруг резко напала дневная сонливость, как с ней часто случается; так что она, недолго поборовшись с дремой и вчистую проиграв, улеглась на траву у скал почти под маяком и уснула. Возможно, это было к смене погоды, потому что, пока я медленно бродил вдоль потрясающе живописных скал, то пробираясь между ними к воде (что почти невозможно), то поднимаясь обратно на пригорки по мягкой сочно-зеленой траве, и непрерывно фотографируя, она (погода) вдруг решила нас порадовать. Облака начали постепенно уходить в сторону, открывая то тут, то там голубое небо. И, наконец, выглянуло солнце.</p>
+<p>При солнечном свете, конечно, ландшафт просто преображается. Ну, на этой серии фотографий смена погоды хорошо видна. И, как водится за Уэссаном, трудно что-то выкинуть... Это, наверное, и так максимум десятая часть отснятого; многое справедливо ушло в корзину. Заранее прошу у вас прощения.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/518060/2188450.3/0_1df6a3_bb40b420_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/518060/2188450.3/0_1df6a3_bb40b420_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769553/2188450.3/0_1df6a4_cb675c90_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769553/2188450.3/0_1df6a4_cb675c90_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6a5_e18918ab_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6a5_e18918ab_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/56796/2188450.3/0_1df6a6_2a29abe5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/56796/2188450.3/0_1df6a6_2a29abe5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6a7_f820c232_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6a7_f820c232_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/56796/2188450.3/0_1df6a8_1bb12be5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/56796/2188450.3/0_1df6a8_1bb12be5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.3/0_1df6a9_a5ce0850_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.3/0_1df6a9_a5ce0850_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6aa_4791bd01_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6aa_4791bd01_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6ab_b78d11a3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6ab_b78d11a3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/56796/2188450.3/0_1df6ac_45048ad9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/56796/2188450.3/0_1df6ac_45048ad9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769553/2188450.3/0_1df6ad_569696c4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769553/2188450.3/0_1df6ad_569696c4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6ae_4f7f99e5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6ae_4f7f99e5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/518060/2188450.3/0_1df6af_5df68164_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/518060/2188450.3/0_1df6af_5df68164_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6b0_f797aec6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.3/0_1df6b0_f797aec6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/517809/2188450.3/0_1df6b1_90dbb239_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/517809/2188450.3/0_1df6b1_90dbb239_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/508911/2188450.3/0_1df6b2_646683a4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/508911/2188450.3/0_1df6b2_646683a4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233354/2188450.3/0_1df6b3_2289c182_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233354/2188450.3/0_1df6b3_2289c182_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237726/2188450.3/0_1df6b4_577a8784_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237726/2188450.3/0_1df6b4_577a8784_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/483372/2188450.3/0_1df6b5_58c3dbe2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/483372/2188450.3/0_1df6b5_58c3dbe2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233354/2188450.3/0_1df6b6_37d4e5be_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233354/2188450.3/0_1df6b6_37d4e5be_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/361460/2188450.3/0_1df6b7_badf698d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/361460/2188450.3/0_1df6b7_badf698d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765674/2188450.3/0_1df6b8_e15c26ae_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765674/2188450.3/0_1df6b8_e15c26ae_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/202385/2188450.3/0_1df6b9_d1689856_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/202385/2188450.3/0_1df6b9_d1689856_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/223280/2188450.3/0_1df6ba_96e2dc96_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/223280/2188450.3/0_1df6ba_96e2dc96_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/246155/2188450.3/0_1df6bb_edb9e85f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/246155/2188450.3/0_1df6bb_edb9e85f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/228104/2188450.3/0_1df6bc_1fa6c94a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/228104/2188450.3/0_1df6bc_1fa6c94a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/404236/2188450.3/0_1df6bd_12fdc052_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/404236/2188450.3/0_1df6bd_12fdc052_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/476474/2188450.3/0_1df6be_c057bdff_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/476474/2188450.3/0_1df6be_c057bdff_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/517809/2188450.3/0_1df6bf_f5537fb9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/517809/2188450.3/0_1df6bf_f5537fb9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.3/0_1df6c1_992f2291_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.3/0_1df6c1_992f2291_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.3/0_1df6c2_3eb12cc4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.3/0_1df6c2_3eb12cc4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.4/0_1df6c3_f1426077_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.4/0_1df6c3_f1426077_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6c4_7d59528b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6c4_7d59528b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6c5_38f2cd71_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6c5_38f2cd71_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6c6_9c2f1d4f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6c6_9c2f1d4f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.4/0_1df6c7_ab57995_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.4/0_1df6c7_ab57995_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6c8_e99f093f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6c8_e99f093f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.4/0_1df6c9_6f1d6fb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.4/0_1df6c9_6f1d6fb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6ca_77aa2e2c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6ca_77aa2e2c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df61f_1660e0d1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df61f_1660e0d1_orig" alt="" loading="lazy"></noscript></figure>
+<p>Долго ходили вдоль этой части острова, продвигаясь к мысу Pointe de Pern, к маяку Nividic с его знаменитыми заброшенными опорами линии электропередачи и одновременно канатной дороги. Нашел вот схему первоначального устройства этой сложной системы доступа на Nividic на французской вики:</p>
+<figure class="photo"><img data-src="https://upload.wikimedia.org/wikipedia/commons/5/54/Nividic_cable_car.jpg" alt="" class="lazy-photo"><noscript><img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Nividic_cable_car.jpg" alt="" loading="lazy"></noscript></figure>
+<p>У маяка, названного по имени скалы, на которой он построен: Leurvaz an Ividig, весьма непростая вековая история. Сначала в качестве источника света использовалась, как почти всегда в те времена, газовая горелка, потом электрическая энергия, передаваемая по кабелю, проложенному через опоры, при этом газ в баллонах тоже складировался на маяке и использовался в случае поломок основного фонаря. Затем и посейчас Nividic снова работает на электричестве, но уже в духе времени – от солнечных батарей. В течение долгого времени на верху маяка действовала посадочная площадка для вертолетов.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6cc_446f95c2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6cc_446f95c2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6cd_9fce1013_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6cd_9fce1013_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6ce_b82c0e28_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6ce_b82c0e28_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.4/0_1df6cf_d405f58d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.4/0_1df6cf_d405f58d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6d0_a395a9b3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6d0_a395a9b3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.4/0_1df6d1_a820a0a4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.4/0_1df6d1_a820a0a4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/518060/2188450.4/0_1df6d2_1c460271_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/518060/2188450.4/0_1df6d2_1c460271_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6d3_1d3d5dcc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6d3_1d3d5dcc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/518060/2188450.4/0_1df6d4_96172df5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/518060/2188450.4/0_1df6d4_96172df5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6d5_b95ed3a1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6d5_b95ed3a1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6d6_fe744cb6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6d6_fe744cb6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6d7_7af12b36_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6d7_7af12b36_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6d8_4d05cd9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6d8_4d05cd9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6d9_21e1a904_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6d9_21e1a904_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.4/0_1df6db_c45fd3de_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.4/0_1df6db_c45fd3de_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6dc_f2799a8a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6dc_f2799a8a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.4/0_1df6dd_4316ac8e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.4/0_1df6dd_4316ac8e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.4/0_1df6de_ed5e80fa_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.4/0_1df6de_ed5e80fa_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6df_89397ca3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6df_89397ca3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/56796/2188450.4/0_1df6e0_107e5b4b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/56796/2188450.4/0_1df6e0_107e5b4b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6e1_9ff98877_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6e1_9ff98877_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.4/0_1df6e2_35519bc7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.4/0_1df6e2_35519bc7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6e3_64d289c5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6e3_64d289c5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6e4_f3242e5c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6e4_f3242e5c_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6e5_7473e49a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6e5_7473e49a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6e6_d27fd5da_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6e6_d27fd5da_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ходили-бродили, пока не устали, и не пришла пора вернуться в Ламполь, хорошенько подкрепиться и передохнуть в ожидании заката.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6e7_ac2c8618_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6e7_ac2c8618_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.4/0_1df6e8_546e2f6_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.4/0_1df6e8_546e2f6_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6e9_be0ff4a0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6e9_be0ff4a0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.4/0_1df6ea_cc6cae38_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.4/0_1df6ea_cc6cae38_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6eb_737fd772_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.4/0_1df6eb_737fd772_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6ec_8dbd3f17_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6ec_8dbd3f17_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6ed_985aca7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/769553/2188450.4/0_1df6ed_985aca7_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну, а на закате мы снова были на северо-западном побережье, и я еще немного пофотографировал:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6ee_277f170b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.4/0_1df6ee_277f170b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/230858/2188450.0/0_1df61b_d7e6cd14_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/230858/2188450.0/0_1df61b_d7e6cd14_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/467152/2188450.4/0_1df6f0_5c92798d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/467152/2188450.4/0_1df6f0_5c92798d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/467152/2188450.4/0_1df6f1_e431ac01_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/467152/2188450.4/0_1df6f1_e431ac01_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/467152/2188450.4/0_1df6f2_ddbe2f7c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/467152/2188450.4/0_1df6f2_ddbe2f7c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Погуляли вдоль темнеющего океана, периодически освещаемые мощным светом Le Créac'h. За весь вечер встретили лишь двоих молодых ребят с удочками. Ближе к полуночи стало совсем холодно, и мы вернулись домой, надеясь, что завтра погода будет не сильно хуже.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/404236/2188450.1/0_1df61c_3beb9c9b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/404236/2188450.1/0_1df61c_3beb9c9b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/508985/2188450.4/0_1df6f4_e0a79a3b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/508985/2188450.4/0_1df6f4_e0a79a3b_orig" alt="" loading="lazy"></noscript></figure>
+<p>Засим заканчиваю дозволенные речи... А про следующий день расскажу вам на следующий день. Не переключайтесь! :)</p>
+<h2 id="ouessant-день-второй">Ouessant. День второй.</h2>
+<p>На следующий день с утра пошли на противоположный берег «клешни», на которую слегка смахивает Уэссан. Там почти нет таких фантастических причудливых скал, как на северном берегу, но идти вдоль внешнего берега тоже довольно приятно.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/508985/2188450.5/0_1df6f6_7e6534e7_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/508985/2188450.5/0_1df6f6_7e6534e7_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/508985/2188450.5/0_1df6f7_bc39ebb1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/508985/2188450.5/0_1df6f7_bc39ebb1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237002/2188450.5/0_1df6f8_899178c0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237002/2188450.5/0_1df6f8_899178c0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/235925/2188450.5/0_1df6f9_4b5c5157_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/235925/2188450.5/0_1df6f9_4b5c5157_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/508985/2188450.5/0_1df6fa_7289807e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/508985/2188450.5/0_1df6fa_7289807e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.5/0_1df6fb_36c449be_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.5/0_1df6fb_36c449be_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/467152/2188450.5/0_1df6fc_e46671b9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/467152/2188450.5/0_1df6fc_e46671b9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.5/0_1df6fd_e38e5cd0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.5/0_1df6fd_e38e5cd0_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/231315/2188450.5/0_1df6fe_3e85025d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/231315/2188450.5/0_1df6fe_3e85025d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237002/2188450.5/0_1df6ff_d932c972_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237002/2188450.5/0_1df6ff_d932c972_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/235925/2188450.5/0_1df700_df3bb1da_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/235925/2188450.5/0_1df700_df3bb1da_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/508985/2188450.5/0_1df701_c0993683_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/508985/2188450.5/0_1df701_c0993683_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/508985/2188450.5/0_1df702_9090774d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/508985/2188450.5/0_1df702_9090774d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/508985/2188450.5/0_1df703_c804cbc8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/508985/2188450.5/0_1df703_c804cbc8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237002/2188450.5/0_1df704_9731e0fd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237002/2188450.5/0_1df704_9731e0fd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/467152/2188450.5/0_1df705_46a51707_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/467152/2188450.5/0_1df705_46a51707_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.5/0_1df706_5fee8d06_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.5/0_1df706_5fee8d06_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/56796/2188450.5/0_1df707_625338bb_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/56796/2188450.5/0_1df707_625338bb_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.5/0_1df708_f2b46a85_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.5/0_1df708_f2b46a85_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/767871/2188450.5/0_1df709_9dccf05b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/767871/2188450.5/0_1df709_9dccf05b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/518060/2188450.5/0_1df70a_6df578d4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/518060/2188450.5/0_1df70a_6df578d4_orig" alt="" loading="lazy"></noscript></figure>
+<p>Обошли всю эту часть вплоть до скал у выхода из гавани Ламполя в открытый океан – Penn Ar Viler – там, где вдали красуется La Jument, и вернулись в Ламполь по внутреннему берегу вдоль гавани, воль Porz Goret и дальше. С той стороны на всем протяжении пути был виден Le Créac'h, и, казалось, до него рукой подать. Ну, на самом деле-то, если по прямой, то и правда недалеко, километра три.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.5/0_1df70b_73379526_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.5/0_1df70b_73379526_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/515846/2188450.5/0_1df70c_f5cec1e4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/515846/2188450.5/0_1df70c_f5cec1e4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/768433/2188450.5/0_1df70d_2819ffb1_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/768433/2188450.5/0_1df70d_2819ffb1_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/214545/2188450.5/0_1df70e_608bfcdf_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/214545/2188450.5/0_1df70e_608bfcdf_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370378/2188450.5/0_1df70f_c3ae21ef_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370378/2188450.5/0_1df70f_c3ae21ef_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/372788/2188450.5/0_1df710_a5c84359_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/372788/2188450.5/0_1df710_a5c84359_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/202385/2188450.6/0_1df74b_cbde5d6a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/202385/2188450.6/0_1df74b_cbde5d6a_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/224193/2188450.6/0_1df74a_7673372a_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/224193/2188450.6/0_1df74a_7673372a_orig" alt="" loading="lazy"></noscript></figure>
+<p>Собственно, еще про погоду. Что на Бель-Иле, что на Уэссане, самым необходимым (ну, по крайней мере, для нас) предметом одежды была шапка. Такая, что называется, «лыжная» — полуспортивная и столь же полушерстяная, двухслойная, плотно облегающая. Без шапок был бы просто швах. Ветер очень сильный. Есть солнце, нету солнца – ветер на побережье дует всегда. Несмотря на использование (может быть, несколько запоздалое в моем случае) гигиенической помады с брутальным названием «вишневый поцелуй», губы мои под конец таки растрескались и болели еще неделю после приезда домой.</p>
+<p>Вот только так можно спастись от ветра – шапка плюс непродуваемый капюшон бретонской куртки:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237002/2188450.6/0_1df747_701aa6cd_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237002/2188450.6/0_1df747_701aa6cd_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/477137/2188450.6/0_1df748_34958b9f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/477137/2188450.6/0_1df748_34958b9f_orig" alt="" loading="lazy"></noscript></figure>
+<p>Так что мы практически все время, пока были на островах, ходили в непродуваемых таких полуспортивных куртках. Как ни странно, только в первый день на Уэссане, после полудня, когда небо очистилось от облаков и солнце стало припекать, я ее снял и ходил в свитере (но все равно в шапке, а как же). Я думал, все будет наоборот.</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/237002/2188450.6/0_1df74c_664edbad_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/237002/2188450.6/0_1df74c_664edbad_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.5/0_1df711_4d1f5765_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.5/0_1df711_4d1f5765_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/172931/2188450.5/0_1df712_c5be197f_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/172931/2188450.5/0_1df712_c5be197f_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/249479/2188450.5/0_1df713_ad3a81f5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/249479/2188450.5/0_1df713_ad3a81f5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/236988/2188450.5/0_1df714_1e709b97_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/236988/2188450.5/0_1df714_1e709b97_orig" alt="" loading="lazy"></noscript></figure>
+<p>Вот эта фотография мне каждый раз «выносит мозг». Мозг пытается разобраться с рельефом – где здесь что, где выступ, где впадина – а это непросто. Как на гравюрах Эшера. Вот поломайте голову сами:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/58784/2188450.5/0_1df715_326ffccc_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/58784/2188450.5/0_1df715_326ffccc_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/742275/2188450.5/0_1df716_168d5592_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/742275/2188450.5/0_1df716_168d5592_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/244821/2188450.5/0_1df717_6de35de2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/244821/2188450.5/0_1df717_6de35de2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/515846/2188450.5/0_1df718_2e51c714_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/515846/2188450.5/0_1df718_2e51c714_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.5/0_1df719_1297e7a8_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.5/0_1df719_1297e7a8_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/484029/2188450.5/0_1df71b_6b7d6aab_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/484029/2188450.5/0_1df71b_6b7d6aab_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/402270/2188450.5/0_1df71c_cb078c65_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/402270/2188450.5/0_1df71c_cb078c65_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/402270/2188450.5/0_1df71d_99d78727_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/402270/2188450.5/0_1df71d_99d78727_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370413/2188450.5/0_1df71e_6181ebe5_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370413/2188450.5/0_1df71e_6181ebe5_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765674/2188450.5/0_1df71f_dd363ae0_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765674/2188450.5/0_1df71f_dd363ae0_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот, мы и вернулись в Ламполь. И, как я уже рассказал, где-то без четверти пять, дождавшись барышню-драйвера, с сожалением отправились на паром, который вернул нас в Брест...</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480548/2188450.5/0_1df720_eb455ca9_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480548/2188450.5/0_1df720_eb455ca9_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478477/2188450.5/0_1df721_8128d34d_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478477/2188450.5/0_1df721_8128d34d_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765674/2188450.5/0_1df722_2bc5368c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765674/2188450.5/0_1df722_2bc5368c_orig" alt="" loading="lazy"></noscript></figure>
+<p>И немного про ветер:</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478477/2188450.5/0_1df723_776a951c_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478477/2188450.5/0_1df723_776a951c_orig" alt="" loading="lazy"></noscript></figure>
+<p>Про Брест сказать особо интересного ничего не могу. Военно-морской порт, посему огромная часть порта – режимная, не подойти. Жилая часть, по которой мы успели погулять в этот вечер и в вечер перед отъездом на Уэссан, показалась не особо интересной. Белые и светло-серые дома, квадратно-гнездовая планировка. Все относительно новое, никакого «старого города», конечно, нет. Из приятного для глаза - длиннющий прямой проспект, по которому ходят симпатичные современные трамваи.</p>
+<p>Пока бродили по вечереющему Бресту, проголодались. Зашли поужинать в ресторанчик (долго вспоминал сейчас, нашел только по Google Streets — «Les P'tites Recettes»). Нам понравилось. Тепло (что было важно!), вкусно, и не сказать, что уж очень дорого.</p>
+<p>Ну и лирическое отступление. Когда планирован путешествие, была у меня мысль успеть в вечер возвращения в Брест на концерт моей любимицы Anne Sila, у который, в рамках ее турне по Франции, был как раз в это самый вечер концерт в Plougastel-Daoulas, это буквально в получасе езды от Бреста на автобусе. Но как-то это получалось с таким напрягом (и где-то на час мы в любом случае опаздывали к началу), что я отказался от этой мысли. Хотя теперь немного жалею… Было бы яркое воспоминание.</p>
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/Kl008nj2bKo" title="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/eMZdFnXkUQo" title="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+<p>Добрая хозяйка гостиницы, узнав, что мы уезжаем в Париж рано, в восемь утра, приготовила нам поднос, уставленный снедью, и принесла в наш номер. Так что с утра мы поднялись еще в темноте, подкрепились и покатили свои чемоданчики к ж.д. вокзалу.</p>
+<p>Ну и, небольшое окончание следует...</p>
+<h2 id="послесловие-брест-париж">Послесловие. Брест - Париж</h2>
+<p>Ну вот, Бретань осталась позади... В голове пока вихрь из картинок, которые будут оседать довольно долго. Хотя опыт показывает, что уже через неделю все это будет восприниматься то ли как сон, то ли, как что-то бывшее лет десять назад. Приходится с этим мириться. И только фотографии вроде бы заверяют, что это и вправду было.</p>
+<p>...От Бреста до Парижа дальше, чем от Ванна, примерно на час. То есть, где-то часа четыре с половиной. Но в общем, TGV достаточно комфортен, так что не так уж мы и притомились. И еще целых полтора дня у нас было на Париж.</p>
+<p>Так что вот, перед тем, как я попрощаюсь, несколько фоточек из оставшихся у меня от этих полутора дождливо-солнечных дней перед отлетом. Понимаю, что для отчета это offtop, но все равно - хочется поделиться. Ну, и окончание отчета, признаюсь, оттягиваю...</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370413/2188450.5/0_1df725_8b415db4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370413/2188450.5/0_1df725_8b415db4_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/478477/2188450.5/0_1df726_94852e29_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/478477/2188450.5/0_1df726_94852e29_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370413/2188450.6/0_1df727_6e986_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370413/2188450.6/0_1df727_6e986_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370413/2188450.6/0_1df728_8be7d3a2_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370413/2188450.6/0_1df728_8be7d3a2_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370413/2188450.6/0_1df729_e9c9c4ea_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370413/2188450.6/0_1df729_e9c9c4ea_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/362774/2188450.6/0_1df72a_519e610e_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/362774/2188450.6/0_1df72a_519e610e_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/370413/2188450.6/0_1df72b_7067a691_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/370413/2188450.6/0_1df72b_7067a691_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/244154/2188450.6/0_1df72d_39aea69b_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/244154/2188450.6/0_1df72d_39aea69b_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480548/2188450.6/0_1df72e_ce6df377_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480548/2188450.6/0_1df72e_ce6df377_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480548/2188450.6/0_1df72f_ecbbe779_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480548/2188450.6/0_1df72f_ecbbe779_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/244154/2188450.6/0_1df730_538bb6c3_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/244154/2188450.6/0_1df730_538bb6c3_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480548/2188450.6/0_1df731_88f81d90_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480548/2188450.6/0_1df731_88f81d90_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/480548/2188450.6/0_1df734_9bc4db49_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/480548/2188450.6/0_1df734_9bc4db49_orig" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/233044/2188450.6/0_1df744_10cbc889_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/233044/2188450.6/0_1df744_10cbc889_orig" alt="" loading="lazy"></noscript></figure>
+<p>Ну что ж. Вот, вроде бы все и рассказал. Даже жалко. И, понятное дело, уже снова хочется во Францию. Ну, будем надеяться, получится.</p>
+<p>Всем спасибо за терпение и интересных путешествий!</p>
+<figure class="photo"><img data-src="https://img-fotki.yandex.ru/get/765674/2188450.6/0_1df735_32ec21f4_orig" alt="" class="lazy-photo"><noscript><img src="https://img-fotki.yandex.ru/get/765674/2188450.6/0_1df735_32ec21f4_orig" alt="" loading="lazy"></noscript></figure>
+  </article>
+</div>
+<script>
+(function() {
+  var pending = []; // images that entered the buffer zone, not yet loading/loaded
+  var loading = false;
+
+  function distanceFromViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;      // above viewport
+    if (rect.top > vh) return rect.top - vh;        // below viewport
+    return 0;                                       // on screen right now
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        if (d === 0) break; // already on screen -- can't beat that
+      }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var img = pickNext();
+    if (!img) return;
+    loading = true;
+    loadImage(img, img.getAttribute('data-src'));
+  }
+
+  function loadImage(img, src) {
+    img.onload = function() {
+      img.classList.add('loaded');
+      img.removeAttribute('data-src');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      // Flickr (or the network) hiccuped on this one request -- don't give
+      // up on it and don't block everything else behind it. Free the
+      // queue immediately, and let this image rejoin the pending pool
+      // after a short, growing backoff so it gets picked up again.
+      loading = false;
+      var attempt = (img._retryCount || 0) + 1;
+      img._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() {
+        pending.push(img);
+        processQueue();
+      }, delay);
+      processQueue();
+    };
+    img.src = src;
+  }
+
+  // Images join the pending pool once they're within reach; every time a
+  // slot frees up, pickNext() re-checks CURRENT positions and grabs
+  // whichever pending image is closest to (or actually on) screen right
+  // now -- so a fast scroll or scrollbar drag doesn't leave visible
+  // photos stuck behind everything the scroll happened to pass over.
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>

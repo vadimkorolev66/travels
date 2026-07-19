@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Стамбул. Три солнечных ноябрьских дня</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --text: #2b2925;
+    --text-soft: #5c584f;
+    --accent: #8a6d3b;
+    --accent-soft: #c9a876;
+    --line: #e8e3d8;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: 86%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4vw 0 8vw;
+  }
+  nav.toc,
+  article > p,
+  article > h2,
+  article > ul.summary-list,
+  article > blockquote.citation {
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.masthead {
+    max-width: none;
+    padding: 8vw 0 4vw;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 3rem;
+    background:
+      linear-gradient(rgba(251,250,247,0.6), rgba(251,250,247,0.6)),
+      url('https://live.staticflickr.com/65535/51708667204_6e57a42a07_o.jpg') center 40% / cover no-repeat;
+  }
+  header.masthead h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 14px var(--bg), 0 0 6px var(--bg);
+  }
+  nav.toc {
+    background: #f4f1ea;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+    font-family: var(--sans);
+  }
+  nav.toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li { margin: 0 0 0.85rem; break-inside: avoid; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.3;
+    font-size: 0.98rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover { border-bottom-color: var(--accent-soft); color: var(--accent); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 3.9rem 0 1.4rem;
+    padding-top: 0.2rem;
+    color: var(--text);
+    position: relative;
+  }
+  h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--accent-soft);
+    margin-bottom: 1.1rem;
+  }
+  p {
+    margin: 0 0 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+  strong { font-weight: 600; color: var(--text); }
+  em { font-style: italic; color: var(--text-soft); }
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); }
+  a:hover { color: #6b5228; }
+  a.internal-link-pending {
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--accent-soft);
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.summary-list {
+    background: #f4f1ea;
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem 1.6rem 2.4rem;
+    margin: 0 0 3rem;
+  }
+  ul.summary-list li { margin-bottom: 0.7rem; }
+  ul.summary-list li:last-child { margin-bottom: 0; }
+  blockquote.citation {
+    margin: 2rem 0;
+    padding: 0.2rem 0 0.2rem 1.5rem;
+    border-left: 3px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--text-soft);
+  }
+  blockquote.citation p {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  figure.photo { margin: 2.6rem 0; }
+  figure.photo img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(43,41,37,0.08), 0 8px 24px rgba(43,41,37,0.06);
+  }
+  img.lazy-photo {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    min-height: 40px;
+    background: var(--line);
+  }
+  img.lazy-photo.loaded { opacity: 1; }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin: 2.2rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  p.epigraph {
+    text-align: right;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-style: italic;
+    color: var(--text-soft);
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+  p.fin {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2.2rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+  }
+  p.subhead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { width: 88%; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 17.5px; }
+    .wrap { width: 90%; padding: 10vw 0 16vw; }
+    header.masthead h1 { font-size: 1.85rem; }
+    nav.toc ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <h1>Стамбул. Три солнечных ноябрьских дня</h1>
+  </header>
+
+  <nav class="toc">
+    <details open>
+      <summary>Содержание</summary>
+      <ul>
+    <li><a href="#предисловие-между-дельтой-и-омикроном">Предисловие. Между дельтой и омикроном.</a></li>
+    <li><a href="#глава-1-туда">Глава 1. Туда.</a></li>
+    <li><a href="#глава-2-там">Глава 2. Там.</a></li>
+    <li><a href="#глава-3-день-второй">Глава 3. День второй.</a></li>
+    <li><a href="#глава-4-день-третий">Глава 4. День третий.</a></li>
+    <li><a href="#глава-5-день-последний-утро">Глава 5. День последний. Утро.</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <article>
+<h2 id="предисловие-между-дельтой-и-омикроном">Предисловие. Между дельтой и омикроном.</h2>
+<p>Ну вот. Не прошло и двух лет, как мы снова застегиваем ремни безопасности и переводим спинки кресел в вертикальное положение… Хотя нет, почему – прошло, даже чуть больше. И пока нас не так много куда выпускают, неожиданно для нас нарисовалась манящая перспектива: наконец-то, наконец-то побывать в Стамбуле. В октябре выяснилось, что у жены в университетско-преподавательском расписании на ноябрь в одну из недель будут сразу два свободных дня – четверг и пятница. Что редкость. А тут и Аэрофлот начал стенать (по почте), что наши мили вот-вот сгорят, мы же уже два (два!) года никуда не летали, как же так? О чем мы вообще думаем, никуда не летая?</p>
+<p>Но как-то мы настолько привыкли в той, до-коронавирусной жизни, путешествовать (вынужденно) только в конце весны и в конце лета, что как-то не сразу поняли всей ослепительной перспективы, которая открывалась. Четверг, пятница, суббота, воскресенье. А Турция-то впускает со Спутником V… И визу оформлять не нужно, осталось только купить авиабилеты, получить за пять минут HES-код на сайте турецкого Минздрава, И ВСЕ! И мы уже почти там. Там, где мы никогда не были. Там, где упираются в небо минареты Айя-Софии и Голубой мечети, мечетей Сулеймание и Бейязида, где маняще шумит Большой базар, и рыбаки ловят рыбу прямо на Галатском мосту, там, где огромные сухогрузы выплывают из Босфора в Мраморное море, а другие вплывают им навстречу… Где-то там нас уже ждет он – Стамбул. Константинополь? Вряд ли. Византий? Тем более. Но и Стамбул звучит красиво. Стамбул…</p>
+<p>Три ноябрьских дня в Стамбуле. Теплых, но местами ветренных. Солнечных, вопреки всем прогнозам – вообще говоря, могли попасть на дожди, как раз сезон. Но мы заранее решили, что дожди нам никак не помешают получить удовольствие, хотя бы просто от новых картинок перед глазами, нового городского рельефа (а в Стамбуле-то рельеф неслабый), нового городского ритма, новых запахов, вкусов и звуков. Неожиданно - но удовольствие, как оказалось, можно получать даже от пробуждения в шесть с небольшим утра от распевов муэдзина с минарета близкой мечети – это необычно, это по-своему красиво, это ненадолго, и можно спать дальше.</p>
+<p>Видимо, поняв, что дожди нас не отпугнут, там, наверху, пожали плечами и сказали: «ну и ладно, очень надо было воду на них расходовать».</p>
+<p>Четыре дня (ну, на самом деле, полноценных - увы, даже меньше трех, если выкинуть перемещения туда и обратно) пролетели как вихрь, оставив яркие картинки в памяти, участь которых – постепенно блекнуть и стираться со временем. Можно было бы спросить нас, а стоило ли тратиться на недешевые авиабилеты, только чтобы три дня провести в Стамбуле. Ну, что тут скажешь. Во-первых, очень уж хотелось наконец выбраться куда-то достаточно далеко. Во-вторых, расплачивался я аэрофлотовскими же ваучерами. То есть, в общем, деньги-то я потратил два года назад, еще в прошлой жизни. Ну, а в третьих… В третьих, Стамбул стОит мессы. Определенно, стОит.</p>
+<p>Ну и вот он – мой рассказ, по горячим следам и первым впечатлениям. Он и сам – скорее про впечатления, нежели про полезные сведения (ну, кроме, разве что, первой главы). Поехали?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708667204_6e57a42a07_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708667204_6e57a42a07_o.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="глава-1-туда">Глава 1. Туда.</h2>
+<p>Но вначале - краткое резюме технических подробностей поездки в Стамбул по состоянию на середину ноября 2021 года.</p>
+<p>- очевидное: требуется действующий загранпаспорт. Виза не требуется.</p>
+<p>- перед вылетом требуется получить так называемый HES-код. Это делается не ранее, чем за три дня (72 часа) до поездки (я оформил за два дня до нее), на сайте турецкого министерства здравоохранения https://register.health.gov.tr/#. Форму, полученную в результате, с QR-кодом и алфавитно-цифровым кодом прямо под ним, я распечатал.</p>
+<p>- по идее, требуется сертификат о прививке Спутником-V (или другой признаваемой Турцией вакциной). В случае прививки Спутником-V сертификат скачивается с сайта Госуслуг (скачиваемый pdf содержит сразу оба варианта, на русском и английском). Его я тоже распечатал. В нашем случае сертификатов можно было скачать два разных – о первой двухфазной прививке Спутником-V и о последовавшей через полгода повторной прививке Спутником-Лайт. Но поскольку Спутник-Лайт как таковой Турцией не признается, смысла скачивать второй я не видел, поскольку и первый все еще был действителен.</p>
+<p>По факту: на границе не спросили ни сертификат, ни HES-код. Ни при посадке на рейс, ни в Турции при въезде. Единственное место, где неожиданно этот HES-код таки спросили – вход в Галатскую башню. Я предъявил свой, и нас женой – обоих - тут же пропустили. Ну, в целом логично: вряд ли один HES код получил, а его половина – нет, так чего время тратить. Наверное, логика такая.</p>
+<p>- перед возвращением на Родину требуется заполнить форму для въезжающих на сайте Госуслуг https://www.gosuslugi.ru/600340/1/form. Я заполнял в приложении Госуслуг на телефоне – весьма удобно, почти все поля заполняются автоматически из данных, имеющихся в аккаунте, только страну, откуда въезжаете, выбираете сами, и номер рейса указываете вручную. В результате генерируется QR-код, его нужно будет показать при въезде в Россию - после прохождения погранконтроля есть специальная зона, где их проверяют. Если вы не заполнили эту форму online, можно (нужно) заполнить в самолете бумажную – бортпроводники проходят и раздают. Но это гораздо менее удобно.</p>
+<p>Что еще... Если вы планируете перемещаться по Стамбулу на общественном транспорте (трамвае, метро, фуникулерах, паромах), вас, скорее всего, заинтересует пополняемая проездная карта Istanbulkart (информацию легко найти на форуме, да и просто в интернете). Ваш HES-код должен быть к ней привязан; это можно сделать самостоятельно на сайте https://kisisellestirme.istanbulkart.istanbul/). Страница откроется, скорее всего, уже в Турции. Карты Istanbulkart, в теории, можно купить прямо в аэропорту; для главного аэропорта Стамбула IST это делается на уровне 0 – там, где останавливаются автобусы (и официальные такси) – пара автоматов по выдаче таких карт стоит у перрона номер 3 (выйдя из здания, поворачиваете налево; вот <a href="https://www.istanbulairport360.com/?dil=eng" target="_blank" rel="noopener noreferrer">тут</a> можно пройтись виртуально по гласному Стамбульскому аэропорту). Но нам не повезло – оба автомата сообщили, что карт у них для нас уже нет. А в дальнейшем мы предпочли везде ходить пешком - мы это любим, так что случая купить карту в городе и воспользоваться ей так и не представилось.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707993351_a8c8631a13_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707993351_a8c8631a13_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Из аэропорта я планировал уехать, как «умная Маша», вызвав такси из приложения Bitaksi, как рекомендуется во многих источниках, включая даже письмо от администрации нашей гостиницы. Установил Bitaksi заранее, но в России в него войти невозможно. Поэтому зарегистрировался в нем я уже в стамбульском аэропорту, когда подключился мобильный интернет. В Bistaksi все очень похоже на Yandex Go, и я быстро и изящно заказал машину прямо до нужной гостиницы. Но Маша казалась не так умна, как хотелось бы. Первый мой прокол заключался в том, что я ждал такси на том же нулевом уровне, где стоит очередь «официальных» такси. А эти «такси», что работают по Bitaksi, таковыми, судя по всему, не являются и приезжают, наравне с другими встречающими машинами, не на уровень «0», а на уровень «-2», куда нужно спуститься на специальном лифте у выхода из аэропорта. Пока я осознал ошибку и пока спустился, машина уже приехала и уехала - судя по карте, где видно ее положение. И назад она как-то возвращаться не собиралась, удаляясь все дальше и дальше. И в связь со мной водитель не вступил.</p>
+<p>Ну ок, сказал я себе - сам виноват. И вызвал снова. Снова обещано ожидание примерно 5 минут, через какое-то время заказ вдруг неожиданно отменяется (предполагаю, что самим водителем). Ладно.</p>
+<p>Снова заказываю, жду еще 10 минут, вижу, что машина подъезжает, пытаюсь ее разглядеть в потоке машин, которые идут довольно плотно и быстро, да еще по двум полосам, не вижу (еще и зрение неидеальное, даже в очках – номера расплываются); машина (вероятно) проезжает мимо и снова, судя по карте, уезжает прочь, и снова - ни ответа, ни привета.</p>
+<p>Ну тут уж я плюнул, признал временное поражение в борьбе с Bitaksi; мы снова поднялись на уровень 0, встали в очередь на желтое такси и практически через несколько секунд сели в очередную подъехавшую машину; я показал водителю с экрана телефона адрес нашей гостиницы, он продиктовал его навигатору, тот построил маршрут, водитель включил счетчик (я бдил за этим, начитавшись о хитростях стамбульских водителей), и мы поехали. Я все подозрительно поглядывал, не отклоняется ли он от маршрута, чтобы срубить с нас побольше, но нет - все прошло гладко, и сумма получилась примерно такая же, что предсказывал Bitaksi, когда я пытался вызвать такси через него – что-то около 170 лир. Так что я оставил сверху немного чаевых (в машине заботливо висела таблица вычисления чаевых, в зависимости от общей суммы за поездку; на такой дистанции, как наша - около 5%).</p>
+<p>Когда через три дня мы отправлялись обратно в аэропорт, я решил не искушать судьбу и попросил клерка на ресепшене (это, конечно, слишком громкое слово для нашей маленькой уютной гостинички) заказать такси для нас. У него имелся «прикормленный» водитель, который ровно в назначенное время и подъехал. Я как-то заранее не оговорил сумму (что в корне неправильно, конечно), но помнил, что на сайте гостиницы услуга трансфера была довольно дорогой, и был морально готов к тратам. Но в аэропорту водитель сказал, что сумма в 140-150 лир его вполне бы устроила. Я был приятно удивлен, обрадован и сгоряча отдал, кажется, все 180.</p>
+<h2 id="глава-2-там">Глава 2. Там.</h2>
+<p>Если вы тоже среди тех редких людей, что еще не были в Стамбуле, как и мы (ну вдруг!), и еще не изучали подробно место будущей высадки десанта, то давайте взглянем на маленькую карту; назовем ее «Стамбул за полминуты»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51711182170_31a3b56fba_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51711182170_31a3b56fba_o.png" alt="" loading="lazy"></noscript></figure>
+<p>Следите за руками: по центру – Босфор; он разделяет европейскую (слева) и азиатскую (справа) части Стамбула, раскинувшегося очень широко, на самом деле. В свою очередь, европейская часть разделятся на «северную» и «южную» части заливом Золотой Рог; через залив переброшено несколько мостов, из них самый ближний к историческому центру (то есть самому правому краю у Босфора) – Галатский (на карте – синий отрезок).</p>
+<p>Южная часть – это район Фатих. Его самая «правая» часть, где сосредоточены основные туристические места, включая дворец Топкапы, Айя-Софию, Голубую мечеть, ипподром и Цистерны, именуется Султанахмет.</p>
+<p>В северной части, называемой Бейоглу, исторически селились западные европейцы – венецианцы и генуэзцы. И до сих пор он гораздо больше похож на старые европейские города, итальянские и даже французские, чем на города Востока. Вот и вся география центра Стамбула, если очень грубо.</p>
+<p>Лирико-фонетическое отступление: «Бейоглу», как традиционно пишется в русскоязычных источниках, читается на самом деле не так, а скорее, как что-то, похожее на «Бейоолу» - таковы правила относительно специальной буквы «ğ» в турецком языке – сама она не читается вообще в этой позиции, просто удлиняет предыдущую гласную, придавая ей слегка горловое звучание, нам непривычное. И с ударением, скорее, двойным, как мне кажется со слуха - и на первом слоге, и на втором, но тут я не уверен. Можете сами послушать, как это звучит, вот <a href="https://ru.forvo.com/word/beyo%C4%9Flu/" target="_blank" rel="noopener noreferrer">здесь</a>. Но я не буду нарушать письменную традицию.</p>
+<p>Кстати, фамилия нынешнего президента страны – Эрдоган – пишется через ту же самую букву «ğ» - Erdoğan, и точно также эта буква по-турецки категорически <a href="https://ru.forvo.com/word/recep_tayyip_erdo%C4%9Fan/" target="_blank" rel="noopener noreferrer">не читается</a>. Как вам такой удар поддых?</p>
+<p>Познакомиться с азиатской стороной Стамбула, лежащей по ту сторону Босфора, - с Ускюдаром и Кадикёем - мы за три дня успеть, конечно, и не надеялись; это осталось на следующие поездки (а мы вернемся, я верю!). Мы и на европейской-то стороне только по верхам пробежались, очевидно. Поэтому основной вопрос для меня был – где селиться, где искать жилье, учитывая сжатое время нашей неожиданной поездки – к северу от Золотого Рога, в Бейоглу, или к югу – в Фатих, в окрестности Султанахмет? Фатих или Бейоглу? Бейоглу или Фатих? Дилемма…</p>
+<p>Я проштудировал несколько отчетов и три путеводителя («афишевский», кстати, прямо приятное послевкусие оставил!) У меня создалось впечатление, что чаще, при условии, что поездка короткая, как наша, и в первый раз (и это снова про нас!), рекомендуется селиться поближе к Султанахмет, с южной стороны, по очевидным причинам.</p>
+<p>Но, вот какое дело - чем чаще я видел такой совет, тем сильнее мне хотелось поступить наперекор и поселиться в Бейоглу. Ходить каждый день нас не смущало совершенно, а описания кварталов прямо за Галатасарайским лицеем, с маленькими тихими кривыми улицами, извивающимися вверх-вниз по склону галатского холма, с антикварными магазинчиками на первых этажах, уж очень манили. Так что в результате поселились мы именно в Бейоглу, в райончике, именуемом Чукурджума, и я ни на секунду не пожалел о своем выборе! Да, ходили мы много, но нас это только радовало. Трекер в телефоне показывал примерно по 20, плюс-минус, пройденных в день километров. И когда поздно вечером мы возвращались к себе, поднимаясь от Галатского моста к началу проспекта Истикляль по крутым мощеным улицам, с совершенно парижскими чугунными столбиками вдоль края тротуаров, проходя небольшой кусок пути по вечернему многолюдному «Арбату» - Истикляль, среди освещенных витрин магазинов сладостей, кафе, и модных бутиков, а потом сворачивая с него примерно в середине направо вниз, в свой и вправду довольно тихий квартальчик, это было каждый раз большим удовольствием.</p>
+<p>А утром! Выйти на кривую старую узкую улицу, увидеть вдали торчащую между крышами Галатскую башню, но пойти не прямо к ней, например, а снова подняться за пару-тройку минут до Истикляль, и дальше – вниз, вниз, к «Тюнель» – верхней станции фуникулера, а оттуда снова вниз, вниз по кривым улицам, чтобы неожиданно оказать у подножия Галатской башни, пройти мимо нее (или, купив билеты, и отстояв четверть часа в очереди, взобраться наверх в лифте – не пропустите это! - виды оттуда, сверху, шикарные, особенно, я думаю, в хорошую погоду), спуститься к набережной Каракёй, пройтись по Галатскому мосту мимо многих десятков рыбаков, плечом к плечу облепивших его ограждения с обеих сторон на протяжении пары сотен метров, наблюдать, как трепещет свежепойманная рыбешка, щуриться от солнечных бликов в воде Золотого Рога – ну как отказаться от такого начала дня? Да и всего-то от нашей гостиницы до той же Голубой мечети, например, по навигатору около 40 минут пешком – не так уж и много. В общем, если судьба предоставит случай вернуться, я пока намерен поселиться снова там же (а, по возможности, и в той же гостинице <a href="https://sp.booking.com/hotel/tr/hamamhane.ru.html?aid=325219" target="_blank" rel="noopener noreferrer">Hammamhane</a>– очень понравилось).</p>
+<p>Вообще-то изначально я не думал, что мы будем все время ходить пешком. Я предполагал, что мы будем с утречка спускаться по улице Богазкесен прямо к станции трамвая T1 на площади Топхане – это пять минут, и скоростной трамвай T1 перенесет нас по тому же Галатскому мосту прямиком к Султанахмет – это еще двадцать минут:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51711182195_b4c1eb6df9_o.png" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51711182195_b4c1eb6df9_o.png" alt="" loading="lazy"></noscript></figure>
+<p>Но как-то… не захотелось. Захотелось идти пешком и смотреть по сторонам. И в первый вечер после прилета, и на следующее утро, и на третий день. Тем более, что светило и даже пригревало солнышко (в среднем было от +12 до +16 в эти дни). Так что и прелести стамбульского трамвая остались нами непознанными. О чем не жалеем. Но видели его в разных местах города неоднократно, так что заочно знакомы.</p>
+<p>Ну так что? Приехали на такси, заселились в уютную студию, менеджер поводил нас по помещениям, показал как выходить и входить, если будем возвращаться поздно (а мы именно так и собирались делать!) – с одной стороны выход с «нулевого» этажа, и несколько ступеней вниз по крыльцу, с другой – выход на улицу прямо с первого этажа, где мы как раз и обитаем – мимо старинного хаммама, и вперед – вверх на холм, и через две-три минуты вы на Истикляль. Красота.</p>
+<p>Тем временем начало смеркаться, небо порозовело, и мы поспешили на первое свидание с городом. Волновался, как подросток. Три объектива с собой, штатив с собой, жена с собой – вроде ничего не забыл…</p>
+<p>Ну, здравствуй, Второй Рим! Наконец-то.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708880150_bd8a5f0e80_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708880150_bd8a5f0e80_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Это мечеть Kılıç Ali Paşa в Каракёй, на нашем пути вниз, к Золотому Рогу, к Галатскому мосту.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708002031_0975dc3ed3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708002031_0975dc3ed3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Основная проблема в Стамбуле – прекратить фотографировать всех встречных котов и кошек. Это сложно. Я обещал себе в конце второго дня – все! Больше ни одной кошки! Угадайте, на сколько меня хватило.</p>
+<p>Ну а это пока только первые ласточки, так сказать:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708001966_6c2a399de7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708001966_6c2a399de7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708271813_1cd87b4432_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708271813_1cd87b4432_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707196952_5caa8235c3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707196952_5caa8235c3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну не все фотографии нуждаются в комментариях, правда же?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708002126_7d575425ea_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708002126_7d575425ea_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708674124_fac7fb96de_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708674124_fac7fb96de_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708271953_8ed368ce6d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708271953_8ed368ce6d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708880320_418fc8a8eb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708880320_418fc8a8eb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708002196_10cb403d20_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708002196_10cb403d20_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну и вот наконец он – залив Золотой Рог. Галатский мест и вдали – мечеть Сулеймание, во всей своей вечерней красе:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707196962_561582683d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707196962_561582683d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707209477_586260f295_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707209477_586260f295_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708880455_10a2686054_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708880455_10a2686054_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Несмотря на уже сгустившуюся темноту, рыбаки на мосту не спешат покидать свои посты…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708002336_c64899105e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708002336_c64899105e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Чтобы сделать фото с западной стороны моста, приходится буквально втискиваться между ними.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708272158_dea81afa22_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708272158_dea81afa22_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Погуляв по мосту туда-сюда, полюбовавшись на вечерние огни и с европейской и с азиатской стороны Босфора, пошли посидеть и подкрепиться в одно из кафе в Каракёй, со стороны Бейоглу (сначала написал было «Кадикёй», путаю пока божий дар с яичницей. Может, где-то еще перепутал, простите и напишите – я исправлюсь.)</p>
+<p>И вот он – первый чай в знаменитых стаканчиках-«тюльпанах». Очень вкусно.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708002376_1f9394c4b7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708002376_1f9394c4b7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Поужинав под медленный приятный блюз, пошли также неспешно гулять в сторону Галаты, постепенно забираясь на холм все выше.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707989831_ee25112f09_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707989831_ee25112f09_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708272213_6a400e8b1d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708272213_6a400e8b1d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708272238_36fc3eb8d4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708272238_36fc3eb8d4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707209692_af67d1a6a3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707209692_af67d1a6a3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Это лавочка - недалеко от Галатской башни, как нетрудно догадаться по некоторым признакам:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707209712_bcb9a85831_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707209712_bcb9a85831_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А что же у нас за столпотворение на площади у самой башни и в прилегающих переулках? А это тут концерты живой музыки каждый вечер. Картинка проецируется прямо на саму Галатскую башню – видно всем.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708272288_4472340d82_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708272288_4472340d82_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Чуть подальше становится поспокойнее…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708674499_43c3fdca76_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708674499_43c3fdca76_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708674519_c513f67127_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708674519_c513f67127_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И вот мы и вышли на «Истикляль Джяддеси», она же Проспект Независимости, она же, в прошлом, La Grand' Rue de Péra. Море народа. А это еще даже не пятница и не выходные!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707209792_d42128f983_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707209792_d42128f983_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Кто о чем, а я о своем, о девичьем – поленился сразу разобраться с правилами чтения, и некоторое время, когда готовился, про себя читал «Caddesi» (улица) как «Каддеси». Ну и, что уж скрывать, «Camii» (мечеть) как «Камии». Вот такой я темный. Потом пришлось переучиваться. Примерно вот так, если записывать русскими буквами: «Джяддеси» и «Джями» (оба слова с ударением на «я»). Конец второго фонетического отступления.</p>
+<p>Продавец жареных каштанов:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707196987_f032f07f24_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707196987_f032f07f24_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В переулках, выходящих на Истикляль:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708880690_8f81ef7ea9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708880690_8f81ef7ea9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708272418_42a6fee2f3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708272418_42a6fee2f3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Крошка-картошка» а ля тюрк:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708272438_42494eef3b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708272438_42494eef3b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот и традиционное развлечение для наблюдателей – рожок, уже, казалось бы, в руках страждущего покупателя, но нет – он постоянно от него ускользает. Тут, конечно, лучше было бы посмотреть видео, но пока - только фото:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708674634_c9ac2d31a2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708674634_c9ac2d31a2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708002641_2f9b8aa62c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708002641_2f9b8aa62c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708002671_19da3d1f19_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708002671_19da3d1f19_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708880875_78925c2044_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708880875_78925c2044_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и он! Наконец-то. Мечта любого фотографа. «Ностальгический» трамвайчик, ездящий туда-сюда по Истикляль, от верхней остановки фуникулера (откуда мы и идем) Tünel до площади Таксим:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707197007_96522c64e1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707197007_96522c64e1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708880910_771b3f169c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708880910_771b3f169c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708002776_a7ab6c603f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708002776_a7ab6c603f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708674774_59e74650a5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708674774_59e74650a5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот, первый вечер незаметно вытек куда-то, через невидимую дырочку, время уже заполночь, и нам пора спать…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708881065_65d7e0b686_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708881065_65d7e0b686_o.jpg" alt="" loading="lazy"></noscript></figure>
+<h2 id="глава-3-день-второй">Глава 3. День второй.</h2>
+<p>Утро началось еще до рассвета. С минарета недалекой мечети послышались переливы пения муэдзина, призывающего правоверных на утреннюю молитву. Проснулся, посмотрел на часы – 6.15. Решил, что не пойду. Поспим еще… Позавывав (довольно красиво, кстати – во всяком случае, необычно) пару минут, голос муэдзина умолк, и мы с чистой совестью поспали еще пару часов.</p>
+<p>А потом – завтрак, и вперед! Площадь Султанахмет ждет. Планируя, как провести эти, фактически, два с половиной дня (плюс пару часов в воскресенье с утра), чтобы и посмотреть, что хочется, и не бегать, высунув язык, я быстро понял, что, пожалуй, дворец Топкапы подождет следующего раза. На фотографии в отчетах коллег я посмотрел, о дворце все, что нашел, прочитал, и решил, что – да, сходить надо. Конечно. Почему нет. Но не в этот раз. Неточно цитируя Игру Престолов: «Что мы говорим дворцу Топкапы? – Не сегодня!»</p>
+<p>Пожалуй, список того, что хотелось увидеть обязательно, для меня включал: мечеть-собор Айя-София, Голубую мечеть (Султанахмет), площадь Ипподрома, мечеть Сулеймание, Большой базар, Галатскую башню, Истикляль с трамваем (последнее - это каприз, понимаю). Если получится – мечеть Байезид (она же Beyazit). Если получится – парк Гюльхане с готской стелой под стенами дворца Топкапы. Если получится – Египетский рынок, и вообще улицы Фатих, сколько получится. Вообще, я предпочту хождение по улицам города любой его достопримечательности. Ходить, наблюдать за людьми, медленно вдыхать воздух, впитывать запах и шум. Это мое.</p>
+<p>Ну, так все и получилось. Вы только что прочли полный список того, что мы увидели за эти два с половиной дня. Еще и погуляв по городу поздними вечерами – в основном, правда по Галате и немного – по Эминёню (это с «южной» стороны Золотого Рога).</p>
+<p>Итак, в путь! Впереди – полный день. Солнце светит, и облаков мало! Наш маршрут снова ведет нас через самую южную оконечность Истикляль, через Галату - вниз, к Галатскому мосту. Пошли? Ну, пошли, пошли, не ленитесь.</p>
+<p>Утренние окрестности нашей гостиницы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708872230_b172464daf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708872230_b172464daf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708264158_15ba48cc48_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708264158_15ba48cc48_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707201132_7dd59e6c60_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707201132_7dd59e6c60_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708264198_cb93774e0a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708264198_cb93774e0a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708264238_40f7b9a7d6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708264238_40f7b9a7d6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708872355_fe1ba795ff_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708872355_fe1ba795ff_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707994181_c181fa2d42_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707994181_c181fa2d42_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708660954_effdfd31f6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708660954_effdfd31f6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и Истикляль.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708666209_68a66af304_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708666209_68a66af304_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708666124_0be33e109f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708666124_0be33e109f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708666244_92725f5692_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708666244_92725f5692_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707201477_124c27611c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707201477_124c27611c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708264578_8ae4dec941_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708264578_8ae4dec941_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707994466_946719700f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707994466_946719700f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708666364_29be007ba5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708666364_29be007ba5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Заглянули к католической церкви Св. Антония Падуанского.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707201577_60ca93d206_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707201577_60ca93d206_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707201632_b24d8df790_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707201632_b24d8df790_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708666469_0046d3a1c4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708666469_0046d3a1c4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Церковь – новодел начала XX века. Но в целом, когда стоишь во дворике этой церкви, полное ощущение, что ты в Италии.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708872775_835fa69bb5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708872775_835fa69bb5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Чего стоят балкончики соседских домов!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708660974_414ab2467f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708660974_414ab2467f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708666429_1b2613eee1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708666429_1b2613eee1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707994681_a98f8b473f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707994681_a98f8b473f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707994751_1d8b06b103_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707994751_1d8b06b103_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И вот мы снова на Истикляль:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708660989_78e47b2cbe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708660989_78e47b2cbe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Еще пара слов про Бейоглу. Сначала – традиционное, что можно найти более-менее, везде: из <a href="https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%B9%D0%BE%D0%B3%D0%BB%D1%83" target="_blank" rel="noopener noreferrer">Википедии</a>:</p>
+<blockquote class="citation"><p>Нынешняя территория Бейоглу на северном берегу бухты Золотой Рог заселена человеком на протяжении тысячелетий. В IV—V веках здесь были пригороды Константинополя. После возведения здесь императором Феодосием II Галатской башни город стал называться Галата. Со временем он становится важным торговым центром, заселённым европейцами, в первую очередь венецианцами и генуэзцами.<br>
+Генуэзский квартал был известен также как генуэзская колония Пера, которая являлась важной промежуточной станцией в торговле генуэзских колоний Северного Причерноморья со средиземноморскими странами и южным побережьем «Великого» моря.<br>
+В 1273 году византийский император Михаил VIII передаёт город Генуе как торговую колонию. В XIV веке генуэзцы обнесли город крепостной стеной, от которой до наших дней сохранилась Галатская башня. Для руководства Галатой Генуя направляла в неё своего подеста. В 1316 году генуэзцы строят здесь Дворец Подеста (Palazzo del Comune), а в 1348-м — уже упомянутую Галатскую башню, один из символов современного Стамбула.<br>
+В обороне Константинополя и Галаты от турецкого нашествия византийцы и генуэзцы действовали совместно, тем не менее в 1453 году Галата была взята турецкой армией, и генуэзцы, с разрешения султана Мехмеда II, покинули город, уплыв на острова Эгейского моря.<br>
+Теперь в уже турецкой Галате место генуэзцев вскоре заняли венецианцы, назначавшие в Галату своего байло (посланника). Байло играл ту же роль, что и генуэзский подеста — занимался решением политических и хозяйственных вопросов с османским правительством. Решались и другие вопросы — так, венецианец Джентиле Беллини прибыл в Галату, чтобы написать портрет султана Махмуда II (ныне — в Национальной галерее в Лондоне). Позднее султан Баязид II заказал Леонардо да Винчи проект Галатского моста, который итальянец выполнил в 1502 году…</p></blockquote>
+<p>А теперь вот то самое, про что я не видел упоминания в своих путеводителях (или пропустил по невнимательности?):</p>
+<p><em>Современное название Бейоглу (по-турецки произносится [bejoː'ɫu]) и является турецкой формой итальянского слова «байло», переосмысленного как турецкое «bey oğlu», то есть «сын правителя».</em> Неожиданно.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708872930_c1d9b0afae_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708872930_c1d9b0afae_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707201887_f2effed39c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707201887_f2effed39c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708265058_8c453bca49_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708265058_8c453bca49_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708265148_0cd0e6181c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708265148_0cd0e6181c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708666799_977a45a080_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708666799_977a45a080_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707994966_d0f1e072a4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707994966_d0f1e072a4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Свернем в переулочек, спускающий в сторону Галатской башни…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708873160_8cd70294e0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708873160_8cd70294e0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708873180_ebfcbd7c52_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708873180_ebfcbd7c52_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661019_d2f2e8e408_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661019_d2f2e8e408_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Неизбежное:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707202117_cd8804c28a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707202117_cd8804c28a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708265328_bca8b1ddb1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708265328_bca8b1ddb1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Живописные витрины уличных фруктовых киосков:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708667054_88be6f9f2c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708667054_88be6f9f2c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Какой-то балкон по пути:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707202262_042992998c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707202262_042992998c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Стена у кафе по дороге через Галату:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707995221_c2ae0a6e5e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707995221_c2ae0a6e5e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Традиционные амулеты «от сглаза», не мог не сфотографировать.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707202327_c9b8d276c3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707202327_c9b8d276c3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Хозяйки стамбульских кафе:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708667204_6e57a42a07_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708667204_6e57a42a07_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708265453_7f3db0121f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708265453_7f3db0121f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708265503_86bd4ea2c1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708265503_86bd4ea2c1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот – традиционное поведение стамбульских собак, которые тоже имеются, хотя и не в таком несчетном множестве (математик во мне ехидно спросил: «и с какого перепугу это множество перестало быть счетным?» - но я отмахнулся. Уж эти мне зануды…):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708667304_956eca0ef9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708667304_956eca0ef9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708265548_5b2203d601_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708265548_5b2203d601_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707995396_20f66ff439_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707995396_20f66ff439_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вниз, вниз, вниз…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708867825_8fd9f17d9f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708867825_8fd9f17d9f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708265618_532b5655fb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708265618_532b5655fb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707995546_23b9b7104a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707995546_23b9b7104a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708265703_0c666e4310_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708265703_0c666e4310_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708667544_d7d8ee9c29_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708667544_d7d8ee9c29_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Просто из серии "стамбульские портреты". Когда фотоаппарат снимает сам:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707995676_62986246bc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707995676_62986246bc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и знаменитая лестница Камондо, фрагмент:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708265768_fcd92c619f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708265768_fcd92c619f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Для справки: лестница Камондо была построена в 1870—1880 годах в смешении стилей необарокко и раннего модерна банкиром Абраамом Саломоном Камондо. Это был</p>
+<blockquote class="citation"><p>османский и французский банкир еврейского (сефардского) происхождения из династии Камондо, которая обосновалась в Османской империи после того, как правительство в 1492 году изгнало евреев из Испании. До основания Оттоманского банка Камондо был банкиром османского правительства, и к его голосу прислушивались не только великие визири, но и султан. Влияние Камондо в Османской империи было весьма значительно, и ему удалось побудить османского султана издать фирман, в силу которого в пределах Османской империи землёй могли владеть и иностранцы...<br>
+Камондо устроил в Константинополе центральную консисторию для турецких евреев и ввёл целый ряд реформ в общественную жизнь константинопольских евреев. В 1858 году он основал в Пери-Паша (предместье Константинополя, населенное бедняками) училище, носящее название Institution Camondo; позднее при этом училище были открыты мастерские для портных и сапожников.</p></blockquote>
+<p>Дежурная по Камондо, утренняя смена:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707989351_ecb1260d78_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707989351_ecb1260d78_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На той же лестнице:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708874045_16e227050b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708874045_16e227050b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708265808_10b4b9b21a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708265808_10b4b9b21a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707995736_400d567027_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707995736_400d567027_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Еще немного – и мы выходим на набережную, к причалам:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707202797_4424da8c7a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707202797_4424da8c7a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мечеть Сулеймание на том берегу, но в жестком дневном свете она не так эффектна:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708874110_d506845f40_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708874110_d506845f40_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Дома у пирсов:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708667729_989fef6fea_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708667729_989fef6fea_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707202857_9890a0203a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707202857_9890a0203a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708266008_eee79bf803_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708266008_eee79bf803_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Рыбаки уже давно на посту, и их число поражает:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708874215_169c551294_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708874215_169c551294_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707995981_49869a8c39_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707995981_49869a8c39_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661089_bdbefb3113_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661089_bdbefb3113_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Позволил себя увлечься немного цветостилизацией (в дальнейшем тоже будет немало), чтобы смягчить резкие дневные цвета и сделать картинку более «восточной». Иногда увлекался чрезмерно, боюсь:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707996026_11a1474490_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707996026_11a1474490_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708667994_4f3b94d3a6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708667994_4f3b94d3a6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707996261_0053bb34e3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707996261_0053bb34e3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707203327_de440476da_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707203327_de440476da_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вдруг неожиданное лицо, у ограды моста, среди мириадов удочек:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707996341_016f27eb66_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707996341_016f27eb66_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Что-то среднее между Александром Кушнером и Иосифом Бродским, правда же? И у Бродского как раз «Путешествие в Стамбул» имеется, и прекрасное «Ritratto di donna»…</p>
+<blockquote class="citation"><p>...Это<br>
+инерция метаморфоз<br>
+сиеной и краплаком роз<br>
+глядит с портрета,<br>
+а не сама она. Она сама<br>
+состарится, сойдет с ума,<br>
+умрет от дряхлости, под колесом, от пули.<br>
+Но там, где не нужны тела,<br>
+она останется какой была<br>
+тогда в Стамбуле.</p></blockquote>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707196557_45485b0012_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707196557_45485b0012_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707203437_5da2098bbf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707203437_5da2098bbf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708874740_8719e819de_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708874740_8719e819de_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Типичный улов:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707996521_fc48e76c6d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707996521_fc48e76c6d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707203642_d028b12f86_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707203642_d028b12f86_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Не мог пройти мимо, извините:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707196572_b633011199_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707196572_b633011199_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Кажется, он позировала кому-то, но я не смог увидеть кому. А может и не позировала…</p>
+<p>Ну вот, мы уже и на стороне Эминёню. Быстро дошли?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708874925_71aba283d3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708874925_71aba283d3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707203767_1d8c2cf59f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707203767_1d8c2cf59f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708668629_381d0b0db4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708668629_381d0b0db4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707996781_462df0731a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707996781_462df0731a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Отправимся через так называемый Египетский базар, вверх и влево, глядя на людей вокруг. Фотограф во мне счастлив.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708668694_05602cca15_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708668694_05602cca15_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708875035_c442c563cb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708875035_c442c563cb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708259718_b633011199_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708259718_b633011199_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708875070_98e76fc4b3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708875070_98e76fc4b3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708668754_bc2e1043ec_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708668754_bc2e1043ec_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708875135_a218656e10_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708875135_a218656e10_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708266953_69b0077720_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708266953_69b0077720_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708668829_f209763bf7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708668829_f209763bf7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707204012_deb949762b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707204012_deb949762b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708668919_8d5cdd5172_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708668919_8d5cdd5172_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708875360_9c7bc6f80a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708875360_9c7bc6f80a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707997101_96eb35eb7b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707997101_96eb35eb7b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Подходим к площади Султанахмет как раз ко времени очередного намаза. Мужчины молятся прямо на улице:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708669069_1abc8f52de_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708669069_1abc8f52de_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707997521_7f9543b5f3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707997521_7f9543b5f3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708267308_1d2c83130b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708267308_1d2c83130b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707204552_f75f21cf48_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707204552_f75f21cf48_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708875850_1b7ec8debe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708875850_1b7ec8debe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707997536_c17f6de018_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707997536_c17f6de018_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661184_7f58bac40d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661184_7f58bac40d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708267623_68e88ac806_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708267623_68e88ac806_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Уже на самой площади, около фонтанов, увидел потрясающей красоты девушку в белом платке, в окружении подруг, так что отдельно ее сфотографировать не получилось. Да и спалили меня подруги моментально, с моим-то телевиком. Но какие же бывают лица у восточных девушек, даже если попытаться вычесть косметику!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708875660_2c4f94d3b4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708875660_2c4f94d3b4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708267408_a046ab6f3f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708267408_a046ab6f3f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708267358_d209982459_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708267358_d209982459_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну что, вот и наша долгожданная цель. Айя-София. Прямо перед нами. Это так странно…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708669284_ebf05d9f5e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708669284_ebf05d9f5e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708267698_e80342325d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708267698_e80342325d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вон и Голубая мечеть на противоположном краю площади.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708669294_a72f60af1f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708669294_a72f60af1f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>К сожалению, там, в Голубой мечети, сейчас вовсю ремонт, о чем позже. В том числе и снаружи: один из минаретов – в строительных лесах.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708669334_42dca6cf58_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708669334_42dca6cf58_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но сейчас у нас на очереди – Айя-София. Пока шел намаз, внутрь не рвались (вот <a href="https://muze.gen.tr/muze-detay/ayasofya" target="_blank" rel="noopener noreferrer">здесь</a> можно уточнить время молитв, когда вход не разрешен, чтобы скоординировать свой план), а отправились пройтись вокруг мечети, посмотреть со стороны.</p>
+<p>Сейчас задумался: какое было мое самое первое впечатление, когда я увидел Айя-Софию в первый раз живьем, выплывающую в дальнем конце переулка, по которому мы к ней подходили? Думаю, первым было - «да она огромная». Вообще, все мечети в Стамбуле оказались визуально гораздо больше, чем я себе их представлял по фотографиям. Наверное, раза в два, если тут вообще применимо такое сравнение. Хотя если посмотреть на цифры, тот же Исаакий раза в два больше (Айя-София: высота – 51 м, основание – примерно 70 на 75 метров; Исаакий: высота - 101,5 м, основание - 111 на 98). Но их, конечно, нельзя сравнивать, это совсем разная архитектура.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708669644_c6bb61bc0e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708669644_c6bb61bc0e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708669664_15a0027cce_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708669664_15a0027cce_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707989496_6a7f9965d3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707989496_6a7f9965d3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708876075_049f13780f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708876075_049f13780f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708876120_e86bab0ef9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708876120_e86bab0ef9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Заглянули в парк Гюльхане (мы сюда вернемся завтра под закат более основательно):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708669784_4c7e6c497c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708669784_4c7e6c497c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708669829_e83ffc8ab5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708669829_e83ffc8ab5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вышли к трамвайной линии T1 – того самого маршрута, который должен был бы нас возить с ветерком в Бейоглу и обратно.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707998056_0ef2ba9bbc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707998056_0ef2ba9bbc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот, кстати, и он, легок на помине:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707196662_764f72aa9d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707196662_764f72aa9d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тут без комментариев:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707205052_e159991f74_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707205052_e159991f74_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Прошли мимо харчевни «с национальным колоритом»</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707998086_11a27f15af_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707998086_11a27f15af_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707205107_66be598341_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707205107_66be598341_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708876500_40a252d698_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708876500_40a252d698_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну и вернулись, наконец, завершив круг, к нашей цели.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708268198_cc50148107_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708268198_cc50148107_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пора и внутрь!</p>
+<p>Мозаика люнета над дверью из южного вестибюля в нартекс собора датируется последней четвертью X века. На ней - Богородица с младенцем на престоле, а по сторонам — императоры Константин (справа), приносящий в дар город Константинополь, и Юстиниан (слева), приносящий Богородице собор Святой Софии:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707998216_311795c9f1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707998216_311795c9f1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но, думаю, про Айя-Софию исторические, архитектурные и художественные подробности я рассказывать тут не буду - информации везде предостаточно. К сожалению, галереи (хоры) сейчас закрыты на реставрацию, это очень печально. Поэтому можно только походить под высоченными сводами центрального нефа, по мягкому темно-зеленому ковру (конечно, разувшись, как и во всех мечетях, и оставив обувь в специальных шкафчиках в нартексе).</p>
+<p>Глядя на Айя-Софию снаружи, совершенно невозможно представить, какая она внутри - воздушная и пронизанная светом. Все-таки, это так странно: жили-были когда совершенно конкретные парни, Исидор Милетский и Анфимий Тралльский, математики, ну и по совместительству архитекторы. До них этого собора не было. После них – появился. Благодаря им – именно такой, как мы видим. Светлый, легкий, с высоченными куполами и полукуполами, перетекающими друг в друга…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708268253_04bc5e8e2a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708268253_04bc5e8e2a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707998286_5ee20d6a3a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707998286_5ee20d6a3a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708876760_7e2a9cb22d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708876760_7e2a9cb22d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708876635_625b17707b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708876635_625b17707b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708670219_8b3a95ceb3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708670219_8b3a95ceb3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Кто-то ходит, кто-то сидит на зеленом ковре, кто-то фотографирует и фотографируется. И вдруг ты видишь, как яркий солнечный свет из одного из окон, выходящих на юг, выхватывает лица двух сидящих на ковре девушек в светло-бежевых традиционных уборах, и это так красиво, что аж дыхание перехватывает.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707196697_1f46a3c09a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707196697_1f46a3c09a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И думаешь только о том, чтобы не подвел автофокус, и в разрывах между темными фигурами, движущихся между тобой и девушками, пытаешь запечатлеть эту картину, остановить мгновение, которое уж точно никогда повторится. Другое, может быть, и будет. Такое – уже нет.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661249_8eb208bd5c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661249_8eb208bd5c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708670329_8f4def8575_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708670329_8f4def8575_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но и девушкам ничто человеческое не чуждо!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707205577_ae3df6641a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707205577_ae3df6641a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ладно. Давайте, что ли, снова посмотрим вокруг…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707205662_73d1bc2992_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707205662_73d1bc2992_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708670594_f42586a9bf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708670594_f42586a9bf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707205777_3803050f89_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707205777_3803050f89_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот еще портрет: имам беседует с верующими:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708670654_93f7e91e8e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708670654_93f7e91e8e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ложа султана:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708670674_e7468928d5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708670674_e7468928d5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708877145_16f2d0121b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708877145_16f2d0121b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Те самые полотнища, прикрывающие христианские мозаики на куполе:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707998941_b1686c9205_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707998941_b1686c9205_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Михраб:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708670744_7690bdb24c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708670744_7690bdb24c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707206002_a33b2aeb6b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707206002_a33b2aeb6b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707989576_18f81f022e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707989576_18f81f022e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707999076_e0f4693135_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707999076_e0f4693135_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707206062_78e311121c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707206062_78e311121c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707999106_025ec3f3bc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707999106_025ec3f3bc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708268993_2874c09702_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708268993_2874c09702_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708670964_fd9456ce40_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708670964_fd9456ce40_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708877370_77d88060b7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708877370_77d88060b7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661264_9a145e9146_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661264_9a145e9146_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пришла пора снова переобуться в телеобъектив (до это были и фикс 50 мм, и широкоугольный зум, всем попробовал поснимать Айя-Софию)…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708877400_56fb166347_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708877400_56fb166347_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708671014_4cbe10fc20_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708671014_4cbe10fc20_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Снова про те полотнища:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708269128_d6922d8166_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708269128_d6922d8166_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708671079_4e52753b0c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708671079_4e52753b0c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708671109_235f467791_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708671109_235f467791_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707999371_061ff14dbe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707999371_061ff14dbe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707196757_bd46e17f72_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707196757_bd46e17f72_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708671159_c179ba6184_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708671159_c179ba6184_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и кресты, кстати:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707999436_144a7282a9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707999436_144a7282a9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708269278_88795f89cc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708269278_88795f89cc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707999481_3a8db5b79c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707999481_3a8db5b79c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Фрагмент мозаики куска пола, огороженного и непокрытой ковром. Это место именовалось по-гречески «Омфалос», или «пуп земли» - именно здесь короновали византийских императоров.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708877740_30fc42c27b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708877740_30fc42c27b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вики: <em>На парусах собора были изображены четыре неодинаковые фигуры ангелов-серафимов. Ангелы, изображенные на восточных парусах, выполнены из мозаики, тогда как ангелы на западных парусах были повреждены ещё до 1453 года и были обновлены как фрески. Ангелы-серафимы на восточных парусах были выполнены в 1347 году. В период Османской империи лики ангелов, изображённые на парусах, были закрыты металлическими крышками в форме звёзд</em>:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708671289_6a5dcbd697_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708671289_6a5dcbd697_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708671319_67bcf7e31d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708671319_67bcf7e31d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707206512_a0b5125453_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707206512_a0b5125453_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708269453_33d83da6ca_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708269453_33d83da6ca_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Пыль в солнечных лучах:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708877840_8cefd0f6c9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708877840_8cefd0f6c9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708877885_6d936a5164_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708877885_6d936a5164_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708269563_4e0e1dc4ae_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708269563_4e0e1dc4ae_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708877920_cb50606a41_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708877920_cb50606a41_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707999751_cc0048d54e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707999751_cc0048d54e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707999831_77f67f7d6c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707999831_77f67f7d6c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707999886_fb1608e971_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707999886_fb1608e971_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661304_bdbf2b7c5f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661304_bdbf2b7c5f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707206852_f8136d9775_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707206852_f8136d9775_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708878105_920b2273d5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708878105_920b2273d5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Это снова в притворе (нартексе). <em>«В правление императора Льва VI (886—912) люнет ... был украшен мозаикой с изображением Иисуса Христа, сидящего на престоле с Евангелием, открытом на словах «Мир вам. Я свет миру», в левой руке и благословляющего правой. По сторонам от него в медальонах изображены полуфигуры Богородицы и архангела Михаила. Слева от Иисуса изображён коленопреклонённый император Лев VI. Несмотря на то, что композиция несимметрична (фигуре Льва не соответствует никакая фигура справа), мозаика обладает строгой уравновешенной композицией... она осуществляется за счёт широкой полосы внизу, на фоне которой помещена фигура, не составляющая таким образом, самостоятельного композиционного пятна. Эта полоса способствует утяжелению нижней части изображения, его прочному построению»</em>:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708269793_c617a7da89_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708269793_c617a7da89_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708671714_7d3c4344f8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708671714_7d3c4344f8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Стены Айя-Софии снаружи:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661314_e229a301d7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661314_e229a301d7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707206972_c3e5e30bac_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707206972_c3e5e30bac_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну что, пора двинуться в сторону мечети Султанахмет, она же «Голубая мечеть». Вот она!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708671779_7f3e813bef_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708671779_7f3e813bef_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708671789_f3e2861eb2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708671789_f3e2861eb2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Каштаны:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708671799_71e29cfa6c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708671799_71e29cfa6c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Обернемся на Айя-Софию вновь:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708269898_3ccd4f08e7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708269898_3ccd4f08e7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Водяные капли фонтана ветерок сносит прямиком на девчонок:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708878295_81279e1f0f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708878295_81279e1f0f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>«Голубая мечеть», как я уже сказал, в процессе ремонта:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708000191_205cd4c35a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708000191_205cd4c35a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707207117_0551eb071e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707207117_0551eb071e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661334_de5d12f5b6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661334_de5d12f5b6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Прямо сейчас в мечети – время очередной молитвы, и внутрь не пускают. У нас есть примерно минут двадцать до того, как внутрь снова начнут запускать. Так что мы решили прогуляться к небольшому рынку, к которому надо спуститься по короткому переулку слева от Голубой мечети…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708269968_77d56b1df7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708269968_77d56b1df7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708878400_646e17ed34_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708878400_646e17ed34_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708000286_101ea7dea6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708000286_101ea7dea6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707207232_e9b342e2d9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707207232_e9b342e2d9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661354_9b7974de31_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661354_9b7974de31_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708270078_b16bf6890e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708270078_b16bf6890e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708270093_6299994dd0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708270093_6299994dd0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708672069_37d74ea19a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708672069_37d74ea19a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708000396_2f455241a4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708000396_2f455241a4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708672114_25e7a648d9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708672114_25e7a648d9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708672149_23d1109579_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708672149_23d1109579_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И через четверть часа мы возвращаемся к Голубой мечети.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708671934_c14616af7e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708671934_c14616af7e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На вход – приличная очередь, еще минут на пятнадцать-двадцать. Но мы решили, что надо отстоять. И мы отстояли.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708000471_18b238abff_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708000471_18b238abff_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну, что вам сказать. Внутри абсолютно все в лесах, защитных щитах, прочих конструкциях. Не видно ничего, кроме малюсенького кусочка купола. Было большое желание, выйдя практически тут же обратно, и снова надев обувь, сказать всем в очереди: «Люди! Приходите через годик, а то и два! Сейчас тут вообще нечего смотреть!» Но мы не сказали.</p>
+<p>Тем временем солнце начало понемногу клониться к закату. А надо сказать, что пока мы ходили в районе того местного базарчика, ожидая окончания намаза, нас отловил парень, который зазывал посетителей в ресторанчик «Арарат». Лицом, вроде бы, явно турок, он прекрасно говорил по-русски практически безо всякого акцента (да что там «практически» - просто на чистом русском). Учился и жил, как выяснилось, в Питере. Сказал, что у них там наверху открытая терраса с прекрасным видом на Босфор. Ну как я мог отказаться? Понятно, что тут таких террас полно, в каждом доме в этом районе, но зачем искать что-то другое? Попробуем. Пообещали практически соотечественнику, что вернемся после Голубой мечети к ним. Ну, и вернулись. На маленькой площадке на самом верху кроме нас, были две французские девушки, потом пришли еще несколько человек, и среди них опять была пара французов. Не знаю, случайное ли это было совпадение.</p>
+<p>И я скажу вам - было вкусно. Начали мы с чая (в уже полюбившихся нам стаканчиках-тюльпанах) – пора было согреться, да и наверху гулял ветерок, и становилось прохладно. Продолжили супчиком из чечевицы – очень вкусно. Ну и сибас был выше всяких похвал. Так что не жалею, что «купились» и зашли.</p>
+<p>Вот так с их крыши выглядит Голубая мечеть – такое ощущение, что она на расстоянии вытянутой руки:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708672289_c5d59a31f3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708672289_c5d59a31f3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Перед нашими глазами - Босфор, практически уже перешедший в Мраморное море:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708000621_df13d7ce79_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708000621_df13d7ce79_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708672449_c0866f1383_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708672449_c0866f1383_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708000551_1b6cf5a2e7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708000551_1b6cf5a2e7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708672474_62a567af65_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708672474_62a567af65_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Азиатский Стамбул на той стороне Босфора, в легкой дымке:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708672489_17b98bf779_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708672489_17b98bf779_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708270543_661e07d3ec_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708270543_661e07d3ec_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На горизонте только в телеобъектив видны огромные сухогрузы, плывущие по Мраморному морю, или стоящие на рейде и ожидающие разрешения на вход в Босфор:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707207802_0c5ea2906e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707207802_0c5ea2906e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661384_7f461d1e34_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661384_7f461d1e34_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну, привет. Чего смотришь?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708270663_3eb5a6ba20_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708270663_3eb5a6ba20_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708672784_e83cf89346_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708672784_e83cf89346_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707989686_04ea48fd5d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707989686_04ea48fd5d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708000966_7a2f8db2a4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708000966_7a2f8db2a4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И снова азиатский Стамбул вдали, в закатном свете:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708672884_c9d99345da_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708672884_c9d99345da_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661404_673ccb82c9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661404_673ccb82c9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708001106_82b3689a55_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708001106_82b3689a55_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708270973_3a90b5bfab_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708270973_3a90b5bfab_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Тот самый сибас:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707208177_77e1e2b20f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707208177_77e1e2b20f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708879410_ce591fda7c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708879410_ce591fda7c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Французские девчонки:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707208292_d5417eafbe_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707208292_d5417eafbe_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708673284_8fa148807a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708673284_8fa148807a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Стемнело, и мы потихонечку разворачиваемся и начинаем движение в сторону Галатского моста… Что тут у нас по дороге случилось, какие картинки остались?</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708001496_0deed68457_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708001496_0deed68457_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708868125_6ae7239465_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708868125_6ae7239465_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708001531_9ca6b2e3b3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708001531_9ca6b2e3b3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708673469_c3ace6c3c5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708673469_c3ace6c3c5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707208632_38cfa08961_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707208632_38cfa08961_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707208652_ca7a9e2257_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707208652_ca7a9e2257_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707208707_cb4cc36d1d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707208707_cb4cc36d1d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708001671_119864f9cf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708001671_119864f9cf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708673619_ab378c8ffa_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708673619_ab378c8ffa_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661479_4be8859236_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661479_4be8859236_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>У Галатской башни – снова концерт, на этот раз другая группа зажигала:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708271523_e17803dfd9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708271523_e17803dfd9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А на Истикляль нас ждет наш старый знакомый – ностальгический трамвайчик «Тюнель-Таксим»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708271633_af82c16e78_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708271633_af82c16e78_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708868145_1970d8283f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708868145_1970d8283f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708673849_2770a4af72_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708673849_2770a4af72_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708673889_78883de245_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708673889_78883de245_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707209047_9864361313_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707209047_9864361313_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708271748_6657806423_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708271748_6657806423_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот так. Это прекрасный длинный день подошел к концу, мы снова дома. По чашечке кофе – и спать. Продолжение следует!</p>
+<h2 id="глава-4-день-третий">Глава 4. День третий.</h2>
+<p>День третий начался так же, как первый – мы вышли («поднялись») на Истикляль. Сначала прошлись немного в сторону Таксим, чтобы взглянуть на Цветочный пассаж.</p>
+<p>Для начала нас опять порадовал трамвайчик, прогромыхав мимо нас:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708664244_2a34b32de2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708664244_2a34b32de2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708870770_212ef0e88c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708870770_212ef0e88c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708664294_3c61e438d6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708664294_3c61e438d6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708664334_eca561bcd4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708664334_eca561bcd4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и Цветочный пассаж:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708870850_4669c71e13_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708870850_4669c71e13_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Внутри Пассажа:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707992736_68d5508bb9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707992736_68d5508bb9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707992706_2b91f3ac61_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707992706_2b91f3ac61_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708660854_afbbde9a51_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708660854_afbbde9a51_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На рыбном прилавке в переулке около Пассажа:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707992761_54539ee571_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707992761_54539ee571_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот теперь уже мы отправляемся в сторону Галатской башни – на этот раз я хотел на нее взобраться. Но, прошу понять меня правильно и не судить строго, – еще одна мечта должна сбыться: снять трамвайчик «Тюнель-Таксим» на телеобъектив. Так что я переобуваюсь в него и внимательно прислушиваюсь, пока мы идем по Истикляль – как охотник, настороженно пробирающийся через саванну. Ну и вот. Dreams come true.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707199792_1b2b947e6e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707199792_1b2b947e6e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708262973_d5fabfe05e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708262973_d5fabfe05e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708871080_3e63876068_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708871080_3e63876068_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708664654_abc9433c1f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708664654_abc9433c1f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сложив добычу в ягдташ и закинув еще дымящееся ружье за спину, спешу дальше.</p>
+<p>Ну, насчет «закинув» - это, конечно, для красного словца. Фотоаппарат - в руке.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707200082_5d66f682f8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707200082_5d66f682f8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708664839_4fb1a51ca7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708664839_4fb1a51ca7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот, дошли мы до Галатской башни, отстояли минут 15 в очереди к вагончику, где продают билеты (100 лир с человека), предъявили, как я уже писал, HES-код девушке в вестибюле самой башни, и поднялись на лифте на застекленный этаж, над которым уже этаж со смотровым опоясывающим балкончиком. Ну и там я, конечно, застрял минут на двадцать, если не все полчаса…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708664899_8bbf0fdd23_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708664899_8bbf0fdd23_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Галатский мост:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708263383_81ec58b222_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708263383_81ec58b222_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Голубая мечеть:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707200307_6d677c1cdf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707200307_6d677c1cdf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Айя-София и Голубая мечеть, на фоне Мраморного моря:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708665074_e9792c85f9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708665074_e9792c85f9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Айя-София:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708263458_df2bb270d9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708263458_df2bb270d9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Новая мечеть на стороне Эминёню:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708871690_790d0173f4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708871690_790d0173f4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Азиатские районы Стамбула на той стороне Босфора – вообще сказочное зрелище:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707989186_048244fb89_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707989186_048244fb89_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708871695_9a05bed94c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708871695_9a05bed94c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707993461_5fba65f7e7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707993461_5fba65f7e7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А теперь – широкий угол:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708871820_b9c2ed9536_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708871820_b9c2ed9536_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708871860_01a2dd24cd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708871860_01a2dd24cd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708263698_247ba0772d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708263698_247ba0772d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708665454_ef9378b7c4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708665454_ef9378b7c4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708871970_0435b9fd98_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708871970_0435b9fd98_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708263853_1bc32074ce_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708263853_1bc32074ce_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Так, пора и честь знать, с фотографиями. Это, конечно, лучше увидеть своими глазами…</p>
+<p>Разве что, напоследок, снова – Айя-София:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707993351_a8c8631a13_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707993351_a8c8631a13_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Внутри застекленного этажа – забавный макет Стамбула – достопримечательности вынесены вверх на металлических ножках. Кораблики по Босфору движутся, ведомые магнитами под поверхностью «воды»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707989246_4ebfb5aa42_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707989246_4ebfb5aa42_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Перед этой лестницей вниз (а вниз спускаются только по лестнице) – небольшая пробка: все хотят сфотографироваться внутри:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707993871_567051a677_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707993871_567051a677_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Еще ниже – сувенирный магазин:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708665639_a01173b2c4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708665639_a01173b2c4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707200977_8d80e552fb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707200977_8d80e552fb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Купили симпатичный магнитик, и отправились дальше. Нас ждет Большой Базар!</p>
+<p>Но по дороге-то полно всего, радующего глаз. Это еще по «нашу» сторону моста:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708665769_775367d24d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708665769_775367d24d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На мосту, не поверите – рыбаки.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708868435_7a1a1dc26d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708868435_7a1a1dc26d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708867330_0a983abd7d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708867330_0a983abd7d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661854_1de1b87a31_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661854_1de1b87a31_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>На дальних подступах к Базару:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707197312_6fbf2c33db_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707197312_6fbf2c33db_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707990171_5d5f59b587_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707990171_5d5f59b587_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708660504_2ba568f40b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708660504_2ba568f40b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707197362_dd884e6630_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707197362_dd884e6630_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707197412_e6b32268f8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707197412_e6b32268f8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот мы и подошли ко входу в пещеры Аладдина:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661944_609231ea4b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661944_609231ea4b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707197447_b3fa755b1f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707197447_b3fa755b1f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707197457_0d5d83a06d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707197457_0d5d83a06d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708260543_a6985b0708_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708260543_a6985b0708_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707195897_a9dbf924e0_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707195897_a9dbf924e0_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707990316_32f71ee7d2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707990316_32f71ee7d2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707197532_eaaf68833b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707197532_eaaf68833b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Неизбежные «кружащиеся дервиши» в великом множестве. Играют ту же роль, что и наши матрёшки.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708260633_97183b5b9a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708260633_97183b5b9a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Думаете, я высокомерно проигнорировал эту манию и не обзавелся своим дервишем на полке? Как бы не так.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708260663_d16a428d88_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708260663_d16a428d88_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708662099_4f649fc611_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708662099_4f649fc611_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707197587_b0136f3fbd_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707197587_b0136f3fbd_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708662144_2f0675c50c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708662144_2f0675c50c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708260753_8555e8bb26_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708260753_8555e8bb26_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707988876_b83e486052_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707988876_b83e486052_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707197687_bb3230e854_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707197687_bb3230e854_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708260783_0d354a1e91_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708260783_0d354a1e91_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707990561_45e8e59c13_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707990561_45e8e59c13_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708868780_10952ee764_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708868780_10952ee764_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707990611_de22a175e4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707990611_de22a175e4_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707990636_30b8839aba_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707990636_30b8839aba_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708662354_669bf9a084_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708662354_669bf9a084_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708662364_4c7c7c965a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708662364_4c7c7c965a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707990706_2c594e30ab_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707990706_2c594e30ab_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708662414_a89281699e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708662414_a89281699e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Антикварная лавочка:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708260938_9f5a499ac7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708260938_9f5a499ac7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707990766_0865ba95e6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707990766_0865ba95e6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708261003_991345c3bb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708261003_991345c3bb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И снова джезвы, называемые у нас так же «турками»:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708662529_86c5b66054_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708662529_86c5b66054_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708261073_e29177a4cf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708261073_e29177a4cf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Где-то на тридцать пятом километре рядов с пряностями и сладостями:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708868995_81325ef14b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708868995_81325ef14b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708662594_57631e166e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708662594_57631e166e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Как-то так. Походили-побродили, пару кругов нарезали, и выбрались в сторону мечети Байезид, она же Бейязыт – есть и такие и такие варианты транскрипции.</p>
+<p>Вики:</p>
+<blockquote class="citation"><p>Мечеть была построена по приказу султана Баязида II в 1500—1506 годах и стала второй крупной мечетью, появившейся в Константинополе после его завоевания в 1453 году. Первой была мечеть Фатих (1470 год), однако она сильно пострадала во время землетрясения 1509 года и в дальнейшем была полностью перестроена. В этом отношении мечеть Баязида имеет намного большую историческую и архитектурную значимость, так как землетрясение лишь частично разрушило её купол.<br>
+Об архитекторе, построившем мечеть Баязида, известно немногое. Он построил караван-сарай в Бурсе. Однако, по стилю мечети видно влияние ранней османской и западной архитектурной техники. Повреждённый в 1509 году купол был вскоре восстановлен. В дальнейшем здание мечети ремонтировалось в 1573–1574 годах архитектором Мимаром Синаном.</p></blockquote>
+<p>Во дворике перед мечетью:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707990946_52d6996c78_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707990946_52d6996c78_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>или вот так - в черном-белом варианте:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708662634_2691c1a4b9_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708662634_2691c1a4b9_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708869135_a3ffca1847_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708869135_a3ffca1847_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708869150_0297f12620_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708869150_0297f12620_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вообще, мечеть Байезид мне понравилась даже больше, чем я ожидал. Очень гармоничная архитектура, красивая роспись купола:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708662729_7cdca866d7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708662729_7cdca866d7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707198132_90b0b0095f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707198132_90b0b0095f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708662769_daa18f08be_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708662769_daa18f08be_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707198207_eb4678f66d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707198207_eb4678f66d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708662844_6e3dc1d16f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708662844_6e3dc1d16f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Красивые линии…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707196037_6ecb8ae17d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707196037_6ecb8ae17d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707198252_b81a79d954_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707198252_b81a79d954_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707991151_d6fd0981ee_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707991151_d6fd0981ee_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вышли наружу. Вдали, между домами примыкающего с юга района Кумкапы, виднелось Мраморное море, и казалось, что оно совсем рядом, и я потащил жену в ту сторону. И мы даже прошли один квартал в том направлении.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707198337_d6477308e2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707198337_d6477308e2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но я быстро остыл, поняв, что это мы сейчас бодро спускаемся, и спускаться будем, по всей видимости, еще долго. А потом нам же подниматься обратно? А у нас еще планов громадье. Завтра-то днем мы уже улетаем. Развернулись, и отправились мимо корпусов Стамбульского университета, мимо кампуса, в сторону мечети Сулеймание.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707198377_fd6b642378_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707198377_fd6b642378_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И вот мы у стен мечети Сулеймание - лучшего, как считается, шедевра великого Синана…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708662984_b581cc4033_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708662984_b581cc4033_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707991261_7ccc670623_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707991261_7ccc670623_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Войдем внутрь.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708663014_4d57e8df92_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708663014_4d57e8df92_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Был час молитвы, так что жену на «мужскую» территорию не пустил служитель.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708869505_51e32ef1f7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708869505_51e32ef1f7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708869495_62a4007cd1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708869495_62a4007cd1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707988946_75011bfbc3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707988946_75011bfbc3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707198487_e26b5c840c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707198487_e26b5c840c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Когда молитва подошла к концу, снова стали пускать всех.</p>
+<p>Во дворике мечети:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708261513_c0c42acb84_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708261513_c0c42acb84_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707198547_e81a7279f7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707198547_e81a7279f7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Выйдем за ограду с северной стороны и пойдем в сторону смотровой «площадки». Ибо, раз саму Сулеймание так прекрасно видно с другого берега Золотого Рога и от моста, стало быть, и от нее виды должны быть роскошные.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707991421_9ee4e36509_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707991421_9ee4e36509_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну и таки-да, есть на что взглянуть!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707196072_8f401a9967_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707196072_8f401a9967_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707991436_1ab17406d6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707991436_1ab17406d6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707991461_82064aac41_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707991461_82064aac41_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Немножко пошаманил с цветом, показалось, стало поинтереснее.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708869685_989d6a7cac_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708869685_989d6a7cac_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вон и Галатская башня…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708663234_a5c2a8676d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708663234_a5c2a8676d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Азиатский берег:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707991551_1cf927642c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707991551_1cf927642c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вдали, если я правильно понимаю, видна огромная мечеть Çamlıca, построенная в 2016 году.</p>
+<p>А вот «наша» Сулеймание, как раз со стороны смотровой площадки:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707196117_a5ebee68a1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707196117_a5ebee68a1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Кладбище около мечети, рядом с мавзолеем нескольких султанов, включая Сулеймана Великолепного, и мавзолеем его знаменитой ужасной и кровавой, а вовсе не романтической, супруги:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707991576_7015fec13a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707991576_7015fec13a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707991601_51c97808e6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707991601_51c97808e6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708663304_cd6d80a5f8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708663304_cd6d80a5f8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В первом мавзолее:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707198727_e9742b5088_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707198727_e9742b5088_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И во втором (его приходится обойти снаружи, встать на ступеньку и заглянуть внутрь. И только потом, уже на фотографии, разглядывать детали):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708261783_bd8644201d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708261783_bd8644201d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707991711_e498e2f1eb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707991711_e498e2f1eb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708869895_ce259aaace_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708869895_ce259aaace_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А вот и солнце становится помягче…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707198827_3116692a59_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707198827_3116692a59_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Сулеймание:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708869935_8efed072bc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708869935_8efed072bc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708663449_c7f45f3913_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708663449_c7f45f3913_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот. Я был доволен. Досадно только, что я пропустил в саду около Сулеймание могилу ее создателя - великого архитектора Синана (1489 — 1588). Забыл, что она как раз там.</p>
+<blockquote class="citation"><p>Полное имя Абдульменна́н оглу́ Синанедди́н Юсу́ф. Известен также как Ходжа́ Мима́р Сина́н Ага́ ("господин учитель архитектор Синан") или просто Мима́р Сина́н ("архитектор Синан").<br>
+С 1538 года занимал пост главного османского архитектора и инженера. Проводил строительные работы при султане Сулеймане I и его преемниках Селиме II и Мураде III. Руководил возведением гражданских сооружений — мечетей, мусульманских начальных школ (мектеб), акведуков, а также укреплений, мостов и переправ в военных походах султанов. Спроектировал знаменитые бани Роксоланы и её мавзолей. Ученик Синана Седефкар Мехмет Ага стал автором проекта Голубой мечети в Стамбуле, другие ученики проектировали Старый мост в Мостаре (Босния и Герцеговина), а ещё один ученик, сирийский архитектор Устада Иса Хан, проектировал Тадж-Махал в империи Великих Моголов.</p></blockquote>
+<p>Мечеть Сулеймание Синан строил в период с 1550 по 1557 годы. Как-то так.</p>
+<p>Теперь отправимся в парк Гюльхане у стен дворца Топкапы – вчера мы только заглянули в него, а сейчас хочется прогуляться по нему спокойно, как по Люксембургскому саду, посидеть на скамеечке, как-то остановить мгновение.</p>
+<p>Ну, пошли…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707991841_b78f9ea543_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707991841_b78f9ea543_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вечерняя распродажа дешевых ковриков:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708261998_81efb84d3b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708261998_81efb84d3b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И снова – Стамбул, рынки, торговля. Суббота подходит к концу.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708663554_3f6642a34b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708663554_3f6642a34b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708259288_dff1e1ec6c_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708259288_dff1e1ec6c_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708262113_ca632c0db2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708262113_ca632c0db2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707991961_9ceb2a34bc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707991961_9ceb2a34bc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707991976_70802fcc83_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707991976_70802fcc83_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707992006_0e32e3f288_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707992006_0e32e3f288_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708262213_cb5005f790_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708262213_cb5005f790_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Вот и парк Гюльхане…</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708870290_62b1145c73_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708870290_62b1145c73_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Понемногу смеркается.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707199202_3bd777a5a3_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707199202_3bd777a5a3_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>В дальней части парка, если пренебречь приличиями и подойти прямо по газону в ограде, окружающей парк со стороны Золотого Рога, можно полюбоваться чудесными видами на Галату.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708262338_688d18ab5b_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708262338_688d18ab5b_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707992131_891b0c24e1_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707992131_891b0c24e1_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707992146_bd6cab383e_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707992146_bd6cab383e_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Мы как раз в самом дальнем конце парка, кстати, у знаменитой Готской колонны – древнейшего, как утверждается, сохранившегося памятника в городе, возможно, установленного еще до основания Константинополя. Но фото у мня нет - было уже темновато.</p>
+<p>Вики: <em>«Название 18,5-метровой колонны … происходит от (теперь уже почти не читаемой) латинской надписи на её основании, в которой увековечена победа римлян над готами: FORTUNAE REDUCI OB DEVICTUS GOTHOS («С победой над готами фортуна вернулась к нам»)… Дата создания и изначальное посвящение колонны точно не установлены. Скорее всего, колонна была возведена в честь побед либо Клавдия II Готского (п. 268—270), либо Константина Великого (п. 306—337); оба императора отметились победами над готскими племенами.»</em></p>
+<p>Сквозь деревья парка просвечивает вдали красавица Сулеймание, откуда мы, кажется, только что вышли. Пора доставать штатив, не зря же я его таскал весь день в рюкзаке! Ну, правда, он легкий, специально для таких вот поездок.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708663879_ec446d1e90_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708663879_ec446d1e90_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Но везде деревья, и никак не найти места, где бы можно было увидеть Сулеймание без помех. Вроде, сквозь ветки тоже неплохо получается. Наверное, придется удовольствоваться этим:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707989091_c59443e4ce_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707989091_c59443e4ce_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Или вот так (посмотрите, кстати, сколько птиц в небе!)</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708663899_d013ded021_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708663899_d013ded021_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А солнце уже село, и небо начинает бледнеть, как все же жалко! Бегаю вдоль дорожек, пытаюсь найти просвет.</p>
+<p>Никак.</p>
+<p>Но у меня же есть специальный человек! Который тоже, пренебрегая правилами поведения в парках, забирается на склон газона с другой стороны от дорожки. И призывно машет. Был ли у меня случай разочароваться в этих маханиях? Не было. Поспешим же – свет ждать не будет.</p>
+<p>Так что вот, смотрите. Неплохо получилось. Даже сам доволен. Вариантов получилось много, покажу один. Хочу распечатать в большом формате, повесить куда-нибудь.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708870570_331f10d4fc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708870570_331f10d4fc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это – Галата. Но солнце уже давно и окончательно село, и небо стало сине-серым. «Синий час» подошел к концу.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707199282_f8906907d7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707199282_f8906907d7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Ну вот. Пойдем мы, пожалуй, к себе, в Чукурджуму, так сказать.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708262553_e84b32ecaf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708262553_e84b32ecaf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>До свидания, Айя-София!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708259358_d2d5a9d527_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708259358_d2d5a9d527_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Кружитесь дальше, парни!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708262568_00fe160e95_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708262568_00fe160e95_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708870630_30fa141c4a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708870630_30fa141c4a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Еще одна вечерняя Айя-София:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707992466_5b1b63f2f2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707992466_5b1b63f2f2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>и вечерняя же Голубая мечеть. Снимал со штатива, с выдержкой в несколько секунд, так что птицы превратились в загадочные зигзаги на фоне ночного неба:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707199532_376713ae54_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707199532_376713ae54_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>Напоследок, "Египетская стела" на площади Ипподрома (<em>древнеегипетский обелиск фараона Тутмоса III (XVIII династия), воздвигнутый на разделительном барьере константинопольского ипподрома. Воздвигнут императором Римской империи Феодосием Великим в 390 году н.э.</em>):</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708870710_8bcd999da8_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708870710_8bcd999da8_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А теперь домой, домой, через Галатский мост, через кусочек Истикляль, это снова был хороший, длинный и прекрасный день, грех жаловаться.</p>
+<h2 id="глава-5-день-последний-утро">Глава 5. День последний. Утро.</h2>
+<p>И у нас осталась всего лишь пара утренних часов, перед отъездом в аэропорт. Можно прогуляться по улочкам Чукурджумы, тихим в это воскресное утро, последний раз посмотреть в глаза стамбульским кошкам.</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707195842_c76a7e797f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707195842_c76a7e797f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661554_1db7be354a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661554_1db7be354a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707989876_28e68cdfca_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707989876_28e68cdfca_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707197072_8ec7679fdc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707197072_8ec7679fdc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707989901_50079f7872_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707989901_50079f7872_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708868240_4d3bbf6dcc_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708868240_4d3bbf6dcc_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661644_1ed70dffa5_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661644_1ed70dffa5_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708868355_332bfe5912_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708868355_332bfe5912_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708868265_93f828dc2d_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708868265_93f828dc2d_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661674_32fa0c3cfb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661674_32fa0c3cfb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707989991_3142321906_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707989991_3142321906_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708260208_9da8bf8abf_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708260208_9da8bf8abf_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708868300_69592340ab_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708868300_69592340ab_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708661704_af973f0e9f_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708661704_af973f0e9f_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>И вот мы снова на нашей улице:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708259028_c1c4442dc2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708259028_c1c4442dc2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707990036_1701376dcb_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707990036_1701376dcb_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707197202_95afe7af6a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707197202_95afe7af6a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708868405_b8fa62bbe2_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708868405_b8fa62bbe2_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707990106_936eca974a_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707990106_936eca974a_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А эти двое дремлют прямо у дверей нашей гостиницы:</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707197257_ab494b78b6_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707197257_ab494b78b6_o.jpg" alt="" loading="lazy"></noscript></figure>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51707990121_d8af687da7_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51707990121_d8af687da7_o.jpg" alt="" loading="lazy"></noscript></figure>
+<p>А это значит, что мы вернулись в гостиницу, и через минут десять за нами приедет машина.</p>
+<p>* * *</p>
+<p>Ну что вам сказать… Я знаю, читал, что кому-то Стамбул не показался. Ну, а нам здесь было интересно. И нам здесь было хорошо. Я не могу сказать, что мы Стамбул уже повидали и насмотрелись. Нет. Нас просто занесло сюда внезапным порывом ноябрьского ветра. И я считаю – нам с этим ветром повезло.</p>
+<p>Приезжайте в Стамбул!</p>
+<figure class="photo"><img data-src="https://live.staticflickr.com/65535/51708871690_790d0173f4_o.jpg" alt="" class="lazy-photo"><noscript><img src="https://live.staticflickr.com/65535/51708871690_790d0173f4_o.jpg" alt="" loading="lazy"></noscript></figure>
+  </article>
+</div>
+<script>
+(function() {
+  var pending = []; // images that entered the buffer zone, not yet loading/loaded
+  var loading = false;
+
+  function distanceFromViewport(img) {
+    var rect = img.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;      // above viewport
+    if (rect.top > vh) return rect.top - vh;        // below viewport
+    return 0;                                       // on screen right now
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+        if (d === 0) break; // already on screen -- can't beat that
+      }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var img = pickNext();
+    if (!img) return;
+    loading = true;
+    loadImage(img, img.getAttribute('data-src'));
+  }
+
+  function loadImage(img, src) {
+    img.onload = function() {
+      img.classList.add('loaded');
+      img.removeAttribute('data-src');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      // Flickr (or the network) hiccuped on this one request -- don't give
+      // up on it and don't block everything else behind it. Free the
+      // queue immediately, and let this image rejoin the pending pool
+      // after a short, growing backoff so it gets picked up again.
+      loading = false;
+      var attempt = (img._retryCount || 0) + 1;
+      img._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() {
+        pending.push(img);
+        processQueue();
+      }, delay);
+      processQueue();
+    };
+    img.src = src;
+  }
+
+  // Images join the pending pool once they're within reach; every time a
+  // slot frees up, pickNext() re-checks CURRENT positions and grabs
+  // whichever pending image is closest to (or actually on) screen right
+  // now -- so a fast scroll or scrollbar drag doesn't leave visible
+  // photos stuck behind everything the scroll happened to pass over.
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>
