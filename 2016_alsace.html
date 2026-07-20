@@ -843,6 +843,37 @@
     observer.observe(img);
   });
 })();
+
+(function() {
+  // Clicking a table-of-contents link jumps to the right spot right away,
+  // but as images below/around it finish loading, the page grows and the
+  // target visually drifts. Re-run the scroll a few times over the next
+  // couple of seconds to self-correct, stopping the moment the person
+  // scrolls on their own.
+  var pendingCorrections = [];
+  function cancelCorrections() {
+    pendingCorrections.forEach(clearTimeout);
+    pendingCorrections = [];
+  }
+  ['wheel', 'touchmove', 'keydown'].forEach(function(evt) {
+    document.addEventListener(evt, cancelCorrections, { passive: true });
+  });
+  document.querySelectorAll('nav.toc a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var id = link.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      cancelCorrections();
+      history.pushState(null, '', '#' + id);
+      [0, 80, 200, 400, 800, 1500, 2500].forEach(function(delay) {
+        pendingCorrections.push(setTimeout(function() {
+          target.scrollIntoView({ block: 'start' });
+        }, delay));
+      });
+    });
+  });
+})();
 </script>
 </body>
 </html>
