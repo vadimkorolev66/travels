@@ -101,7 +101,10 @@
     background-position: center;
     background-color: var(--line);
     min-height: 132px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
   }
+  .card-photo.loaded { opacity: 1; }
   .card-body {
     flex: 1 1 auto;
     padding: 0.9rem 1.1rem;
@@ -153,7 +156,7 @@
       <div class="year-label">2012</div>
       <div class="cards">
       <a class="card" href="2012_benelux.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/49901218392_a0d54efc3f_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/49901218392_a0d54efc3f_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">август</div>
           <div class="card-title">Ностальгический рассказ о том, как не залечь на дно, путешествуя своим ходом по Бельгии и Нидерландам</div>
@@ -165,14 +168,14 @@
       <div class="year-label">2014</div>
       <div class="cards">
       <a class="card" href="2014_east_brittany.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/49821015786_58b1e7bbee_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/49821015786_58b1e7bbee_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">апрель</div>
           <div class="card-title">Восточная Бретань — от Арзона до Сен-Мало</div>
         </div>
       </a>
       <a class="card" href="2014_salzburg.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/54107976442_95d7722974_b.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/54107976442_95d7722974_b.jpg"></div>
         <div class="card-body">
           <div class="card-month">декабрь – январь</div>
           <div class="card-title">Зальцбург под снегом. Воспоминание о новогодней Австрии</div>
@@ -184,14 +187,14 @@
       <div class="year-label">2015</div>
       <div class="cards">
       <a class="card" href="2015_georgia.html">
-        <div class="card-photo" style="background-image:url('https://img-fotki.yandex.ru/get/477594/2188450.14/0_1e64eb_b3300372_orig')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://img-fotki.yandex.ru/get/477594/2188450.14/0_1e64eb_b3300372_orig"></div>
         <div class="card-body">
           <div class="card-month">апрель</div>
           <div class="card-title">Грузия — по волнам моей фотопамяти</div>
         </div>
       </a>
       <a class="card" href="2015_bavaria_salzkammergut.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/54425096785_db01c8f1da_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/54425096785_db01c8f1da_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">август</div>
           <div class="card-title">Бавария и Зальцкаммергут. Десять лет тому назад</div>
@@ -203,14 +206,14 @@
       <div class="year-label">2016</div>
       <div class="cards">
       <a class="card" href="2016_andalusia.html">
-        <div class="card-photo" style="background-image:url('https://img-fotki.yandex.ru/get/369579/2188450.1f/0_1e895c_55b263ef_orig')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://img-fotki.yandex.ru/get/369579/2188450.1f/0_1e895c_55b263ef_orig"></div>
         <div class="card-body">
           <div class="card-month">апрель</div>
           <div class="card-title">Цвета Андалусии — белые города, песчаные дворцы, алое фламенко</div>
         </div>
       </a>
       <a class="card" href="2016_alsace.html">
-        <div class="card-photo" style="background-image:url('https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8001_4aa8881e_orig')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://img-fotki.yandex.ru/get/478621/2188450.1c/0_1e8001_4aa8881e_orig"></div>
         <div class="card-body">
           <div class="card-month">август</div>
           <div class="card-title">Эльзас — глоток холодного рислинга в тени виноградной лозы</div>
@@ -222,14 +225,14 @@
       <div class="year-label">2017</div>
       <div class="cards">
       <a class="card" href="2017_bretagne.html">
-        <div class="card-photo" style="background-image:url('https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df61f_1660e0d1_orig')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://img-fotki.yandex.ru/get/202427/2188450.1/0_1df61f_1660e0d1_orig"></div>
         <div class="card-body">
           <div class="card-month">апрель</div>
           <div class="card-title">Западная Бретань — от Бель-Иля до Уэссана</div>
         </div>
       </a>
       <a class="card" href="2017_alps.html">
-        <div class="card-photo" style="background-image:url('https://img-fotki.yandex.ru/get/478662/2188450.8/0_1e24a3_5de382fd_orig')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://img-fotki.yandex.ru/get/478662/2188450.8/0_1e24a3_5de382fd_orig"></div>
         <div class="card-body">
           <div class="card-month">август</div>
           <div class="card-title">Альпы в августе — от озера к озеру, от Австрии к Баварии</div>
@@ -241,14 +244,14 @@
       <div class="year-label">2018</div>
       <div class="cards">
       <a class="card" href="2018_north_italy.html">
-        <div class="card-photo" style="background-image:url('https://farm1.staticflickr.com/958/41335390605_5b8c55d78a_b.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://farm1.staticflickr.com/958/41335390605_5b8c55d78a_b.jpg"></div>
         <div class="card-body">
           <div class="card-month">апрель</div>
           <div class="card-title">Города Северной Италии, или Мост над бездной</div>
         </div>
       </a>
       <a class="card" href="2018_switzerland.html">
-        <div class="card-photo" style="background-image:url('https://farm5.staticflickr.com/4912/45696010801_9791bb5db6_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://farm5.staticflickr.com/4912/45696010801_9791bb5db6_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">август</div>
           <div class="card-title">Швейцария. Прогулка рядом с облаками</div>
@@ -260,14 +263,14 @@
       <div class="year-label">2019</div>
       <div class="cards">
       <a class="card" href="2019_normandy.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/48214170891_b5529f5d72_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/48214170891_b5529f5d72_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">май</div>
           <div class="card-title">Нормандия — безупречная линия горизонта</div>
         </div>
       </a>
       <a class="card" href="2019_dolomites_garda.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/49002758212_92d4418297_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/49002758212_92d4418297_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">август</div>
           <div class="card-title">Доломиты и озеро Гарда. Две недели в августе</div>
@@ -279,28 +282,28 @@
       <div class="year-label">2021</div>
       <div class="cards">
       <a class="card" href="2021_three_routes_1.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/51892272407_cb677a6695_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/51892272407_cb677a6695_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">август</div>
           <div class="card-title">Три коротких маршрута. Часть первая: Суздаль и Владимир</div>
         </div>
       </a>
       <a class="card" href="2021_three_routes_2.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/51740529969_7f36a1e7f4_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/51740529969_7f36a1e7f4_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">август</div>
           <div class="card-title">Три коротких маршрута. Часть вторая: Коломна и Константиново</div>
         </div>
       </a>
       <a class="card" href="2021_three_routes_3.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/51893568129_19725c3e6c_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/51893568129_19725c3e6c_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">август</div>
           <div class="card-title">Три коротких маршрута. Часть третья: Таруса</div>
         </div>
       </a>
       <a class="card" href="2021_istanbul_nov.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/51708667204_6e57a42a07_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/51708667204_6e57a42a07_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">ноябрь</div>
           <div class="card-title">Стамбул. Три солнечных ноябрьских дня</div>
@@ -312,7 +315,7 @@
       <div class="year-label">2022</div>
       <div class="cards">
       <a class="card" href="2022_istanbul_oct.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/52482440583_c003da0526_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/52482440583_c003da0526_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">октябрь</div>
           <div class="card-title">Октябрь в Стамбуле</div>
@@ -324,14 +327,14 @@
       <div class="year-label">2023</div>
       <div class="cards">
       <a class="card" href="2023_armenia1.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/53065578884_082c55db69_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/53065578884_082c55db69_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">апрель</div>
           <div class="card-title">Армения. Знакомство длиной в тысячу километров</div>
         </div>
       </a>
       <a class="card" href="2023_elbrus.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/53461347506_0ea082387a_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/53461347506_0ea082387a_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">август</div>
           <div class="card-title">Неделя в Приэльбрусье</div>
@@ -343,14 +346,14 @@
       <div class="year-label">2024</div>
       <div class="cards">
       <a class="card" href="2024_armenia2.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/53726915126_c6bc16b367_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/53726915126_c6bc16b367_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">апрель</div>
           <div class="card-title">Возвращение в Армению. Год спустя</div>
         </div>
       </a>
       <a class="card" href="2024_venice_dolomites.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/54027023736_20b39efefe_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/54027023736_20b39efefe_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">август</div>
           <div class="card-title">Венеция и Доломитовые Альпы. Горячее дыхание августа</div>
@@ -362,7 +365,7 @@
       <div class="year-label">2025</div>
       <div class="cards">
       <a class="card" href="2025_rome.html">
-        <div class="card-photo" style="background-image:url('https://live.staticflickr.com/65535/54300792337_712cb31068_o.jpg')"></div>
+        <div class="card-photo lazy-bg" data-bg="https://live.staticflickr.com/65535/54300792337_712cb31068_o.jpg"></div>
         <div class="card-body">
           <div class="card-month">январь</div>
           <div class="card-title">Рим. Пять дней в январе</div>
@@ -374,5 +377,75 @@
 
   <footer class="site-footer">© Вадим Королёв</footer>
 </div>
+<script>
+(function() {
+  // Same idea as the report pages: load card photos one at a time with a
+  // small pause, and retry with backoff on failure, instead of firing all
+  // ~23 requests at once (which is exactly the kind of burst that can get
+  // throttled by the image host, especially on a hard refresh).
+  var pending = [];
+  var loading = false;
+
+  function distanceFromViewport(el) {
+    var rect = el.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0) return -rect.bottom;
+    if (rect.top > vh) return rect.top - vh;
+    return 0;
+  }
+
+  function pickNext() {
+    if (pending.length === 0) return null;
+    var bestIdx = 0, bestDist = Infinity;
+    for (var i = 0; i < pending.length; i++) {
+      var d = distanceFromViewport(pending[i]);
+      if (d < bestDist) { bestDist = d; bestIdx = i; if (d === 0) break; }
+    }
+    return pending.splice(bestIdx, 1)[0];
+  }
+
+  function processQueue() {
+    if (loading) return;
+    var el = pickNext();
+    if (!el) return;
+    loading = true;
+    loadBg(el, el.getAttribute('data-bg'));
+  }
+
+  function loadBg(el, url) {
+    var img = new Image();
+    img.onload = function() {
+      el.style.backgroundImage = "url('" + url + "')";
+      el.classList.add('loaded');
+      el.removeAttribute('data-bg');
+      loading = false;
+      setTimeout(processQueue, 90);
+    };
+    img.onerror = function() {
+      loading = false;
+      var attempt = (el._retryCount || 0) + 1;
+      el._retryCount = attempt;
+      var delay = Math.min(500 * attempt, 5000);
+      setTimeout(function() { pending.push(el); processQueue(); }, delay);
+      processQueue();
+    };
+    img.src = url;
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        pending.push(entry.target);
+        processQueue();
+      }
+    });
+  }, { rootMargin: '600px 0px', threshold: 0.01 });
+
+  document.querySelectorAll('.card-photo.lazy-bg[data-bg]').forEach(function(el) {
+    observer.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
