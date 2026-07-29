@@ -387,6 +387,12 @@
   // throttled by the image host, especially on a hard refresh).
   var pending = [];
   var loading = false;
+  var basePace = 280;
+  var consecutiveFails = 0;
+
+  function currentPace() {
+    return Math.min(basePace * Math.pow(1.7, consecutiveFails), 8000);
+  }
 
   function distanceFromViewport(el) {
     var rect = el.getBoundingClientRect();
@@ -420,16 +426,18 @@
       el.style.backgroundImage = "url('" + url + "')";
       el.classList.add('loaded');
       el.removeAttribute('data-bg');
+      consecutiveFails = 0;
       loading = false;
-      setTimeout(processQueue, 90);
+      setTimeout(processQueue, basePace);
     };
     img.onerror = function() {
       loading = false;
+      consecutiveFails++;
       var attempt = (el._retryCount || 0) + 1;
       el._retryCount = attempt;
-      var delay = Math.min(500 * attempt, 5000);
-      setTimeout(function() { pending.push(el); processQueue(); }, delay);
-      processQueue();
+      var retryDelay = Math.min(700 * attempt, 8000);
+      setTimeout(function() { pending.push(el); processQueue(); }, retryDelay);
+      setTimeout(processQueue, currentPace());
     };
     img.src = url;
   }

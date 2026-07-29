@@ -924,6 +924,18 @@
 (function() {
   var pending = []; // images that entered the buffer zone, not yet loading/loaded
   var loading = false;
+  var basePace = 280;        // ms between successful loads
+  var consecutiveFails = 0;  // recent run of failures -- back off harder while this is high
+  var loadedCount = 0;       // total successful loads -- for the periodic cooldown below
+  var COOLDOWN_EVERY = 15;   // take a longer breather after this many loads
+  var COOLDOWN_MS = 4500;
+
+  function currentPace() {
+    // The more failures we've seen in a row, the more we slow down --
+    // this is what actually protects against a bad patch instead of
+    // just retrying at full speed and making it worse.
+    return Math.min(basePace * Math.pow(1.7, consecutiveFails), 8000);
+  }
 
   function distanceFromViewport(img) {
     var rect = img.getBoundingClientRect();
@@ -959,23 +971,29 @@
     img.onload = function() {
       img.classList.add('loaded');
       img.removeAttribute('data-src');
+      consecutiveFails = 0;
       loading = false;
-      setTimeout(processQueue, 90);
+      loadedCount++;
+      var pace = (loadedCount % COOLDOWN_EVERY === 0) ? COOLDOWN_MS : basePace;
+      setTimeout(processQueue, pace);
     };
     img.onerror = function() {
-      // Flickr (or the network) hiccuped on this one request -- don't give
-      // up on it and don't block everything else behind it. Free the
-      // queue immediately, and let this image rejoin the pending pool
-      // after a short, growing backoff so it gets picked up again.
+      // A failed request (Flickr hiccup, or an actual rate limit) rejoins
+      // the pool after its own backoff -- but crucially, the *next*
+      // attempt at a different image is paced too (currentPace(), which
+      // grows with consecutiveFails). Retrying instantly on error would
+      // just burst-fire through everything left in the queue the moment
+      // things start failing, which is the opposite of backing off.
       loading = false;
+      consecutiveFails++;
       var attempt = (img._retryCount || 0) + 1;
       img._retryCount = attempt;
-      var delay = Math.min(500 * attempt, 5000);
+      var retryDelay = Math.min(700 * attempt, 8000);
       setTimeout(function() {
         pending.push(img);
         processQueue();
-      }, delay);
-      processQueue();
+      }, retryDelay);
+      setTimeout(processQueue, currentPace());
     };
     img.src = src;
   }
@@ -998,9 +1016,7 @@
   document.querySelectorAll('img.lazy-photo[data-src]').forEach(function(img) {
     observer.observe(img);
   });
-})();
 
-(function() {
   // Clicking a table-of-contents link jumps to the right spot right away,
   // but as images below/around it finish loading, the page grows and the
   // target visually drifts. Re-run the scroll a few times over the next
@@ -1014,6 +1030,26 @@
   ['wheel', 'touchmove', 'keydown'].forEach(function(evt) {
     document.addEventListener(evt, cancelCorrections, { passive: true });
   });
+
+  // Jumping to a chapter means the person is about to read forward from
+  // there. Don't keep fetching photos from chapters already skipped past
+  // -- drop them from the queue and go back to just watching for them, so
+  // they only load again if the person actually scrolls back up to them.
+  function deprioritizeAbove(target) {
+    var targetTop = target.getBoundingClientRect().top + window.scrollY;
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var kept = [];
+    pending.forEach(function(img) {
+      var imgTop = img.getBoundingClientRect().top + window.scrollY;
+      if (imgTop < targetTop - vh) {
+        observer.observe(img); // watch it again instead of fetching now
+      } else {
+        kept.push(img);
+      }
+    });
+    pending = kept;
+  }
+
   document.querySelectorAll('nav.toc a[href^="#"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
       var id = link.getAttribute('href').slice(1);
@@ -1022,6 +1058,7 @@
       e.preventDefault();
       cancelCorrections();
       history.pushState(null, '', '#' + id);
+      setTimeout(function() { deprioritizeAbove(target); }, 30);
       [0, 80, 200, 400, 800, 1500, 2500, 4000].forEach(function(delay) {
         pendingCorrections.push(setTimeout(function() {
           target.scrollIntoView({ block: 'start' });
