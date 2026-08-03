@@ -387,11 +387,11 @@
   // throttled by the image host, especially on a hard refresh).
   var pending = [];
   var loading = false;
-  var basePace = 280;
+  var basePace = 90;
   var consecutiveFails = 0;
 
   function currentPace() {
-    return Math.min(basePace * Math.pow(1.7, consecutiveFails), 8000);
+    return Math.min(basePace * Math.pow(1.7, consecutiveFails), 4000);
   }
 
   function distanceFromViewport(el) {
@@ -435,7 +435,7 @@
       consecutiveFails++;
       var attempt = (el._retryCount || 0) + 1;
       el._retryCount = attempt;
-      var retryDelay = Math.min(700 * attempt, 8000);
+      var retryDelay = Math.min(500 * attempt, 4000);
       setTimeout(function() { pending.push(el); processQueue(); }, retryDelay);
       setTimeout(processQueue, currentPace());
     };
