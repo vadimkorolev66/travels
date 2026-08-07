@@ -164,6 +164,10 @@
     min-height: 40px;
     background: var(--line);
   }
+  img.lazy-photo:not(.loaded) {
+    display: block;
+    width: 100%;
+  }
   img.lazy-photo.loaded { opacity: 1; }
   .video-embed {
     position: relative;
@@ -955,17 +959,17 @@
 (function() {
   var pending = []; // images that entered the buffer zone, not yet loading/loaded
   var loading = false;
-  var basePace = 280;        // ms between successful loads
+  var basePace = 140;        // ms between successful loads
   var consecutiveFails = 0;  // recent run of failures -- back off harder while this is high
-  var loadedCount = 0;       // total successful loads -- for the periodic cooldown below
-  var COOLDOWN_EVERY = 15;   // take a longer breather after this many loads
-  var COOLDOWN_MS = 4500;
 
   function currentPace() {
     // The more failures we've seen in a row, the more we slow down --
     // this is what actually protects against a bad patch instead of
-    // just retrying at full speed and making it worse.
-    return Math.min(basePace * Math.pow(1.7, consecutiveFails), 8000);
+    // just retrying at full speed and making it worse. No unconditional
+    // periodic "cooldown" beyond this: on a report with 400+ photos that
+    // made the page take several minutes to finish loading even when
+    // everything was succeeding, which just looked broken.
+    return Math.min(basePace * Math.pow(1.6, consecutiveFails), 6000);
   }
 
   function distanceFromViewport(img) {
@@ -1004,9 +1008,7 @@
       img.removeAttribute('data-src');
       consecutiveFails = 0;
       loading = false;
-      loadedCount++;
-      var pace = (loadedCount % COOLDOWN_EVERY === 0) ? COOLDOWN_MS : basePace;
-      setTimeout(processQueue, pace);
+      setTimeout(processQueue, basePace);
     };
     img.onerror = function() {
       // A failed request (Flickr hiccup, or an actual rate limit) rejoins
@@ -1019,7 +1021,7 @@
       consecutiveFails++;
       var attempt = (img._retryCount || 0) + 1;
       img._retryCount = attempt;
-      var retryDelay = Math.min(700 * attempt, 8000);
+      var retryDelay = Math.min(600 * attempt, 6000);
       setTimeout(function() {
         pending.push(img);
         processQueue();
