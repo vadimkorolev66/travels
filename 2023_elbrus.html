@@ -808,6 +808,8 @@
 
   function pickNext() {
     if (pending.length === 0) return null;
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var maxDistance = vh * 2; // "a couple of screens" -- see note below
     var bestIdx = 0, bestDist = Infinity;
     for (var i = 0; i < pending.length; i++) {
       var d = distanceFromViewport(pending[i]);
@@ -816,6 +818,21 @@
         bestIdx = i;
         if (d === 0) break; // already on screen -- can't beat that
       }
+    }
+    if (bestDist > maxDistance) {
+      // Nothing left in the queue is actually near the viewport right now
+      // -- e.g. images from the very start of a long report that were
+      // queued on page load, before a table-of-contents click jumped
+      // straight to some later chapter. Re-checking this fresh on every
+      // single call (instead of only right after a click) is what
+      // actually fixes it: a one-time filter can lose a race against the
+      // page's own initial intersection scan, which resolves slightly
+      // later and can re-add exactly the images it just removed. Stop
+      // holding onto any of it and go back to just watching, so it's
+      // only picked up again if the person actually scrolls near it.
+      pending.forEach(function(img) { observer.observe(img); });
+      pending = [];
+      return null;
     }
     return pending.splice(bestIdx, 1)[0];
   }
@@ -880,7 +897,10 @@
   // but as images below/around it finish loading, the page grows and the
   // target visually drifts. Re-run the scroll a few times over the next
   // couple of seconds to self-correct, stopping the moment the person
-  // scrolls on their own.
+  // scrolls on their own. (Note: nothing special is needed here to stop
+  // loading images from chapters skipped past -- pickNext()'s distance
+  // cutoff above already takes care of that on every single call, freshly,
+  // which is what actually makes it reliable.)
   var pendingCorrections = [];
   function cancelCorrections() {
     pendingCorrections.forEach(clearTimeout);
@@ -890,25 +910,6 @@
     document.addEventListener(evt, cancelCorrections, { passive: true });
   });
 
-  // Jumping to a chapter means the person is about to read forward from
-  // there. Don't keep fetching photos from chapters already skipped past
-  // -- drop them from the queue and go back to just watching for them, so
-  // they only load again if the person actually scrolls back up to them.
-  function deprioritizeAbove(target) {
-    var targetTop = target.getBoundingClientRect().top + window.scrollY;
-    var vh = window.innerHeight || document.documentElement.clientHeight;
-    var kept = [];
-    pending.forEach(function(img) {
-      var imgTop = img.getBoundingClientRect().top + window.scrollY;
-      if (imgTop < targetTop - vh) {
-        observer.observe(img); // watch it again instead of fetching now
-      } else {
-        kept.push(img);
-      }
-    });
-    pending = kept;
-  }
-
   document.querySelectorAll('nav.toc a[href^="#"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
       var id = link.getAttribute('href').slice(1);
@@ -917,7 +918,6 @@
       e.preventDefault();
       cancelCorrections();
       history.pushState(null, '', '#' + id);
-      setTimeout(function() { deprioritizeAbove(target); }, 30);
       [0, 80, 200, 400, 800, 1500, 2500, 4000].forEach(function(delay) {
         pendingCorrections.push(setTimeout(function() {
           target.scrollIntoView({ block: 'start' });
